@@ -87,7 +87,6 @@ function initScene() {
 	directionalLight.shadowMapWidth = 4096;
 	directionalLight.shadowMapHeight = 4096;
 	directionalLight.shadowCameraFar = 10000;
-	directionalLight.shadowDarkness = 0.5;
 
 	visualizer.scene.add(directionalLight);
 

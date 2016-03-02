@@ -5,7 +5,6 @@ var concat = require('gulp-concat');
 var minify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
-var browserSync = require('browser-sync');
 var tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('tsd', function (callback) {
@@ -15,7 +14,7 @@ gulp.task('tsd', function (callback) {
     }, callback);
 });
 
-gulp.task('scripts', ['tsd'], function () {
+gulp.task('scripts', function () {
     tsProject.sortOutput = true;
     tsProject.declarationFiles = false;
     tsProject.noExternalResolve = true;
@@ -28,27 +27,15 @@ gulp.task('scripts', ['tsd'], function () {
         .pipe(gulp.dest('js'));
 });
 
-gulp.task('scripts-reload', ['scripts'], function () {
-    browserSync.reload({stream: true});
-});
-
 gulp.task('sass', function () {
     gulp.src('sass/**/*.scss')
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(gulp.dest('css'));
 });
 
-gulp.task('sass-reload', ['sass'], function () {
-    browserSync.reload();
-});
-
 gulp.task('watch', ['scripts', 'sass'], function () {
-    browserSync({
-        server: {baseDir: '.'},
-        port: 4000
-    });
-    gulp.watch('sass/**/*.scss', ['sass-reload']);
-    gulp.watch('ts/**/*.ts', ['scripts-reload']);
+    gulp.watch('ts/**/*.ts', ['scripts']);
+    gulp.watch('sass/**/*.scss', ['sass']);
 });
 
 gulp.task('default', ['scripts', 'sass']);
