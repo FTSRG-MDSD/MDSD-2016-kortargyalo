@@ -57,6 +57,18 @@
           <children xmi:type="notation:Node" xmi:id="_1owfAOB5EeW6fKjsFKPE8Q" type="2003" element="_1oWPUOB5EeW6fKjsFKPE8Q">
             <children xmi:type="notation:Node" xmi:id="_1oyUMOB5EeW6fKjsFKPE8Q" type="5007"/>
             <children xmi:type="notation:Node" xmi:id="_1oyUMeB5EeW6fKjsFKPE8Q" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_LbVt0OC3EeW6fKjsFKPE8Q" type="3010" element="_LajqsOC3EeW6fKjsFKPE8Q">
+                <styles xmi:type="notation:FontStyle" xmi:id="_LbVt0eC3EeW6fKjsFKPE8Q" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_LbVt0uC3EeW6fKjsFKPE8Q"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_NfR7gOC3EeW6fKjsFKPE8Q" type="3010" element="_NeeDMOC3EeW6fKjsFKPE8Q">
+                <styles xmi:type="notation:FontStyle" xmi:id="_NfR7geC3EeW6fKjsFKPE8Q" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_NfR7guC3EeW6fKjsFKPE8Q"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_v3PDIOC3EeW6fKjsFKPE8Q" type="3010" element="_v2PkoOC3EeW6fKjsFKPE8Q">
+                <styles xmi:type="notation:FontStyle" xmi:id="_v3PDIeC3EeW6fKjsFKPE8Q" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_v3PDIuC3EeW6fKjsFKPE8Q"/>
+              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_1oyUMuB5EeW6fKjsFKPE8Q"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_1oyUM-B5EeW6fKjsFKPE8Q"/>
             </children>
@@ -183,6 +195,10 @@
           <children xmi:type="notation:Node" xmi:id="_8NoZEOCsEeW6fKjsFKPE8Q" type="2003" element="_8NIp0OCsEeW6fKjsFKPE8Q">
             <children xmi:type="notation:Node" xmi:id="_8NpnMOCsEeW6fKjsFKPE8Q" type="5007"/>
             <children xmi:type="notation:Node" xmi:id="_8NqOQOCsEeW6fKjsFKPE8Q" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_yQpxkOC3EeW6fKjsFKPE8Q" type="3010" element="_yP6KsOC3EeW6fKjsFKPE8Q">
+                <styles xmi:type="notation:FontStyle" xmi:id="_yQpxkeC3EeW6fKjsFKPE8Q" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_yQpxkuC3EeW6fKjsFKPE8Q"/>
+              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_8NqOQeCsEeW6fKjsFKPE8Q"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_8NqOQuCsEeW6fKjsFKPE8Q"/>
             </children>
@@ -955,10 +971,34 @@
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_1oWPUOB5EeW6fKjsFKPE8Q" name="DroneType" tooltipText="" outgoingEdges="_CS1oIOB-EeW6fKjsFKPE8Q _N3QQQOCvEeW6fKjsFKPE8Q" incomingEdges="_yTAHUOB9EeW6fKjsFKPE8Q _9kOYkOCsEeW6fKjsFKPE8Q" width="12" height="10">
         <target xmi:type="ecore:EClass" href="droneModel.ecore#//DroneType"/>
         <semanticElements xmi:type="ecore:EClass" href="droneModel.ecore#//DroneType"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_1oYEgOB5EeW6fKjsFKPE8Q" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_xkMUMOC3EeW6fKjsFKPE8Q" backgroundStyle="Liquid" foregroundColor="255,252,216">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_LajqsOC3EeW6fKjsFKPE8Q" name="weight : EDouble = 0.0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="droneModel.ecore#//DroneType/weight"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="droneModel.ecore#//DroneType/weight"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_M2CKMOC3EeW6fKjsFKPE8Q" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_NeeDMOC3EeW6fKjsFKPE8Q" name="maxSpeed : EDouble = 0.0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="droneModel.ecore#//DroneType/maxSpeed"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="droneModel.ecore#//DroneType/maxSpeed"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_PLVNoOC3EeW6fKjsFKPE8Q" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_v2PkoOC3EeW6fKjsFKPE8Q" name="maxBatteryCapacity : EDouble = 0.0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="droneModel.ecore#//DroneType/maxBatteryCapacity"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="droneModel.ecore#//DroneType/maxBatteryCapacity"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_xkWFMOC3EeW6fKjsFKPE8Q" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_4zpGoOB5EeW6fKjsFKPE8Q" name="Scenario" tooltipText="" outgoingEdges="_F-rAsOB-EeW6fKjsFKPE8Q _HimRkOB-EeW6fKjsFKPE8Q _EoDAoOCtEeW6fKjsFKPE8Q" incomingEdges="_xuMxIOB9EeW6fKjsFKPE8Q" width="12" height="10">
         <target xmi:type="ecore:EClass" href="droneModel.ecore#//Scenario"/>
@@ -1219,10 +1259,18 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8NJ38OCsEeW6fKjsFKPE8Q" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_0LP2AOC3EeW6fKjsFKPE8Q" backgroundStyle="Liquid" foregroundColor="255,252,216">
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_yP6KsOC3EeW6fKjsFKPE8Q" name="currentBattery : EDouble = 0.0" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="droneModel.ecore#//Drone/currentBattery"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="droneModel.ecore#//Drone/currentBattery"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_0LcqUOC3EeW6fKjsFKPE8Q" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_9kOYkOCsEeW6fKjsFKPE8Q" name="[1..1] type" sourceNode="_8NIp0OCsEeW6fKjsFKPE8Q" targetNode="_1oWPUOB5EeW6fKjsFKPE8Q">
         <target xmi:type="ecore:EReference" href="droneModel.ecore#//Drone/type"/>

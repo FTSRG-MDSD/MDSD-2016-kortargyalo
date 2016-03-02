@@ -17,6 +17,9 @@
         eType="#//Capability" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" lowerBound="1"
         eType="#//AABB" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSpeed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxBatteryCapacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scenario">
     <eStructuralFeatures xsi:type="ecore:EReference" name="goals" upperBound="-1"
@@ -66,6 +69,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DroneType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="position" upperBound="-1"
         eType="#//Point" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentBattery" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Statement"/>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeStatement" eSuperTypes="#//Statement"/>

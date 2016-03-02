@@ -15,6 +15,9 @@
     <genClasses ecoreClass="droneModel.ecore#//DroneType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//DroneType/capabilities"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//DroneType/dimension"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//DroneType/weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//DroneType/maxSpeed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//DroneType/maxBatteryCapacity"/>
     </genClasses>
     <genClasses ecoreClass="droneModel.ecore#//Scenario">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Scenario/goals"/>
@@ -53,6 +56,7 @@
     <genClasses ecoreClass="droneModel.ecore#//Drone">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//Drone/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Drone/position"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Drone/currentBattery"/>
     </genClasses>
     <genClasses ecoreClass="droneModel.ecore#//Statement"/>
     <genClasses ecoreClass="droneModel.ecore#//CompositeStatement"/>
