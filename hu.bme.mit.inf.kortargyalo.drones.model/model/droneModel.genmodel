@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.kortargyalo.drones.model/src" modelPluginID="hu.bme.mit.inf.kortargyalo.drones.model"
+    modelName="DroneModel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>droneModel.ecore</foreignModel>
+  <genPackages prefix="DroneModel" disposableProviderFactory="true" ecorePackage="droneModel.ecore#/">
+    <genClasses ecoreClass="droneModel.ecore#//DroneModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//DroneModel/scenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//DroneModel/dronetypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//DroneModel/scripts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//DroneModel/capabilityTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//DroneType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//DroneType/capabilities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//DroneType/dimension"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//Scenario">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Scenario/goals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Scenario/environment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Scenario/scripts"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//Goal"/>
+    <genClasses ecoreClass="droneModel.ecore#//Environment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Environment/obstacles"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//PhysicalObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//PhysicalObject/weight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//PhysicalObject/position"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//PhysicalObject/dimension"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//Script">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Script/drone"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Script/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//AABB">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//AABB/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//AABB/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//AABB/depth"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//Point">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Point/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Point/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Point/z"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//Capability">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//Capability/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Capability/maxmimalValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Capability/energyConsumptionPerValue"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//CapabilityType"/>
+    <genClasses ecoreClass="droneModel.ecore#//Drone">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//Drone/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Drone/position"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//Statement"/>
+    <genClasses ecoreClass="droneModel.ecore#//CompositeStatement"/>
+    <genClasses ecoreClass="droneModel.ecore#//StatementSequence"/>
+    <genClasses ecoreClass="droneModel.ecore#//ConditionalStatement"/>
+    <genClasses ecoreClass="droneModel.ecore#//Loop"/>
+    <genClasses ecoreClass="droneModel.ecore#//AtomicStatement"/>
+    <genClasses ecoreClass="droneModel.ecore#//CooperativeActionStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//CooperativeActionStatement/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//CooperativeActionStatement/roleByStatement"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//SoloActionStatement"/>
+    <genClasses ecoreClass="droneModel.ecore#//Move"/>
+    <genClasses ecoreClass="droneModel.ecore#//Charge"/>
+    <genClasses ecoreClass="droneModel.ecore#//Role">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//Role/requirements"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//CooperativeActionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//CooperativeActionType/roles"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//Requirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Requirement/minimalValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//Requirement/type"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//Signal">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//Signal/signaltype"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//WaitForSignal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//WaitForSignal/reactionstatement"/>
+    </genClasses>
+    <genClasses ecoreClass="droneModel.ecore#//SignalType"/>
+    <genClasses ecoreClass="droneModel.ecore#//ReactionStatement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//ReactionStatement/reactoTo"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference droneModel.ecore#//ReactionStatement/reaction"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
