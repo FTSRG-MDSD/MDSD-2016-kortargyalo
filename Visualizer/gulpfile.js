@@ -1,24 +1,16 @@
 var gulp = require('gulp');
 var ts = require('gulp-typescript');
-var tsd = require('gulp-tsd');
 var concat = require('gulp-concat');
 var minify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var tsProject = ts.createProject('tsconfig.json');
 
-gulp.task('tsd', function (callback) {
-    tsd({
-        command: 'reinstall',
-        config: 'tsd.json'
-    }, callback);
-});
-
 gulp.task('scripts', function () {
     tsProject.sortOutput = true;
     tsProject.declarationFiles = false;
     tsProject.noExternalResolve = true;
-    gulp.src(['typings/**/*.d.ts', 'ts/**/*.ts'])
+    gulp.src(['typings/browser.d.ts', 'typings/browser/**/*.d.ts', 'ts/**/*.ts'])
         .pipe(sourcemaps.init())
         .pipe(ts(tsProject))
         .pipe(concat('visualizer.min.js'))

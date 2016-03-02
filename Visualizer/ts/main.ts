@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../typings/browser.d.ts" />
 
 var visualizer: any;
 
@@ -117,6 +117,12 @@ function initScene() {
 	plane.receiveShadow = true;
 	visualizer.scene.add(plane);
 }
+
+declare module THREE {
+    export var OrbitControls: any;
+}
+
+declare var Paho: any;
 
 function initMisc() {
 	visualizer.renderer = new THREE.WebGLRenderer({
