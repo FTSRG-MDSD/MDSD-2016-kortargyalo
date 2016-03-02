@@ -118,12 +118,6 @@ function initScene() {
 	visualizer.scene.add(plane);
 }
 
-declare module THREE {
-    export var OrbitControls: any;
-}
-
-declare var Paho: any;
-
 function initMisc() {
 	visualizer.renderer = new THREE.WebGLRenderer({
 		antialias: true

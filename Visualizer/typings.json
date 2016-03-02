@@ -3,6 +3,7 @@
   "dependencies": {},
   "devDependencies": {},
   "ambientDependencies": {
-    "three": "github:DefinitelyTyped/DefinitelyTyped/threejs/three.d.ts#c6c3d3e65dd2d7035428f9c7b371ec911ff28542"
+    "three": "github:DefinitelyTyped/DefinitelyTyped/threejs/three.d.ts#c6c3d3e65dd2d7035428f9c7b371ec911ff28542",
+    "three-orbitcontrols": "github:DefinitelyTyped/DefinitelyTyped/threejs/three-orbitcontrols.d.ts#c6c3d3e65dd2d7035428f9c7b371ec911ff28542"
   }
 }
