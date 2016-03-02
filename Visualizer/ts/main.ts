@@ -1,4 +1,6 @@
-var visualizer;
+/// <reference path="../typings/tsd.d.ts" />
+
+var visualizer: any;
 
 window.onload = function(e) {
 	init();
@@ -7,7 +9,7 @@ window.onload = function(e) {
 
 function init() {
 	visualizer = new Object();
-
+    
 	initScene();
 	initMisc();
 
@@ -89,7 +91,7 @@ function initScene() {
 
 	visualizer.scene.add(directionalLight);
 
-	function setUpGroundTexture(url) {
+	function setUpGroundTexture(url: string) {
 		var texture = new THREE.TextureLoader().load(url);
 		texture.minFilter = THREE.LinearMipMapLinearFilter;
 		texture.magFilter = THREE.NearestFilter;
@@ -150,7 +152,7 @@ function render() {
 	visualizer.renderer.render(visualizer.scene, visualizer.camera);
 }
 
-function createObstacle(position, size) {
+function createObstacle(position: any, size: any) {
 	var geometry = new THREE.BoxGeometry(size.x, size.y, size.z);
 	var material = new THREE.MeshPhongMaterial({
 		map: THREE.ImageUtils.loadTexture('texture/obstacle.png')
@@ -163,7 +165,7 @@ function createObstacle(position, size) {
 	visualizer.scene.add(cube);
 }
 
-function createRegion(position, size) {
+function createRegion(position: any, size: any) {
 	var geometry = new THREE.BoxGeometry(size.x, size.y, size.z);
 	var material = new THREE.MeshPhongMaterial({
 		map: THREE.ImageUtils.loadTexture('texture/region.png'),
@@ -177,7 +179,7 @@ function createRegion(position, size) {
 	visualizer.scene.add(cube);
 }
 
-function createDrone(position, size) {
+function createDrone(position: any, size: any) {
 	var geometry = new THREE.BoxGeometry(size.x, size.y, size.z);
 	var material = new THREE.MeshPhongMaterial({
 		color: 0x00ff00
