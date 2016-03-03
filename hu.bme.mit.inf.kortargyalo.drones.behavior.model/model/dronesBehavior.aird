@@ -4,6 +4,7 @@
   <semanticResources>dronesBehavior.genmodel</semanticResources>
   <semanticResources>platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.ecore</semanticResources>
   <semanticResources>http://www.eclipse.org/emf/2002/Ecore</semanticResources>
+  <semanticResources>platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.genmodel</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_sXvlkOFIEeWD9YxWJAHmbA">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_Dm4hgOFQEeWnWqdKA-z-KQ" name="dronesBehavior class diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_Dm4hgeFQEeWnWqdKA-z-KQ" source="DANNOTATION_CUSTOMIZATION_KEY">
