@@ -28,19 +28,18 @@
     <genClasses ecoreClass="droneModel.ecore#//Environment">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Environment/obstacles"/>
     </genClasses>
-    <genClasses ecoreClass="droneModel.ecore#//PhysicalObject">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//PhysicalObject/weight"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//PhysicalObject/position"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//PhysicalObject/dimension"/>
+    <genClasses ecoreClass="droneModel.ecore#//Obstacle">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Obstacle/position"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Obstacle/dimension"/>
     </genClasses>
     <genClasses ecoreClass="droneModel.ecore#//Script">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Script/drone"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference droneModel.ecore#//Script/statements"/>
     </genClasses>
-    <genClasses ecoreClass="droneModel.ecore#//AABB">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//AABB/height"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//AABB/width"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//AABB/depth"/>
+    <genClasses ecoreClass="droneModel.ecore#//Dimension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Dimension/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Dimension/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Dimension/depth"/>
     </genClasses>
     <genClasses ecoreClass="droneModel.ecore#//Point">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute droneModel.ecore#//Point/x"/>
