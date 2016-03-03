@@ -3,4 +3,5 @@ Bundle-ManifestVersion: 2
 Bundle-Name: hu.bme.mit.inf.kortargyalo.drones.behavior.model
 Bundle-SymbolicName: hu.bme.mit.inf.kortargyalo.drones.behavior.model; singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Require-Bundle: org.eclipse.emf.ecore
+Require-Bundle: org.eclipse.emf.ecore,
+ hu.bme.mit.inf.kortargyalo.drones.structure.model;bundle-version="0.1.0"
