@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dronesStructure" nsURI="http://inf.mit.bme.hu/kortargyalo/dronesStructure"
+    nsPrefix="dronesStructure">
+  <eClassifiers xsi:type="ecore:EClass" name="DronesStructure">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" upperBound="-1"
+        eType="#//Scenario" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="droneTypes" upperBound="-1"
+        eType="#//DroneType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cooperativeActions" upperBound="-1"
+        eType="#//CooperativeAction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capabilities" upperBound="-1"
+        eType="#//Capability" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scenario">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="drones" upperBound="-1"
+        eType="#//Drone" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="allowedBounds" lowerBound="1"
+        eType="#//ScenarioBounds" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="obstacles" upperBound="-1"
+        eType="#//Obstacle" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regions" upperBound="-1"
+        eType="#//Region" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//Task" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Capability">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DroneType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxBatteryCapacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="idleEneryConsumption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="providedCapabilities" upperBound="-1"
+        eType="#//ProvidedCapability" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="movementCapability" eType="#//ProvidedCapability"
+        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" lowerBound="1"
+        eType="#//Dimension" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProvidedCapability">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="energyConsumptionPerValue"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capability" lowerBound="1"
+        eType="#//Capability"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MovementCapability" eSuperTypes="#//Capability"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CooperativeAction">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roles" lowerBound="1" upperBound="-1"
+        eType="#//Role" containment="true" eOpposite="#//Role/cooperativeAction"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTimeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Role">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCapabilities" upperBound="-1"
+        eType="#//RequiredCapability" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cooperativeAction" lowerBound="1"
+        eType="#//CooperativeAction" eOpposite="#//CooperativeAction/roles"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiredCapability">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="capability" lowerBound="1"
+        eType="#//Capability"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Drone">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startPosition" lowerBound="1"
+        eType="#//Position" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dronetype" lowerBound="1"
+        eType="#//DroneType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Position">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="z" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dimension">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="depth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AABB" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" lowerBound="1"
+        eType="#//Position" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" lowerBound="1"
+        eType="#//Dimension" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Obstacle" eSuperTypes="#//AABB">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="#//AABB">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//Task" eOpposite="#//Task/region"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScenarioBounds" eSuperTypes="#//AABB"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="region" lowerBound="1"
+        eType="#//Region" eOpposite="#//Region/tasks"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actionToPerform" eType="#//CooperativeAction"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Charger" eSuperTypes="#//Region"/>
+</ecore:EPackage>

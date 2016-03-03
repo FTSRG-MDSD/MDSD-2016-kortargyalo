@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.model/src"
+    modelPluginID="hu.bme.mit.inf.kortargyalo.drones.structure.model" modelName="DronesStructure"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>dronesStructure.ecore</foreignModel>
+  <genPackages prefix="DronesStructure" disposableProviderFactory="true" ecorePackage="dronesStructure.ecore#/">
+    <genClasses ecoreClass="dronesStructure.ecore#//DronesStructure">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DronesStructure/scenarios"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DronesStructure/droneTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DronesStructure/cooperativeActions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DronesStructure/capabilities"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Scenario">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Scenario/drones"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Scenario/allowedBounds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Scenario/obstacles"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Scenario/regions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Scenario/tasks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Scenario/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Capability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Capability/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//DroneType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//DroneType/weight"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//DroneType/maxBatteryCapacity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//DroneType/idleEneryConsumption"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DroneType/providedCapabilities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DroneType/movementCapability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DroneType/dimension"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//DroneType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//ProvidedCapability">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//ProvidedCapability/maximalValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//ProvidedCapability/energyConsumptionPerValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//ProvidedCapability/capability"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//MovementCapability"/>
+    <genClasses ecoreClass="dronesStructure.ecore#//CooperativeAction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//CooperativeAction/roles"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//CooperativeAction/startTimeout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//CooperativeAction/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//CooperativeAction/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Role">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Role/requiredCapabilities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Role/cooperativeAction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Role/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//RequiredCapability">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//RequiredCapability/capability"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//RequiredCapability/minimalValue"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Drone">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Drone/startPosition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Drone/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Drone/dronetype"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Position">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Position/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Position/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Position/z"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Dimension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Dimension/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Dimension/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Dimension/depth"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//AABB">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//AABB/position"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//AABB/dimension"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Obstacle">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Obstacle/name"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Region">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Region/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Region/tasks"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//ScenarioBounds"/>
+    <genClasses ecoreClass="dronesStructure.ecore#//Task">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Task/region"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Task/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Task/actionToPerform"/>
+    </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//Charger"/>
+  </genPackages>
+</genmodel:GenModel>
