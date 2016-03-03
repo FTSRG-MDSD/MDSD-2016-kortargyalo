@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dronesStructure -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureModelWizardID"
+            name="%_UI_DronesStructureModelWizard_label"
+            class="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DronesStructureModelFile.gif">
+         <description>%_UI_DronesStructureModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dronesStructure -->
+      <editor
+            id="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"
+            name="%_UI_DronesStructureEditor_label"
+            icon="icons/full/obj16/DronesStructureModelFile.gif"
+            extensions="dronesstructure"
+            class="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditor"
+            contributorClass="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
