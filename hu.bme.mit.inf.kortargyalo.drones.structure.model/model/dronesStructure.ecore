@@ -33,7 +33,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxBatteryCapacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="idleEneryConsumption" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedCapabilities" upperBound="-1"
-        eType="#//ProvidedCapability" containment="true"/>
+        eType="#//ProvidedCapability" containment="true" eOpposite="#//ProvidedCapability/droneType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="movementCapability" eType="#//ProvidedCapability"
         derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" lowerBound="1"
@@ -46,6 +46,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="capability" lowerBound="1"
         eType="#//Capability"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="droneType" lowerBound="1"
+        eType="#//DroneType" eOpposite="#//DroneType/providedCapabilities"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MovementCapability" eSuperTypes="#//Capability"/>
   <eClassifiers xsi:type="ecore:EClass" name="CooperativeAction">
@@ -57,7 +59,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Role">
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCapabilities" upperBound="-1"
-        eType="#//RequiredCapability" containment="true"/>
+        eType="#//RequiredCapability" containment="true" eOpposite="#//RequiredCapability/role"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cooperativeAction" lowerBound="1"
         eType="#//CooperativeAction" eOpposite="#//CooperativeAction/roles"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -66,6 +68,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="capability" lowerBound="1"
         eType="#//Capability"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" lowerBound="1" eType="#//Role"
+        eOpposite="#//Role/requiredCapabilities"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Drone">
     <eStructuralFeatures xsi:type="ecore:EReference" name="startPosition" lowerBound="1"

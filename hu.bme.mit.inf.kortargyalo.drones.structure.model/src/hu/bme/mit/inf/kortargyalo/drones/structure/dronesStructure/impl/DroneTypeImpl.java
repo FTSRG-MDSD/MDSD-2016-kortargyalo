@@ -19,8 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -242,7 +241,7 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 	 */
 	public EList<ProvidedCapability> getProvidedCapabilities() {
 		if (providedCapabilities == null) {
-			providedCapabilities = new EObjectContainmentEList<ProvidedCapability>(ProvidedCapability.class, this, DronesStructurePackage.DRONE_TYPE__PROVIDED_CAPABILITIES);
+			providedCapabilities = new EObjectContainmentWithInverseEList<ProvidedCapability>(ProvidedCapability.class, this, DronesStructurePackage.DRONE_TYPE__PROVIDED_CAPABILITIES, DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE);
 		}
 		return providedCapabilities;
 	}
@@ -347,6 +346,21 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.DRONE_TYPE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DronesStructurePackage.DRONE_TYPE__PROVIDED_CAPABILITIES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getProvidedCapabilities()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

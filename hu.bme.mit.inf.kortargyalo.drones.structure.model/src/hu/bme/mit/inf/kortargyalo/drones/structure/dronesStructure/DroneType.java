@@ -110,6 +110,7 @@ public interface DroneType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Provided Capabilities</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability}.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getDroneType <em>Drone Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Provided Capabilities</em>' containment reference list isn't clear,
@@ -118,7 +119,8 @@ public interface DroneType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Provided Capabilities</em>' containment reference list.
 	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getDroneType_ProvidedCapabilities()
-	 * @model containment="true"
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getDroneType
+	 * @model opposite="droneType" containment="true"
 	 * @generated
 	 */
 	EList<ProvidedCapability> getProvidedCapabilities();

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getMaximalValue <em>Maximal Value</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getEnergyConsumptionPerValue <em>Energy Consumption Per Value</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getCapability <em>Capability</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getDroneType <em>Drone Type</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getProvidedCapability()
@@ -100,5 +101,33 @@ public interface ProvidedCapability extends EObject {
 	 * @generated
 	 */
 	void setCapability(Capability value);
+
+	/**
+	 * Returns the value of the '<em><b>Drone Type</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getProvidedCapabilities <em>Provided Capabilities</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Drone Type</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Drone Type</em>' container reference.
+	 * @see #setDroneType(DroneType)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getProvidedCapability_DroneType()
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getProvidedCapabilities
+	 * @model opposite="providedCapabilities" required="true" transient="false"
+	 * @generated
+	 */
+	DroneType getDroneType();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getDroneType <em>Drone Type</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Drone Type</em>' container reference.
+	 * @see #getDroneType()
+	 * @generated
+	 */
+	void setDroneType(DroneType value);
 
 } // ProvidedCapability

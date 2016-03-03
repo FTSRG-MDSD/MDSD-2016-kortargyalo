@@ -19,8 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -96,7 +95,7 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 */
 	public EList<RequiredCapability> getRequiredCapabilities() {
 		if (requiredCapabilities == null) {
-			requiredCapabilities = new EObjectContainmentEList<RequiredCapability>(RequiredCapability.class, this, DronesStructurePackage.ROLE__REQUIRED_CAPABILITIES);
+			requiredCapabilities = new EObjectContainmentWithInverseEList<RequiredCapability>(RequiredCapability.class, this, DronesStructurePackage.ROLE__REQUIRED_CAPABILITIES, DronesStructurePackage.REQUIRED_CAPABILITY__ROLE);
 		}
 		return requiredCapabilities;
 	}
@@ -168,9 +167,12 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case DronesStructurePackage.ROLE__REQUIRED_CAPABILITIES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRequiredCapabilities()).basicAdd(otherEnd, msgs);
 			case DronesStructurePackage.ROLE__COOPERATIVE_ACTION:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);

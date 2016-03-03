@@ -368,13 +368,22 @@ public interface DronesStructurePackage extends EPackage {
 	int PROVIDED_CAPABILITY__CAPABILITY = 2;
 
 	/**
+	 * The feature id for the '<em><b>Drone Type</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_CAPABILITY__DRONE_TYPE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Provided Capability</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDED_CAPABILITY_FEATURE_COUNT = 3;
+	int PROVIDED_CAPABILITY_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Provided Capability</em>' class.
@@ -570,13 +579,22 @@ public interface DronesStructurePackage extends EPackage {
 	int REQUIRED_CAPABILITY__MINIMAL_VALUE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Role</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_CAPABILITY__ROLE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Required Capability</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIRED_CAPABILITY_FEATURE_COUNT = 2;
+	int REQUIRED_CAPABILITY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Required Capability</em>' class.
@@ -1365,6 +1383,17 @@ public interface DronesStructurePackage extends EPackage {
 	EReference getProvidedCapability_Capability();
 
 	/**
+	 * Returns the meta object for the container reference '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getDroneType <em>Drone Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Drone Type</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability#getDroneType()
+	 * @see #getProvidedCapability()
+	 * @generated
+	 */
+	EReference getProvidedCapability_DroneType();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.MovementCapability <em>Movement Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1502,6 +1531,17 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRequiredCapability_MinimalValue();
+
+	/**
+	 * Returns the meta object for the container reference '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability#getRole <em>Role</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Role</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability#getRole()
+	 * @see #getRequiredCapability()
+	 * @generated
+	 */
+	EReference getRequiredCapability_Role();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone <em>Drone</em>}'.
@@ -2022,6 +2062,14 @@ public interface DronesStructurePackage extends EPackage {
 		EReference PROVIDED_CAPABILITY__CAPABILITY = eINSTANCE.getProvidedCapability_Capability();
 
 		/**
+		 * The meta object literal for the '<em><b>Drone Type</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROVIDED_CAPABILITY__DRONE_TYPE = eINSTANCE.getProvidedCapability_DroneType();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.MovementCapabilityImpl <em>Movement Capability</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2132,6 +2180,14 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute REQUIRED_CAPABILITY__MINIMAL_VALUE = eINSTANCE.getRequiredCapability_MinimalValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Role</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REQUIRED_CAPABILITY__ROLE = eINSTANCE.getRequiredCapability_Role();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneImpl <em>Drone</em>}' class.

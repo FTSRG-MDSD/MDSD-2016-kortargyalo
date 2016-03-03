@@ -28,6 +28,7 @@ public interface Role extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Required Capabilities</b></em>' containment reference list.
 	 * The list contents are of type {@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability}.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability#getRole <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Required Capabilities</em>' containment reference list isn't clear,
@@ -36,7 +37,8 @@ public interface Role extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Required Capabilities</em>' containment reference list.
 	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getRole_RequiredCapabilities()
-	 * @model containment="true"
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability#getRole
+	 * @model opposite="role" containment="true"
 	 * @generated
 	 */
 	EList<RequiredCapability> getRequiredCapabilities();
