@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.model/src"
-    editDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.edit/src" editorDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.editor/src"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.model/emf-gen"
+    editDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.edit/emf-gen" editorDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.editor/emf-gen"
     modelPluginID="hu.bme.mit.inf.kortargyalo.drones.structure.model" modelName="DronesStructure"
-    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.tests/src"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    editPluginID="hu.bme.mit.inf.kortargyalo.drones.structure.edit" editorPluginID="hu.bme.mit.inf.kortargyalo.drones.structure.editor"
-    testsPluginID="hu.bme.mit.inf.kortargyalo.drones.structure.tests" operationReflection="true"
-    importOrganizing="true">
+    modelPluginClass="" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="/hu.bme.mit.inf.kortargyalo.drones.structure.tests/emf-gen" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" editPluginID="hu.bme.mit.inf.kortargyalo.drones.structure.edit"
+    editorPluginID="hu.bme.mit.inf.kortargyalo.drones.structure.editor" testsPluginID="hu.bme.mit.inf.kortargyalo.drones.structure.tests"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>dronesStructure.ecore</foreignModel>
   <genPackages prefix="DronesStructure" basePackage="hu.bme.mit.inf.kortargyalo.drones.structure"
       disposableProviderFactory="true" ecorePackage="dronesStructure.ecore#/">

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.notOneMovementCapabilityProvided" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotOneMovementCapabilityProvidedConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.notOneMovementCapabilityProvided">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+</plugin>

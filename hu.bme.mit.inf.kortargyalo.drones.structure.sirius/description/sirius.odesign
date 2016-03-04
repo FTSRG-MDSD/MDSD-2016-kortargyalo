@@ -14,7 +14,7 @@
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
-        <containerMappings name="ScenarioContainer" label="Scenario" domainClass="Scenario">
+        <containerMappings name="ScenarioContainer" label="Scenario" semanticElements="aql:self->including(self.allowedBounds.position)->including(self.allowedBounds.dimension)" domainClass="Scenario">
           <subNodeMappings name="ScenarioBoundNode" label="Scenario Bounds" semanticCandidatesExpression="feature:eAllContents" domainClass="ScenarioBounds"/>
           <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -38,7 +38,22 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DroneType" referenceName="droneTypes"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Scenario" referenceName="scenarios">
+                  <subModelOperations xsi:type="tool_1:ChangeContext">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ScenarioBounds" referenceName="allowedBounds" variableName="bounds">
+                      <subModelOperations xsi:type="tool_1:ChangeContext">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Position" referenceName="position" variableName="position"/>
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Dimension" referenceName="dimension" variableName="dimension">
+                          <subModelOperations xsi:type="tool_1:ChangeContext">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="width" valueExpression="1024.0"/>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="depth" valueExpression="1024.0"/>
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="height" valueExpression="256.0"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>

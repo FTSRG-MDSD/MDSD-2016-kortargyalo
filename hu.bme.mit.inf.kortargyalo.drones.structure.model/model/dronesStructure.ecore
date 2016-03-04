@@ -2,6 +2,9 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dronesStructure" nsURI="http://inf.mit.bme.hu/kortargyalo/dronesStructure"
     nsPrefix="dronesStructure">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="settingDelegates" value="org.eclipse.incquery.querybasedfeature"/>
+  </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="DronesStructure">
     <eStructuralFeatures xsi:type="ecore:EReference" name="scenarios" upperBound="-1"
         eType="#//Scenario" containment="true"/>
@@ -35,7 +38,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedCapabilities" upperBound="-1"
         eType="#//ProvidedCapability" containment="true" eOpposite="#//ProvidedCapability/droneType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="movementCapability" eType="#//ProvidedCapability"
-        derived="true"/>
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
+        <details key="patternFQN" value="hu.bme.mit.inf.kortargyalo.drones.structure.queries.movementCapability"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" lowerBound="1"
         eType="#//Dimension" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
