@@ -3,16 +3,19 @@
 package hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl;
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability;
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +28,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ProvidedCapabilityImpl#getMaximalValue <em>Maximal Value</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ProvidedCapabilityImpl#getEnergyConsumptionPerValue <em>Energy Consumption Per Value</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ProvidedCapabilityImpl#getCapability <em>Capability</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ProvidedCapabilityImpl#getDroneType <em>Drone Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -184,6 +188,91 @@ public class ProvidedCapabilityImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DroneType getDroneType() {
+		if (eContainerFeatureID() != DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE) return null;
+		return (DroneType)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDroneType(DroneType newDroneType, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newDroneType, DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDroneType(DroneType newDroneType) {
+		if (newDroneType != eInternalContainer() || (eContainerFeatureID() != DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE && newDroneType != null)) {
+			if (EcoreUtil.isAncestor(this, newDroneType))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newDroneType != null)
+				msgs = ((InternalEObject)newDroneType).eInverseAdd(this, DronesStructurePackage.DRONE_TYPE__PROVIDED_CAPABILITIES, DroneType.class, msgs);
+			msgs = basicSetDroneType(newDroneType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE, newDroneType, newDroneType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetDroneType((DroneType)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE:
+				return basicSetDroneType(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE:
+				return eInternalContainer().eInverseRemove(this, DronesStructurePackage.DRONE_TYPE__PROVIDED_CAPABILITIES, DroneType.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -194,6 +283,8 @@ public class ProvidedCapabilityImpl extends MinimalEObjectImpl.Container impleme
 			case DronesStructurePackage.PROVIDED_CAPABILITY__CAPABILITY:
 				if (resolve) return getCapability();
 				return basicGetCapability();
+			case DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE:
+				return getDroneType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,6 +305,9 @@ public class ProvidedCapabilityImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case DronesStructurePackage.PROVIDED_CAPABILITY__CAPABILITY:
 				setCapability((Capability)newValue);
+				return;
+			case DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE:
+				setDroneType((DroneType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -236,6 +330,9 @@ public class ProvidedCapabilityImpl extends MinimalEObjectImpl.Container impleme
 			case DronesStructurePackage.PROVIDED_CAPABILITY__CAPABILITY:
 				setCapability((Capability)null);
 				return;
+			case DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE:
+				setDroneType((DroneType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -254,6 +351,8 @@ public class ProvidedCapabilityImpl extends MinimalEObjectImpl.Container impleme
 				return energyConsumptionPerValue != ENERGY_CONSUMPTION_PER_VALUE_EDEFAULT;
 			case DronesStructurePackage.PROVIDED_CAPABILITY__CAPABILITY:
 				return capability != null;
+			case DronesStructurePackage.PROVIDED_CAPABILITY__DRONE_TYPE:
+				return getDroneType() != null;
 		}
 		return super.eIsSet(featureID);
 	}

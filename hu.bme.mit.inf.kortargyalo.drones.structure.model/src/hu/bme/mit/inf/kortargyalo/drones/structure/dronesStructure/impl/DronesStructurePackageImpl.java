@@ -462,6 +462,15 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getProvidedCapability_DroneType() {
+		return (EReference)providedCapabilityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMovementCapability() {
 		return movementCapabilityEClass;
 	}
@@ -572,6 +581,15 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 */
 	public EAttribute getRequiredCapability_MinimalValue() {
 		return (EAttribute)requiredCapabilityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRequiredCapability_Role() {
+		return (EReference)requiredCapabilityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -866,6 +884,7 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		createEAttribute(providedCapabilityEClass, PROVIDED_CAPABILITY__MAXIMAL_VALUE);
 		createEAttribute(providedCapabilityEClass, PROVIDED_CAPABILITY__ENERGY_CONSUMPTION_PER_VALUE);
 		createEReference(providedCapabilityEClass, PROVIDED_CAPABILITY__CAPABILITY);
+		createEReference(providedCapabilityEClass, PROVIDED_CAPABILITY__DRONE_TYPE);
 
 		movementCapabilityEClass = createEClass(MOVEMENT_CAPABILITY);
 
@@ -883,6 +902,7 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		requiredCapabilityEClass = createEClass(REQUIRED_CAPABILITY);
 		createEReference(requiredCapabilityEClass, REQUIRED_CAPABILITY__CAPABILITY);
 		createEAttribute(requiredCapabilityEClass, REQUIRED_CAPABILITY__MINIMAL_VALUE);
+		createEReference(requiredCapabilityEClass, REQUIRED_CAPABILITY__ROLE);
 
 		droneEClass = createEClass(DRONE);
 		createEReference(droneEClass, DRONE__START_POSITION);
@@ -976,7 +996,7 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEAttribute(getDroneType_Weight(), ecorePackage.getEDouble(), "weight", null, 0, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDroneType_MaxBatteryCapacity(), ecorePackage.getEDouble(), "maxBatteryCapacity", null, 0, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDroneType_IdleEneryConsumption(), ecorePackage.getEDouble(), "idleEneryConsumption", null, 0, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDroneType_ProvidedCapabilities(), this.getProvidedCapability(), null, "providedCapabilities", null, 0, -1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDroneType_ProvidedCapabilities(), this.getProvidedCapability(), this.getProvidedCapability_DroneType(), "providedCapabilities", null, 0, -1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneType_MovementCapability(), this.getProvidedCapability(), null, "movementCapability", null, 0, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneType_Dimension(), this.getDimension(), null, "dimension", null, 1, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDroneType_Name(), ecorePackage.getEString(), "name", null, 1, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -985,6 +1005,7 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEAttribute(getProvidedCapability_MaximalValue(), ecorePackage.getEDouble(), "maximalValue", null, 0, 1, ProvidedCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProvidedCapability_EnergyConsumptionPerValue(), ecorePackage.getEDouble(), "energyConsumptionPerValue", null, 0, 1, ProvidedCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProvidedCapability_Capability(), this.getCapability(), null, "capability", null, 1, 1, ProvidedCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProvidedCapability_DroneType(), this.getDroneType(), this.getDroneType_ProvidedCapabilities(), "droneType", null, 1, 1, ProvidedCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(movementCapabilityEClass, MovementCapability.class, "MovementCapability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -995,13 +1016,14 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEAttribute(getCooperativeAction_Name(), ecorePackage.getEString(), "name", null, 1, 1, CooperativeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRole_RequiredCapabilities(), this.getRequiredCapability(), null, "requiredCapabilities", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRole_RequiredCapabilities(), this.getRequiredCapability(), this.getRequiredCapability_Role(), "requiredCapabilities", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_CooperativeAction(), this.getCooperativeAction(), this.getCooperativeAction_Roles(), "cooperativeAction", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requiredCapabilityEClass, RequiredCapability.class, "RequiredCapability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequiredCapability_Capability(), this.getCapability(), null, "capability", null, 1, 1, RequiredCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRequiredCapability_MinimalValue(), ecorePackage.getEDouble(), "minimalValue", null, 0, 1, RequiredCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRequiredCapability_Role(), this.getRole(), this.getRole_RequiredCapabilities(), "role", null, 1, 1, RequiredCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(droneEClass, Drone.class, "Drone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDrone_StartPosition(), this.getPosition(), null, "startPosition", null, 1, 1, Drone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

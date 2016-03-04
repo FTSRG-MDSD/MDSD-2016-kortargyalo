@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated dronesBehavior -->
+      <package
+            uri="http://inf.mit.bme.hu/kortargyalo/dronesBehavior"
+            class="hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage"
+            genModel="model/dronesBehavior.genmodel"/>
+   </extension>
+
+</plugin>

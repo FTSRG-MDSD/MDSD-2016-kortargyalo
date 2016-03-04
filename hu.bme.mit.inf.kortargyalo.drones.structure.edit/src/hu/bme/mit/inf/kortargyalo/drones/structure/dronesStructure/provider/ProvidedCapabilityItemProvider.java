@@ -63,6 +63,7 @@ public class ProvidedCapabilityItemProvider
 			addMaximalValuePropertyDescriptor(object);
 			addEnergyConsumptionPerValuePropertyDescriptor(object);
 			addCapabilityPropertyDescriptor(object);
+			addDroneTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -125,6 +126,28 @@ public class ProvidedCapabilityItemProvider
 				 getString("_UI_ProvidedCapability_capability_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ProvidedCapability_capability_feature", "_UI_ProvidedCapability_type"),
 				 DronesStructurePackage.Literals.PROVIDED_CAPABILITY__CAPABILITY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Drone Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDroneTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ProvidedCapability_droneType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ProvidedCapability_droneType_feature", "_UI_ProvidedCapability_type"),
+				 DronesStructurePackage.Literals.PROVIDED_CAPABILITY__DRONE_TYPE,
 				 true,
 				 false,
 				 true,

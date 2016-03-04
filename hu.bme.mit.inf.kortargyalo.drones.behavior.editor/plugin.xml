@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated dronesBehavior -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.presentation.DronesBehaviorModelWizardID"
+            name="%_UI_DronesBehaviorModelWizard_label"
+            class="hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.presentation.DronesBehaviorModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DronesBehaviorModelFile.gif">
+         <description>%_UI_DronesBehaviorModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated dronesBehavior -->
+      <editor
+            id="hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.presentation.DronesBehaviorEditorID"
+            name="%_UI_DronesBehaviorEditor_label"
+            icon="icons/full/obj16/DronesBehaviorModelFile.gif"
+            extensions="dronesbehavior"
+            class="hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.presentation.DronesBehaviorEditor"
+            contributorClass="hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.presentation.DronesBehaviorActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
