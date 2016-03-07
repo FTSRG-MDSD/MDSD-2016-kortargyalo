@@ -4,4 +4,9 @@
       <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
     </constraint>
   </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.duplicateName" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.DuplicateNameConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.duplicateName">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
 </plugin>

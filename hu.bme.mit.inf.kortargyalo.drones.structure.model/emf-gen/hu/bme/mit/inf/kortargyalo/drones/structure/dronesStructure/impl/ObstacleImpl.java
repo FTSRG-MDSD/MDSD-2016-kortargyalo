@@ -3,6 +3,7 @@
 package hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl;
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage;
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -141,6 +142,38 @@ public class ObstacleImpl extends AABBImpl implements Obstacle {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (derivedFeatureID) {
+				case DronesStructurePackage.OBSTACLE__NAME: return DronesStructurePackage.NAMED_ELEMENT__NAME;
+				default: return -1;
+			}
+		}
+		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+		if (baseClass == NamedElement.class) {
+			switch (baseFeatureID) {
+				case DronesStructurePackage.NAMED_ELEMENT__NAME: return DronesStructurePackage.OBSTACLE__NAME;
+				default: return -1;
+			}
+		}
+		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

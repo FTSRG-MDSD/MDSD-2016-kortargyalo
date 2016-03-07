@@ -122,6 +122,43 @@ public interface DronesStructurePackage extends EPackage {
 	int DRONES_STRUCTURE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.NamedElementImpl <em>Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.NamedElementImpl
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DronesStructurePackageImpl#getNamedElement()
+	 * @generated
+	 */
+	int NAMED_ELEMENT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl <em>Scenario</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -132,13 +169,22 @@ public interface DronesStructurePackage extends EPackage {
 	int SCENARIO = 1;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Drones</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__DRONES = 0;
+	int SCENARIO__DRONES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Allowed Bounds</b></em>' containment reference.
@@ -147,7 +193,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__ALLOWED_BOUNDS = 1;
+	int SCENARIO__ALLOWED_BOUNDS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Obstacles</b></em>' containment reference list.
@@ -156,7 +202,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__OBSTACLES = 2;
+	int SCENARIO__OBSTACLES = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Regions</b></em>' containment reference list.
@@ -165,7 +211,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__REGIONS = 3;
+	int SCENARIO__REGIONS = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
@@ -174,16 +220,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO__TASKS = 4;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SCENARIO__NAME = 5;
+	int SCENARIO__TASKS = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
@@ -192,7 +229,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = 6;
+	int SCENARIO_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -201,7 +238,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_OPERATION_COUNT = 0;
+	int SCENARIO_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.CapabilityImpl <em>Capability</em>}' class.
@@ -220,7 +257,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY__NAME = 0;
+	int CAPABILITY__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The number of structural features of the '<em>Capability</em>' class.
@@ -229,7 +266,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_FEATURE_COUNT = 1;
+	int CAPABILITY_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Capability</em>' class.
@@ -238,7 +275,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CAPABILITY_OPERATION_COUNT = 0;
+	int CAPABILITY_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl <em>Drone Type</em>}' class.
@@ -251,13 +288,22 @@ public interface DronesStructurePackage extends EPackage {
 	int DRONE_TYPE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRONE_TYPE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE__WEIGHT = 0;
+	int DRONE_TYPE__WEIGHT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Battery Capacity</b></em>' attribute.
@@ -266,7 +312,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE__MAX_BATTERY_CAPACITY = 1;
+	int DRONE_TYPE__MAX_BATTERY_CAPACITY = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Idle Enery Consumption</b></em>' attribute.
@@ -275,7 +321,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE__IDLE_ENERY_CONSUMPTION = 2;
+	int DRONE_TYPE__IDLE_ENERY_CONSUMPTION = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Provided Capabilities</b></em>' containment reference list.
@@ -284,7 +330,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE__PROVIDED_CAPABILITIES = 3;
+	int DRONE_TYPE__PROVIDED_CAPABILITIES = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Movement Capability</b></em>' reference.
@@ -293,7 +339,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE__MOVEMENT_CAPABILITY = 4;
+	int DRONE_TYPE__MOVEMENT_CAPABILITY = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Dimension</b></em>' containment reference.
@@ -302,16 +348,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE__DIMENSION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DRONE_TYPE__NAME = 6;
+	int DRONE_TYPE__DIMENSION = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Drone Type</em>' class.
@@ -320,7 +357,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE_FEATURE_COUNT = 7;
+	int DRONE_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Drone Type</em>' class.
@@ -329,7 +366,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE_OPERATION_COUNT = 0;
+	int DRONE_TYPE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ProvidedCapabilityImpl <em>Provided Capability</em>}' class.
@@ -443,13 +480,22 @@ public interface DronesStructurePackage extends EPackage {
 	int COOPERATIVE_ACTION = 6;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COOPERATIVE_ACTION__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Roles</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COOPERATIVE_ACTION__ROLES = 0;
+	int COOPERATIVE_ACTION__ROLES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Start Timeout</b></em>' attribute.
@@ -458,7 +504,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOPERATIVE_ACTION__START_TIMEOUT = 1;
+	int COOPERATIVE_ACTION__START_TIMEOUT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Duration</b></em>' attribute.
@@ -467,16 +513,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOPERATIVE_ACTION__DURATION = 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COOPERATIVE_ACTION__NAME = 3;
+	int COOPERATIVE_ACTION__DURATION = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Cooperative Action</em>' class.
@@ -485,7 +522,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOPERATIVE_ACTION_FEATURE_COUNT = 4;
+	int COOPERATIVE_ACTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Cooperative Action</em>' class.
@@ -494,7 +531,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOPERATIVE_ACTION_OPERATION_COUNT = 0;
+	int COOPERATIVE_ACTION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.RoleImpl <em>Role</em>}' class.
@@ -507,13 +544,22 @@ public interface DronesStructurePackage extends EPackage {
 	int ROLE = 7;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Required Capabilities</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__REQUIRED_CAPABILITIES = 0;
+	int ROLE__REQUIRED_CAPABILITIES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Cooperative Action</b></em>' container reference.
@@ -522,16 +568,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__COOPERATIVE_ACTION = 1;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__NAME = 2;
+	int ROLE__COOPERATIVE_ACTION = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -540,7 +577,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = 3;
+	int ROLE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -549,7 +586,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_OPERATION_COUNT = 0;
+	int ROLE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.RequiredCapabilityImpl <em>Required Capability</em>}' class.
@@ -617,22 +654,22 @@ public interface DronesStructurePackage extends EPackage {
 	int DRONE = 9;
 
 	/**
-	 * The feature id for the '<em><b>Start Position</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DRONE__START_POSITION = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE__NAME = 1;
+	int DRONE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Start Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRONE__START_POSITION = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Dronetype</b></em>' reference.
@@ -641,7 +678,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE__DRONETYPE = 2;
+	int DRONE__DRONETYPE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Drone</em>' class.
@@ -650,7 +687,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_FEATURE_COUNT = 3;
+	int DRONE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Drone</em>' class.
@@ -659,7 +696,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_OPERATION_COUNT = 0;
+	int DRONE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.PositionImpl <em>Position</em>}' class.
@@ -993,22 +1030,22 @@ public interface DronesStructurePackage extends EPackage {
 	int TASK = 16;
 
 	/**
-	 * The feature id for the '<em><b>Region</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK__REGION = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__NAME = 1;
+	int TASK__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Region</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__REGION = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Action To Perform</b></em>' reference.
@@ -1017,7 +1054,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__ACTION_TO_PERFORM = 2;
+	int TASK__ACTION_TO_PERFORM = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -1026,7 +1063,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = 3;
+	int TASK_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Task</em>' class.
@@ -1035,7 +1072,7 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_OPERATION_COUNT = 0;
+	int TASK_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ChargerImpl <em>Charger</em>}' class.
@@ -1222,17 +1259,6 @@ public interface DronesStructurePackage extends EPackage {
 	EReference getScenario_Tasks();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getName()
-	 * @see #getScenario()
-	 * @generated
-	 */
-	EAttribute getScenario_Name();
-
-	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1241,17 +1267,6 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCapability();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability#getName()
-	 * @see #getCapability()
-	 * @generated
-	 */
-	EAttribute getCapability_Name();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType <em>Drone Type</em>}'.
@@ -1328,17 +1343,6 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDroneType_Dimension();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getName()
-	 * @see #getDroneType()
-	 * @generated
-	 */
-	EAttribute getDroneType_Name();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability <em>Provided Capability</em>}'.
@@ -1448,17 +1452,6 @@ public interface DronesStructurePackage extends EPackage {
 	EAttribute getCooperativeAction_Duration();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction#getName()
-	 * @see #getCooperativeAction()
-	 * @generated
-	 */
-	EAttribute getCooperativeAction_Name();
-
-	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1489,17 +1482,6 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRole_CooperativeAction();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role#getName()
-	 * @see #getRole()
-	 * @generated
-	 */
-	EAttribute getRole_Name();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability <em>Required Capability</em>}'.
@@ -1564,17 +1546,6 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDrone_StartPosition();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone#getName()
-	 * @see #getDrone()
-	 * @generated
-	 */
-	EAttribute getDrone_Name();
 
 	/**
 	 * Returns the meta object for the reference '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone#getDronetype <em>Dronetype</em>}'.
@@ -1716,17 +1687,6 @@ public interface DronesStructurePackage extends EPackage {
 	EClass getObstacle();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle#getName()
-	 * @see #getObstacle()
-	 * @generated
-	 */
-	EAttribute getObstacle_Name();
-
-	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Region <em>Region</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1735,17 +1695,6 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getRegion();
-
-	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Region#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Region#getName()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EAttribute getRegion_Name();
 
 	/**
 	 * Returns the meta object for the reference list '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Region#getTasks <em>Tasks</em>}'.
@@ -1790,17 +1739,6 @@ public interface DronesStructurePackage extends EPackage {
 	EReference getTask_Region();
 
 	/**
-	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Task#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Task#getName()
-	 * @see #getTask()
-	 * @generated
-	 */
-	EAttribute getTask_Name();
-
-	/**
 	 * Returns the meta object for the reference '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Task#getActionToPerform <em>Action To Perform</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1820,6 +1758,27 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCharger();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement
+	 * @generated
+	 */
+	EClass getNamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement#getName()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EAttribute getNamedElement_Name();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1937,14 +1896,6 @@ public interface DronesStructurePackage extends EPackage {
 		EReference SCENARIO__TASKS = eINSTANCE.getScenario_Tasks();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SCENARIO__NAME = eINSTANCE.getScenario_Name();
-
-		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.CapabilityImpl <em>Capability</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1953,14 +1904,6 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CAPABILITY = eINSTANCE.getCapability();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CAPABILITY__NAME = eINSTANCE.getCapability_Name();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl <em>Drone Type</em>}' class.
@@ -2019,14 +1962,6 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DRONE_TYPE__DIMENSION = eINSTANCE.getDroneType_Dimension();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DRONE_TYPE__NAME = eINSTANCE.getDroneType_Name();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ProvidedCapabilityImpl <em>Provided Capability</em>}' class.
@@ -2115,14 +2050,6 @@ public interface DronesStructurePackage extends EPackage {
 		EAttribute COOPERATIVE_ACTION__DURATION = eINSTANCE.getCooperativeAction_Duration();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COOPERATIVE_ACTION__NAME = eINSTANCE.getCooperativeAction_Name();
-
-		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.RoleImpl <em>Role</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2147,14 +2074,6 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROLE__COOPERATIVE_ACTION = eINSTANCE.getRole_CooperativeAction();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROLE__NAME = eINSTANCE.getRole_Name();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.RequiredCapabilityImpl <em>Required Capability</em>}' class.
@@ -2207,14 +2126,6 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DRONE__START_POSITION = eINSTANCE.getDrone_StartPosition();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DRONE__NAME = eINSTANCE.getDrone_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Dronetype</b></em>' reference feature.
@@ -2329,14 +2240,6 @@ public interface DronesStructurePackage extends EPackage {
 		EClass OBSTACLE = eINSTANCE.getObstacle();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OBSTACLE__NAME = eINSTANCE.getObstacle_Name();
-
-		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.RegionImpl <em>Region</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2345,14 +2248,6 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass REGION = eINSTANCE.getRegion();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute REGION__NAME = eINSTANCE.getRegion_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Tasks</b></em>' reference list feature.
@@ -2391,14 +2286,6 @@ public interface DronesStructurePackage extends EPackage {
 		EReference TASK__REGION = eINSTANCE.getTask_Region();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TASK__NAME = eINSTANCE.getTask_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Action To Perform</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2415,6 +2302,24 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHARGER = eINSTANCE.getCharger();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.NamedElementImpl <em>Named Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.NamedElementImpl
+		 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DronesStructurePackageImpl#getNamedElement()
+		 * @generated
+		 */
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 	}
 

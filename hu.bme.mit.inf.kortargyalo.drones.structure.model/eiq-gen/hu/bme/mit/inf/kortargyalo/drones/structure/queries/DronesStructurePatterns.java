@@ -1,7 +1,9 @@
 package hu.bme.mit.inf.kortargyalo.drones.structure.queries;
 
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.DuplicateNameMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.MovementCapabilityMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotOneMovementCapabilityProvidedMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.DuplicateNameQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.MovementCapabilityQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NotOneMovementCapabilityProvidedQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
@@ -19,6 +21,11 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * <li>providedMovementCapability</li>
  * <li>notOneMovementCapabilityProvided</li>
  * <li>movementCapability</li>
+ * <li>duplicateName</li>
+ * <li>nameScope</li>
+ * <li>childScope</li>
+ * <li>relatedScope</li>
+ * <li>inRelatedScope</li>
  * </ul>
  * 
  * @see IPatternGroup
@@ -45,6 +52,7 @@ public final class DronesStructurePatterns extends BaseGeneratedPatternGroup {
   private DronesStructurePatterns() throws IncQueryException {
     querySpecifications.add(NotOneMovementCapabilityProvidedQuerySpecification.instance());
     querySpecifications.add(MovementCapabilityQuerySpecification.instance());
+    querySpecifications.add(DuplicateNameQuerySpecification.instance());
   }
   
   public NotOneMovementCapabilityProvidedQuerySpecification getNotOneMovementCapabilityProvided() throws IncQueryException {
@@ -61,5 +69,13 @@ public final class DronesStructurePatterns extends BaseGeneratedPatternGroup {
   
   public MovementCapabilityMatcher getMovementCapability(final IncQueryEngine engine) throws IncQueryException {
     return MovementCapabilityMatcher.on(engine);
+  }
+  
+  public DuplicateNameQuerySpecification getDuplicateName() throws IncQueryException {
+    return DuplicateNameQuerySpecification.instance();
+  }
+  
+  public DuplicateNameMatcher getDuplicateName(final IncQueryEngine engine) throws IncQueryException {
+    return DuplicateNameMatcher.on(engine);
   }
 }

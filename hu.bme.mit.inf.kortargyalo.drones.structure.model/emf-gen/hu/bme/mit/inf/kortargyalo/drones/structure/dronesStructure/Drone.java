@@ -2,8 +2,6 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Drone</b></em>'.
@@ -14,7 +12,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone#getStartPosition <em>Start Position</em>}</li>
- *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone#getDronetype <em>Dronetype</em>}</li>
  * </ul>
  *
@@ -22,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Drone extends EObject {
+public interface Drone extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Start Position</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -48,32 +45,6 @@ public interface Drone extends EObject {
 	 * @generated
 	 */
 	void setStartPosition(Position value);
-
-	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getDrone_Name()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Dronetype</b></em>' reference.

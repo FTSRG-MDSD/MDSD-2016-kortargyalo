@@ -62,9 +62,9 @@ public class RegionItemProvider extends AABBItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Region_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Region_name_feature", "_UI_Region_type"),
-				 DronesStructurePackage.Literals.REGION__NAME,
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 DronesStructurePackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,

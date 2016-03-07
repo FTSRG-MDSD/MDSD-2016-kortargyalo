@@ -61,9 +61,9 @@ public class ObstacleItemProvider extends AABBItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Obstacle_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Obstacle_name_feature", "_UI_Obstacle_type"),
-				 DronesStructurePackage.Literals.OBSTACLE__NAME,
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 DronesStructurePackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
 				 false,
 				 false,

@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,13 +24,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneImpl#getStartPosition <em>Start Position</em>}</li>
- *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneImpl#getDronetype <em>Dronetype</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DroneImpl extends MinimalEObjectImpl.Container implements Drone {
+public class DroneImpl extends NamedElementImpl implements Drone {
 	/**
 	 * The cached value of the '{@link #getStartPosition() <em>Start Position</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -41,26 +39,6 @@ public class DroneImpl extends MinimalEObjectImpl.Container implements Drone {
 	 * @ordered
 	 */
 	protected Position startPosition;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getDronetype() <em>Dronetype</em>}' reference.
@@ -139,27 +117,6 @@ public class DroneImpl extends MinimalEObjectImpl.Container implements Drone {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.DRONE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DroneType getDronetype() {
 		if (dronetype != null && dronetype.eIsProxy()) {
 			InternalEObject oldDronetype = (InternalEObject)dronetype;
@@ -217,8 +174,6 @@ public class DroneImpl extends MinimalEObjectImpl.Container implements Drone {
 		switch (featureID) {
 			case DronesStructurePackage.DRONE__START_POSITION:
 				return getStartPosition();
-			case DronesStructurePackage.DRONE__NAME:
-				return getName();
 			case DronesStructurePackage.DRONE__DRONETYPE:
 				if (resolve) return getDronetype();
 				return basicGetDronetype();
@@ -236,9 +191,6 @@ public class DroneImpl extends MinimalEObjectImpl.Container implements Drone {
 		switch (featureID) {
 			case DronesStructurePackage.DRONE__START_POSITION:
 				setStartPosition((Position)newValue);
-				return;
-			case DronesStructurePackage.DRONE__NAME:
-				setName((String)newValue);
 				return;
 			case DronesStructurePackage.DRONE__DRONETYPE:
 				setDronetype((DroneType)newValue);
@@ -258,9 +210,6 @@ public class DroneImpl extends MinimalEObjectImpl.Container implements Drone {
 			case DronesStructurePackage.DRONE__START_POSITION:
 				setStartPosition((Position)null);
 				return;
-			case DronesStructurePackage.DRONE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case DronesStructurePackage.DRONE__DRONETYPE:
 				setDronetype((DroneType)null);
 				return;
@@ -278,28 +227,10 @@ public class DroneImpl extends MinimalEObjectImpl.Container implements Drone {
 		switch (featureID) {
 			case DronesStructurePackage.DRONE__START_POSITION:
 				return startPosition != null;
-			case DronesStructurePackage.DRONE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DronesStructurePackage.DRONE__DRONETYPE:
 				return dronetype != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //DroneImpl

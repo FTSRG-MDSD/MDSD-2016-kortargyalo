@@ -19,8 +19,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,12 +36,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl#getProvidedCapabilities <em>Provided Capabilities</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl#getMovementCapability <em>Movement Capability</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl#getDimension <em>Dimension</em>}</li>
- *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DroneTypeImpl extends MinimalEObjectImpl.Container implements DroneType {
+public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	/**
 	 * The default value of the '{@link #getWeight() <em>Weight</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -133,26 +130,6 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 	 * @ordered
 	 */
 	protected Dimension dimension;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -314,27 +291,6 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.DRONE_TYPE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -382,8 +338,6 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 				return basicGetMovementCapability();
 			case DronesStructurePackage.DRONE_TYPE__DIMENSION:
 				return getDimension();
-			case DronesStructurePackage.DRONE_TYPE__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -413,9 +367,6 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 			case DronesStructurePackage.DRONE_TYPE__DIMENSION:
 				setDimension((Dimension)newValue);
 				return;
-			case DronesStructurePackage.DRONE_TYPE__NAME:
-				setName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -443,9 +394,6 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 			case DronesStructurePackage.DRONE_TYPE__DIMENSION:
 				setDimension((Dimension)null);
 				return;
-			case DronesStructurePackage.DRONE_TYPE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -470,8 +418,6 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 				return MOVEMENT_CAPABILITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case DronesStructurePackage.DRONE_TYPE__DIMENSION:
 				return dimension != null;
-			case DronesStructurePackage.DRONE_TYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -492,8 +438,6 @@ public class DroneTypeImpl extends MinimalEObjectImpl.Container implements Drone
 		result.append(maxBatteryCapacity);
 		result.append(", idleEneryConsumption: ");
 		result.append(idleEneryConsumption);
-		result.append(", name: ");
-		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

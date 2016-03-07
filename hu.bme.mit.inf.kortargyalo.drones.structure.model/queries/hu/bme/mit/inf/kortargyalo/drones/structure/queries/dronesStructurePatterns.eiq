@@ -1,5 +1,6 @@
 package hu.bme.mit.inf.kortargyalo.drones.structure.queries
 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://inf.mit.bme.hu/kortargyalo/dronesStructure"
 
 private pattern providedMovementCapability(DroneType : DroneType, ProvidedCapability : ProvidedCapability) {
@@ -21,4 +22,54 @@ pattern notOneMovementCapabilityProvided(DroneType : DroneType) {
 pattern movementCapability(This : DroneType, Target : ProvidedCapability) {
 	find providedMovementCapability(This, Target);
 	1 == count find providedMovementCapability(This, _);
+}
+
+@Constraint(
+	key = {"NamedElement"},
+	severity = "error",
+	message = "Duplicate name $Name$."
+)
+pattern duplicateName(NamedElement : NamedElement, Name : ecore::EString) {
+	find inRelatedScope(NamedElement, Other);
+	NamedElement.name(NamedElement, Name);
+	NamedElement.name(Other, Name);
+	NamedElement != Other;
+}
+
+private pattern nameScope(Element : NamedElement, Scope : ecore::EObject) {
+	DronesStructure.scenarios(Scope, Element);
+} or {
+	DronesStructure.capabilities(Scope, Element);
+} or {
+	DronesStructure.droneTypes(Scope, Element);
+} or {
+	DronesStructure.cooperativeActions(Scope, Element);
+} or {
+	Scenario.obstacles(Scope, Element);
+} or {
+	Scenario.regions(Scope, Element);
+} or {
+	Scenario.drones(Scope, Element);
+} or {
+	CooperativeAction.roles(Scope, Element);
+}
+
+private pattern childScope(Parent : ecore::EObject, Child : ecore::EObject) {
+	DronesStructure.scenarios(Parent, Child);
+} or {
+	DronesStructure.cooperativeActions(Parent, Child);
+}
+
+private pattern relatedScope(Left : ecore::EObject, Right : ecore::EObject) {
+	Left == Right;
+} or {
+	find childScope+(Left, Right);
+} or {
+	find childScope+(Right, Left);
+}
+
+private pattern inRelatedScope(Left : NamedElement, Right : NamedElement) {
+	find nameScope(Left, LeftScope);
+	find nameScope(Right, RightScope);
+	find relatedScope(LeftScope, RightScope);
 }

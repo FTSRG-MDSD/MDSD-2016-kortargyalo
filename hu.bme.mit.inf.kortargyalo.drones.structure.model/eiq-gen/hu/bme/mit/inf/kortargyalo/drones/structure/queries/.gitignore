@@ -12,3 +12,15 @@
 /.MovementCapabilityMatcher.java._trace
 /.NotOneMovementCapabilityProvidedMatch.java._trace
 /.NotOneMovementCapabilityProvidedMatcher.java._trace
+/.NoDuplicateDroneTypeNameMatch.java._trace
+/.NoDuplicateDroneTypeNameMatcher.java._trace
+/.DroneTypeWithDuplicateNameMatch.java._trace
+/.DroneTypeWithDuplicateNameMatcher.java._trace
+/.ScenarioWithDuplicateNameMatch.java._trace
+/.ScenarioWithDuplicateNameMatcher.java._trace
+/.CapabilityWithDuplicateNameMatch.java._trace
+/.CapabilityWithDuplicateNameMatcher.java._trace
+/.CooperativeActionWithDuplicateNameMatch.java._trace
+/.CooperativeActionWithDuplicateNameMatcher.java._trace
+/.DuplicateNameMatch.java._trace
+/.DuplicateNameMatcher.java._trace

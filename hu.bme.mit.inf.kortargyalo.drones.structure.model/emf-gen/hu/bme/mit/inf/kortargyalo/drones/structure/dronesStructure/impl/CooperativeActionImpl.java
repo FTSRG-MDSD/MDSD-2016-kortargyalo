@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -33,12 +31,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.CooperativeActionImpl#getRoles <em>Roles</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.CooperativeActionImpl#getStartTimeout <em>Start Timeout</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.CooperativeActionImpl#getDuration <em>Duration</em>}</li>
- *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.CooperativeActionImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CooperativeActionImpl extends MinimalEObjectImpl.Container implements CooperativeAction {
+public class CooperativeActionImpl extends NamedElementImpl implements CooperativeAction {
 	/**
 	 * The cached value of the '{@link #getRoles() <em>Roles</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -88,26 +85,6 @@ public class CooperativeActionImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected double duration = DURATION_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,27 +164,6 @@ public class CooperativeActionImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.COOPERATIVE_ACTION__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -246,8 +202,6 @@ public class CooperativeActionImpl extends MinimalEObjectImpl.Container implemen
 				return getStartTimeout();
 			case DronesStructurePackage.COOPERATIVE_ACTION__DURATION:
 				return getDuration();
-			case DronesStructurePackage.COOPERATIVE_ACTION__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -271,9 +225,6 @@ public class CooperativeActionImpl extends MinimalEObjectImpl.Container implemen
 			case DronesStructurePackage.COOPERATIVE_ACTION__DURATION:
 				setDuration((Double)newValue);
 				return;
-			case DronesStructurePackage.COOPERATIVE_ACTION__NAME:
-				setName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -295,9 +246,6 @@ public class CooperativeActionImpl extends MinimalEObjectImpl.Container implemen
 			case DronesStructurePackage.COOPERATIVE_ACTION__DURATION:
 				setDuration(DURATION_EDEFAULT);
 				return;
-			case DronesStructurePackage.COOPERATIVE_ACTION__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -316,8 +264,6 @@ public class CooperativeActionImpl extends MinimalEObjectImpl.Container implemen
 				return startTimeout != START_TIMEOUT_EDEFAULT;
 			case DronesStructurePackage.COOPERATIVE_ACTION__DURATION:
 				return duration != DURATION_EDEFAULT;
-			case DronesStructurePackage.COOPERATIVE_ACTION__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -336,8 +282,6 @@ public class CooperativeActionImpl extends MinimalEObjectImpl.Container implemen
 		result.append(startTimeout);
 		result.append(", duration: ");
 		result.append(duration);
-		result.append(", name: ");
-		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

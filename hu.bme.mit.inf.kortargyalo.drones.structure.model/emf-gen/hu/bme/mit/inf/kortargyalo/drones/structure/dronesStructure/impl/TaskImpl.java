@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,13 +24,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.TaskImpl#getRegion <em>Region</em>}</li>
- *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.TaskImpl#getName <em>Name</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.TaskImpl#getActionToPerform <em>Action To Perform</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
+public class TaskImpl extends NamedElementImpl implements Task {
 	/**
 	 * The cached value of the '{@link #getRegion() <em>Region</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -41,26 +39,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 	 * @ordered
 	 */
 	protected Region region;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getActionToPerform() <em>Action To Perform</em>}' reference.
@@ -156,27 +134,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.TASK__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public CooperativeAction getActionToPerform() {
 		if (actionToPerform != null && actionToPerform.eIsProxy()) {
 			InternalEObject oldActionToPerform = (InternalEObject)actionToPerform;
@@ -251,8 +208,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 			case DronesStructurePackage.TASK__REGION:
 				if (resolve) return getRegion();
 				return basicGetRegion();
-			case DronesStructurePackage.TASK__NAME:
-				return getName();
 			case DronesStructurePackage.TASK__ACTION_TO_PERFORM:
 				if (resolve) return getActionToPerform();
 				return basicGetActionToPerform();
@@ -270,9 +225,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 		switch (featureID) {
 			case DronesStructurePackage.TASK__REGION:
 				setRegion((Region)newValue);
-				return;
-			case DronesStructurePackage.TASK__NAME:
-				setName((String)newValue);
 				return;
 			case DronesStructurePackage.TASK__ACTION_TO_PERFORM:
 				setActionToPerform((CooperativeAction)newValue);
@@ -292,9 +244,6 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 			case DronesStructurePackage.TASK__REGION:
 				setRegion((Region)null);
 				return;
-			case DronesStructurePackage.TASK__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case DronesStructurePackage.TASK__ACTION_TO_PERFORM:
 				setActionToPerform((CooperativeAction)null);
 				return;
@@ -312,28 +261,10 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 		switch (featureID) {
 			case DronesStructurePackage.TASK__REGION:
 				return region != null;
-			case DronesStructurePackage.TASK__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case DronesStructurePackage.TASK__ACTION_TO_PERFORM:
 				return actionToPerform != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TaskImpl

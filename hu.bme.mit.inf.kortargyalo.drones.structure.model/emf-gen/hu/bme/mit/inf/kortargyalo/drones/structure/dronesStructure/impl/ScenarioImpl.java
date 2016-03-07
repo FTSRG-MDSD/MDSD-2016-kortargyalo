@@ -21,8 +21,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -39,12 +37,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getObstacles <em>Obstacles</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getRegions <em>Regions</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getTasks <em>Tasks</em>}</li>
- *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenario {
+public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	/**
 	 * The cached value of the '{@link #getDrones() <em>Drones</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -94,26 +91,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * @ordered
 	 */
 	protected EList<Task> tasks;
-
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,27 +207,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.SCENARIO__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -286,8 +242,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return getRegions();
 			case DronesStructurePackage.SCENARIO__TASKS:
 				return getTasks();
-			case DronesStructurePackage.SCENARIO__NAME:
-				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -320,9 +274,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				getTasks().clear();
 				getTasks().addAll((Collection<? extends Task>)newValue);
 				return;
-			case DronesStructurePackage.SCENARIO__NAME:
-				setName((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -350,9 +301,6 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 			case DronesStructurePackage.SCENARIO__TASKS:
 				getTasks().clear();
 				return;
-			case DronesStructurePackage.SCENARIO__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -375,26 +323,8 @@ public class ScenarioImpl extends MinimalEObjectImpl.Container implements Scenar
 				return regions != null && !regions.isEmpty();
 			case DronesStructurePackage.SCENARIO__TASKS:
 				return tasks != null && !tasks.isEmpty();
-			case DronesStructurePackage.SCENARIO__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ScenarioImpl

@@ -75,18 +75,21 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 			case DronesStructurePackage.SCENARIO: {
 				Scenario scenario = (Scenario)theEObject;
 				T result = caseScenario(scenario);
+				if (result == null) result = caseNamedElement(scenario);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DronesStructurePackage.CAPABILITY: {
 				Capability capability = (Capability)theEObject;
 				T result = caseCapability(capability);
+				if (result == null) result = caseNamedElement(capability);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DronesStructurePackage.DRONE_TYPE: {
 				DroneType droneType = (DroneType)theEObject;
 				T result = caseDroneType(droneType);
+				if (result == null) result = caseNamedElement(droneType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -100,18 +103,21 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 				MovementCapability movementCapability = (MovementCapability)theEObject;
 				T result = caseMovementCapability(movementCapability);
 				if (result == null) result = caseCapability(movementCapability);
+				if (result == null) result = caseNamedElement(movementCapability);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DronesStructurePackage.COOPERATIVE_ACTION: {
 				CooperativeAction cooperativeAction = (CooperativeAction)theEObject;
 				T result = caseCooperativeAction(cooperativeAction);
+				if (result == null) result = caseNamedElement(cooperativeAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case DronesStructurePackage.ROLE: {
 				Role role = (Role)theEObject;
 				T result = caseRole(role);
+				if (result == null) result = caseNamedElement(role);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -124,6 +130,7 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 			case DronesStructurePackage.DRONE: {
 				Drone drone = (Drone)theEObject;
 				T result = caseDrone(drone);
+				if (result == null) result = caseNamedElement(drone);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -149,6 +156,7 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 				Obstacle obstacle = (Obstacle)theEObject;
 				T result = caseObstacle(obstacle);
 				if (result == null) result = caseAABB(obstacle);
+				if (result == null) result = caseNamedElement(obstacle);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -156,6 +164,7 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
 				if (result == null) result = caseAABB(region);
+				if (result == null) result = caseNamedElement(region);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -169,6 +178,7 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 			case DronesStructurePackage.TASK: {
 				Task task = (Task)theEObject;
 				T result = caseTask(task);
+				if (result == null) result = caseNamedElement(task);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -177,6 +187,13 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 				T result = caseCharger(charger);
 				if (result == null) result = caseRegion(charger);
 				if (result == null) result = caseAABB(charger);
+				if (result == null) result = caseNamedElement(charger);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DronesStructurePackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T result = caseNamedElement(namedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -451,6 +468,21 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCharger(Charger object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

@@ -12,6 +12,7 @@ import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructu
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructureFactory;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.MovementCapability;
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Position;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability;
@@ -161,6 +162,13 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * @generated
 	 */
 	private EClass chargerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namedElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -327,26 +335,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getScenario_Name() {
-		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getCapability() {
 		return capabilityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getCapability_Name() {
-		return (EAttribute)capabilityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -410,15 +400,6 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 */
 	public EReference getDroneType_Dimension() {
 		return (EReference)droneTypeEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDroneType_Name() {
-		return (EAttribute)droneTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -516,15 +497,6 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCooperativeAction_Name() {
-		return (EAttribute)cooperativeActionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRole() {
 		return roleEClass;
 	}
@@ -545,15 +517,6 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 */
 	public EReference getRole_CooperativeAction() {
 		return (EReference)roleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRole_Name() {
-		return (EAttribute)roleEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -615,17 +578,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDrone_Name() {
-		return (EAttribute)droneEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getDrone_Dronetype() {
-		return (EReference)droneEClass.getEStructuralFeatures().get(2);
+		return (EReference)droneEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -741,15 +695,6 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getObstacle_Name() {
-		return (EAttribute)obstacleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getRegion() {
 		return regionEClass;
 	}
@@ -759,17 +704,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRegion_Name() {
-		return (EAttribute)regionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getRegion_Tasks() {
-		return (EReference)regionEClass.getEStructuralFeatures().get(1);
+		return (EReference)regionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -804,17 +740,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTask_Name() {
-		return (EAttribute)taskEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTask_ActionToPerform() {
-		return (EReference)taskEClass.getEStructuralFeatures().get(2);
+		return (EReference)taskEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -824,6 +751,24 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 */
 	public EClass getCharger() {
 		return chargerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNamedElement() {
+		return namedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNamedElement_Name() {
+		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -866,10 +811,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		createEReference(scenarioEClass, SCENARIO__OBSTACLES);
 		createEReference(scenarioEClass, SCENARIO__REGIONS);
 		createEReference(scenarioEClass, SCENARIO__TASKS);
-		createEAttribute(scenarioEClass, SCENARIO__NAME);
 
 		capabilityEClass = createEClass(CAPABILITY);
-		createEAttribute(capabilityEClass, CAPABILITY__NAME);
 
 		droneTypeEClass = createEClass(DRONE_TYPE);
 		createEAttribute(droneTypeEClass, DRONE_TYPE__WEIGHT);
@@ -878,7 +821,6 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		createEReference(droneTypeEClass, DRONE_TYPE__PROVIDED_CAPABILITIES);
 		createEReference(droneTypeEClass, DRONE_TYPE__MOVEMENT_CAPABILITY);
 		createEReference(droneTypeEClass, DRONE_TYPE__DIMENSION);
-		createEAttribute(droneTypeEClass, DRONE_TYPE__NAME);
 
 		providedCapabilityEClass = createEClass(PROVIDED_CAPABILITY);
 		createEAttribute(providedCapabilityEClass, PROVIDED_CAPABILITY__MAXIMAL_VALUE);
@@ -892,12 +834,10 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		createEReference(cooperativeActionEClass, COOPERATIVE_ACTION__ROLES);
 		createEAttribute(cooperativeActionEClass, COOPERATIVE_ACTION__START_TIMEOUT);
 		createEAttribute(cooperativeActionEClass, COOPERATIVE_ACTION__DURATION);
-		createEAttribute(cooperativeActionEClass, COOPERATIVE_ACTION__NAME);
 
 		roleEClass = createEClass(ROLE);
 		createEReference(roleEClass, ROLE__REQUIRED_CAPABILITIES);
 		createEReference(roleEClass, ROLE__COOPERATIVE_ACTION);
-		createEAttribute(roleEClass, ROLE__NAME);
 
 		requiredCapabilityEClass = createEClass(REQUIRED_CAPABILITY);
 		createEReference(requiredCapabilityEClass, REQUIRED_CAPABILITY__CAPABILITY);
@@ -906,7 +846,6 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 
 		droneEClass = createEClass(DRONE);
 		createEReference(droneEClass, DRONE__START_POSITION);
-		createEAttribute(droneEClass, DRONE__NAME);
 		createEReference(droneEClass, DRONE__DRONETYPE);
 
 		positionEClass = createEClass(POSITION);
@@ -924,20 +863,20 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		createEReference(aabbEClass, AABB__DIMENSION);
 
 		obstacleEClass = createEClass(OBSTACLE);
-		createEAttribute(obstacleEClass, OBSTACLE__NAME);
 
 		regionEClass = createEClass(REGION);
-		createEAttribute(regionEClass, REGION__NAME);
 		createEReference(regionEClass, REGION__TASKS);
 
 		scenarioBoundsEClass = createEClass(SCENARIO_BOUNDS);
 
 		taskEClass = createEClass(TASK);
 		createEReference(taskEClass, TASK__REGION);
-		createEAttribute(taskEClass, TASK__NAME);
 		createEReference(taskEClass, TASK__ACTION_TO_PERFORM);
 
 		chargerEClass = createEClass(CHARGER);
+
+		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 	}
 
 	/**
@@ -968,10 +907,19 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		scenarioEClass.getESuperTypes().add(this.getNamedElement());
+		capabilityEClass.getESuperTypes().add(this.getNamedElement());
+		droneTypeEClass.getESuperTypes().add(this.getNamedElement());
 		movementCapabilityEClass.getESuperTypes().add(this.getCapability());
+		cooperativeActionEClass.getESuperTypes().add(this.getNamedElement());
+		roleEClass.getESuperTypes().add(this.getNamedElement());
+		droneEClass.getESuperTypes().add(this.getNamedElement());
 		obstacleEClass.getESuperTypes().add(this.getAABB());
+		obstacleEClass.getESuperTypes().add(this.getNamedElement());
 		regionEClass.getESuperTypes().add(this.getAABB());
+		regionEClass.getESuperTypes().add(this.getNamedElement());
 		scenarioBoundsEClass.getESuperTypes().add(this.getAABB());
+		taskEClass.getESuperTypes().add(this.getNamedElement());
 		chargerEClass.getESuperTypes().add(this.getRegion());
 
 		// Initialize classes, features, and operations; add parameters
@@ -987,10 +935,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEReference(getScenario_Obstacles(), this.getObstacle(), null, "obstacles", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Regions(), this.getRegion(), null, "regions", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Tasks(), this.getTask(), null, "tasks", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getScenario_Name(), ecorePackage.getEString(), "name", null, 1, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(capabilityEClass, Capability.class, "Capability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCapability_Name(), ecorePackage.getEString(), "name", null, 1, 1, Capability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(droneTypeEClass, DroneType.class, "DroneType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDroneType_Weight(), ecorePackage.getEDouble(), "weight", null, 0, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -999,7 +945,6 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEReference(getDroneType_ProvidedCapabilities(), this.getProvidedCapability(), this.getProvidedCapability_DroneType(), "providedCapabilities", null, 0, -1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneType_MovementCapability(), this.getProvidedCapability(), null, "movementCapability", null, 0, 1, DroneType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneType_Dimension(), this.getDimension(), null, "dimension", null, 1, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDroneType_Name(), ecorePackage.getEString(), "name", null, 1, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(providedCapabilityEClass, ProvidedCapability.class, "ProvidedCapability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProvidedCapability_MaximalValue(), ecorePackage.getEDouble(), "maximalValue", null, 0, 1, ProvidedCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1013,12 +958,10 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEReference(getCooperativeAction_Roles(), this.getRole(), this.getRole_CooperativeAction(), "roles", null, 1, -1, CooperativeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCooperativeAction_StartTimeout(), ecorePackage.getEDouble(), "startTimeout", null, 0, 1, CooperativeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCooperativeAction_Duration(), ecorePackage.getEDouble(), "duration", null, 0, 1, CooperativeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCooperativeAction_Name(), ecorePackage.getEString(), "name", null, 1, 1, CooperativeAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRole_RequiredCapabilities(), this.getRequiredCapability(), this.getRequiredCapability_Role(), "requiredCapabilities", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRole_CooperativeAction(), this.getCooperativeAction(), this.getCooperativeAction_Roles(), "cooperativeAction", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 1, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(requiredCapabilityEClass, RequiredCapability.class, "RequiredCapability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRequiredCapability_Capability(), this.getCapability(), null, "capability", null, 1, 1, RequiredCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1027,7 +970,6 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 
 		initEClass(droneEClass, Drone.class, "Drone", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDrone_StartPosition(), this.getPosition(), null, "startPosition", null, 1, 1, Drone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDrone_Name(), ecorePackage.getEString(), "name", null, 1, 1, Drone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDrone_Dronetype(), this.getDroneType(), null, "dronetype", null, 1, 1, Drone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(positionEClass, Position.class, "Position", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1045,20 +987,20 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEReference(getAABB_Dimension(), this.getDimension(), null, "dimension", null, 1, 1, hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.AABB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(obstacleEClass, Obstacle.class, "Obstacle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getObstacle_Name(), ecorePackage.getEString(), "name", null, 1, 1, Obstacle.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(regionEClass, Region.class, "Region", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRegion_Name(), ecorePackage.getEString(), "name", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_Tasks(), this.getTask(), this.getTask_Region(), "tasks", null, 0, -1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scenarioBoundsEClass, ScenarioBounds.class, "ScenarioBounds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTask_Region(), this.getRegion(), this.getRegion_Tasks(), "region", null, 1, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTask_Name(), ecorePackage.getEString(), "name", null, 1, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTask_ActionToPerform(), this.getCooperativeAction(), null, "actionToPerform", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(chargerEClass, Charger.class, "Charger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
