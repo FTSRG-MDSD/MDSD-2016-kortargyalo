@@ -55,5 +55,6 @@
     <genClasses ecoreClass="dronesBehavior.ecore#//SendMap">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//SendMap/recipent"/>
     </genClasses>
+    <genClasses ecoreClass="dronesBehavior.ecore#//Scan"/>
   </genPackages>
 </genmodel:GenModel>

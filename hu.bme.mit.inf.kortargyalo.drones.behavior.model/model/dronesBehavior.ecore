@@ -54,4 +54,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="SendMap" eSuperTypes="#//AtomicStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="recipent" eType="ecore:EClass ../../hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.ecore#//Drone"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scan" eSuperTypes="#//AtomicStatement"/>
 </ecore:EPackage>
