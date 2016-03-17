@@ -26,3 +26,14 @@
 /.ChildScopeQuerySpecification.java._trace
 /.RelatedScopeQuerySpecification.java._trace
 /.InRelatedScopeQuerySpecification.java._trace
+/MovementCapabilityProcessor.java
+/MovementCapabilityQuerySpecification.java
+/NotOneMovementCapabilityProvidedProcessor.java
+/NotOneMovementCapabilityProvidedQuerySpecification.java
+/ProvidedMovementCapabilityQuerySpecification.java
+/DuplicateNameProcessor.java
+/DuplicateNameQuerySpecification.java
+/NameScopeQuerySpecification.java
+/ChildScopeQuerySpecification.java
+/InRelatedScopeQuerySpecification.java
+/RelatedScopeQuerySpecification.java

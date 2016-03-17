@@ -85,5 +85,6 @@
     <genClasses ecoreClass="dronesStructure.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//NamedElement/name"/>
     </genClasses>
+    <genClasses ecoreClass="dronesStructure.ecore#//ScanningCapability"/>
   </genPackages>
 </genmodel:GenModel>

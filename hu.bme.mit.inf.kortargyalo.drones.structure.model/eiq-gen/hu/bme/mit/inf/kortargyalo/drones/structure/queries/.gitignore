@@ -24,3 +24,10 @@
 /.CooperativeActionWithDuplicateNameMatcher.java._trace
 /.DuplicateNameMatch.java._trace
 /.DuplicateNameMatcher.java._trace
+/MovementCapabilityMatch.java
+/MovementCapabilityMatcher.java
+/NotOneMovementCapabilityProvidedMatch.java
+/NotOneMovementCapabilityProvidedMatcher.java
+/DuplicateNameMatch.java
+/DuplicateNameMatcher.java
+/DronesStructurePatterns.java
