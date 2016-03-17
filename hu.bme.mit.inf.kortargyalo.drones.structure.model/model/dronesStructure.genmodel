@@ -32,6 +32,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DroneType/providedCapabilities"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DroneType/movementCapability"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DroneType/dimension"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//DroneType/scanningCapability"/>
     </genClasses>
     <genClasses ecoreClass="dronesStructure.ecore#//ProvidedCapability">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//ProvidedCapability/maximalValue"/>

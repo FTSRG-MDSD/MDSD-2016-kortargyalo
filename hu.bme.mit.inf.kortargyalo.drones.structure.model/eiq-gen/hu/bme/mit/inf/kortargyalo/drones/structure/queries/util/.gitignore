@@ -37,3 +37,6 @@
 /ChildScopeQuerySpecification.java
 /InRelatedScopeQuerySpecification.java
 /RelatedScopeQuerySpecification.java
+/.ProvidedScanningCapabilityQuerySpecification.java._trace
+/.ScanningCapabilityProcessor.java._trace
+/.ScanningCapabilityQuerySpecification.java._trace

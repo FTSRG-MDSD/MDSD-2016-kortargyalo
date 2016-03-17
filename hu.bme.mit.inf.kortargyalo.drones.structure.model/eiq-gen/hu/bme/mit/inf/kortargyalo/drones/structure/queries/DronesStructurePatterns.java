@@ -3,9 +3,11 @@ package hu.bme.mit.inf.kortargyalo.drones.structure.queries;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.DuplicateNameMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.MovementCapabilityMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotOneMovementCapabilityProvidedMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.ScanningCapabilityMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.DuplicateNameQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.MovementCapabilityQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NotOneMovementCapabilityProvidedQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.ScanningCapabilityQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
@@ -19,8 +21,10 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  * <p> From package hu.bme.mit.inf.kortargyalo.drones.structure.queries, the group contains the definition of the following patterns: <ul>
  * <li>providedMovementCapability</li>
+ * <li>providedScanningCapability</li>
  * <li>notOneMovementCapabilityProvided</li>
  * <li>movementCapability</li>
+ * <li>scanningCapability</li>
  * <li>duplicateName</li>
  * <li>nameScope</li>
  * <li>childScope</li>
@@ -52,6 +56,7 @@ public final class DronesStructurePatterns extends BaseGeneratedPatternGroup {
   private DronesStructurePatterns() throws IncQueryException {
     querySpecifications.add(NotOneMovementCapabilityProvidedQuerySpecification.instance());
     querySpecifications.add(MovementCapabilityQuerySpecification.instance());
+    querySpecifications.add(ScanningCapabilityQuerySpecification.instance());
     querySpecifications.add(DuplicateNameQuerySpecification.instance());
   }
   
@@ -69,6 +74,14 @@ public final class DronesStructurePatterns extends BaseGeneratedPatternGroup {
   
   public MovementCapabilityMatcher getMovementCapability(final IncQueryEngine engine) throws IncQueryException {
     return MovementCapabilityMatcher.on(engine);
+  }
+  
+  public ScanningCapabilityQuerySpecification getScanningCapability() throws IncQueryException {
+    return ScanningCapabilityQuerySpecification.instance();
+  }
+  
+  public ScanningCapabilityMatcher getScanningCapability(final IncQueryEngine engine) throws IncQueryException {
+    return ScanningCapabilityMatcher.on(engine);
   }
   
   public DuplicateNameQuerySpecification getDuplicateName() throws IncQueryException {

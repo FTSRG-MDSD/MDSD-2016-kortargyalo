@@ -9,6 +9,12 @@ private pattern providedMovementCapability(DroneType : DroneType, ProvidedCapabi
 	MovementCapability(Capability);
 }
 
+private pattern providedScanningCapability(DroneType : DroneType, ProvidedCapability : ProvidedCapability) {
+	DroneType.providedCapabilities(DroneType, ProvidedCapability);
+	ProvidedCapability.capability(ProvidedCapability, Capability);
+	ScanningCapability(Capability);
+}
+
 @Constraint(
 	key = {"DroneType"},
 	severity = "error",
@@ -22,6 +28,12 @@ pattern notOneMovementCapabilityProvided(DroneType : DroneType) {
 pattern movementCapability(This : DroneType, Target : ProvidedCapability) {
 	find providedMovementCapability(This, Target);
 	1 == count find providedMovementCapability(This, _);
+}
+
+@QueryBasedFeature
+pattern scanningCapability(This : DroneType, Target : ProvidedCapability) {
+	find providedScanningCapability(This, Target);
+	1 == count find providedScanningCapability(This, _);
 }
 
 @Constraint(
