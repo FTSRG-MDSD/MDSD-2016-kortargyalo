@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: hu.bme.mit.inf.kortargyalo.drones.behavior.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: hu.bme.mit.inf.kortargyalo.drones.behavior.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: hu.bme.mit.inf.kortargyalo.drones.behavior.model,
+ hu.bme.mit.inf.kortargyalo.drones.structure.model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ hu.bme.mit.inf.kortargyalo.drones.structure.xtext;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.serializer,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.scoping,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.parser.antlr.internal,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.services,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.parser.antlr,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.generator,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.validation,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.formatting
+Import-Package: org.apache.log4j

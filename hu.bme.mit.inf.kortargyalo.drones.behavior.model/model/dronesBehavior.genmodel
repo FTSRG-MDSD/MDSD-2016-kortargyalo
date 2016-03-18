@@ -36,7 +36,9 @@
     <genClasses ecoreClass="dronesBehavior.ecore#//Move">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//Move/destination"/>
     </genClasses>
-    <genClasses ecoreClass="dronesBehavior.ecore#//Wait"/>
+    <genClasses ecoreClass="dronesBehavior.ecore#//Wait">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesBehavior.ecore#//Wait/timeout"/>
+    </genClasses>
     <genClasses ecoreClass="dronesBehavior.ecore#//SendSignal">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//SendSignal/signal"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//SendSignal/recipent"/>
@@ -46,6 +48,7 @@
     </genClasses>
     <genClasses ecoreClass="dronesBehavior.ecore#//ComplexWait">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//ComplexWait/reactions"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//ComplexWait/onTimeout"/>
     </genClasses>
     <genClasses ecoreClass="dronesBehavior.ecore#//Reaction">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//Reaction/statement"/>
@@ -56,5 +59,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//SendMap/recipent"/>
     </genClasses>
     <genClasses ecoreClass="dronesBehavior.ecore#//Scan"/>
+    <genClasses ecoreClass="dronesBehavior.ecore#//Charge"/>
   </genPackages>
 </genmodel:GenModel>

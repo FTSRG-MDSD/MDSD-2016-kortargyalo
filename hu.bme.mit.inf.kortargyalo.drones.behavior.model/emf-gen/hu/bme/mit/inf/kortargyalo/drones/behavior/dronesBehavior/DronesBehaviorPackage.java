@@ -2,6 +2,8 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior;
 
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage;
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -445,13 +447,22 @@ public interface DronesBehaviorPackage extends EPackage {
 	int WAIT = 10;
 
 	/**
+	 * The feature id for the '<em><b>Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT__TIMEOUT = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Wait</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WAIT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
+	int WAIT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Wait</em>' class.
@@ -519,6 +530,15 @@ public interface DronesBehaviorPackage extends EPackage {
 	int SIMPLE_WAIT = 12;
 
 	/**
+	 * The feature id for the '<em><b>Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_WAIT__TIMEOUT = WAIT__TIMEOUT;
+
+	/**
 	 * The feature id for the '<em><b>Signal</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -556,6 +576,15 @@ public interface DronesBehaviorPackage extends EPackage {
 	int COMPLEX_WAIT = 13;
 
 	/**
+	 * The feature id for the '<em><b>Timeout</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_WAIT__TIMEOUT = WAIT__TIMEOUT;
+
+	/**
 	 * The feature id for the '<em><b>Reactions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -565,13 +594,22 @@ public interface DronesBehaviorPackage extends EPackage {
 	int COMPLEX_WAIT__REACTIONS = WAIT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>On Timeout</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_WAIT__ON_TIMEOUT = WAIT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Complex Wait</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPLEX_WAIT_FEATURE_COUNT = WAIT_FEATURE_COUNT + 1;
+	int COMPLEX_WAIT_FEATURE_COUNT = WAIT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Complex Wait</em>' class.
@@ -639,13 +677,22 @@ public interface DronesBehaviorPackage extends EPackage {
 	int SIGNAL = 15;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNAL__NAME = DronesStructurePackage.NAMED_ELEMENT__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Signal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIGNAL_FEATURE_COUNT = 0;
+	int SIGNAL_FEATURE_COUNT = DronesStructurePackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Signal</em>' class.
@@ -654,7 +701,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SIGNAL_OPERATION_COUNT = 0;
+	int SIGNAL_OPERATION_COUNT = DronesStructurePackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.SendMapImpl <em>Send Map</em>}' class.
@@ -692,6 +739,64 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEND_MAP_OPERATION_COUNT = ATOMIC_STATEMENT_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ScanImpl <em>Scan</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ScanImpl
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getScan()
+	 * @generated
+	 */
+	int SCAN = 17;
+
+	/**
+	 * The number of structural features of the '<em>Scan</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_FEATURE_COUNT = ATOMIC_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Scan</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCAN_OPERATION_COUNT = ATOMIC_STATEMENT_OPERATION_COUNT + 0;
+
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ChargeImpl <em>Charge</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ChargeImpl
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getCharge()
+	 * @generated
+	 */
+	int CHARGE = 18;
+
+	/**
+	 * The number of structural features of the '<em>Charge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE_FEATURE_COUNT = ATOMIC_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Charge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE_OPERATION_COUNT = ATOMIC_STATEMENT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -904,6 +1009,17 @@ public interface DronesBehaviorPackage extends EPackage {
 	EClass getWait();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Wait#getTimeout <em>Timeout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Timeout</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Wait#getTimeout()
+	 * @see #getWait()
+	 * @generated
+	 */
+	EAttribute getWait_Timeout();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendSignal <em>Send Signal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -978,6 +1094,17 @@ public interface DronesBehaviorPackage extends EPackage {
 	EReference getComplexWait_Reactions();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.ComplexWait#getOnTimeout <em>On Timeout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>On Timeout</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.ComplexWait#getOnTimeout()
+	 * @see #getComplexWait()
+	 * @generated
+	 */
+	EReference getComplexWait_OnTimeout();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Reaction <em>Reaction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1039,6 +1166,26 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSendMap_Recipent();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan <em>Scan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scan</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan
+	 * @generated
+	 */
+	EClass getScan();
+
+	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Charge <em>Charge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Charge</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Charge
+	 * @generated
+	 */
+	EClass getCharge();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1246,6 +1393,14 @@ public interface DronesBehaviorPackage extends EPackage {
 		EClass WAIT = eINSTANCE.getWait();
 
 		/**
+		 * The meta object literal for the '<em><b>Timeout</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WAIT__TIMEOUT = eINSTANCE.getWait_Timeout();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.SendSignalImpl <em>Send Signal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1308,6 +1463,14 @@ public interface DronesBehaviorPackage extends EPackage {
 		EReference COMPLEX_WAIT__REACTIONS = eINSTANCE.getComplexWait_Reactions();
 
 		/**
+		 * The meta object literal for the '<em><b>On Timeout</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPLEX_WAIT__ON_TIMEOUT = eINSTANCE.getComplexWait_OnTimeout();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ReactionImpl <em>Reaction</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1360,6 +1523,26 @@ public interface DronesBehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SEND_MAP__RECIPENT = eINSTANCE.getSendMap_Recipent();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ScanImpl <em>Scan</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ScanImpl
+		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getScan()
+		 * @generated
+		 */
+		EClass SCAN = eINSTANCE.getScan();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ChargeImpl <em>Charge</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ChargeImpl
+		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getCharge()
+		 * @generated
+		 */
+		EClass CHARGE = eINSTANCE.getCharge();
 
 	}
 

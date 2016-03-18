@@ -3,6 +3,7 @@
 package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl;
 
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.AtomicStatement;
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Charge;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.ComplexWait;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Condition;
@@ -13,6 +14,7 @@ import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorP
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Loop;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Move;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Reaction;
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendMap;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendSignal;
@@ -24,6 +26,7 @@ import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Wait;
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -155,6 +158,20 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 	 * @generated
 	 */
 	private EClass sendMapEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass scanEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass chargeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -405,6 +422,15 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getWait_Timeout() {
+		return (EAttribute)waitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSendSignal() {
 		return sendSignalEClass;
 	}
@@ -468,6 +494,15 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getComplexWait_OnTimeout() {
+		return (EReference)complexWaitEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getReaction() {
 		return reactionEClass;
 	}
@@ -515,6 +550,24 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 	 */
 	public EReference getSendMap_Recipent() {
 		return (EReference)sendMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getScan() {
+		return scanEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCharge() {
+		return chargeEClass;
 	}
 
 	/**
@@ -575,6 +628,7 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 		createEReference(moveEClass, MOVE__DESTINATION);
 
 		waitEClass = createEClass(WAIT);
+		createEAttribute(waitEClass, WAIT__TIMEOUT);
 
 		sendSignalEClass = createEClass(SEND_SIGNAL);
 		createEReference(sendSignalEClass, SEND_SIGNAL__SIGNAL);
@@ -585,6 +639,7 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		complexWaitEClass = createEClass(COMPLEX_WAIT);
 		createEReference(complexWaitEClass, COMPLEX_WAIT__REACTIONS);
+		createEReference(complexWaitEClass, COMPLEX_WAIT__ON_TIMEOUT);
 
 		reactionEClass = createEClass(REACTION);
 		createEReference(reactionEClass, REACTION__STATEMENT);
@@ -594,6 +649,10 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		sendMapEClass = createEClass(SEND_MAP);
 		createEReference(sendMapEClass, SEND_MAP__RECIPENT);
+
+		scanEClass = createEClass(SCAN);
+
+		chargeEClass = createEClass(CHARGE);
 	}
 
 	/**
@@ -638,7 +697,10 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 		sendSignalEClass.getESuperTypes().add(this.getAtomicStatement());
 		simpleWaitEClass.getESuperTypes().add(this.getWait());
 		complexWaitEClass.getESuperTypes().add(this.getWait());
+		signalEClass.getESuperTypes().add(theDronesStructurePackage.getNamedElement());
 		sendMapEClass.getESuperTypes().add(this.getAtomicStatement());
+		scanEClass.getESuperTypes().add(this.getAtomicStatement());
+		chargeEClass.getESuperTypes().add(this.getAtomicStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dronesBehaviorEClass, DronesBehavior.class, "DronesBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -671,6 +733,7 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 		initEReference(getMove_Destination(), theDronesStructurePackage.getPosition(), null, "destination", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(waitEClass, Wait.class, "Wait", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWait_Timeout(), ecorePackage.getEInt(), "timeout", null, 0, 1, Wait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sendSignalEClass, SendSignal.class, "SendSignal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSendSignal_Signal(), this.getSignal(), null, "signal", null, 0, 1, SendSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -681,6 +744,7 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		initEClass(complexWaitEClass, ComplexWait.class, "ComplexWait", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComplexWait_Reactions(), this.getReaction(), null, "reactions", null, 0, -1, ComplexWait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComplexWait_OnTimeout(), this.getStatement(), null, "onTimeout", null, 0, 1, ComplexWait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reactionEClass, Reaction.class, "Reaction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReaction_Statement(), this.getStatement(), null, "statement", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -690,6 +754,10 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		initEClass(sendMapEClass, SendMap.class, "SendMap", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSendMap_Recipent(), theDronesStructurePackage.getDrone(), null, "recipent", null, 0, 1, SendMap.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(scanEClass, Scan.class, "Scan", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(chargeEClass, Charge.class, "Charge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

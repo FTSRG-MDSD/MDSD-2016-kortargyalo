@@ -1,0 +1,156 @@
+/**
+ */
+package hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation;
+
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script;
+
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Position;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Drone Instance</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getScript <em>Script</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getPosition <em>Position</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getCurrentRole <em>Current Role</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getObservations <em>Observations</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getCurrentBattery <em>Current Battery</em>}</li>
+ * </ul>
+ *
+ * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance()
+ * @model
+ * @generated
+ */
+public interface DroneInstance extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Script</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Script</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Script</em>' reference.
+	 * @see #setScript(Script)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance_Script()
+	 * @model required="true"
+	 * @generated
+	 */
+	Script getScript();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getScript <em>Script</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Script</em>' reference.
+	 * @see #getScript()
+	 * @generated
+	 */
+	void setScript(Script value);
+
+	/**
+	 * Returns the value of the '<em><b>Position</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Position</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Position</em>' containment reference.
+	 * @see #setPosition(Position)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance_Position()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Position getPosition();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getPosition <em>Position</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Position</em>' containment reference.
+	 * @see #getPosition()
+	 * @generated
+	 */
+	void setPosition(Position value);
+
+	/**
+	 * Returns the value of the '<em><b>Current Role</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.RoleInstance#getAllocatedDrone <em>Allocated Drone</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current Role</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Role</em>' reference.
+	 * @see #setCurrentRole(RoleInstance)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance_CurrentRole()
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.RoleInstance#getAllocatedDrone
+	 * @model opposite="allocatedDrone"
+	 * @generated
+	 */
+	RoleInstance getCurrentRole();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getCurrentRole <em>Current Role</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current Role</em>' reference.
+	 * @see #getCurrentRole()
+	 * @generated
+	 */
+	void setCurrentRole(RoleInstance value);
+
+	/**
+	 * Returns the value of the '<em><b>Observations</b></em>' containment reference list.
+	 * The list contents are of type {@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.Observation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Observations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Observations</em>' containment reference list.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance_Observations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Observation> getObservations();
+
+	/**
+	 * Returns the value of the '<em><b>Current Battery</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current Battery</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current Battery</em>' attribute.
+	 * @see #setCurrentBattery(double)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance_CurrentBattery()
+	 * @model
+	 * @generated
+	 */
+	double getCurrentBattery();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getCurrentBattery <em>Current Battery</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current Battery</em>' attribute.
+	 * @see #getCurrentBattery()
+	 * @generated
+	 */
+	void setCurrentBattery(double value);
+
+} // DroneInstance

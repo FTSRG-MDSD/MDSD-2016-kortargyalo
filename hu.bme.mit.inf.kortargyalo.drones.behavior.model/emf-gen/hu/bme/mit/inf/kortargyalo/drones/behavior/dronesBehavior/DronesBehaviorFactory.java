@@ -166,6 +166,24 @@ public interface DronesBehaviorFactory extends EFactory {
 	SendMap createSendMap();
 
 	/**
+	 * Returns a new object of class '<em>Scan</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scan</em>'.
+	 * @generated
+	 */
+	Scan createScan();
+
+	/**
+	 * Returns a new object of class '<em>Charge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Charge</em>'.
+	 * @generated
+	 */
+	Charge createCharge();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

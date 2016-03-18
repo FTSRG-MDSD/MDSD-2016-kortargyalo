@@ -2,7 +2,7 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior;
 
-import org.eclipse.emf.ecore.EObject;
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Signal extends EObject {
+public interface Signal extends NamedElement {
 } // Signal

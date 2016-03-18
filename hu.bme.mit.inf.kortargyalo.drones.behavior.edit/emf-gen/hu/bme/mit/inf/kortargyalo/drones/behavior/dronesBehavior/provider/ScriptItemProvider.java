@@ -231,6 +231,16 @@ public class ScriptItemProvider
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.SCRIPT__STATEMENT,
 				 DronesBehaviorFactory.eINSTANCE.createSendMap()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.SCRIPT__STATEMENT,
+				 DronesBehaviorFactory.eINSTANCE.createScan()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.SCRIPT__STATEMENT,
+				 DronesBehaviorFactory.eINSTANCE.createCharge()));
 	}
 
 	/**

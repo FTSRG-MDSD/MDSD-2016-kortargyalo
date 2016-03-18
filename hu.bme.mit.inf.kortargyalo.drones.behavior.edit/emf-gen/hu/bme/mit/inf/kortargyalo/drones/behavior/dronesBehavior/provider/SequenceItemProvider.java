@@ -192,6 +192,16 @@ public class SequenceItemProvider extends StatementItemProvider {
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.SEQUENCE__STATEMENTS,
 				 DronesBehaviorFactory.eINSTANCE.createSendMap()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.SEQUENCE__STATEMENTS,
+				 DronesBehaviorFactory.eINSTANCE.createScan()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.SEQUENCE__STATEMENTS,
+				 DronesBehaviorFactory.eINSTANCE.createCharge()));
 	}
 
 }

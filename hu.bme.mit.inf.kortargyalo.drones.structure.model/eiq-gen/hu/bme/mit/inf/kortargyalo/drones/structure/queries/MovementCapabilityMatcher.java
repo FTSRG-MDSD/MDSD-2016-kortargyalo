@@ -265,7 +265,7 @@ public class MovementCapabilityMatcher extends BaseMatcher<MovementCapabilityMat
   @Override
   protected MovementCapabilityMatch tupleToMatch(final Tuple t) {
     try {
-    	return MovementCapabilityMatch.newMatch((DroneType) t.get(POSITION_THIS), (ProvidedCapability) t.get(POSITION_TARGET));
+    	return MovementCapabilityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_THIS), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) t.get(POSITION_TARGET));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -275,7 +275,7 @@ public class MovementCapabilityMatcher extends BaseMatcher<MovementCapabilityMat
   @Override
   protected MovementCapabilityMatch arrayToMatch(final Object[] match) {
     try {
-    	return MovementCapabilityMatch.newMatch((DroneType) match[POSITION_THIS], (ProvidedCapability) match[POSITION_TARGET]);
+    	return MovementCapabilityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_THIS], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) match[POSITION_TARGET]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -285,7 +285,7 @@ public class MovementCapabilityMatcher extends BaseMatcher<MovementCapabilityMat
   @Override
   protected MovementCapabilityMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return MovementCapabilityMatch.newMutableMatch((DroneType) match[POSITION_THIS], (ProvidedCapability) match[POSITION_TARGET]);
+    	return MovementCapabilityMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_THIS], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) match[POSITION_TARGET]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

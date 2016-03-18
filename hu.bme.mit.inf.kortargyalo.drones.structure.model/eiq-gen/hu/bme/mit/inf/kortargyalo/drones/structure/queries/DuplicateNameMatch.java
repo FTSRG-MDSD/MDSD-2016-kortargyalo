@@ -53,11 +53,11 @@ public abstract class DuplicateNameMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("NamedElement".equals(parameterName) ) {
-    	this.fNamedElement = (NamedElement) newValue;
+    	this.fNamedElement = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement) newValue;
     	return true;
     }
     if ("Name".equals(parameterName) ) {
-    	this.fName = (String) newValue;
+    	this.fName = (java.lang.String) newValue;
     	return true;
     }
     return false;

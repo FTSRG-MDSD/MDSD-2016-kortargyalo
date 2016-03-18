@@ -192,6 +192,16 @@ public class CompositeStatementItemProvider extends StatementItemProvider {
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.COMPOSITE_STATEMENT__STATEMENT,
 				 DronesBehaviorFactory.eINSTANCE.createSendMap()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPOSITE_STATEMENT__STATEMENT,
+				 DronesBehaviorFactory.eINSTANCE.createScan()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPOSITE_STATEMENT__STATEMENT,
+				 DronesBehaviorFactory.eINSTANCE.createCharge()));
 	}
 
 }

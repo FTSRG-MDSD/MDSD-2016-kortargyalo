@@ -5,9 +5,8 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Signal;
 
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.NamedElementImpl;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class SignalImpl extends MinimalEObjectImpl.Container implements Signal {
+public class SignalImpl extends NamedElementImpl implements Signal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -33,7 +33,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" eType="ecore:EClass ../../hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.ecore#//Position"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Wait" eSuperTypes="#//Statement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Wait" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SendSignal" eSuperTypes="#//AtomicStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="signal" eType="#//Signal"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="recipent" eType="ecore:EClass ../../hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.ecore#//Drone"/>
@@ -44,15 +46,18 @@
   <eClassifiers xsi:type="ecore:EClass" name="ComplexWait" eSuperTypes="#//Wait">
     <eStructuralFeatures xsi:type="ecore:EReference" name="reactions" upperBound="-1"
         eType="#//Reaction" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onTimeout" eType="#//Statement"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Reaction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statement" eType="#//Statement"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signal" eType="#//Signal"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Signal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Signal" eSuperTypes="../../hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SendMap" eSuperTypes="#//AtomicStatement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="recipent" eType="ecore:EClass ../../hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.ecore#//Drone"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Scan" eSuperTypes="#//AtomicStatement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Charge" eSuperTypes="#//AtomicStatement"/>
 </ecore:EPackage>

@@ -72,6 +72,8 @@ public class DronesBehaviorFactoryImpl extends EFactoryImpl implements DronesBeh
 			case DronesBehaviorPackage.REACTION: return createReaction();
 			case DronesBehaviorPackage.SIGNAL: return createSignal();
 			case DronesBehaviorPackage.SEND_MAP: return createSendMap();
+			case DronesBehaviorPackage.SCAN: return createScan();
+			case DronesBehaviorPackage.CHARGE: return createCharge();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -235,6 +237,26 @@ public class DronesBehaviorFactoryImpl extends EFactoryImpl implements DronesBeh
 	public SendMap createSendMap() {
 		SendMapImpl sendMap = new SendMapImpl();
 		return sendMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Scan createScan() {
+		ScanImpl scan = new ScanImpl();
+		return scan;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Charge createCharge() {
+		ChargeImpl charge = new ChargeImpl();
+		return charge;
 	}
 
 	/**

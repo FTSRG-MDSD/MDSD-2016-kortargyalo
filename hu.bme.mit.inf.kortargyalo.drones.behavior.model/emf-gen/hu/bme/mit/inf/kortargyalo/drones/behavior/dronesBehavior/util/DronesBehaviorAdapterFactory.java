@@ -4,6 +4,7 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.util;
 
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.*;
 
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -134,6 +135,18 @@ public class DronesBehaviorAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSendMap(SendMap object) {
 				return createSendMapAdapter();
+			}
+			@Override
+			public Adapter caseScan(Scan object) {
+				return createScanAdapter();
+			}
+			@Override
+			public Adapter caseCharge(Charge object) {
+				return createChargeAdapter();
+			}
+			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -390,6 +403,48 @@ public class DronesBehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSendMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan <em>Scan</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan
+	 * @generated
+	 */
+	public Adapter createScanAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Charge <em>Charge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Charge
+	 * @generated
+	 */
+	public Adapter createChargeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 

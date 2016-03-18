@@ -5,6 +5,7 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.provider;
 
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage;
 
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SimpleWait;
 import java.util.Collection;
 import java.util.List;
 
@@ -88,7 +89,8 @@ public class SimpleWaitItemProvider extends WaitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SimpleWait_type");
+		SimpleWait simpleWait = (SimpleWait)object;
+		return getString("_UI_SimpleWait_type") + " " + simpleWait.getTimeout();
 	}
 	
 

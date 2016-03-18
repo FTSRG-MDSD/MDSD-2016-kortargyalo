@@ -4,6 +4,7 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.util;
 
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.*;
 
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -177,6 +178,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 			case DronesBehaviorPackage.SIGNAL: {
 				Signal signal = (Signal)theEObject;
 				T result = caseSignal(signal);
+				if (result == null) result = caseNamedElement(signal);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -185,6 +187,22 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseSendMap(sendMap);
 				if (result == null) result = caseAtomicStatement(sendMap);
 				if (result == null) result = caseStatement(sendMap);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DronesBehaviorPackage.SCAN: {
+				Scan scan = (Scan)theEObject;
+				T result = caseScan(scan);
+				if (result == null) result = caseAtomicStatement(scan);
+				if (result == null) result = caseStatement(scan);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DronesBehaviorPackage.CHARGE: {
+				Charge charge = (Charge)theEObject;
+				T result = caseCharge(charge);
+				if (result == null) result = caseAtomicStatement(charge);
+				if (result == null) result = caseStatement(charge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -444,6 +462,51 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSendMap(SendMap object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scan</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scan</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScan(Scan object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Charge</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Charge</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCharge(Charge object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

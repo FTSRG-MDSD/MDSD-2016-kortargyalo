@@ -231,6 +231,16 @@ public class ReactionItemProvider
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
 				 DronesBehaviorFactory.eINSTANCE.createSendMap()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 DronesBehaviorFactory.eINSTANCE.createScan()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 DronesBehaviorFactory.eINSTANCE.createCharge()));
 	}
 
 	/**

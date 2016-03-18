@@ -45,7 +45,7 @@ public abstract class NotOneMovementCapabilityProvidedMatch extends BasePatternM
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("DroneType".equals(parameterName) ) {
-    	this.fDroneType = (DroneType) newValue;
+    	this.fDroneType = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) newValue;
     	return true;
     }
     return false;

@@ -440,6 +440,52 @@ public class DronesBehaviorItemProviderAdapterFactory extends DronesBehaviorAdap
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ScanItemProvider scanItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createScanAdapter() {
+		if (scanItemProvider == null) {
+			scanItemProvider = new ScanItemProvider(this);
+		}
+
+		return scanItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Charge} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChargeItemProvider chargeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Charge}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChargeAdapter() {
+		if (chargeItemProvider == null) {
+			chargeItemProvider = new ChargeItemProvider(this);
+		}
+
+		return chargeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -554,6 +600,8 @@ public class DronesBehaviorItemProviderAdapterFactory extends DronesBehaviorAdap
 		if (reactionItemProvider != null) reactionItemProvider.dispose();
 		if (signalItemProvider != null) signalItemProvider.dispose();
 		if (sendMapItemProvider != null) sendMapItemProvider.dispose();
+		if (scanItemProvider != null) scanItemProvider.dispose();
+		if (chargeItemProvider != null) chargeItemProvider.dispose();
 	}
 
 }

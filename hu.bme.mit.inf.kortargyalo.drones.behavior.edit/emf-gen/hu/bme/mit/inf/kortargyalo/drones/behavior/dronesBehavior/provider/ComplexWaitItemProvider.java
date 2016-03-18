@@ -15,6 +15,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -46,8 +47,31 @@ public class ComplexWaitItemProvider extends WaitItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOnTimeoutPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the On Timeout feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOnTimeoutPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComplexWait_onTimeout_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComplexWait_onTimeout_feature", "_UI_ComplexWait_type"),
+				 DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -63,6 +87,7 @@ public class ComplexWaitItemProvider extends WaitItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DronesBehaviorPackage.Literals.COMPLEX_WAIT__REACTIONS);
+			childrenFeatures.add(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT);
 		}
 		return childrenFeatures;
 	}
@@ -99,7 +124,8 @@ public class ComplexWaitItemProvider extends WaitItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ComplexWait_type");
+		ComplexWait complexWait = (ComplexWait)object;
+		return getString("_UI_ComplexWait_type") + " " + complexWait.getTimeout();
 	}
 	
 
@@ -116,6 +142,7 @@ public class ComplexWaitItemProvider extends WaitItemProvider {
 
 		switch (notification.getFeatureID(ComplexWait.class)) {
 			case DronesBehaviorPackage.COMPLEX_WAIT__REACTIONS:
+			case DronesBehaviorPackage.COMPLEX_WAIT__ON_TIMEOUT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -137,6 +164,76 @@ public class ComplexWaitItemProvider extends WaitItemProvider {
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__REACTIONS,
 				 DronesBehaviorFactory.eINSTANCE.createReaction()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createSequence()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createCompositeStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createCondition()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createLoop()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createAtomicStatement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createCooperate()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createMove()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createWait()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createSendSignal()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createSimpleWait()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createComplexWait()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createSendMap()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createScan()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 DronesBehaviorFactory.eINSTANCE.createCharge()));
 	}
 
 }
