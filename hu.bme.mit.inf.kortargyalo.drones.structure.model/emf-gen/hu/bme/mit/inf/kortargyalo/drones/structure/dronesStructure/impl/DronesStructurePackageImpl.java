@@ -19,6 +19,7 @@ import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapab
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Region;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role;
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScenarioBounds;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Task;
@@ -169,6 +170,13 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass scanningCapabilityEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -400,6 +408,15 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 */
 	public EReference getDroneType_Dimension() {
 		return (EReference)droneTypeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getDroneType_ScanningCapability() {
+		return (EReference)droneTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -776,6 +793,15 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getScanningCapability() {
+		return scanningCapabilityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DronesStructureFactory getDronesStructureFactory() {
 		return (DronesStructureFactory)getEFactoryInstance();
 	}
@@ -821,6 +847,7 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		createEReference(droneTypeEClass, DRONE_TYPE__PROVIDED_CAPABILITIES);
 		createEReference(droneTypeEClass, DRONE_TYPE__MOVEMENT_CAPABILITY);
 		createEReference(droneTypeEClass, DRONE_TYPE__DIMENSION);
+		createEReference(droneTypeEClass, DRONE_TYPE__SCANNING_CAPABILITY);
 
 		providedCapabilityEClass = createEClass(PROVIDED_CAPABILITY);
 		createEAttribute(providedCapabilityEClass, PROVIDED_CAPABILITY__MAXIMAL_VALUE);
@@ -877,6 +904,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
+		scanningCapabilityEClass = createEClass(SCANNING_CAPABILITY);
 	}
 
 	/**
@@ -921,6 +950,7 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		scenarioBoundsEClass.getESuperTypes().add(this.getAABB());
 		taskEClass.getESuperTypes().add(this.getNamedElement());
 		chargerEClass.getESuperTypes().add(this.getRegion());
+		scanningCapabilityEClass.getESuperTypes().add(this.getCapability());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dronesStructureEClass, DronesStructure.class, "DronesStructure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -945,6 +975,7 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEReference(getDroneType_ProvidedCapabilities(), this.getProvidedCapability(), this.getProvidedCapability_DroneType(), "providedCapabilities", null, 0, -1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneType_MovementCapability(), this.getProvidedCapability(), null, "movementCapability", null, 0, 1, DroneType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneType_Dimension(), this.getDimension(), null, "dimension", null, 1, 1, DroneType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDroneType_ScanningCapability(), this.getProvidedCapability(), null, "scanningCapability", null, 0, 1, DroneType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(providedCapabilityEClass, ProvidedCapability.class, "ProvidedCapability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProvidedCapability_MaximalValue(), ecorePackage.getEDouble(), "maximalValue", null, 0, 1, ProvidedCapability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1002,6 +1033,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(scanningCapabilityEClass, ScanningCapability.class, "ScanningCapability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -1041,6 +1074,12 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		   source, 
 		   new String[] {
 			 "patternFQN", "hu.bme.mit.inf.kortargyalo.drones.structure.queries.movementCapability"
+		   });	
+		addAnnotation
+		  (getDroneType_ScanningCapability(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "hu.bme.mit.inf.kortargyalo.drones.structure.queries.scanningCapability"
 		   });
 	}
 

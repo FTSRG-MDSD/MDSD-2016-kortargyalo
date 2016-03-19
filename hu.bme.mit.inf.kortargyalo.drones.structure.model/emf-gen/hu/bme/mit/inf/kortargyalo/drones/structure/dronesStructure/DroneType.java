@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getProvidedCapabilities <em>Provided Capabilities</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getMovementCapability <em>Movement Capability</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getDimension <em>Dimension</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getScanningCapability <em>Scanning Capability</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getDroneType()
@@ -163,5 +164,21 @@ public interface DroneType extends NamedElement {
 	 * @generated
 	 */
 	void setDimension(Dimension value);
+
+	/**
+	 * Returns the value of the '<em><b>Scanning Capability</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Scanning Capability</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Scanning Capability</em>' reference.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getDroneType_ScanningCapability()
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
+	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='hu.bme.mit.inf.kortargyalo.drones.structure.queries.scanningCapability'"
+	 * @generated
+	 */
+	ProvidedCapability getScanningCapability();
 
 } // DroneType

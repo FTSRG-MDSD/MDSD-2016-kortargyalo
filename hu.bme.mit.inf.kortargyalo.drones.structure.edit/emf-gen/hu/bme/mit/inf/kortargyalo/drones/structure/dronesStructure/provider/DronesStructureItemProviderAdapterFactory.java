@@ -463,6 +463,29 @@ public class DronesStructureItemProviderAdapterFactory extends DronesStructureAd
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ScanningCapabilityItemProvider scanningCapabilityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createScanningCapabilityAdapter() {
+		if (scanningCapabilityItemProvider == null) {
+			scanningCapabilityItemProvider = new ScanningCapabilityItemProvider(this);
+		}
+
+		return scanningCapabilityItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -578,6 +601,7 @@ public class DronesStructureItemProviderAdapterFactory extends DronesStructureAd
 		if (scenarioBoundsItemProvider != null) scenarioBoundsItemProvider.dispose();
 		if (taskItemProvider != null) taskItemProvider.dispose();
 		if (chargerItemProvider != null) chargerItemProvider.dispose();
+		if (scanningCapabilityItemProvider != null) scanningCapabilityItemProvider.dispose();
 	}
 
 }

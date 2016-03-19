@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'scenario'", "'signal'", "','", "'script'", "'{'", "'}'", "'wait'", "'timeout'", "'on'", "'move'", "'to'", "'send'", "'cooperate'", "'charge'", "'scan'", "'map'", "'-'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'scenario'", "'signal'", "','", "'script'", "'for'", "'{'", "'}'", "'wait'", "'timeout'", "'on'", "'move'", "'to'", "'send'", "'cooperate'", "'as'", "'charge'", "'scan'", "'map'", "'-'", "'.'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -35,6 +35,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -42,6 +43,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int RULE_INT=5;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -500,49 +502,48 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScript"
-    // InternalDroneScript.g:217:1: ruleScript returns [EObject current=null] : (otherlv_0= 'script' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleSequence ) ) ) ;
+    // InternalDroneScript.g:217:1: ruleScript returns [EObject current=null] : (otherlv_0= 'script' otherlv_1= 'for' ( (otherlv_2= RULE_ID ) ) ( (lv_statement_3_0= ruleSequence ) ) ) ;
     public final EObject ruleScript() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        EObject lv_statement_2_0 = null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        EObject lv_statement_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalDroneScript.g:223:2: ( (otherlv_0= 'script' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleSequence ) ) ) )
-            // InternalDroneScript.g:224:2: (otherlv_0= 'script' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleSequence ) ) )
+            // InternalDroneScript.g:223:2: ( (otherlv_0= 'script' otherlv_1= 'for' ( (otherlv_2= RULE_ID ) ) ( (lv_statement_3_0= ruleSequence ) ) ) )
+            // InternalDroneScript.g:224:2: (otherlv_0= 'script' otherlv_1= 'for' ( (otherlv_2= RULE_ID ) ) ( (lv_statement_3_0= ruleSequence ) ) )
             {
-            // InternalDroneScript.g:224:2: (otherlv_0= 'script' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleSequence ) ) )
-            // InternalDroneScript.g:225:3: otherlv_0= 'script' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleSequence ) )
+            // InternalDroneScript.g:224:2: (otherlv_0= 'script' otherlv_1= 'for' ( (otherlv_2= RULE_ID ) ) ( (lv_statement_3_0= ruleSequence ) ) )
+            // InternalDroneScript.g:225:3: otherlv_0= 'script' otherlv_1= 'for' ( (otherlv_2= RULE_ID ) ) ( (lv_statement_3_0= ruleSequence ) )
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_3); 
+            otherlv_0=(Token)match(input,14,FOLLOW_6); 
 
             			newLeafNode(otherlv_0, grammarAccess.getScriptAccess().getScriptKeyword_0());
             		
-            // InternalDroneScript.g:229:3: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:230:4: ( ruleQualifiedName )
+            otherlv_1=(Token)match(input,15,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getScriptAccess().getForKeyword_1());
+            		
+            // InternalDroneScript.g:233:3: ( (otherlv_2= RULE_ID ) )
+            // InternalDroneScript.g:234:4: (otherlv_2= RULE_ID )
             {
-            // InternalDroneScript.g:230:4: ( ruleQualifiedName )
-            // InternalDroneScript.g:231:5: ruleQualifiedName
+            // InternalDroneScript.g:234:4: (otherlv_2= RULE_ID )
+            // InternalDroneScript.g:235:5: otherlv_2= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getScriptRule());
             					}
             				
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_7); 
 
-            					newCompositeNode(grammarAccess.getScriptAccess().getDroneDroneCrossReference_1_0());
-            				
-            pushFollow(FOLLOW_6);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-
-            					afterParserOrEnumRuleCall();
+            					newLeafNode(otherlv_2, grammarAccess.getScriptAccess().getDroneDroneCrossReference_2_0());
             				
 
             }
@@ -550,17 +551,17 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDroneScript.g:245:3: ( (lv_statement_2_0= ruleSequence ) )
-            // InternalDroneScript.g:246:4: (lv_statement_2_0= ruleSequence )
+            // InternalDroneScript.g:246:3: ( (lv_statement_3_0= ruleSequence ) )
+            // InternalDroneScript.g:247:4: (lv_statement_3_0= ruleSequence )
             {
-            // InternalDroneScript.g:246:4: (lv_statement_2_0= ruleSequence )
-            // InternalDroneScript.g:247:5: lv_statement_2_0= ruleSequence
+            // InternalDroneScript.g:247:4: (lv_statement_3_0= ruleSequence )
+            // InternalDroneScript.g:248:5: lv_statement_3_0= ruleSequence
             {
 
-            					newCompositeNode(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_3_0());
             				
             pushFollow(FOLLOW_2);
-            lv_statement_2_0=ruleSequence();
+            lv_statement_3_0=ruleSequence();
 
             state._fsp--;
 
@@ -571,7 +572,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"statement",
-            						lv_statement_2_0,
+            						lv_statement_3_0,
             						"hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.Sequence");
             					afterParserOrEnumRuleCall();
             				
@@ -604,7 +605,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStatement"
-    // InternalDroneScript.g:268:1: entryRuleStatement returns [EObject current=null] : iv_ruleStatement= ruleStatement EOF ;
+    // InternalDroneScript.g:269:1: entryRuleStatement returns [EObject current=null] : iv_ruleStatement= ruleStatement EOF ;
     public final EObject entryRuleStatement() throws RecognitionException {
         EObject current = null;
 
@@ -612,8 +613,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:268:50: (iv_ruleStatement= ruleStatement EOF )
-            // InternalDroneScript.g:269:2: iv_ruleStatement= ruleStatement EOF
+            // InternalDroneScript.g:269:50: (iv_ruleStatement= ruleStatement EOF )
+            // InternalDroneScript.g:270:2: iv_ruleStatement= ruleStatement EOF
             {
              newCompositeNode(grammarAccess.getStatementRule()); 
             pushFollow(FOLLOW_1);
@@ -640,7 +641,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatement"
-    // InternalDroneScript.g:275:1: ruleStatement returns [EObject current=null] : (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap ) ;
+    // InternalDroneScript.g:276:1: ruleStatement returns [EObject current=null] : (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap ) ;
     public final EObject ruleStatement() throws RecognitionException {
         EObject current = null;
 
@@ -667,15 +668,15 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:281:2: ( (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap ) )
-            // InternalDroneScript.g:282:2: (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap )
+            // InternalDroneScript.g:282:2: ( (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap ) )
+            // InternalDroneScript.g:283:2: (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap )
             {
-            // InternalDroneScript.g:282:2: (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap )
+            // InternalDroneScript.g:283:2: (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap )
             int alt3=9;
             alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
-                    // InternalDroneScript.g:283:3: this_Sequence_0= ruleSequence
+                    // InternalDroneScript.g:284:3: this_Sequence_0= ruleSequence
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getSequenceParserRuleCall_0());
@@ -693,7 +694,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalDroneScript.g:292:3: this_SimpleWait_1= ruleSimpleWait
+                    // InternalDroneScript.g:293:3: this_SimpleWait_1= ruleSimpleWait
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getSimpleWaitParserRuleCall_1());
@@ -711,7 +712,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalDroneScript.g:301:3: this_ComplexWait_2= ruleComplexWait
+                    // InternalDroneScript.g:302:3: this_ComplexWait_2= ruleComplexWait
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getComplexWaitParserRuleCall_2());
@@ -729,7 +730,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalDroneScript.g:310:3: this_Move_3= ruleMove
+                    // InternalDroneScript.g:311:3: this_Move_3= ruleMove
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getMoveParserRuleCall_3());
@@ -747,7 +748,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalDroneScript.g:319:3: this_SendSignal_4= ruleSendSignal
+                    // InternalDroneScript.g:320:3: this_SendSignal_4= ruleSendSignal
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getSendSignalParserRuleCall_4());
@@ -765,7 +766,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalDroneScript.g:328:3: this_Cooperate_5= ruleCooperate
+                    // InternalDroneScript.g:329:3: this_Cooperate_5= ruleCooperate
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getCooperateParserRuleCall_5());
@@ -783,7 +784,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalDroneScript.g:337:3: this_Charge_6= ruleCharge
+                    // InternalDroneScript.g:338:3: this_Charge_6= ruleCharge
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getChargeParserRuleCall_6());
@@ -801,7 +802,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalDroneScript.g:346:3: this_Scan_7= ruleScan
+                    // InternalDroneScript.g:347:3: this_Scan_7= ruleScan
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getScanParserRuleCall_7());
@@ -819,7 +820,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalDroneScript.g:355:3: this_SendMap_8= ruleSendMap
+                    // InternalDroneScript.g:356:3: this_SendMap_8= ruleSendMap
                     {
 
                     			newCompositeNode(grammarAccess.getStatementAccess().getSendMapParserRuleCall_8());
@@ -859,7 +860,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSequence"
-    // InternalDroneScript.g:367:1: entryRuleSequence returns [EObject current=null] : iv_ruleSequence= ruleSequence EOF ;
+    // InternalDroneScript.g:368:1: entryRuleSequence returns [EObject current=null] : iv_ruleSequence= ruleSequence EOF ;
     public final EObject entryRuleSequence() throws RecognitionException {
         EObject current = null;
 
@@ -867,8 +868,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:367:49: (iv_ruleSequence= ruleSequence EOF )
-            // InternalDroneScript.g:368:2: iv_ruleSequence= ruleSequence EOF
+            // InternalDroneScript.g:368:49: (iv_ruleSequence= ruleSequence EOF )
+            // InternalDroneScript.g:369:2: iv_ruleSequence= ruleSequence EOF
             {
              newCompositeNode(grammarAccess.getSequenceRule()); 
             pushFollow(FOLLOW_1);
@@ -895,7 +896,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSequence"
-    // InternalDroneScript.g:374:1: ruleSequence returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' ) ;
+    // InternalDroneScript.g:375:1: ruleSequence returns [EObject current=null] : ( () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' ) ;
     public final EObject ruleSequence() throws RecognitionException {
         EObject current = null;
 
@@ -908,14 +909,14 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:380:2: ( ( () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' ) )
-            // InternalDroneScript.g:381:2: ( () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' )
+            // InternalDroneScript.g:381:2: ( ( () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' ) )
+            // InternalDroneScript.g:382:2: ( () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' )
             {
-            // InternalDroneScript.g:381:2: ( () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' )
-            // InternalDroneScript.g:382:3: () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}'
+            // InternalDroneScript.g:382:2: ( () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}' )
+            // InternalDroneScript.g:383:3: () otherlv_1= '{' ( (lv_statements_2_0= ruleStatement ) )* otherlv_3= '}'
             {
-            // InternalDroneScript.g:382:3: ()
-            // InternalDroneScript.g:383:4: 
+            // InternalDroneScript.g:383:3: ()
+            // InternalDroneScript.g:384:4: 
             {
 
             				current = forceCreateModelElement(
@@ -925,32 +926,32 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,15,FOLLOW_7); 
+            otherlv_1=(Token)match(input,16,FOLLOW_8); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSequenceAccess().getLeftCurlyBracketKeyword_1());
             		
-            // InternalDroneScript.g:393:3: ( (lv_statements_2_0= ruleStatement ) )*
+            // InternalDroneScript.g:394:3: ( (lv_statements_2_0= ruleStatement ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==15||LA4_0==17||LA4_0==20||(LA4_0>=22 && LA4_0<=25)) ) {
+                if ( (LA4_0==16||LA4_0==18||LA4_0==21||(LA4_0>=23 && LA4_0<=24)||(LA4_0>=26 && LA4_0<=27)) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalDroneScript.g:394:4: (lv_statements_2_0= ruleStatement )
+            	    // InternalDroneScript.g:395:4: (lv_statements_2_0= ruleStatement )
             	    {
-            	    // InternalDroneScript.g:394:4: (lv_statements_2_0= ruleStatement )
-            	    // InternalDroneScript.g:395:5: lv_statements_2_0= ruleStatement
+            	    // InternalDroneScript.g:395:4: (lv_statements_2_0= ruleStatement )
+            	    // InternalDroneScript.g:396:5: lv_statements_2_0= ruleStatement
             	    {
 
             	    					newCompositeNode(grammarAccess.getSequenceAccess().getStatementsStatementParserRuleCall_2_0());
             	    				
-            	    pushFollow(FOLLOW_7);
+            	    pushFollow(FOLLOW_8);
             	    lv_statements_2_0=ruleStatement();
 
             	    state._fsp--;
@@ -978,7 +979,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,16,FOLLOW_2); 
+            otherlv_3=(Token)match(input,17,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSequenceAccess().getRightCurlyBracketKeyword_3());
             		
@@ -1005,7 +1006,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSimpleWait"
-    // InternalDroneScript.g:420:1: entryRuleSimpleWait returns [EObject current=null] : iv_ruleSimpleWait= ruleSimpleWait EOF ;
+    // InternalDroneScript.g:421:1: entryRuleSimpleWait returns [EObject current=null] : iv_ruleSimpleWait= ruleSimpleWait EOF ;
     public final EObject entryRuleSimpleWait() throws RecognitionException {
         EObject current = null;
 
@@ -1013,8 +1014,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:420:51: (iv_ruleSimpleWait= ruleSimpleWait EOF )
-            // InternalDroneScript.g:421:2: iv_ruleSimpleWait= ruleSimpleWait EOF
+            // InternalDroneScript.g:421:51: (iv_ruleSimpleWait= ruleSimpleWait EOF )
+            // InternalDroneScript.g:422:2: iv_ruleSimpleWait= ruleSimpleWait EOF
             {
              newCompositeNode(grammarAccess.getSimpleWaitRule()); 
             pushFollow(FOLLOW_1);
@@ -1041,33 +1042,38 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleWait"
-    // InternalDroneScript.g:427:1: ruleSimpleWait returns [EObject current=null] : (otherlv_0= 'wait' ( ( ruleQualifiedName ) ) (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? ) ;
+    // InternalDroneScript.g:428:1: ruleSimpleWait returns [EObject current=null] : (otherlv_0= 'wait' otherlv_1= 'for' ( ( ruleQualifiedName ) ) (otherlv_3= 'timeout' ( (lv_timeout_4_0= RULE_INT ) ) )? ) ;
     public final EObject ruleSimpleWait() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_2=null;
-        Token lv_timeout_3_0=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token lv_timeout_4_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalDroneScript.g:433:2: ( (otherlv_0= 'wait' ( ( ruleQualifiedName ) ) (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? ) )
-            // InternalDroneScript.g:434:2: (otherlv_0= 'wait' ( ( ruleQualifiedName ) ) (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? )
+            // InternalDroneScript.g:434:2: ( (otherlv_0= 'wait' otherlv_1= 'for' ( ( ruleQualifiedName ) ) (otherlv_3= 'timeout' ( (lv_timeout_4_0= RULE_INT ) ) )? ) )
+            // InternalDroneScript.g:435:2: (otherlv_0= 'wait' otherlv_1= 'for' ( ( ruleQualifiedName ) ) (otherlv_3= 'timeout' ( (lv_timeout_4_0= RULE_INT ) ) )? )
             {
-            // InternalDroneScript.g:434:2: (otherlv_0= 'wait' ( ( ruleQualifiedName ) ) (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? )
-            // InternalDroneScript.g:435:3: otherlv_0= 'wait' ( ( ruleQualifiedName ) ) (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )?
+            // InternalDroneScript.g:435:2: (otherlv_0= 'wait' otherlv_1= 'for' ( ( ruleQualifiedName ) ) (otherlv_3= 'timeout' ( (lv_timeout_4_0= RULE_INT ) ) )? )
+            // InternalDroneScript.g:436:3: otherlv_0= 'wait' otherlv_1= 'for' ( ( ruleQualifiedName ) ) (otherlv_3= 'timeout' ( (lv_timeout_4_0= RULE_INT ) ) )?
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_3); 
+            otherlv_0=(Token)match(input,18,FOLLOW_6); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSimpleWaitAccess().getWaitKeyword_0());
             		
-            // InternalDroneScript.g:439:3: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:440:4: ( ruleQualifiedName )
+            otherlv_1=(Token)match(input,15,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getSimpleWaitAccess().getForKeyword_1());
+            		
+            // InternalDroneScript.g:444:3: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:445:4: ( ruleQualifiedName )
             {
-            // InternalDroneScript.g:440:4: ( ruleQualifiedName )
-            // InternalDroneScript.g:441:5: ruleQualifiedName
+            // InternalDroneScript.g:445:4: ( ruleQualifiedName )
+            // InternalDroneScript.g:446:5: ruleQualifiedName
             {
 
             					if (current==null) {
@@ -1075,9 +1081,9 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
             					}
             				
 
-            					newCompositeNode(grammarAccess.getSimpleWaitAccess().getSignalSignalCrossReference_1_0());
+            					newCompositeNode(grammarAccess.getSimpleWaitAccess().getSignalSignalCrossReference_2_0());
             				
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_9);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1091,30 +1097,30 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDroneScript.g:455:3: (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )?
+            // InternalDroneScript.g:460:3: (otherlv_3= 'timeout' ( (lv_timeout_4_0= RULE_INT ) ) )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==18) ) {
+            if ( (LA5_0==19) ) {
                 alt5=1;
             }
             switch (alt5) {
                 case 1 :
-                    // InternalDroneScript.g:456:4: otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) )
+                    // InternalDroneScript.g:461:4: otherlv_3= 'timeout' ( (lv_timeout_4_0= RULE_INT ) )
                     {
-                    otherlv_2=(Token)match(input,18,FOLLOW_9); 
+                    otherlv_3=(Token)match(input,19,FOLLOW_10); 
 
-                    				newLeafNode(otherlv_2, grammarAccess.getSimpleWaitAccess().getTimeoutKeyword_2_0());
+                    				newLeafNode(otherlv_3, grammarAccess.getSimpleWaitAccess().getTimeoutKeyword_3_0());
                     			
-                    // InternalDroneScript.g:460:4: ( (lv_timeout_3_0= RULE_INT ) )
-                    // InternalDroneScript.g:461:5: (lv_timeout_3_0= RULE_INT )
+                    // InternalDroneScript.g:465:4: ( (lv_timeout_4_0= RULE_INT ) )
+                    // InternalDroneScript.g:466:5: (lv_timeout_4_0= RULE_INT )
                     {
-                    // InternalDroneScript.g:461:5: (lv_timeout_3_0= RULE_INT )
-                    // InternalDroneScript.g:462:6: lv_timeout_3_0= RULE_INT
+                    // InternalDroneScript.g:466:5: (lv_timeout_4_0= RULE_INT )
+                    // InternalDroneScript.g:467:6: lv_timeout_4_0= RULE_INT
                     {
-                    lv_timeout_3_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+                    lv_timeout_4_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
-                    						newLeafNode(lv_timeout_3_0, grammarAccess.getSimpleWaitAccess().getTimeoutINTTerminalRuleCall_2_1_0());
+                    						newLeafNode(lv_timeout_4_0, grammarAccess.getSimpleWaitAccess().getTimeoutINTTerminalRuleCall_3_1_0());
                     					
 
                     						if (current==null) {
@@ -1123,7 +1129,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                     						setWithLastConsumed(
                     							current,
                     							"timeout",
-                    							lv_timeout_3_0,
+                    							lv_timeout_4_0,
                     							"org.eclipse.xtext.common.Terminals.INT");
                     					
 
@@ -1161,7 +1167,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComplexWait"
-    // InternalDroneScript.g:483:1: entryRuleComplexWait returns [EObject current=null] : iv_ruleComplexWait= ruleComplexWait EOF ;
+    // InternalDroneScript.g:488:1: entryRuleComplexWait returns [EObject current=null] : iv_ruleComplexWait= ruleComplexWait EOF ;
     public final EObject entryRuleComplexWait() throws RecognitionException {
         EObject current = null;
 
@@ -1169,8 +1175,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:483:52: (iv_ruleComplexWait= ruleComplexWait EOF )
-            // InternalDroneScript.g:484:2: iv_ruleComplexWait= ruleComplexWait EOF
+            // InternalDroneScript.g:488:52: (iv_ruleComplexWait= ruleComplexWait EOF )
+            // InternalDroneScript.g:489:2: iv_ruleComplexWait= ruleComplexWait EOF
             {
              newCompositeNode(grammarAccess.getComplexWaitRule()); 
             pushFollow(FOLLOW_1);
@@ -1197,7 +1203,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComplexWait"
-    // InternalDroneScript.g:490:1: ruleComplexWait returns [EObject current=null] : ( () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}' ) ;
+    // InternalDroneScript.g:495:1: ruleComplexWait returns [EObject current=null] : ( () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}' ) ;
     public final EObject ruleComplexWait() throws RecognitionException {
         EObject current = null;
 
@@ -1217,14 +1223,14 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:496:2: ( ( () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}' ) )
-            // InternalDroneScript.g:497:2: ( () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}' )
+            // InternalDroneScript.g:501:2: ( ( () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}' ) )
+            // InternalDroneScript.g:502:2: ( () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}' )
             {
-            // InternalDroneScript.g:497:2: ( () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}' )
-            // InternalDroneScript.g:498:3: () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}'
+            // InternalDroneScript.g:502:2: ( () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}' )
+            // InternalDroneScript.g:503:3: () otherlv_1= 'wait' (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )? otherlv_4= '{' ( (lv_reactions_5_0= ruleReaction ) )* (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )? otherlv_9= '}'
             {
-            // InternalDroneScript.g:498:3: ()
-            // InternalDroneScript.g:499:4: 
+            // InternalDroneScript.g:503:3: ()
+            // InternalDroneScript.g:504:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1234,32 +1240,32 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,17,FOLLOW_10); 
+            otherlv_1=(Token)match(input,18,FOLLOW_11); 
 
             			newLeafNode(otherlv_1, grammarAccess.getComplexWaitAccess().getWaitKeyword_1());
             		
-            // InternalDroneScript.g:509:3: (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )?
+            // InternalDroneScript.g:514:3: (otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) ) )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==18) ) {
+            if ( (LA6_0==19) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
-                    // InternalDroneScript.g:510:4: otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) )
+                    // InternalDroneScript.g:515:4: otherlv_2= 'timeout' ( (lv_timeout_3_0= RULE_INT ) )
                     {
-                    otherlv_2=(Token)match(input,18,FOLLOW_9); 
+                    otherlv_2=(Token)match(input,19,FOLLOW_10); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getComplexWaitAccess().getTimeoutKeyword_2_0());
                     			
-                    // InternalDroneScript.g:514:4: ( (lv_timeout_3_0= RULE_INT ) )
-                    // InternalDroneScript.g:515:5: (lv_timeout_3_0= RULE_INT )
+                    // InternalDroneScript.g:519:4: ( (lv_timeout_3_0= RULE_INT ) )
+                    // InternalDroneScript.g:520:5: (lv_timeout_3_0= RULE_INT )
                     {
-                    // InternalDroneScript.g:515:5: (lv_timeout_3_0= RULE_INT )
-                    // InternalDroneScript.g:516:6: lv_timeout_3_0= RULE_INT
+                    // InternalDroneScript.g:520:5: (lv_timeout_3_0= RULE_INT )
+                    // InternalDroneScript.g:521:6: lv_timeout_3_0= RULE_INT
                     {
-                    lv_timeout_3_0=(Token)match(input,RULE_INT,FOLLOW_6); 
+                    lv_timeout_3_0=(Token)match(input,RULE_INT,FOLLOW_7); 
 
                     						newLeafNode(lv_timeout_3_0, grammarAccess.getComplexWaitAccess().getTimeoutINTTerminalRuleCall_2_1_0());
                     					
@@ -1285,17 +1291,17 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,15,FOLLOW_11); 
+            otherlv_4=(Token)match(input,16,FOLLOW_12); 
 
             			newLeafNode(otherlv_4, grammarAccess.getComplexWaitAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalDroneScript.g:537:3: ( (lv_reactions_5_0= ruleReaction ) )*
+            // InternalDroneScript.g:542:3: ( (lv_reactions_5_0= ruleReaction ) )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==19) ) {
+                if ( (LA7_0==20) ) {
                     int LA7_1 = input.LA(2);
 
                     if ( (LA7_1==RULE_ID) ) {
@@ -1308,15 +1314,15 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalDroneScript.g:538:4: (lv_reactions_5_0= ruleReaction )
+            	    // InternalDroneScript.g:543:4: (lv_reactions_5_0= ruleReaction )
             	    {
-            	    // InternalDroneScript.g:538:4: (lv_reactions_5_0= ruleReaction )
-            	    // InternalDroneScript.g:539:5: lv_reactions_5_0= ruleReaction
+            	    // InternalDroneScript.g:543:4: (lv_reactions_5_0= ruleReaction )
+            	    // InternalDroneScript.g:544:5: lv_reactions_5_0= ruleReaction
             	    {
 
             	    					newCompositeNode(grammarAccess.getComplexWaitAccess().getReactionsReactionParserRuleCall_4_0());
             	    				
-            	    pushFollow(FOLLOW_11);
+            	    pushFollow(FOLLOW_12);
             	    lv_reactions_5_0=ruleReaction();
 
             	    state._fsp--;
@@ -1344,35 +1350,35 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalDroneScript.g:556:3: (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )?
+            // InternalDroneScript.g:561:3: (otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==19) ) {
+            if ( (LA8_0==20) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
-                    // InternalDroneScript.g:557:4: otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) )
+                    // InternalDroneScript.g:562:4: otherlv_6= 'on' otherlv_7= 'timeout' ( (lv_onTimeout_8_0= ruleStatement ) )
                     {
-                    otherlv_6=(Token)match(input,19,FOLLOW_12); 
+                    otherlv_6=(Token)match(input,20,FOLLOW_13); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getComplexWaitAccess().getOnKeyword_5_0());
                     			
-                    otherlv_7=(Token)match(input,18,FOLLOW_13); 
+                    otherlv_7=(Token)match(input,19,FOLLOW_14); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getComplexWaitAccess().getTimeoutKeyword_5_1());
                     			
-                    // InternalDroneScript.g:565:4: ( (lv_onTimeout_8_0= ruleStatement ) )
-                    // InternalDroneScript.g:566:5: (lv_onTimeout_8_0= ruleStatement )
+                    // InternalDroneScript.g:570:4: ( (lv_onTimeout_8_0= ruleStatement ) )
+                    // InternalDroneScript.g:571:5: (lv_onTimeout_8_0= ruleStatement )
                     {
-                    // InternalDroneScript.g:566:5: (lv_onTimeout_8_0= ruleStatement )
-                    // InternalDroneScript.g:567:6: lv_onTimeout_8_0= ruleStatement
+                    // InternalDroneScript.g:571:5: (lv_onTimeout_8_0= ruleStatement )
+                    // InternalDroneScript.g:572:6: lv_onTimeout_8_0= ruleStatement
                     {
 
                     						newCompositeNode(grammarAccess.getComplexWaitAccess().getOnTimeoutStatementParserRuleCall_5_2_0());
                     					
-                    pushFollow(FOLLOW_14);
+                    pushFollow(FOLLOW_15);
                     lv_onTimeout_8_0=ruleStatement();
 
                     state._fsp--;
@@ -1400,7 +1406,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,16,FOLLOW_2); 
+            otherlv_9=(Token)match(input,17,FOLLOW_2); 
 
             			newLeafNode(otherlv_9, grammarAccess.getComplexWaitAccess().getRightCurlyBracketKeyword_6());
             		
@@ -1427,7 +1433,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleReaction"
-    // InternalDroneScript.g:593:1: entryRuleReaction returns [EObject current=null] : iv_ruleReaction= ruleReaction EOF ;
+    // InternalDroneScript.g:598:1: entryRuleReaction returns [EObject current=null] : iv_ruleReaction= ruleReaction EOF ;
     public final EObject entryRuleReaction() throws RecognitionException {
         EObject current = null;
 
@@ -1435,8 +1441,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:593:49: (iv_ruleReaction= ruleReaction EOF )
-            // InternalDroneScript.g:594:2: iv_ruleReaction= ruleReaction EOF
+            // InternalDroneScript.g:598:49: (iv_ruleReaction= ruleReaction EOF )
+            // InternalDroneScript.g:599:2: iv_ruleReaction= ruleReaction EOF
             {
              newCompositeNode(grammarAccess.getReactionRule()); 
             pushFollow(FOLLOW_1);
@@ -1463,7 +1469,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReaction"
-    // InternalDroneScript.g:600:1: ruleReaction returns [EObject current=null] : (otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) ) ) ;
+    // InternalDroneScript.g:605:1: ruleReaction returns [EObject current=null] : (otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) ) ) ;
     public final EObject ruleReaction() throws RecognitionException {
         EObject current = null;
 
@@ -1475,21 +1481,21 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:606:2: ( (otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) ) ) )
-            // InternalDroneScript.g:607:2: (otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) ) )
+            // InternalDroneScript.g:611:2: ( (otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) ) ) )
+            // InternalDroneScript.g:612:2: (otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) ) )
             {
-            // InternalDroneScript.g:607:2: (otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) ) )
-            // InternalDroneScript.g:608:3: otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) )
+            // InternalDroneScript.g:612:2: (otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) ) )
+            // InternalDroneScript.g:613:3: otherlv_0= 'on' ( ( ruleQualifiedName ) ) ( (lv_statement_2_0= ruleStatement ) )
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_3); 
+            otherlv_0=(Token)match(input,20,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getReactionAccess().getOnKeyword_0());
             		
-            // InternalDroneScript.g:612:3: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:613:4: ( ruleQualifiedName )
+            // InternalDroneScript.g:617:3: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:618:4: ( ruleQualifiedName )
             {
-            // InternalDroneScript.g:613:4: ( ruleQualifiedName )
-            // InternalDroneScript.g:614:5: ruleQualifiedName
+            // InternalDroneScript.g:618:4: ( ruleQualifiedName )
+            // InternalDroneScript.g:619:5: ruleQualifiedName
             {
 
             					if (current==null) {
@@ -1499,7 +1505,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getReactionAccess().getSignalSignalCrossReference_1_0());
             				
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1513,11 +1519,11 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDroneScript.g:628:3: ( (lv_statement_2_0= ruleStatement ) )
-            // InternalDroneScript.g:629:4: (lv_statement_2_0= ruleStatement )
+            // InternalDroneScript.g:633:3: ( (lv_statement_2_0= ruleStatement ) )
+            // InternalDroneScript.g:634:4: (lv_statement_2_0= ruleStatement )
             {
-            // InternalDroneScript.g:629:4: (lv_statement_2_0= ruleStatement )
-            // InternalDroneScript.g:630:5: lv_statement_2_0= ruleStatement
+            // InternalDroneScript.g:634:4: (lv_statement_2_0= ruleStatement )
+            // InternalDroneScript.g:635:5: lv_statement_2_0= ruleStatement
             {
 
             					newCompositeNode(grammarAccess.getReactionAccess().getStatementStatementParserRuleCall_2_0());
@@ -1567,7 +1573,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMove"
-    // InternalDroneScript.g:651:1: entryRuleMove returns [EObject current=null] : iv_ruleMove= ruleMove EOF ;
+    // InternalDroneScript.g:656:1: entryRuleMove returns [EObject current=null] : iv_ruleMove= ruleMove EOF ;
     public final EObject entryRuleMove() throws RecognitionException {
         EObject current = null;
 
@@ -1575,8 +1581,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:651:45: (iv_ruleMove= ruleMove EOF )
-            // InternalDroneScript.g:652:2: iv_ruleMove= ruleMove EOF
+            // InternalDroneScript.g:656:45: (iv_ruleMove= ruleMove EOF )
+            // InternalDroneScript.g:657:2: iv_ruleMove= ruleMove EOF
             {
              newCompositeNode(grammarAccess.getMoveRule()); 
             pushFollow(FOLLOW_1);
@@ -1603,7 +1609,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMove"
-    // InternalDroneScript.g:658:1: ruleMove returns [EObject current=null] : (otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) ) ) ;
+    // InternalDroneScript.g:663:1: ruleMove returns [EObject current=null] : (otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) ) ) ;
     public final EObject ruleMove() throws RecognitionException {
         EObject current = null;
 
@@ -1616,25 +1622,25 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:664:2: ( (otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) ) ) )
-            // InternalDroneScript.g:665:2: (otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) ) )
+            // InternalDroneScript.g:669:2: ( (otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) ) ) )
+            // InternalDroneScript.g:670:2: (otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) ) )
             {
-            // InternalDroneScript.g:665:2: (otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) ) )
-            // InternalDroneScript.g:666:3: otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) )
+            // InternalDroneScript.g:670:2: (otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) ) )
+            // InternalDroneScript.g:671:3: otherlv_0= 'move' otherlv_1= 'to' ( (lv_destination_2_0= rulePosition ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_15); 
+            otherlv_0=(Token)match(input,21,FOLLOW_16); 
 
             			newLeafNode(otherlv_0, grammarAccess.getMoveAccess().getMoveKeyword_0());
             		
-            otherlv_1=(Token)match(input,21,FOLLOW_16); 
+            otherlv_1=(Token)match(input,22,FOLLOW_17); 
 
             			newLeafNode(otherlv_1, grammarAccess.getMoveAccess().getToKeyword_1());
             		
-            // InternalDroneScript.g:674:3: ( (lv_destination_2_0= rulePosition ) )
-            // InternalDroneScript.g:675:4: (lv_destination_2_0= rulePosition )
+            // InternalDroneScript.g:679:3: ( (lv_destination_2_0= rulePosition ) )
+            // InternalDroneScript.g:680:4: (lv_destination_2_0= rulePosition )
             {
-            // InternalDroneScript.g:675:4: (lv_destination_2_0= rulePosition )
-            // InternalDroneScript.g:676:5: lv_destination_2_0= rulePosition
+            // InternalDroneScript.g:680:4: (lv_destination_2_0= rulePosition )
+            // InternalDroneScript.g:681:5: lv_destination_2_0= rulePosition
             {
 
             					newCompositeNode(grammarAccess.getMoveAccess().getDestinationPositionParserRuleCall_2_0());
@@ -1684,7 +1690,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSendSignal"
-    // InternalDroneScript.g:697:1: entryRuleSendSignal returns [EObject current=null] : iv_ruleSendSignal= ruleSendSignal EOF ;
+    // InternalDroneScript.g:702:1: entryRuleSendSignal returns [EObject current=null] : iv_ruleSendSignal= ruleSendSignal EOF ;
     public final EObject entryRuleSendSignal() throws RecognitionException {
         EObject current = null;
 
@@ -1692,8 +1698,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:697:51: (iv_ruleSendSignal= ruleSendSignal EOF )
-            // InternalDroneScript.g:698:2: iv_ruleSendSignal= ruleSendSignal EOF
+            // InternalDroneScript.g:702:51: (iv_ruleSendSignal= ruleSendSignal EOF )
+            // InternalDroneScript.g:703:2: iv_ruleSendSignal= ruleSendSignal EOF
             {
              newCompositeNode(grammarAccess.getSendSignalRule()); 
             pushFollow(FOLLOW_1);
@@ -1720,32 +1726,33 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSendSignal"
-    // InternalDroneScript.g:704:1: ruleSendSignal returns [EObject current=null] : (otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( ( ruleQualifiedName ) ) ) ;
+    // InternalDroneScript.g:709:1: ruleSendSignal returns [EObject current=null] : (otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleSendSignal() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_2=null;
+        Token otherlv_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalDroneScript.g:710:2: ( (otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( ( ruleQualifiedName ) ) ) )
-            // InternalDroneScript.g:711:2: (otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( ( ruleQualifiedName ) ) )
+            // InternalDroneScript.g:715:2: ( (otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalDroneScript.g:716:2: (otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalDroneScript.g:711:2: (otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:712:3: otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:716:2: (otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( (otherlv_3= RULE_ID ) ) )
+            // InternalDroneScript.g:717:3: otherlv_0= 'send' ( ( ruleQualifiedName ) ) otherlv_2= 'to' ( (otherlv_3= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_3); 
+            otherlv_0=(Token)match(input,23,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSendSignalAccess().getSendKeyword_0());
             		
-            // InternalDroneScript.g:716:3: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:717:4: ( ruleQualifiedName )
+            // InternalDroneScript.g:721:3: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:722:4: ( ruleQualifiedName )
             {
-            // InternalDroneScript.g:717:4: ( ruleQualifiedName )
-            // InternalDroneScript.g:718:5: ruleQualifiedName
+            // InternalDroneScript.g:722:4: ( ruleQualifiedName )
+            // InternalDroneScript.g:723:5: ruleQualifiedName
             {
 
             					if (current==null) {
@@ -1755,7 +1762,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getSendSignalAccess().getSignalSignalCrossReference_1_0());
             				
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1769,31 +1776,24 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,21,FOLLOW_3); 
+            otherlv_2=(Token)match(input,22,FOLLOW_3); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSendSignalAccess().getToKeyword_2());
             		
-            // InternalDroneScript.g:736:3: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:737:4: ( ruleQualifiedName )
+            // InternalDroneScript.g:741:3: ( (otherlv_3= RULE_ID ) )
+            // InternalDroneScript.g:742:4: (otherlv_3= RULE_ID )
             {
-            // InternalDroneScript.g:737:4: ( ruleQualifiedName )
-            // InternalDroneScript.g:738:5: ruleQualifiedName
+            // InternalDroneScript.g:742:4: (otherlv_3= RULE_ID )
+            // InternalDroneScript.g:743:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getSendSignalRule());
             					}
             				
+            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newCompositeNode(grammarAccess.getSendSignalAccess().getRecipentDroneCrossReference_3_0());
-            				
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-
-            					afterParserOrEnumRuleCall();
+            					newLeafNode(otherlv_3, grammarAccess.getSendSignalAccess().getRecipentDroneCrossReference_3_0());
             				
 
             }
@@ -1824,7 +1824,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCooperate"
-    // InternalDroneScript.g:756:1: entryRuleCooperate returns [EObject current=null] : iv_ruleCooperate= ruleCooperate EOF ;
+    // InternalDroneScript.g:758:1: entryRuleCooperate returns [EObject current=null] : iv_ruleCooperate= ruleCooperate EOF ;
     public final EObject entryRuleCooperate() throws RecognitionException {
         EObject current = null;
 
@@ -1832,8 +1832,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:756:50: (iv_ruleCooperate= ruleCooperate EOF )
-            // InternalDroneScript.g:757:2: iv_ruleCooperate= ruleCooperate EOF
+            // InternalDroneScript.g:758:50: (iv_ruleCooperate= ruleCooperate EOF )
+            // InternalDroneScript.g:759:2: iv_ruleCooperate= ruleCooperate EOF
             {
              newCompositeNode(grammarAccess.getCooperateRule()); 
             pushFollow(FOLLOW_1);
@@ -1860,47 +1860,73 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCooperate"
-    // InternalDroneScript.g:763:1: ruleCooperate returns [EObject current=null] : (otherlv_0= 'cooperate' ( ( ruleQualifiedName ) ) ) ;
+    // InternalDroneScript.g:765:1: ruleCooperate returns [EObject current=null] : (otherlv_0= 'cooperate' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'as' ( (otherlv_4= RULE_ID ) ) ) ;
     public final EObject ruleCooperate() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
+        Token otherlv_1=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
 
 
         	enterRule();
 
         try {
-            // InternalDroneScript.g:769:2: ( (otherlv_0= 'cooperate' ( ( ruleQualifiedName ) ) ) )
-            // InternalDroneScript.g:770:2: (otherlv_0= 'cooperate' ( ( ruleQualifiedName ) ) )
+            // InternalDroneScript.g:771:2: ( (otherlv_0= 'cooperate' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'as' ( (otherlv_4= RULE_ID ) ) ) )
+            // InternalDroneScript.g:772:2: (otherlv_0= 'cooperate' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'as' ( (otherlv_4= RULE_ID ) ) )
             {
-            // InternalDroneScript.g:770:2: (otherlv_0= 'cooperate' ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:771:3: otherlv_0= 'cooperate' ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:772:2: (otherlv_0= 'cooperate' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'as' ( (otherlv_4= RULE_ID ) ) )
+            // InternalDroneScript.g:773:3: otherlv_0= 'cooperate' otherlv_1= 'on' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'as' ( (otherlv_4= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_3); 
+            otherlv_0=(Token)match(input,24,FOLLOW_18); 
 
             			newLeafNode(otherlv_0, grammarAccess.getCooperateAccess().getCooperateKeyword_0());
             		
-            // InternalDroneScript.g:775:3: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:776:4: ( ruleQualifiedName )
+            otherlv_1=(Token)match(input,20,FOLLOW_3); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getCooperateAccess().getOnKeyword_1());
+            		
+            // InternalDroneScript.g:781:3: ( (otherlv_2= RULE_ID ) )
+            // InternalDroneScript.g:782:4: (otherlv_2= RULE_ID )
             {
-            // InternalDroneScript.g:776:4: ( ruleQualifiedName )
-            // InternalDroneScript.g:777:5: ruleQualifiedName
+            // InternalDroneScript.g:782:4: (otherlv_2= RULE_ID )
+            // InternalDroneScript.g:783:5: otherlv_2= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getCooperateRule());
             					}
             				
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_19); 
 
-            					newCompositeNode(grammarAccess.getCooperateAccess().getRoleRoleCrossReference_1_0());
+            					newLeafNode(otherlv_2, grammarAccess.getCooperateAccess().getTaskTaskCrossReference_2_0());
             				
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
 
-            state._fsp--;
+            }
 
 
-            					afterParserOrEnumRuleCall();
+            }
+
+            otherlv_3=(Token)match(input,25,FOLLOW_3); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getCooperateAccess().getAsKeyword_3());
+            		
+            // InternalDroneScript.g:798:3: ( (otherlv_4= RULE_ID ) )
+            // InternalDroneScript.g:799:4: (otherlv_4= RULE_ID )
+            {
+            // InternalDroneScript.g:799:4: (otherlv_4= RULE_ID )
+            // InternalDroneScript.g:800:5: otherlv_4= RULE_ID
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getCooperateRule());
+            					}
+            				
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(otherlv_4, grammarAccess.getCooperateAccess().getRoleRoleCrossReference_4_0());
             				
 
             }
@@ -1931,7 +1957,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCharge"
-    // InternalDroneScript.g:795:1: entryRuleCharge returns [EObject current=null] : iv_ruleCharge= ruleCharge EOF ;
+    // InternalDroneScript.g:815:1: entryRuleCharge returns [EObject current=null] : iv_ruleCharge= ruleCharge EOF ;
     public final EObject entryRuleCharge() throws RecognitionException {
         EObject current = null;
 
@@ -1939,8 +1965,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:795:47: (iv_ruleCharge= ruleCharge EOF )
-            // InternalDroneScript.g:796:2: iv_ruleCharge= ruleCharge EOF
+            // InternalDroneScript.g:815:47: (iv_ruleCharge= ruleCharge EOF )
+            // InternalDroneScript.g:816:2: iv_ruleCharge= ruleCharge EOF
             {
              newCompositeNode(grammarAccess.getChargeRule()); 
             pushFollow(FOLLOW_1);
@@ -1967,7 +1993,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCharge"
-    // InternalDroneScript.g:802:1: ruleCharge returns [EObject current=null] : ( () otherlv_1= 'charge' ) ;
+    // InternalDroneScript.g:822:1: ruleCharge returns [EObject current=null] : ( () otherlv_1= 'charge' ) ;
     public final EObject ruleCharge() throws RecognitionException {
         EObject current = null;
 
@@ -1977,14 +2003,14 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:808:2: ( ( () otherlv_1= 'charge' ) )
-            // InternalDroneScript.g:809:2: ( () otherlv_1= 'charge' )
+            // InternalDroneScript.g:828:2: ( ( () otherlv_1= 'charge' ) )
+            // InternalDroneScript.g:829:2: ( () otherlv_1= 'charge' )
             {
-            // InternalDroneScript.g:809:2: ( () otherlv_1= 'charge' )
-            // InternalDroneScript.g:810:3: () otherlv_1= 'charge'
+            // InternalDroneScript.g:829:2: ( () otherlv_1= 'charge' )
+            // InternalDroneScript.g:830:3: () otherlv_1= 'charge'
             {
-            // InternalDroneScript.g:810:3: ()
-            // InternalDroneScript.g:811:4: 
+            // InternalDroneScript.g:830:3: ()
+            // InternalDroneScript.g:831:4: 
             {
 
             				current = forceCreateModelElement(
@@ -1994,7 +2020,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,24,FOLLOW_2); 
+            otherlv_1=(Token)match(input,26,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getChargeAccess().getChargeKeyword_1());
             		
@@ -2021,7 +2047,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleScan"
-    // InternalDroneScript.g:825:1: entryRuleScan returns [EObject current=null] : iv_ruleScan= ruleScan EOF ;
+    // InternalDroneScript.g:845:1: entryRuleScan returns [EObject current=null] : iv_ruleScan= ruleScan EOF ;
     public final EObject entryRuleScan() throws RecognitionException {
         EObject current = null;
 
@@ -2029,8 +2055,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:825:45: (iv_ruleScan= ruleScan EOF )
-            // InternalDroneScript.g:826:2: iv_ruleScan= ruleScan EOF
+            // InternalDroneScript.g:845:45: (iv_ruleScan= ruleScan EOF )
+            // InternalDroneScript.g:846:2: iv_ruleScan= ruleScan EOF
             {
              newCompositeNode(grammarAccess.getScanRule()); 
             pushFollow(FOLLOW_1);
@@ -2057,7 +2083,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleScan"
-    // InternalDroneScript.g:832:1: ruleScan returns [EObject current=null] : ( () otherlv_1= 'scan' ) ;
+    // InternalDroneScript.g:852:1: ruleScan returns [EObject current=null] : ( () otherlv_1= 'scan' ) ;
     public final EObject ruleScan() throws RecognitionException {
         EObject current = null;
 
@@ -2067,14 +2093,14 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:838:2: ( ( () otherlv_1= 'scan' ) )
-            // InternalDroneScript.g:839:2: ( () otherlv_1= 'scan' )
+            // InternalDroneScript.g:858:2: ( ( () otherlv_1= 'scan' ) )
+            // InternalDroneScript.g:859:2: ( () otherlv_1= 'scan' )
             {
-            // InternalDroneScript.g:839:2: ( () otherlv_1= 'scan' )
-            // InternalDroneScript.g:840:3: () otherlv_1= 'scan'
+            // InternalDroneScript.g:859:2: ( () otherlv_1= 'scan' )
+            // InternalDroneScript.g:860:3: () otherlv_1= 'scan'
             {
-            // InternalDroneScript.g:840:3: ()
-            // InternalDroneScript.g:841:4: 
+            // InternalDroneScript.g:860:3: ()
+            // InternalDroneScript.g:861:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2084,7 +2110,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,25,FOLLOW_2); 
+            otherlv_1=(Token)match(input,27,FOLLOW_2); 
 
             			newLeafNode(otherlv_1, grammarAccess.getScanAccess().getScanKeyword_1());
             		
@@ -2111,7 +2137,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSendMap"
-    // InternalDroneScript.g:855:1: entryRuleSendMap returns [EObject current=null] : iv_ruleSendMap= ruleSendMap EOF ;
+    // InternalDroneScript.g:875:1: entryRuleSendMap returns [EObject current=null] : iv_ruleSendMap= ruleSendMap EOF ;
     public final EObject entryRuleSendMap() throws RecognitionException {
         EObject current = null;
 
@@ -2119,8 +2145,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:855:48: (iv_ruleSendMap= ruleSendMap EOF )
-            // InternalDroneScript.g:856:2: iv_ruleSendMap= ruleSendMap EOF
+            // InternalDroneScript.g:875:48: (iv_ruleSendMap= ruleSendMap EOF )
+            // InternalDroneScript.g:876:2: iv_ruleSendMap= ruleSendMap EOF
             {
              newCompositeNode(grammarAccess.getSendMapRule()); 
             pushFollow(FOLLOW_1);
@@ -2147,57 +2173,51 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSendMap"
-    // InternalDroneScript.g:862:1: ruleSendMap returns [EObject current=null] : (otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( ( ruleQualifiedName ) ) ) ;
+    // InternalDroneScript.g:882:1: ruleSendMap returns [EObject current=null] : (otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( (otherlv_3= RULE_ID ) ) ) ;
     public final EObject ruleSendMap() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token otherlv_2=null;
+        Token otherlv_3=null;
 
 
         	enterRule();
 
         try {
-            // InternalDroneScript.g:868:2: ( (otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( ( ruleQualifiedName ) ) ) )
-            // InternalDroneScript.g:869:2: (otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( ( ruleQualifiedName ) ) )
+            // InternalDroneScript.g:888:2: ( (otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( (otherlv_3= RULE_ID ) ) ) )
+            // InternalDroneScript.g:889:2: (otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( (otherlv_3= RULE_ID ) ) )
             {
-            // InternalDroneScript.g:869:2: (otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:870:3: otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:889:2: (otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( (otherlv_3= RULE_ID ) ) )
+            // InternalDroneScript.g:890:3: otherlv_0= 'send' otherlv_1= 'map' otherlv_2= 'to' ( (otherlv_3= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_17); 
+            otherlv_0=(Token)match(input,23,FOLLOW_20); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSendMapAccess().getSendKeyword_0());
             		
-            otherlv_1=(Token)match(input,26,FOLLOW_15); 
+            otherlv_1=(Token)match(input,28,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSendMapAccess().getMapKeyword_1());
             		
-            otherlv_2=(Token)match(input,21,FOLLOW_3); 
+            otherlv_2=(Token)match(input,22,FOLLOW_3); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSendMapAccess().getToKeyword_2());
             		
-            // InternalDroneScript.g:882:3: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:883:4: ( ruleQualifiedName )
+            // InternalDroneScript.g:902:3: ( (otherlv_3= RULE_ID ) )
+            // InternalDroneScript.g:903:4: (otherlv_3= RULE_ID )
             {
-            // InternalDroneScript.g:883:4: ( ruleQualifiedName )
-            // InternalDroneScript.g:884:5: ruleQualifiedName
+            // InternalDroneScript.g:903:4: (otherlv_3= RULE_ID )
+            // InternalDroneScript.g:904:5: otherlv_3= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getSendMapRule());
             					}
             				
+            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newCompositeNode(grammarAccess.getSendMapAccess().getRecipentDroneCrossReference_3_0());
-            				
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-
-            					afterParserOrEnumRuleCall();
+            					newLeafNode(otherlv_3, grammarAccess.getSendMapAccess().getRecipentDroneCrossReference_3_0());
             				
 
             }
@@ -2228,7 +2248,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePosition"
-    // InternalDroneScript.g:902:1: entryRulePosition returns [EObject current=null] : iv_rulePosition= rulePosition EOF ;
+    // InternalDroneScript.g:919:1: entryRulePosition returns [EObject current=null] : iv_rulePosition= rulePosition EOF ;
     public final EObject entryRulePosition() throws RecognitionException {
         EObject current = null;
 
@@ -2236,8 +2256,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:902:49: (iv_rulePosition= rulePosition EOF )
-            // InternalDroneScript.g:903:2: iv_rulePosition= rulePosition EOF
+            // InternalDroneScript.g:919:49: (iv_rulePosition= rulePosition EOF )
+            // InternalDroneScript.g:920:2: iv_rulePosition= rulePosition EOF
             {
              newCompositeNode(grammarAccess.getPositionRule()); 
             pushFollow(FOLLOW_1);
@@ -2264,7 +2284,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePosition"
-    // InternalDroneScript.g:909:1: rulePosition returns [EObject current=null] : ( ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) ) ) ;
+    // InternalDroneScript.g:926:1: rulePosition returns [EObject current=null] : ( ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) ) ) ;
     public final EObject rulePosition() throws RecognitionException {
         EObject current = null;
 
@@ -2281,22 +2301,22 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:915:2: ( ( ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) ) ) )
-            // InternalDroneScript.g:916:2: ( ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) ) )
+            // InternalDroneScript.g:932:2: ( ( ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) ) ) )
+            // InternalDroneScript.g:933:2: ( ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) ) )
             {
-            // InternalDroneScript.g:916:2: ( ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) ) )
-            // InternalDroneScript.g:917:3: ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) )
+            // InternalDroneScript.g:933:2: ( ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) ) )
+            // InternalDroneScript.g:934:3: ( (lv_x_0_0= ruleDOUBLE ) ) otherlv_1= ',' ( (lv_y_2_0= ruleDOUBLE ) ) otherlv_3= ',' ( (lv_z_4_0= ruleDOUBLE ) )
             {
-            // InternalDroneScript.g:917:3: ( (lv_x_0_0= ruleDOUBLE ) )
-            // InternalDroneScript.g:918:4: (lv_x_0_0= ruleDOUBLE )
+            // InternalDroneScript.g:934:3: ( (lv_x_0_0= ruleDOUBLE ) )
+            // InternalDroneScript.g:935:4: (lv_x_0_0= ruleDOUBLE )
             {
-            // InternalDroneScript.g:918:4: (lv_x_0_0= ruleDOUBLE )
-            // InternalDroneScript.g:919:5: lv_x_0_0= ruleDOUBLE
+            // InternalDroneScript.g:935:4: (lv_x_0_0= ruleDOUBLE )
+            // InternalDroneScript.g:936:5: lv_x_0_0= ruleDOUBLE
             {
 
             					newCompositeNode(grammarAccess.getPositionAccess().getXDOUBLEParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             lv_x_0_0=ruleDOUBLE();
 
             state._fsp--;
@@ -2318,20 +2338,20 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,13,FOLLOW_16); 
+            otherlv_1=(Token)match(input,13,FOLLOW_17); 
 
             			newLeafNode(otherlv_1, grammarAccess.getPositionAccess().getCommaKeyword_1());
             		
-            // InternalDroneScript.g:940:3: ( (lv_y_2_0= ruleDOUBLE ) )
-            // InternalDroneScript.g:941:4: (lv_y_2_0= ruleDOUBLE )
+            // InternalDroneScript.g:957:3: ( (lv_y_2_0= ruleDOUBLE ) )
+            // InternalDroneScript.g:958:4: (lv_y_2_0= ruleDOUBLE )
             {
-            // InternalDroneScript.g:941:4: (lv_y_2_0= ruleDOUBLE )
-            // InternalDroneScript.g:942:5: lv_y_2_0= ruleDOUBLE
+            // InternalDroneScript.g:958:4: (lv_y_2_0= ruleDOUBLE )
+            // InternalDroneScript.g:959:5: lv_y_2_0= ruleDOUBLE
             {
 
             					newCompositeNode(grammarAccess.getPositionAccess().getYDOUBLEParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             lv_y_2_0=ruleDOUBLE();
 
             state._fsp--;
@@ -2353,15 +2373,15 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,13,FOLLOW_16); 
+            otherlv_3=(Token)match(input,13,FOLLOW_17); 
 
             			newLeafNode(otherlv_3, grammarAccess.getPositionAccess().getCommaKeyword_3());
             		
-            // InternalDroneScript.g:963:3: ( (lv_z_4_0= ruleDOUBLE ) )
-            // InternalDroneScript.g:964:4: (lv_z_4_0= ruleDOUBLE )
+            // InternalDroneScript.g:980:3: ( (lv_z_4_0= ruleDOUBLE ) )
+            // InternalDroneScript.g:981:4: (lv_z_4_0= ruleDOUBLE )
             {
-            // InternalDroneScript.g:964:4: (lv_z_4_0= ruleDOUBLE )
-            // InternalDroneScript.g:965:5: lv_z_4_0= ruleDOUBLE
+            // InternalDroneScript.g:981:4: (lv_z_4_0= ruleDOUBLE )
+            // InternalDroneScript.g:982:5: lv_z_4_0= ruleDOUBLE
             {
 
             					newCompositeNode(grammarAccess.getPositionAccess().getZDOUBLEParserRuleCall_4_0());
@@ -2411,7 +2431,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDOUBLE"
-    // InternalDroneScript.g:986:1: entryRuleDOUBLE returns [String current=null] : iv_ruleDOUBLE= ruleDOUBLE EOF ;
+    // InternalDroneScript.g:1003:1: entryRuleDOUBLE returns [String current=null] : iv_ruleDOUBLE= ruleDOUBLE EOF ;
     public final String entryRuleDOUBLE() throws RecognitionException {
         String current = null;
 
@@ -2419,8 +2439,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDroneScript.g:986:46: (iv_ruleDOUBLE= ruleDOUBLE EOF )
-            // InternalDroneScript.g:987:2: iv_ruleDOUBLE= ruleDOUBLE EOF
+            // InternalDroneScript.g:1003:46: (iv_ruleDOUBLE= ruleDOUBLE EOF )
+            // InternalDroneScript.g:1004:2: iv_ruleDOUBLE= ruleDOUBLE EOF
             {
              newCompositeNode(grammarAccess.getDOUBLERule()); 
             pushFollow(FOLLOW_1);
@@ -2447,7 +2467,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDOUBLE"
-    // InternalDroneScript.g:993:1: ruleDOUBLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? ) ;
+    // InternalDroneScript.g:1010:1: ruleDOUBLE returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? ) ;
     public final AntlrDatatypeRuleToken ruleDOUBLE() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2459,24 +2479,24 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDroneScript.g:999:2: ( ( (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? ) )
-            // InternalDroneScript.g:1000:2: ( (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? )
+            // InternalDroneScript.g:1016:2: ( ( (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? ) )
+            // InternalDroneScript.g:1017:2: ( (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? )
             {
-            // InternalDroneScript.g:1000:2: ( (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? )
-            // InternalDroneScript.g:1001:3: (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )?
+            // InternalDroneScript.g:1017:2: ( (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )? )
+            // InternalDroneScript.g:1018:3: (kw= '-' )? this_INT_1= RULE_INT (kw= '.' this_INT_3= RULE_INT )?
             {
-            // InternalDroneScript.g:1001:3: (kw= '-' )?
+            // InternalDroneScript.g:1018:3: (kw= '-' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==27) ) {
+            if ( (LA9_0==29) ) {
                 alt9=1;
             }
             switch (alt9) {
                 case 1 :
-                    // InternalDroneScript.g:1002:4: kw= '-'
+                    // InternalDroneScript.g:1019:4: kw= '-'
                     {
-                    kw=(Token)match(input,27,FOLLOW_9); 
+                    kw=(Token)match(input,29,FOLLOW_10); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getDOUBLEAccess().getHyphenMinusKeyword_0());
@@ -2487,25 +2507,25 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
             }
 
-            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_19); 
+            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_22); 
 
             			current.merge(this_INT_1);
             		
 
             			newLeafNode(this_INT_1, grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_1());
             		
-            // InternalDroneScript.g:1015:3: (kw= '.' this_INT_3= RULE_INT )?
+            // InternalDroneScript.g:1032:3: (kw= '.' this_INT_3= RULE_INT )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==28) ) {
+            if ( (LA10_0==30) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
-                    // InternalDroneScript.g:1016:4: kw= '.' this_INT_3= RULE_INT
+                    // InternalDroneScript.g:1033:4: kw= '.' this_INT_3= RULE_INT
                     {
-                    kw=(Token)match(input,28,FOLLOW_9); 
+                    kw=(Token)match(input,30,FOLLOW_10); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getDOUBLEAccess().getFullStopKeyword_2_0());
@@ -2546,7 +2566,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // InternalDroneScript.g:1033:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // InternalDroneScript.g:1050:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -2557,8 +2577,8 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 
         try {
-            // InternalDroneScript.g:1035:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // InternalDroneScript.g:1036:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // InternalDroneScript.g:1052:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // InternalDroneScript.g:1053:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             pushFollow(FOLLOW_1);
@@ -2588,7 +2608,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // InternalDroneScript.g:1045:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // InternalDroneScript.g:1062:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -2601,40 +2621,40 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
 
         try {
-            // InternalDroneScript.g:1052:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // InternalDroneScript.g:1053:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalDroneScript.g:1069:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // InternalDroneScript.g:1070:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // InternalDroneScript.g:1053:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // InternalDroneScript.g:1054:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // InternalDroneScript.g:1070:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalDroneScript.g:1071:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_19); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_22); 
 
             			current.merge(this_ID_0);
             		
 
             			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
             		
-            // InternalDroneScript.g:1061:3: (kw= '.' this_ID_2= RULE_ID )*
+            // InternalDroneScript.g:1078:3: (kw= '.' this_ID_2= RULE_ID )*
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==28) ) {
+                if ( (LA11_0==30) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // InternalDroneScript.g:1062:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalDroneScript.g:1079:4: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,28,FOLLOW_3); 
+            	    kw=(Token)match(input,30,FOLLOW_3); 
 
             	    				current.merge(kw);
             	    				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
             	    			
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_19); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_22); 
 
             	    				current.merge(this_ID_2);
             	    			
@@ -2679,16 +2699,16 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
 
     protected DFA3 dfa3 = new DFA3(this);
     static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\17\1\uffff\1\4\1\uffff\1\4\7\uffff";
-    static final String dfa_3s = "\1\31\1\uffff\1\22\1\uffff\1\32\7\uffff";
-    static final String dfa_4s = "\1\uffff\1\1\1\uffff\1\4\1\uffff\1\6\1\7\1\10\1\2\1\3\1\5\1\11";
+    static final String dfa_2s = "\1\20\1\uffff\1\17\1\uffff\1\4\7\uffff";
+    static final String dfa_3s = "\1\33\1\uffff\1\23\1\uffff\1\34\7\uffff";
+    static final String dfa_4s = "\1\uffff\1\1\1\uffff\1\4\1\uffff\1\6\1\7\1\10\1\3\1\2\1\5\1\11";
     static final String dfa_5s = "\14\uffff}>";
     static final String[] dfa_6s = {
-            "\1\1\1\uffff\1\2\2\uffff\1\3\1\uffff\1\4\1\5\1\6\1\7",
+            "\1\1\1\uffff\1\2\2\uffff\1\3\1\uffff\1\4\1\5\1\uffff\1\6\1\7",
             "",
-            "\1\10\12\uffff\1\11\2\uffff\1\11",
+            "\1\11\1\10\2\uffff\1\10",
             "",
-            "\1\12\25\uffff\1\13",
+            "\1\12\27\uffff\1\13",
             "",
             "",
             "",
@@ -2719,7 +2739,7 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
             this.transition = dfa_6;
         }
         public String getDescription() {
-            return "282:2: (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap )";
+            return "283:2: (this_Sequence_0= ruleSequence | this_SimpleWait_1= ruleSimpleWait | this_ComplexWait_2= ruleComplexWait | this_Move_3= ruleMove | this_SendSignal_4= ruleSendSignal | this_Cooperate_5= ruleCooperate | this_Charge_6= ruleCharge | this_Scan_7= ruleScan | this_SendMap_8= ruleSendMap )";
         }
     }
  
@@ -2730,18 +2750,21 @@ public class InternalDroneScriptParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000005002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000007002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000003D38000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000000DA70000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000090000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000003D28000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000008000020L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000120000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x000000000DA50000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000020000020L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000040000002L});
 
 }

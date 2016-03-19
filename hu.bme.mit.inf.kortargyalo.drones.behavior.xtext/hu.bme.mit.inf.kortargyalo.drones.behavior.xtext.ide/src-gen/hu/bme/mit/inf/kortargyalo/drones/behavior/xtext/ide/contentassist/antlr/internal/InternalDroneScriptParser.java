@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDroneScriptParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'scenario'", "'signal'", "','", "'script'", "'{'", "'}'", "'wait'", "'timeout'", "'on'", "'move'", "'to'", "'send'", "'cooperate'", "'charge'", "'scan'", "'map'", "'-'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'scenario'", "'signal'", "','", "'script'", "'for'", "'{'", "'}'", "'wait'", "'timeout'", "'on'", "'move'", "'to'", "'send'", "'cooperate'", "'as'", "'charge'", "'scan'", "'map'", "'-'", "'.'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -36,6 +36,7 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -43,6 +44,7 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     public static final int T__27=27;
     public static final int T__28=28;
     public static final int RULE_INT=4;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -2374,7 +2376,7 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
             // InternalDroneScript.g:789:1: ( rule__Script__Group__0__Impl rule__Script__Group__1 )
             // InternalDroneScript.g:790:2: rule__Script__Group__0__Impl rule__Script__Group__1
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_8);
             rule__Script__Group__0__Impl();
 
             state._fsp--;
@@ -2449,7 +2451,7 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
             // InternalDroneScript.g:816:1: ( rule__Script__Group__1__Impl rule__Script__Group__2 )
             // InternalDroneScript.g:817:2: rule__Script__Group__1__Impl rule__Script__Group__2
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_3);
             rule__Script__Group__1__Impl();
 
             state._fsp--;
@@ -2478,31 +2480,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Script__Group__1__Impl"
-    // InternalDroneScript.g:824:1: rule__Script__Group__1__Impl : ( ( rule__Script__DroneAssignment_1 ) ) ;
+    // InternalDroneScript.g:824:1: rule__Script__Group__1__Impl : ( 'for' ) ;
     public final void rule__Script__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:828:1: ( ( ( rule__Script__DroneAssignment_1 ) ) )
-            // InternalDroneScript.g:829:1: ( ( rule__Script__DroneAssignment_1 ) )
+            // InternalDroneScript.g:828:1: ( ( 'for' ) )
+            // InternalDroneScript.g:829:1: ( 'for' )
             {
-            // InternalDroneScript.g:829:1: ( ( rule__Script__DroneAssignment_1 ) )
-            // InternalDroneScript.g:830:2: ( rule__Script__DroneAssignment_1 )
+            // InternalDroneScript.g:829:1: ( 'for' )
+            // InternalDroneScript.g:830:2: 'for'
             {
-             before(grammarAccess.getScriptAccess().getDroneAssignment_1()); 
-            // InternalDroneScript.g:831:2: ( rule__Script__DroneAssignment_1 )
-            // InternalDroneScript.g:831:3: rule__Script__DroneAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Script__DroneAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getScriptAccess().getDroneAssignment_1()); 
+             before(grammarAccess.getScriptAccess().getForKeyword_1()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getScriptAccess().getForKeyword_1()); 
 
             }
 
@@ -2525,17 +2517,22 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Script__Group__2"
-    // InternalDroneScript.g:839:1: rule__Script__Group__2 : rule__Script__Group__2__Impl ;
+    // InternalDroneScript.g:839:1: rule__Script__Group__2 : rule__Script__Group__2__Impl rule__Script__Group__3 ;
     public final void rule__Script__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:843:1: ( rule__Script__Group__2__Impl )
-            // InternalDroneScript.g:844:2: rule__Script__Group__2__Impl
+            // InternalDroneScript.g:843:1: ( rule__Script__Group__2__Impl rule__Script__Group__3 )
+            // InternalDroneScript.g:844:2: rule__Script__Group__2__Impl rule__Script__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_9);
             rule__Script__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Script__Group__3();
 
             state._fsp--;
 
@@ -2558,31 +2555,31 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Script__Group__2__Impl"
-    // InternalDroneScript.g:850:1: rule__Script__Group__2__Impl : ( ( rule__Script__StatementAssignment_2 ) ) ;
+    // InternalDroneScript.g:851:1: rule__Script__Group__2__Impl : ( ( rule__Script__DroneAssignment_2 ) ) ;
     public final void rule__Script__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:854:1: ( ( ( rule__Script__StatementAssignment_2 ) ) )
-            // InternalDroneScript.g:855:1: ( ( rule__Script__StatementAssignment_2 ) )
+            // InternalDroneScript.g:855:1: ( ( ( rule__Script__DroneAssignment_2 ) ) )
+            // InternalDroneScript.g:856:1: ( ( rule__Script__DroneAssignment_2 ) )
             {
-            // InternalDroneScript.g:855:1: ( ( rule__Script__StatementAssignment_2 ) )
-            // InternalDroneScript.g:856:2: ( rule__Script__StatementAssignment_2 )
+            // InternalDroneScript.g:856:1: ( ( rule__Script__DroneAssignment_2 ) )
+            // InternalDroneScript.g:857:2: ( rule__Script__DroneAssignment_2 )
             {
-             before(grammarAccess.getScriptAccess().getStatementAssignment_2()); 
-            // InternalDroneScript.g:857:2: ( rule__Script__StatementAssignment_2 )
-            // InternalDroneScript.g:857:3: rule__Script__StatementAssignment_2
+             before(grammarAccess.getScriptAccess().getDroneAssignment_2()); 
+            // InternalDroneScript.g:858:2: ( rule__Script__DroneAssignment_2 )
+            // InternalDroneScript.g:858:3: rule__Script__DroneAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__Script__StatementAssignment_2();
+            rule__Script__DroneAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getScriptAccess().getStatementAssignment_2()); 
+             after(grammarAccess.getScriptAccess().getDroneAssignment_2()); 
 
             }
 
@@ -2604,17 +2601,97 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Script__Group__2__Impl"
 
 
+    // $ANTLR start "rule__Script__Group__3"
+    // InternalDroneScript.g:866:1: rule__Script__Group__3 : rule__Script__Group__3__Impl ;
+    public final void rule__Script__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:870:1: ( rule__Script__Group__3__Impl )
+            // InternalDroneScript.g:871:2: rule__Script__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Script__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Script__Group__3"
+
+
+    // $ANTLR start "rule__Script__Group__3__Impl"
+    // InternalDroneScript.g:877:1: rule__Script__Group__3__Impl : ( ( rule__Script__StatementAssignment_3 ) ) ;
+    public final void rule__Script__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:881:1: ( ( ( rule__Script__StatementAssignment_3 ) ) )
+            // InternalDroneScript.g:882:1: ( ( rule__Script__StatementAssignment_3 ) )
+            {
+            // InternalDroneScript.g:882:1: ( ( rule__Script__StatementAssignment_3 ) )
+            // InternalDroneScript.g:883:2: ( rule__Script__StatementAssignment_3 )
+            {
+             before(grammarAccess.getScriptAccess().getStatementAssignment_3()); 
+            // InternalDroneScript.g:884:2: ( rule__Script__StatementAssignment_3 )
+            // InternalDroneScript.g:884:3: rule__Script__StatementAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Script__StatementAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getScriptAccess().getStatementAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Script__Group__3__Impl"
+
+
     // $ANTLR start "rule__Sequence__Group__0"
-    // InternalDroneScript.g:866:1: rule__Sequence__Group__0 : rule__Sequence__Group__0__Impl rule__Sequence__Group__1 ;
+    // InternalDroneScript.g:893:1: rule__Sequence__Group__0 : rule__Sequence__Group__0__Impl rule__Sequence__Group__1 ;
     public final void rule__Sequence__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:870:1: ( rule__Sequence__Group__0__Impl rule__Sequence__Group__1 )
-            // InternalDroneScript.g:871:2: rule__Sequence__Group__0__Impl rule__Sequence__Group__1
+            // InternalDroneScript.g:897:1: ( rule__Sequence__Group__0__Impl rule__Sequence__Group__1 )
+            // InternalDroneScript.g:898:2: rule__Sequence__Group__0__Impl rule__Sequence__Group__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_9);
             rule__Sequence__Group__0__Impl();
 
             state._fsp--;
@@ -2643,21 +2720,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Sequence__Group__0__Impl"
-    // InternalDroneScript.g:878:1: rule__Sequence__Group__0__Impl : ( () ) ;
+    // InternalDroneScript.g:905:1: rule__Sequence__Group__0__Impl : ( () ) ;
     public final void rule__Sequence__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:882:1: ( ( () ) )
-            // InternalDroneScript.g:883:1: ( () )
+            // InternalDroneScript.g:909:1: ( ( () ) )
+            // InternalDroneScript.g:910:1: ( () )
             {
-            // InternalDroneScript.g:883:1: ( () )
-            // InternalDroneScript.g:884:2: ()
+            // InternalDroneScript.g:910:1: ( () )
+            // InternalDroneScript.g:911:2: ()
             {
              before(grammarAccess.getSequenceAccess().getSequenceAction_0()); 
-            // InternalDroneScript.g:885:2: ()
-            // InternalDroneScript.g:885:3: 
+            // InternalDroneScript.g:912:2: ()
+            // InternalDroneScript.g:912:3: 
             {
             }
 
@@ -2680,16 +2757,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Sequence__Group__1"
-    // InternalDroneScript.g:893:1: rule__Sequence__Group__1 : rule__Sequence__Group__1__Impl rule__Sequence__Group__2 ;
+    // InternalDroneScript.g:920:1: rule__Sequence__Group__1 : rule__Sequence__Group__1__Impl rule__Sequence__Group__2 ;
     public final void rule__Sequence__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:897:1: ( rule__Sequence__Group__1__Impl rule__Sequence__Group__2 )
-            // InternalDroneScript.g:898:2: rule__Sequence__Group__1__Impl rule__Sequence__Group__2
+            // InternalDroneScript.g:924:1: ( rule__Sequence__Group__1__Impl rule__Sequence__Group__2 )
+            // InternalDroneScript.g:925:2: rule__Sequence__Group__1__Impl rule__Sequence__Group__2
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__Sequence__Group__1__Impl();
 
             state._fsp--;
@@ -2718,20 +2795,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Sequence__Group__1__Impl"
-    // InternalDroneScript.g:905:1: rule__Sequence__Group__1__Impl : ( '{' ) ;
+    // InternalDroneScript.g:932:1: rule__Sequence__Group__1__Impl : ( '{' ) ;
     public final void rule__Sequence__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:909:1: ( ( '{' ) )
-            // InternalDroneScript.g:910:1: ( '{' )
+            // InternalDroneScript.g:936:1: ( ( '{' ) )
+            // InternalDroneScript.g:937:1: ( '{' )
             {
-            // InternalDroneScript.g:910:1: ( '{' )
-            // InternalDroneScript.g:911:2: '{'
+            // InternalDroneScript.g:937:1: ( '{' )
+            // InternalDroneScript.g:938:2: '{'
             {
              before(grammarAccess.getSequenceAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,15,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getSequenceAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -2755,16 +2832,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Sequence__Group__2"
-    // InternalDroneScript.g:920:1: rule__Sequence__Group__2 : rule__Sequence__Group__2__Impl rule__Sequence__Group__3 ;
+    // InternalDroneScript.g:947:1: rule__Sequence__Group__2 : rule__Sequence__Group__2__Impl rule__Sequence__Group__3 ;
     public final void rule__Sequence__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:924:1: ( rule__Sequence__Group__2__Impl rule__Sequence__Group__3 )
-            // InternalDroneScript.g:925:2: rule__Sequence__Group__2__Impl rule__Sequence__Group__3
+            // InternalDroneScript.g:951:1: ( rule__Sequence__Group__2__Impl rule__Sequence__Group__3 )
+            // InternalDroneScript.g:952:2: rule__Sequence__Group__2__Impl rule__Sequence__Group__3
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__Sequence__Group__2__Impl();
 
             state._fsp--;
@@ -2793,35 +2870,35 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Sequence__Group__2__Impl"
-    // InternalDroneScript.g:932:1: rule__Sequence__Group__2__Impl : ( ( rule__Sequence__StatementsAssignment_2 )* ) ;
+    // InternalDroneScript.g:959:1: rule__Sequence__Group__2__Impl : ( ( rule__Sequence__StatementsAssignment_2 )* ) ;
     public final void rule__Sequence__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:936:1: ( ( ( rule__Sequence__StatementsAssignment_2 )* ) )
-            // InternalDroneScript.g:937:1: ( ( rule__Sequence__StatementsAssignment_2 )* )
+            // InternalDroneScript.g:963:1: ( ( ( rule__Sequence__StatementsAssignment_2 )* ) )
+            // InternalDroneScript.g:964:1: ( ( rule__Sequence__StatementsAssignment_2 )* )
             {
-            // InternalDroneScript.g:937:1: ( ( rule__Sequence__StatementsAssignment_2 )* )
-            // InternalDroneScript.g:938:2: ( rule__Sequence__StatementsAssignment_2 )*
+            // InternalDroneScript.g:964:1: ( ( rule__Sequence__StatementsAssignment_2 )* )
+            // InternalDroneScript.g:965:2: ( rule__Sequence__StatementsAssignment_2 )*
             {
              before(grammarAccess.getSequenceAccess().getStatementsAssignment_2()); 
-            // InternalDroneScript.g:939:2: ( rule__Sequence__StatementsAssignment_2 )*
+            // InternalDroneScript.g:966:2: ( rule__Sequence__StatementsAssignment_2 )*
             loop5:
             do {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==15||LA5_0==17||LA5_0==20||(LA5_0>=22 && LA5_0<=25)) ) {
+                if ( (LA5_0==16||LA5_0==18||LA5_0==21||(LA5_0>=23 && LA5_0<=24)||(LA5_0>=26 && LA5_0<=27)) ) {
                     alt5=1;
                 }
 
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalDroneScript.g:939:3: rule__Sequence__StatementsAssignment_2
+            	    // InternalDroneScript.g:966:3: rule__Sequence__StatementsAssignment_2
             	    {
-            	    pushFollow(FOLLOW_10);
+            	    pushFollow(FOLLOW_11);
             	    rule__Sequence__StatementsAssignment_2();
 
             	    state._fsp--;
@@ -2858,14 +2935,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Sequence__Group__3"
-    // InternalDroneScript.g:947:1: rule__Sequence__Group__3 : rule__Sequence__Group__3__Impl ;
+    // InternalDroneScript.g:974:1: rule__Sequence__Group__3 : rule__Sequence__Group__3__Impl ;
     public final void rule__Sequence__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:951:1: ( rule__Sequence__Group__3__Impl )
-            // InternalDroneScript.g:952:2: rule__Sequence__Group__3__Impl
+            // InternalDroneScript.g:978:1: ( rule__Sequence__Group__3__Impl )
+            // InternalDroneScript.g:979:2: rule__Sequence__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sequence__Group__3__Impl();
@@ -2891,20 +2968,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Sequence__Group__3__Impl"
-    // InternalDroneScript.g:958:1: rule__Sequence__Group__3__Impl : ( '}' ) ;
+    // InternalDroneScript.g:985:1: rule__Sequence__Group__3__Impl : ( '}' ) ;
     public final void rule__Sequence__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:962:1: ( ( '}' ) )
-            // InternalDroneScript.g:963:1: ( '}' )
+            // InternalDroneScript.g:989:1: ( ( '}' ) )
+            // InternalDroneScript.g:990:1: ( '}' )
             {
-            // InternalDroneScript.g:963:1: ( '}' )
-            // InternalDroneScript.g:964:2: '}'
+            // InternalDroneScript.g:990:1: ( '}' )
+            // InternalDroneScript.g:991:2: '}'
             {
              before(grammarAccess.getSequenceAccess().getRightCurlyBracketKeyword_3()); 
-            match(input,16,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getSequenceAccess().getRightCurlyBracketKeyword_3()); 
 
             }
@@ -2928,16 +3005,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SimpleWait__Group__0"
-    // InternalDroneScript.g:974:1: rule__SimpleWait__Group__0 : rule__SimpleWait__Group__0__Impl rule__SimpleWait__Group__1 ;
+    // InternalDroneScript.g:1001:1: rule__SimpleWait__Group__0 : rule__SimpleWait__Group__0__Impl rule__SimpleWait__Group__1 ;
     public final void rule__SimpleWait__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:978:1: ( rule__SimpleWait__Group__0__Impl rule__SimpleWait__Group__1 )
-            // InternalDroneScript.g:979:2: rule__SimpleWait__Group__0__Impl rule__SimpleWait__Group__1
+            // InternalDroneScript.g:1005:1: ( rule__SimpleWait__Group__0__Impl rule__SimpleWait__Group__1 )
+            // InternalDroneScript.g:1006:2: rule__SimpleWait__Group__0__Impl rule__SimpleWait__Group__1
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_8);
             rule__SimpleWait__Group__0__Impl();
 
             state._fsp--;
@@ -2966,20 +3043,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SimpleWait__Group__0__Impl"
-    // InternalDroneScript.g:986:1: rule__SimpleWait__Group__0__Impl : ( 'wait' ) ;
+    // InternalDroneScript.g:1013:1: rule__SimpleWait__Group__0__Impl : ( 'wait' ) ;
     public final void rule__SimpleWait__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:990:1: ( ( 'wait' ) )
-            // InternalDroneScript.g:991:1: ( 'wait' )
+            // InternalDroneScript.g:1017:1: ( ( 'wait' ) )
+            // InternalDroneScript.g:1018:1: ( 'wait' )
             {
-            // InternalDroneScript.g:991:1: ( 'wait' )
-            // InternalDroneScript.g:992:2: 'wait'
+            // InternalDroneScript.g:1018:1: ( 'wait' )
+            // InternalDroneScript.g:1019:2: 'wait'
             {
              before(grammarAccess.getSimpleWaitAccess().getWaitKeyword_0()); 
-            match(input,17,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getSimpleWaitAccess().getWaitKeyword_0()); 
 
             }
@@ -3003,16 +3080,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SimpleWait__Group__1"
-    // InternalDroneScript.g:1001:1: rule__SimpleWait__Group__1 : rule__SimpleWait__Group__1__Impl rule__SimpleWait__Group__2 ;
+    // InternalDroneScript.g:1028:1: rule__SimpleWait__Group__1 : rule__SimpleWait__Group__1__Impl rule__SimpleWait__Group__2 ;
     public final void rule__SimpleWait__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1005:1: ( rule__SimpleWait__Group__1__Impl rule__SimpleWait__Group__2 )
-            // InternalDroneScript.g:1006:2: rule__SimpleWait__Group__1__Impl rule__SimpleWait__Group__2
+            // InternalDroneScript.g:1032:1: ( rule__SimpleWait__Group__1__Impl rule__SimpleWait__Group__2 )
+            // InternalDroneScript.g:1033:2: rule__SimpleWait__Group__1__Impl rule__SimpleWait__Group__2
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_3);
             rule__SimpleWait__Group__1__Impl();
 
             state._fsp--;
@@ -3041,31 +3118,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SimpleWait__Group__1__Impl"
-    // InternalDroneScript.g:1013:1: rule__SimpleWait__Group__1__Impl : ( ( rule__SimpleWait__SignalAssignment_1 ) ) ;
+    // InternalDroneScript.g:1040:1: rule__SimpleWait__Group__1__Impl : ( 'for' ) ;
     public final void rule__SimpleWait__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1017:1: ( ( ( rule__SimpleWait__SignalAssignment_1 ) ) )
-            // InternalDroneScript.g:1018:1: ( ( rule__SimpleWait__SignalAssignment_1 ) )
+            // InternalDroneScript.g:1044:1: ( ( 'for' ) )
+            // InternalDroneScript.g:1045:1: ( 'for' )
             {
-            // InternalDroneScript.g:1018:1: ( ( rule__SimpleWait__SignalAssignment_1 ) )
-            // InternalDroneScript.g:1019:2: ( rule__SimpleWait__SignalAssignment_1 )
+            // InternalDroneScript.g:1045:1: ( 'for' )
+            // InternalDroneScript.g:1046:2: 'for'
             {
-             before(grammarAccess.getSimpleWaitAccess().getSignalAssignment_1()); 
-            // InternalDroneScript.g:1020:2: ( rule__SimpleWait__SignalAssignment_1 )
-            // InternalDroneScript.g:1020:3: rule__SimpleWait__SignalAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__SimpleWait__SignalAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSimpleWaitAccess().getSignalAssignment_1()); 
+             before(grammarAccess.getSimpleWaitAccess().getForKeyword_1()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getSimpleWaitAccess().getForKeyword_1()); 
 
             }
 
@@ -3088,17 +3155,22 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SimpleWait__Group__2"
-    // InternalDroneScript.g:1028:1: rule__SimpleWait__Group__2 : rule__SimpleWait__Group__2__Impl ;
+    // InternalDroneScript.g:1055:1: rule__SimpleWait__Group__2 : rule__SimpleWait__Group__2__Impl rule__SimpleWait__Group__3 ;
     public final void rule__SimpleWait__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1032:1: ( rule__SimpleWait__Group__2__Impl )
-            // InternalDroneScript.g:1033:2: rule__SimpleWait__Group__2__Impl
+            // InternalDroneScript.g:1059:1: ( rule__SimpleWait__Group__2__Impl rule__SimpleWait__Group__3 )
+            // InternalDroneScript.g:1060:2: rule__SimpleWait__Group__2__Impl rule__SimpleWait__Group__3
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_12);
             rule__SimpleWait__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SimpleWait__Group__3();
 
             state._fsp--;
 
@@ -3121,42 +3193,31 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SimpleWait__Group__2__Impl"
-    // InternalDroneScript.g:1039:1: rule__SimpleWait__Group__2__Impl : ( ( rule__SimpleWait__Group_2__0 )? ) ;
+    // InternalDroneScript.g:1067:1: rule__SimpleWait__Group__2__Impl : ( ( rule__SimpleWait__SignalAssignment_2 ) ) ;
     public final void rule__SimpleWait__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1043:1: ( ( ( rule__SimpleWait__Group_2__0 )? ) )
-            // InternalDroneScript.g:1044:1: ( ( rule__SimpleWait__Group_2__0 )? )
+            // InternalDroneScript.g:1071:1: ( ( ( rule__SimpleWait__SignalAssignment_2 ) ) )
+            // InternalDroneScript.g:1072:1: ( ( rule__SimpleWait__SignalAssignment_2 ) )
             {
-            // InternalDroneScript.g:1044:1: ( ( rule__SimpleWait__Group_2__0 )? )
-            // InternalDroneScript.g:1045:2: ( rule__SimpleWait__Group_2__0 )?
+            // InternalDroneScript.g:1072:1: ( ( rule__SimpleWait__SignalAssignment_2 ) )
+            // InternalDroneScript.g:1073:2: ( rule__SimpleWait__SignalAssignment_2 )
             {
-             before(grammarAccess.getSimpleWaitAccess().getGroup_2()); 
-            // InternalDroneScript.g:1046:2: ( rule__SimpleWait__Group_2__0 )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+             before(grammarAccess.getSimpleWaitAccess().getSignalAssignment_2()); 
+            // InternalDroneScript.g:1074:2: ( rule__SimpleWait__SignalAssignment_2 )
+            // InternalDroneScript.g:1074:3: rule__SimpleWait__SignalAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__SimpleWait__SignalAssignment_2();
 
-            if ( (LA6_0==18) ) {
-                alt6=1;
-            }
-            switch (alt6) {
-                case 1 :
-                    // InternalDroneScript.g:1046:3: rule__SimpleWait__Group_2__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__SimpleWait__Group_2__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getSimpleWaitAccess().getGroup_2()); 
+             after(grammarAccess.getSimpleWaitAccess().getSignalAssignment_2()); 
 
             }
 
@@ -3178,23 +3239,114 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__SimpleWait__Group__2__Impl"
 
 
-    // $ANTLR start "rule__SimpleWait__Group_2__0"
-    // InternalDroneScript.g:1055:1: rule__SimpleWait__Group_2__0 : rule__SimpleWait__Group_2__0__Impl rule__SimpleWait__Group_2__1 ;
-    public final void rule__SimpleWait__Group_2__0() throws RecognitionException {
+    // $ANTLR start "rule__SimpleWait__Group__3"
+    // InternalDroneScript.g:1082:1: rule__SimpleWait__Group__3 : rule__SimpleWait__Group__3__Impl ;
+    public final void rule__SimpleWait__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1059:1: ( rule__SimpleWait__Group_2__0__Impl rule__SimpleWait__Group_2__1 )
-            // InternalDroneScript.g:1060:2: rule__SimpleWait__Group_2__0__Impl rule__SimpleWait__Group_2__1
+            // InternalDroneScript.g:1086:1: ( rule__SimpleWait__Group__3__Impl )
+            // InternalDroneScript.g:1087:2: rule__SimpleWait__Group__3__Impl
             {
-            pushFollow(FOLLOW_12);
-            rule__SimpleWait__Group_2__0__Impl();
+            pushFollow(FOLLOW_2);
+            rule__SimpleWait__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SimpleWait__Group__3"
+
+
+    // $ANTLR start "rule__SimpleWait__Group__3__Impl"
+    // InternalDroneScript.g:1093:1: rule__SimpleWait__Group__3__Impl : ( ( rule__SimpleWait__Group_3__0 )? ) ;
+    public final void rule__SimpleWait__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:1097:1: ( ( ( rule__SimpleWait__Group_3__0 )? ) )
+            // InternalDroneScript.g:1098:1: ( ( rule__SimpleWait__Group_3__0 )? )
+            {
+            // InternalDroneScript.g:1098:1: ( ( rule__SimpleWait__Group_3__0 )? )
+            // InternalDroneScript.g:1099:2: ( rule__SimpleWait__Group_3__0 )?
+            {
+             before(grammarAccess.getSimpleWaitAccess().getGroup_3()); 
+            // InternalDroneScript.g:1100:2: ( rule__SimpleWait__Group_3__0 )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==19) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // InternalDroneScript.g:1100:3: rule__SimpleWait__Group_3__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__SimpleWait__Group_3__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getSimpleWaitAccess().getGroup_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SimpleWait__Group__3__Impl"
+
+
+    // $ANTLR start "rule__SimpleWait__Group_3__0"
+    // InternalDroneScript.g:1109:1: rule__SimpleWait__Group_3__0 : rule__SimpleWait__Group_3__0__Impl rule__SimpleWait__Group_3__1 ;
+    public final void rule__SimpleWait__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:1113:1: ( rule__SimpleWait__Group_3__0__Impl rule__SimpleWait__Group_3__1 )
+            // InternalDroneScript.g:1114:2: rule__SimpleWait__Group_3__0__Impl rule__SimpleWait__Group_3__1
+            {
+            pushFollow(FOLLOW_13);
+            rule__SimpleWait__Group_3__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SimpleWait__Group_2__1();
+            rule__SimpleWait__Group_3__1();
 
             state._fsp--;
 
@@ -3213,25 +3365,25 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleWait__Group_2__0"
+    // $ANTLR end "rule__SimpleWait__Group_3__0"
 
 
-    // $ANTLR start "rule__SimpleWait__Group_2__0__Impl"
-    // InternalDroneScript.g:1067:1: rule__SimpleWait__Group_2__0__Impl : ( 'timeout' ) ;
-    public final void rule__SimpleWait__Group_2__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SimpleWait__Group_3__0__Impl"
+    // InternalDroneScript.g:1121:1: rule__SimpleWait__Group_3__0__Impl : ( 'timeout' ) ;
+    public final void rule__SimpleWait__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1071:1: ( ( 'timeout' ) )
-            // InternalDroneScript.g:1072:1: ( 'timeout' )
+            // InternalDroneScript.g:1125:1: ( ( 'timeout' ) )
+            // InternalDroneScript.g:1126:1: ( 'timeout' )
             {
-            // InternalDroneScript.g:1072:1: ( 'timeout' )
-            // InternalDroneScript.g:1073:2: 'timeout'
+            // InternalDroneScript.g:1126:1: ( 'timeout' )
+            // InternalDroneScript.g:1127:2: 'timeout'
             {
-             before(grammarAccess.getSimpleWaitAccess().getTimeoutKeyword_2_0()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getSimpleWaitAccess().getTimeoutKeyword_2_0()); 
+             before(grammarAccess.getSimpleWaitAccess().getTimeoutKeyword_3_0()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getSimpleWaitAccess().getTimeoutKeyword_3_0()); 
 
             }
 
@@ -3250,21 +3402,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleWait__Group_2__0__Impl"
+    // $ANTLR end "rule__SimpleWait__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__SimpleWait__Group_2__1"
-    // InternalDroneScript.g:1082:1: rule__SimpleWait__Group_2__1 : rule__SimpleWait__Group_2__1__Impl ;
-    public final void rule__SimpleWait__Group_2__1() throws RecognitionException {
+    // $ANTLR start "rule__SimpleWait__Group_3__1"
+    // InternalDroneScript.g:1136:1: rule__SimpleWait__Group_3__1 : rule__SimpleWait__Group_3__1__Impl ;
+    public final void rule__SimpleWait__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1086:1: ( rule__SimpleWait__Group_2__1__Impl )
-            // InternalDroneScript.g:1087:2: rule__SimpleWait__Group_2__1__Impl
+            // InternalDroneScript.g:1140:1: ( rule__SimpleWait__Group_3__1__Impl )
+            // InternalDroneScript.g:1141:2: rule__SimpleWait__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__SimpleWait__Group_2__1__Impl();
+            rule__SimpleWait__Group_3__1__Impl();
 
             state._fsp--;
 
@@ -3283,35 +3435,35 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleWait__Group_2__1"
+    // $ANTLR end "rule__SimpleWait__Group_3__1"
 
 
-    // $ANTLR start "rule__SimpleWait__Group_2__1__Impl"
-    // InternalDroneScript.g:1093:1: rule__SimpleWait__Group_2__1__Impl : ( ( rule__SimpleWait__TimeoutAssignment_2_1 ) ) ;
-    public final void rule__SimpleWait__Group_2__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SimpleWait__Group_3__1__Impl"
+    // InternalDroneScript.g:1147:1: rule__SimpleWait__Group_3__1__Impl : ( ( rule__SimpleWait__TimeoutAssignment_3_1 ) ) ;
+    public final void rule__SimpleWait__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1097:1: ( ( ( rule__SimpleWait__TimeoutAssignment_2_1 ) ) )
-            // InternalDroneScript.g:1098:1: ( ( rule__SimpleWait__TimeoutAssignment_2_1 ) )
+            // InternalDroneScript.g:1151:1: ( ( ( rule__SimpleWait__TimeoutAssignment_3_1 ) ) )
+            // InternalDroneScript.g:1152:1: ( ( rule__SimpleWait__TimeoutAssignment_3_1 ) )
             {
-            // InternalDroneScript.g:1098:1: ( ( rule__SimpleWait__TimeoutAssignment_2_1 ) )
-            // InternalDroneScript.g:1099:2: ( rule__SimpleWait__TimeoutAssignment_2_1 )
+            // InternalDroneScript.g:1152:1: ( ( rule__SimpleWait__TimeoutAssignment_3_1 ) )
+            // InternalDroneScript.g:1153:2: ( rule__SimpleWait__TimeoutAssignment_3_1 )
             {
-             before(grammarAccess.getSimpleWaitAccess().getTimeoutAssignment_2_1()); 
-            // InternalDroneScript.g:1100:2: ( rule__SimpleWait__TimeoutAssignment_2_1 )
-            // InternalDroneScript.g:1100:3: rule__SimpleWait__TimeoutAssignment_2_1
+             before(grammarAccess.getSimpleWaitAccess().getTimeoutAssignment_3_1()); 
+            // InternalDroneScript.g:1154:2: ( rule__SimpleWait__TimeoutAssignment_3_1 )
+            // InternalDroneScript.g:1154:3: rule__SimpleWait__TimeoutAssignment_3_1
             {
             pushFollow(FOLLOW_2);
-            rule__SimpleWait__TimeoutAssignment_2_1();
+            rule__SimpleWait__TimeoutAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSimpleWaitAccess().getTimeoutAssignment_2_1()); 
+             after(grammarAccess.getSimpleWaitAccess().getTimeoutAssignment_3_1()); 
 
             }
 
@@ -3330,20 +3482,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleWait__Group_2__1__Impl"
+    // $ANTLR end "rule__SimpleWait__Group_3__1__Impl"
 
 
     // $ANTLR start "rule__ComplexWait__Group__0"
-    // InternalDroneScript.g:1109:1: rule__ComplexWait__Group__0 : rule__ComplexWait__Group__0__Impl rule__ComplexWait__Group__1 ;
+    // InternalDroneScript.g:1163:1: rule__ComplexWait__Group__0 : rule__ComplexWait__Group__0__Impl rule__ComplexWait__Group__1 ;
     public final void rule__ComplexWait__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1113:1: ( rule__ComplexWait__Group__0__Impl rule__ComplexWait__Group__1 )
-            // InternalDroneScript.g:1114:2: rule__ComplexWait__Group__0__Impl rule__ComplexWait__Group__1
+            // InternalDroneScript.g:1167:1: ( rule__ComplexWait__Group__0__Impl rule__ComplexWait__Group__1 )
+            // InternalDroneScript.g:1168:2: rule__ComplexWait__Group__0__Impl rule__ComplexWait__Group__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__ComplexWait__Group__0__Impl();
 
             state._fsp--;
@@ -3372,21 +3524,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__0__Impl"
-    // InternalDroneScript.g:1121:1: rule__ComplexWait__Group__0__Impl : ( () ) ;
+    // InternalDroneScript.g:1175:1: rule__ComplexWait__Group__0__Impl : ( () ) ;
     public final void rule__ComplexWait__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1125:1: ( ( () ) )
-            // InternalDroneScript.g:1126:1: ( () )
+            // InternalDroneScript.g:1179:1: ( ( () ) )
+            // InternalDroneScript.g:1180:1: ( () )
             {
-            // InternalDroneScript.g:1126:1: ( () )
-            // InternalDroneScript.g:1127:2: ()
+            // InternalDroneScript.g:1180:1: ( () )
+            // InternalDroneScript.g:1181:2: ()
             {
              before(grammarAccess.getComplexWaitAccess().getComplexWaitAction_0()); 
-            // InternalDroneScript.g:1128:2: ()
-            // InternalDroneScript.g:1128:3: 
+            // InternalDroneScript.g:1182:2: ()
+            // InternalDroneScript.g:1182:3: 
             {
             }
 
@@ -3409,16 +3561,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__1"
-    // InternalDroneScript.g:1136:1: rule__ComplexWait__Group__1 : rule__ComplexWait__Group__1__Impl rule__ComplexWait__Group__2 ;
+    // InternalDroneScript.g:1190:1: rule__ComplexWait__Group__1 : rule__ComplexWait__Group__1__Impl rule__ComplexWait__Group__2 ;
     public final void rule__ComplexWait__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1140:1: ( rule__ComplexWait__Group__1__Impl rule__ComplexWait__Group__2 )
-            // InternalDroneScript.g:1141:2: rule__ComplexWait__Group__1__Impl rule__ComplexWait__Group__2
+            // InternalDroneScript.g:1194:1: ( rule__ComplexWait__Group__1__Impl rule__ComplexWait__Group__2 )
+            // InternalDroneScript.g:1195:2: rule__ComplexWait__Group__1__Impl rule__ComplexWait__Group__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__ComplexWait__Group__1__Impl();
 
             state._fsp--;
@@ -3447,20 +3599,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__1__Impl"
-    // InternalDroneScript.g:1148:1: rule__ComplexWait__Group__1__Impl : ( 'wait' ) ;
+    // InternalDroneScript.g:1202:1: rule__ComplexWait__Group__1__Impl : ( 'wait' ) ;
     public final void rule__ComplexWait__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1152:1: ( ( 'wait' ) )
-            // InternalDroneScript.g:1153:1: ( 'wait' )
+            // InternalDroneScript.g:1206:1: ( ( 'wait' ) )
+            // InternalDroneScript.g:1207:1: ( 'wait' )
             {
-            // InternalDroneScript.g:1153:1: ( 'wait' )
-            // InternalDroneScript.g:1154:2: 'wait'
+            // InternalDroneScript.g:1207:1: ( 'wait' )
+            // InternalDroneScript.g:1208:2: 'wait'
             {
              before(grammarAccess.getComplexWaitAccess().getWaitKeyword_1()); 
-            match(input,17,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getComplexWaitAccess().getWaitKeyword_1()); 
 
             }
@@ -3484,16 +3636,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__2"
-    // InternalDroneScript.g:1163:1: rule__ComplexWait__Group__2 : rule__ComplexWait__Group__2__Impl rule__ComplexWait__Group__3 ;
+    // InternalDroneScript.g:1217:1: rule__ComplexWait__Group__2 : rule__ComplexWait__Group__2__Impl rule__ComplexWait__Group__3 ;
     public final void rule__ComplexWait__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1167:1: ( rule__ComplexWait__Group__2__Impl rule__ComplexWait__Group__3 )
-            // InternalDroneScript.g:1168:2: rule__ComplexWait__Group__2__Impl rule__ComplexWait__Group__3
+            // InternalDroneScript.g:1221:1: ( rule__ComplexWait__Group__2__Impl rule__ComplexWait__Group__3 )
+            // InternalDroneScript.g:1222:2: rule__ComplexWait__Group__2__Impl rule__ComplexWait__Group__3
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__ComplexWait__Group__2__Impl();
 
             state._fsp--;
@@ -3522,29 +3674,29 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__2__Impl"
-    // InternalDroneScript.g:1175:1: rule__ComplexWait__Group__2__Impl : ( ( rule__ComplexWait__Group_2__0 )? ) ;
+    // InternalDroneScript.g:1229:1: rule__ComplexWait__Group__2__Impl : ( ( rule__ComplexWait__Group_2__0 )? ) ;
     public final void rule__ComplexWait__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1179:1: ( ( ( rule__ComplexWait__Group_2__0 )? ) )
-            // InternalDroneScript.g:1180:1: ( ( rule__ComplexWait__Group_2__0 )? )
+            // InternalDroneScript.g:1233:1: ( ( ( rule__ComplexWait__Group_2__0 )? ) )
+            // InternalDroneScript.g:1234:1: ( ( rule__ComplexWait__Group_2__0 )? )
             {
-            // InternalDroneScript.g:1180:1: ( ( rule__ComplexWait__Group_2__0 )? )
-            // InternalDroneScript.g:1181:2: ( rule__ComplexWait__Group_2__0 )?
+            // InternalDroneScript.g:1234:1: ( ( rule__ComplexWait__Group_2__0 )? )
+            // InternalDroneScript.g:1235:2: ( rule__ComplexWait__Group_2__0 )?
             {
              before(grammarAccess.getComplexWaitAccess().getGroup_2()); 
-            // InternalDroneScript.g:1182:2: ( rule__ComplexWait__Group_2__0 )?
+            // InternalDroneScript.g:1236:2: ( rule__ComplexWait__Group_2__0 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==18) ) {
+            if ( (LA7_0==19) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // InternalDroneScript.g:1182:3: rule__ComplexWait__Group_2__0
+                    // InternalDroneScript.g:1236:3: rule__ComplexWait__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ComplexWait__Group_2__0();
@@ -3580,16 +3732,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__3"
-    // InternalDroneScript.g:1190:1: rule__ComplexWait__Group__3 : rule__ComplexWait__Group__3__Impl rule__ComplexWait__Group__4 ;
+    // InternalDroneScript.g:1244:1: rule__ComplexWait__Group__3 : rule__ComplexWait__Group__3__Impl rule__ComplexWait__Group__4 ;
     public final void rule__ComplexWait__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1194:1: ( rule__ComplexWait__Group__3__Impl rule__ComplexWait__Group__4 )
-            // InternalDroneScript.g:1195:2: rule__ComplexWait__Group__3__Impl rule__ComplexWait__Group__4
+            // InternalDroneScript.g:1248:1: ( rule__ComplexWait__Group__3__Impl rule__ComplexWait__Group__4 )
+            // InternalDroneScript.g:1249:2: rule__ComplexWait__Group__3__Impl rule__ComplexWait__Group__4
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__ComplexWait__Group__3__Impl();
 
             state._fsp--;
@@ -3618,20 +3770,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__3__Impl"
-    // InternalDroneScript.g:1202:1: rule__ComplexWait__Group__3__Impl : ( '{' ) ;
+    // InternalDroneScript.g:1256:1: rule__ComplexWait__Group__3__Impl : ( '{' ) ;
     public final void rule__ComplexWait__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1206:1: ( ( '{' ) )
-            // InternalDroneScript.g:1207:1: ( '{' )
+            // InternalDroneScript.g:1260:1: ( ( '{' ) )
+            // InternalDroneScript.g:1261:1: ( '{' )
             {
-            // InternalDroneScript.g:1207:1: ( '{' )
-            // InternalDroneScript.g:1208:2: '{'
+            // InternalDroneScript.g:1261:1: ( '{' )
+            // InternalDroneScript.g:1262:2: '{'
             {
              before(grammarAccess.getComplexWaitAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,15,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getComplexWaitAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -3655,16 +3807,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__4"
-    // InternalDroneScript.g:1217:1: rule__ComplexWait__Group__4 : rule__ComplexWait__Group__4__Impl rule__ComplexWait__Group__5 ;
+    // InternalDroneScript.g:1271:1: rule__ComplexWait__Group__4 : rule__ComplexWait__Group__4__Impl rule__ComplexWait__Group__5 ;
     public final void rule__ComplexWait__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1221:1: ( rule__ComplexWait__Group__4__Impl rule__ComplexWait__Group__5 )
-            // InternalDroneScript.g:1222:2: rule__ComplexWait__Group__4__Impl rule__ComplexWait__Group__5
+            // InternalDroneScript.g:1275:1: ( rule__ComplexWait__Group__4__Impl rule__ComplexWait__Group__5 )
+            // InternalDroneScript.g:1276:2: rule__ComplexWait__Group__4__Impl rule__ComplexWait__Group__5
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__ComplexWait__Group__4__Impl();
 
             state._fsp--;
@@ -3693,26 +3845,26 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__4__Impl"
-    // InternalDroneScript.g:1229:1: rule__ComplexWait__Group__4__Impl : ( ( rule__ComplexWait__ReactionsAssignment_4 )* ) ;
+    // InternalDroneScript.g:1283:1: rule__ComplexWait__Group__4__Impl : ( ( rule__ComplexWait__ReactionsAssignment_4 )* ) ;
     public final void rule__ComplexWait__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1233:1: ( ( ( rule__ComplexWait__ReactionsAssignment_4 )* ) )
-            // InternalDroneScript.g:1234:1: ( ( rule__ComplexWait__ReactionsAssignment_4 )* )
+            // InternalDroneScript.g:1287:1: ( ( ( rule__ComplexWait__ReactionsAssignment_4 )* ) )
+            // InternalDroneScript.g:1288:1: ( ( rule__ComplexWait__ReactionsAssignment_4 )* )
             {
-            // InternalDroneScript.g:1234:1: ( ( rule__ComplexWait__ReactionsAssignment_4 )* )
-            // InternalDroneScript.g:1235:2: ( rule__ComplexWait__ReactionsAssignment_4 )*
+            // InternalDroneScript.g:1288:1: ( ( rule__ComplexWait__ReactionsAssignment_4 )* )
+            // InternalDroneScript.g:1289:2: ( rule__ComplexWait__ReactionsAssignment_4 )*
             {
              before(grammarAccess.getComplexWaitAccess().getReactionsAssignment_4()); 
-            // InternalDroneScript.g:1236:2: ( rule__ComplexWait__ReactionsAssignment_4 )*
+            // InternalDroneScript.g:1290:2: ( rule__ComplexWait__ReactionsAssignment_4 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==19) ) {
+                if ( (LA8_0==20) ) {
                     int LA8_1 = input.LA(2);
 
                     if ( (LA8_1==RULE_ID) ) {
@@ -3725,9 +3877,9 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalDroneScript.g:1236:3: rule__ComplexWait__ReactionsAssignment_4
+            	    // InternalDroneScript.g:1290:3: rule__ComplexWait__ReactionsAssignment_4
             	    {
-            	    pushFollow(FOLLOW_16);
+            	    pushFollow(FOLLOW_17);
             	    rule__ComplexWait__ReactionsAssignment_4();
 
             	    state._fsp--;
@@ -3764,16 +3916,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__5"
-    // InternalDroneScript.g:1244:1: rule__ComplexWait__Group__5 : rule__ComplexWait__Group__5__Impl rule__ComplexWait__Group__6 ;
+    // InternalDroneScript.g:1298:1: rule__ComplexWait__Group__5 : rule__ComplexWait__Group__5__Impl rule__ComplexWait__Group__6 ;
     public final void rule__ComplexWait__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1248:1: ( rule__ComplexWait__Group__5__Impl rule__ComplexWait__Group__6 )
-            // InternalDroneScript.g:1249:2: rule__ComplexWait__Group__5__Impl rule__ComplexWait__Group__6
+            // InternalDroneScript.g:1302:1: ( rule__ComplexWait__Group__5__Impl rule__ComplexWait__Group__6 )
+            // InternalDroneScript.g:1303:2: rule__ComplexWait__Group__5__Impl rule__ComplexWait__Group__6
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_16);
             rule__ComplexWait__Group__5__Impl();
 
             state._fsp--;
@@ -3802,29 +3954,29 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__5__Impl"
-    // InternalDroneScript.g:1256:1: rule__ComplexWait__Group__5__Impl : ( ( rule__ComplexWait__Group_5__0 )? ) ;
+    // InternalDroneScript.g:1310:1: rule__ComplexWait__Group__5__Impl : ( ( rule__ComplexWait__Group_5__0 )? ) ;
     public final void rule__ComplexWait__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1260:1: ( ( ( rule__ComplexWait__Group_5__0 )? ) )
-            // InternalDroneScript.g:1261:1: ( ( rule__ComplexWait__Group_5__0 )? )
+            // InternalDroneScript.g:1314:1: ( ( ( rule__ComplexWait__Group_5__0 )? ) )
+            // InternalDroneScript.g:1315:1: ( ( rule__ComplexWait__Group_5__0 )? )
             {
-            // InternalDroneScript.g:1261:1: ( ( rule__ComplexWait__Group_5__0 )? )
-            // InternalDroneScript.g:1262:2: ( rule__ComplexWait__Group_5__0 )?
+            // InternalDroneScript.g:1315:1: ( ( rule__ComplexWait__Group_5__0 )? )
+            // InternalDroneScript.g:1316:2: ( rule__ComplexWait__Group_5__0 )?
             {
              before(grammarAccess.getComplexWaitAccess().getGroup_5()); 
-            // InternalDroneScript.g:1263:2: ( rule__ComplexWait__Group_5__0 )?
+            // InternalDroneScript.g:1317:2: ( rule__ComplexWait__Group_5__0 )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==19) ) {
+            if ( (LA9_0==20) ) {
                 alt9=1;
             }
             switch (alt9) {
                 case 1 :
-                    // InternalDroneScript.g:1263:3: rule__ComplexWait__Group_5__0
+                    // InternalDroneScript.g:1317:3: rule__ComplexWait__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ComplexWait__Group_5__0();
@@ -3860,14 +4012,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__6"
-    // InternalDroneScript.g:1271:1: rule__ComplexWait__Group__6 : rule__ComplexWait__Group__6__Impl ;
+    // InternalDroneScript.g:1325:1: rule__ComplexWait__Group__6 : rule__ComplexWait__Group__6__Impl ;
     public final void rule__ComplexWait__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1275:1: ( rule__ComplexWait__Group__6__Impl )
-            // InternalDroneScript.g:1276:2: rule__ComplexWait__Group__6__Impl
+            // InternalDroneScript.g:1329:1: ( rule__ComplexWait__Group__6__Impl )
+            // InternalDroneScript.g:1330:2: rule__ComplexWait__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComplexWait__Group__6__Impl();
@@ -3893,20 +4045,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group__6__Impl"
-    // InternalDroneScript.g:1282:1: rule__ComplexWait__Group__6__Impl : ( '}' ) ;
+    // InternalDroneScript.g:1336:1: rule__ComplexWait__Group__6__Impl : ( '}' ) ;
     public final void rule__ComplexWait__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1286:1: ( ( '}' ) )
-            // InternalDroneScript.g:1287:1: ( '}' )
+            // InternalDroneScript.g:1340:1: ( ( '}' ) )
+            // InternalDroneScript.g:1341:1: ( '}' )
             {
-            // InternalDroneScript.g:1287:1: ( '}' )
-            // InternalDroneScript.g:1288:2: '}'
+            // InternalDroneScript.g:1341:1: ( '}' )
+            // InternalDroneScript.g:1342:2: '}'
             {
              before(grammarAccess.getComplexWaitAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,16,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getComplexWaitAccess().getRightCurlyBracketKeyword_6()); 
 
             }
@@ -3930,16 +4082,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_2__0"
-    // InternalDroneScript.g:1298:1: rule__ComplexWait__Group_2__0 : rule__ComplexWait__Group_2__0__Impl rule__ComplexWait__Group_2__1 ;
+    // InternalDroneScript.g:1352:1: rule__ComplexWait__Group_2__0 : rule__ComplexWait__Group_2__0__Impl rule__ComplexWait__Group_2__1 ;
     public final void rule__ComplexWait__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1302:1: ( rule__ComplexWait__Group_2__0__Impl rule__ComplexWait__Group_2__1 )
-            // InternalDroneScript.g:1303:2: rule__ComplexWait__Group_2__0__Impl rule__ComplexWait__Group_2__1
+            // InternalDroneScript.g:1356:1: ( rule__ComplexWait__Group_2__0__Impl rule__ComplexWait__Group_2__1 )
+            // InternalDroneScript.g:1357:2: rule__ComplexWait__Group_2__0__Impl rule__ComplexWait__Group_2__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_13);
             rule__ComplexWait__Group_2__0__Impl();
 
             state._fsp--;
@@ -3968,20 +4120,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_2__0__Impl"
-    // InternalDroneScript.g:1310:1: rule__ComplexWait__Group_2__0__Impl : ( 'timeout' ) ;
+    // InternalDroneScript.g:1364:1: rule__ComplexWait__Group_2__0__Impl : ( 'timeout' ) ;
     public final void rule__ComplexWait__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1314:1: ( ( 'timeout' ) )
-            // InternalDroneScript.g:1315:1: ( 'timeout' )
+            // InternalDroneScript.g:1368:1: ( ( 'timeout' ) )
+            // InternalDroneScript.g:1369:1: ( 'timeout' )
             {
-            // InternalDroneScript.g:1315:1: ( 'timeout' )
-            // InternalDroneScript.g:1316:2: 'timeout'
+            // InternalDroneScript.g:1369:1: ( 'timeout' )
+            // InternalDroneScript.g:1370:2: 'timeout'
             {
              before(grammarAccess.getComplexWaitAccess().getTimeoutKeyword_2_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getComplexWaitAccess().getTimeoutKeyword_2_0()); 
 
             }
@@ -4005,14 +4157,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_2__1"
-    // InternalDroneScript.g:1325:1: rule__ComplexWait__Group_2__1 : rule__ComplexWait__Group_2__1__Impl ;
+    // InternalDroneScript.g:1379:1: rule__ComplexWait__Group_2__1 : rule__ComplexWait__Group_2__1__Impl ;
     public final void rule__ComplexWait__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1329:1: ( rule__ComplexWait__Group_2__1__Impl )
-            // InternalDroneScript.g:1330:2: rule__ComplexWait__Group_2__1__Impl
+            // InternalDroneScript.g:1383:1: ( rule__ComplexWait__Group_2__1__Impl )
+            // InternalDroneScript.g:1384:2: rule__ComplexWait__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComplexWait__Group_2__1__Impl();
@@ -4038,21 +4190,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_2__1__Impl"
-    // InternalDroneScript.g:1336:1: rule__ComplexWait__Group_2__1__Impl : ( ( rule__ComplexWait__TimeoutAssignment_2_1 ) ) ;
+    // InternalDroneScript.g:1390:1: rule__ComplexWait__Group_2__1__Impl : ( ( rule__ComplexWait__TimeoutAssignment_2_1 ) ) ;
     public final void rule__ComplexWait__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1340:1: ( ( ( rule__ComplexWait__TimeoutAssignment_2_1 ) ) )
-            // InternalDroneScript.g:1341:1: ( ( rule__ComplexWait__TimeoutAssignment_2_1 ) )
+            // InternalDroneScript.g:1394:1: ( ( ( rule__ComplexWait__TimeoutAssignment_2_1 ) ) )
+            // InternalDroneScript.g:1395:1: ( ( rule__ComplexWait__TimeoutAssignment_2_1 ) )
             {
-            // InternalDroneScript.g:1341:1: ( ( rule__ComplexWait__TimeoutAssignment_2_1 ) )
-            // InternalDroneScript.g:1342:2: ( rule__ComplexWait__TimeoutAssignment_2_1 )
+            // InternalDroneScript.g:1395:1: ( ( rule__ComplexWait__TimeoutAssignment_2_1 ) )
+            // InternalDroneScript.g:1396:2: ( rule__ComplexWait__TimeoutAssignment_2_1 )
             {
              before(grammarAccess.getComplexWaitAccess().getTimeoutAssignment_2_1()); 
-            // InternalDroneScript.g:1343:2: ( rule__ComplexWait__TimeoutAssignment_2_1 )
-            // InternalDroneScript.g:1343:3: rule__ComplexWait__TimeoutAssignment_2_1
+            // InternalDroneScript.g:1397:2: ( rule__ComplexWait__TimeoutAssignment_2_1 )
+            // InternalDroneScript.g:1397:3: rule__ComplexWait__TimeoutAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__ComplexWait__TimeoutAssignment_2_1();
@@ -4085,16 +4237,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_5__0"
-    // InternalDroneScript.g:1352:1: rule__ComplexWait__Group_5__0 : rule__ComplexWait__Group_5__0__Impl rule__ComplexWait__Group_5__1 ;
+    // InternalDroneScript.g:1406:1: rule__ComplexWait__Group_5__0 : rule__ComplexWait__Group_5__0__Impl rule__ComplexWait__Group_5__1 ;
     public final void rule__ComplexWait__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1356:1: ( rule__ComplexWait__Group_5__0__Impl rule__ComplexWait__Group_5__1 )
-            // InternalDroneScript.g:1357:2: rule__ComplexWait__Group_5__0__Impl rule__ComplexWait__Group_5__1
+            // InternalDroneScript.g:1410:1: ( rule__ComplexWait__Group_5__0__Impl rule__ComplexWait__Group_5__1 )
+            // InternalDroneScript.g:1411:2: rule__ComplexWait__Group_5__0__Impl rule__ComplexWait__Group_5__1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__ComplexWait__Group_5__0__Impl();
 
             state._fsp--;
@@ -4123,20 +4275,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_5__0__Impl"
-    // InternalDroneScript.g:1364:1: rule__ComplexWait__Group_5__0__Impl : ( 'on' ) ;
+    // InternalDroneScript.g:1418:1: rule__ComplexWait__Group_5__0__Impl : ( 'on' ) ;
     public final void rule__ComplexWait__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1368:1: ( ( 'on' ) )
-            // InternalDroneScript.g:1369:1: ( 'on' )
+            // InternalDroneScript.g:1422:1: ( ( 'on' ) )
+            // InternalDroneScript.g:1423:1: ( 'on' )
             {
-            // InternalDroneScript.g:1369:1: ( 'on' )
-            // InternalDroneScript.g:1370:2: 'on'
+            // InternalDroneScript.g:1423:1: ( 'on' )
+            // InternalDroneScript.g:1424:2: 'on'
             {
              before(grammarAccess.getComplexWaitAccess().getOnKeyword_5_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getComplexWaitAccess().getOnKeyword_5_0()); 
 
             }
@@ -4160,16 +4312,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_5__1"
-    // InternalDroneScript.g:1379:1: rule__ComplexWait__Group_5__1 : rule__ComplexWait__Group_5__1__Impl rule__ComplexWait__Group_5__2 ;
+    // InternalDroneScript.g:1433:1: rule__ComplexWait__Group_5__1 : rule__ComplexWait__Group_5__1__Impl rule__ComplexWait__Group_5__2 ;
     public final void rule__ComplexWait__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1383:1: ( rule__ComplexWait__Group_5__1__Impl rule__ComplexWait__Group_5__2 )
-            // InternalDroneScript.g:1384:2: rule__ComplexWait__Group_5__1__Impl rule__ComplexWait__Group_5__2
+            // InternalDroneScript.g:1437:1: ( rule__ComplexWait__Group_5__1__Impl rule__ComplexWait__Group_5__2 )
+            // InternalDroneScript.g:1438:2: rule__ComplexWait__Group_5__1__Impl rule__ComplexWait__Group_5__2
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             rule__ComplexWait__Group_5__1__Impl();
 
             state._fsp--;
@@ -4198,20 +4350,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_5__1__Impl"
-    // InternalDroneScript.g:1391:1: rule__ComplexWait__Group_5__1__Impl : ( 'timeout' ) ;
+    // InternalDroneScript.g:1445:1: rule__ComplexWait__Group_5__1__Impl : ( 'timeout' ) ;
     public final void rule__ComplexWait__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1395:1: ( ( 'timeout' ) )
-            // InternalDroneScript.g:1396:1: ( 'timeout' )
+            // InternalDroneScript.g:1449:1: ( ( 'timeout' ) )
+            // InternalDroneScript.g:1450:1: ( 'timeout' )
             {
-            // InternalDroneScript.g:1396:1: ( 'timeout' )
-            // InternalDroneScript.g:1397:2: 'timeout'
+            // InternalDroneScript.g:1450:1: ( 'timeout' )
+            // InternalDroneScript.g:1451:2: 'timeout'
             {
              before(grammarAccess.getComplexWaitAccess().getTimeoutKeyword_5_1()); 
-            match(input,18,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getComplexWaitAccess().getTimeoutKeyword_5_1()); 
 
             }
@@ -4235,14 +4387,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_5__2"
-    // InternalDroneScript.g:1406:1: rule__ComplexWait__Group_5__2 : rule__ComplexWait__Group_5__2__Impl ;
+    // InternalDroneScript.g:1460:1: rule__ComplexWait__Group_5__2 : rule__ComplexWait__Group_5__2__Impl ;
     public final void rule__ComplexWait__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1410:1: ( rule__ComplexWait__Group_5__2__Impl )
-            // InternalDroneScript.g:1411:2: rule__ComplexWait__Group_5__2__Impl
+            // InternalDroneScript.g:1464:1: ( rule__ComplexWait__Group_5__2__Impl )
+            // InternalDroneScript.g:1465:2: rule__ComplexWait__Group_5__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ComplexWait__Group_5__2__Impl();
@@ -4268,21 +4420,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__Group_5__2__Impl"
-    // InternalDroneScript.g:1417:1: rule__ComplexWait__Group_5__2__Impl : ( ( rule__ComplexWait__OnTimeoutAssignment_5_2 ) ) ;
+    // InternalDroneScript.g:1471:1: rule__ComplexWait__Group_5__2__Impl : ( ( rule__ComplexWait__OnTimeoutAssignment_5_2 ) ) ;
     public final void rule__ComplexWait__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1421:1: ( ( ( rule__ComplexWait__OnTimeoutAssignment_5_2 ) ) )
-            // InternalDroneScript.g:1422:1: ( ( rule__ComplexWait__OnTimeoutAssignment_5_2 ) )
+            // InternalDroneScript.g:1475:1: ( ( ( rule__ComplexWait__OnTimeoutAssignment_5_2 ) ) )
+            // InternalDroneScript.g:1476:1: ( ( rule__ComplexWait__OnTimeoutAssignment_5_2 ) )
             {
-            // InternalDroneScript.g:1422:1: ( ( rule__ComplexWait__OnTimeoutAssignment_5_2 ) )
-            // InternalDroneScript.g:1423:2: ( rule__ComplexWait__OnTimeoutAssignment_5_2 )
+            // InternalDroneScript.g:1476:1: ( ( rule__ComplexWait__OnTimeoutAssignment_5_2 ) )
+            // InternalDroneScript.g:1477:2: ( rule__ComplexWait__OnTimeoutAssignment_5_2 )
             {
              before(grammarAccess.getComplexWaitAccess().getOnTimeoutAssignment_5_2()); 
-            // InternalDroneScript.g:1424:2: ( rule__ComplexWait__OnTimeoutAssignment_5_2 )
-            // InternalDroneScript.g:1424:3: rule__ComplexWait__OnTimeoutAssignment_5_2
+            // InternalDroneScript.g:1478:2: ( rule__ComplexWait__OnTimeoutAssignment_5_2 )
+            // InternalDroneScript.g:1478:3: rule__ComplexWait__OnTimeoutAssignment_5_2
             {
             pushFollow(FOLLOW_2);
             rule__ComplexWait__OnTimeoutAssignment_5_2();
@@ -4315,14 +4467,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reaction__Group__0"
-    // InternalDroneScript.g:1433:1: rule__Reaction__Group__0 : rule__Reaction__Group__0__Impl rule__Reaction__Group__1 ;
+    // InternalDroneScript.g:1487:1: rule__Reaction__Group__0 : rule__Reaction__Group__0__Impl rule__Reaction__Group__1 ;
     public final void rule__Reaction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1437:1: ( rule__Reaction__Group__0__Impl rule__Reaction__Group__1 )
-            // InternalDroneScript.g:1438:2: rule__Reaction__Group__0__Impl rule__Reaction__Group__1
+            // InternalDroneScript.g:1491:1: ( rule__Reaction__Group__0__Impl rule__Reaction__Group__1 )
+            // InternalDroneScript.g:1492:2: rule__Reaction__Group__0__Impl rule__Reaction__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Reaction__Group__0__Impl();
@@ -4353,20 +4505,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reaction__Group__0__Impl"
-    // InternalDroneScript.g:1445:1: rule__Reaction__Group__0__Impl : ( 'on' ) ;
+    // InternalDroneScript.g:1499:1: rule__Reaction__Group__0__Impl : ( 'on' ) ;
     public final void rule__Reaction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1449:1: ( ( 'on' ) )
-            // InternalDroneScript.g:1450:1: ( 'on' )
+            // InternalDroneScript.g:1503:1: ( ( 'on' ) )
+            // InternalDroneScript.g:1504:1: ( 'on' )
             {
-            // InternalDroneScript.g:1450:1: ( 'on' )
-            // InternalDroneScript.g:1451:2: 'on'
+            // InternalDroneScript.g:1504:1: ( 'on' )
+            // InternalDroneScript.g:1505:2: 'on'
             {
              before(grammarAccess.getReactionAccess().getOnKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getReactionAccess().getOnKeyword_0()); 
 
             }
@@ -4390,16 +4542,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reaction__Group__1"
-    // InternalDroneScript.g:1460:1: rule__Reaction__Group__1 : rule__Reaction__Group__1__Impl rule__Reaction__Group__2 ;
+    // InternalDroneScript.g:1514:1: rule__Reaction__Group__1 : rule__Reaction__Group__1__Impl rule__Reaction__Group__2 ;
     public final void rule__Reaction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1464:1: ( rule__Reaction__Group__1__Impl rule__Reaction__Group__2 )
-            // InternalDroneScript.g:1465:2: rule__Reaction__Group__1__Impl rule__Reaction__Group__2
+            // InternalDroneScript.g:1518:1: ( rule__Reaction__Group__1__Impl rule__Reaction__Group__2 )
+            // InternalDroneScript.g:1519:2: rule__Reaction__Group__1__Impl rule__Reaction__Group__2
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_18);
             rule__Reaction__Group__1__Impl();
 
             state._fsp--;
@@ -4428,21 +4580,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reaction__Group__1__Impl"
-    // InternalDroneScript.g:1472:1: rule__Reaction__Group__1__Impl : ( ( rule__Reaction__SignalAssignment_1 ) ) ;
+    // InternalDroneScript.g:1526:1: rule__Reaction__Group__1__Impl : ( ( rule__Reaction__SignalAssignment_1 ) ) ;
     public final void rule__Reaction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1476:1: ( ( ( rule__Reaction__SignalAssignment_1 ) ) )
-            // InternalDroneScript.g:1477:1: ( ( rule__Reaction__SignalAssignment_1 ) )
+            // InternalDroneScript.g:1530:1: ( ( ( rule__Reaction__SignalAssignment_1 ) ) )
+            // InternalDroneScript.g:1531:1: ( ( rule__Reaction__SignalAssignment_1 ) )
             {
-            // InternalDroneScript.g:1477:1: ( ( rule__Reaction__SignalAssignment_1 ) )
-            // InternalDroneScript.g:1478:2: ( rule__Reaction__SignalAssignment_1 )
+            // InternalDroneScript.g:1531:1: ( ( rule__Reaction__SignalAssignment_1 ) )
+            // InternalDroneScript.g:1532:2: ( rule__Reaction__SignalAssignment_1 )
             {
              before(grammarAccess.getReactionAccess().getSignalAssignment_1()); 
-            // InternalDroneScript.g:1479:2: ( rule__Reaction__SignalAssignment_1 )
-            // InternalDroneScript.g:1479:3: rule__Reaction__SignalAssignment_1
+            // InternalDroneScript.g:1533:2: ( rule__Reaction__SignalAssignment_1 )
+            // InternalDroneScript.g:1533:3: rule__Reaction__SignalAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Reaction__SignalAssignment_1();
@@ -4475,14 +4627,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reaction__Group__2"
-    // InternalDroneScript.g:1487:1: rule__Reaction__Group__2 : rule__Reaction__Group__2__Impl ;
+    // InternalDroneScript.g:1541:1: rule__Reaction__Group__2 : rule__Reaction__Group__2__Impl ;
     public final void rule__Reaction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1491:1: ( rule__Reaction__Group__2__Impl )
-            // InternalDroneScript.g:1492:2: rule__Reaction__Group__2__Impl
+            // InternalDroneScript.g:1545:1: ( rule__Reaction__Group__2__Impl )
+            // InternalDroneScript.g:1546:2: rule__Reaction__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Reaction__Group__2__Impl();
@@ -4508,21 +4660,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reaction__Group__2__Impl"
-    // InternalDroneScript.g:1498:1: rule__Reaction__Group__2__Impl : ( ( rule__Reaction__StatementAssignment_2 ) ) ;
+    // InternalDroneScript.g:1552:1: rule__Reaction__Group__2__Impl : ( ( rule__Reaction__StatementAssignment_2 ) ) ;
     public final void rule__Reaction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1502:1: ( ( ( rule__Reaction__StatementAssignment_2 ) ) )
-            // InternalDroneScript.g:1503:1: ( ( rule__Reaction__StatementAssignment_2 ) )
+            // InternalDroneScript.g:1556:1: ( ( ( rule__Reaction__StatementAssignment_2 ) ) )
+            // InternalDroneScript.g:1557:1: ( ( rule__Reaction__StatementAssignment_2 ) )
             {
-            // InternalDroneScript.g:1503:1: ( ( rule__Reaction__StatementAssignment_2 ) )
-            // InternalDroneScript.g:1504:2: ( rule__Reaction__StatementAssignment_2 )
+            // InternalDroneScript.g:1557:1: ( ( rule__Reaction__StatementAssignment_2 ) )
+            // InternalDroneScript.g:1558:2: ( rule__Reaction__StatementAssignment_2 )
             {
              before(grammarAccess.getReactionAccess().getStatementAssignment_2()); 
-            // InternalDroneScript.g:1505:2: ( rule__Reaction__StatementAssignment_2 )
-            // InternalDroneScript.g:1505:3: rule__Reaction__StatementAssignment_2
+            // InternalDroneScript.g:1559:2: ( rule__Reaction__StatementAssignment_2 )
+            // InternalDroneScript.g:1559:3: rule__Reaction__StatementAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Reaction__StatementAssignment_2();
@@ -4555,16 +4707,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Move__Group__0"
-    // InternalDroneScript.g:1514:1: rule__Move__Group__0 : rule__Move__Group__0__Impl rule__Move__Group__1 ;
+    // InternalDroneScript.g:1568:1: rule__Move__Group__0 : rule__Move__Group__0__Impl rule__Move__Group__1 ;
     public final void rule__Move__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1518:1: ( rule__Move__Group__0__Impl rule__Move__Group__1 )
-            // InternalDroneScript.g:1519:2: rule__Move__Group__0__Impl rule__Move__Group__1
+            // InternalDroneScript.g:1572:1: ( rule__Move__Group__0__Impl rule__Move__Group__1 )
+            // InternalDroneScript.g:1573:2: rule__Move__Group__0__Impl rule__Move__Group__1
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__Move__Group__0__Impl();
 
             state._fsp--;
@@ -4593,20 +4745,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Move__Group__0__Impl"
-    // InternalDroneScript.g:1526:1: rule__Move__Group__0__Impl : ( 'move' ) ;
+    // InternalDroneScript.g:1580:1: rule__Move__Group__0__Impl : ( 'move' ) ;
     public final void rule__Move__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1530:1: ( ( 'move' ) )
-            // InternalDroneScript.g:1531:1: ( 'move' )
+            // InternalDroneScript.g:1584:1: ( ( 'move' ) )
+            // InternalDroneScript.g:1585:1: ( 'move' )
             {
-            // InternalDroneScript.g:1531:1: ( 'move' )
-            // InternalDroneScript.g:1532:2: 'move'
+            // InternalDroneScript.g:1585:1: ( 'move' )
+            // InternalDroneScript.g:1586:2: 'move'
             {
              before(grammarAccess.getMoveAccess().getMoveKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getMoveKeyword_0()); 
 
             }
@@ -4630,16 +4782,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Move__Group__1"
-    // InternalDroneScript.g:1541:1: rule__Move__Group__1 : rule__Move__Group__1__Impl rule__Move__Group__2 ;
+    // InternalDroneScript.g:1595:1: rule__Move__Group__1 : rule__Move__Group__1__Impl rule__Move__Group__2 ;
     public final void rule__Move__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1545:1: ( rule__Move__Group__1__Impl rule__Move__Group__2 )
-            // InternalDroneScript.g:1546:2: rule__Move__Group__1__Impl rule__Move__Group__2
+            // InternalDroneScript.g:1599:1: ( rule__Move__Group__1__Impl rule__Move__Group__2 )
+            // InternalDroneScript.g:1600:2: rule__Move__Group__1__Impl rule__Move__Group__2
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_20);
             rule__Move__Group__1__Impl();
 
             state._fsp--;
@@ -4668,20 +4820,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Move__Group__1__Impl"
-    // InternalDroneScript.g:1553:1: rule__Move__Group__1__Impl : ( 'to' ) ;
+    // InternalDroneScript.g:1607:1: rule__Move__Group__1__Impl : ( 'to' ) ;
     public final void rule__Move__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1557:1: ( ( 'to' ) )
-            // InternalDroneScript.g:1558:1: ( 'to' )
+            // InternalDroneScript.g:1611:1: ( ( 'to' ) )
+            // InternalDroneScript.g:1612:1: ( 'to' )
             {
-            // InternalDroneScript.g:1558:1: ( 'to' )
-            // InternalDroneScript.g:1559:2: 'to'
+            // InternalDroneScript.g:1612:1: ( 'to' )
+            // InternalDroneScript.g:1613:2: 'to'
             {
              before(grammarAccess.getMoveAccess().getToKeyword_1()); 
-            match(input,21,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getToKeyword_1()); 
 
             }
@@ -4705,14 +4857,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Move__Group__2"
-    // InternalDroneScript.g:1568:1: rule__Move__Group__2 : rule__Move__Group__2__Impl ;
+    // InternalDroneScript.g:1622:1: rule__Move__Group__2 : rule__Move__Group__2__Impl ;
     public final void rule__Move__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1572:1: ( rule__Move__Group__2__Impl )
-            // InternalDroneScript.g:1573:2: rule__Move__Group__2__Impl
+            // InternalDroneScript.g:1626:1: ( rule__Move__Group__2__Impl )
+            // InternalDroneScript.g:1627:2: rule__Move__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Move__Group__2__Impl();
@@ -4738,21 +4890,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Move__Group__2__Impl"
-    // InternalDroneScript.g:1579:1: rule__Move__Group__2__Impl : ( ( rule__Move__DestinationAssignment_2 ) ) ;
+    // InternalDroneScript.g:1633:1: rule__Move__Group__2__Impl : ( ( rule__Move__DestinationAssignment_2 ) ) ;
     public final void rule__Move__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1583:1: ( ( ( rule__Move__DestinationAssignment_2 ) ) )
-            // InternalDroneScript.g:1584:1: ( ( rule__Move__DestinationAssignment_2 ) )
+            // InternalDroneScript.g:1637:1: ( ( ( rule__Move__DestinationAssignment_2 ) ) )
+            // InternalDroneScript.g:1638:1: ( ( rule__Move__DestinationAssignment_2 ) )
             {
-            // InternalDroneScript.g:1584:1: ( ( rule__Move__DestinationAssignment_2 ) )
-            // InternalDroneScript.g:1585:2: ( rule__Move__DestinationAssignment_2 )
+            // InternalDroneScript.g:1638:1: ( ( rule__Move__DestinationAssignment_2 ) )
+            // InternalDroneScript.g:1639:2: ( rule__Move__DestinationAssignment_2 )
             {
              before(grammarAccess.getMoveAccess().getDestinationAssignment_2()); 
-            // InternalDroneScript.g:1586:2: ( rule__Move__DestinationAssignment_2 )
-            // InternalDroneScript.g:1586:3: rule__Move__DestinationAssignment_2
+            // InternalDroneScript.g:1640:2: ( rule__Move__DestinationAssignment_2 )
+            // InternalDroneScript.g:1640:3: rule__Move__DestinationAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Move__DestinationAssignment_2();
@@ -4785,14 +4937,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__Group__0"
-    // InternalDroneScript.g:1595:1: rule__SendSignal__Group__0 : rule__SendSignal__Group__0__Impl rule__SendSignal__Group__1 ;
+    // InternalDroneScript.g:1649:1: rule__SendSignal__Group__0 : rule__SendSignal__Group__0__Impl rule__SendSignal__Group__1 ;
     public final void rule__SendSignal__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1599:1: ( rule__SendSignal__Group__0__Impl rule__SendSignal__Group__1 )
-            // InternalDroneScript.g:1600:2: rule__SendSignal__Group__0__Impl rule__SendSignal__Group__1
+            // InternalDroneScript.g:1653:1: ( rule__SendSignal__Group__0__Impl rule__SendSignal__Group__1 )
+            // InternalDroneScript.g:1654:2: rule__SendSignal__Group__0__Impl rule__SendSignal__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__SendSignal__Group__0__Impl();
@@ -4823,20 +4975,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__Group__0__Impl"
-    // InternalDroneScript.g:1607:1: rule__SendSignal__Group__0__Impl : ( 'send' ) ;
+    // InternalDroneScript.g:1661:1: rule__SendSignal__Group__0__Impl : ( 'send' ) ;
     public final void rule__SendSignal__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1611:1: ( ( 'send' ) )
-            // InternalDroneScript.g:1612:1: ( 'send' )
+            // InternalDroneScript.g:1665:1: ( ( 'send' ) )
+            // InternalDroneScript.g:1666:1: ( 'send' )
             {
-            // InternalDroneScript.g:1612:1: ( 'send' )
-            // InternalDroneScript.g:1613:2: 'send'
+            // InternalDroneScript.g:1666:1: ( 'send' )
+            // InternalDroneScript.g:1667:2: 'send'
             {
              before(grammarAccess.getSendSignalAccess().getSendKeyword_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getSendSignalAccess().getSendKeyword_0()); 
 
             }
@@ -4860,16 +5012,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__Group__1"
-    // InternalDroneScript.g:1622:1: rule__SendSignal__Group__1 : rule__SendSignal__Group__1__Impl rule__SendSignal__Group__2 ;
+    // InternalDroneScript.g:1676:1: rule__SendSignal__Group__1 : rule__SendSignal__Group__1__Impl rule__SendSignal__Group__2 ;
     public final void rule__SendSignal__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1626:1: ( rule__SendSignal__Group__1__Impl rule__SendSignal__Group__2 )
-            // InternalDroneScript.g:1627:2: rule__SendSignal__Group__1__Impl rule__SendSignal__Group__2
+            // InternalDroneScript.g:1680:1: ( rule__SendSignal__Group__1__Impl rule__SendSignal__Group__2 )
+            // InternalDroneScript.g:1681:2: rule__SendSignal__Group__1__Impl rule__SendSignal__Group__2
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__SendSignal__Group__1__Impl();
 
             state._fsp--;
@@ -4898,21 +5050,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__Group__1__Impl"
-    // InternalDroneScript.g:1634:1: rule__SendSignal__Group__1__Impl : ( ( rule__SendSignal__SignalAssignment_1 ) ) ;
+    // InternalDroneScript.g:1688:1: rule__SendSignal__Group__1__Impl : ( ( rule__SendSignal__SignalAssignment_1 ) ) ;
     public final void rule__SendSignal__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1638:1: ( ( ( rule__SendSignal__SignalAssignment_1 ) ) )
-            // InternalDroneScript.g:1639:1: ( ( rule__SendSignal__SignalAssignment_1 ) )
+            // InternalDroneScript.g:1692:1: ( ( ( rule__SendSignal__SignalAssignment_1 ) ) )
+            // InternalDroneScript.g:1693:1: ( ( rule__SendSignal__SignalAssignment_1 ) )
             {
-            // InternalDroneScript.g:1639:1: ( ( rule__SendSignal__SignalAssignment_1 ) )
-            // InternalDroneScript.g:1640:2: ( rule__SendSignal__SignalAssignment_1 )
+            // InternalDroneScript.g:1693:1: ( ( rule__SendSignal__SignalAssignment_1 ) )
+            // InternalDroneScript.g:1694:2: ( rule__SendSignal__SignalAssignment_1 )
             {
              before(grammarAccess.getSendSignalAccess().getSignalAssignment_1()); 
-            // InternalDroneScript.g:1641:2: ( rule__SendSignal__SignalAssignment_1 )
-            // InternalDroneScript.g:1641:3: rule__SendSignal__SignalAssignment_1
+            // InternalDroneScript.g:1695:2: ( rule__SendSignal__SignalAssignment_1 )
+            // InternalDroneScript.g:1695:3: rule__SendSignal__SignalAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SendSignal__SignalAssignment_1();
@@ -4945,14 +5097,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__Group__2"
-    // InternalDroneScript.g:1649:1: rule__SendSignal__Group__2 : rule__SendSignal__Group__2__Impl rule__SendSignal__Group__3 ;
+    // InternalDroneScript.g:1703:1: rule__SendSignal__Group__2 : rule__SendSignal__Group__2__Impl rule__SendSignal__Group__3 ;
     public final void rule__SendSignal__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1653:1: ( rule__SendSignal__Group__2__Impl rule__SendSignal__Group__3 )
-            // InternalDroneScript.g:1654:2: rule__SendSignal__Group__2__Impl rule__SendSignal__Group__3
+            // InternalDroneScript.g:1707:1: ( rule__SendSignal__Group__2__Impl rule__SendSignal__Group__3 )
+            // InternalDroneScript.g:1708:2: rule__SendSignal__Group__2__Impl rule__SendSignal__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__SendSignal__Group__2__Impl();
@@ -4983,20 +5135,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__Group__2__Impl"
-    // InternalDroneScript.g:1661:1: rule__SendSignal__Group__2__Impl : ( 'to' ) ;
+    // InternalDroneScript.g:1715:1: rule__SendSignal__Group__2__Impl : ( 'to' ) ;
     public final void rule__SendSignal__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1665:1: ( ( 'to' ) )
-            // InternalDroneScript.g:1666:1: ( 'to' )
+            // InternalDroneScript.g:1719:1: ( ( 'to' ) )
+            // InternalDroneScript.g:1720:1: ( 'to' )
             {
-            // InternalDroneScript.g:1666:1: ( 'to' )
-            // InternalDroneScript.g:1667:2: 'to'
+            // InternalDroneScript.g:1720:1: ( 'to' )
+            // InternalDroneScript.g:1721:2: 'to'
             {
              before(grammarAccess.getSendSignalAccess().getToKeyword_2()); 
-            match(input,21,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getSendSignalAccess().getToKeyword_2()); 
 
             }
@@ -5020,14 +5172,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__Group__3"
-    // InternalDroneScript.g:1676:1: rule__SendSignal__Group__3 : rule__SendSignal__Group__3__Impl ;
+    // InternalDroneScript.g:1730:1: rule__SendSignal__Group__3 : rule__SendSignal__Group__3__Impl ;
     public final void rule__SendSignal__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1680:1: ( rule__SendSignal__Group__3__Impl )
-            // InternalDroneScript.g:1681:2: rule__SendSignal__Group__3__Impl
+            // InternalDroneScript.g:1734:1: ( rule__SendSignal__Group__3__Impl )
+            // InternalDroneScript.g:1735:2: rule__SendSignal__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SendSignal__Group__3__Impl();
@@ -5053,21 +5205,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__Group__3__Impl"
-    // InternalDroneScript.g:1687:1: rule__SendSignal__Group__3__Impl : ( ( rule__SendSignal__RecipentAssignment_3 ) ) ;
+    // InternalDroneScript.g:1741:1: rule__SendSignal__Group__3__Impl : ( ( rule__SendSignal__RecipentAssignment_3 ) ) ;
     public final void rule__SendSignal__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1691:1: ( ( ( rule__SendSignal__RecipentAssignment_3 ) ) )
-            // InternalDroneScript.g:1692:1: ( ( rule__SendSignal__RecipentAssignment_3 ) )
+            // InternalDroneScript.g:1745:1: ( ( ( rule__SendSignal__RecipentAssignment_3 ) ) )
+            // InternalDroneScript.g:1746:1: ( ( rule__SendSignal__RecipentAssignment_3 ) )
             {
-            // InternalDroneScript.g:1692:1: ( ( rule__SendSignal__RecipentAssignment_3 ) )
-            // InternalDroneScript.g:1693:2: ( rule__SendSignal__RecipentAssignment_3 )
+            // InternalDroneScript.g:1746:1: ( ( rule__SendSignal__RecipentAssignment_3 ) )
+            // InternalDroneScript.g:1747:2: ( rule__SendSignal__RecipentAssignment_3 )
             {
              before(grammarAccess.getSendSignalAccess().getRecipentAssignment_3()); 
-            // InternalDroneScript.g:1694:2: ( rule__SendSignal__RecipentAssignment_3 )
-            // InternalDroneScript.g:1694:3: rule__SendSignal__RecipentAssignment_3
+            // InternalDroneScript.g:1748:2: ( rule__SendSignal__RecipentAssignment_3 )
+            // InternalDroneScript.g:1748:3: rule__SendSignal__RecipentAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SendSignal__RecipentAssignment_3();
@@ -5100,16 +5252,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Cooperate__Group__0"
-    // InternalDroneScript.g:1703:1: rule__Cooperate__Group__0 : rule__Cooperate__Group__0__Impl rule__Cooperate__Group__1 ;
+    // InternalDroneScript.g:1757:1: rule__Cooperate__Group__0 : rule__Cooperate__Group__0__Impl rule__Cooperate__Group__1 ;
     public final void rule__Cooperate__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1707:1: ( rule__Cooperate__Group__0__Impl rule__Cooperate__Group__1 )
-            // InternalDroneScript.g:1708:2: rule__Cooperate__Group__0__Impl rule__Cooperate__Group__1
+            // InternalDroneScript.g:1761:1: ( rule__Cooperate__Group__0__Impl rule__Cooperate__Group__1 )
+            // InternalDroneScript.g:1762:2: rule__Cooperate__Group__0__Impl rule__Cooperate__Group__1
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_21);
             rule__Cooperate__Group__0__Impl();
 
             state._fsp--;
@@ -5138,20 +5290,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Cooperate__Group__0__Impl"
-    // InternalDroneScript.g:1715:1: rule__Cooperate__Group__0__Impl : ( 'cooperate' ) ;
+    // InternalDroneScript.g:1769:1: rule__Cooperate__Group__0__Impl : ( 'cooperate' ) ;
     public final void rule__Cooperate__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1719:1: ( ( 'cooperate' ) )
-            // InternalDroneScript.g:1720:1: ( 'cooperate' )
+            // InternalDroneScript.g:1773:1: ( ( 'cooperate' ) )
+            // InternalDroneScript.g:1774:1: ( 'cooperate' )
             {
-            // InternalDroneScript.g:1720:1: ( 'cooperate' )
-            // InternalDroneScript.g:1721:2: 'cooperate'
+            // InternalDroneScript.g:1774:1: ( 'cooperate' )
+            // InternalDroneScript.g:1775:2: 'cooperate'
             {
              before(grammarAccess.getCooperateAccess().getCooperateKeyword_0()); 
-            match(input,23,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getCooperateAccess().getCooperateKeyword_0()); 
 
             }
@@ -5175,17 +5327,22 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Cooperate__Group__1"
-    // InternalDroneScript.g:1730:1: rule__Cooperate__Group__1 : rule__Cooperate__Group__1__Impl ;
+    // InternalDroneScript.g:1784:1: rule__Cooperate__Group__1 : rule__Cooperate__Group__1__Impl rule__Cooperate__Group__2 ;
     public final void rule__Cooperate__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1734:1: ( rule__Cooperate__Group__1__Impl )
-            // InternalDroneScript.g:1735:2: rule__Cooperate__Group__1__Impl
+            // InternalDroneScript.g:1788:1: ( rule__Cooperate__Group__1__Impl rule__Cooperate__Group__2 )
+            // InternalDroneScript.g:1789:2: rule__Cooperate__Group__1__Impl rule__Cooperate__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_3);
             rule__Cooperate__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Cooperate__Group__2();
 
             state._fsp--;
 
@@ -5208,31 +5365,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Cooperate__Group__1__Impl"
-    // InternalDroneScript.g:1741:1: rule__Cooperate__Group__1__Impl : ( ( rule__Cooperate__RoleAssignment_1 ) ) ;
+    // InternalDroneScript.g:1796:1: rule__Cooperate__Group__1__Impl : ( 'on' ) ;
     public final void rule__Cooperate__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1745:1: ( ( ( rule__Cooperate__RoleAssignment_1 ) ) )
-            // InternalDroneScript.g:1746:1: ( ( rule__Cooperate__RoleAssignment_1 ) )
+            // InternalDroneScript.g:1800:1: ( ( 'on' ) )
+            // InternalDroneScript.g:1801:1: ( 'on' )
             {
-            // InternalDroneScript.g:1746:1: ( ( rule__Cooperate__RoleAssignment_1 ) )
-            // InternalDroneScript.g:1747:2: ( rule__Cooperate__RoleAssignment_1 )
+            // InternalDroneScript.g:1801:1: ( 'on' )
+            // InternalDroneScript.g:1802:2: 'on'
             {
-             before(grammarAccess.getCooperateAccess().getRoleAssignment_1()); 
-            // InternalDroneScript.g:1748:2: ( rule__Cooperate__RoleAssignment_1 )
-            // InternalDroneScript.g:1748:3: rule__Cooperate__RoleAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Cooperate__RoleAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getCooperateAccess().getRoleAssignment_1()); 
+             before(grammarAccess.getCooperateAccess().getOnKeyword_1()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getCooperateAccess().getOnKeyword_1()); 
 
             }
 
@@ -5254,17 +5401,257 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Cooperate__Group__1__Impl"
 
 
+    // $ANTLR start "rule__Cooperate__Group__2"
+    // InternalDroneScript.g:1811:1: rule__Cooperate__Group__2 : rule__Cooperate__Group__2__Impl rule__Cooperate__Group__3 ;
+    public final void rule__Cooperate__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:1815:1: ( rule__Cooperate__Group__2__Impl rule__Cooperate__Group__3 )
+            // InternalDroneScript.g:1816:2: rule__Cooperate__Group__2__Impl rule__Cooperate__Group__3
+            {
+            pushFollow(FOLLOW_22);
+            rule__Cooperate__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Cooperate__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Cooperate__Group__2"
+
+
+    // $ANTLR start "rule__Cooperate__Group__2__Impl"
+    // InternalDroneScript.g:1823:1: rule__Cooperate__Group__2__Impl : ( ( rule__Cooperate__TaskAssignment_2 ) ) ;
+    public final void rule__Cooperate__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:1827:1: ( ( ( rule__Cooperate__TaskAssignment_2 ) ) )
+            // InternalDroneScript.g:1828:1: ( ( rule__Cooperate__TaskAssignment_2 ) )
+            {
+            // InternalDroneScript.g:1828:1: ( ( rule__Cooperate__TaskAssignment_2 ) )
+            // InternalDroneScript.g:1829:2: ( rule__Cooperate__TaskAssignment_2 )
+            {
+             before(grammarAccess.getCooperateAccess().getTaskAssignment_2()); 
+            // InternalDroneScript.g:1830:2: ( rule__Cooperate__TaskAssignment_2 )
+            // InternalDroneScript.g:1830:3: rule__Cooperate__TaskAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Cooperate__TaskAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getCooperateAccess().getTaskAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Cooperate__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Cooperate__Group__3"
+    // InternalDroneScript.g:1838:1: rule__Cooperate__Group__3 : rule__Cooperate__Group__3__Impl rule__Cooperate__Group__4 ;
+    public final void rule__Cooperate__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:1842:1: ( rule__Cooperate__Group__3__Impl rule__Cooperate__Group__4 )
+            // InternalDroneScript.g:1843:2: rule__Cooperate__Group__3__Impl rule__Cooperate__Group__4
+            {
+            pushFollow(FOLLOW_3);
+            rule__Cooperate__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Cooperate__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Cooperate__Group__3"
+
+
+    // $ANTLR start "rule__Cooperate__Group__3__Impl"
+    // InternalDroneScript.g:1850:1: rule__Cooperate__Group__3__Impl : ( 'as' ) ;
+    public final void rule__Cooperate__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:1854:1: ( ( 'as' ) )
+            // InternalDroneScript.g:1855:1: ( 'as' )
+            {
+            // InternalDroneScript.g:1855:1: ( 'as' )
+            // InternalDroneScript.g:1856:2: 'as'
+            {
+             before(grammarAccess.getCooperateAccess().getAsKeyword_3()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getCooperateAccess().getAsKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Cooperate__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Cooperate__Group__4"
+    // InternalDroneScript.g:1865:1: rule__Cooperate__Group__4 : rule__Cooperate__Group__4__Impl ;
+    public final void rule__Cooperate__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:1869:1: ( rule__Cooperate__Group__4__Impl )
+            // InternalDroneScript.g:1870:2: rule__Cooperate__Group__4__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Cooperate__Group__4__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Cooperate__Group__4"
+
+
+    // $ANTLR start "rule__Cooperate__Group__4__Impl"
+    // InternalDroneScript.g:1876:1: rule__Cooperate__Group__4__Impl : ( ( rule__Cooperate__RoleAssignment_4 ) ) ;
+    public final void rule__Cooperate__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:1880:1: ( ( ( rule__Cooperate__RoleAssignment_4 ) ) )
+            // InternalDroneScript.g:1881:1: ( ( rule__Cooperate__RoleAssignment_4 ) )
+            {
+            // InternalDroneScript.g:1881:1: ( ( rule__Cooperate__RoleAssignment_4 ) )
+            // InternalDroneScript.g:1882:2: ( rule__Cooperate__RoleAssignment_4 )
+            {
+             before(grammarAccess.getCooperateAccess().getRoleAssignment_4()); 
+            // InternalDroneScript.g:1883:2: ( rule__Cooperate__RoleAssignment_4 )
+            // InternalDroneScript.g:1883:3: rule__Cooperate__RoleAssignment_4
+            {
+            pushFollow(FOLLOW_2);
+            rule__Cooperate__RoleAssignment_4();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getCooperateAccess().getRoleAssignment_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Cooperate__Group__4__Impl"
+
+
     // $ANTLR start "rule__Charge__Group__0"
-    // InternalDroneScript.g:1757:1: rule__Charge__Group__0 : rule__Charge__Group__0__Impl rule__Charge__Group__1 ;
+    // InternalDroneScript.g:1892:1: rule__Charge__Group__0 : rule__Charge__Group__0__Impl rule__Charge__Group__1 ;
     public final void rule__Charge__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1761:1: ( rule__Charge__Group__0__Impl rule__Charge__Group__1 )
-            // InternalDroneScript.g:1762:2: rule__Charge__Group__0__Impl rule__Charge__Group__1
+            // InternalDroneScript.g:1896:1: ( rule__Charge__Group__0__Impl rule__Charge__Group__1 )
+            // InternalDroneScript.g:1897:2: rule__Charge__Group__0__Impl rule__Charge__Group__1
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_23);
             rule__Charge__Group__0__Impl();
 
             state._fsp--;
@@ -5293,21 +5680,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Charge__Group__0__Impl"
-    // InternalDroneScript.g:1769:1: rule__Charge__Group__0__Impl : ( () ) ;
+    // InternalDroneScript.g:1904:1: rule__Charge__Group__0__Impl : ( () ) ;
     public final void rule__Charge__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1773:1: ( ( () ) )
-            // InternalDroneScript.g:1774:1: ( () )
+            // InternalDroneScript.g:1908:1: ( ( () ) )
+            // InternalDroneScript.g:1909:1: ( () )
             {
-            // InternalDroneScript.g:1774:1: ( () )
-            // InternalDroneScript.g:1775:2: ()
+            // InternalDroneScript.g:1909:1: ( () )
+            // InternalDroneScript.g:1910:2: ()
             {
              before(grammarAccess.getChargeAccess().getChargeAction_0()); 
-            // InternalDroneScript.g:1776:2: ()
-            // InternalDroneScript.g:1776:3: 
+            // InternalDroneScript.g:1911:2: ()
+            // InternalDroneScript.g:1911:3: 
             {
             }
 
@@ -5330,14 +5717,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Charge__Group__1"
-    // InternalDroneScript.g:1784:1: rule__Charge__Group__1 : rule__Charge__Group__1__Impl ;
+    // InternalDroneScript.g:1919:1: rule__Charge__Group__1 : rule__Charge__Group__1__Impl ;
     public final void rule__Charge__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1788:1: ( rule__Charge__Group__1__Impl )
-            // InternalDroneScript.g:1789:2: rule__Charge__Group__1__Impl
+            // InternalDroneScript.g:1923:1: ( rule__Charge__Group__1__Impl )
+            // InternalDroneScript.g:1924:2: rule__Charge__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Charge__Group__1__Impl();
@@ -5363,20 +5750,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Charge__Group__1__Impl"
-    // InternalDroneScript.g:1795:1: rule__Charge__Group__1__Impl : ( 'charge' ) ;
+    // InternalDroneScript.g:1930:1: rule__Charge__Group__1__Impl : ( 'charge' ) ;
     public final void rule__Charge__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1799:1: ( ( 'charge' ) )
-            // InternalDroneScript.g:1800:1: ( 'charge' )
+            // InternalDroneScript.g:1934:1: ( ( 'charge' ) )
+            // InternalDroneScript.g:1935:1: ( 'charge' )
             {
-            // InternalDroneScript.g:1800:1: ( 'charge' )
-            // InternalDroneScript.g:1801:2: 'charge'
+            // InternalDroneScript.g:1935:1: ( 'charge' )
+            // InternalDroneScript.g:1936:2: 'charge'
             {
              before(grammarAccess.getChargeAccess().getChargeKeyword_1()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getChargeAccess().getChargeKeyword_1()); 
 
             }
@@ -5400,16 +5787,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Scan__Group__0"
-    // InternalDroneScript.g:1811:1: rule__Scan__Group__0 : rule__Scan__Group__0__Impl rule__Scan__Group__1 ;
+    // InternalDroneScript.g:1946:1: rule__Scan__Group__0 : rule__Scan__Group__0__Impl rule__Scan__Group__1 ;
     public final void rule__Scan__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1815:1: ( rule__Scan__Group__0__Impl rule__Scan__Group__1 )
-            // InternalDroneScript.g:1816:2: rule__Scan__Group__0__Impl rule__Scan__Group__1
+            // InternalDroneScript.g:1950:1: ( rule__Scan__Group__0__Impl rule__Scan__Group__1 )
+            // InternalDroneScript.g:1951:2: rule__Scan__Group__0__Impl rule__Scan__Group__1
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_24);
             rule__Scan__Group__0__Impl();
 
             state._fsp--;
@@ -5438,21 +5825,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Scan__Group__0__Impl"
-    // InternalDroneScript.g:1823:1: rule__Scan__Group__0__Impl : ( () ) ;
+    // InternalDroneScript.g:1958:1: rule__Scan__Group__0__Impl : ( () ) ;
     public final void rule__Scan__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1827:1: ( ( () ) )
-            // InternalDroneScript.g:1828:1: ( () )
+            // InternalDroneScript.g:1962:1: ( ( () ) )
+            // InternalDroneScript.g:1963:1: ( () )
             {
-            // InternalDroneScript.g:1828:1: ( () )
-            // InternalDroneScript.g:1829:2: ()
+            // InternalDroneScript.g:1963:1: ( () )
+            // InternalDroneScript.g:1964:2: ()
             {
              before(grammarAccess.getScanAccess().getScanAction_0()); 
-            // InternalDroneScript.g:1830:2: ()
-            // InternalDroneScript.g:1830:3: 
+            // InternalDroneScript.g:1965:2: ()
+            // InternalDroneScript.g:1965:3: 
             {
             }
 
@@ -5475,14 +5862,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Scan__Group__1"
-    // InternalDroneScript.g:1838:1: rule__Scan__Group__1 : rule__Scan__Group__1__Impl ;
+    // InternalDroneScript.g:1973:1: rule__Scan__Group__1 : rule__Scan__Group__1__Impl ;
     public final void rule__Scan__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1842:1: ( rule__Scan__Group__1__Impl )
-            // InternalDroneScript.g:1843:2: rule__Scan__Group__1__Impl
+            // InternalDroneScript.g:1977:1: ( rule__Scan__Group__1__Impl )
+            // InternalDroneScript.g:1978:2: rule__Scan__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Scan__Group__1__Impl();
@@ -5508,20 +5895,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Scan__Group__1__Impl"
-    // InternalDroneScript.g:1849:1: rule__Scan__Group__1__Impl : ( 'scan' ) ;
+    // InternalDroneScript.g:1984:1: rule__Scan__Group__1__Impl : ( 'scan' ) ;
     public final void rule__Scan__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1853:1: ( ( 'scan' ) )
-            // InternalDroneScript.g:1854:1: ( 'scan' )
+            // InternalDroneScript.g:1988:1: ( ( 'scan' ) )
+            // InternalDroneScript.g:1989:1: ( 'scan' )
             {
-            // InternalDroneScript.g:1854:1: ( 'scan' )
-            // InternalDroneScript.g:1855:2: 'scan'
+            // InternalDroneScript.g:1989:1: ( 'scan' )
+            // InternalDroneScript.g:1990:2: 'scan'
             {
              before(grammarAccess.getScanAccess().getScanKeyword_1()); 
-            match(input,25,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getScanAccess().getScanKeyword_1()); 
 
             }
@@ -5545,16 +5932,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendMap__Group__0"
-    // InternalDroneScript.g:1865:1: rule__SendMap__Group__0 : rule__SendMap__Group__0__Impl rule__SendMap__Group__1 ;
+    // InternalDroneScript.g:2000:1: rule__SendMap__Group__0 : rule__SendMap__Group__0__Impl rule__SendMap__Group__1 ;
     public final void rule__SendMap__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1869:1: ( rule__SendMap__Group__0__Impl rule__SendMap__Group__1 )
-            // InternalDroneScript.g:1870:2: rule__SendMap__Group__0__Impl rule__SendMap__Group__1
+            // InternalDroneScript.g:2004:1: ( rule__SendMap__Group__0__Impl rule__SendMap__Group__1 )
+            // InternalDroneScript.g:2005:2: rule__SendMap__Group__0__Impl rule__SendMap__Group__1
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_25);
             rule__SendMap__Group__0__Impl();
 
             state._fsp--;
@@ -5583,20 +5970,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendMap__Group__0__Impl"
-    // InternalDroneScript.g:1877:1: rule__SendMap__Group__0__Impl : ( 'send' ) ;
+    // InternalDroneScript.g:2012:1: rule__SendMap__Group__0__Impl : ( 'send' ) ;
     public final void rule__SendMap__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1881:1: ( ( 'send' ) )
-            // InternalDroneScript.g:1882:1: ( 'send' )
+            // InternalDroneScript.g:2016:1: ( ( 'send' ) )
+            // InternalDroneScript.g:2017:1: ( 'send' )
             {
-            // InternalDroneScript.g:1882:1: ( 'send' )
-            // InternalDroneScript.g:1883:2: 'send'
+            // InternalDroneScript.g:2017:1: ( 'send' )
+            // InternalDroneScript.g:2018:2: 'send'
             {
              before(grammarAccess.getSendMapAccess().getSendKeyword_0()); 
-            match(input,22,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getSendMapAccess().getSendKeyword_0()); 
 
             }
@@ -5620,16 +6007,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendMap__Group__1"
-    // InternalDroneScript.g:1892:1: rule__SendMap__Group__1 : rule__SendMap__Group__1__Impl rule__SendMap__Group__2 ;
+    // InternalDroneScript.g:2027:1: rule__SendMap__Group__1 : rule__SendMap__Group__1__Impl rule__SendMap__Group__2 ;
     public final void rule__SendMap__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1896:1: ( rule__SendMap__Group__1__Impl rule__SendMap__Group__2 )
-            // InternalDroneScript.g:1897:2: rule__SendMap__Group__1__Impl rule__SendMap__Group__2
+            // InternalDroneScript.g:2031:1: ( rule__SendMap__Group__1__Impl rule__SendMap__Group__2 )
+            // InternalDroneScript.g:2032:2: rule__SendMap__Group__1__Impl rule__SendMap__Group__2
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_19);
             rule__SendMap__Group__1__Impl();
 
             state._fsp--;
@@ -5658,20 +6045,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendMap__Group__1__Impl"
-    // InternalDroneScript.g:1904:1: rule__SendMap__Group__1__Impl : ( 'map' ) ;
+    // InternalDroneScript.g:2039:1: rule__SendMap__Group__1__Impl : ( 'map' ) ;
     public final void rule__SendMap__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1908:1: ( ( 'map' ) )
-            // InternalDroneScript.g:1909:1: ( 'map' )
+            // InternalDroneScript.g:2043:1: ( ( 'map' ) )
+            // InternalDroneScript.g:2044:1: ( 'map' )
             {
-            // InternalDroneScript.g:1909:1: ( 'map' )
-            // InternalDroneScript.g:1910:2: 'map'
+            // InternalDroneScript.g:2044:1: ( 'map' )
+            // InternalDroneScript.g:2045:2: 'map'
             {
              before(grammarAccess.getSendMapAccess().getMapKeyword_1()); 
-            match(input,26,FOLLOW_2); 
+            match(input,28,FOLLOW_2); 
              after(grammarAccess.getSendMapAccess().getMapKeyword_1()); 
 
             }
@@ -5695,14 +6082,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendMap__Group__2"
-    // InternalDroneScript.g:1919:1: rule__SendMap__Group__2 : rule__SendMap__Group__2__Impl rule__SendMap__Group__3 ;
+    // InternalDroneScript.g:2054:1: rule__SendMap__Group__2 : rule__SendMap__Group__2__Impl rule__SendMap__Group__3 ;
     public final void rule__SendMap__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1923:1: ( rule__SendMap__Group__2__Impl rule__SendMap__Group__3 )
-            // InternalDroneScript.g:1924:2: rule__SendMap__Group__2__Impl rule__SendMap__Group__3
+            // InternalDroneScript.g:2058:1: ( rule__SendMap__Group__2__Impl rule__SendMap__Group__3 )
+            // InternalDroneScript.g:2059:2: rule__SendMap__Group__2__Impl rule__SendMap__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__SendMap__Group__2__Impl();
@@ -5733,20 +6120,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendMap__Group__2__Impl"
-    // InternalDroneScript.g:1931:1: rule__SendMap__Group__2__Impl : ( 'to' ) ;
+    // InternalDroneScript.g:2066:1: rule__SendMap__Group__2__Impl : ( 'to' ) ;
     public final void rule__SendMap__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1935:1: ( ( 'to' ) )
-            // InternalDroneScript.g:1936:1: ( 'to' )
+            // InternalDroneScript.g:2070:1: ( ( 'to' ) )
+            // InternalDroneScript.g:2071:1: ( 'to' )
             {
-            // InternalDroneScript.g:1936:1: ( 'to' )
-            // InternalDroneScript.g:1937:2: 'to'
+            // InternalDroneScript.g:2071:1: ( 'to' )
+            // InternalDroneScript.g:2072:2: 'to'
             {
              before(grammarAccess.getSendMapAccess().getToKeyword_2()); 
-            match(input,21,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getSendMapAccess().getToKeyword_2()); 
 
             }
@@ -5770,14 +6157,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendMap__Group__3"
-    // InternalDroneScript.g:1946:1: rule__SendMap__Group__3 : rule__SendMap__Group__3__Impl ;
+    // InternalDroneScript.g:2081:1: rule__SendMap__Group__3 : rule__SendMap__Group__3__Impl ;
     public final void rule__SendMap__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1950:1: ( rule__SendMap__Group__3__Impl )
-            // InternalDroneScript.g:1951:2: rule__SendMap__Group__3__Impl
+            // InternalDroneScript.g:2085:1: ( rule__SendMap__Group__3__Impl )
+            // InternalDroneScript.g:2086:2: rule__SendMap__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SendMap__Group__3__Impl();
@@ -5803,21 +6190,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendMap__Group__3__Impl"
-    // InternalDroneScript.g:1957:1: rule__SendMap__Group__3__Impl : ( ( rule__SendMap__RecipentAssignment_3 ) ) ;
+    // InternalDroneScript.g:2092:1: rule__SendMap__Group__3__Impl : ( ( rule__SendMap__RecipentAssignment_3 ) ) ;
     public final void rule__SendMap__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1961:1: ( ( ( rule__SendMap__RecipentAssignment_3 ) ) )
-            // InternalDroneScript.g:1962:1: ( ( rule__SendMap__RecipentAssignment_3 ) )
+            // InternalDroneScript.g:2096:1: ( ( ( rule__SendMap__RecipentAssignment_3 ) ) )
+            // InternalDroneScript.g:2097:1: ( ( rule__SendMap__RecipentAssignment_3 ) )
             {
-            // InternalDroneScript.g:1962:1: ( ( rule__SendMap__RecipentAssignment_3 ) )
-            // InternalDroneScript.g:1963:2: ( rule__SendMap__RecipentAssignment_3 )
+            // InternalDroneScript.g:2097:1: ( ( rule__SendMap__RecipentAssignment_3 ) )
+            // InternalDroneScript.g:2098:2: ( rule__SendMap__RecipentAssignment_3 )
             {
              before(grammarAccess.getSendMapAccess().getRecipentAssignment_3()); 
-            // InternalDroneScript.g:1964:2: ( rule__SendMap__RecipentAssignment_3 )
-            // InternalDroneScript.g:1964:3: rule__SendMap__RecipentAssignment_3
+            // InternalDroneScript.g:2099:2: ( rule__SendMap__RecipentAssignment_3 )
+            // InternalDroneScript.g:2099:3: rule__SendMap__RecipentAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__SendMap__RecipentAssignment_3();
@@ -5850,14 +6237,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__0"
-    // InternalDroneScript.g:1973:1: rule__Position__Group__0 : rule__Position__Group__0__Impl rule__Position__Group__1 ;
+    // InternalDroneScript.g:2108:1: rule__Position__Group__0 : rule__Position__Group__0__Impl rule__Position__Group__1 ;
     public final void rule__Position__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1977:1: ( rule__Position__Group__0__Impl rule__Position__Group__1 )
-            // InternalDroneScript.g:1978:2: rule__Position__Group__0__Impl rule__Position__Group__1
+            // InternalDroneScript.g:2112:1: ( rule__Position__Group__0__Impl rule__Position__Group__1 )
+            // InternalDroneScript.g:2113:2: rule__Position__Group__0__Impl rule__Position__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Position__Group__0__Impl();
@@ -5888,21 +6275,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__0__Impl"
-    // InternalDroneScript.g:1985:1: rule__Position__Group__0__Impl : ( ( rule__Position__XAssignment_0 ) ) ;
+    // InternalDroneScript.g:2120:1: rule__Position__Group__0__Impl : ( ( rule__Position__XAssignment_0 ) ) ;
     public final void rule__Position__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:1989:1: ( ( ( rule__Position__XAssignment_0 ) ) )
-            // InternalDroneScript.g:1990:1: ( ( rule__Position__XAssignment_0 ) )
+            // InternalDroneScript.g:2124:1: ( ( ( rule__Position__XAssignment_0 ) ) )
+            // InternalDroneScript.g:2125:1: ( ( rule__Position__XAssignment_0 ) )
             {
-            // InternalDroneScript.g:1990:1: ( ( rule__Position__XAssignment_0 ) )
-            // InternalDroneScript.g:1991:2: ( rule__Position__XAssignment_0 )
+            // InternalDroneScript.g:2125:1: ( ( rule__Position__XAssignment_0 ) )
+            // InternalDroneScript.g:2126:2: ( rule__Position__XAssignment_0 )
             {
              before(grammarAccess.getPositionAccess().getXAssignment_0()); 
-            // InternalDroneScript.g:1992:2: ( rule__Position__XAssignment_0 )
-            // InternalDroneScript.g:1992:3: rule__Position__XAssignment_0
+            // InternalDroneScript.g:2127:2: ( rule__Position__XAssignment_0 )
+            // InternalDroneScript.g:2127:3: rule__Position__XAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Position__XAssignment_0();
@@ -5935,16 +6322,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__1"
-    // InternalDroneScript.g:2000:1: rule__Position__Group__1 : rule__Position__Group__1__Impl rule__Position__Group__2 ;
+    // InternalDroneScript.g:2135:1: rule__Position__Group__1 : rule__Position__Group__1__Impl rule__Position__Group__2 ;
     public final void rule__Position__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2004:1: ( rule__Position__Group__1__Impl rule__Position__Group__2 )
-            // InternalDroneScript.g:2005:2: rule__Position__Group__1__Impl rule__Position__Group__2
+            // InternalDroneScript.g:2139:1: ( rule__Position__Group__1__Impl rule__Position__Group__2 )
+            // InternalDroneScript.g:2140:2: rule__Position__Group__1__Impl rule__Position__Group__2
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_20);
             rule__Position__Group__1__Impl();
 
             state._fsp--;
@@ -5973,17 +6360,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__1__Impl"
-    // InternalDroneScript.g:2012:1: rule__Position__Group__1__Impl : ( ',' ) ;
+    // InternalDroneScript.g:2147:1: rule__Position__Group__1__Impl : ( ',' ) ;
     public final void rule__Position__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2016:1: ( ( ',' ) )
-            // InternalDroneScript.g:2017:1: ( ',' )
+            // InternalDroneScript.g:2151:1: ( ( ',' ) )
+            // InternalDroneScript.g:2152:1: ( ',' )
             {
-            // InternalDroneScript.g:2017:1: ( ',' )
-            // InternalDroneScript.g:2018:2: ','
+            // InternalDroneScript.g:2152:1: ( ',' )
+            // InternalDroneScript.g:2153:2: ','
             {
              before(grammarAccess.getPositionAccess().getCommaKeyword_1()); 
             match(input,13,FOLLOW_2); 
@@ -6010,14 +6397,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__2"
-    // InternalDroneScript.g:2027:1: rule__Position__Group__2 : rule__Position__Group__2__Impl rule__Position__Group__3 ;
+    // InternalDroneScript.g:2162:1: rule__Position__Group__2 : rule__Position__Group__2__Impl rule__Position__Group__3 ;
     public final void rule__Position__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2031:1: ( rule__Position__Group__2__Impl rule__Position__Group__3 )
-            // InternalDroneScript.g:2032:2: rule__Position__Group__2__Impl rule__Position__Group__3
+            // InternalDroneScript.g:2166:1: ( rule__Position__Group__2__Impl rule__Position__Group__3 )
+            // InternalDroneScript.g:2167:2: rule__Position__Group__2__Impl rule__Position__Group__3
             {
             pushFollow(FOLLOW_6);
             rule__Position__Group__2__Impl();
@@ -6048,21 +6435,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__2__Impl"
-    // InternalDroneScript.g:2039:1: rule__Position__Group__2__Impl : ( ( rule__Position__YAssignment_2 ) ) ;
+    // InternalDroneScript.g:2174:1: rule__Position__Group__2__Impl : ( ( rule__Position__YAssignment_2 ) ) ;
     public final void rule__Position__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2043:1: ( ( ( rule__Position__YAssignment_2 ) ) )
-            // InternalDroneScript.g:2044:1: ( ( rule__Position__YAssignment_2 ) )
+            // InternalDroneScript.g:2178:1: ( ( ( rule__Position__YAssignment_2 ) ) )
+            // InternalDroneScript.g:2179:1: ( ( rule__Position__YAssignment_2 ) )
             {
-            // InternalDroneScript.g:2044:1: ( ( rule__Position__YAssignment_2 ) )
-            // InternalDroneScript.g:2045:2: ( rule__Position__YAssignment_2 )
+            // InternalDroneScript.g:2179:1: ( ( rule__Position__YAssignment_2 ) )
+            // InternalDroneScript.g:2180:2: ( rule__Position__YAssignment_2 )
             {
              before(grammarAccess.getPositionAccess().getYAssignment_2()); 
-            // InternalDroneScript.g:2046:2: ( rule__Position__YAssignment_2 )
-            // InternalDroneScript.g:2046:3: rule__Position__YAssignment_2
+            // InternalDroneScript.g:2181:2: ( rule__Position__YAssignment_2 )
+            // InternalDroneScript.g:2181:3: rule__Position__YAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Position__YAssignment_2();
@@ -6095,16 +6482,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__3"
-    // InternalDroneScript.g:2054:1: rule__Position__Group__3 : rule__Position__Group__3__Impl rule__Position__Group__4 ;
+    // InternalDroneScript.g:2189:1: rule__Position__Group__3 : rule__Position__Group__3__Impl rule__Position__Group__4 ;
     public final void rule__Position__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2058:1: ( rule__Position__Group__3__Impl rule__Position__Group__4 )
-            // InternalDroneScript.g:2059:2: rule__Position__Group__3__Impl rule__Position__Group__4
+            // InternalDroneScript.g:2193:1: ( rule__Position__Group__3__Impl rule__Position__Group__4 )
+            // InternalDroneScript.g:2194:2: rule__Position__Group__3__Impl rule__Position__Group__4
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_20);
             rule__Position__Group__3__Impl();
 
             state._fsp--;
@@ -6133,17 +6520,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__3__Impl"
-    // InternalDroneScript.g:2066:1: rule__Position__Group__3__Impl : ( ',' ) ;
+    // InternalDroneScript.g:2201:1: rule__Position__Group__3__Impl : ( ',' ) ;
     public final void rule__Position__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2070:1: ( ( ',' ) )
-            // InternalDroneScript.g:2071:1: ( ',' )
+            // InternalDroneScript.g:2205:1: ( ( ',' ) )
+            // InternalDroneScript.g:2206:1: ( ',' )
             {
-            // InternalDroneScript.g:2071:1: ( ',' )
-            // InternalDroneScript.g:2072:2: ','
+            // InternalDroneScript.g:2206:1: ( ',' )
+            // InternalDroneScript.g:2207:2: ','
             {
              before(grammarAccess.getPositionAccess().getCommaKeyword_3()); 
             match(input,13,FOLLOW_2); 
@@ -6170,14 +6557,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__4"
-    // InternalDroneScript.g:2081:1: rule__Position__Group__4 : rule__Position__Group__4__Impl ;
+    // InternalDroneScript.g:2216:1: rule__Position__Group__4 : rule__Position__Group__4__Impl ;
     public final void rule__Position__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2085:1: ( rule__Position__Group__4__Impl )
-            // InternalDroneScript.g:2086:2: rule__Position__Group__4__Impl
+            // InternalDroneScript.g:2220:1: ( rule__Position__Group__4__Impl )
+            // InternalDroneScript.g:2221:2: rule__Position__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Position__Group__4__Impl();
@@ -6203,21 +6590,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__Group__4__Impl"
-    // InternalDroneScript.g:2092:1: rule__Position__Group__4__Impl : ( ( rule__Position__ZAssignment_4 ) ) ;
+    // InternalDroneScript.g:2227:1: rule__Position__Group__4__Impl : ( ( rule__Position__ZAssignment_4 ) ) ;
     public final void rule__Position__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2096:1: ( ( ( rule__Position__ZAssignment_4 ) ) )
-            // InternalDroneScript.g:2097:1: ( ( rule__Position__ZAssignment_4 ) )
+            // InternalDroneScript.g:2231:1: ( ( ( rule__Position__ZAssignment_4 ) ) )
+            // InternalDroneScript.g:2232:1: ( ( rule__Position__ZAssignment_4 ) )
             {
-            // InternalDroneScript.g:2097:1: ( ( rule__Position__ZAssignment_4 ) )
-            // InternalDroneScript.g:2098:2: ( rule__Position__ZAssignment_4 )
+            // InternalDroneScript.g:2232:1: ( ( rule__Position__ZAssignment_4 ) )
+            // InternalDroneScript.g:2233:2: ( rule__Position__ZAssignment_4 )
             {
              before(grammarAccess.getPositionAccess().getZAssignment_4()); 
-            // InternalDroneScript.g:2099:2: ( rule__Position__ZAssignment_4 )
-            // InternalDroneScript.g:2099:3: rule__Position__ZAssignment_4
+            // InternalDroneScript.g:2234:2: ( rule__Position__ZAssignment_4 )
+            // InternalDroneScript.g:2234:3: rule__Position__ZAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Position__ZAssignment_4();
@@ -6250,16 +6637,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group__0"
-    // InternalDroneScript.g:2108:1: rule__DOUBLE__Group__0 : rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1 ;
+    // InternalDroneScript.g:2243:1: rule__DOUBLE__Group__0 : rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1 ;
     public final void rule__DOUBLE__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2112:1: ( rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1 )
-            // InternalDroneScript.g:2113:2: rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1
+            // InternalDroneScript.g:2247:1: ( rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1 )
+            // InternalDroneScript.g:2248:2: rule__DOUBLE__Group__0__Impl rule__DOUBLE__Group__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_20);
             rule__DOUBLE__Group__0__Impl();
 
             state._fsp--;
@@ -6288,31 +6675,31 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group__0__Impl"
-    // InternalDroneScript.g:2120:1: rule__DOUBLE__Group__0__Impl : ( ( '-' )? ) ;
+    // InternalDroneScript.g:2255:1: rule__DOUBLE__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__DOUBLE__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2124:1: ( ( ( '-' )? ) )
-            // InternalDroneScript.g:2125:1: ( ( '-' )? )
+            // InternalDroneScript.g:2259:1: ( ( ( '-' )? ) )
+            // InternalDroneScript.g:2260:1: ( ( '-' )? )
             {
-            // InternalDroneScript.g:2125:1: ( ( '-' )? )
-            // InternalDroneScript.g:2126:2: ( '-' )?
+            // InternalDroneScript.g:2260:1: ( ( '-' )? )
+            // InternalDroneScript.g:2261:2: ( '-' )?
             {
              before(grammarAccess.getDOUBLEAccess().getHyphenMinusKeyword_0()); 
-            // InternalDroneScript.g:2127:2: ( '-' )?
+            // InternalDroneScript.g:2262:2: ( '-' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==27) ) {
+            if ( (LA10_0==29) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
-                    // InternalDroneScript.g:2127:3: '-'
+                    // InternalDroneScript.g:2262:3: '-'
                     {
-                    match(input,27,FOLLOW_2); 
+                    match(input,29,FOLLOW_2); 
 
                     }
                     break;
@@ -6342,16 +6729,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group__1"
-    // InternalDroneScript.g:2135:1: rule__DOUBLE__Group__1 : rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2 ;
+    // InternalDroneScript.g:2270:1: rule__DOUBLE__Group__1 : rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2 ;
     public final void rule__DOUBLE__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2139:1: ( rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2 )
-            // InternalDroneScript.g:2140:2: rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2
+            // InternalDroneScript.g:2274:1: ( rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2 )
+            // InternalDroneScript.g:2275:2: rule__DOUBLE__Group__1__Impl rule__DOUBLE__Group__2
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_26);
             rule__DOUBLE__Group__1__Impl();
 
             state._fsp--;
@@ -6380,17 +6767,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group__1__Impl"
-    // InternalDroneScript.g:2147:1: rule__DOUBLE__Group__1__Impl : ( RULE_INT ) ;
+    // InternalDroneScript.g:2282:1: rule__DOUBLE__Group__1__Impl : ( RULE_INT ) ;
     public final void rule__DOUBLE__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2151:1: ( ( RULE_INT ) )
-            // InternalDroneScript.g:2152:1: ( RULE_INT )
+            // InternalDroneScript.g:2286:1: ( ( RULE_INT ) )
+            // InternalDroneScript.g:2287:1: ( RULE_INT )
             {
-            // InternalDroneScript.g:2152:1: ( RULE_INT )
-            // InternalDroneScript.g:2153:2: RULE_INT
+            // InternalDroneScript.g:2287:1: ( RULE_INT )
+            // InternalDroneScript.g:2288:2: RULE_INT
             {
              before(grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_1()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -6417,14 +6804,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group__2"
-    // InternalDroneScript.g:2162:1: rule__DOUBLE__Group__2 : rule__DOUBLE__Group__2__Impl ;
+    // InternalDroneScript.g:2297:1: rule__DOUBLE__Group__2 : rule__DOUBLE__Group__2__Impl ;
     public final void rule__DOUBLE__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2166:1: ( rule__DOUBLE__Group__2__Impl )
-            // InternalDroneScript.g:2167:2: rule__DOUBLE__Group__2__Impl
+            // InternalDroneScript.g:2301:1: ( rule__DOUBLE__Group__2__Impl )
+            // InternalDroneScript.g:2302:2: rule__DOUBLE__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DOUBLE__Group__2__Impl();
@@ -6450,29 +6837,29 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group__2__Impl"
-    // InternalDroneScript.g:2173:1: rule__DOUBLE__Group__2__Impl : ( ( rule__DOUBLE__Group_2__0 )? ) ;
+    // InternalDroneScript.g:2308:1: rule__DOUBLE__Group__2__Impl : ( ( rule__DOUBLE__Group_2__0 )? ) ;
     public final void rule__DOUBLE__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2177:1: ( ( ( rule__DOUBLE__Group_2__0 )? ) )
-            // InternalDroneScript.g:2178:1: ( ( rule__DOUBLE__Group_2__0 )? )
+            // InternalDroneScript.g:2312:1: ( ( ( rule__DOUBLE__Group_2__0 )? ) )
+            // InternalDroneScript.g:2313:1: ( ( rule__DOUBLE__Group_2__0 )? )
             {
-            // InternalDroneScript.g:2178:1: ( ( rule__DOUBLE__Group_2__0 )? )
-            // InternalDroneScript.g:2179:2: ( rule__DOUBLE__Group_2__0 )?
+            // InternalDroneScript.g:2313:1: ( ( rule__DOUBLE__Group_2__0 )? )
+            // InternalDroneScript.g:2314:2: ( rule__DOUBLE__Group_2__0 )?
             {
              before(grammarAccess.getDOUBLEAccess().getGroup_2()); 
-            // InternalDroneScript.g:2180:2: ( rule__DOUBLE__Group_2__0 )?
+            // InternalDroneScript.g:2315:2: ( rule__DOUBLE__Group_2__0 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==28) ) {
+            if ( (LA11_0==30) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
-                    // InternalDroneScript.g:2180:3: rule__DOUBLE__Group_2__0
+                    // InternalDroneScript.g:2315:3: rule__DOUBLE__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__DOUBLE__Group_2__0();
@@ -6508,16 +6895,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group_2__0"
-    // InternalDroneScript.g:2189:1: rule__DOUBLE__Group_2__0 : rule__DOUBLE__Group_2__0__Impl rule__DOUBLE__Group_2__1 ;
+    // InternalDroneScript.g:2324:1: rule__DOUBLE__Group_2__0 : rule__DOUBLE__Group_2__0__Impl rule__DOUBLE__Group_2__1 ;
     public final void rule__DOUBLE__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2193:1: ( rule__DOUBLE__Group_2__0__Impl rule__DOUBLE__Group_2__1 )
-            // InternalDroneScript.g:2194:2: rule__DOUBLE__Group_2__0__Impl rule__DOUBLE__Group_2__1
+            // InternalDroneScript.g:2328:1: ( rule__DOUBLE__Group_2__0__Impl rule__DOUBLE__Group_2__1 )
+            // InternalDroneScript.g:2329:2: rule__DOUBLE__Group_2__0__Impl rule__DOUBLE__Group_2__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_13);
             rule__DOUBLE__Group_2__0__Impl();
 
             state._fsp--;
@@ -6546,20 +6933,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group_2__0__Impl"
-    // InternalDroneScript.g:2201:1: rule__DOUBLE__Group_2__0__Impl : ( '.' ) ;
+    // InternalDroneScript.g:2336:1: rule__DOUBLE__Group_2__0__Impl : ( '.' ) ;
     public final void rule__DOUBLE__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2205:1: ( ( '.' ) )
-            // InternalDroneScript.g:2206:1: ( '.' )
+            // InternalDroneScript.g:2340:1: ( ( '.' ) )
+            // InternalDroneScript.g:2341:1: ( '.' )
             {
-            // InternalDroneScript.g:2206:1: ( '.' )
-            // InternalDroneScript.g:2207:2: '.'
+            // InternalDroneScript.g:2341:1: ( '.' )
+            // InternalDroneScript.g:2342:2: '.'
             {
              before(grammarAccess.getDOUBLEAccess().getFullStopKeyword_2_0()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getDOUBLEAccess().getFullStopKeyword_2_0()); 
 
             }
@@ -6583,14 +6970,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group_2__1"
-    // InternalDroneScript.g:2216:1: rule__DOUBLE__Group_2__1 : rule__DOUBLE__Group_2__1__Impl ;
+    // InternalDroneScript.g:2351:1: rule__DOUBLE__Group_2__1 : rule__DOUBLE__Group_2__1__Impl ;
     public final void rule__DOUBLE__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2220:1: ( rule__DOUBLE__Group_2__1__Impl )
-            // InternalDroneScript.g:2221:2: rule__DOUBLE__Group_2__1__Impl
+            // InternalDroneScript.g:2355:1: ( rule__DOUBLE__Group_2__1__Impl )
+            // InternalDroneScript.g:2356:2: rule__DOUBLE__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__DOUBLE__Group_2__1__Impl();
@@ -6616,17 +7003,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DOUBLE__Group_2__1__Impl"
-    // InternalDroneScript.g:2227:1: rule__DOUBLE__Group_2__1__Impl : ( RULE_INT ) ;
+    // InternalDroneScript.g:2362:1: rule__DOUBLE__Group_2__1__Impl : ( RULE_INT ) ;
     public final void rule__DOUBLE__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2231:1: ( ( RULE_INT ) )
-            // InternalDroneScript.g:2232:1: ( RULE_INT )
+            // InternalDroneScript.g:2366:1: ( ( RULE_INT ) )
+            // InternalDroneScript.g:2367:1: ( RULE_INT )
             {
-            // InternalDroneScript.g:2232:1: ( RULE_INT )
-            // InternalDroneScript.g:2233:2: RULE_INT
+            // InternalDroneScript.g:2367:1: ( RULE_INT )
+            // InternalDroneScript.g:2368:2: RULE_INT
             {
              before(grammarAccess.getDOUBLEAccess().getINTTerminalRuleCall_2_1()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -6653,16 +7040,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // InternalDroneScript.g:2243:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // InternalDroneScript.g:2378:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2247:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // InternalDroneScript.g:2248:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // InternalDroneScript.g:2382:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalDroneScript.g:2383:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_26);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
@@ -6691,17 +7078,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // InternalDroneScript.g:2255:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // InternalDroneScript.g:2390:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2259:1: ( ( RULE_ID ) )
-            // InternalDroneScript.g:2260:1: ( RULE_ID )
+            // InternalDroneScript.g:2394:1: ( ( RULE_ID ) )
+            // InternalDroneScript.g:2395:1: ( RULE_ID )
             {
-            // InternalDroneScript.g:2260:1: ( RULE_ID )
-            // InternalDroneScript.g:2261:2: RULE_ID
+            // InternalDroneScript.g:2395:1: ( RULE_ID )
+            // InternalDroneScript.g:2396:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6728,14 +7115,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // InternalDroneScript.g:2270:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // InternalDroneScript.g:2405:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2274:1: ( rule__QualifiedName__Group__1__Impl )
-            // InternalDroneScript.g:2275:2: rule__QualifiedName__Group__1__Impl
+            // InternalDroneScript.g:2409:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalDroneScript.g:2410:2: rule__QualifiedName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__1__Impl();
@@ -6761,35 +7148,35 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // InternalDroneScript.g:2281:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // InternalDroneScript.g:2416:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2285:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // InternalDroneScript.g:2286:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalDroneScript.g:2420:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // InternalDroneScript.g:2421:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // InternalDroneScript.g:2286:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // InternalDroneScript.g:2287:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalDroneScript.g:2421:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalDroneScript.g:2422:2: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // InternalDroneScript.g:2288:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalDroneScript.g:2423:2: ( rule__QualifiedName__Group_1__0 )*
             loop12:
             do {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==28) ) {
+                if ( (LA12_0==30) ) {
                     alt12=1;
                 }
 
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalDroneScript.g:2288:3: rule__QualifiedName__Group_1__0
+            	    // InternalDroneScript.g:2423:3: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_24);
+            	    pushFollow(FOLLOW_27);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -6826,14 +7213,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // InternalDroneScript.g:2297:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // InternalDroneScript.g:2432:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2301:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // InternalDroneScript.g:2302:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // InternalDroneScript.g:2436:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // InternalDroneScript.g:2437:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
             pushFollow(FOLLOW_3);
             rule__QualifiedName__Group_1__0__Impl();
@@ -6864,20 +7251,20 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // InternalDroneScript.g:2309:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // InternalDroneScript.g:2444:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2313:1: ( ( '.' ) )
-            // InternalDroneScript.g:2314:1: ( '.' )
+            // InternalDroneScript.g:2448:1: ( ( '.' ) )
+            // InternalDroneScript.g:2449:1: ( '.' )
             {
-            // InternalDroneScript.g:2314:1: ( '.' )
-            // InternalDroneScript.g:2315:2: '.'
+            // InternalDroneScript.g:2449:1: ( '.' )
+            // InternalDroneScript.g:2450:2: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,28,FOLLOW_2); 
+            match(input,30,FOLLOW_2); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -6901,14 +7288,14 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // InternalDroneScript.g:2324:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // InternalDroneScript.g:2459:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2328:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // InternalDroneScript.g:2329:2: rule__QualifiedName__Group_1__1__Impl
+            // InternalDroneScript.g:2463:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // InternalDroneScript.g:2464:2: rule__QualifiedName__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group_1__1__Impl();
@@ -6934,17 +7321,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // InternalDroneScript.g:2335:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalDroneScript.g:2470:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2339:1: ( ( RULE_ID ) )
-            // InternalDroneScript.g:2340:1: ( RULE_ID )
+            // InternalDroneScript.g:2474:1: ( ( RULE_ID ) )
+            // InternalDroneScript.g:2475:1: ( RULE_ID )
             {
-            // InternalDroneScript.g:2340:1: ( RULE_ID )
-            // InternalDroneScript.g:2341:2: RULE_ID
+            // InternalDroneScript.g:2475:1: ( RULE_ID )
+            // InternalDroneScript.g:2476:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6971,21 +7358,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DronesBehavior__ScenarioAssignment_1"
-    // InternalDroneScript.g:2351:1: rule__DronesBehavior__ScenarioAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalDroneScript.g:2486:1: rule__DronesBehavior__ScenarioAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__DronesBehavior__ScenarioAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2355:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:2356:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2490:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalDroneScript.g:2491:2: ( ( ruleQualifiedName ) )
             {
-            // InternalDroneScript.g:2356:2: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:2357:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2491:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2492:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getDronesBehaviorAccess().getScenarioScenarioCrossReference_1_0()); 
-            // InternalDroneScript.g:2358:3: ( ruleQualifiedName )
-            // InternalDroneScript.g:2359:4: ruleQualifiedName
+            // InternalDroneScript.g:2493:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2494:4: ruleQualifiedName
             {
              before(grammarAccess.getDronesBehaviorAccess().getScenarioScenarioQualifiedNameParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -7020,17 +7407,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DronesBehavior__SignalsAssignment_2_0_1"
-    // InternalDroneScript.g:2370:1: rule__DronesBehavior__SignalsAssignment_2_0_1 : ( ruleSignal ) ;
+    // InternalDroneScript.g:2505:1: rule__DronesBehavior__SignalsAssignment_2_0_1 : ( ruleSignal ) ;
     public final void rule__DronesBehavior__SignalsAssignment_2_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2374:1: ( ( ruleSignal ) )
-            // InternalDroneScript.g:2375:2: ( ruleSignal )
+            // InternalDroneScript.g:2509:1: ( ( ruleSignal ) )
+            // InternalDroneScript.g:2510:2: ( ruleSignal )
             {
-            // InternalDroneScript.g:2375:2: ( ruleSignal )
-            // InternalDroneScript.g:2376:3: ruleSignal
+            // InternalDroneScript.g:2510:2: ( ruleSignal )
+            // InternalDroneScript.g:2511:3: ruleSignal
             {
              before(grammarAccess.getDronesBehaviorAccess().getSignalsSignalParserRuleCall_2_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7061,17 +7448,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DronesBehavior__SignalsAssignment_2_0_2_1"
-    // InternalDroneScript.g:2385:1: rule__DronesBehavior__SignalsAssignment_2_0_2_1 : ( ruleSignal ) ;
+    // InternalDroneScript.g:2520:1: rule__DronesBehavior__SignalsAssignment_2_0_2_1 : ( ruleSignal ) ;
     public final void rule__DronesBehavior__SignalsAssignment_2_0_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2389:1: ( ( ruleSignal ) )
-            // InternalDroneScript.g:2390:2: ( ruleSignal )
+            // InternalDroneScript.g:2524:1: ( ( ruleSignal ) )
+            // InternalDroneScript.g:2525:2: ( ruleSignal )
             {
-            // InternalDroneScript.g:2390:2: ( ruleSignal )
-            // InternalDroneScript.g:2391:3: ruleSignal
+            // InternalDroneScript.g:2525:2: ( ruleSignal )
+            // InternalDroneScript.g:2526:3: ruleSignal
             {
              before(grammarAccess.getDronesBehaviorAccess().getSignalsSignalParserRuleCall_2_0_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7102,17 +7489,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__DronesBehavior__ScriptsAssignment_2_1"
-    // InternalDroneScript.g:2400:1: rule__DronesBehavior__ScriptsAssignment_2_1 : ( ruleScript ) ;
+    // InternalDroneScript.g:2535:1: rule__DronesBehavior__ScriptsAssignment_2_1 : ( ruleScript ) ;
     public final void rule__DronesBehavior__ScriptsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2404:1: ( ( ruleScript ) )
-            // InternalDroneScript.g:2405:2: ( ruleScript )
+            // InternalDroneScript.g:2539:1: ( ( ruleScript ) )
+            // InternalDroneScript.g:2540:2: ( ruleScript )
             {
-            // InternalDroneScript.g:2405:2: ( ruleScript )
-            // InternalDroneScript.g:2406:3: ruleScript
+            // InternalDroneScript.g:2540:2: ( ruleScript )
+            // InternalDroneScript.g:2541:3: ruleScript
             {
              before(grammarAccess.getDronesBehaviorAccess().getScriptsScriptParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7143,17 +7530,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Signal__NameAssignment"
-    // InternalDroneScript.g:2415:1: rule__Signal__NameAssignment : ( RULE_ID ) ;
+    // InternalDroneScript.g:2550:1: rule__Signal__NameAssignment : ( RULE_ID ) ;
     public final void rule__Signal__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2419:1: ( ( RULE_ID ) )
-            // InternalDroneScript.g:2420:2: ( RULE_ID )
+            // InternalDroneScript.g:2554:1: ( ( RULE_ID ) )
+            // InternalDroneScript.g:2555:2: ( RULE_ID )
             {
-            // InternalDroneScript.g:2420:2: ( RULE_ID )
-            // InternalDroneScript.g:2421:3: RULE_ID
+            // InternalDroneScript.g:2555:2: ( RULE_ID )
+            // InternalDroneScript.g:2556:3: RULE_ID
             {
              before(grammarAccess.getSignalAccess().getNameIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7179,34 +7566,30 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Signal__NameAssignment"
 
 
-    // $ANTLR start "rule__Script__DroneAssignment_1"
-    // InternalDroneScript.g:2430:1: rule__Script__DroneAssignment_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__Script__DroneAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Script__DroneAssignment_2"
+    // InternalDroneScript.g:2565:1: rule__Script__DroneAssignment_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Script__DroneAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2434:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:2435:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2569:1: ( ( ( RULE_ID ) ) )
+            // InternalDroneScript.g:2570:2: ( ( RULE_ID ) )
             {
-            // InternalDroneScript.g:2435:2: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:2436:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2570:2: ( ( RULE_ID ) )
+            // InternalDroneScript.g:2571:3: ( RULE_ID )
             {
-             before(grammarAccess.getScriptAccess().getDroneDroneCrossReference_1_0()); 
-            // InternalDroneScript.g:2437:3: ( ruleQualifiedName )
-            // InternalDroneScript.g:2438:4: ruleQualifiedName
+             before(grammarAccess.getScriptAccess().getDroneDroneCrossReference_2_0()); 
+            // InternalDroneScript.g:2572:3: ( RULE_ID )
+            // InternalDroneScript.g:2573:4: RULE_ID
             {
-             before(grammarAccess.getScriptAccess().getDroneDroneQualifiedNameParserRuleCall_1_0_1()); 
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getScriptAccess().getDroneDroneQualifiedNameParserRuleCall_1_0_1()); 
+             before(grammarAccess.getScriptAccess().getDroneDroneIDTerminalRuleCall_2_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getScriptAccess().getDroneDroneIDTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getScriptAccess().getDroneDroneCrossReference_1_0()); 
+             after(grammarAccess.getScriptAccess().getDroneDroneCrossReference_2_0()); 
 
             }
 
@@ -7225,29 +7608,29 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Script__DroneAssignment_1"
+    // $ANTLR end "rule__Script__DroneAssignment_2"
 
 
-    // $ANTLR start "rule__Script__StatementAssignment_2"
-    // InternalDroneScript.g:2449:1: rule__Script__StatementAssignment_2 : ( ruleSequence ) ;
-    public final void rule__Script__StatementAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Script__StatementAssignment_3"
+    // InternalDroneScript.g:2584:1: rule__Script__StatementAssignment_3 : ( ruleSequence ) ;
+    public final void rule__Script__StatementAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2453:1: ( ( ruleSequence ) )
-            // InternalDroneScript.g:2454:2: ( ruleSequence )
+            // InternalDroneScript.g:2588:1: ( ( ruleSequence ) )
+            // InternalDroneScript.g:2589:2: ( ruleSequence )
             {
-            // InternalDroneScript.g:2454:2: ( ruleSequence )
-            // InternalDroneScript.g:2455:3: ruleSequence
+            // InternalDroneScript.g:2589:2: ( ruleSequence )
+            // InternalDroneScript.g:2590:3: ruleSequence
             {
-             before(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_2_0()); 
+             before(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
             ruleSequence();
 
             state._fsp--;
 
-             after(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_2_0()); 
+             after(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_3_0()); 
 
             }
 
@@ -7266,21 +7649,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Script__StatementAssignment_2"
+    // $ANTLR end "rule__Script__StatementAssignment_3"
 
 
     // $ANTLR start "rule__Sequence__StatementsAssignment_2"
-    // InternalDroneScript.g:2464:1: rule__Sequence__StatementsAssignment_2 : ( ruleStatement ) ;
+    // InternalDroneScript.g:2599:1: rule__Sequence__StatementsAssignment_2 : ( ruleStatement ) ;
     public final void rule__Sequence__StatementsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2468:1: ( ( ruleStatement ) )
-            // InternalDroneScript.g:2469:2: ( ruleStatement )
+            // InternalDroneScript.g:2603:1: ( ( ruleStatement ) )
+            // InternalDroneScript.g:2604:2: ( ruleStatement )
             {
-            // InternalDroneScript.g:2469:2: ( ruleStatement )
-            // InternalDroneScript.g:2470:3: ruleStatement
+            // InternalDroneScript.g:2604:2: ( ruleStatement )
+            // InternalDroneScript.g:2605:3: ruleStatement
             {
              before(grammarAccess.getSequenceAccess().getStatementsStatementParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7310,34 +7693,34 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Sequence__StatementsAssignment_2"
 
 
-    // $ANTLR start "rule__SimpleWait__SignalAssignment_1"
-    // InternalDroneScript.g:2479:1: rule__SimpleWait__SignalAssignment_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__SimpleWait__SignalAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__SimpleWait__SignalAssignment_2"
+    // InternalDroneScript.g:2614:1: rule__SimpleWait__SignalAssignment_2 : ( ( ruleQualifiedName ) ) ;
+    public final void rule__SimpleWait__SignalAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2483:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:2484:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2618:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalDroneScript.g:2619:2: ( ( ruleQualifiedName ) )
             {
-            // InternalDroneScript.g:2484:2: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:2485:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2619:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2620:3: ( ruleQualifiedName )
             {
-             before(grammarAccess.getSimpleWaitAccess().getSignalSignalCrossReference_1_0()); 
-            // InternalDroneScript.g:2486:3: ( ruleQualifiedName )
-            // InternalDroneScript.g:2487:4: ruleQualifiedName
+             before(grammarAccess.getSimpleWaitAccess().getSignalSignalCrossReference_2_0()); 
+            // InternalDroneScript.g:2621:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2622:4: ruleQualifiedName
             {
-             before(grammarAccess.getSimpleWaitAccess().getSignalSignalQualifiedNameParserRuleCall_1_0_1()); 
+             before(grammarAccess.getSimpleWaitAccess().getSignalSignalQualifiedNameParserRuleCall_2_0_1()); 
             pushFollow(FOLLOW_2);
             ruleQualifiedName();
 
             state._fsp--;
 
-             after(grammarAccess.getSimpleWaitAccess().getSignalSignalQualifiedNameParserRuleCall_1_0_1()); 
+             after(grammarAccess.getSimpleWaitAccess().getSignalSignalQualifiedNameParserRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getSimpleWaitAccess().getSignalSignalCrossReference_1_0()); 
+             after(grammarAccess.getSimpleWaitAccess().getSignalSignalCrossReference_2_0()); 
 
             }
 
@@ -7356,25 +7739,25 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleWait__SignalAssignment_1"
+    // $ANTLR end "rule__SimpleWait__SignalAssignment_2"
 
 
-    // $ANTLR start "rule__SimpleWait__TimeoutAssignment_2_1"
-    // InternalDroneScript.g:2498:1: rule__SimpleWait__TimeoutAssignment_2_1 : ( RULE_INT ) ;
-    public final void rule__SimpleWait__TimeoutAssignment_2_1() throws RecognitionException {
+    // $ANTLR start "rule__SimpleWait__TimeoutAssignment_3_1"
+    // InternalDroneScript.g:2633:1: rule__SimpleWait__TimeoutAssignment_3_1 : ( RULE_INT ) ;
+    public final void rule__SimpleWait__TimeoutAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2502:1: ( ( RULE_INT ) )
-            // InternalDroneScript.g:2503:2: ( RULE_INT )
+            // InternalDroneScript.g:2637:1: ( ( RULE_INT ) )
+            // InternalDroneScript.g:2638:2: ( RULE_INT )
             {
-            // InternalDroneScript.g:2503:2: ( RULE_INT )
-            // InternalDroneScript.g:2504:3: RULE_INT
+            // InternalDroneScript.g:2638:2: ( RULE_INT )
+            // InternalDroneScript.g:2639:3: RULE_INT
             {
-             before(grammarAccess.getSimpleWaitAccess().getTimeoutINTTerminalRuleCall_2_1_0()); 
+             before(grammarAccess.getSimpleWaitAccess().getTimeoutINTTerminalRuleCall_3_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getSimpleWaitAccess().getTimeoutINTTerminalRuleCall_2_1_0()); 
+             after(grammarAccess.getSimpleWaitAccess().getTimeoutINTTerminalRuleCall_3_1_0()); 
 
             }
 
@@ -7393,21 +7776,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__SimpleWait__TimeoutAssignment_2_1"
+    // $ANTLR end "rule__SimpleWait__TimeoutAssignment_3_1"
 
 
     // $ANTLR start "rule__ComplexWait__TimeoutAssignment_2_1"
-    // InternalDroneScript.g:2513:1: rule__ComplexWait__TimeoutAssignment_2_1 : ( RULE_INT ) ;
+    // InternalDroneScript.g:2648:1: rule__ComplexWait__TimeoutAssignment_2_1 : ( RULE_INT ) ;
     public final void rule__ComplexWait__TimeoutAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2517:1: ( ( RULE_INT ) )
-            // InternalDroneScript.g:2518:2: ( RULE_INT )
+            // InternalDroneScript.g:2652:1: ( ( RULE_INT ) )
+            // InternalDroneScript.g:2653:2: ( RULE_INT )
             {
-            // InternalDroneScript.g:2518:2: ( RULE_INT )
-            // InternalDroneScript.g:2519:3: RULE_INT
+            // InternalDroneScript.g:2653:2: ( RULE_INT )
+            // InternalDroneScript.g:2654:3: RULE_INT
             {
              before(grammarAccess.getComplexWaitAccess().getTimeoutINTTerminalRuleCall_2_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -7434,17 +7817,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__ReactionsAssignment_4"
-    // InternalDroneScript.g:2528:1: rule__ComplexWait__ReactionsAssignment_4 : ( ruleReaction ) ;
+    // InternalDroneScript.g:2663:1: rule__ComplexWait__ReactionsAssignment_4 : ( ruleReaction ) ;
     public final void rule__ComplexWait__ReactionsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2532:1: ( ( ruleReaction ) )
-            // InternalDroneScript.g:2533:2: ( ruleReaction )
+            // InternalDroneScript.g:2667:1: ( ( ruleReaction ) )
+            // InternalDroneScript.g:2668:2: ( ruleReaction )
             {
-            // InternalDroneScript.g:2533:2: ( ruleReaction )
-            // InternalDroneScript.g:2534:3: ruleReaction
+            // InternalDroneScript.g:2668:2: ( ruleReaction )
+            // InternalDroneScript.g:2669:3: ruleReaction
             {
              before(grammarAccess.getComplexWaitAccess().getReactionsReactionParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -7475,17 +7858,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ComplexWait__OnTimeoutAssignment_5_2"
-    // InternalDroneScript.g:2543:1: rule__ComplexWait__OnTimeoutAssignment_5_2 : ( ruleStatement ) ;
+    // InternalDroneScript.g:2678:1: rule__ComplexWait__OnTimeoutAssignment_5_2 : ( ruleStatement ) ;
     public final void rule__ComplexWait__OnTimeoutAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2547:1: ( ( ruleStatement ) )
-            // InternalDroneScript.g:2548:2: ( ruleStatement )
+            // InternalDroneScript.g:2682:1: ( ( ruleStatement ) )
+            // InternalDroneScript.g:2683:2: ( ruleStatement )
             {
-            // InternalDroneScript.g:2548:2: ( ruleStatement )
-            // InternalDroneScript.g:2549:3: ruleStatement
+            // InternalDroneScript.g:2683:2: ( ruleStatement )
+            // InternalDroneScript.g:2684:3: ruleStatement
             {
              before(grammarAccess.getComplexWaitAccess().getOnTimeoutStatementParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7516,21 +7899,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reaction__SignalAssignment_1"
-    // InternalDroneScript.g:2558:1: rule__Reaction__SignalAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalDroneScript.g:2693:1: rule__Reaction__SignalAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Reaction__SignalAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2562:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:2563:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2697:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalDroneScript.g:2698:2: ( ( ruleQualifiedName ) )
             {
-            // InternalDroneScript.g:2563:2: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:2564:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2698:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2699:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getReactionAccess().getSignalSignalCrossReference_1_0()); 
-            // InternalDroneScript.g:2565:3: ( ruleQualifiedName )
-            // InternalDroneScript.g:2566:4: ruleQualifiedName
+            // InternalDroneScript.g:2700:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2701:4: ruleQualifiedName
             {
              before(grammarAccess.getReactionAccess().getSignalSignalQualifiedNameParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -7565,17 +7948,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Reaction__StatementAssignment_2"
-    // InternalDroneScript.g:2577:1: rule__Reaction__StatementAssignment_2 : ( ruleStatement ) ;
+    // InternalDroneScript.g:2712:1: rule__Reaction__StatementAssignment_2 : ( ruleStatement ) ;
     public final void rule__Reaction__StatementAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2581:1: ( ( ruleStatement ) )
-            // InternalDroneScript.g:2582:2: ( ruleStatement )
+            // InternalDroneScript.g:2716:1: ( ( ruleStatement ) )
+            // InternalDroneScript.g:2717:2: ( ruleStatement )
             {
-            // InternalDroneScript.g:2582:2: ( ruleStatement )
-            // InternalDroneScript.g:2583:3: ruleStatement
+            // InternalDroneScript.g:2717:2: ( ruleStatement )
+            // InternalDroneScript.g:2718:3: ruleStatement
             {
              before(grammarAccess.getReactionAccess().getStatementStatementParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7606,17 +7989,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Move__DestinationAssignment_2"
-    // InternalDroneScript.g:2592:1: rule__Move__DestinationAssignment_2 : ( rulePosition ) ;
+    // InternalDroneScript.g:2727:1: rule__Move__DestinationAssignment_2 : ( rulePosition ) ;
     public final void rule__Move__DestinationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2596:1: ( ( rulePosition ) )
-            // InternalDroneScript.g:2597:2: ( rulePosition )
+            // InternalDroneScript.g:2731:1: ( ( rulePosition ) )
+            // InternalDroneScript.g:2732:2: ( rulePosition )
             {
-            // InternalDroneScript.g:2597:2: ( rulePosition )
-            // InternalDroneScript.g:2598:3: rulePosition
+            // InternalDroneScript.g:2732:2: ( rulePosition )
+            // InternalDroneScript.g:2733:3: rulePosition
             {
              before(grammarAccess.getMoveAccess().getDestinationPositionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7647,21 +8030,21 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__SignalAssignment_1"
-    // InternalDroneScript.g:2607:1: rule__SendSignal__SignalAssignment_1 : ( ( ruleQualifiedName ) ) ;
+    // InternalDroneScript.g:2742:1: rule__SendSignal__SignalAssignment_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__SendSignal__SignalAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2611:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:2612:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2746:1: ( ( ( ruleQualifiedName ) ) )
+            // InternalDroneScript.g:2747:2: ( ( ruleQualifiedName ) )
             {
-            // InternalDroneScript.g:2612:2: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:2613:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2747:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2748:3: ( ruleQualifiedName )
             {
              before(grammarAccess.getSendSignalAccess().getSignalSignalCrossReference_1_0()); 
-            // InternalDroneScript.g:2614:3: ( ruleQualifiedName )
-            // InternalDroneScript.g:2615:4: ruleQualifiedName
+            // InternalDroneScript.g:2749:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2750:4: ruleQualifiedName
             {
              before(grammarAccess.getSendSignalAccess().getSignalSignalQualifiedNameParserRuleCall_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -7696,29 +8079,25 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SendSignal__RecipentAssignment_3"
-    // InternalDroneScript.g:2626:1: rule__SendSignal__RecipentAssignment_3 : ( ( ruleQualifiedName ) ) ;
+    // InternalDroneScript.g:2761:1: rule__SendSignal__RecipentAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__SendSignal__RecipentAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2630:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:2631:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2765:1: ( ( ( RULE_ID ) ) )
+            // InternalDroneScript.g:2766:2: ( ( RULE_ID ) )
             {
-            // InternalDroneScript.g:2631:2: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:2632:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2766:2: ( ( RULE_ID ) )
+            // InternalDroneScript.g:2767:3: ( RULE_ID )
             {
              before(grammarAccess.getSendSignalAccess().getRecipentDroneCrossReference_3_0()); 
-            // InternalDroneScript.g:2633:3: ( ruleQualifiedName )
-            // InternalDroneScript.g:2634:4: ruleQualifiedName
+            // InternalDroneScript.g:2768:3: ( RULE_ID )
+            // InternalDroneScript.g:2769:4: RULE_ID
             {
-             before(grammarAccess.getSendSignalAccess().getRecipentDroneQualifiedNameParserRuleCall_3_0_1()); 
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getSendSignalAccess().getRecipentDroneQualifiedNameParserRuleCall_3_0_1()); 
+             before(grammarAccess.getSendSignalAccess().getRecipentDroneIDTerminalRuleCall_3_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getSendSignalAccess().getRecipentDroneIDTerminalRuleCall_3_0_1()); 
 
             }
 
@@ -7744,34 +8123,30 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__SendSignal__RecipentAssignment_3"
 
 
-    // $ANTLR start "rule__Cooperate__RoleAssignment_1"
-    // InternalDroneScript.g:2645:1: rule__Cooperate__RoleAssignment_1 : ( ( ruleQualifiedName ) ) ;
-    public final void rule__Cooperate__RoleAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Cooperate__TaskAssignment_2"
+    // InternalDroneScript.g:2780:1: rule__Cooperate__TaskAssignment_2 : ( ( RULE_ID ) ) ;
+    public final void rule__Cooperate__TaskAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2649:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:2650:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2784:1: ( ( ( RULE_ID ) ) )
+            // InternalDroneScript.g:2785:2: ( ( RULE_ID ) )
             {
-            // InternalDroneScript.g:2650:2: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:2651:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2785:2: ( ( RULE_ID ) )
+            // InternalDroneScript.g:2786:3: ( RULE_ID )
             {
-             before(grammarAccess.getCooperateAccess().getRoleRoleCrossReference_1_0()); 
-            // InternalDroneScript.g:2652:3: ( ruleQualifiedName )
-            // InternalDroneScript.g:2653:4: ruleQualifiedName
+             before(grammarAccess.getCooperateAccess().getTaskTaskCrossReference_2_0()); 
+            // InternalDroneScript.g:2787:3: ( RULE_ID )
+            // InternalDroneScript.g:2788:4: RULE_ID
             {
-             before(grammarAccess.getCooperateAccess().getRoleRoleQualifiedNameParserRuleCall_1_0_1()); 
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getCooperateAccess().getRoleRoleQualifiedNameParserRuleCall_1_0_1()); 
+             before(grammarAccess.getCooperateAccess().getTaskTaskIDTerminalRuleCall_2_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getCooperateAccess().getTaskTaskIDTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getCooperateAccess().getRoleRoleCrossReference_1_0()); 
+             after(grammarAccess.getCooperateAccess().getTaskTaskCrossReference_2_0()); 
 
             }
 
@@ -7790,33 +8165,74 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Cooperate__RoleAssignment_1"
+    // $ANTLR end "rule__Cooperate__TaskAssignment_2"
+
+
+    // $ANTLR start "rule__Cooperate__RoleAssignment_4"
+    // InternalDroneScript.g:2799:1: rule__Cooperate__RoleAssignment_4 : ( ( RULE_ID ) ) ;
+    public final void rule__Cooperate__RoleAssignment_4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDroneScript.g:2803:1: ( ( ( RULE_ID ) ) )
+            // InternalDroneScript.g:2804:2: ( ( RULE_ID ) )
+            {
+            // InternalDroneScript.g:2804:2: ( ( RULE_ID ) )
+            // InternalDroneScript.g:2805:3: ( RULE_ID )
+            {
+             before(grammarAccess.getCooperateAccess().getRoleRoleCrossReference_4_0()); 
+            // InternalDroneScript.g:2806:3: ( RULE_ID )
+            // InternalDroneScript.g:2807:4: RULE_ID
+            {
+             before(grammarAccess.getCooperateAccess().getRoleRoleIDTerminalRuleCall_4_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getCooperateAccess().getRoleRoleIDTerminalRuleCall_4_0_1()); 
+
+            }
+
+             after(grammarAccess.getCooperateAccess().getRoleRoleCrossReference_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Cooperate__RoleAssignment_4"
 
 
     // $ANTLR start "rule__SendMap__RecipentAssignment_3"
-    // InternalDroneScript.g:2664:1: rule__SendMap__RecipentAssignment_3 : ( ( ruleQualifiedName ) ) ;
+    // InternalDroneScript.g:2818:1: rule__SendMap__RecipentAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__SendMap__RecipentAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2668:1: ( ( ( ruleQualifiedName ) ) )
-            // InternalDroneScript.g:2669:2: ( ( ruleQualifiedName ) )
+            // InternalDroneScript.g:2822:1: ( ( ( RULE_ID ) ) )
+            // InternalDroneScript.g:2823:2: ( ( RULE_ID ) )
             {
-            // InternalDroneScript.g:2669:2: ( ( ruleQualifiedName ) )
-            // InternalDroneScript.g:2670:3: ( ruleQualifiedName )
+            // InternalDroneScript.g:2823:2: ( ( RULE_ID ) )
+            // InternalDroneScript.g:2824:3: ( RULE_ID )
             {
              before(grammarAccess.getSendMapAccess().getRecipentDroneCrossReference_3_0()); 
-            // InternalDroneScript.g:2671:3: ( ruleQualifiedName )
-            // InternalDroneScript.g:2672:4: ruleQualifiedName
+            // InternalDroneScript.g:2825:3: ( RULE_ID )
+            // InternalDroneScript.g:2826:4: RULE_ID
             {
-             before(grammarAccess.getSendMapAccess().getRecipentDroneQualifiedNameParserRuleCall_3_0_1()); 
-            pushFollow(FOLLOW_2);
-            ruleQualifiedName();
-
-            state._fsp--;
-
-             after(grammarAccess.getSendMapAccess().getRecipentDroneQualifiedNameParserRuleCall_3_0_1()); 
+             before(grammarAccess.getSendMapAccess().getRecipentDroneIDTerminalRuleCall_3_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getSendMapAccess().getRecipentDroneIDTerminalRuleCall_3_0_1()); 
 
             }
 
@@ -7843,17 +8259,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__XAssignment_0"
-    // InternalDroneScript.g:2683:1: rule__Position__XAssignment_0 : ( ruleDOUBLE ) ;
+    // InternalDroneScript.g:2837:1: rule__Position__XAssignment_0 : ( ruleDOUBLE ) ;
     public final void rule__Position__XAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2687:1: ( ( ruleDOUBLE ) )
-            // InternalDroneScript.g:2688:2: ( ruleDOUBLE )
+            // InternalDroneScript.g:2841:1: ( ( ruleDOUBLE ) )
+            // InternalDroneScript.g:2842:2: ( ruleDOUBLE )
             {
-            // InternalDroneScript.g:2688:2: ( ruleDOUBLE )
-            // InternalDroneScript.g:2689:3: ruleDOUBLE
+            // InternalDroneScript.g:2842:2: ( ruleDOUBLE )
+            // InternalDroneScript.g:2843:3: ruleDOUBLE
             {
              before(grammarAccess.getPositionAccess().getXDOUBLEParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7884,17 +8300,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__YAssignment_2"
-    // InternalDroneScript.g:2698:1: rule__Position__YAssignment_2 : ( ruleDOUBLE ) ;
+    // InternalDroneScript.g:2852:1: rule__Position__YAssignment_2 : ( ruleDOUBLE ) ;
     public final void rule__Position__YAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2702:1: ( ( ruleDOUBLE ) )
-            // InternalDroneScript.g:2703:2: ( ruleDOUBLE )
+            // InternalDroneScript.g:2856:1: ( ( ruleDOUBLE ) )
+            // InternalDroneScript.g:2857:2: ( ruleDOUBLE )
             {
-            // InternalDroneScript.g:2703:2: ( ruleDOUBLE )
-            // InternalDroneScript.g:2704:3: ruleDOUBLE
+            // InternalDroneScript.g:2857:2: ( ruleDOUBLE )
+            // InternalDroneScript.g:2858:3: ruleDOUBLE
             {
              before(grammarAccess.getPositionAccess().getYDOUBLEParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7925,17 +8341,17 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Position__ZAssignment_4"
-    // InternalDroneScript.g:2713:1: rule__Position__ZAssignment_4 : ( ruleDOUBLE ) ;
+    // InternalDroneScript.g:2867:1: rule__Position__ZAssignment_4 : ( ruleDOUBLE ) ;
     public final void rule__Position__ZAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDroneScript.g:2717:1: ( ( ruleDOUBLE ) )
-            // InternalDroneScript.g:2718:2: ( ruleDOUBLE )
+            // InternalDroneScript.g:2871:1: ( ( ruleDOUBLE ) )
+            // InternalDroneScript.g:2872:2: ( ruleDOUBLE )
             {
-            // InternalDroneScript.g:2718:2: ( ruleDOUBLE )
-            // InternalDroneScript.g:2719:3: ruleDOUBLE
+            // InternalDroneScript.g:2872:2: ( ruleDOUBLE )
+            // InternalDroneScript.g:2873:3: ruleDOUBLE
             {
              before(grammarAccess.getPositionAccess().getZDOUBLEParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -7969,16 +8385,16 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
 
     protected DFA2 dfa2 = new DFA2(this);
     static final String dfa_1s = "\14\uffff";
-    static final String dfa_2s = "\1\17\1\uffff\1\5\1\uffff\1\5\7\uffff";
-    static final String dfa_3s = "\1\31\1\uffff\1\22\1\uffff\1\32\7\uffff";
+    static final String dfa_2s = "\1\20\1\uffff\1\17\1\uffff\1\5\7\uffff";
+    static final String dfa_3s = "\1\33\1\uffff\1\23\1\uffff\1\34\7\uffff";
     static final String dfa_4s = "\1\uffff\1\1\1\uffff\1\4\1\uffff\1\6\1\7\1\10\1\3\1\2\1\11\1\5";
     static final String dfa_5s = "\14\uffff}>";
     static final String[] dfa_6s = {
-            "\1\1\1\uffff\1\2\2\uffff\1\3\1\uffff\1\4\1\5\1\6\1\7",
+            "\1\1\1\uffff\1\2\2\uffff\1\3\1\uffff\1\4\1\5\1\uffff\1\6\1\7",
             "",
-            "\1\11\11\uffff\1\10\2\uffff\1\10",
+            "\1\11\1\10\2\uffff\1\10",
             "",
-            "\1\13\24\uffff\1\12",
+            "\1\13\26\uffff\1\12",
             "",
             "",
             "",
@@ -8022,21 +8438,24 @@ public class InternalDroneScriptParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000003D38000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000003D28002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000048000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x000000000DA70000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x000000000DA50002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000090000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000003D28000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000008000010L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000120000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x000000000DA50000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000020000010L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000040000002L});
 
 }

@@ -114,36 +114,40 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.Script");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cScriptKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDroneAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cDroneDroneCrossReference_1_0 = (CrossReference)cDroneAssignment_1.eContents().get(0);
-		private final RuleCall cDroneDroneQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cDroneDroneCrossReference_1_0.eContents().get(1);
-		private final Assignment cStatementAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cStatementSequenceParserRuleCall_2_0 = (RuleCall)cStatementAssignment_2.eContents().get(0);
+		private final Keyword cForKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cDroneAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cDroneDroneCrossReference_2_0 = (CrossReference)cDroneAssignment_2.eContents().get(0);
+		private final RuleCall cDroneDroneIDTerminalRuleCall_2_0_1 = (RuleCall)cDroneDroneCrossReference_2_0.eContents().get(1);
+		private final Assignment cStatementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementSequenceParserRuleCall_3_0 = (RuleCall)cStatementAssignment_3.eContents().get(0);
 		
 		//Script:
-		//	"script" drone=[Drone|QualifiedName] statement=Sequence;
+		//	"script" "for" drone=[Drone] statement=Sequence;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"script" drone=[Drone|QualifiedName] statement=Sequence
+		//"script" "for" drone=[Drone] statement=Sequence
 		public Group getGroup() { return cGroup; }
 		
 		//"script"
 		public Keyword getScriptKeyword_0() { return cScriptKeyword_0; }
 		
-		//drone=[Drone|QualifiedName]
-		public Assignment getDroneAssignment_1() { return cDroneAssignment_1; }
+		//"for"
+		public Keyword getForKeyword_1() { return cForKeyword_1; }
 		
-		//[Drone|QualifiedName]
-		public CrossReference getDroneDroneCrossReference_1_0() { return cDroneDroneCrossReference_1_0; }
+		//drone=[Drone]
+		public Assignment getDroneAssignment_2() { return cDroneAssignment_2; }
 		
-		//QualifiedName
-		public RuleCall getDroneDroneQualifiedNameParserRuleCall_1_0_1() { return cDroneDroneQualifiedNameParserRuleCall_1_0_1; }
+		//[Drone]
+		public CrossReference getDroneDroneCrossReference_2_0() { return cDroneDroneCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getDroneDroneIDTerminalRuleCall_2_0_1() { return cDroneDroneIDTerminalRuleCall_2_0_1; }
 		
 		//statement=Sequence
-		public Assignment getStatementAssignment_2() { return cStatementAssignment_2; }
+		public Assignment getStatementAssignment_3() { return cStatementAssignment_3; }
 		
 		//Sequence
-		public RuleCall getStatementSequenceParserRuleCall_2_0() { return cStatementSequenceParserRuleCall_2_0; }
+		public RuleCall getStatementSequenceParserRuleCall_3_0() { return cStatementSequenceParserRuleCall_3_0; }
 	}
 	public class StatementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.Statement");
@@ -227,44 +231,48 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.SimpleWait");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cWaitKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cSignalAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cSignalSignalCrossReference_1_0 = (CrossReference)cSignalAssignment_1.eContents().get(0);
-		private final RuleCall cSignalSignalQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cSignalSignalCrossReference_1_0.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cTimeoutKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cTimeoutAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cTimeoutINTTerminalRuleCall_2_1_0 = (RuleCall)cTimeoutAssignment_2_1.eContents().get(0);
+		private final Keyword cForKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cSignalAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cSignalSignalCrossReference_2_0 = (CrossReference)cSignalAssignment_2.eContents().get(0);
+		private final RuleCall cSignalSignalQualifiedNameParserRuleCall_2_0_1 = (RuleCall)cSignalSignalCrossReference_2_0.eContents().get(1);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cTimeoutKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTimeoutAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTimeoutINTTerminalRuleCall_3_1_0 = (RuleCall)cTimeoutAssignment_3_1.eContents().get(0);
 		
 		//SimpleWait:
-		//	"wait" signal=[Signal|QualifiedName] ("timeout" timeout=INT)?;
+		//	"wait" "for" signal=[Signal|QualifiedName] ("timeout" timeout=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"wait" signal=[Signal|QualifiedName] ("timeout" timeout=INT)?
+		//"wait" "for" signal=[Signal|QualifiedName] ("timeout" timeout=INT)?
 		public Group getGroup() { return cGroup; }
 		
 		//"wait"
 		public Keyword getWaitKeyword_0() { return cWaitKeyword_0; }
 		
+		//"for"
+		public Keyword getForKeyword_1() { return cForKeyword_1; }
+		
 		//signal=[Signal|QualifiedName]
-		public Assignment getSignalAssignment_1() { return cSignalAssignment_1; }
+		public Assignment getSignalAssignment_2() { return cSignalAssignment_2; }
 		
 		//[Signal|QualifiedName]
-		public CrossReference getSignalSignalCrossReference_1_0() { return cSignalSignalCrossReference_1_0; }
+		public CrossReference getSignalSignalCrossReference_2_0() { return cSignalSignalCrossReference_2_0; }
 		
 		//QualifiedName
-		public RuleCall getSignalSignalQualifiedNameParserRuleCall_1_0_1() { return cSignalSignalQualifiedNameParserRuleCall_1_0_1; }
+		public RuleCall getSignalSignalQualifiedNameParserRuleCall_2_0_1() { return cSignalSignalQualifiedNameParserRuleCall_2_0_1; }
 		
 		//("timeout" timeout=INT)?
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//"timeout"
-		public Keyword getTimeoutKeyword_2_0() { return cTimeoutKeyword_2_0; }
+		public Keyword getTimeoutKeyword_3_0() { return cTimeoutKeyword_3_0; }
 		
 		//timeout=INT
-		public Assignment getTimeoutAssignment_2_1() { return cTimeoutAssignment_2_1; }
+		public Assignment getTimeoutAssignment_3_1() { return cTimeoutAssignment_3_1; }
 		
 		//INT
-		public RuleCall getTimeoutINTTerminalRuleCall_2_1_0() { return cTimeoutINTTerminalRuleCall_2_1_0; }
+		public RuleCall getTimeoutINTTerminalRuleCall_3_1_0() { return cTimeoutINTTerminalRuleCall_3_1_0; }
 	}
 	public class ComplexWaitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.ComplexWait");
@@ -411,13 +419,13 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cRecipentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cRecipentDroneCrossReference_3_0 = (CrossReference)cRecipentAssignment_3.eContents().get(0);
-		private final RuleCall cRecipentDroneQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cRecipentDroneCrossReference_3_0.eContents().get(1);
+		private final RuleCall cRecipentDroneIDTerminalRuleCall_3_0_1 = (RuleCall)cRecipentDroneCrossReference_3_0.eContents().get(1);
 		
 		//SendSignal:
-		//	"send" signal=[Signal|QualifiedName] "to" recipent=[Drone|QualifiedName];
+		//	"send" signal=[Signal|QualifiedName] "to" recipent=[Drone];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"send" signal=[Signal|QualifiedName] "to" recipent=[Drone|QualifiedName]
+		//"send" signal=[Signal|QualifiedName] "to" recipent=[Drone]
 		public Group getGroup() { return cGroup; }
 		
 		//"send"
@@ -435,41 +443,61 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//"to"
 		public Keyword getToKeyword_2() { return cToKeyword_2; }
 		
-		//recipent=[Drone|QualifiedName]
+		//recipent=[Drone]
 		public Assignment getRecipentAssignment_3() { return cRecipentAssignment_3; }
 		
-		//[Drone|QualifiedName]
+		//[Drone]
 		public CrossReference getRecipentDroneCrossReference_3_0() { return cRecipentDroneCrossReference_3_0; }
 		
-		//QualifiedName
-		public RuleCall getRecipentDroneQualifiedNameParserRuleCall_3_0_1() { return cRecipentDroneQualifiedNameParserRuleCall_3_0_1; }
+		//ID
+		public RuleCall getRecipentDroneIDTerminalRuleCall_3_0_1() { return cRecipentDroneIDTerminalRuleCall_3_0_1; }
 	}
 	public class CooperateElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.Cooperate");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cCooperateKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cRoleAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cRoleRoleCrossReference_1_0 = (CrossReference)cRoleAssignment_1.eContents().get(0);
-		private final RuleCall cRoleRoleQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cRoleRoleCrossReference_1_0.eContents().get(1);
+		private final Keyword cOnKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTaskAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTaskTaskCrossReference_2_0 = (CrossReference)cTaskAssignment_2.eContents().get(0);
+		private final RuleCall cTaskTaskIDTerminalRuleCall_2_0_1 = (RuleCall)cTaskTaskCrossReference_2_0.eContents().get(1);
+		private final Keyword cAsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cRoleAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cRoleRoleCrossReference_4_0 = (CrossReference)cRoleAssignment_4.eContents().get(0);
+		private final RuleCall cRoleRoleIDTerminalRuleCall_4_0_1 = (RuleCall)cRoleRoleCrossReference_4_0.eContents().get(1);
 		
 		//Cooperate:
-		//	"cooperate" role=[Role|QualifiedName];
+		//	"cooperate" "on" task=[Task] "as" role=[Role];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"cooperate" role=[Role|QualifiedName]
+		//"cooperate" "on" task=[Task] "as" role=[Role]
 		public Group getGroup() { return cGroup; }
 		
 		//"cooperate"
 		public Keyword getCooperateKeyword_0() { return cCooperateKeyword_0; }
 		
-		//role=[Role|QualifiedName]
-		public Assignment getRoleAssignment_1() { return cRoleAssignment_1; }
+		//"on"
+		public Keyword getOnKeyword_1() { return cOnKeyword_1; }
 		
-		//[Role|QualifiedName]
-		public CrossReference getRoleRoleCrossReference_1_0() { return cRoleRoleCrossReference_1_0; }
+		//task=[Task]
+		public Assignment getTaskAssignment_2() { return cTaskAssignment_2; }
 		
-		//QualifiedName
-		public RuleCall getRoleRoleQualifiedNameParserRuleCall_1_0_1() { return cRoleRoleQualifiedNameParserRuleCall_1_0_1; }
+		//[Task]
+		public CrossReference getTaskTaskCrossReference_2_0() { return cTaskTaskCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getTaskTaskIDTerminalRuleCall_2_0_1() { return cTaskTaskIDTerminalRuleCall_2_0_1; }
+		
+		//"as"
+		public Keyword getAsKeyword_3() { return cAsKeyword_3; }
+		
+		//role=[Role]
+		public Assignment getRoleAssignment_4() { return cRoleAssignment_4; }
+		
+		//[Role]
+		public CrossReference getRoleRoleCrossReference_4_0() { return cRoleRoleCrossReference_4_0; }
+		
+		//ID
+		public RuleCall getRoleRoleIDTerminalRuleCall_4_0_1() { return cRoleRoleIDTerminalRuleCall_4_0_1; }
 	}
 	public class ChargeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.Charge");
@@ -517,13 +545,13 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cToKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cRecipentAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cRecipentDroneCrossReference_3_0 = (CrossReference)cRecipentAssignment_3.eContents().get(0);
-		private final RuleCall cRecipentDroneQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cRecipentDroneCrossReference_3_0.eContents().get(1);
+		private final RuleCall cRecipentDroneIDTerminalRuleCall_3_0_1 = (RuleCall)cRecipentDroneCrossReference_3_0.eContents().get(1);
 		
 		//SendMap:
-		//	"send" "map" "to" recipent=[Drone|QualifiedName];
+		//	"send" "map" "to" recipent=[Drone];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"send" "map" "to" recipent=[Drone|QualifiedName]
+		//"send" "map" "to" recipent=[Drone]
 		public Group getGroup() { return cGroup; }
 		
 		//"send"
@@ -535,14 +563,14 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//"to"
 		public Keyword getToKeyword_2() { return cToKeyword_2; }
 		
-		//recipent=[Drone|QualifiedName]
+		//recipent=[Drone]
 		public Assignment getRecipentAssignment_3() { return cRecipentAssignment_3; }
 		
-		//[Drone|QualifiedName]
+		//[Drone]
 		public CrossReference getRecipentDroneCrossReference_3_0() { return cRecipentDroneCrossReference_3_0; }
 		
-		//QualifiedName
-		public RuleCall getRecipentDroneQualifiedNameParserRuleCall_3_0_1() { return cRecipentDroneQualifiedNameParserRuleCall_3_0_1; }
+		//ID
+		public RuleCall getRecipentDroneIDTerminalRuleCall_3_0_1() { return cRecipentDroneIDTerminalRuleCall_3_0_1; }
 	}
 	public class PositionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.Position");
@@ -741,7 +769,7 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Script:
-	//	"script" drone=[Drone|QualifiedName] statement=Sequence;
+	//	"script" "for" drone=[Drone] statement=Sequence;
 	public ScriptElements getScriptAccess() {
 		return pScript;
 	}
@@ -771,7 +799,7 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SimpleWait:
-	//	"wait" signal=[Signal|QualifiedName] ("timeout" timeout=INT)?;
+	//	"wait" "for" signal=[Signal|QualifiedName] ("timeout" timeout=INT)?;
 	public SimpleWaitElements getSimpleWaitAccess() {
 		return pSimpleWait;
 	}
@@ -813,7 +841,7 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SendSignal:
-	//	"send" signal=[Signal|QualifiedName] "to" recipent=[Drone|QualifiedName];
+	//	"send" signal=[Signal|QualifiedName] "to" recipent=[Drone];
 	public SendSignalElements getSendSignalAccess() {
 		return pSendSignal;
 	}
@@ -823,7 +851,7 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Cooperate:
-	//	"cooperate" role=[Role|QualifiedName];
+	//	"cooperate" "on" task=[Task] "as" role=[Role];
 	public CooperateElements getCooperateAccess() {
 		return pCooperate;
 	}
@@ -853,7 +881,7 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SendMap:
-	//	"send" "map" "to" recipent=[Drone|QualifiedName];
+	//	"send" "map" "to" recipent=[Drone];
 	public SendMapElements getSendMapAccess() {
 		return pSendMap;
 	}

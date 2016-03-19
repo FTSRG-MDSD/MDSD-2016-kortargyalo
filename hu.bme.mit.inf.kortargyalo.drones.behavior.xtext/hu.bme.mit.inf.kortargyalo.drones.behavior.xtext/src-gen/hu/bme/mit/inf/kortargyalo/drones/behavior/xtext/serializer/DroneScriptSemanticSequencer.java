@@ -128,15 +128,18 @@ public class DroneScriptSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Cooperate returns Cooperate
 	 *
 	 * Constraint:
-	 *     role=[Role|QualifiedName]
+	 *     (task=[Task|ID] role=[Role|ID])
 	 */
 	protected void sequence_Cooperate(ISerializationContext context, Cooperate semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, DronesBehaviorPackage.Literals.COOPERATE__TASK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DronesBehaviorPackage.Literals.COOPERATE__TASK));
 			if (transientValues.isValueTransient(semanticObject, DronesBehaviorPackage.Literals.COOPERATE__ROLE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DronesBehaviorPackage.Literals.COOPERATE__ROLE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCooperateAccess().getRoleRoleQualifiedNameParserRuleCall_1_0_1(), semanticObject.getRole());
+		feeder.accept(grammarAccess.getCooperateAccess().getTaskTaskIDTerminalRuleCall_2_0_1(), semanticObject.getTask());
+		feeder.accept(grammarAccess.getCooperateAccess().getRoleRoleIDTerminalRuleCall_4_0_1(), semanticObject.getRole());
 		feeder.finish();
 	}
 	
@@ -235,7 +238,7 @@ public class DroneScriptSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Script returns Script
 	 *
 	 * Constraint:
-	 *     (drone=[Drone|QualifiedName] statement=Sequence)
+	 *     (drone=[Drone|ID] statement=Sequence)
 	 */
 	protected void sequence_Script(ISerializationContext context, Script semanticObject) {
 		if (errorAcceptor != null) {
@@ -245,8 +248,8 @@ public class DroneScriptSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DronesBehaviorPackage.Literals.SCRIPT__STATEMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getScriptAccess().getDroneDroneQualifiedNameParserRuleCall_1_0_1(), semanticObject.getDrone());
-		feeder.accept(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_2_0(), semanticObject.getStatement());
+		feeder.accept(grammarAccess.getScriptAccess().getDroneDroneIDTerminalRuleCall_2_0_1(), semanticObject.getDrone());
+		feeder.accept(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_3_0(), semanticObject.getStatement());
 		feeder.finish();
 	}
 	
@@ -257,7 +260,7 @@ public class DroneScriptSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SendMap returns SendMap
 	 *
 	 * Constraint:
-	 *     recipent=[Drone|QualifiedName]
+	 *     recipent=[Drone|ID]
 	 */
 	protected void sequence_SendMap(ISerializationContext context, SendMap semanticObject) {
 		if (errorAcceptor != null) {
@@ -265,7 +268,7 @@ public class DroneScriptSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DronesBehaviorPackage.Literals.SEND_MAP__RECIPENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSendMapAccess().getRecipentDroneQualifiedNameParserRuleCall_3_0_1(), semanticObject.getRecipent());
+		feeder.accept(grammarAccess.getSendMapAccess().getRecipentDroneIDTerminalRuleCall_3_0_1(), semanticObject.getRecipent());
 		feeder.finish();
 	}
 	
@@ -276,7 +279,7 @@ public class DroneScriptSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SendSignal returns SendSignal
 	 *
 	 * Constraint:
-	 *     (signal=[Signal|QualifiedName] recipent=[Drone|QualifiedName])
+	 *     (signal=[Signal|QualifiedName] recipent=[Drone|ID])
 	 */
 	protected void sequence_SendSignal(ISerializationContext context, SendSignal semanticObject) {
 		if (errorAcceptor != null) {
@@ -287,7 +290,7 @@ public class DroneScriptSemanticSequencer extends AbstractDelegatingSemanticSequ
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSendSignalAccess().getSignalSignalQualifiedNameParserRuleCall_1_0_1(), semanticObject.getSignal());
-		feeder.accept(grammarAccess.getSendSignalAccess().getRecipentDroneQualifiedNameParserRuleCall_3_0_1(), semanticObject.getRecipent());
+		feeder.accept(grammarAccess.getSendSignalAccess().getRecipentDroneIDTerminalRuleCall_3_0_1(), semanticObject.getRecipent());
 		feeder.finish();
 	}
 	

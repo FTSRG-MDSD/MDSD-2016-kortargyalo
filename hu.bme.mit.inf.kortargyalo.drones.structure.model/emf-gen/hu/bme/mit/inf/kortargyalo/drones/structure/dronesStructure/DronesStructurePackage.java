@@ -351,13 +351,22 @@ public interface DronesStructurePackage extends EPackage {
 	int DRONE_TYPE__DIMENSION = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Scanning Capability</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRONE_TYPE__SCANNING_CAPABILITY = NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Drone Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 6;
+	int DRONE_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Drone Type</em>' class.
@@ -1140,6 +1149,44 @@ public interface DronesStructurePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScanningCapabilityImpl <em>Scanning Capability</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScanningCapabilityImpl
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DronesStructurePackageImpl#getScanningCapability()
+	 * @generated
+	 */
+	int SCANNING_CAPABILITY = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_CAPABILITY__NAME = CAPABILITY__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Scanning Capability</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_CAPABILITY_FEATURE_COUNT = CAPABILITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Scanning Capability</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCANNING_CAPABILITY_OPERATION_COUNT = CAPABILITY_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructure <em>Drones Structure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1343,6 +1390,17 @@ public interface DronesStructurePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDroneType_Dimension();
+
+	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getScanningCapability <em>Scanning Capability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Scanning Capability</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType#getScanningCapability()
+	 * @see #getDroneType()
+	 * @generated
+	 */
+	EReference getDroneType_ScanningCapability();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability <em>Provided Capability</em>}'.
@@ -1781,6 +1839,16 @@ public interface DronesStructurePackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
+	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability <em>Scanning Capability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Scanning Capability</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability
+	 * @generated
+	 */
+	EClass getScanningCapability();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1962,6 +2030,14 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference DRONE_TYPE__DIMENSION = eINSTANCE.getDroneType_Dimension();
+
+		/**
+		 * The meta object literal for the '<em><b>Scanning Capability</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DRONE_TYPE__SCANNING_CAPABILITY = eINSTANCE.getDroneType_ScanningCapability();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ProvidedCapabilityImpl <em>Provided Capability</em>}' class.
@@ -2320,6 +2396,16 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScanningCapabilityImpl <em>Scanning Capability</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScanningCapabilityImpl
+		 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DronesStructurePackageImpl#getScanningCapability()
+		 * @generated
+		 */
+		EClass SCANNING_CAPABILITY = eINSTANCE.getScanningCapability();
 
 	}
 

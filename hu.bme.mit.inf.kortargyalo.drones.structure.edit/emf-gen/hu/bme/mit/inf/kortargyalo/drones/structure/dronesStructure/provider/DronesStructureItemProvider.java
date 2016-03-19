@@ -202,6 +202,11 @@ public class DronesStructureItemProvider
 			(createChildParameter
 				(DronesStructurePackage.Literals.DRONES_STRUCTURE__CAPABILITIES,
 				 DronesStructureFactory.eINSTANCE.createMovementCapability()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesStructurePackage.Literals.DRONES_STRUCTURE__CAPABILITIES,
+				 DronesStructureFactory.eINSTANCE.createScanningCapability()));
 	}
 
 	/**

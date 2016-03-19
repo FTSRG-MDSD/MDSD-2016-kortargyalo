@@ -52,6 +52,7 @@ public class DroneTypeItemProvider
 			addMaxBatteryCapacityPropertyDescriptor(object);
 			addIdleEneryConsumptionPropertyDescriptor(object);
 			addMovementCapabilityPropertyDescriptor(object);
+			addScanningCapabilityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -136,6 +137,28 @@ public class DroneTypeItemProvider
 				 getString("_UI_DroneType_movementCapability_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_DroneType_movementCapability_feature", "_UI_DroneType_type"),
 				 DronesStructurePackage.Literals.DRONE_TYPE__MOVEMENT_CAPABILITY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Scanning Capability feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addScanningCapabilityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DroneType_scanningCapability_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DroneType_scanningCapability_feature", "_UI_DroneType_type"),
+				 DronesStructurePackage.Literals.DRONE_TYPE__SCANNING_CAPABILITY,
 				 true,
 				 false,
 				 true,

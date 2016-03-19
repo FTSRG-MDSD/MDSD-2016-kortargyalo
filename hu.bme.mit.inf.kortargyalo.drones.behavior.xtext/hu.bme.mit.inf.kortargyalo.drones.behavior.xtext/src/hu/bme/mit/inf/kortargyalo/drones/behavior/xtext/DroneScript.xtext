@@ -12,7 +12,7 @@ Signal:
 	name=ID;
 
 Script:
-	"script" drone=[Drone|QualifiedName] statement=Sequence;
+	"script" "for" drone=[Drone] statement=Sequence;
 
 Statement:
 	Sequence | SimpleWait | ComplexWait | Move | SendSignal | Cooperate | Charge | Scan | SendMap;
@@ -21,7 +21,7 @@ Sequence:
 	{Sequence} "{" statements+=Statement* "}";
 
 SimpleWait:
-	"wait" signal=[Signal|QualifiedName] ("timeout" timeout=INT)?;
+	"wait" "for" signal=[Signal|QualifiedName] ("timeout" timeout=INT)?;
 
 ComplexWait:
 	{ComplexWait} "wait" ("timeout" timeout=INT)? "{"
@@ -36,10 +36,10 @@ Move:
 	"move" "to" destination=Position;
 
 SendSignal:
-	"send" signal=[Signal|QualifiedName] "to" recipent=[Drone|QualifiedName];
+	"send" signal=[Signal|QualifiedName] "to" recipent=[Drone];
 
 Cooperate:
-	"cooperate" role=[Role|QualifiedName];
+	"cooperate" "on" task=[Task] "as" role=[Role];
 
 Charge:
 	{Charge} "charge";
@@ -48,7 +48,7 @@ Scan:
 	{Scan} "scan";
 
 SendMap:
-	"send" "map" "to" recipent=[Drone|QualifiedName];
+	"send" "map" "to" recipent=[Drone];
 
 Position:
 	x=DOUBLE "," y=DOUBLE "," z=DOUBLE;

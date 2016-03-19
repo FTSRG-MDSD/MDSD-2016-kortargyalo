@@ -32,6 +32,7 @@
     <genClasses ecoreClass="dronesBehavior.ecore#//AtomicStatement"/>
     <genClasses ecoreClass="dronesBehavior.ecore#//Cooperate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//Cooperate/role"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//Cooperate/task"/>
     </genClasses>
     <genClasses ecoreClass="dronesBehavior.ecore#//Move">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesBehavior.ecore#//Move/destination"/>

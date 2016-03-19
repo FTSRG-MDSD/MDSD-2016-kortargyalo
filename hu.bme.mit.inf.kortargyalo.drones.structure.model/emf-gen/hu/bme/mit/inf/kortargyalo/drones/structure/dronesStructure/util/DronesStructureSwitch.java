@@ -197,6 +197,14 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case DronesStructurePackage.SCANNING_CAPABILITY: {
+				ScanningCapability scanningCapability = (ScanningCapability)theEObject;
+				T result = caseScanningCapability(scanningCapability);
+				if (result == null) result = caseCapability(scanningCapability);
+				if (result == null) result = caseNamedElement(scanningCapability);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -483,6 +491,21 @@ public class DronesStructureSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Scanning Capability</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Scanning Capability</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseScanningCapability(ScanningCapability object) {
 		return null;
 	}
 

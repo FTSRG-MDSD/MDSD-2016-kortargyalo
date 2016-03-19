@@ -382,13 +382,22 @@ public interface DronesBehaviorPackage extends EPackage {
 	int COOPERATE__ROLE = ATOMIC_STATEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Task</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COOPERATE__TASK = ATOMIC_STATEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Cooperate</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COOPERATE_FEATURE_COUNT = ATOMIC_STATEMENT_FEATURE_COUNT + 1;
+	int COOPERATE_FEATURE_COUNT = ATOMIC_STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Cooperate</em>' class.
@@ -978,6 +987,17 @@ public interface DronesBehaviorPackage extends EPackage {
 	EReference getCooperate_Role();
 
 	/**
+	 * Returns the meta object for the reference '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Cooperate#getTask <em>Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Task</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Cooperate#getTask()
+	 * @see #getCooperate()
+	 * @generated
+	 */
+	EReference getCooperate_Task();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Move <em>Move</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1363,6 +1383,14 @@ public interface DronesBehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COOPERATE__ROLE = eINSTANCE.getCooperate_Role();
+
+		/**
+		 * The meta object literal for the '<em><b>Task</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COOPERATE__TASK = eINSTANCE.getCooperate_Task();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.MoveImpl <em>Move</em>}' class.

@@ -175,6 +175,15 @@ public interface DronesStructureFactory extends EFactory {
 	Charger createCharger();
 
 	/**
+	 * Returns a new object of class '<em>Scanning Capability</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scanning Capability</em>'.
+	 * @generated
+	 */
+	ScanningCapability createScanningCapability();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

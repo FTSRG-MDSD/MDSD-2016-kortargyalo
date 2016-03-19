@@ -3,9 +3,16 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext
 
+import hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.resource.DroneScriptResourceDescriptionStrategy
+import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy
+
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 class DroneScriptRuntimeModule extends AbstractDroneScriptRuntimeModule {
+
+	def Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
+		DroneScriptResourceDescriptionStrategy
+	}
 
 }

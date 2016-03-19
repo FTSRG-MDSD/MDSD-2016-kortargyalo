@@ -36,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl#getProvidedCapabilities <em>Provided Capabilities</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl#getMovementCapability <em>Movement Capability</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl#getDimension <em>Dimension</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.DroneTypeImpl#getScanningCapability <em>Scanning Capability</em>}</li>
  * </ul>
  *
  * @generated
@@ -130,6 +131,16 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	 * @ordered
 	 */
 	protected Dimension dimension;
+
+	/**
+	 * The cached setting delegate for the '{@link #getScanningCapability() <em>Scanning Capability</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getScanningCapability()
+	 * @generated
+	 * @ordered
+	 */
+	protected EStructuralFeature.Internal.SettingDelegate SCANNING_CAPABILITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DronesStructurePackage.Literals.DRONE_TYPE__SCANNING_CAPABILITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,6 +302,24 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ProvidedCapability getScanningCapability() {
+		return (ProvidedCapability)SCANNING_CAPABILITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProvidedCapability basicGetScanningCapability() {
+		return (ProvidedCapability)SCANNING_CAPABILITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -338,6 +367,9 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 				return basicGetMovementCapability();
 			case DronesStructurePackage.DRONE_TYPE__DIMENSION:
 				return getDimension();
+			case DronesStructurePackage.DRONE_TYPE__SCANNING_CAPABILITY:
+				if (resolve) return getScanningCapability();
+				return basicGetScanningCapability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -418,6 +450,8 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 				return MOVEMENT_CAPABILITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 			case DronesStructurePackage.DRONE_TYPE__DIMENSION:
 				return dimension != null;
+			case DronesStructurePackage.DRONE_TYPE__SCANNING_CAPABILITY:
+				return SCANNING_CAPABILITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
 		}
 		return super.eIsSet(featureID);
 	}

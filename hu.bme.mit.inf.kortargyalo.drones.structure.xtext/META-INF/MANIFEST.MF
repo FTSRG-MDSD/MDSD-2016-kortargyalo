@@ -10,8 +10,10 @@ Require-Bundle: org.eclipse.ui,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtend.lib,
- org.eclipse.xtend.lib.macro
+ org.eclipse.xtend.lib.macro,
+ hu.bme.mit.inf.kortargyalo.drones.structure.model;bundle-version="0.1.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: hu.bme.mit.inf.kortargyalo.drones.structure.xtext
+Import-Package: org.apache.log4j;version="1.2.15"
 

@@ -144,6 +144,10 @@ public class DronesStructureAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
+			public Adapter caseScanningCapability(ScanningCapability object) {
+				return createScanningCapabilityAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -426,6 +430,20 @@ public class DronesStructureAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability <em>Scanning Capability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability
+	 * @generated
+	 */
+	public Adapter createScanningCapabilityAdapter() {
 		return null;
 	}
 

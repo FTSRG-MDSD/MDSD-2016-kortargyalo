@@ -3,6 +3,21 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.scoping
 
+import com.google.inject.Inject
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Cooperate
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage
+import hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.resource.DroneScriptResourceDescriptionStrategy
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.naming.IQualifiedNameConverter
+import org.eclipse.xtext.resource.IResourceDescriptions
+import org.eclipse.xtext.scoping.IGlobalScopeProvider
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.xtext.scoping.Scopes
 
 /**
  * This class contains custom scoping description.
@@ -12,4 +27,63 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.scoping
  */
 class DroneScriptScopeProvider extends AbstractDroneScriptScopeProvider {
 
+	extension DronesStructurePackage = DronesStructurePackage.eINSTANCE
+
+	extension DronesBehaviorPackage = DronesBehaviorPackage.eINSTANCE
+
+	@Inject IGlobalScopeProvider globalScopeProvider
+
+	@Inject IResourceDescriptions globalResourceDescriptions
+
+	@Inject IQualifiedNameConverter qualifiedNameConverter
+
+	override getScope(EObject context, EReference reference) {
+		switch (reference) {
+			case dronesBehavior_Scenario: super.getScope(context, reference)
+			case cooperate_Role: getCooperateRoleScope(context)
+			default: getScenarioScope(context, reference)
+		}
+	}
+
+	private def getCooperateRoleScope(EObject context) {
+		val cooperate = EcoreUtil2.getContainerOfType(context, Cooperate)
+		if (cooperate?.task == null) {
+			IScope.NULLSCOPE
+		} else {
+			Scopes.scopeFor(cooperate.task.actionToPerform.roles)
+		}
+	}
+	
+	private def getScenarioScope(EObject context, EReference reference) {
+		val behaviorModel = EcoreUtil2.getContainerOfType(context, DronesBehavior)
+		val scenario = behaviorModel?.scenario
+		if (scenario == null) {
+			return IScope.NULLSCOPE
+		}
+		switch (reference?.EReferenceType) {
+			case drone: Scopes.scopeFor(scenario.drones)
+			case task: Scopes.scopeFor(scenario.tasks)
+			case signal: getSignalsScope(context, reference, behaviorModel)
+			default: IScope.NULLSCOPE
+		}
+	}
+	
+	private def getSignalsScope(EObject context, EReference reference, DronesBehavior behaviorModel) {
+		val scenarioNameStr = getName(behaviorModel.scenario)
+		val globalScope = globalScopeProvider.getScope(context.eResource, reference) [
+			getUserData(DroneScriptResourceDescriptionStrategy.SCENARIO_NAME_KEY) == scenarioNameStr
+		]
+		Scopes.scopeFor(behaviorModel.signals, globalScope)
+	}
+	
+	private def getName(Scenario scenario) {
+		if (scenario == null) {
+			return null
+		}
+		val scenarioName = globalResourceDescriptions.getExportedObjectsByObject(scenario).head?.name
+		if (scenarioName == null) {
+			return null
+		}
+		qualifiedNameConverter.toString(scenarioName)
+	}
 }

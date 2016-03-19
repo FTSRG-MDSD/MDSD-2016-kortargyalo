@@ -226,6 +226,10 @@ ruleScript returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getScriptAccess().getScriptKeyword_0());
 		}
+		otherlv_1='for'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getScriptAccess().getForKeyword_1());
+		}
 		(
 			(
 				{
@@ -233,21 +237,18 @@ ruleScript returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getScriptRule());
 					}
 				}
+				otherlv_2=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getScriptAccess().getDroneDroneCrossReference_1_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
+					newLeafNode(otherlv_2, grammarAccess.getScriptAccess().getDroneDroneCrossReference_2_0());
 				}
 			)
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getScriptAccess().getStatementSequenceParserRuleCall_3_0());
 				}
-				lv_statement_2_0=ruleSequence
+				lv_statement_3_0=ruleSequence
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getScriptRule());
@@ -255,7 +256,7 @@ ruleScript returns [EObject current=null]
 					set(
 						$current,
 						"statement",
-						lv_statement_2_0,
+						lv_statement_3_0,
 						"hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.Sequence");
 					afterParserOrEnumRuleCall();
 				}
@@ -436,6 +437,10 @@ ruleSimpleWait returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getSimpleWaitAccess().getWaitKeyword_0());
 		}
+		otherlv_1='for'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getSimpleWaitAccess().getForKeyword_1());
+		}
 		(
 			(
 				{
@@ -444,7 +449,7 @@ ruleSimpleWait returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getSimpleWaitAccess().getSignalSignalCrossReference_1_0());
+					newCompositeNode(grammarAccess.getSimpleWaitAccess().getSignalSignalCrossReference_2_0());
 				}
 				ruleQualifiedName
 				{
@@ -453,15 +458,15 @@ ruleSimpleWait returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_2='timeout'
+			otherlv_3='timeout'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getSimpleWaitAccess().getTimeoutKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getSimpleWaitAccess().getTimeoutKeyword_3_0());
 			}
 			(
 				(
-					lv_timeout_3_0=RULE_INT
+					lv_timeout_4_0=RULE_INT
 					{
-						newLeafNode(lv_timeout_3_0, grammarAccess.getSimpleWaitAccess().getTimeoutINTTerminalRuleCall_2_1_0());
+						newLeafNode(lv_timeout_4_0, grammarAccess.getSimpleWaitAccess().getTimeoutINTTerminalRuleCall_3_1_0());
 					}
 					{
 						if ($current==null) {
@@ -470,7 +475,7 @@ ruleSimpleWait returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"timeout",
-							lv_timeout_3_0,
+							lv_timeout_4_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
@@ -740,12 +745,9 @@ ruleSendSignal returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getSendSignalRule());
 					}
 				}
+				otherlv_3=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getSendSignalAccess().getRecipentDroneCrossReference_3_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
+					newLeafNode(otherlv_3, grammarAccess.getSendSignalAccess().getRecipentDroneCrossReference_3_0());
 				}
 			)
 		)
@@ -772,6 +774,10 @@ ruleCooperate returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getCooperateAccess().getCooperateKeyword_0());
 		}
+		otherlv_1='on'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getCooperateAccess().getOnKeyword_1());
+		}
 		(
 			(
 				{
@@ -779,12 +785,26 @@ ruleCooperate returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getCooperateRule());
 					}
 				}
+				otherlv_2=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getCooperateAccess().getRoleRoleCrossReference_1_0());
+					newLeafNode(otherlv_2, grammarAccess.getCooperateAccess().getTaskTaskCrossReference_2_0());
 				}
-				ruleQualifiedName
+			)
+		)
+		otherlv_3='as'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getCooperateAccess().getAsKeyword_3());
+		}
+		(
+			(
 				{
-					afterParserOrEnumRuleCall();
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getCooperateRule());
+					}
+				}
+				otherlv_4=RULE_ID
+				{
+					newLeafNode(otherlv_4, grammarAccess.getCooperateAccess().getRoleRoleCrossReference_4_0());
 				}
 			)
 		)
@@ -886,12 +906,9 @@ ruleSendMap returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getSendMapRule());
 					}
 				}
+				otherlv_3=RULE_ID
 				{
-					newCompositeNode(grammarAccess.getSendMapAccess().getRecipentDroneCrossReference_3_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
+					newLeafNode(otherlv_3, grammarAccess.getSendMapAccess().getRecipentDroneCrossReference_3_0());
 				}
 			)
 		)

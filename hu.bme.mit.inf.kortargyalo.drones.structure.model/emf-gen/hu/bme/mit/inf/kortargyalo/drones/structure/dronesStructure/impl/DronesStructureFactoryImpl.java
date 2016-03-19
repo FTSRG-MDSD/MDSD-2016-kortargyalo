@@ -73,6 +73,7 @@ public class DronesStructureFactoryImpl extends EFactoryImpl implements DronesSt
 			case DronesStructurePackage.SCENARIO_BOUNDS: return createScenarioBounds();
 			case DronesStructurePackage.TASK: return createTask();
 			case DronesStructurePackage.CHARGER: return createCharger();
+			case DronesStructurePackage.SCANNING_CAPABILITY: return createScanningCapability();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -246,6 +247,16 @@ public class DronesStructureFactoryImpl extends EFactoryImpl implements DronesSt
 	public Charger createCharger() {
 		ChargerImpl charger = new ChargerImpl();
 		return charger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ScanningCapability createScanningCapability() {
+		ScanningCapabilityImpl scanningCapability = new ScanningCapabilityImpl();
+		return scanningCapability;
 	}
 
 	/**

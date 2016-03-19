@@ -43,7 +43,7 @@ public class DroneScriptParser extends AbstractContentAssistParser {
 					put(grammarAccess.getScriptAccess().getGroup(), "rule__Script__Group__0");
 					put(grammarAccess.getSequenceAccess().getGroup(), "rule__Sequence__Group__0");
 					put(grammarAccess.getSimpleWaitAccess().getGroup(), "rule__SimpleWait__Group__0");
-					put(grammarAccess.getSimpleWaitAccess().getGroup_2(), "rule__SimpleWait__Group_2__0");
+					put(grammarAccess.getSimpleWaitAccess().getGroup_3(), "rule__SimpleWait__Group_3__0");
 					put(grammarAccess.getComplexWaitAccess().getGroup(), "rule__ComplexWait__Group__0");
 					put(grammarAccess.getComplexWaitAccess().getGroup_2(), "rule__ComplexWait__Group_2__0");
 					put(grammarAccess.getComplexWaitAccess().getGroup_5(), "rule__ComplexWait__Group_5__0");
@@ -64,11 +64,11 @@ public class DroneScriptParser extends AbstractContentAssistParser {
 					put(grammarAccess.getDronesBehaviorAccess().getSignalsAssignment_2_0_2_1(), "rule__DronesBehavior__SignalsAssignment_2_0_2_1");
 					put(grammarAccess.getDronesBehaviorAccess().getScriptsAssignment_2_1(), "rule__DronesBehavior__ScriptsAssignment_2_1");
 					put(grammarAccess.getSignalAccess().getNameAssignment(), "rule__Signal__NameAssignment");
-					put(grammarAccess.getScriptAccess().getDroneAssignment_1(), "rule__Script__DroneAssignment_1");
-					put(grammarAccess.getScriptAccess().getStatementAssignment_2(), "rule__Script__StatementAssignment_2");
+					put(grammarAccess.getScriptAccess().getDroneAssignment_2(), "rule__Script__DroneAssignment_2");
+					put(grammarAccess.getScriptAccess().getStatementAssignment_3(), "rule__Script__StatementAssignment_3");
 					put(grammarAccess.getSequenceAccess().getStatementsAssignment_2(), "rule__Sequence__StatementsAssignment_2");
-					put(grammarAccess.getSimpleWaitAccess().getSignalAssignment_1(), "rule__SimpleWait__SignalAssignment_1");
-					put(grammarAccess.getSimpleWaitAccess().getTimeoutAssignment_2_1(), "rule__SimpleWait__TimeoutAssignment_2_1");
+					put(grammarAccess.getSimpleWaitAccess().getSignalAssignment_2(), "rule__SimpleWait__SignalAssignment_2");
+					put(grammarAccess.getSimpleWaitAccess().getTimeoutAssignment_3_1(), "rule__SimpleWait__TimeoutAssignment_3_1");
 					put(grammarAccess.getComplexWaitAccess().getTimeoutAssignment_2_1(), "rule__ComplexWait__TimeoutAssignment_2_1");
 					put(grammarAccess.getComplexWaitAccess().getReactionsAssignment_4(), "rule__ComplexWait__ReactionsAssignment_4");
 					put(grammarAccess.getComplexWaitAccess().getOnTimeoutAssignment_5_2(), "rule__ComplexWait__OnTimeoutAssignment_5_2");
@@ -77,7 +77,8 @@ public class DroneScriptParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMoveAccess().getDestinationAssignment_2(), "rule__Move__DestinationAssignment_2");
 					put(grammarAccess.getSendSignalAccess().getSignalAssignment_1(), "rule__SendSignal__SignalAssignment_1");
 					put(grammarAccess.getSendSignalAccess().getRecipentAssignment_3(), "rule__SendSignal__RecipentAssignment_3");
-					put(grammarAccess.getCooperateAccess().getRoleAssignment_1(), "rule__Cooperate__RoleAssignment_1");
+					put(grammarAccess.getCooperateAccess().getTaskAssignment_2(), "rule__Cooperate__TaskAssignment_2");
+					put(grammarAccess.getCooperateAccess().getRoleAssignment_4(), "rule__Cooperate__RoleAssignment_4");
 					put(grammarAccess.getSendMapAccess().getRecipentAssignment_3(), "rule__SendMap__RecipentAssignment_3");
 					put(grammarAccess.getPositionAccess().getXAssignment_0(), "rule__Position__XAssignment_0");
 					put(grammarAccess.getPositionAccess().getYAssignment_2(), "rule__Position__YAssignment_2");

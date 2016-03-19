@@ -395,6 +395,15 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getCooperate_Task() {
+		return (EReference)cooperateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getMove() {
 		return moveEClass;
 	}
@@ -623,6 +632,7 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		cooperateEClass = createEClass(COOPERATE);
 		createEReference(cooperateEClass, COOPERATE__ROLE);
+		createEReference(cooperateEClass, COOPERATE__TASK);
 
 		moveEClass = createEClass(MOVE);
 		createEReference(moveEClass, MOVE__DESTINATION);
@@ -728,6 +738,7 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		initEClass(cooperateEClass, Cooperate.class, "Cooperate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCooperate_Role(), theDronesStructurePackage.getRole(), null, "role", null, 0, 1, Cooperate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCooperate_Task(), theDronesStructurePackage.getTask(), null, "task", null, 0, 1, Cooperate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(moveEClass, Move.class, "Move", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMove_Destination(), theDronesStructurePackage.getPosition(), null, "destination", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

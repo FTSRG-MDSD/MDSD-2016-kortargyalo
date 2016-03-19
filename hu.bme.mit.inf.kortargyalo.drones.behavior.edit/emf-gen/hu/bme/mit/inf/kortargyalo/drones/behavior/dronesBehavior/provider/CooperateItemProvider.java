@@ -43,6 +43,7 @@ public class CooperateItemProvider extends AtomicStatementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addRolePropertyDescriptor(object);
+			addTaskPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -61,6 +62,28 @@ public class CooperateItemProvider extends AtomicStatementItemProvider {
 				 getString("_UI_Cooperate_role_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Cooperate_role_feature", "_UI_Cooperate_type"),
 				 DronesBehaviorPackage.Literals.COOPERATE__ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Task feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTaskPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Cooperate_task_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Cooperate_task_feature", "_UI_Cooperate_type"),
+				 DronesBehaviorPackage.Literals.COOPERATE__TASK,
 				 true,
 				 false,
 				 true,
