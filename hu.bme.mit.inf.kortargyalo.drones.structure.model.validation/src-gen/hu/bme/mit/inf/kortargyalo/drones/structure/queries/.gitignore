@@ -1,8 +1,3 @@
-/MultipleProvidedMovementCapabilitiesConstraint0.java
-/NoMovementCapabilityConstraint0.java
-/NotOneMovementCapabilityProvidedConstraint0.java
-/DroneTypeWithDuplicateNameConstraint0.java
-/ScenarioWithDuplicateNameConstraint0.java
-/CapabilityWithDuplicateNameConstraint0.java
 /DuplicateNameConstraint0.java
 /NotMoreThanOneScanningCapabilitiesConstraint0.java
+/NotOneMovementCapabilityProvidedConstraint0.java
