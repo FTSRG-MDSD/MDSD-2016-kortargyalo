@@ -14,5 +14,4 @@ package hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure;
  * @generated
  */
 public interface Obstacle extends AABB, NamedElement {
-
 } // Obstacle

@@ -1,0 +1,12 @@
+
+scenario firstScenario
+
+script for quad2 {
+	move to 890, 700, 100
+	wait for letsBuild
+	send readyToBuild to quad1
+	cooperate on buildBridge1 as lifter
+	move to 30, 40, 30
+	charge
+	move to 0, 0, 0
+}

@@ -4,6 +4,7 @@ package hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl;
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**

@@ -2,6 +2,7 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Capability</b></em>'.
@@ -13,5 +14,4 @@ package hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure;
  * @generated
  */
 public interface Capability extends NamedElement {
-
 } // Capability

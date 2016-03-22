@@ -15,10 +15,10 @@ import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -113,16 +113,6 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	protected EList<ProvidedCapability> providedCapabilities;
 
 	/**
-	 * The cached setting delegate for the '{@link #getMovementCapability() <em>Movement Capability</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMovementCapability()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate MOVEMENT_CAPABILITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DronesStructurePackage.Literals.DRONE_TYPE__MOVEMENT_CAPABILITY).getSettingDelegate();
-
-	/**
 	 * The cached value of the '{@link #getDimension() <em>Dimension</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,16 +121,6 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	 * @ordered
 	 */
 	protected Dimension dimension;
-
-	/**
-	 * The cached setting delegate for the '{@link #getScanningCapability() <em>Scanning Capability</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getScanningCapability()
-	 * @generated
-	 * @ordered
-	 */
-	protected EStructuralFeature.Internal.SettingDelegate SCANNING_CAPABILITY__ESETTING_DELEGATE = ((EStructuralFeature.Internal)DronesStructurePackage.Literals.DRONE_TYPE__SCANNING_CAPABILITY).getSettingDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -242,7 +222,8 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	 * @generated
 	 */
 	public ProvidedCapability getMovementCapability() {
-		return (ProvidedCapability)MOVEMENT_CAPABILITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		ProvidedCapability movementCapability = basicGetMovementCapability();
+		return movementCapability != null && movementCapability.eIsProxy() ? (ProvidedCapability)eResolveProxy((InternalEObject)movementCapability) : movementCapability;
 	}
 
 	/**
@@ -251,7 +232,10 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	 * @generated
 	 */
 	public ProvidedCapability basicGetMovementCapability() {
-		return (ProvidedCapability)MOVEMENT_CAPABILITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+		// TODO: implement this method to return the 'Movement Capability' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -303,7 +287,8 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	 * @generated
 	 */
 	public ProvidedCapability getScanningCapability() {
-		return (ProvidedCapability)SCANNING_CAPABILITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, true, false);
+		ProvidedCapability scanningCapability = basicGetScanningCapability();
+		return scanningCapability != null && scanningCapability.eIsProxy() ? (ProvidedCapability)eResolveProxy((InternalEObject)scanningCapability) : scanningCapability;
 	}
 
 	/**
@@ -312,7 +297,10 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 	 * @generated
 	 */
 	public ProvidedCapability basicGetScanningCapability() {
-		return (ProvidedCapability)SCANNING_CAPABILITY__ESETTING_DELEGATE.dynamicGet(this, null, 0, false, false);
+		// TODO: implement this method to return the 'Scanning Capability' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -447,11 +435,11 @@ public class DroneTypeImpl extends NamedElementImpl implements DroneType {
 			case DronesStructurePackage.DRONE_TYPE__PROVIDED_CAPABILITIES:
 				return providedCapabilities != null && !providedCapabilities.isEmpty();
 			case DronesStructurePackage.DRONE_TYPE__MOVEMENT_CAPABILITY:
-				return MOVEMENT_CAPABILITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return basicGetMovementCapability() != null;
 			case DronesStructurePackage.DRONE_TYPE__DIMENSION:
 				return dimension != null;
 			case DronesStructurePackage.DRONE_TYPE__SCANNING_CAPABILITY:
-				return SCANNING_CAPABILITY__ESETTING_DELEGATE.dynamicIsSet(this, null, 0);
+				return basicGetScanningCapability() != null;
 		}
 		return super.eIsSet(featureID);
 	}

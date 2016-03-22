@@ -134,7 +134,6 @@ public interface DroneType extends NamedElement {
 	 * @return the value of the '<em>Movement Capability</em>' reference.
 	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getDroneType_MovementCapability()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='hu.bme.mit.inf.kortargyalo.drones.structure.queries.movementCapability'"
 	 * @generated
 	 */
 	ProvidedCapability getMovementCapability();
@@ -176,7 +175,6 @@ public interface DroneType extends NamedElement {
 	 * @return the value of the '<em>Scanning Capability</em>' reference.
 	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getDroneType_ScanningCapability()
 	 * @model transient="true" changeable="false" volatile="true" derived="true"
-	 *        annotation="org.eclipse.incquery.querybasedfeature patternFQN='hu.bme.mit.inf.kortargyalo.drones.structure.queries.scanningCapability'"
 	 * @generated
 	 */
 	ProvidedCapability getScanningCapability();

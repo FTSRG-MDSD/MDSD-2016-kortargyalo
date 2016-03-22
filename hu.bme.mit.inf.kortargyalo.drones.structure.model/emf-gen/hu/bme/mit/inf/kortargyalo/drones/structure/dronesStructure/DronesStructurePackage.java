@@ -1147,7 +1147,6 @@ public interface DronesStructurePackage extends EPackage {
 	 */
 	int CHARGER_OPERATION_COUNT = REGION_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScanningCapabilityImpl <em>Scanning Capability</em>}' class.
 	 * <!-- begin-user-doc -->
