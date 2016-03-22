@@ -4,9 +4,125 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DroneStructuralDiagram" label="Drone Structural Diagram" domainClass="dronesStructure.DronesStructure" enablePopupBars="true">
       <metamodel href="http://inf.mit.bme.hu/kortargyalo/dronesStructure#/"/>
       <defaultLayer name="Default">
-        <containerMappings name="DroneTypeContainer" label="Drone Type" domainClass="DroneType">
-          <subNodeMappings name="Dimension" label="Dimension" semanticCandidatesExpression="feature:eAllContents" domainClass="Dimension"/>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+        <nodeMappings name="CapabilityNode" label="Capability" preconditionExpression="aql:self.oclIsTypeOf(dronesStructure::Capability)" semanticCandidatesExpression="feature:capabilities" domainClass="Capability">
+          <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="MovementCapabilityNode" label="Movement Capability" semanticCandidatesExpression="feature:capabilities" domainClass="MovementCapability">
+          <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ScanningCapabilityNode" label="Scanning Capability" semanticCandidatesExpression="feature:capabilities" domainClass="ScanningCapability">
+          <style xsi:type="style:EllipseNodeDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="DroneTypeNode" label="Drone Type" semanticElements="aql:self->including(self.dimension)" domainClass="DroneType">
+          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="RequiredCapabilityEdge" label="Required Capability" sourceMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']/@subNodeMappings[name='RoleNode']" targetMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode'] //@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='MovementCapabilityNode'] //@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='ScanningCapabilityNode']" targetFinderExpression="aql:self.capability" sourceFinderExpression="aql:self.role" domainClass="RequiredCapability" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="feature:minimalValue">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ProvidedCapabilityEdge" label="Provided Capability" sourceMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='DroneTypeNode']" targetMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode'] //@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='MovementCapabilityNode'] //@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='ScanningCapabilityNode']" targetFinderExpression="aql:self.capability" sourceFinderExpression="aql:self.droneType" domainClass="ProvidedCapability" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="aql:self.maximalValue + ' / ' + self.energyConsumptionPerValue">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DroneDroneTypeEdge" label="Drone - DroneType" sourceMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='DronesContainer']/@subNodeMappings[name='DroneNode']" targetMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='DroneTypeNode']" targetFinderExpression="feature:dronetype">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="TaskCooperativeActionEdge" label="Task - Cooperative Action" sourceMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']/@subNodeMappings[name='TaskNode']" targetMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']" targetFinderExpression="feature:actionToPerform">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ScenarioContainer" label="Scenario" semanticCandidatesExpression="feature:scenarios" semanticElements="aql:self->including(self.allowedBounds.position)->including(self.allowedBounds.dimension)" domainClass="Scenario" childrenPresentation="HorizontalStack">
+          <subContainerMappings name="DronesContainer" label="Drones" semanticCandidatesExpression="var:self" domainClass="Scenario">
+            <subNodeMappings name="DroneNode" label="Drone" semanticCandidatesExpression="feature:drones" semanticElements="aql:self->including(self.startPosition)" domainClass="Drone">
+              <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Drones">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="RegionContainer" label="Regions" semanticCandidatesExpression="var:self" domainClass="Scenario">
+            <subContainerMappings name="RegionContainer" label="Region" semanticCandidatesExpression="feature:regions" semanticElements="aql:self->including(self.position)->including(self.dimension)" domainClass="Region">
+              <subNodeMappings name="TaskNode" label="Task" semanticCandidatesExpression="feature:tasks" domainClass="Task">
+                <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+                  <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                  <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                </style>
+              </subNodeMappings>
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+                <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Regions">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="ObstacleContainer" label="Obstacles" semanticCandidatesExpression="var:self" domainClass="Scenario" childrenPresentation="List">
+            <subNodeMappings name="ObstacleNode" label="Obstacle" semanticCandidatesExpression="feature:obstacles" semanticElements="aql:self->including(self.position)->including(self.dimension)" domainClass="Obstacle">
+              <style xsi:type="style:SquareDescription" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="Obstacles">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -14,17 +130,37 @@
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
-        <containerMappings name="ScenarioContainer" label="Scenario" semanticElements="aql:self->including(self.allowedBounds.position)->including(self.allowedBounds.dimension)" domainClass="Scenario">
-          <subNodeMappings name="ScenarioBoundNode" label="Scenario Bounds" semanticCandidatesExpression="feature:eAllContents" domainClass="ScenarioBounds"/>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+        <containerMappings name="CooperativeActionContainer" label="Cooperative Action" semanticCandidatesExpression="feature:cooperativeActions" domainClass="CooperativeAction">
+          <subNodeMappings name="RoleNode" label="Role" semanticCandidatesExpression="feature:roles" domainClass="Role">
+            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
-        <toolSections name="ContainersSection" label="Containers">
-          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateDroneType" label="Drone Type" containerMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='DroneTypeContainer']">
+        <toolSections name="ElementsSection" label="Drone Structure">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateDroneType" label="Drone Type" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='DroneTypeNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DroneType" referenceName="droneTypes">
+                  <subModelOperations xsi:type="tool_1:ChangeContext">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Dimension" referenceName="dimension" variableName="dimension"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:CreationDescription" name="CreateDroneType" label="Drone Type" containerMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='DroneTypeContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -33,6 +169,89 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+        </toolSections>
+        <toolSections name="CapabilitySection" label="Capabilities">
+          <ownedTools xsi:type="tool:ToolGroup" name="CapabilityGroup">
+            <tools xsi:type="tool:NodeCreationDescription" name="CreateCapability" label="Capability" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Capability" referenceName="capabilities"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="CreateMovementCapability" label="Movement capability" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='MovementCapabilityNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="MovementCapability" referenceName="capabilities"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+            <tools xsi:type="tool:NodeCreationDescription" name="CreateScanningCapability" label="Scanning capability" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='ScanningCapabilityNode']">
+              <variable name="container"/>
+              <viewVariable name="containerView"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ScanningCapability" referenceName="capabilities"/>
+                </firstModelOperations>
+              </initialOperation>
+            </tools>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CreateRequiredCapabilityEdge" label="Required Capability" precondition="aql:preSource.oclAsType(dronesStructure::Role).requiredCapabilities.capability->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RequiredCapability" referenceName="requiredCapabilities">
+                  <subModelOperations xsi:type="tool_1:ChangeContext">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="capability" valueExpression="var:target"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="CreateProvidedCapabilityEdge" label="Provided Capability" precondition="aql:preSource.oclAsType(dronesStructure::DroneType).providedCapabilities.capability->excludes(preTarget)" edgeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='ProvidedCapabilityEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ProvidedCapability" referenceName="providedCapabilities">
+                  <subModelOperations xsi:type="tool_1:ChangeContext">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="capability" valueExpression="var:target"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="CooperativeSection" label="Cooperative Action">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateCooperativeAction" label="Cooperative Action" containerMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CooperativeAction" referenceName="cooperativeActions"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateRole" label="Role" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']/@subNodeMappings[name='RoleNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Role" referenceName="roles"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="ScenarioSection" label="Scenario">
           <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateScenario" label="Scenario" containerMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
@@ -57,23 +276,57 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:CreationDescription" name="CreateDroneType" label="Drone Type" containerMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='DroneTypeContainer']">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateDrone" label="Drone" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='DronesContainer']/@subNodeMappings[name='DroneNode']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="DroneType" referenceName="droneTypes"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Drone" referenceName="drones">
+                  <subModelOperations xsi:type="tool_1:ChangeContext">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Position" referenceName="startPosition" variableName="startPosition"/>
+                  </subModelOperations>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-        </toolSections>
-        <toolSections name="NodesSection" label="Nodes">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateScenarioBounds" label="Scenario Bounds" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subNodeMappings[name='ScenarioBoundNode']">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CreateRegion" label="Region" containerMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ScenarioBounds" referenceName="allowedBounds"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Region" referenceName="regions">
+                  <subModelOperations xsi:type="tool_1:ChangeContext">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Position" referenceName="position" variableName="position"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Dimension" referenceName="dimension" variableName="dimension"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateTask" label="Task" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']/@subNodeMappings[name='TaskNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container.eContainer().oclAsType(dronesStructure::Scenario)">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Task" referenceName="tasks">
+                  <subModelOperations xsi:type="tool_1:ChangeContext">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="region" valueExpression="var:container"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateObstacle" label="Obstacle" nodeMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='ObstacleContainer']/@subNodeMappings[name='ObstacleNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Obstacle" referenceName="obstacles">
+                  <subModelOperations xsi:type="tool_1:ChangeContext">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Position" referenceName="position" variableName="position"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Dimension" referenceName="dimension" variableName="dimension"/>
+                  </subModelOperations>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
