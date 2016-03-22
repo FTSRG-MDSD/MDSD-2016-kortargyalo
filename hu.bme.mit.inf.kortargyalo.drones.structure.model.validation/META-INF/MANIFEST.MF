@@ -8,4 +8,5 @@ Require-Bundle: hu.bme.mit.inf.kortargyalo.drones.structure.model,
  com.google.guava,
  org.eclipse.incquery.runtime,
  org.eclipse.incquery.validation.core
+Import-Package: hu.bme.mit.inf.kortargyalo.drones.structure.queries.util
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

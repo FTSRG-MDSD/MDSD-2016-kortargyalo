@@ -1,2 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dronesStructure:DronesStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dronesStructure="http://inf.mit.bme.hu/kortargyalo/dronesStructure"/>
+<dronesStructure:DronesStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dronesStructure="http://inf.mit.bme.hu/kortargyalo/dronesStructure">
+  <scenarios name="firstScenario">
+    <drones name="quad1" dronetype="//@droneTypes.0">
+      <startPosition x="50.0"/>
+    </drones>
+    <drones name="quad2" dronetype="//@droneTypes.0">
+      <startPosition/>
+    </drones>
+    <allowedBounds>
+      <position/>
+      <dimension width="1024.0" height="256.0" depth="1024.0"/>
+    </allowedBounds>
+    <obstacles name="tree">
+      <position x="256.0" y="678.0"/>
+      <dimension width="51.0" height="200.0" depth="50.0"/>
+    </obstacles>
+    <obstacles name="anotherTree">
+      <position x="89.0" y="126.0"/>
+      <dimension width="45.0" height="195.0" depth="67.0"/>
+    </obstacles>
+    <regions xsi:type="dronesStructure:Charger" name="charger1">
+      <position x="20.0" y="40.0"/>
+      <dimension width="50.0" height="10.0" depth="50.0"/>
+    </regions>
+    <regions name="bridge1" tasks="//@scenarios.0/@tasks.0">
+      <position x="870.0" y="698.0" z="15.0"/>
+      <dimension width="25.0" height="20.0" depth="100.0"/>
+    </regions>
+    <tasks name="buildBridge1" region="//@scenarios.0/@regions.1" actionToPerform="//@cooperativeActions.0"/>
+  </scenarios>
+  <droneTypes name="quad" weight="8.76" maxBatteryCapacity="687.0" idleEneryConsumption="1.645">
+    <providedCapabilities maximalValue="10.0" energyConsumptionPerValue="1.0" capability="//@capabilities.0"/>
+    <providedCapabilities maximalValue="300.0" energyConsumptionPerValue="0.01" capability="//@capabilities.1"/>
+    <providedCapabilities maximalValue="10.0" energyConsumptionPerValue="5.0" capability="//@capabilities.2"/>
+    <dimension width="25.0" height="7.5" depth="25.0"/>
+  </droneTypes>
+  <cooperativeActions name="buildBridge" startTimeout="60.0" duration="3600.0">
+    <roles name="coordinator">
+      <requiredCapabilities capability="//@capabilities.1" minimalValue="200.0"/>
+    </roles>
+    <roles name="lifter">
+      <requiredCapabilities capability="//@capabilities.2" minimalValue="8.0"/>
+      <requiredCapabilities capability="//@capabilities.0" minimalValue="10.0"/>
+    </roles>
+  </cooperativeActions>
+  <capabilities xsi:type="dronesStructure:MovementCapability" name="fly"/>
+  <capabilities xsi:type="dronesStructure:ScanningCapability" name="camera"/>
+  <capabilities name="lift"/>
+</dronesStructure:DronesStructure>
