@@ -2,7 +2,7 @@
 <dronesStructure:DronesStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dronesStructure="http://inf.mit.bme.hu/kortargyalo/dronesStructure">
   <scenarios name="firstScenario">
     <drones name="quad1" dronetype="//@droneTypes.0">
-      <startPosition x="50.0"/>
+      <startPosition x="40.0"/>
     </drones>
     <drones name="quad2" dronetype="//@droneTypes.0">
       <startPosition/>
@@ -31,8 +31,8 @@
   </scenarios>
   <droneTypes name="quad" weight="8.76" maxBatteryCapacity="687.0" idleEneryConsumption="1.645">
     <providedCapabilities maximalValue="10.0" energyConsumptionPerValue="1.0" capability="//@capabilities.0"/>
-    <providedCapabilities maximalValue="300.0" energyConsumptionPerValue="0.01" capability="//@capabilities.1"/>
-    <providedCapabilities maximalValue="10.0" energyConsumptionPerValue="5.0" capability="//@capabilities.2"/>
+    <providedCapabilities maximalValue="350.0" energyConsumptionPerValue="0.01" capability="//@capabilities.1"/>
+    <providedCapabilities maximalValue="12.0" energyConsumptionPerValue="5.0" capability="//@capabilities.2"/>
     <dimension width="25.0" height="7.5" depth="25.0"/>
   </droneTypes>
   <cooperativeActions name="buildBridge" startTimeout="60.0" duration="3600.0">

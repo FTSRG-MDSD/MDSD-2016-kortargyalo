@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Drone sirius" version="10.1.3.201511131800">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Drone sirius" version="10.1.3.201511131800">
   <ownedViewpoints name="hu.bme.mit.inf.kortargyalo.drones.structure.model" label="Structural model">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="DroneStructuralDiagram" label="Drone Structural Diagram" domainClass="dronesStructure.DronesStructure" enablePopupBars="true">
       <metamodel href="http://inf.mit.bme.hu/kortargyalo/dronesStructure#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="CapabilityNode" label="Capability" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:capabilities" domainClass="Capability">
+        <nodeMappings name="CapabilityNode" label="Capability" detailDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateCapabilitiesCrossTable']" navigationDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToCapabilitiesTable']" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:capabilities" domainClass="Capability">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/capability.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -22,7 +22,7 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="DroneTypeNode" label="Drone Type" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticElements="aql:self->including(self.dimension)" domainClass="DroneType">
+        <nodeMappings name="DroneTypeNode" label="Drone Type" detailDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateCapabilitiesCrossTable']" navigationDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToCapabilitiesTable']" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticElements="aql:self->including(self.dimension)" domainClass="DroneType">
           <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/drone_type.svg">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -59,7 +59,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="ScenarioContainer" label="Scenario" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:scenarios" semanticElements="aql:self->including(self.allowedBounds.position)->including(self.allowedBounds.dimension)" domainClass="Scenario" childrenPresentation="HorizontalStack">
+        <containerMappings name="ScenarioContainer" label="Scenario" detailDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateScenarioTable']" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:scenarios" semanticElements="aql:self->including(self.allowedBounds.position)->including(self.allowedBounds.dimension)" domainClass="Scenario" childrenPresentation="HorizontalStack">
           <subContainerMappings name="DronesContainer" label="Drones" semanticCandidatesExpression="var:self" domainClass="Scenario">
             <subNodeMappings name="DroneNode" label="Drone" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:drones" semanticElements="aql:self->including(self.startPosition)" domainClass="Drone">
               <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/drone.svg">
@@ -126,8 +126,8 @@
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
-        <containerMappings name="CooperativeActionContainer" label="Cooperative Action" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:cooperativeActions" domainClass="CooperativeAction">
-          <subNodeMappings name="RoleNode" label="Role" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:roles" domainClass="Role">
+        <containerMappings name="CooperativeActionContainer" label="Cooperative Action" detailDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateCapabilitiesCrossTable']" navigationDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToCapabilitiesTable']" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:cooperativeActions" domainClass="CooperativeAction">
+          <subNodeMappings name="RoleNode" label="Role" detailDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateCapabilitiesCrossTable']" navigationDescriptions="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NavigateToCapabilitiesTable']" labelDirectEdit="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@toolSections.0/@ownedTools[name='SetName']" semanticCandidatesExpression="feature:roles" domainClass="Role">
             <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelAlignment="RIGHT" sizeComputationExpression="-1" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/role.svg">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -182,6 +182,21 @@
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:arg0"/>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="description_2:TableCreationDescription" name="CreateScenarioTable" label="Create Scenario Table" tableDescription="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']">
+            <initialOperation/>
+            <containerViewVariable name="containerView"/>
+            <representationNameVariable name="tableName"/>
+          </ownedTools>
+          <ownedTools xsi:type="description_2:TableCreationDescription" name="CreateCapabilitiesCrossTable" label="Create Capabilities Table" browseExpression="aql:self.eContainerOrSelf(dronesStructure::DronesStructure)" tableDescription="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']">
+            <initialOperation/>
+            <containerViewVariable name="containerView"/>
+            <representationNameVariable name="tableName"/>
+          </ownedTools>
+          <ownedTools xsi:type="description_2:TableNavigationDescription" name="NavigateToCapabilitiesTable" label="Go to Capabilities Table" browseExpression="aql:self.eContainerOrSelf(dronesStructure::DronesStructure)" navigationNameExpression="var:tableName" tableDescription="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']">
+            <containerViewVariable name="containerView"/>
+            <containerVariable name="container"/>
+            <representationNameVariable name="tableName"/>
           </ownedTools>
           <ownedTools xsi:type="tool:CreationDescription" name="CreateDroneType" label="Drone Type" containerMappings="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='DroneTypeContainer']">
                         <variable name="container"/>
@@ -369,6 +384,101 @@
           </ownedTools>
         </toolSections>
       </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:EditionTableDescription" name="ScenarioAabbTable" label="Scenario Table" titleExpression="aql:self.name + ' Scenario Table'" domainClass="Scenario">
+      <metamodel href="http://inf.mit.bme.hu/kortargyalo/dronesStructure#/"/>
+      <ownedLineMappings name="BoundsLine" label="Bounds" domainClass="ScenarioBounds" semanticCandidatesExpression="feature:allowedBounds" headerLabelExpression="Allowed Bounds"/>
+      <ownedLineMappings name="DronesLine" label="Drones" domainClass="Scenario" semanticCandidatesExpression="var:self" headerLabelExpression="Drones">
+        <ownedSubLines name="DroneLine" label="Drone" domainClass="Drone" semanticCandidatesExpression="feature:drones" headerLabelExpression="aql:self.dronetype.name + ' ' + self.name"/>
+      </ownedLineMappings>
+      <ownedLineMappings name="RegionsLine" label="Regions" domainClass="Scenario" semanticCandidatesExpression="var:self" headerLabelExpression="Regions">
+        <ownedSubLines name="RegionLine" label="Region" domainClass="Region" semanticCandidatesExpression="feature:regions" headerLabelExpression="aql:if self.oclIsKindOf(dronesStructure::Charger) then self.name + ' (charger)' else self.name endif"/>
+      </ownedLineMappings>
+      <ownedLineMappings name="ObstaclesLine" label="Obstacles" domainClass="Scenario" semanticCandidatesExpression="var:self" headerLabelExpression="Obstacles">
+        <ownedSubLines name="ObstacleLine" label="Obstacle" domainClass="Obstacle" semanticCandidatesExpression="feature:obstacles" headerLabelExpression="feature:name"/>
+      </ownedLineMappings>
+      <ownedColumnMappings name="XColumn" label="X" headerLabelExpression="x" featureName="x" featureParentExpression="aql:if self.oclIsKindOf(dronesStructure::Drone) then self.startPosition else self.position endif"/>
+      <ownedColumnMappings name="YColumn" label="Y" headerLabelExpression="y" featureName="y" featureParentExpression="aql:if self.oclIsKindOf(dronesStructure::Drone) then self.startPosition else self.position endif"/>
+      <ownedColumnMappings name="ZColumn" label="Z" headerLabelExpression="z" featureName="z" featureParentExpression="aql:if self.oclIsKindOf(dronesStructure::Drone) then self.startPosition else self.position endif"/>
+      <ownedColumnMappings name="WidthColumn" label="Width" headerLabelExpression="width" canEdit="aql:not self.eContainer().oclIsKindOf(dronesStructure::DroneType)" featureName="width" featureParentExpression="aql:if self.oclIsKindOf(dronesStructure::Drone) then self.dronetype.dimension else self.dimension endif"/>
+      <ownedColumnMappings name="DepthColumn" label="Depth" headerLabelExpression="depth" canEdit="aql:not self.eContainer().oclIsKindOf(dronesStructure::DroneType)" featureName="depth" featureParentExpression="aql:if self.oclIsKindOf(dronesStructure::Drone) then self.dronetype.dimension else self.dimension endif"/>
+      <ownedColumnMappings name="HeightColumn" label="Height" headerLabelExpression="height" canEdit="aql:not self.eContainer().oclIsKindOf(dronesStructure::DroneType)" featureName="height" featureParentExpression="aql:if self.oclIsKindOf(dronesStructure::Drone) then self.dronetype.dimension else self.dimension endif"/>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_2:CrossTableDescription" name="CapabilitiesCrossTable" label="Capabilities Table" titleExpression="Capabilities Table" domainClass="DronesStructure">
+      <metamodel href="http://inf.mit.bme.hu/kortargyalo/dronesStructure#/"/>
+      <ownedLineMappings name="DroneTypesLine" label="Drone Types" domainClass="DronesStructure" semanticCandidatesExpression="var:self" headerLabelExpression="Drone Types">
+        <ownedSubLines name="DroneTypeLine" label="Drone Type" domainClass="DroneType" semanticCandidatesExpression="feature:droneTypes" headerLabelExpression="feature:name"/>
+      </ownedLineMappings>
+      <ownedLineMappings name="CooperativeActionsLine" label="Cooperative Actions" domainClass="DronesStructure" semanticCandidatesExpression="var:self" headerLabelExpression="Cooperative Actions">
+        <ownedSubLines name="CooperativeActionLine" label="Cooperative Action" domainClass="CooperativeAction" semanticCandidatesExpression="feature:cooperativeActions" headerLabelExpression="feature:name">
+          <ownedSubLines name="RoleLine" label="Role" domainClass="Role" semanticCandidatesExpression="feature:roles" headerLabelExpression="feature:name"/>
+        </ownedSubLines>
+      </ownedLineMappings>
+      <ownedColumnMappings name="CapabilityToProvideColumn" label="Capability" headerLabelExpression="feature:name" domainClass="Capability" semanticCandidatesExpression="feature:capabilities"/>
+      <intersection name="ProvidedCapabilityIntersection" label="Provided Capability" lineMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedLineMappings[name='DroneTypesLine']/@ownedSubLines[name='DroneTypeLine']" columnMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedColumnMappings.0" labelExpression="aql:self.maximalValue + ' / ' + self.energyConsumptionPerValue" useDomainClass="true" columnFinderExpression="feature:capability" lineFinderExpression="feature:droneType" semanticCandidatesExpression="aql:self.droneTypes.providedCapabilities" domainClass="ProvidedCapability">
+        <directEdit>
+          <variables name="element" documentation="The semantic currently edited element."/>
+          <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
+          <variables name="columnSemantic" documentation="The semantic element corresponding to the column (only available for Intersection Mapping)."/>
+          <variables name="root" documentation="The semantic root element of the table."/>
+          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+            <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:arg0 != '' and arg0.tokenize('/')->size() = 2">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="maximalValue" valueExpression="aql:arg0.tokenize('/')->at(1).trim().toReal()"/>
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="energyConsumptionPerValue" valueExpression="aql:arg0.tokenize('/')->at(2).trim().toReal()"/>
+            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:arg0 = ''">
+              <subModelOperations xsi:type="tool_1:RemoveElement"/>
+            </subModelOperations>
+          </firstModelOperation>
+          <mask mask="{0}"/>
+        </directEdit>
+        <create name="CreateProvidedCapability" label="Create Provided Capability">
+          <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
+          <variables name="columnSemantic" documentation="The semantic element corresponding to the column."/>
+          <variables name="root" documentation="The semantic root element of the table."/>
+          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ProvidedCapability" referenceName="providedCapabilities">
+              <subModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="capability" valueExpression="var:columnSemantic"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="maximalValue" valueExpression="aql:arg0.trim().toReal()"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="energyConsumptionPerValue" valueExpression="aql:arg1.trim().toReal()"/>
+              </subModelOperations>
+            </subModelOperations>
+          </firstModelOperation>
+          <mask mask="{0}/{1}"/>
+        </create>
+      </intersection>
+      <intersection name="RequiredCapabilityIntersection" label="Required Capability" lineMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedLineMappings[name='CooperativeActionsLine']/@ownedSubLines[name='CooperativeActionLine']/@ownedSubLines[name='RoleLine']" columnMapping="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedColumnMappings.0" labelExpression="aql:self.minimalValue" useDomainClass="true" columnFinderExpression="feature:capability" lineFinderExpression="feature:role" semanticCandidatesExpression="aql:self.cooperativeActions.roles.requiredCapabilities" domainClass="RequiredCapability">
+        <directEdit>
+          <variables name="element" documentation="The semantic currently edited element."/>
+          <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
+          <variables name="columnSemantic" documentation="The semantic element corresponding to the column (only available for Intersection Mapping)."/>
+          <variables name="root" documentation="The semantic root element of the table."/>
+          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+            <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:arg0 != ''">
+              <subModelOperations xsi:type="tool_1:SetValue" featureName="minimalValue" valueExpression="aql:arg0.trim().toReal()"/>
+            </subModelOperations>
+            <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:arg0 = ''">
+              <subModelOperations xsi:type="tool_1:RemoveElement"/>
+            </subModelOperations>
+          </firstModelOperation>
+          <mask mask="{0}"/>
+        </directEdit>
+        <create name="CreateRequiredCapability" label="Create Required Capability">
+          <variables name="lineSemantic" documentation="The semantic element corresponding to the line."/>
+          <variables name="columnSemantic" documentation="The semantic element corresponding to the column."/>
+          <variables name="root" documentation="The semantic root element of the table."/>
+          <firstModelOperation xsi:type="tool_1:ChangeContext" browseExpression="var:lineSemantic">
+            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="RequiredCapability" referenceName="requiredCapabilities">
+              <subModelOperations xsi:type="tool_1:ChangeContext">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="capability" valueExpression="var:columnSemantic"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="minimalValue" valueExpression="aql:arg0.trim().toReal()"/>
+              </subModelOperations>
+            </subModelOperations>
+          </firstModelOperation>
+          <mask mask="{0}"/>
+        </create>
+      </intersection>
     </ownedRepresentations>
   </ownedViewpoints>
   <userColorsPalettes name="MDSDPalette">
