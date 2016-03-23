@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:dronesStructure="http://inf.mit.bme.hu/kortargyalo/dronesStructure" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_Tt_p0PAIEeWaFfU3f7WxDQ" selectedViews="_UsWvgPAIEeWaFfU3f7WxDQ" version="10.1.0.201509162000">
   <semanticResources>First.dronesstructure</semanticResources>
+  <semanticResources>quad2.dronesbehavior</semanticResources>
+  <semanticResources>quad1.ds</semanticResources>
+  <semanticResources>quad1.dronesbehavior</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_UsWvgPAIEeWaFfU3f7WxDQ">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_LZsfEPANEeW4EaVHk84x2g" name="Drone Structural Diagram">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_LZtGIPANEeW4EaVHk84x2g" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -210,8 +213,7 @@
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_uyEt0fBNEeWoku93ZZbM-w"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_uyEt0vBNEeWoku93ZZbM-w" fontName=".SF NS Text" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uyEt0_BNEeWoku93ZZbM-w" points="[-1, 9, 173, -104]$[-8, 121, 166, 8]$[-172, 121, 2, 8]"/>
-            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uyFU4PBNEeWoku93ZZbM-w" id="(0.4,0.82)"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_uyEt0_BNEeWoku93ZZbM-w" points="[-9, 22, 162, -107]$[-9, 137, 162, 8]$[-169, 137, 2, 8]"/>
             <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_uyFU4fBNEeWoku93ZZbM-w" id="(0.86,0.2)"/>
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_4DzX4PBNEeWoku93ZZbM-w" type="4001" element="_4Dq1APBNEeWoku93ZZbM-w" source="_kMHbwPBNEeWoku93ZZbM-w" target="_2EcvQPBNEeWoku93ZZbM-w">
@@ -248,19 +250,19 @@
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_qkBjkPBOEeWoku93ZZbM-w" type="4001" element="_qj5nwPBOEeWoku93ZZbM-w" source="_kMHbwPBNEeWoku93ZZbM-w" target="_omKvwPBOEeWoku93ZZbM-w">
             <children xmi:type="notation:Node" xmi:id="_qkCKoPBOEeWoku93ZZbM-w" type="6001">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qkCKofBOEeWoku93ZZbM-w" x="26" y="-12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qkCKofBOEeWoku93ZZbM-w" x="30" y="-13"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_qkCKovBOEeWoku93ZZbM-w" type="6002">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qkCKo_BOEeWoku93ZZbM-w" x="5" y="9"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qkCKo_BOEeWoku93ZZbM-w" x="8" y="9"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_qkCKpPBOEeWoku93ZZbM-w" type="6003">
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qkCKpfBOEeWoku93ZZbM-w" y="10"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qkCKpfBOEeWoku93ZZbM-w" x="3" y="9"/>
             </children>
             <styles xmi:type="notation:ConnectorStyle" xmi:id="_qkBjkfBOEeWoku93ZZbM-w"/>
             <styles xmi:type="notation:FontStyle" xmi:id="_qkBjkvBOEeWoku93ZZbM-w" fontName=".SF NS Text" fontHeight="8"/>
-            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qkBjk_BOEeWoku93ZZbM-w" points="[0, -16, -155, -29]$[74, 22, -81, 9]$[137, 22, -18, 9]"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qkBjk_BOEeWoku93ZZbM-w" points="[0, -16, -132, -56]$[74, 40, -58, 0]$[130, 40, -2, 0]"/>
             <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qkCKpvBOEeWoku93ZZbM-w" id="(0.5,1.0)"/>
-            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qkCKp_BOEeWoku93ZZbM-w" id="(0.54,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qkCKp_BOEeWoku93ZZbM-w" id="(0.08,0.54)"/>
           </edges>
           <edges xmi:type="notation:Edge" xmi:id="_-QYZcPBOEeWoku93ZZbM-w" type="4001" element="_-QDCQPBOEeWoku93ZZbM-w" source="_4ehIgPBOEeWoku93ZZbM-w" target="_X959APBOEeWoku93ZZbM-w">
             <children xmi:type="notation:Node" xmi:id="_-QZnkPBOEeWoku93ZZbM-w" type="6001">
