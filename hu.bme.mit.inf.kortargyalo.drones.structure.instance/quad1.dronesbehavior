@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ASCII"?>
+<dronesBehavior:DronesBehavior xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dronesBehavior="http://inf.mit.bme.hu/kortargyalo/dronesBehavior">
+  <scripts>
+    <statement xsi:type="dronesBehavior:Sequence">
+      <statements xsi:type="dronesBehavior:Move">
+        <destination x="890.0" y="700.0" z="20.0"/>
+      </statements>
+      <statements xsi:type="dronesBehavior:Scan"/>
+      <statements xsi:type="dronesBehavior:SendSignal" signal="//@signals.0">
+        <recipent href="First.dronesstructure#//@scenarios.0/@drones.1"/>
+      </statements>
+      <statements xsi:type="dronesBehavior:ComplexWait" timeout="120">
+        <reactions signal="//@signals.1">
+          <statement xsi:type="dronesBehavior:Sequence"/>
+        </reactions>
+        <onTimeout xsi:type="dronesBehavior:Sequence">
+          <statements xsi:type="dronesBehavior:SendSignal" signal="//@signals.0">
+            <recipent href="First.dronesstructure#//@scenarios.0/@drones.1"/>
+          </statements>
+          <statements xsi:type="dronesBehavior:SimpleWait" signal="//@signals.1"/>
+        </onTimeout>
+      </statements>
+      <statements xsi:type="dronesBehavior:SendMap">
+        <recipent href="First.dronesstructure#//@scenarios.0/@drones.1"/>
+      </statements>
+      <statements xsi:type="dronesBehavior:Cooperate">
+        <role href="First.dronesstructure#//@cooperativeActions.0/@roles.0"/>
+        <task href="First.dronesstructure#//@scenarios.0/@tasks.0"/>
+      </statements>
+      <statements xsi:type="dronesBehavior:Move">
+        <destination x="50.0"/>
+      </statements>
+    </statement>
+    <drone href="First.dronesstructure#//@scenarios.0/@drones.0"/>
+  </scripts>
+  <signals name="letsBuild"/>
+  <signals name="readyToBuild"/>
+  <scenario href="First.dronesstructure#//@scenarios.0"/>
+</dronesBehavior:DronesBehavior>
