@@ -550,7 +550,7 @@
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']/@subNodeMappings[name='RoleNode']"/>
         </ownedDiagramElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_agAtYPBOEeWoku93ZZbM-w" name="350.0 / 0.01" sourceNode="_kL9DsPBNEeWoku93ZZbM-w" targetNode="_X9wMAPBOEeWoku93ZZbM-w">
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_agAtYPBOEeWoku93ZZbM-w" name="350.0 / 0.0" sourceNode="_kL9DsPBNEeWoku93ZZbM-w" targetNode="_X9wMAPBOEeWoku93ZZbM-w">
         <target xmi:type="dronesStructure:ProvidedCapability" href="First.dronesstructure#//@droneTypes.0/@providedCapabilities.1"/>
         <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="First.dronesstructure#//@droneTypes.0/@providedCapabilities.1"/>
         <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_agBUcPBOEeWoku93ZZbM-w" strokeColor="69,69,69">
@@ -903,7 +903,7 @@
             <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="First.dronesstructure#//@droneTypes.0/@providedCapabilities.0"/>
             <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.0"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_CFpx5PD_EeWKrNH1apMHDw" label="350.0 / 0.01" column="_CFpx7vD_EeWKrNH1apMHDw">
+          <cells xmi:type="table:DCell" xmi:id="_CFpx5PD_EeWKrNH1apMHDw" label="350.0 / 0.0" column="_CFpx7vD_EeWKrNH1apMHDw">
             <target xmi:type="dronesStructure:ProvidedCapability" href="First.dronesstructure#//@droneTypes.0/@providedCapabilities.1"/>
             <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="First.dronesstructure#//@droneTypes.0/@providedCapabilities.1"/>
             <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.0"/>

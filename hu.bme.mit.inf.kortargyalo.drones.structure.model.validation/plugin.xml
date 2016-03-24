@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveProvidedCapability" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveProvidedCapabilityConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveProvidedCapability">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotMoreThanOneScanningCapabilitiesConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveDimension" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveDimensionConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveDimension">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.negativeCostProvidedCapability" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NegativeCostProvidedCapabilityConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.negativeCostProvidedCapability">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveRequiredCapability" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveRequiredCapabilityConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveRequiredCapability">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
   <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.notOneMovementCapabilityProvided" point="org.eclipse.incquery.validation.runtime.constraint">
     <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotOneMovementCapabilityProvidedConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.notOneMovementCapabilityProvided">
       <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
@@ -9,8 +34,33 @@
       <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
     </constraint>
   </extension>
-  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities" point="org.eclipse.incquery.validation.runtime.constraint">
-    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotMoreThanOneScanningCapabilitiesConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities">
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.providedScanningCapabilityWithCost" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.ProvidedScanningCapabilityWithCostConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.providedScanningCapabilityWithCost">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveStartTimeout" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveStartTimeoutConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveStartTimeout">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.durationTooShort" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.DurationTooShortConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.durationTooShort">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveBatteryCapacity" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveBatteryCapacityConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveBatteryCapacity">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveWeight" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveWeightConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveWeight">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.negativeEnergyConsumption" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NegativeEnergyConsumptionConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.negativeEnergyConsumption">
       <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
     </constraint>
   </extension>

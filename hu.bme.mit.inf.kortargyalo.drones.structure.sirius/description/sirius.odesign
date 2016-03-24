@@ -188,12 +188,12 @@
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="tableName"/>
           </ownedTools>
-          <ownedTools xsi:type="description_2:TableCreationDescription" name="CreateCapabilitiesCrossTable" label="Create Capabilities Table" browseExpression="aql:self.eContainerOrSelf(dronesStructure::DronesStructure)" tableDescription="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']">
+          <ownedTools xsi:type="description_2:TableCreationDescription" name="CreateCapabilitiesCrossTable" label="Create Capabilities Table" precondition="aql:false" browseExpression="aql:self.eContainerOrSelf(dronesStructure::DronesStructure)" tableDescription="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']">
             <initialOperation/>
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="tableName"/>
           </ownedTools>
-          <ownedTools xsi:type="description_2:TableNavigationDescription" name="NavigateToCapabilitiesTable" label="Go to Capabilities Table" browseExpression="aql:self.eContainerOrSelf(dronesStructure::DronesStructure)" navigationNameExpression="var:tableName" tableDescription="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']">
+          <ownedTools xsi:type="description_2:TableNavigationDescription" name="NavigateToCapabilitiesTable" label="Go to Capabilities Table" precondition="aql:false" browseExpression="aql:self.eContainerOrSelf(dronesStructure::DronesStructure)" navigationNameExpression="var:tableName" tableDescription="//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']">
             <containerViewVariable name="containerView"/>
             <containerVariable name="container"/>
             <representationNameVariable name="tableName"/>

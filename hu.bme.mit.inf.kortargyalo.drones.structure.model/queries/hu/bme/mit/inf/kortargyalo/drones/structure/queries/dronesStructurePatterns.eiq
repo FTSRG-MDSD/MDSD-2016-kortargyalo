@@ -94,3 +94,117 @@ private pattern inRelatedScope(Left : NamedElement, Right : NamedElement) {
 	find nameScope(Right, RightScope);
 	find relatedScope(LeftScope, RightScope);
 }
+
+// Validation rules for attributes:
+
+@Constraint(
+	key = {"Dimension"},
+	severity = "error",
+	message = "Dimensions must be positive."
+)
+pattern nonpositiveDimension(Dimension : Dimension) {
+	Dimension.width(Dimension, Width);
+	Dimension.depth(Dimension, Depth);
+	Dimension.height(Dimension, Height);
+	check(Width <= 0 || Depth <= 0 || Height <= 0);
+}
+
+@Constraint(
+	key = {"DroneType"},
+	severity = "error",
+	message = "Weight of drone type $DroneType.name$ must be positive."
+)
+pattern nonpositiveWeight(DroneType : DroneType) {
+	DroneType.weight(DroneType, Weight);
+	check(Weight <= 0);
+}
+
+@Constraint(
+	key = {"DroneType"},
+	severity = "error",
+	message = "Battery capacity of drone type $DroneType.name$ must be positive."
+)
+pattern nonpositiveBatteryCapacity(DroneType : DroneType) {
+	DroneType.maxBatteryCapacity(DroneType, Capacity);
+	check(Capacity <= 0);
+}
+
+@Constraint(
+	key = {"DroneType"},
+	severity = "error",
+	message = "Idle energy consumption of drone type $DroneType.name$ must not be negative."
+)
+pattern negativeEnergyConsumption(DroneType : DroneType) {
+	DroneType.idleEneryConsumption(DroneType, Consumption);
+	check(Consumption < 0);
+}
+
+@Constraint(
+	key = {"ProvidedCapability"},
+	severity = "error",
+	message = "Maximal value of provided capability $Capability.name$ of $DroneType.name$ must be positive."
+)
+pattern nonpositiveProvidedCapability(ProvidedCapability : ProvidedCapability, Capability : Capability, DroneType : DroneType) {
+	ProvidedCapability.maximalValue(ProvidedCapability, Value);
+	check(Value <= 0);
+	ProvidedCapability.capability(ProvidedCapability, Capability);
+	ProvidedCapability.droneType(ProvidedCapability, DroneType);
+}
+
+@Constraint(
+	key = {"ProvidedCapability"},
+	severity = "error",
+	message = "Energy consumption of provided capability $Capability.name$ of $DroneType.name$ must not be negative."
+)
+pattern negativeCostProvidedCapability(ProvidedCapability : ProvidedCapability, Capability : Capability, DroneType : DroneType) {
+	ProvidedCapability.energyConsumptionPerValue(ProvidedCapability, Value);
+	check(Value < 0);
+	ProvidedCapability.capability(ProvidedCapability, Capability);
+	ProvidedCapability.droneType(ProvidedCapability, DroneType);
+}
+
+@Constraint(
+	key = {"RequiredCapability"},
+	severity = "error",
+	message = "Minimal value of provided capability $Capability.name$ of $Action.name$.$Role.name$ must be positive."
+)
+pattern nonpositiveRequiredCapability(RequiredCapability : RequiredCapability, Capability : Capability, Action : CooperativeAction, Role : Role) {
+	RequiredCapability.minimalValue(RequiredCapability, Value);
+	check(Value <= 0);
+	RequiredCapability.capability(RequiredCapability, Capability);
+	RequiredCapability.role(RequiredCapability, Role);
+	CooperativeAction.roles(Action, Role);
+}
+
+@Constraint(
+	key = {"ProvidedCapability"},
+	severity = "error",
+	message = "Provided scanning capability $Capability.name$ of $DroneType.name$ cannot consume energy."
+)
+pattern providedScanningCapabilityWithCost(ProvidedCapability : ProvidedCapability, Capability : ScanningCapability, DroneType : DroneType) {
+	ProvidedCapability.energyConsumptionPerValue(ProvidedCapability, Value);
+	check(Value != 0);
+	ProvidedCapability.capability(ProvidedCapability, Capability);
+	ProvidedCapability.droneType(ProvidedCapability, DroneType);
+}
+
+@Constraint(
+	key = {"Action"},
+	severity = "error",
+	message = "Start timeout of cooperative action $Action.name$ must be positive."
+)
+pattern nonpositiveStartTimeout(Action : CooperativeAction) {
+	CooperativeAction.startTimeout(Action, StartTimeout);
+	check(StartTimeout <= 0);
+}
+
+@Constraint(
+	key = {"Action"},
+	severity = "error",
+	message = "Duration of cooperative action $Action.name$ must be longer than the start timeout."
+)
+pattern durationTooShort(Action : CooperativeAction) {
+	CooperativeAction.startTimeout(Action, StartTimeout);
+	CooperativeAction.duration(Action, Duration);
+	check(StartTimeout >= Duration);
+}

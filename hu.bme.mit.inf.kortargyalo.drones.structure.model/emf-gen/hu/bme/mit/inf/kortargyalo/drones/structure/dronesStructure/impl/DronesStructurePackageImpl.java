@@ -1041,6 +1041,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// org.eclipse.incquery.querybasedfeature
+		createOrgAnnotations();
 	}
 
 	/**
@@ -1056,6 +1058,28 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		   source, 
 		   new String[] {
 			 "settingDelegates", "org.eclipse.incquery.querybasedfeature"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>org.eclipse.incquery.querybasedfeature</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOrgAnnotations() {
+		String source = "org.eclipse.incquery.querybasedfeature";	
+		addAnnotation
+		  (getDroneType_MovementCapability(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "hu.bme.mit.inf.kortargyalo.drones.structure.queries.movementCapability"
+		   });	
+		addAnnotation
+		  (getDroneType_ScanningCapability(), 
+		   source, 
+		   new String[] {
+			 "patternFQN", "hu.bme.mit.inf.kortargyalo.drones.structure.queries.scanningCapability"
 		   });
 	}
 
