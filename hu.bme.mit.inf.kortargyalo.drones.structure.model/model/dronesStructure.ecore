@@ -35,19 +35,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedCapabilities" upperBound="-1"
         eType="#//ProvidedCapability" containment="true" eOpposite="#//ProvidedCapability/droneType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="movementCapability" eType="#//ProvidedCapability"
-        changeable="false" volatile="true" transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
-        <details key="patternFQN" value="hu.bme.mit.inf.kortargyalo.drones.structure.queries.movementCapability"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        changeable="false" volatile="true" transient="true" derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dimension" lowerBound="1"
         eType="#//Dimension" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="scanningCapability" eType="#//ProvidedCapability"
-        changeable="false" volatile="true" transient="true" derived="true">
-      <eAnnotations source="org.eclipse.incquery.querybasedfeature">
-        <details key="patternFQN" value="hu.bme.mit.inf.kortargyalo.drones.structure.queries.scanningCapability"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        changeable="false" volatile="true" transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProvidedCapability">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
