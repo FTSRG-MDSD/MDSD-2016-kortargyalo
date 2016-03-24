@@ -1,8 +1,8 @@
 package hu.bme.mit.inf.kortargyalo.drones.structure.queries;
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType;
-import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotMoreThanOneScanningCapabilitiesMatch;
-import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NotMoreThanOneScanningCapabilitiesQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.MoreThanOneScanningCapabilitiesMatch;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.MoreThanOneScanningCapabilitiesQuerySpecification;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,13 +17,13 @@ import org.eclipse.incquery.runtime.matchers.tuple.Tuple;
 import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
 
 /**
- * Generated pattern matcher API of the hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities pattern,
+ * Generated pattern matcher API of the hu.bme.mit.inf.kortargyalo.drones.structure.queries.moreThanOneScanningCapabilities pattern,
  * providing pattern-specific query methods.
  * 
  * <p>Use the pattern matcher on a given model via {@link #on(IncQueryEngine)},
  * e.g. in conjunction with {@link IncQueryEngine#on(Notifier)}.
  * 
- * <p>Matches of the pattern will be represented as {@link NotMoreThanOneScanningCapabilitiesMatch}.
+ * <p>Matches of the pattern will be represented as {@link MoreThanOneScanningCapabilitiesMatch}.
  * 
  * <p>Original source:
  * <code><pre>
@@ -32,18 +32,20 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 	severity = "error",
  * 	message = "A drone type must have one scanning capability at most."
  * )
- * pattern notMoreThanOneScanningCapabilities(DroneType : DroneType) {
- * 	1 != count find providedMovementCapability(DroneType, _);
+ * pattern moreThanOneScanningCapabilities(DroneType : DroneType) {
+ * 	find providedScanningCapability(DroneType, Capability1);
+ * 	find providedScanningCapability(DroneType, Capability2);
+ * 	Capability1 != Capability2;
  * }
  * </pre></code>
  * 
- * @see NotMoreThanOneScanningCapabilitiesMatch
- * @see NotMoreThanOneScanningCapabilitiesProcessor
- * @see NotMoreThanOneScanningCapabilitiesQuerySpecification
+ * @see MoreThanOneScanningCapabilitiesMatch
+ * @see MoreThanOneScanningCapabilitiesProcessor
+ * @see MoreThanOneScanningCapabilitiesQuerySpecification
  * 
  */
 @SuppressWarnings("all")
-public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMoreThanOneScanningCapabilitiesMatch> {
+public class MoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<MoreThanOneScanningCapabilitiesMatch> {
   /**
    * Initializes the pattern matcher within an existing EMF-IncQuery engine.
    * If the pattern matcher is already constructed in the engine, only a light-weight reference is returned.
@@ -52,11 +54,11 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
    * @throws IncQueryException if an error occurs during pattern matcher creation
    * 
    */
-  public static NotMoreThanOneScanningCapabilitiesMatcher on(final IncQueryEngine engine) throws IncQueryException {
+  public static MoreThanOneScanningCapabilitiesMatcher on(final IncQueryEngine engine) throws IncQueryException {
     // check if matcher already exists
-    NotMoreThanOneScanningCapabilitiesMatcher matcher = engine.getExistingMatcher(querySpecification());
+    MoreThanOneScanningCapabilitiesMatcher matcher = engine.getExistingMatcher(querySpecification());
     if (matcher == null) {
-    	matcher = new NotMoreThanOneScanningCapabilitiesMatcher(engine);
+    	matcher = new MoreThanOneScanningCapabilitiesMatcher(engine);
     	// do not have to "put" it into engine.matchers, reportMatcherInitialized() will take care of it
     }
     return matcher;
@@ -64,7 +66,7 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
   
   private final static int POSITION_DRONETYPE = 0;
   
-  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(NotMoreThanOneScanningCapabilitiesMatcher.class);
+  private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(MoreThanOneScanningCapabilitiesMatcher.class);
   
   /**
    * Initializes the pattern matcher over a given EMF model root (recommended: Resource or ResourceSet).
@@ -79,7 +81,7 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
    * 
    */
   @Deprecated
-  public NotMoreThanOneScanningCapabilitiesMatcher(final Notifier emfRoot) throws IncQueryException {
+  public MoreThanOneScanningCapabilitiesMatcher(final Notifier emfRoot) throws IncQueryException {
     this(IncQueryEngine.on(emfRoot));
   }
   
@@ -93,17 +95,17 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
    * 
    */
   @Deprecated
-  public NotMoreThanOneScanningCapabilitiesMatcher(final IncQueryEngine engine) throws IncQueryException {
+  public MoreThanOneScanningCapabilitiesMatcher(final IncQueryEngine engine) throws IncQueryException {
     super(engine, querySpecification());
   }
   
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pDroneType the fixed value of pattern parameter DroneType, or null if not bound.
-   * @return matches represented as a NotMoreThanOneScanningCapabilitiesMatch object.
+   * @return matches represented as a MoreThanOneScanningCapabilitiesMatch object.
    * 
    */
-  public Collection<NotMoreThanOneScanningCapabilitiesMatch> getAllMatches(final DroneType pDroneType) {
+  public Collection<MoreThanOneScanningCapabilitiesMatch> getAllMatches(final DroneType pDroneType) {
     return rawGetAllMatches(new Object[]{pDroneType});
   }
   
@@ -111,10 +113,10 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pDroneType the fixed value of pattern parameter DroneType, or null if not bound.
-   * @return a match represented as a NotMoreThanOneScanningCapabilitiesMatch object, or null if no match is found.
+   * @return a match represented as a MoreThanOneScanningCapabilitiesMatch object, or null if no match is found.
    * 
    */
-  public NotMoreThanOneScanningCapabilitiesMatch getOneArbitraryMatch(final DroneType pDroneType) {
+  public MoreThanOneScanningCapabilitiesMatch getOneArbitraryMatch(final DroneType pDroneType) {
     return rawGetOneArbitraryMatch(new Object[]{pDroneType});
   }
   
@@ -145,7 +147,7 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final DroneType pDroneType, final IMatchProcessor<? super NotMoreThanOneScanningCapabilitiesMatch> processor) {
+  public void forEachMatch(final DroneType pDroneType, final IMatchProcessor<? super MoreThanOneScanningCapabilitiesMatch> processor) {
     rawForEachMatch(new Object[]{pDroneType}, processor);
   }
   
@@ -157,7 +159,7 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final DroneType pDroneType, final IMatchProcessor<? super NotMoreThanOneScanningCapabilitiesMatch> processor) {
+  public boolean forOneArbitraryMatch(final DroneType pDroneType, final IMatchProcessor<? super MoreThanOneScanningCapabilitiesMatch> processor) {
     return rawForOneArbitraryMatch(new Object[]{pDroneType}, processor);
   }
   
@@ -169,8 +171,8 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
    * @return the (partial) match object.
    * 
    */
-  public NotMoreThanOneScanningCapabilitiesMatch newMatch(final DroneType pDroneType) {
-    return NotMoreThanOneScanningCapabilitiesMatch.newMatch(pDroneType);
+  public MoreThanOneScanningCapabilitiesMatch newMatch(final DroneType pDroneType) {
+    return MoreThanOneScanningCapabilitiesMatch.newMatch(pDroneType);
   }
   
   /**
@@ -194,9 +196,9 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
   }
   
   @Override
-  protected NotMoreThanOneScanningCapabilitiesMatch tupleToMatch(final Tuple t) {
+  protected MoreThanOneScanningCapabilitiesMatch tupleToMatch(final Tuple t) {
     try {
-    	return NotMoreThanOneScanningCapabilitiesMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
+    	return MoreThanOneScanningCapabilitiesMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -204,9 +206,9 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
   }
   
   @Override
-  protected NotMoreThanOneScanningCapabilitiesMatch arrayToMatch(final Object[] match) {
+  protected MoreThanOneScanningCapabilitiesMatch arrayToMatch(final Object[] match) {
     try {
-    	return NotMoreThanOneScanningCapabilitiesMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
+    	return MoreThanOneScanningCapabilitiesMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -214,9 +216,9 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
   }
   
   @Override
-  protected NotMoreThanOneScanningCapabilitiesMatch arrayToMatchMutable(final Object[] match) {
+  protected MoreThanOneScanningCapabilitiesMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NotMoreThanOneScanningCapabilitiesMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
+    	return MoreThanOneScanningCapabilitiesMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -228,7 +230,7 @@ public class NotMoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<NotMo
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static IQuerySpecification<NotMoreThanOneScanningCapabilitiesMatcher> querySpecification() throws IncQueryException {
-    return NotMoreThanOneScanningCapabilitiesQuerySpecification.instance();
+  public static IQuerySpecification<MoreThanOneScanningCapabilitiesMatcher> querySpecification() throws IncQueryException {
+    return MoreThanOneScanningCapabilitiesQuerySpecification.instance();
   }
 }

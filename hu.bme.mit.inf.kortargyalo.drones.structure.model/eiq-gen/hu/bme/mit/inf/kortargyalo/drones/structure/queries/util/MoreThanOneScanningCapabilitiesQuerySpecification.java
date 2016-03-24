@@ -1,9 +1,9 @@
 package hu.bme.mit.inf.kortargyalo.drones.structure.queries.util;
 
 import com.google.common.collect.Sets;
-import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotMoreThanOneScanningCapabilitiesMatch;
-import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotMoreThanOneScanningCapabilitiesMatcher;
-import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.ProvidedMovementCapabilityQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.MoreThanOneScanningCapabilitiesMatch;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.MoreThanOneScanningCapabilitiesMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.ProvidedScanningCapabilityQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -18,23 +18,22 @@ import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.annotations.PAnnotation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Inequality;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.PatternMatchCounter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.ConstantValue;
+import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.PositivePatternCall;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 
 /**
- * A pattern-specific query specification that can instantiate NotMoreThanOneScanningCapabilitiesMatcher in a type-safe way.
+ * A pattern-specific query specification that can instantiate MoreThanOneScanningCapabilitiesMatcher in a type-safe way.
  * 
- * @see NotMoreThanOneScanningCapabilitiesMatcher
- * @see NotMoreThanOneScanningCapabilitiesMatch
+ * @see MoreThanOneScanningCapabilitiesMatcher
+ * @see MoreThanOneScanningCapabilitiesMatch
  * 
  */
 @SuppressWarnings("all")
-public final class NotMoreThanOneScanningCapabilitiesQuerySpecification extends BaseGeneratedEMFQuerySpecification<NotMoreThanOneScanningCapabilitiesMatcher> {
-  private NotMoreThanOneScanningCapabilitiesQuerySpecification() {
+public final class MoreThanOneScanningCapabilitiesQuerySpecification extends BaseGeneratedEMFQuerySpecification<MoreThanOneScanningCapabilitiesMatcher> {
+  private MoreThanOneScanningCapabilitiesQuerySpecification() {
     super(GeneratedPQuery.INSTANCE);
   }
   
@@ -43,7 +42,7 @@ public final class NotMoreThanOneScanningCapabilitiesQuerySpecification extends 
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static NotMoreThanOneScanningCapabilitiesQuerySpecification instance() throws IncQueryException {
+  public static MoreThanOneScanningCapabilitiesQuerySpecification instance() throws IncQueryException {
     try{
     	return LazyHolder.INSTANCE;
     } catch (ExceptionInInitializerError err) {
@@ -52,34 +51,34 @@ public final class NotMoreThanOneScanningCapabilitiesQuerySpecification extends 
   }
   
   @Override
-  protected NotMoreThanOneScanningCapabilitiesMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
-    return NotMoreThanOneScanningCapabilitiesMatcher.on(engine);
+  protected MoreThanOneScanningCapabilitiesMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+    return MoreThanOneScanningCapabilitiesMatcher.on(engine);
   }
   
   @Override
-  public NotMoreThanOneScanningCapabilitiesMatch newEmptyMatch() {
-    return NotMoreThanOneScanningCapabilitiesMatch.newEmptyMatch();
+  public MoreThanOneScanningCapabilitiesMatch newEmptyMatch() {
+    return MoreThanOneScanningCapabilitiesMatch.newEmptyMatch();
   }
   
   @Override
-  public NotMoreThanOneScanningCapabilitiesMatch newMatch(final Object... parameters) {
-    return NotMoreThanOneScanningCapabilitiesMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) parameters[0]);
+  public MoreThanOneScanningCapabilitiesMatch newMatch(final Object... parameters) {
+    return MoreThanOneScanningCapabilitiesMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) parameters[0]);
   }
   
   private static class LazyHolder {
-    private final static NotMoreThanOneScanningCapabilitiesQuerySpecification INSTANCE = make();
+    private final static MoreThanOneScanningCapabilitiesQuerySpecification INSTANCE = make();
     
-    public static NotMoreThanOneScanningCapabilitiesQuerySpecification make() {
-      return new NotMoreThanOneScanningCapabilitiesQuerySpecification();					
+    public static MoreThanOneScanningCapabilitiesQuerySpecification make() {
+      return new MoreThanOneScanningCapabilitiesQuerySpecification();					
     }
   }
   
   private static class GeneratedPQuery extends BaseGeneratedEMFPQuery {
-    private final static NotMoreThanOneScanningCapabilitiesQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
+    private final static MoreThanOneScanningCapabilitiesQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
     
     @Override
     public String getFullyQualifiedName() {
-      return "hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities";
+      return "hu.bme.mit.inf.kortargyalo.drones.structure.queries.moreThanOneScanningCapabilities";
     }
     
     @Override
@@ -99,17 +98,18 @@ public final class NotMoreThanOneScanningCapabilitiesQuerySpecification extends 
       	{
       		PBody body = new PBody(this);
       		PVariable var_DroneType = body.getOrCreateVariableByName("DroneType");
-      		PVariable var___0_ = body.getOrCreateVariableByName("_<0>");
+      		PVariable var_Capability1 = body.getOrCreateVariableByName("Capability1");
+      		PVariable var_Capability2 = body.getOrCreateVariableByName("Capability2");
       		new TypeConstraint(body, new FlatTuple(var_DroneType), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "DroneType")));
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
       		   new ExportedParameter(body, var_DroneType, "DroneType")
       		));
-      		// 	1 != count find providedMovementCapability(DroneType, _)
-      		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-      		new ConstantValue(body, var__virtual_0_, 1);
-      		PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-      		new PatternMatchCounter(body, new FlatTuple(var_DroneType, var___0_), ProvidedMovementCapabilityQuerySpecification.instance().getInternalQueryRepresentation(), var__virtual_1_);
-      		new Inequality(body, var__virtual_0_, var__virtual_1_);
+      		// 	find providedScanningCapability(DroneType, Capability1)
+      		new PositivePatternCall(body, new FlatTuple(var_DroneType, var_Capability1), ProvidedScanningCapabilityQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 	find providedScanningCapability(DroneType, Capability2)
+      		new PositivePatternCall(body, new FlatTuple(var_DroneType, var_Capability2), ProvidedScanningCapabilityQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 	Capability1 != Capability2
+      		new Inequality(body, var_Capability1, var_Capability2);
       		bodies.add(body);
       	}
       	                {

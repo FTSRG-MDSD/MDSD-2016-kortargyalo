@@ -4,11 +4,6 @@
       <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
     </constraint>
   </extension>
-  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities" point="org.eclipse.incquery.validation.runtime.constraint">
-    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotMoreThanOneScanningCapabilitiesConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities">
-      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
-    </constraint>
-  </extension>
   <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveDimension" point="org.eclipse.incquery.validation.runtime.constraint">
     <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveDimensionConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.nonpositiveDimension">
       <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
@@ -61,6 +56,11 @@
   </extension>
   <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.negativeEnergyConsumption" point="org.eclipse.incquery.validation.runtime.constraint">
     <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.NegativeEnergyConsumptionConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.negativeEnergyConsumption">
+      <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
+    </constraint>
+  </extension>
+  <extension id="validation.constraint.hu.bme.mit.inf.kortargyalo.drones.structure.queries.moreThanOneScanningCapabilities" point="org.eclipse.incquery.validation.runtime.constraint">
+    <constraint class="hu.bme.mit.inf.kortargyalo.drones.structure.queries.MoreThanOneScanningCapabilitiesConstraint0" name="hu.bme.mit.inf.kortargyalo.drones.structure.queries.moreThanOneScanningCapabilities">
       <enabledForEditor editorId="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.presentation.DronesStructureEditorID"/>
     </constraint>
   </extension>

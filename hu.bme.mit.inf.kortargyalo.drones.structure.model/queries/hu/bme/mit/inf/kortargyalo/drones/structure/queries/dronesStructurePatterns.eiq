@@ -29,8 +29,10 @@ pattern notOneMovementCapabilityProvided(DroneType : DroneType) {
 	severity = "error",
 	message = "A drone type must have one scanning capability at most."
 )
-pattern notMoreThanOneScanningCapabilities(DroneType : DroneType) {
-	1 != count find providedMovementCapability(DroneType, _);
+pattern moreThanOneScanningCapabilities(DroneType : DroneType) {
+	find providedScanningCapability(DroneType, Capability1);
+	find providedScanningCapability(DroneType, Capability2);
+	Capability1 != Capability2;
 }
 
 @QueryBasedFeature

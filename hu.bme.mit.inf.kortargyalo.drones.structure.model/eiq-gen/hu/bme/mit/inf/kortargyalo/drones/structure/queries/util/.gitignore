@@ -87,3 +87,5 @@
 /.NegativeEnergyConsumptionQuerySpecification.java._trace
 /.NonpositiveBatteryCapacityProcessor.java._trace
 /.NonpositiveBatteryCapacityQuerySpecification.java._trace
+/.MoreThanOneScanningCapabilitiesProcessor.java._trace
+/.MoreThanOneScanningCapabilitiesQuerySpecification.java._trace

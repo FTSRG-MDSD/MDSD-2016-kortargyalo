@@ -2,6 +2,7 @@ package hu.bme.mit.inf.kortargyalo.drones.structure.queries;
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.DuplicateNameMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.DurationTooShortMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.MoreThanOneScanningCapabilitiesMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.MovementCapabilityMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NegativeCostProvidedCapabilityMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NegativeEnergyConsumptionMatcher;
@@ -11,12 +12,12 @@ import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveProvidedCa
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveRequiredCapabilityMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveStartTimeoutMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NonpositiveWeightMatcher;
-import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotMoreThanOneScanningCapabilitiesMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.NotOneMovementCapabilityProvidedMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.ProvidedScanningCapabilityWithCostMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.ScanningCapabilityMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.DuplicateNameQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.DurationTooShortQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.MoreThanOneScanningCapabilitiesQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.MovementCapabilityQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NegativeCostProvidedCapabilityQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NegativeEnergyConsumptionQuerySpecification;
@@ -26,7 +27,6 @@ import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NonpositiveProvi
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NonpositiveRequiredCapabilityQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NonpositiveStartTimeoutQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NonpositiveWeightQuerySpecification;
-import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NotMoreThanOneScanningCapabilitiesQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NotOneMovementCapabilityProvidedQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.ProvidedScanningCapabilityWithCostQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.ScanningCapabilityQuerySpecification;
@@ -45,7 +45,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * <li>providedMovementCapability</li>
  * <li>providedScanningCapability</li>
  * <li>notOneMovementCapabilityProvided</li>
- * <li>notMoreThanOneScanningCapabilities</li>
+ * <li>moreThanOneScanningCapabilities</li>
  * <li>movementCapability</li>
  * <li>scanningCapability</li>
  * <li>duplicateName</li>
@@ -88,7 +88,7 @@ public final class DronesStructurePatterns extends BaseGeneratedPatternGroup {
   
   private DronesStructurePatterns() throws IncQueryException {
     querySpecifications.add(NotOneMovementCapabilityProvidedQuerySpecification.instance());
-    querySpecifications.add(NotMoreThanOneScanningCapabilitiesQuerySpecification.instance());
+    querySpecifications.add(MoreThanOneScanningCapabilitiesQuerySpecification.instance());
     querySpecifications.add(MovementCapabilityQuerySpecification.instance());
     querySpecifications.add(ScanningCapabilityQuerySpecification.instance());
     querySpecifications.add(DuplicateNameQuerySpecification.instance());
@@ -112,12 +112,12 @@ public final class DronesStructurePatterns extends BaseGeneratedPatternGroup {
     return NotOneMovementCapabilityProvidedMatcher.on(engine);
   }
   
-  public NotMoreThanOneScanningCapabilitiesQuerySpecification getNotMoreThanOneScanningCapabilities() throws IncQueryException {
-    return NotMoreThanOneScanningCapabilitiesQuerySpecification.instance();
+  public MoreThanOneScanningCapabilitiesQuerySpecification getMoreThanOneScanningCapabilities() throws IncQueryException {
+    return MoreThanOneScanningCapabilitiesQuerySpecification.instance();
   }
   
-  public NotMoreThanOneScanningCapabilitiesMatcher getNotMoreThanOneScanningCapabilities(final IncQueryEngine engine) throws IncQueryException {
-    return NotMoreThanOneScanningCapabilitiesMatcher.on(engine);
+  public MoreThanOneScanningCapabilitiesMatcher getMoreThanOneScanningCapabilities(final IncQueryEngine engine) throws IncQueryException {
+    return MoreThanOneScanningCapabilitiesMatcher.on(engine);
   }
   
   public MovementCapabilityQuerySpecification getMovementCapability() throws IncQueryException {

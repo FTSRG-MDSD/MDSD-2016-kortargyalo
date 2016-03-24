@@ -1,7 +1,7 @@
 package hu.bme.mit.inf.kortargyalo.drones.structure.queries;
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType;
-import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.NotMoreThanOneScanningCapabilitiesQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.structure.queries.util.MoreThanOneScanningCapabilitiesQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -9,25 +9,25 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities pattern,
- * to be used in conjunction with {@link NotMoreThanOneScanningCapabilitiesMatcher}.
+ * Pattern-specific match representation of the hu.bme.mit.inf.kortargyalo.drones.structure.queries.moreThanOneScanningCapabilities pattern,
+ * to be used in conjunction with {@link MoreThanOneScanningCapabilitiesMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters,
  * usable to represent a match of the pattern in the result of a query,
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
- * @see NotMoreThanOneScanningCapabilitiesMatcher
- * @see NotMoreThanOneScanningCapabilitiesProcessor
+ * @see MoreThanOneScanningCapabilitiesMatcher
+ * @see MoreThanOneScanningCapabilitiesProcessor
  * 
  */
 @SuppressWarnings("all")
-public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatternMatch {
+public abstract class MoreThanOneScanningCapabilitiesMatch extends BasePatternMatch {
   private DroneType fDroneType;
   
   private static List<String> parameterNames = makeImmutableList("DroneType");
   
-  private NotMoreThanOneScanningCapabilitiesMatch(final DroneType pDroneType) {
+  private MoreThanOneScanningCapabilitiesMatch(final DroneType pDroneType) {
     this.fDroneType = pDroneType;
   }
   
@@ -58,12 +58,12 @@ public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatter
   
   @Override
   public String patternName() {
-    return "hu.bme.mit.inf.kortargyalo.drones.structure.queries.notMoreThanOneScanningCapabilities";
+    return "hu.bme.mit.inf.kortargyalo.drones.structure.queries.moreThanOneScanningCapabilities";
   }
   
   @Override
   public List<String> parameterNames() {
-    return NotMoreThanOneScanningCapabilitiesMatch.parameterNames;
+    return MoreThanOneScanningCapabilitiesMatch.parameterNames;
   }
   
   @Override
@@ -72,7 +72,7 @@ public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatter
   }
   
   @Override
-  public NotMoreThanOneScanningCapabilitiesMatch toImmutable() {
+  public MoreThanOneScanningCapabilitiesMatch toImmutable() {
     return isMutable() ? newMatch(fDroneType) : this;
   }
   
@@ -96,7 +96,7 @@ public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatter
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof NotMoreThanOneScanningCapabilitiesMatch)) { // this should be infrequent
+    if (!(obj instanceof MoreThanOneScanningCapabilitiesMatch)) { // this should be infrequent
     	if (obj == null) {
     		return false;
     	}
@@ -108,16 +108,16 @@ public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatter
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
-    NotMoreThanOneScanningCapabilitiesMatch other = (NotMoreThanOneScanningCapabilitiesMatch) obj;
+    MoreThanOneScanningCapabilitiesMatch other = (MoreThanOneScanningCapabilitiesMatch) obj;
     if (fDroneType == null) {if (other.fDroneType != null) return false;}
     else if (!fDroneType.equals(other.fDroneType)) return false;
     return true;
   }
   
   @Override
-  public NotMoreThanOneScanningCapabilitiesQuerySpecification specification() {
+  public MoreThanOneScanningCapabilitiesQuerySpecification specification() {
     try {
-    	return NotMoreThanOneScanningCapabilitiesQuerySpecification.instance();
+    	return MoreThanOneScanningCapabilitiesQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException (ex);
@@ -131,7 +131,7 @@ public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatter
    * @return the empty match.
    * 
    */
-  public static NotMoreThanOneScanningCapabilitiesMatch newEmptyMatch() {
+  public static MoreThanOneScanningCapabilitiesMatch newEmptyMatch() {
     return new Mutable(null);
   }
   
@@ -143,7 +143,7 @@ public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatter
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static NotMoreThanOneScanningCapabilitiesMatch newMutableMatch(final DroneType pDroneType) {
+  public static MoreThanOneScanningCapabilitiesMatch newMutableMatch(final DroneType pDroneType) {
     return new Mutable(pDroneType);
   }
   
@@ -155,11 +155,11 @@ public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatter
    * @return the (partial) match object.
    * 
    */
-  public static NotMoreThanOneScanningCapabilitiesMatch newMatch(final DroneType pDroneType) {
+  public static MoreThanOneScanningCapabilitiesMatch newMatch(final DroneType pDroneType) {
     return new Immutable(pDroneType);
   }
   
-  private static final class Mutable extends NotMoreThanOneScanningCapabilitiesMatch {
+  private static final class Mutable extends MoreThanOneScanningCapabilitiesMatch {
     Mutable(final DroneType pDroneType) {
       super(pDroneType);
     }
@@ -170,7 +170,7 @@ public abstract class NotMoreThanOneScanningCapabilitiesMatch extends BasePatter
     }
   }
   
-  private static final class Immutable extends NotMoreThanOneScanningCapabilitiesMatch {
+  private static final class Immutable extends MoreThanOneScanningCapabilitiesMatch {
     Immutable(final DroneType pDroneType) {
       super(pDroneType);
     }
