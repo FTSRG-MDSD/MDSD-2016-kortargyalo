@@ -43,8 +43,8 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * 
  * <p> From package hu.bme.mit.inf.kortargyalo.drones.structure.queries, the group contains the definition of the following patterns: <ul>
  * <li>providedMovementCapability</li>
- * <li>notOneMovementCapabilityProvided</li>
  * <li>providedScanningCapability</li>
+ * <li>notOneMovementCapabilityProvided</li>
  * <li>notMoreThanOneScanningCapabilities</li>
  * <li>movementCapability</li>
  * <li>scanningCapability</li>
