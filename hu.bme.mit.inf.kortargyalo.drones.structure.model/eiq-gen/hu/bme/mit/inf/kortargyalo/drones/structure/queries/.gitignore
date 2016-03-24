@@ -81,3 +81,17 @@
 /.NonpositiveBatteryCapacityMatcher.java._trace
 /.NonpositiveWeightMatch.java._trace
 /.NonpositiveWeightMatcher.java._trace
+/DurationTooShortMatch.java
+/DurationTooShortMatcher.java
+/NegativeEnergyConsumptionMatch.java
+/NegativeEnergyConsumptionMatcher.java
+/NonpositiveBatteryCapacityMatch.java
+/NonpositiveBatteryCapacityMatcher.java
+/NonpositiveRequiredCapabilityMatch.java
+/NonpositiveRequiredCapabilityMatcher.java
+/NonpositiveStartTimeoutMatch.java
+/NonpositiveStartTimeoutMatcher.java
+/NonpositiveWeightMatch.java
+/NonpositiveWeightMatcher.java
+/ProvidedScanningCapabilityWithCostMatch.java
+/ProvidedScanningCapabilityWithCostMatcher.java
