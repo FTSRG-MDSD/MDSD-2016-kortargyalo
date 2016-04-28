@@ -8,6 +8,7 @@ import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendSignal
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage
 import org.eclipse.xtext.EcoreUtil2
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendMap
 
 /**
  * This class contains custom validation rules. 
@@ -17,11 +18,20 @@ import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script
 class DroneScriptValidator extends AbstractDroneScriptValidator {
 	
 	@Check
-	def checkGreetingStartsWithCapital(SendSignal signalCommand) {
+	def checkSendSignalWithSameSenderAsRecipent(SendSignal signalCommand) {
 		if (signalCommand.recipent == EcoreUtil2.getContainerOfType(signalCommand, Script)?.drone) {
-			warning('Signals sent to from a drone to itself will be dropped', 
+			warning('Signals sent to from a drone to itself will be dropped.', 
 					signalCommand,
 					DronesBehaviorPackage.eINSTANCE.sendSignal_Recipent)
+		}
+	}
+
+	@Check
+	def checkSendMapWithSameSenderAsRecipent(SendMap signalCommand) {
+		if (signalCommand.recipent == EcoreUtil2.getContainerOfType(signalCommand, Script)?.drone) {
+			warning('Sending the map information from a drone to itself contains no new information.', 
+					signalCommand,
+					DronesBehaviorPackage.eINSTANCE.sendMap_Recipent)
 		}
 	}
 	
