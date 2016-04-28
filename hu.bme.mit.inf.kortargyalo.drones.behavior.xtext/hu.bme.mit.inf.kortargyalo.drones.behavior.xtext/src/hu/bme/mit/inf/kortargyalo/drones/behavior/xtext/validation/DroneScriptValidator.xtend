@@ -3,6 +3,11 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.validation
 
+import org.eclipse.xtext.validation.Check
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendSignal
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage
+import org.eclipse.xtext.EcoreUtil2
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +16,13 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.validation
  */
 class DroneScriptValidator extends AbstractDroneScriptValidator {
 	
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					DroneScriptPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	@Check
+	def checkGreetingStartsWithCapital(SendSignal signalCommand) {
+		if (signalCommand.recipent == EcoreUtil2.getContainerOfType(signalCommand, Script)?.drone) {
+			warning('Signals sent to from a drone to itself will be dropped', 
+					signalCommand,
+					DronesBehaviorPackage.eINSTANCE.sendSignal_Recipent)
+		}
+	}
 	
 }
