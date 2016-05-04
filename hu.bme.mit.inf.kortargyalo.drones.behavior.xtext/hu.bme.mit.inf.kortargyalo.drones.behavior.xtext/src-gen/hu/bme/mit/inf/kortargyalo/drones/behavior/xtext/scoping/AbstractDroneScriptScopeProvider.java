@@ -3,7 +3,7 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.scoping;
 
-import org.eclipse.xtext.scoping.impl.DelegatingScopeProvider;
+import org.eclipse.xtext.xbase.scoping.batch.XbaseBatchScopeProvider;
 
-public abstract class AbstractDroneScriptScopeProvider extends DelegatingScopeProvider {
+public abstract class AbstractDroneScriptScopeProvider extends XbaseBatchScopeProvider {
 }

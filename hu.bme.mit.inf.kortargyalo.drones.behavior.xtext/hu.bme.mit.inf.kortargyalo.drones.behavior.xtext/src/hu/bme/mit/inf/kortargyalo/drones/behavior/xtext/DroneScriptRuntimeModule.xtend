@@ -5,14 +5,22 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext
 
 import hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.resource.DroneScriptResourceDescriptionStrategy
 import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy
+import org.eclipse.xtext.xbase.scoping.batch.IBatchScopeProvider
+import hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.scoping.DroneScriptScopeProvider
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 class DroneScriptRuntimeModule extends AbstractDroneScriptRuntimeModule {
 
-	def Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
+	override Class<? extends IDefaultResourceDescriptionStrategy> bindIDefaultResourceDescriptionStrategy() {
 		DroneScriptResourceDescriptionStrategy
 	}
 
+	def Class<? extends IBatchScopeProvider> bindIBatchScopeProvider() {
+		// Xbase languages use IBatchScopeProvider for linking instead of IScopeProvider,
+		// therefore it is possible that an object is in scope for content assist, but cannot be linked.
+		// We inject our own scope provider, which derives from XbaseBatchScopeProvider, to remedy this.
+		DroneScriptScopeProvider
+	}
 }

@@ -1,4 +1,4 @@
-grammar hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript with org.eclipse.xtext.common.Terminals
+grammar hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript with org.eclipse.xtext.xbase.Xbase
 
 import "http://inf.mit.bme.hu/kortargyalo/dronesBehavior"
 import "http://inf.mit.bme.hu/kortargyalo/dronesStructure"
@@ -56,5 +56,5 @@ Position:
 DOUBLE returns ecore::EDouble:
 	"-"? INT ("." INT)?;
 
-QualifiedName hidden():
-	ID ("." ID)*;
+/*QualifiedName hidden():
+	ID ("." ID)*;*/

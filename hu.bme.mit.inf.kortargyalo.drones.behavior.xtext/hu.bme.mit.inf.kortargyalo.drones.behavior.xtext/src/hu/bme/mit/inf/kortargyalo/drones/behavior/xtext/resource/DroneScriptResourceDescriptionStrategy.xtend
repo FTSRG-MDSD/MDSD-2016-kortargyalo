@@ -6,14 +6,14 @@ import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Signal
 import org.apache.log4j.Logger
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.naming.IQualifiedNameConverter
 import org.eclipse.xtext.resource.EObjectDescription
 import org.eclipse.xtext.resource.IEObjectDescription
 import org.eclipse.xtext.resource.IResourceDescriptions
-import org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy
 import org.eclipse.xtext.util.IAcceptor
-import org.eclipse.xtext.naming.IQualifiedNameConverter
+import org.eclipse.xtext.xbase.resource.XbaseResourceDescriptionStrategy
 
-class DroneScriptResourceDescriptionStrategy extends DefaultResourceDescriptionStrategy {
+class DroneScriptResourceDescriptionStrategy extends XbaseResourceDescriptionStrategy {
 
 	public static val SCENARIO_NAME_KEY = "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.resource.SCENARIO_NAME"
 

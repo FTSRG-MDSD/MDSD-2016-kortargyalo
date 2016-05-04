@@ -18,6 +18,7 @@ import org.eclipse.xtext.resource.IResourceDescriptions
 import org.eclipse.xtext.scoping.IGlobalScopeProvider
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
+import org.eclipse.emf.ecore.util.EcoreUtil
 
 /**
  * This class contains custom scoping description.
@@ -48,10 +49,15 @@ class DroneScriptScopeProvider extends AbstractDroneScriptScopeProvider {
 	private def getCooperateRoleScope(EObject context) {
 		val cooperate = EcoreUtil2.getContainerOfType(context, Cooperate)
 		if (cooperate?.task == null) {
-			IScope.NULLSCOPE
-		} else {
-			Scopes.scopeFor(cooperate.task.actionToPerform.roles)
+			return IScope.NULLSCOPE
 		}
+		// actionToPerform may be lazily linked, we must avoid following null references.
+		val action = cooperate.task.actionToPerform
+		if (action == null) {
+			return IScope.NULLSCOPE
+		}
+		EcoreUtil.resolveAll(action)
+		Scopes.scopeFor(action.roles)
 	}
 	
 	private def getScenarioScope(EObject context, EReference reference) {
@@ -64,7 +70,7 @@ class DroneScriptScopeProvider extends AbstractDroneScriptScopeProvider {
 			case drone: Scopes.scopeFor(scenario.drones)
 			case task: Scopes.scopeFor(scenario.tasks)
 			case signal: getSignalsScope(context, reference, behaviorModel)
-			default: IScope.NULLSCOPE
+			default: super.getScope(context, reference) // Let Xbase do the scoping.
 		}
 	}
 	

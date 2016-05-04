@@ -14,7 +14,9 @@ Require-Bundle: hu.bme.mit.inf.kortargyalo.drones.behavior.model,
  org.antlr.runtime,
  org.eclipse.xtext.util,
  org.eclipse.xtend.lib,
- hu.bme.mit.inf.kortargyalo.drones.structure.xtext;bundle-version="1.0.0"
+ hu.bme.mit.inf.kortargyalo.drones.structure.xtext;bundle-version="1.0.0",
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.serializer,
  hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.scoping,
@@ -24,5 +26,6 @@ Export-Package: hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.serializer,
  hu.bme.mit.inf.kortargyalo.drones.behavior.xtext,
  hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.generator,
  hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.validation,
- hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.formatting
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.formatting,
+ hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.jvmmodel
 Import-Package: org.apache.log4j
