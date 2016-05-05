@@ -1020,10 +1020,11 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:54:7: ( '{' )
-            // InternalDroneScript.g:54:9: '{'
+            // InternalDroneScript.g:54:7: ( 'wait' )
+            // InternalDroneScript.g:54:9: 'wait'
             {
-            match('{'); 
+            match("wait"); 
+
 
             }
 
@@ -1040,10 +1041,11 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:55:7: ( '}' )
-            // InternalDroneScript.g:55:9: '}'
+            // InternalDroneScript.g:55:7: ( 'timeout' )
+            // InternalDroneScript.g:55:9: 'timeout'
             {
-            match('}'); 
+            match("timeout"); 
+
 
             }
 
@@ -1060,11 +1062,10 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:56:7: ( 'wait' )
-            // InternalDroneScript.g:56:9: 'wait'
+            // InternalDroneScript.g:56:7: ( '{' )
+            // InternalDroneScript.g:56:9: '{'
             {
-            match("wait"); 
-
+            match('{'); 
 
             }
 
@@ -1081,11 +1082,10 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:57:7: ( 'timeout' )
-            // InternalDroneScript.g:57:9: 'timeout'
+            // InternalDroneScript.g:57:7: ( '}' )
+            // InternalDroneScript.g:57:9: '}'
             {
-            match("timeout"); 
-
+            match('}'); 
 
             }
 
@@ -1932,10 +1932,10 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19589:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // InternalDroneScript.g:19589:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalDroneScript.g:19570:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // InternalDroneScript.g:19570:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // InternalDroneScript.g:19589:12: ( '0x' | '0X' )
+            // InternalDroneScript.g:19570:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1963,7 +1963,7 @@ public class InternalDroneScriptLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalDroneScript.g:19589:13: '0x'
+                    // InternalDroneScript.g:19570:13: '0x'
                     {
                     match("0x"); 
 
@@ -1971,7 +1971,7 @@ public class InternalDroneScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDroneScript.g:19589:18: '0X'
+                    // InternalDroneScript.g:19570:18: '0X'
                     {
                     match("0X"); 
 
@@ -1981,7 +1981,7 @@ public class InternalDroneScriptLexer extends Lexer {
 
             }
 
-            // InternalDroneScript.g:19589:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // InternalDroneScript.g:19570:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -2019,7 +2019,7 @@ public class InternalDroneScriptLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // InternalDroneScript.g:19589:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // InternalDroneScript.g:19570:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2028,10 +2028,10 @@ public class InternalDroneScriptLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalDroneScript.g:19589:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalDroneScript.g:19570:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // InternalDroneScript.g:19589:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // InternalDroneScript.g:19570:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -2049,7 +2049,7 @@ public class InternalDroneScriptLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // InternalDroneScript.g:19589:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // InternalDroneScript.g:19570:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -2073,7 +2073,7 @@ public class InternalDroneScriptLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // InternalDroneScript.g:19589:84: ( 'l' | 'L' )
+                            // InternalDroneScript.g:19570:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -2112,11 +2112,11 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19591:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // InternalDroneScript.g:19591:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // InternalDroneScript.g:19572:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // InternalDroneScript.g:19572:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // InternalDroneScript.g:19591:21: ( '0' .. '9' | '_' )*
+            // InternalDroneScript.g:19572:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -2165,11 +2165,11 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19593:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // InternalDroneScript.g:19593:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalDroneScript.g:19574:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // InternalDroneScript.g:19574:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // InternalDroneScript.g:19593:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // InternalDroneScript.g:19574:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2178,7 +2178,7 @@ public class InternalDroneScriptLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalDroneScript.g:19593:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // InternalDroneScript.g:19574:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -2189,7 +2189,7 @@ public class InternalDroneScriptLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // InternalDroneScript.g:19593:36: ( '+' | '-' )?
+                    // InternalDroneScript.g:19574:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2222,7 +2222,7 @@ public class InternalDroneScriptLexer extends Lexer {
 
             }
 
-            // InternalDroneScript.g:19593:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // InternalDroneScript.g:19574:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2234,7 +2234,7 @@ public class InternalDroneScriptLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalDroneScript.g:19593:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // InternalDroneScript.g:19574:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2258,7 +2258,7 @@ public class InternalDroneScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDroneScript.g:19593:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // InternalDroneScript.g:19574:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2291,10 +2291,10 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19595:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // InternalDroneScript.g:19595:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalDroneScript.g:19576:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // InternalDroneScript.g:19576:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // InternalDroneScript.g:19595:11: ( '^' )?
+            // InternalDroneScript.g:19576:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2303,7 +2303,7 @@ public class InternalDroneScriptLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // InternalDroneScript.g:19595:11: '^'
+                    // InternalDroneScript.g:19576:11: '^'
                     {
                     match('^'); 
 
@@ -2321,7 +2321,7 @@ public class InternalDroneScriptLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalDroneScript.g:19595:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // InternalDroneScript.g:19576:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2370,10 +2370,10 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19597:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // InternalDroneScript.g:19597:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalDroneScript.g:19578:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // InternalDroneScript.g:19578:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // InternalDroneScript.g:19597:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // InternalDroneScript.g:19578:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2391,10 +2391,10 @@ public class InternalDroneScriptLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // InternalDroneScript.g:19597:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // InternalDroneScript.g:19578:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // InternalDroneScript.g:19597:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalDroneScript.g:19578:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2410,7 +2410,7 @@ public class InternalDroneScriptLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // InternalDroneScript.g:19597:21: '\\\\' .
+                    	    // InternalDroneScript.g:19578:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2418,7 +2418,7 @@ public class InternalDroneScriptLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDroneScript.g:19597:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalDroneScript.g:19578:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2438,7 +2438,7 @@ public class InternalDroneScriptLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalDroneScript.g:19597:44: ( '\"' )?
+                    // InternalDroneScript.g:19578:44: ( '\"' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2447,7 +2447,7 @@ public class InternalDroneScriptLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // InternalDroneScript.g:19597:44: '\"'
+                            // InternalDroneScript.g:19578:44: '\"'
                             {
                             match('\"'); 
 
@@ -2460,10 +2460,10 @@ public class InternalDroneScriptLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDroneScript.g:19597:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // InternalDroneScript.g:19578:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // InternalDroneScript.g:19597:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalDroneScript.g:19578:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -2479,7 +2479,7 @@ public class InternalDroneScriptLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // InternalDroneScript.g:19597:55: '\\\\' .
+                    	    // InternalDroneScript.g:19578:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2487,7 +2487,7 @@ public class InternalDroneScriptLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDroneScript.g:19597:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalDroneScript.g:19578:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2507,7 +2507,7 @@ public class InternalDroneScriptLexer extends Lexer {
                         }
                     } while (true);
 
-                    // InternalDroneScript.g:19597:79: ( '\\'' )?
+                    // InternalDroneScript.g:19578:79: ( '\\'' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2516,7 +2516,7 @@ public class InternalDroneScriptLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // InternalDroneScript.g:19597:79: '\\''
+                            // InternalDroneScript.g:19578:79: '\\''
                             {
                             match('\''); 
 
@@ -2547,12 +2547,12 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19599:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalDroneScript.g:19599:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalDroneScript.g:19580:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalDroneScript.g:19580:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalDroneScript.g:19599:24: ( options {greedy=false; } : . )*
+            // InternalDroneScript.g:19580:24: ( options {greedy=false; } : . )*
             loop16:
             do {
                 int alt16=2;
@@ -2577,7 +2577,7 @@ public class InternalDroneScriptLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // InternalDroneScript.g:19599:52: .
+            	    // InternalDroneScript.g:19580:52: .
             	    {
             	    matchAny(); 
 
@@ -2607,12 +2607,12 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19601:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalDroneScript.g:19601:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalDroneScript.g:19582:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalDroneScript.g:19582:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalDroneScript.g:19601:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalDroneScript.g:19582:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop17:
             do {
                 int alt17=2;
@@ -2625,7 +2625,7 @@ public class InternalDroneScriptLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalDroneScript.g:19601:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalDroneScript.g:19582:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2645,7 +2645,7 @@ public class InternalDroneScriptLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalDroneScript.g:19601:40: ( ( '\\r' )? '\\n' )?
+            // InternalDroneScript.g:19582:40: ( ( '\\r' )? '\\n' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2654,9 +2654,9 @@ public class InternalDroneScriptLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalDroneScript.g:19601:41: ( '\\r' )? '\\n'
+                    // InternalDroneScript.g:19582:41: ( '\\r' )? '\\n'
                     {
-                    // InternalDroneScript.g:19601:41: ( '\\r' )?
+                    // InternalDroneScript.g:19582:41: ( '\\r' )?
                     int alt18=2;
                     int LA18_0 = input.LA(1);
 
@@ -2665,7 +2665,7 @@ public class InternalDroneScriptLexer extends Lexer {
                     }
                     switch (alt18) {
                         case 1 :
-                            // InternalDroneScript.g:19601:41: '\\r'
+                            // InternalDroneScript.g:19582:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2697,10 +2697,10 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19603:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalDroneScript.g:19603:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDroneScript.g:19584:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalDroneScript.g:19584:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalDroneScript.g:19603:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDroneScript.g:19584:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt20=0;
             loop20:
             do {
@@ -2754,8 +2754,8 @@ public class InternalDroneScriptLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDroneScript.g:19605:16: ( . )
-            // InternalDroneScript.g:19605:18: .
+            // InternalDroneScript.g:19586:16: ( . )
+            // InternalDroneScript.g:19586:18: .
             {
             matchAny(); 
 
@@ -3454,19 +3454,19 @@ public class InternalDroneScriptLexer extends Lexer {
 
     protected DFA21 dfa21 = new DFA21(this);
     static final String DFA21_eotS =
-        "\1\uffff\1\60\1\62\1\64\1\67\1\73\1\76\1\102\1\104\1\106\1\110\1\112\1\114\1\117\5\121\3\uffff\6\121\6\uffff\1\171\3\121\2\u0081\1\55\5\uffff\1\u0086\26\uffff\1\u0088\5\uffff\1\u008a\4\uffff\1\121\1\uffff\13\121\1\u009a\3\121\3\uffff\3\121\1\u00a1\3\121\1\u00a6\5\121\1\u00ad\10\uffff\1\121\1\u00af\3\121\1\uffff\1\u0081\12\uffff\1\u00b3\1\u00b4\15\121\1\uffff\1\121\1\u00c3\4\121\1\uffff\2\121\1\u00ca\1\121\1\uffff\1\121\1\u00cd\4\121\1\uffff\1\121\1\uffff\1\u00d3\2\121\2\uffff\1\121\1\u00d7\4\121\1\u00dc\1\121\1\u00de\5\121\1\uffff\1\121\1\u00e5\4\121\1\uffff\1\u00ea\1\u00eb\1\uffff\2\121\1\u00ee\2\121\1\uffff\1\u00f1\2\121\1\uffff\1\121\1\u00f6\2\121\1\uffff\1\121\1\uffff\4\121\1\u00fe\1\121\1\uffff\1\u0100\2\121\1\u0103\2\uffff\2\121\1\uffff\1\u0106\1\121\1\uffff\3\121\1\u010b\1\uffff\1\121\1\u010d\1\u010e\1\u010f\1\121\1\u0111\1\121\1\uffff\1\121\1\uffff\1\121\1\u0115\1\uffff\1\121\1\u0117\1\uffff\1\121\1\u0119\1\u011a\1\121\1\uffff\1\121\3\uffff\1\121\1\uffff\1\121\1\u011f\1\u0120\1\uffff\1\121\1\uffff\1\u0122\2\uffff\1\121\1\u0124\2\121\2\uffff\1\121\1\uffff\1\u0128\1\uffff\2\121\1\u012b\1\uffff\1\121\1\u012d\1\uffff\1\121\1\uffff\1\u012f\1\uffff";
+        "\1\uffff\1\60\1\62\1\64\1\67\1\73\1\76\1\102\1\104\1\106\1\110\1\112\1\114\1\117\5\121\1\uffff\2\121\2\uffff\4\121\6\uffff\1\171\3\121\2\u0081\1\55\5\uffff\1\u0086\26\uffff\1\u0088\5\uffff\1\u008a\4\uffff\1\121\1\uffff\13\121\1\u009a\3\121\1\uffff\3\121\1\u00a1\3\121\2\uffff\1\u00a6\5\121\1\u00ad\10\uffff\1\121\1\u00af\3\121\1\uffff\1\u0081\12\uffff\1\u00b3\1\u00b4\15\121\1\uffff\1\121\1\u00c3\4\121\1\uffff\2\121\1\u00ca\1\121\1\uffff\1\121\1\u00cd\4\121\1\uffff\1\121\1\uffff\1\u00d3\2\121\2\uffff\1\121\1\u00d7\4\121\1\u00dc\1\121\1\u00de\5\121\1\uffff\1\121\1\u00e5\4\121\1\uffff\1\u00ea\1\u00eb\1\uffff\2\121\1\u00ee\2\121\1\uffff\1\u00f1\2\121\1\uffff\1\121\1\u00f6\2\121\1\uffff\1\121\1\uffff\4\121\1\u00fe\1\121\1\uffff\1\u0100\2\121\1\u0103\2\uffff\2\121\1\uffff\1\u0106\1\121\1\uffff\3\121\1\u010b\1\uffff\1\121\1\u010d\1\u010e\1\u010f\1\121\1\u0111\1\121\1\uffff\1\121\1\uffff\1\121\1\u0115\1\uffff\1\121\1\u0117\1\uffff\1\121\1\u0119\1\u011a\1\121\1\uffff\1\121\3\uffff\1\121\1\uffff\1\121\1\u011f\1\u0120\1\uffff\1\121\1\uffff\1\u0122\2\uffff\1\121\1\u0124\2\121\2\uffff\1\121\1\uffff\1\u0128\1\uffff\2\121\1\u012b\1\uffff\1\121\1\u012d\1\uffff\1\121\1\uffff\1\u012f\1\uffff";
     static final String DFA21_eofS =
         "\u0130\uffff";
     static final String DFA21_minS =
-        "\1\0\1\75\1\174\1\46\1\53\1\55\2\52\3\75\1\76\2\56\1\141\1\154\1\143\1\146\1\141\3\uffff\1\141\1\150\1\156\2\141\1\163\6\uffff\1\72\3\145\2\60\1\44\5\uffff\1\75\26\uffff\1\75\5\uffff\1\74\4\uffff\1\154\1\uffff\1\164\1\163\1\141\1\160\1\141\1\147\1\156\1\151\1\156\1\160\1\163\1\44\1\154\1\162\1\156\3\uffff\2\151\1\155\1\44\1\160\1\162\1\165\1\44\1\166\1\160\1\157\1\141\1\163\1\44\10\uffff\1\146\1\44\1\167\1\154\1\164\1\uffff\1\60\12\uffff\2\44\2\145\1\164\1\145\1\156\1\151\2\156\1\144\1\164\1\143\1\157\1\164\1\uffff\1\163\1\44\1\141\1\164\1\154\1\145\1\uffff\1\145\1\157\1\44\1\145\1\uffff\1\145\1\44\1\160\1\162\1\145\1\143\1\uffff\1\141\1\uffff\1\44\1\154\1\165\2\uffff\1\156\1\44\1\151\1\162\1\141\1\160\1\44\1\141\1\44\1\143\1\150\1\162\1\141\1\145\1\uffff\1\154\1\44\1\145\2\157\1\167\1\uffff\2\44\1\uffff\1\145\1\147\1\44\1\150\1\165\1\uffff\1\44\1\162\1\144\1\uffff\1\143\1\44\1\162\1\164\1\uffff\1\154\1\uffff\1\150\1\162\1\164\1\156\1\44\1\154\1\uffff\1\44\1\165\1\146\1\44\2\uffff\1\162\1\145\1\uffff\1\44\1\154\1\uffff\1\156\1\163\1\151\1\44\1\uffff\1\151\3\44\1\157\1\44\1\143\1\uffff\1\171\1\uffff\1\164\1\44\1\uffff\1\141\1\44\1\uffff\1\164\2\44\1\157\1\uffff\1\157\3\uffff\1\156\1\uffff\1\145\2\44\1\uffff\1\164\1\uffff\1\44\2\uffff\1\156\1\44\1\151\1\157\2\uffff\1\145\1\uffff\1\44\1\uffff\1\172\1\146\1\44\1\uffff\1\145\1\44\1\uffff\1\144\1\uffff\1\44\1\uffff";
+        "\1\0\1\75\1\174\1\46\1\53\1\55\2\52\3\75\1\76\2\56\1\141\1\154\1\143\1\146\1\141\1\uffff\1\141\1\150\2\uffff\1\156\2\141\1\163\6\uffff\1\72\3\145\2\60\1\44\5\uffff\1\75\26\uffff\1\75\5\uffff\1\74\4\uffff\1\154\1\uffff\1\164\1\163\1\141\1\160\1\141\1\147\1\156\1\151\1\156\1\160\1\163\1\44\1\154\1\162\1\156\1\uffff\2\151\1\155\1\44\1\160\1\162\1\165\2\uffff\1\44\1\166\1\160\1\157\1\141\1\163\1\44\10\uffff\1\146\1\44\1\167\1\154\1\164\1\uffff\1\60\12\uffff\2\44\2\145\1\164\1\145\1\156\1\151\2\156\1\144\1\164\1\143\1\157\1\164\1\uffff\1\163\1\44\1\141\1\164\1\154\1\145\1\uffff\1\145\1\157\1\44\1\145\1\uffff\1\145\1\44\1\160\1\162\1\145\1\143\1\uffff\1\141\1\uffff\1\44\1\154\1\165\2\uffff\1\156\1\44\1\151\1\162\1\141\1\160\1\44\1\141\1\44\1\143\1\150\1\162\1\141\1\145\1\uffff\1\154\1\44\1\145\2\157\1\167\1\uffff\2\44\1\uffff\1\145\1\147\1\44\1\150\1\165\1\uffff\1\44\1\162\1\144\1\uffff\1\143\1\44\1\162\1\164\1\uffff\1\154\1\uffff\1\150\1\162\1\164\1\156\1\44\1\154\1\uffff\1\44\1\165\1\146\1\44\2\uffff\1\162\1\145\1\uffff\1\44\1\154\1\uffff\1\156\1\163\1\151\1\44\1\uffff\1\151\3\44\1\157\1\44\1\143\1\uffff\1\171\1\uffff\1\164\1\44\1\uffff\1\141\1\44\1\uffff\1\164\2\44\1\157\1\uffff\1\157\3\uffff\1\156\1\uffff\1\145\2\44\1\uffff\1\164\1\uffff\1\44\2\uffff\1\156\1\44\1\151\1\157\2\uffff\1\145\1\uffff\1\44\1\uffff\1\172\1\146\1\44\1\uffff\1\145\1\44\1\uffff\1\144\1\uffff\1\44\1\uffff";
     static final String DFA21_maxS =
-        "\1\uffff\1\76\1\174\1\46\1\75\1\76\5\75\1\76\1\56\1\72\1\141\1\170\1\171\1\156\1\157\3\uffff\1\150\1\171\1\156\2\157\1\163\6\uffff\1\72\1\157\1\165\1\145\1\170\1\154\1\172\5\uffff\1\75\26\uffff\1\75\5\uffff\1\74\4\uffff\1\162\1\uffff\1\164\1\163\1\141\1\160\1\162\1\147\1\156\1\151\1\156\1\160\1\163\1\172\1\154\1\162\1\156\3\uffff\2\151\1\155\1\172\1\160\1\162\1\171\1\172\1\166\1\160\1\157\1\141\1\164\1\172\10\uffff\1\146\1\172\1\167\1\154\1\164\1\uffff\1\154\12\uffff\2\172\2\145\1\164\1\145\1\156\1\151\2\156\1\144\1\164\1\143\1\157\1\164\1\uffff\1\163\1\172\1\141\1\164\1\154\1\145\1\uffff\1\145\1\157\1\172\1\145\1\uffff\1\145\1\172\1\160\1\162\1\145\1\143\1\uffff\1\141\1\uffff\1\172\1\154\1\165\2\uffff\1\156\1\172\1\151\1\162\1\141\1\160\1\172\1\141\1\172\1\143\1\150\1\162\1\141\1\145\1\uffff\1\154\1\172\1\145\2\157\1\167\1\uffff\2\172\1\uffff\1\145\1\147\1\172\1\150\1\165\1\uffff\1\172\1\162\1\163\1\uffff\1\143\1\172\1\162\1\164\1\uffff\1\154\1\uffff\1\150\1\162\1\164\1\156\1\172\1\154\1\uffff\1\172\1\165\1\146\1\172\2\uffff\1\162\1\145\1\uffff\1\172\1\154\1\uffff\1\156\1\163\1\151\1\172\1\uffff\1\151\3\172\1\157\1\172\1\143\1\uffff\1\171\1\uffff\1\164\1\172\1\uffff\1\141\1\172\1\uffff\1\164\2\172\1\157\1\uffff\1\157\3\uffff\1\156\1\uffff\1\145\2\172\1\uffff\1\164\1\uffff\1\172\2\uffff\1\156\1\172\1\151\1\157\2\uffff\1\145\1\uffff\1\172\1\uffff\1\172\1\146\1\172\1\uffff\1\145\1\172\1\uffff\1\144\1\uffff\1\172\1\uffff";
+        "\1\uffff\1\76\1\174\1\46\1\75\1\76\5\75\1\76\1\56\1\72\1\141\1\170\1\171\1\156\1\157\1\uffff\1\150\1\171\2\uffff\1\156\2\157\1\163\6\uffff\1\72\1\157\1\165\1\145\1\170\1\154\1\172\5\uffff\1\75\26\uffff\1\75\5\uffff\1\74\4\uffff\1\162\1\uffff\1\164\1\163\1\141\1\160\1\162\1\147\1\156\1\151\1\156\1\160\1\163\1\172\1\154\1\162\1\156\1\uffff\2\151\1\155\1\172\1\160\1\162\1\171\2\uffff\1\172\1\166\1\160\1\157\1\141\1\164\1\172\10\uffff\1\146\1\172\1\167\1\154\1\164\1\uffff\1\154\12\uffff\2\172\2\145\1\164\1\145\1\156\1\151\2\156\1\144\1\164\1\143\1\157\1\164\1\uffff\1\163\1\172\1\141\1\164\1\154\1\145\1\uffff\1\145\1\157\1\172\1\145\1\uffff\1\145\1\172\1\160\1\162\1\145\1\143\1\uffff\1\141\1\uffff\1\172\1\154\1\165\2\uffff\1\156\1\172\1\151\1\162\1\141\1\160\1\172\1\141\1\172\1\143\1\150\1\162\1\141\1\145\1\uffff\1\154\1\172\1\145\2\157\1\167\1\uffff\2\172\1\uffff\1\145\1\147\1\172\1\150\1\165\1\uffff\1\172\1\162\1\163\1\uffff\1\143\1\172\1\162\1\164\1\uffff\1\154\1\uffff\1\150\1\162\1\164\1\156\1\172\1\154\1\uffff\1\172\1\165\1\146\1\172\2\uffff\1\162\1\145\1\uffff\1\172\1\154\1\uffff\1\156\1\163\1\151\1\172\1\uffff\1\151\3\172\1\157\1\172\1\143\1\uffff\1\171\1\uffff\1\164\1\172\1\uffff\1\141\1\172\1\uffff\1\164\2\172\1\157\1\uffff\1\157\3\uffff\1\156\1\uffff\1\145\2\172\1\uffff\1\164\1\uffff\1\172\2\uffff\1\156\1\172\1\151\1\157\2\uffff\1\145\1\uffff\1\172\1\uffff\1\172\1\146\1\172\1\uffff\1\145\1\172\1\uffff\1\144\1\uffff\1\172\1\uffff";
     static final String DFA21_acceptS =
-        "\23\uffff\1\51\1\54\1\55\6\uffff\1\72\1\73\1\74\1\75\1\76\1\77\7\uffff\1\133\2\134\1\137\1\140\1\uffff\1\23\1\1\1\2\1\125\1\3\1\122\1\4\1\35\1\26\1\5\1\20\1\36\1\27\1\6\1\31\1\30\1\7\1\135\1\136\1\32\1\10\1\33\1\uffff\1\34\1\15\1\16\1\24\1\17\1\uffff\1\37\1\25\1\124\1\121\1\uffff\1\133\17\uffff\1\51\1\54\1\55\16\uffff\1\72\1\73\1\74\1\75\1\76\1\77\1\123\1\103\5\uffff\1\130\1\uffff\1\131\1\132\1\134\1\137\1\13\1\11\1\14\1\12\1\21\1\22\17\uffff\1\100\6\uffff\1\62\4\uffff\1\60\6\uffff\1\65\1\uffff\1\107\3\uffff\1\40\1\126\16\uffff\1\53\6\uffff\1\115\2\uffff\1\70\5\uffff\1\110\3\uffff\1\101\4\uffff\1\67\1\uffff\1\63\6\uffff\1\56\4\uffff\1\127\1\61\2\uffff\1\105\2\uffff\1\111\4\uffff\1\45\7\uffff\1\46\1\uffff\1\106\2\uffff\1\113\2\uffff\1\120\4\uffff\1\42\1\uffff\1\52\1\50\1\102\1\uffff\1\43\3\uffff\1\112\1\uffff\1\66\1\uffff\1\114\1\41\4\uffff\1\116\1\57\1\uffff\1\104\1\uffff\1\47\3\uffff\1\44\2\uffff\1\64\1\uffff\1\71\1\uffff\1\117";
+        "\23\uffff\1\51\2\uffff\1\56\1\57\4\uffff\1\72\1\73\1\74\1\75\1\76\1\77\7\uffff\1\133\2\134\1\137\1\140\1\uffff\1\23\1\1\1\2\1\125\1\3\1\122\1\4\1\35\1\26\1\5\1\20\1\36\1\27\1\6\1\31\1\30\1\7\1\135\1\136\1\32\1\10\1\33\1\uffff\1\34\1\15\1\16\1\24\1\17\1\uffff\1\37\1\25\1\124\1\121\1\uffff\1\133\17\uffff\1\51\7\uffff\1\56\1\57\7\uffff\1\72\1\73\1\74\1\75\1\76\1\77\1\123\1\103\5\uffff\1\130\1\uffff\1\131\1\132\1\134\1\137\1\13\1\11\1\14\1\12\1\21\1\22\17\uffff\1\100\6\uffff\1\62\4\uffff\1\60\6\uffff\1\65\1\uffff\1\107\3\uffff\1\40\1\126\16\uffff\1\53\6\uffff\1\115\2\uffff\1\70\5\uffff\1\110\3\uffff\1\101\4\uffff\1\67\1\uffff\1\63\6\uffff\1\54\4\uffff\1\127\1\61\2\uffff\1\105\2\uffff\1\111\4\uffff\1\45\7\uffff\1\46\1\uffff\1\106\2\uffff\1\113\2\uffff\1\120\4\uffff\1\42\1\uffff\1\52\1\50\1\102\1\uffff\1\43\3\uffff\1\112\1\uffff\1\66\1\uffff\1\114\1\41\4\uffff\1\116\1\55\1\uffff\1\104\1\uffff\1\47\3\uffff\1\44\2\uffff\1\64\1\uffff\1\71\1\uffff\1\117";
     static final String DFA21_specialS =
         "\1\0\u012f\uffff}>";
     static final String[] DFA21_transitionS = {
-            "\11\55\2\54\2\55\1\54\22\55\1\54\1\11\1\52\1\35\1\51\1\10\1\3\1\53\1\41\1\34\1\6\1\4\1\23\1\5\1\14\1\7\1\46\11\47\1\42\1\40\1\13\1\1\1\12\1\15\1\55\32\51\1\36\1\55\1\37\1\50\1\51\1\55\1\33\1\51\1\32\1\43\1\17\1\22\2\51\1\21\3\51\1\31\1\44\1\30\2\51\1\45\1\20\1\27\1\51\1\16\1\26\3\51\1\24\1\2\1\25\uff82\55",
+            "\11\55\2\54\2\55\1\54\22\55\1\54\1\11\1\52\1\35\1\51\1\10\1\3\1\53\1\41\1\34\1\6\1\4\1\23\1\5\1\14\1\7\1\46\11\47\1\42\1\40\1\13\1\1\1\12\1\15\1\55\32\51\1\36\1\55\1\37\1\50\1\51\1\55\1\33\1\51\1\32\1\43\1\17\1\22\2\51\1\21\3\51\1\31\1\44\1\30\2\51\1\45\1\20\1\25\1\51\1\16\1\24\3\51\1\26\1\2\1\27\uff82\55",
             "\1\56\1\57",
             "\1\61",
             "\1\63",
@@ -3486,10 +3486,10 @@ public class InternalDroneScriptLexer extends Lexer {
             "\1\135\6\uffff\1\133\1\134",
             "\1\136\7\uffff\1\140\5\uffff\1\137",
             "",
+            "\1\142\6\uffff\1\143",
+            "\1\147\1\144\5\uffff\1\145\2\uffff\1\150\6\uffff\1\146",
             "",
             "",
-            "\1\144\6\uffff\1\145",
-            "\1\151\1\146\5\uffff\1\147\2\uffff\1\152\6\uffff\1\150",
             "\1\153",
             "\1\155\15\uffff\1\154",
             "\1\160\6\uffff\1\157\6\uffff\1\156",
@@ -3564,8 +3564,6 @@ public class InternalDroneScriptLexer extends Lexer {
             "\1\u009c",
             "\1\u009d",
             "",
-            "",
-            "",
             "\1\u009e",
             "\1\u009f",
             "\1\u00a0",
@@ -3573,6 +3571,8 @@ public class InternalDroneScriptLexer extends Lexer {
             "\1\u00a2",
             "\1\u00a3",
             "\1\u00a5\3\uffff\1\u00a4",
+            "",
+            "",
             "\1\121\13\uffff\12\121\7\uffff\32\121\4\uffff\1\121\1\uffff\32\121",
             "\1\u00a7",
             "\1\u00a8",
@@ -3850,13 +3850,13 @@ public class InternalDroneScriptLexer extends Lexer {
 
                         else if ( (LA21_0==',') ) {s = 19;}
 
-                        else if ( (LA21_0=='{') ) {s = 20;}
+                        else if ( (LA21_0=='w') ) {s = 20;}
 
-                        else if ( (LA21_0=='}') ) {s = 21;}
+                        else if ( (LA21_0=='t') ) {s = 21;}
 
-                        else if ( (LA21_0=='w') ) {s = 22;}
+                        else if ( (LA21_0=='{') ) {s = 22;}
 
-                        else if ( (LA21_0=='t') ) {s = 23;}
+                        else if ( (LA21_0=='}') ) {s = 23;}
 
                         else if ( (LA21_0=='o') ) {s = 24;}
 

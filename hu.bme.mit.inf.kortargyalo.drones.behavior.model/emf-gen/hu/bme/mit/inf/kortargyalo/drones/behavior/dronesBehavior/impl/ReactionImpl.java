@@ -5,8 +5,6 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Reaction;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Signal;
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Statement;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -15,6 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,7 +38,7 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
 	 * @generated
 	 * @ordered
 	 */
-	protected Statement statement;
+	protected XExpression statement;
 
 	/**
 	 * The cached value of the '{@link #getSignal() <em>Signal</em>}' reference.
@@ -75,7 +74,7 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statement getStatement() {
+	public XExpression getStatement() {
 		return statement;
 	}
 
@@ -84,8 +83,8 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatement(Statement newStatement, NotificationChain msgs) {
-		Statement oldStatement = statement;
+	public NotificationChain basicSetStatement(XExpression newStatement, NotificationChain msgs) {
+		XExpression oldStatement = statement;
 		statement = newStatement;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DronesBehaviorPackage.REACTION__STATEMENT, oldStatement, newStatement);
@@ -99,7 +98,7 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatement(Statement newStatement) {
+	public void setStatement(XExpression newStatement) {
 		if (newStatement != statement) {
 			NotificationChain msgs = null;
 			if (statement != null)
@@ -191,7 +190,7 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DronesBehaviorPackage.REACTION__STATEMENT:
-				setStatement((Statement)newValue);
+				setStatement((XExpression)newValue);
 				return;
 			case DronesBehaviorPackage.REACTION__SIGNAL:
 				setSignal((Signal)newValue);
@@ -209,7 +208,7 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DronesBehaviorPackage.REACTION__STATEMENT:
-				setStatement((Statement)null);
+				setStatement((XExpression)null);
 				return;
 			case DronesBehaviorPackage.REACTION__SIGNAL:
 				setSignal((Signal)null);

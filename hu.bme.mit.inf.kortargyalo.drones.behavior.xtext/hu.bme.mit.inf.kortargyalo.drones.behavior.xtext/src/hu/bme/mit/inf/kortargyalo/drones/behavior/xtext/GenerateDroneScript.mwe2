@@ -5,26 +5,7 @@ import org.eclipse.xtext.xtext.generator.model.project.*
 
 var rootPath = ".."
 
-Workflow {
-	bean = org.eclipse.emf.mwe.utils.StandaloneSetup {
-		scanClassPath = true
-		platformUri = "${rootPath}/.."
-		uriMap = {
-			from = "platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.model/model/DronesStructure.genmodel"
-			to = "platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.model/model/DronesStructure.genmodel"
-		}
-		uriMap = {
-			from = "platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.behavior.model/model/DronesBehavior.genmodel"
-			to = "platform:/resource/hu.bme.mit.inf.kortargyalo.drones.behavior.model/model/DronesBehavior.genmodel"
-		}
-		registerGeneratedEPackage = "hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage"
-		registerGeneratedEPackage = "hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage"
-		registerGenModelFile = "platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.model/model/DronesStructure.genmodel"
-		registerGenModelFile = "platform:/resource/hu.bme.mit.inf.kortargyalo.drones.behavior.model/model/DronesBehavior.genmodel"
-		registerEcoreFile = "platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.model/model/DronesStructure.ecore"
-		registerEcoreFile = "platform:/resource/hu.bme.mit.inf.kortargyalo.drones.behavior.model/model/DronesBehavior.ecore"
-	}
-	
+Workflow {	
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
@@ -57,6 +38,12 @@ Workflow {
 			validator = {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
+			
+			// Must use old-style Ecore model references to support Xbase rule overriding.
+			referencedResource = "platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel"
+			referencedResource = "platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel"
+			referencedResource = "platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.model/model/DronesStructure.genmodel"
+			referencedResource = "platform:/resource/hu.bme.mit.inf.kortargyalo.drones.behavior.model/model/DronesBehavior.genmodel"
 		}
 	}
 	

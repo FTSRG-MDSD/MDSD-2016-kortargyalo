@@ -5,8 +5,6 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.ComplexWait;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Reaction;
-
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Statement;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,6 +18,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -54,7 +53,7 @@ public class ComplexWaitImpl extends WaitImpl implements ComplexWait {
 	 * @generated
 	 * @ordered
 	 */
-	protected Statement onTimeout;
+	protected XExpression onTimeout;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,7 +91,7 @@ public class ComplexWaitImpl extends WaitImpl implements ComplexWait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statement getOnTimeout() {
+	public XExpression getOnTimeout() {
 		return onTimeout;
 	}
 
@@ -101,8 +100,8 @@ public class ComplexWaitImpl extends WaitImpl implements ComplexWait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetOnTimeout(Statement newOnTimeout, NotificationChain msgs) {
-		Statement oldOnTimeout = onTimeout;
+	public NotificationChain basicSetOnTimeout(XExpression newOnTimeout, NotificationChain msgs) {
+		XExpression oldOnTimeout = onTimeout;
 		onTimeout = newOnTimeout;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DronesBehaviorPackage.COMPLEX_WAIT__ON_TIMEOUT, oldOnTimeout, newOnTimeout);
@@ -116,7 +115,7 @@ public class ComplexWaitImpl extends WaitImpl implements ComplexWait {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOnTimeout(Statement newOnTimeout) {
+	public void setOnTimeout(XExpression newOnTimeout) {
 		if (newOnTimeout != onTimeout) {
 			NotificationChain msgs = null;
 			if (onTimeout != null)
@@ -176,7 +175,7 @@ public class ComplexWaitImpl extends WaitImpl implements ComplexWait {
 				getReactions().addAll((Collection<? extends Reaction>)newValue);
 				return;
 			case DronesBehaviorPackage.COMPLEX_WAIT__ON_TIMEOUT:
-				setOnTimeout((Statement)newValue);
+				setOnTimeout((XExpression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -194,7 +193,7 @@ public class ComplexWaitImpl extends WaitImpl implements ComplexWait {
 				getReactions().clear();
 				return;
 			case DronesBehaviorPackage.COMPLEX_WAIT__ON_TIMEOUT:
-				setOnTimeout((Statement)null);
+				setOnTimeout((XExpression)null);
 				return;
 		}
 		super.eUnset(featureID);

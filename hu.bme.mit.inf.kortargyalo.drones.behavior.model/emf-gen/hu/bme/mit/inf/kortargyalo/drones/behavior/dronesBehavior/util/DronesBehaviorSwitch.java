@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,36 +83,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 			case DronesBehaviorPackage.STATEMENT: {
 				Statement statement = (Statement)theEObject;
 				T result = caseStatement(statement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DronesBehaviorPackage.SEQUENCE: {
-				Sequence sequence = (Sequence)theEObject;
-				T result = caseSequence(sequence);
-				if (result == null) result = caseStatement(sequence);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DronesBehaviorPackage.CONDITION: {
-				Condition condition = (Condition)theEObject;
-				T result = caseCondition(condition);
-				if (result == null) result = caseCompositeStatement(condition);
-				if (result == null) result = caseStatement(condition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DronesBehaviorPackage.LOOP: {
-				Loop loop = (Loop)theEObject;
-				T result = caseLoop(loop);
-				if (result == null) result = caseCompositeStatement(loop);
-				if (result == null) result = caseStatement(loop);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case DronesBehaviorPackage.COMPOSITE_STATEMENT: {
-				CompositeStatement compositeStatement = (CompositeStatement)theEObject;
-				T result = caseCompositeStatement(compositeStatement);
-				if (result == null) result = caseStatement(compositeStatement);
+				if (result == null) result = caseXExpression(statement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -119,6 +91,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				AtomicStatement atomicStatement = (AtomicStatement)theEObject;
 				T result = caseAtomicStatement(atomicStatement);
 				if (result == null) result = caseStatement(atomicStatement);
+				if (result == null) result = caseXExpression(atomicStatement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -127,6 +100,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseCooperate(cooperate);
 				if (result == null) result = caseAtomicStatement(cooperate);
 				if (result == null) result = caseStatement(cooperate);
+				if (result == null) result = caseXExpression(cooperate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,6 +109,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseMove(move);
 				if (result == null) result = caseAtomicStatement(move);
 				if (result == null) result = caseStatement(move);
+				if (result == null) result = caseXExpression(move);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,6 +117,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				Wait wait = (Wait)theEObject;
 				T result = caseWait(wait);
 				if (result == null) result = caseStatement(wait);
+				if (result == null) result = caseXExpression(wait);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -150,6 +126,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseSendSignal(sendSignal);
 				if (result == null) result = caseAtomicStatement(sendSignal);
 				if (result == null) result = caseStatement(sendSignal);
+				if (result == null) result = caseXExpression(sendSignal);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -158,6 +135,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseSimpleWait(simpleWait);
 				if (result == null) result = caseWait(simpleWait);
 				if (result == null) result = caseStatement(simpleWait);
+				if (result == null) result = caseXExpression(simpleWait);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -166,6 +144,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseComplexWait(complexWait);
 				if (result == null) result = caseWait(complexWait);
 				if (result == null) result = caseStatement(complexWait);
+				if (result == null) result = caseXExpression(complexWait);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -187,6 +166,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseSendMap(sendMap);
 				if (result == null) result = caseAtomicStatement(sendMap);
 				if (result == null) result = caseStatement(sendMap);
+				if (result == null) result = caseXExpression(sendMap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,6 +175,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseScan(scan);
 				if (result == null) result = caseAtomicStatement(scan);
 				if (result == null) result = caseStatement(scan);
+				if (result == null) result = caseXExpression(scan);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -203,6 +184,7 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 				T result = caseCharge(charge);
 				if (result == null) result = caseAtomicStatement(charge);
 				if (result == null) result = caseStatement(charge);
+				if (result == null) result = caseXExpression(charge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -252,66 +234,6 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStatement(Statement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Sequence</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Sequence</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSequence(Sequence object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCondition(Condition object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Loop</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Loop</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLoop(Loop object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Composite Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Composite Statement</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCompositeStatement(CompositeStatement object) {
 		return null;
 	}
 
@@ -492,6 +414,21 @@ public class DronesBehaviorSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCharge(Charge object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>XExpression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>XExpression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseXExpression(XExpression object) {
 		return null;
 	}
 

@@ -5,6 +5,7 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,12 +34,12 @@ public interface Script extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Statement</em>' containment reference.
-	 * @see #setStatement(Statement)
+	 * @see #setStatement(XExpression)
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage#getScript_Statement()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Statement getStatement();
+	XExpression getStatement();
 
 	/**
 	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script#getStatement <em>Statement</em>}' containment reference.
@@ -48,7 +49,7 @@ public interface Script extends EObject {
 	 * @see #getStatement()
 	 * @generated
 	 */
-	void setStatement(Statement value);
+	void setStatement(XExpression value);
 
 	/**
 	 * Returns the value of the '<em><b>Drone</b></em>' reference.

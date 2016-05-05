@@ -3,10 +3,13 @@
 package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior;
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.xtext.xbase.XbasePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -95,13 +98,22 @@ public interface DronesBehaviorPackage extends EPackage {
 	int DRONES_BEHAVIOR__SCENARIO = 2;
 
 	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRONES_BEHAVIOR__IMPORTS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Drones Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DRONES_BEHAVIOR_FEATURE_COUNT = 3;
+	int DRONES_BEHAVIOR_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Drones Behavior</em>' class.
@@ -175,164 +187,18 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATEMENT_FEATURE_COUNT = 0;
+	int STATEMENT_FEATURE_COUNT = XbasePackage.XEXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * The generated code looks for XbasePackage.XEXPRESSION_OPERATION_COUNT, but it does not exist.
+	 * We override the generated code manually to compile.
+	 * @generated NOT
 	 * @ordered
 	 */
 	int STATEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.SequenceImpl <em>Sequence</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.SequenceImpl
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getSequence()
-	 * @generated
-	 */
-	int SEQUENCE = 3;
-
-	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE__STATEMENTS = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Sequence</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Sequence</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.CompositeStatementImpl <em>Composite Statement</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.CompositeStatementImpl
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getCompositeStatement()
-	 * @generated
-	 */
-	int COMPOSITE_STATEMENT = 6;
-
-	/**
-	 * The feature id for the '<em><b>Statement</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_STATEMENT__STATEMENT = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Composite Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_STATEMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Composite Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_STATEMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ConditionImpl <em>Condition</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ConditionImpl
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getCondition()
-	 * @generated
-	 */
-	int CONDITION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Statement</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__STATEMENT = COMPOSITE_STATEMENT__STATEMENT;
-
-	/**
-	 * The number of structural features of the '<em>Condition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_FEATURE_COUNT = COMPOSITE_STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Condition</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION_OPERATION_COUNT = COMPOSITE_STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.LoopImpl <em>Loop</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.LoopImpl
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getLoop()
-	 * @generated
-	 */
-	int LOOP = 5;
-
-	/**
-	 * The feature id for the '<em><b>Statement</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP__STATEMENT = COMPOSITE_STATEMENT__STATEMENT;
-
-	/**
-	 * The number of structural features of the '<em>Loop</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP_FEATURE_COUNT = COMPOSITE_STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Loop</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP_OPERATION_COUNT = COMPOSITE_STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.AtomicStatementImpl <em>Atomic Statement</em>}' class.
@@ -342,7 +208,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getAtomicStatement()
 	 * @generated
 	 */
-	int ATOMIC_STATEMENT = 7;
+	int ATOMIC_STATEMENT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Atomic Statement</em>' class.
@@ -370,7 +236,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getCooperate()
 	 * @generated
 	 */
-	int COOPERATE = 8;
+	int COOPERATE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' reference.
@@ -416,7 +282,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getMove()
 	 * @generated
 	 */
-	int MOVE = 9;
+	int MOVE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Destination</b></em>' containment reference.
@@ -453,7 +319,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getWait()
 	 * @generated
 	 */
-	int WAIT = 10;
+	int WAIT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -490,7 +356,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getSendSignal()
 	 * @generated
 	 */
-	int SEND_SIGNAL = 11;
+	int SEND_SIGNAL = 7;
 
 	/**
 	 * The feature id for the '<em><b>Signal</b></em>' reference.
@@ -536,7 +402,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getSimpleWait()
 	 * @generated
 	 */
-	int SIMPLE_WAIT = 12;
+	int SIMPLE_WAIT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -582,7 +448,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getComplexWait()
 	 * @generated
 	 */
-	int COMPLEX_WAIT = 13;
+	int COMPLEX_WAIT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Timeout</b></em>' attribute.
@@ -637,7 +503,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getReaction()
 	 * @generated
 	 */
-	int REACTION = 14;
+	int REACTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Statement</b></em>' containment reference.
@@ -683,7 +549,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getSignal()
 	 * @generated
 	 */
-	int SIGNAL = 15;
+	int SIGNAL = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -720,7 +586,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getSendMap()
 	 * @generated
 	 */
-	int SEND_MAP = 16;
+	int SEND_MAP = 12;
 
 	/**
 	 * The feature id for the '<em><b>Recipent</b></em>' reference.
@@ -749,7 +615,6 @@ public interface DronesBehaviorPackage extends EPackage {
 	 */
 	int SEND_MAP_OPERATION_COUNT = ATOMIC_STATEMENT_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ScanImpl <em>Scan</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -758,7 +623,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getScan()
 	 * @generated
 	 */
-	int SCAN = 17;
+	int SCAN = 13;
 
 	/**
 	 * The number of structural features of the '<em>Scan</em>' class.
@@ -778,7 +643,6 @@ public interface DronesBehaviorPackage extends EPackage {
 	 */
 	int SCAN_OPERATION_COUNT = ATOMIC_STATEMENT_OPERATION_COUNT + 0;
 
-
 	/**
 	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ChargeImpl <em>Charge</em>}' class.
 	 * <!-- begin-user-doc -->
@@ -787,7 +651,7 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getCharge()
 	 * @generated
 	 */
-	int CHARGE = 18;
+	int CHARGE = 14;
 
 	/**
 	 * The number of structural features of the '<em>Charge</em>' class.
@@ -852,6 +716,17 @@ public interface DronesBehaviorPackage extends EPackage {
 	EReference getDronesBehavior_Scenario();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior#getImports <em>Imports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Imports</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior#getImports()
+	 * @see #getDronesBehavior()
+	 * @generated
+	 */
+	EReference getDronesBehavior_Imports();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -892,68 +767,6 @@ public interface DronesBehaviorPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getStatement();
-
-	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence <em>Sequence</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Sequence</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence
-	 * @generated
-	 */
-	EClass getSequence();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence#getStatements <em>Statements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence#getStatements()
-	 * @see #getSequence()
-	 * @generated
-	 */
-	EReference getSequence_Statements();
-
-	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Condition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Condition</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Condition
-	 * @generated
-	 */
-	EClass getCondition();
-
-	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Loop <em>Loop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Loop</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Loop
-	 * @generated
-	 */
-	EClass getLoop();
-
-	/**
-	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement <em>Composite Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Composite Statement</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement
-	 * @generated
-	 */
-	EClass getCompositeStatement();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement#getStatement <em>Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Statement</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement#getStatement()
-	 * @see #getCompositeStatement()
-	 * @generated
-	 */
-	EReference getCompositeStatement_Statement();
 
 	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.AtomicStatement <em>Atomic Statement</em>}'.
@@ -1265,6 +1078,14 @@ public interface DronesBehaviorPackage extends EPackage {
 		EReference DRONES_BEHAVIOR__SCENARIO = eINSTANCE.getDronesBehavior_Scenario();
 
 		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DRONES_BEHAVIOR__IMPORTS = eINSTANCE.getDronesBehavior_Imports();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ScriptImpl <em>Script</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1299,62 +1120,6 @@ public interface DronesBehaviorPackage extends EPackage {
 		 * @generated
 		 */
 		EClass STATEMENT = eINSTANCE.getStatement();
-
-		/**
-		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.SequenceImpl <em>Sequence</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.SequenceImpl
-		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getSequence()
-		 * @generated
-		 */
-		EClass SEQUENCE = eINSTANCE.getSequence();
-
-		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SEQUENCE__STATEMENTS = eINSTANCE.getSequence_Statements();
-
-		/**
-		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ConditionImpl <em>Condition</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.ConditionImpl
-		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getCondition()
-		 * @generated
-		 */
-		EClass CONDITION = eINSTANCE.getCondition();
-
-		/**
-		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.LoopImpl <em>Loop</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.LoopImpl
-		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getLoop()
-		 * @generated
-		 */
-		EClass LOOP = eINSTANCE.getLoop();
-
-		/**
-		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.CompositeStatementImpl <em>Composite Statement</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.CompositeStatementImpl
-		 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorPackageImpl#getCompositeStatement()
-		 * @generated
-		 */
-		EClass COMPOSITE_STATEMENT = eINSTANCE.getCompositeStatement();
-
-		/**
-		 * The meta object literal for the '<em><b>Statement</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPOSITE_STATEMENT__STATEMENT = eINSTANCE.getCompositeStatement_Statement();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.AtomicStatementImpl <em>Atomic Statement</em>}' class.

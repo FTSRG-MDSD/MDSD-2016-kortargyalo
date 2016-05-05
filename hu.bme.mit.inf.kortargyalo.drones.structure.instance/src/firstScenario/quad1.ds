@@ -1,0 +1,19 @@
+
+scenario firstScenario
+
+signal letsBuild, readyToBuild
+
+script for quad1 {
+	move to 890, 700, 20
+	scan
+	var accepted = false
+	while (!accepted) {
+		send letsBuild to quad2
+		wait timeout 120 {
+			on readyToBuild accepted = true
+		}
+	}
+	send map to quad2
+	cooperate on buildBridge1 as coordinator
+	move to 50, 0, 0
+}

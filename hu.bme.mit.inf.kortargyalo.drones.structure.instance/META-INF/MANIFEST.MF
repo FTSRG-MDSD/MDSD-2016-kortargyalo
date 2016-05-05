@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Instance
+Bundle-SymbolicName: hu.bme.mit.inf.kortargyalo.drones.structure.instance
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: org.eclipse.xtext.xbase.lib;bundle-version="2.9.2"

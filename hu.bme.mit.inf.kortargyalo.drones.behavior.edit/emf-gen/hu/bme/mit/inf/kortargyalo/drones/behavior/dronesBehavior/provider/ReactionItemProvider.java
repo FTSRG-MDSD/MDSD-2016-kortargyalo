@@ -26,6 +26,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.xtext.xbase.XbaseFactory;
 
 /**
  * This is the item provider adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Reaction} object.
@@ -175,26 +176,6 @@ public class ReactionItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
-				 DronesBehaviorFactory.eINSTANCE.createSequence()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
-				 DronesBehaviorFactory.eINSTANCE.createCompositeStatement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
-				 DronesBehaviorFactory.eINSTANCE.createCondition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
-				 DronesBehaviorFactory.eINSTANCE.createLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
 				 DronesBehaviorFactory.eINSTANCE.createAtomicStatement()));
 
 		newChildDescriptors.add
@@ -241,6 +222,151 @@ public class ReactionItemProvider
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
 				 DronesBehaviorFactory.eINSTANCE.createCharge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXIfExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXSwitchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXBlockExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXVariableDeclaration()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXMemberFeatureCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXFeatureCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXConstructorCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXBooleanLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXNullLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXNumberLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXListLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXSetLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXClosure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXCastedExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXBinaryOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXUnaryOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXPostfixOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXForLoopExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXBasicForLoopExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXDoWhileExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXWhileExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXTypeLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXInstanceOfExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXThrowExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXTryCatchFinallyExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXAssignment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXReturnExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.REACTION__STATEMENT,
+				 XbaseFactory.eINSTANCE.createXSynchronizedExpression()));
 	}
 
 	/**

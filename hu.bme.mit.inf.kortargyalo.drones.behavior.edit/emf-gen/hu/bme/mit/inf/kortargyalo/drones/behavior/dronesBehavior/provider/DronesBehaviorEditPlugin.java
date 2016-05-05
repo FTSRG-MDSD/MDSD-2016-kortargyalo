@@ -7,6 +7,7 @@ import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.provider.Dron
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.xtext.common.types.provider.TypesEditPlugin;
 
 /**
  * This is the central singleton for the DronesBehavior edit plugin.
@@ -41,6 +42,7 @@ public final class DronesBehaviorEditPlugin extends EMFPlugin {
 		super
 		  (new ResourceLocator [] {
 		     DronesStructureEditPlugin.INSTANCE,
+		     TypesEditPlugin.INSTANCE,
 		   });
 	}
 

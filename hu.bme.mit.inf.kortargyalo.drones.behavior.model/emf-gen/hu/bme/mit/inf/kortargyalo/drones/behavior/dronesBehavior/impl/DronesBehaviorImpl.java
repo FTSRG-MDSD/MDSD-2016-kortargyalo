@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.xtext.xtype.XImportSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorImpl#getScripts <em>Scripts</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorImpl#getSignals <em>Signals</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorImpl#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl.DronesBehaviorImpl#getImports <em>Imports</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,6 +72,16 @@ public class DronesBehaviorImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected Scenario scenario;
+
+	/**
+	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImports()
+	 * @generated
+	 * @ordered
+	 */
+	protected XImportSection imports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,6 +169,49 @@ public class DronesBehaviorImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public XImportSection getImports() {
+		return imports;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetImports(XImportSection newImports, NotificationChain msgs) {
+		XImportSection oldImports = imports;
+		imports = newImports;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS, oldImports, newImports);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImports(XImportSection newImports) {
+		if (newImports != imports) {
+			NotificationChain msgs = null;
+			if (imports != null)
+				msgs = ((InternalEObject)imports).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS, null, msgs);
+			if (newImports != null)
+				msgs = ((InternalEObject)newImports).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS, null, msgs);
+			msgs = basicSetImports(newImports, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS, newImports, newImports));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -164,6 +219,8 @@ public class DronesBehaviorImpl extends MinimalEObjectImpl.Container implements 
 				return ((InternalEList<?>)getScripts()).basicRemove(otherEnd, msgs);
 			case DronesBehaviorPackage.DRONES_BEHAVIOR__SIGNALS:
 				return ((InternalEList<?>)getSignals()).basicRemove(otherEnd, msgs);
+			case DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS:
+				return basicSetImports(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -183,6 +240,8 @@ public class DronesBehaviorImpl extends MinimalEObjectImpl.Container implements 
 			case DronesBehaviorPackage.DRONES_BEHAVIOR__SCENARIO:
 				if (resolve) return getScenario();
 				return basicGetScenario();
+			case DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS:
+				return getImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,6 +266,9 @@ public class DronesBehaviorImpl extends MinimalEObjectImpl.Container implements 
 			case DronesBehaviorPackage.DRONES_BEHAVIOR__SCENARIO:
 				setScenario((Scenario)newValue);
 				return;
+			case DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS:
+				setImports((XImportSection)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -228,6 +290,9 @@ public class DronesBehaviorImpl extends MinimalEObjectImpl.Container implements 
 			case DronesBehaviorPackage.DRONES_BEHAVIOR__SCENARIO:
 				setScenario((Scenario)null);
 				return;
+			case DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS:
+				setImports((XImportSection)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -246,6 +311,8 @@ public class DronesBehaviorImpl extends MinimalEObjectImpl.Container implements 
 				return signals != null && !signals.isEmpty();
 			case DronesBehaviorPackage.DRONES_BEHAVIOR__SCENARIO:
 				return scenario != null;
+			case DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS:
+				return imports != null;
 		}
 		return super.eIsSet(featureID);
 	}

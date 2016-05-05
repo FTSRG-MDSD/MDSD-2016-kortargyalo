@@ -11,6 +11,8 @@ Export-Package: hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior,
  hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- hu.bme.mit.inf.kortargyalo.drones.structure.model;bundle-version="0.1.0";visibility:=reexport
+ hu.bme.mit.inf.kortargyalo.drones.structure.model;bundle-version="0.1.0";visibility:=reexport,
+ org.eclipse.xtext.common.types;visibility:=reexport,
+ org.eclipse.xtext.xbase;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy

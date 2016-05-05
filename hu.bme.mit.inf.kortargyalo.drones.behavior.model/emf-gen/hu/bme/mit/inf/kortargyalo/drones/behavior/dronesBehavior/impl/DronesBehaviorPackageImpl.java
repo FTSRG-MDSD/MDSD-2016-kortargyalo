@@ -5,20 +5,16 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.AtomicStatement;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Charge;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.ComplexWait;
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement;
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Condition;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Cooperate;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorFactory;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage;
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Loop;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Move;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Reaction;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendMap;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendSignal;
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Signal;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SimpleWait;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Statement;
@@ -32,6 +28,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.xtext.xbase.XbasePackage;
+import org.eclipse.xtext.xtype.XtypePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,34 +58,6 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 	 * @generated
 	 */
 	private EClass statementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sequenceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass conditionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass loopEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass compositeStatementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,6 +191,8 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		// Initialize simple dependencies
 		DronesStructurePackage.eINSTANCE.eClass();
+		XtypePackage.eINSTANCE.eClass();
+		XbasePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDronesBehaviorPackage.createPackageContents();
@@ -278,6 +250,15 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDronesBehavior_Imports() {
+		return (EReference)dronesBehaviorEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getScript() {
 		return scriptEClass;
 	}
@@ -307,60 +288,6 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 	 */
 	public EClass getStatement() {
 		return statementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSequence() {
-		return sequenceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getSequence_Statements() {
-		return (EReference)sequenceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCondition() {
-		return conditionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLoop() {
-		return loopEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCompositeStatement() {
-		return compositeStatementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCompositeStatement_Statement() {
-		return (EReference)compositeStatementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -611,22 +538,13 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 		createEReference(dronesBehaviorEClass, DRONES_BEHAVIOR__SCRIPTS);
 		createEReference(dronesBehaviorEClass, DRONES_BEHAVIOR__SIGNALS);
 		createEReference(dronesBehaviorEClass, DRONES_BEHAVIOR__SCENARIO);
+		createEReference(dronesBehaviorEClass, DRONES_BEHAVIOR__IMPORTS);
 
 		scriptEClass = createEClass(SCRIPT);
 		createEReference(scriptEClass, SCRIPT__STATEMENT);
 		createEReference(scriptEClass, SCRIPT__DRONE);
 
 		statementEClass = createEClass(STATEMENT);
-
-		sequenceEClass = createEClass(SEQUENCE);
-		createEReference(sequenceEClass, SEQUENCE__STATEMENTS);
-
-		conditionEClass = createEClass(CONDITION);
-
-		loopEClass = createEClass(LOOP);
-
-		compositeStatementEClass = createEClass(COMPOSITE_STATEMENT);
-		createEReference(compositeStatementEClass, COMPOSITE_STATEMENT__STATEMENT);
 
 		atomicStatementEClass = createEClass(ATOMIC_STATEMENT);
 
@@ -690,16 +608,15 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		// Obtain other dependent packages
 		DronesStructurePackage theDronesStructurePackage = (DronesStructurePackage)EPackage.Registry.INSTANCE.getEPackage(DronesStructurePackage.eNS_URI);
+		XtypePackage theXtypePackage = (XtypePackage)EPackage.Registry.INSTANCE.getEPackage(XtypePackage.eNS_URI);
+		XbasePackage theXbasePackage = (XbasePackage)EPackage.Registry.INSTANCE.getEPackage(XbasePackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		sequenceEClass.getESuperTypes().add(this.getStatement());
-		conditionEClass.getESuperTypes().add(this.getCompositeStatement());
-		loopEClass.getESuperTypes().add(this.getCompositeStatement());
-		compositeStatementEClass.getESuperTypes().add(this.getStatement());
+		statementEClass.getESuperTypes().add(theXbasePackage.getXExpression());
 		atomicStatementEClass.getESuperTypes().add(this.getStatement());
 		cooperateEClass.getESuperTypes().add(this.getAtomicStatement());
 		moveEClass.getESuperTypes().add(this.getAtomicStatement());
@@ -717,22 +634,13 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 		initEReference(getDronesBehavior_Scripts(), this.getScript(), null, "scripts", null, 0, -1, DronesBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDronesBehavior_Signals(), this.getSignal(), null, "signals", null, 0, -1, DronesBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDronesBehavior_Scenario(), theDronesStructurePackage.getScenario(), null, "scenario", null, 0, 1, DronesBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDronesBehavior_Imports(), theXtypePackage.getXImportSection(), null, "imports", null, 0, 1, DronesBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScript_Statement(), this.getStatement(), null, "statement", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_Statement(), theXbasePackage.getXExpression(), null, "statement", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScript_Drone(), theDronesStructurePackage.getDrone(), null, "drone", null, 0, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSequence_Statements(), this.getStatement(), null, "statements", null, 0, -1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(compositeStatementEClass, CompositeStatement.class, "CompositeStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCompositeStatement_Statement(), this.getStatement(), null, "statement", null, 0, 1, CompositeStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(atomicStatementEClass, AtomicStatement.class, "AtomicStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -755,10 +663,10 @@ public class DronesBehaviorPackageImpl extends EPackageImpl implements DronesBeh
 
 		initEClass(complexWaitEClass, ComplexWait.class, "ComplexWait", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getComplexWait_Reactions(), this.getReaction(), null, "reactions", null, 0, -1, ComplexWait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComplexWait_OnTimeout(), this.getStatement(), null, "onTimeout", null, 0, 1, ComplexWait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComplexWait_OnTimeout(), theXbasePackage.getXExpression(), null, "onTimeout", null, 0, 1, ComplexWait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(reactionEClass, Reaction.class, "Reaction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReaction_Statement(), this.getStatement(), null, "statement", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getReaction_Statement(), theXbasePackage.getXExpression(), null, "statement", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getReaction_Signal(), this.getSignal(), null, "signal", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signalEClass, Signal.class, "Signal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

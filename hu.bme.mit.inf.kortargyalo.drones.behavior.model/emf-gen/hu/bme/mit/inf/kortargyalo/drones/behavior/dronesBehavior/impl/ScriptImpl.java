@@ -4,8 +4,6 @@ package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.impl;
 
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage;
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script;
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Statement;
-
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -16,6 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +39,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * @generated
 	 * @ordered
 	 */
-	protected Statement statement;
+	protected XExpression statement;
 
 	/**
 	 * The cached value of the '{@link #getDrone() <em>Drone</em>}' reference.
@@ -76,7 +75,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Statement getStatement() {
+	public XExpression getStatement() {
 		return statement;
 	}
 
@@ -85,8 +84,8 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStatement(Statement newStatement, NotificationChain msgs) {
-		Statement oldStatement = statement;
+	public NotificationChain basicSetStatement(XExpression newStatement, NotificationChain msgs) {
+		XExpression oldStatement = statement;
 		statement = newStatement;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DronesBehaviorPackage.SCRIPT__STATEMENT, oldStatement, newStatement);
@@ -100,7 +99,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatement(Statement newStatement) {
+	public void setStatement(XExpression newStatement) {
 		if (newStatement != statement) {
 			NotificationChain msgs = null;
 			if (statement != null)
@@ -192,7 +191,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case DronesBehaviorPackage.SCRIPT__STATEMENT:
-				setStatement((Statement)newValue);
+				setStatement((XExpression)newValue);
 				return;
 			case DronesBehaviorPackage.SCRIPT__DRONE:
 				setDrone((Drone)newValue);
@@ -210,7 +209,7 @@ public class ScriptImpl extends MinimalEObjectImpl.Container implements Script {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case DronesBehaviorPackage.SCRIPT__STATEMENT:
-				setStatement((Statement)null);
+				setStatement((XExpression)null);
 				return;
 			case DronesBehaviorPackage.SCRIPT__DRONE:
 				setDrone((Drone)null);

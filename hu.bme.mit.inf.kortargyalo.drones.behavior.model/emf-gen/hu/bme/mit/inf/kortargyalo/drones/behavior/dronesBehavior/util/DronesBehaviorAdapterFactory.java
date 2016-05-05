@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,22 +82,6 @@ public class DronesBehaviorAdapterFactory extends AdapterFactoryImpl {
 				return createStatementAdapter();
 			}
 			@Override
-			public Adapter caseSequence(Sequence object) {
-				return createSequenceAdapter();
-			}
-			@Override
-			public Adapter caseCondition(Condition object) {
-				return createConditionAdapter();
-			}
-			@Override
-			public Adapter caseLoop(Loop object) {
-				return createLoopAdapter();
-			}
-			@Override
-			public Adapter caseCompositeStatement(CompositeStatement object) {
-				return createCompositeStatementAdapter();
-			}
-			@Override
 			public Adapter caseAtomicStatement(AtomicStatement object) {
 				return createAtomicStatementAdapter();
 			}
@@ -143,6 +128,10 @@ public class DronesBehaviorAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCharge(Charge object) {
 				return createChargeAdapter();
+			}
+			@Override
+			public Adapter caseXExpression(XExpression object) {
+				return createXExpressionAdapter();
 			}
 			@Override
 			public Adapter caseNamedElement(NamedElement object) {
@@ -207,62 +196,6 @@ public class DronesBehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStatementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence <em>Sequence</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence
-	 * @generated
-	 */
-	public Adapter createSequenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Condition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Condition
-	 * @generated
-	 */
-	public Adapter createConditionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Loop <em>Loop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Loop
-	 * @generated
-	 */
-	public Adapter createLoopAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement <em>Composite Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement
-	 * @generated
-	 */
-	public Adapter createCompositeStatementAdapter() {
 		return null;
 	}
 
@@ -431,6 +364,20 @@ public class DronesBehaviorAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createChargeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.xtext.xbase.XExpression <em>XExpression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.xtext.xbase.XExpression
+	 * @generated
+	 */
+	public Adapter createXExpressionAdapter() {
 		return null;
 	}
 

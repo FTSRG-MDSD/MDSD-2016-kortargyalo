@@ -7,6 +7,7 @@ import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xtype.XImportSection;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior#getScripts <em>Scripts</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior#getSignals <em>Signals</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior#getScenario <em>Scenario</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior#getImports <em>Imports</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage#getDronesBehavior()
@@ -84,5 +86,31 @@ public interface DronesBehavior extends EObject {
 	 * @generated
 	 */
 	void setScenario(Scenario value);
+
+	/**
+	 * Returns the value of the '<em><b>Imports</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Imports</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Imports</em>' containment reference.
+	 * @see #setImports(XImportSection)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage#getDronesBehavior_Imports()
+	 * @model containment="true"
+	 * @generated
+	 */
+	XImportSection getImports();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior#getImports <em>Imports</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Imports</em>' containment reference.
+	 * @see #getImports()
+	 * @generated
+	 */
+	void setImports(XImportSection value);
 
 } // DronesBehavior

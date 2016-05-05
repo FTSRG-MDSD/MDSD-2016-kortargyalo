@@ -40,42 +40,6 @@ public interface DronesBehaviorFactory extends EFactory {
 	Script createScript();
 
 	/**
-	 * Returns a new object of class '<em>Sequence</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Sequence</em>'.
-	 * @generated
-	 */
-	Sequence createSequence();
-
-	/**
-	 * Returns a new object of class '<em>Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition</em>'.
-	 * @generated
-	 */
-	Condition createCondition();
-
-	/**
-	 * Returns a new object of class '<em>Loop</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Loop</em>'.
-	 * @generated
-	 */
-	Loop createLoop();
-
-	/**
-	 * Returns a new object of class '<em>Composite Statement</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composite Statement</em>'.
-	 * @generated
-	 */
-	CompositeStatement createCompositeStatement();
-
-	/**
 	 * Returns a new object of class '<em>Atomic Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

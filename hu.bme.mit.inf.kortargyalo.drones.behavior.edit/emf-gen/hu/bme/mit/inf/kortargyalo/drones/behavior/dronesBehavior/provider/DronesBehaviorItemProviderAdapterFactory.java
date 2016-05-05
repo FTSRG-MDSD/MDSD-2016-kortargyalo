@@ -118,98 +118,6 @@ public class DronesBehaviorItemProviderAdapterFactory extends DronesBehaviorAdap
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SequenceItemProvider sequenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Sequence}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSequenceAdapter() {
-		if (sequenceItemProvider == null) {
-			sequenceItemProvider = new SequenceItemProvider(this);
-		}
-
-		return sequenceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Condition} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConditionItemProvider conditionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Condition}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConditionAdapter() {
-		if (conditionItemProvider == null) {
-			conditionItemProvider = new ConditionItemProvider(this);
-		}
-
-		return conditionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Loop} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LoopItemProvider loopItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Loop}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLoopAdapter() {
-		if (loopItemProvider == null) {
-			loopItemProvider = new LoopItemProvider(this);
-		}
-
-		return loopItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CompositeStatementItemProvider compositeStatementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.CompositeStatement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCompositeStatementAdapter() {
-		if (compositeStatementItemProvider == null) {
-			compositeStatementItemProvider = new CompositeStatementItemProvider(this);
-		}
-
-		return compositeStatementItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.AtomicStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -586,10 +494,6 @@ public class DronesBehaviorItemProviderAdapterFactory extends DronesBehaviorAdap
 	public void dispose() {
 		if (dronesBehaviorItemProvider != null) dronesBehaviorItemProvider.dispose();
 		if (scriptItemProvider != null) scriptItemProvider.dispose();
-		if (sequenceItemProvider != null) sequenceItemProvider.dispose();
-		if (conditionItemProvider != null) conditionItemProvider.dispose();
-		if (loopItemProvider != null) loopItemProvider.dispose();
-		if (compositeStatementItemProvider != null) compositeStatementItemProvider.dispose();
 		if (atomicStatementItemProvider != null) atomicStatementItemProvider.dispose();
 		if (cooperateItemProvider != null) cooperateItemProvider.dispose();
 		if (moveItemProvider != null) moveItemProvider.dispose();

@@ -3,10 +3,14 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext
 
+import hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.compiler.DroneScriptCompiler
 import hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.resource.DroneScriptResourceDescriptionStrategy
-import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy
-import org.eclipse.xtext.xbase.scoping.batch.IBatchScopeProvider
 import hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.scoping.DroneScriptScopeProvider
+import hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.typesystem.DroneScriptTypeComputer
+import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy
+import org.eclipse.xtext.xbase.compiler.XbaseCompiler
+import org.eclipse.xtext.xbase.scoping.batch.IBatchScopeProvider
+import org.eclipse.xtext.xbase.typesystem.computation.ITypeComputer
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
@@ -17,10 +21,18 @@ class DroneScriptRuntimeModule extends AbstractDroneScriptRuntimeModule {
 		DroneScriptResourceDescriptionStrategy
 	}
 
-	def Class<? extends IBatchScopeProvider> bindIBatchScopeProvider() {
+	override Class<? extends IBatchScopeProvider> bindIBatchScopeProvider() {
 		// Xbase languages use IBatchScopeProvider for linking instead of IScopeProvider,
 		// therefore it is possible that an object is in scope for content assist, but cannot be linked.
 		// We inject our own scope provider, which derives from XbaseBatchScopeProvider, to remedy this.
 		DroneScriptScopeProvider
+	}
+	
+	def Class<? extends ITypeComputer> bindITypeComputer() {
+		DroneScriptTypeComputer
+	}
+	
+	def Class<? extends XbaseCompiler> bindXbaseCompiler() {
+		DroneScriptCompiler
 	}
 }

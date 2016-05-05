@@ -58,10 +58,6 @@ public class DronesBehaviorFactoryImpl extends EFactoryImpl implements DronesBeh
 		switch (eClass.getClassifierID()) {
 			case DronesBehaviorPackage.DRONES_BEHAVIOR: return createDronesBehavior();
 			case DronesBehaviorPackage.SCRIPT: return createScript();
-			case DronesBehaviorPackage.SEQUENCE: return createSequence();
-			case DronesBehaviorPackage.CONDITION: return createCondition();
-			case DronesBehaviorPackage.LOOP: return createLoop();
-			case DronesBehaviorPackage.COMPOSITE_STATEMENT: return createCompositeStatement();
 			case DronesBehaviorPackage.ATOMIC_STATEMENT: return createAtomicStatement();
 			case DronesBehaviorPackage.COOPERATE: return createCooperate();
 			case DronesBehaviorPackage.MOVE: return createMove();
@@ -97,46 +93,6 @@ public class DronesBehaviorFactoryImpl extends EFactoryImpl implements DronesBeh
 	public Script createScript() {
 		ScriptImpl script = new ScriptImpl();
 		return script;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Sequence createSequence() {
-		SequenceImpl sequence = new SequenceImpl();
-		return sequence;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Condition createCondition() {
-		ConditionImpl condition = new ConditionImpl();
-		return condition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Loop createLoop() {
-		LoopImpl loop = new LoopImpl();
-		return loop;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CompositeStatement createCompositeStatement() {
-		CompositeStatementImpl compositeStatement = new CompositeStatementImpl();
-		return compositeStatement;
 	}
 
 	/**

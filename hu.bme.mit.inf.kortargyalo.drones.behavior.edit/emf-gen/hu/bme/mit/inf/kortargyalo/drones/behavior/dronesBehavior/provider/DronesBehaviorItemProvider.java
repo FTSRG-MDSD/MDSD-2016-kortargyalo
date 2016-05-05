@@ -26,6 +26,7 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.xtext.xtype.XtypeFactory;
 
 /**
  * This is the item provider adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior} object.
@@ -103,6 +104,7 @@ public class DronesBehaviorItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DronesBehaviorPackage.Literals.DRONES_BEHAVIOR__SCRIPTS);
 			childrenFeatures.add(DronesBehaviorPackage.Literals.DRONES_BEHAVIOR__SIGNALS);
+			childrenFeatures.add(DronesBehaviorPackage.Literals.DRONES_BEHAVIOR__IMPORTS);
 		}
 		return childrenFeatures;
 	}
@@ -157,6 +159,7 @@ public class DronesBehaviorItemProvider
 		switch (notification.getFeatureID(DronesBehavior.class)) {
 			case DronesBehaviorPackage.DRONES_BEHAVIOR__SCRIPTS:
 			case DronesBehaviorPackage.DRONES_BEHAVIOR__SIGNALS:
+			case DronesBehaviorPackage.DRONES_BEHAVIOR__IMPORTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,6 +186,11 @@ public class DronesBehaviorItemProvider
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.DRONES_BEHAVIOR__SIGNALS,
 				 DronesBehaviorFactory.eINSTANCE.createSignal()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.DRONES_BEHAVIOR__IMPORTS,
+				 XtypeFactory.eINSTANCE.createXImportSection()));
 	}
 
 	/**

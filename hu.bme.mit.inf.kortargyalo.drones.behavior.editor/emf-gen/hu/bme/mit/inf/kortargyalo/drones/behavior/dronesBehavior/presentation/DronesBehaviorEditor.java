@@ -159,6 +159,7 @@ import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.provider.Drones
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.provider.DronesStructureItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+import org.eclipse.xtext.common.types.provider.TypesItemProviderAdapterFactory;
 
 
 /**
@@ -705,6 +706,7 @@ public class DronesBehaviorEditor
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DronesBehaviorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DronesStructureItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TypesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

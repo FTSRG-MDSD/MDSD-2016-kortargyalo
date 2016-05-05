@@ -6,8 +6,7 @@ import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorP
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Statement;
 
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.xtext.xbase.impl.XExpressionImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class StatementImpl extends MinimalEObjectImpl.Container implements Statement {
+public abstract class StatementImpl extends XExpressionImpl implements Statement {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.xtext.xbase.XbaseFactory;
 
 /**
  * This is the item provider adapter for a {@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.ComplexWait} object.
@@ -168,26 +169,6 @@ public class ComplexWaitItemProvider extends WaitItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
-				 DronesBehaviorFactory.eINSTANCE.createSequence()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
-				 DronesBehaviorFactory.eINSTANCE.createCompositeStatement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
-				 DronesBehaviorFactory.eINSTANCE.createCondition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
-				 DronesBehaviorFactory.eINSTANCE.createLoop()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
 				 DronesBehaviorFactory.eINSTANCE.createAtomicStatement()));
 
 		newChildDescriptors.add
@@ -234,6 +215,151 @@ public class ComplexWaitItemProvider extends WaitItemProvider {
 			(createChildParameter
 				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
 				 DronesBehaviorFactory.eINSTANCE.createCharge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXIfExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXSwitchExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXBlockExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXVariableDeclaration()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXMemberFeatureCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXFeatureCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXConstructorCall()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXBooleanLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXNullLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXNumberLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXStringLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXListLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXSetLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXClosure()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXCastedExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXBinaryOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXUnaryOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXPostfixOperation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXForLoopExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXBasicForLoopExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXDoWhileExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXWhileExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXTypeLiteral()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXInstanceOfExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXThrowExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXTryCatchFinallyExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXAssignment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXReturnExpression()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(DronesBehaviorPackage.Literals.COMPLEX_WAIT__ON_TIMEOUT,
+				 XbaseFactory.eINSTANCE.createXSynchronizedExpression()));
 	}
 
 }

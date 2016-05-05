@@ -3,6 +3,7 @@
 package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,12 +48,12 @@ public interface ComplexWait extends Wait {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>On Timeout</em>' containment reference.
-	 * @see #setOnTimeout(Statement)
+	 * @see #setOnTimeout(XExpression)
 	 * @see hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage#getComplexWait_OnTimeout()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Statement getOnTimeout();
+	XExpression getOnTimeout();
 
 	/**
 	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.ComplexWait#getOnTimeout <em>On Timeout</em>}' containment reference.
@@ -62,6 +63,6 @@ public interface ComplexWait extends Wait {
 	 * @see #getOnTimeout()
 	 * @generated
 	 */
-	void setOnTimeout(Statement value);
+	void setOnTimeout(XExpression value);
 
 } // ComplexWait

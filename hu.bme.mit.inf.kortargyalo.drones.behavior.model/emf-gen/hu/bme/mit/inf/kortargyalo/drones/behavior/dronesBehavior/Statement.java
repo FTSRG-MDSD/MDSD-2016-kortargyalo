@@ -2,7 +2,7 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior;
 
-import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xbase.XExpression;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Statement extends EObject {
+public interface Statement extends XExpression {
 } // Statement
