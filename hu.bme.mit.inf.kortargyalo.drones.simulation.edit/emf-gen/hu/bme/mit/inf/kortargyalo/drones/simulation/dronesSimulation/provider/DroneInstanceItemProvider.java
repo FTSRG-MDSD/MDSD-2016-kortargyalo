@@ -65,7 +65,7 @@ public class DroneInstanceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addScriptPropertyDescriptor(object);
+			addDronePropertyDescriptor(object);
 			addCurrentRolePropertyDescriptor(object);
 			addCurrentBatteryPropertyDescriptor(object);
 		}
@@ -73,19 +73,19 @@ public class DroneInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Script feature.
+	 * This adds a property descriptor for the Drone feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addScriptPropertyDescriptor(Object object) {
+	protected void addDronePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DroneInstance_script_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DroneInstance_script_feature", "_UI_DroneInstance_type"),
-				 DronesSimulationPackage.Literals.DRONE_INSTANCE__SCRIPT,
+				 getString("_UI_DroneInstance_drone_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DroneInstance_drone_feature", "_UI_DroneInstance_type"),
+				 DronesSimulationPackage.Literals.DRONE_INSTANCE__DRONE,
 				 true,
 				 false,
 				 true,

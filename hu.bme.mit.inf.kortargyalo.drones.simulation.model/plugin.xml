@@ -1,17 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.0"?>
-
-<!--
--->
-
-<plugin>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated dronesSimulation -->
-      <package
-            uri="http://inf.mit.bme.hu/kortargyalo/dronesSimulation"
-            class="hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage"
-            genModel="model/dronesSimulation.genmodel"/>
-   </extension>
-
+<?xml version="1.0" encoding="UTF-8"?><?eclipse version="3.0"?><!--
+--><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated dronesSimulation -->
+    <package class="hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage" genModel="model/dronesSimulation.genmodel" uri="http://inf.mit.bme.hu/kortargyalo/dronesSimulation"/>
+  </extension>
+  <extension id="hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DronesSimulationQueries" point="org.eclipse.incquery.runtime.queryspecification">
+    <group group="org.eclipse.incquery.runtime.extensibility.SingletonExtensionFactory:hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DronesSimulationQueries" id="hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DronesSimulationQueries"/>
+  </extension>
 </plugin>

@@ -63,15 +63,15 @@ public abstract class ProvidedScanningCapabilityWithCostMatch extends BasePatter
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("ProvidedCapability".equals(parameterName) ) {
-    	this.fProvidedCapability = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) newValue;
+    	this.fProvidedCapability = (ProvidedCapability) newValue;
     	return true;
     }
     if ("Capability".equals(parameterName) ) {
-    	this.fCapability = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability) newValue;
+    	this.fCapability = (ScanningCapability) newValue;
     	return true;
     }
     if ("DroneType".equals(parameterName) ) {
-    	this.fDroneType = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) newValue;
+    	this.fDroneType = (DroneType) newValue;
     	return true;
     }
     return false;

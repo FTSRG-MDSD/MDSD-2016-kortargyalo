@@ -2,8 +2,7 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation;
 
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script;
-
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Position;
 
 import org.eclipse.emf.common.util.EList;
@@ -19,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getScript <em>Script</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getDrone <em>Drone</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getPosition <em>Position</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getCurrentRole <em>Current Role</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getObservations <em>Observations</em>}</li>
@@ -32,30 +31,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface DroneInstance extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Script</b></em>' reference.
+	 * Returns the value of the '<em><b>Drone</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Script</em>' reference isn't clear,
+	 * If the meaning of the '<em>Drone</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Script</em>' reference.
-	 * @see #setScript(Script)
-	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance_Script()
+	 * @return the value of the '<em>Drone</em>' reference.
+	 * @see #setDrone(Drone)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance_Drone()
 	 * @model required="true"
 	 * @generated
 	 */
-	Script getScript();
+	Drone getDrone();
 
 	/**
-	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getScript <em>Script</em>}' reference.
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getDrone <em>Drone</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Script</em>' reference.
-	 * @see #getScript()
+	 * @param value the new value of the '<em>Drone</em>' reference.
+	 * @see #getDrone()
 	 * @generated
 	 */
-	void setScript(Script value);
+	void setDrone(Drone value);
 
 	/**
 	 * Returns the value of the '<em><b>Position</b></em>' containment reference.

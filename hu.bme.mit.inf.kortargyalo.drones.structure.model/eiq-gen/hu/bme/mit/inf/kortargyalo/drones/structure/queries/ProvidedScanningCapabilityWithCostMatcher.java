@@ -325,7 +325,7 @@ public class ProvidedScanningCapabilityWithCostMatcher extends BaseMatcher<Provi
   @Override
   protected ProvidedScanningCapabilityWithCostMatch tupleToMatch(final Tuple t) {
     try {
-    	return ProvidedScanningCapabilityWithCostMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) t.get(POSITION_PROVIDEDCAPABILITY), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability) t.get(POSITION_CAPABILITY), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
+    	return ProvidedScanningCapabilityWithCostMatch.newMatch((ProvidedCapability) t.get(POSITION_PROVIDEDCAPABILITY), (ScanningCapability) t.get(POSITION_CAPABILITY), (DroneType) t.get(POSITION_DRONETYPE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -335,7 +335,7 @@ public class ProvidedScanningCapabilityWithCostMatcher extends BaseMatcher<Provi
   @Override
   protected ProvidedScanningCapabilityWithCostMatch arrayToMatch(final Object[] match) {
     try {
-    	return ProvidedScanningCapabilityWithCostMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) match[POSITION_PROVIDEDCAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability) match[POSITION_CAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
+    	return ProvidedScanningCapabilityWithCostMatch.newMatch((ProvidedCapability) match[POSITION_PROVIDEDCAPABILITY], (ScanningCapability) match[POSITION_CAPABILITY], (DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -345,7 +345,7 @@ public class ProvidedScanningCapabilityWithCostMatcher extends BaseMatcher<Provi
   @Override
   protected ProvidedScanningCapabilityWithCostMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return ProvidedScanningCapabilityWithCostMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) match[POSITION_PROVIDEDCAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ScanningCapability) match[POSITION_CAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
+    	return ProvidedScanningCapabilityWithCostMatch.newMutableMatch((ProvidedCapability) match[POSITION_PROVIDEDCAPABILITY], (ScanningCapability) match[POSITION_CAPABILITY], (DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

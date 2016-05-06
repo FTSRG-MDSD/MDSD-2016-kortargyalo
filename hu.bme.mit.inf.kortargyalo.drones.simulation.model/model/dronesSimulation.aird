@@ -13,6 +13,7 @@
   <semanticResources>platform:/resource/org.eclipse.xtext.common.types/model/JavaVMTypes.genmodel</semanticResources>
   <semanticResources>platform:/resource/org.eclipse.xtext.xbase/model/Xbase.genmodel</semanticResources>
   <semanticResources>platform:/resource/org.eclipse.xtext.xbase/model/XAnnotations.ecore</semanticResources>
+  <semanticResources>../queries/hu/bme/mit/inf/kortargyalo/drones/simulation/model/queries/CollisionHelper.xtend</semanticResources>
   <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_WWbhEOSWEeWgT-yAxJSf6Q">
     <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_WW9FgOSWEeWgT-yAxJSf6Q" name="dronesSimulation">
       <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_WW9FgeSWEeWgT-yAxJSf6Q" source="DANNOTATION_CUSTOMIZATION_KEY">
