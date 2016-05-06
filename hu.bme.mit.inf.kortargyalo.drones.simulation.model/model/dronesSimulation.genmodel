@@ -23,7 +23,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DronesSimulation/droneInstances"/>
     </genClasses>
     <genClasses ecoreClass="dronesSimulation.ecore#//DroneInstance">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DroneInstance/script"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DroneInstance/drone"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DroneInstance/position"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DroneInstance/currentRole"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DroneInstance/observations"/>
