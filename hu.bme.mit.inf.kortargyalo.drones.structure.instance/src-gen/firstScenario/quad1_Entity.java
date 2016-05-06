@@ -1,5 +1,7 @@
 package firstScenario;
 
+import org.eclipse.xtext.xbase.lib.InputOutput;
+
 @SuppressWarnings("all")
 public class quad1_Entity {
   public void run() {
@@ -8,5 +10,6 @@ public class quad1_Entity {
       {
       }
     }
+    InputOutput.<String>println("Hello");
   }
 }

@@ -13,6 +13,7 @@ script for quad1 {
 			on readyToBuild accepted = true
 		}
 	}
+	println("Hello")
 	send map to quad2
 	cooperate on buildBridge1 as coordinator
 	move to 50, 0, 0
