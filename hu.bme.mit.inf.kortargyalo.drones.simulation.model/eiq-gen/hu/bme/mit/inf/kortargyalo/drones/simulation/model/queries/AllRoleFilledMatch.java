@@ -45,7 +45,7 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("t".equals(parameterName) ) {
-    	this.fT = (TaskInstance) newValue;
+    	this.fT = (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance) newValue;
     	return true;
     }
     return false;
