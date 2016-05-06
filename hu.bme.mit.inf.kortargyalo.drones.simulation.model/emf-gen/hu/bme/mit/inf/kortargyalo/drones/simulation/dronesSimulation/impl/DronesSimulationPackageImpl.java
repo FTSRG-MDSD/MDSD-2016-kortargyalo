@@ -202,7 +202,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDroneInstance_Script() {
+	public EReference getDroneInstance_Drone() {
 		return (EReference)droneInstanceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -420,7 +420,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 		createEReference(dronesSimulationEClass, DRONES_SIMULATION__DRONE_INSTANCES);
 
 		droneInstanceEClass = createEClass(DRONE_INSTANCE);
-		createEReference(droneInstanceEClass, DRONE_INSTANCE__SCRIPT);
+		createEReference(droneInstanceEClass, DRONE_INSTANCE__DRONE);
 		createEReference(droneInstanceEClass, DRONE_INSTANCE__POSITION);
 		createEReference(droneInstanceEClass, DRONE_INSTANCE__CURRENT_ROLE);
 		createEReference(droneInstanceEClass, DRONE_INSTANCE__OBSERVATIONS);
@@ -475,7 +475,6 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 
 		// Obtain other dependent packages
 		DronesStructurePackage theDronesStructurePackage = (DronesStructurePackage)EPackage.Registry.INSTANCE.getEPackage(DronesStructurePackage.eNS_URI);
-		DronesBehaviorPackage theDronesBehaviorPackage = (DronesBehaviorPackage)EPackage.Registry.INSTANCE.getEPackage(DronesBehaviorPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -492,7 +491,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 		initEReference(getDronesSimulation_DroneInstances(), this.getDroneInstance(), null, "droneInstances", null, 0, -1, DronesSimulation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(droneInstanceEClass, DroneInstance.class, "DroneInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDroneInstance_Script(), theDronesBehaviorPackage.getScript(), null, "script", null, 1, 1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDroneInstance_Drone(), theDronesStructurePackage.getDrone(), null, "drone", null, 1, 1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneInstance_Position(), theDronesStructurePackage.getPosition(), null, "position", null, 1, 1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneInstance_CurrentRole(), this.getRoleInstance(), this.getRoleInstance_AllocatedDrone(), "currentRole", null, 0, 1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneInstance_Observations(), this.getObservation(), null, "observations", null, 0, -1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -123,13 +123,13 @@ public interface DronesSimulationPackage extends EPackage {
 	int DRONE_INSTANCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Script</b></em>' reference.
+	 * The feature id for the '<em><b>Drone</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_INSTANCE__SCRIPT = 0;
+	int DRONE_INSTANCE__DRONE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Position</b></em>' containment reference.
@@ -498,15 +498,15 @@ public interface DronesSimulationPackage extends EPackage {
 	EClass getDroneInstance();
 
 	/**
-	 * Returns the meta object for the reference '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getScript <em>Script</em>}'.
+	 * Returns the meta object for the reference '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getDrone <em>Drone</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Script</em>'.
-	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getScript()
+	 * @return the meta object for the reference '<em>Drone</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getDrone()
 	 * @see #getDroneInstance()
 	 * @generated
 	 */
-	EReference getDroneInstance_Script();
+	EReference getDroneInstance_Drone();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getPosition <em>Position</em>}'.
@@ -790,12 +790,12 @@ public interface DronesSimulationPackage extends EPackage {
 		EClass DRONE_INSTANCE = eINSTANCE.getDroneInstance();
 
 		/**
-		 * The meta object literal for the '<em><b>Script</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Drone</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DRONE_INSTANCE__SCRIPT = eINSTANCE.getDroneInstance_Script();
+		EReference DRONE_INSTANCE__DRONE = eINSTANCE.getDroneInstance_Drone();
 
 		/**
 		 * The meta object literal for the '<em><b>Position</b></em>' containment reference feature.

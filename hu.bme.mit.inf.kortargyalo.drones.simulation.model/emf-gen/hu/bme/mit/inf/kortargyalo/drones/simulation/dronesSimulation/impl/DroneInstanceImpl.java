@@ -2,13 +2,12 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl;
 
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script;
-
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.Observation;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.RoleInstance;
 
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone;
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Position;
 
 import java.util.Collection;
@@ -35,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getScript <em>Script</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getDrone <em>Drone</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getPosition <em>Position</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getCurrentRole <em>Current Role</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getObservations <em>Observations</em>}</li>
@@ -46,14 +45,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements DroneInstance {
 	/**
-	 * The cached value of the '{@link #getScript() <em>Script</em>}' reference.
+	 * The cached value of the '{@link #getDrone() <em>Drone</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getScript()
+	 * @see #getDrone()
 	 * @generated
 	 * @ordered
 	 */
-	protected Script script;
+	protected Drone drone;
 
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}' containment reference.
@@ -129,16 +128,16 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Script getScript() {
-		if (script != null && script.eIsProxy()) {
-			InternalEObject oldScript = (InternalEObject)script;
-			script = (Script)eResolveProxy(oldScript);
-			if (script != oldScript) {
+	public Drone getDrone() {
+		if (drone != null && drone.eIsProxy()) {
+			InternalEObject oldDrone = (InternalEObject)drone;
+			drone = (Drone)eResolveProxy(oldDrone);
+			if (drone != oldDrone) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DronesSimulationPackage.DRONE_INSTANCE__SCRIPT, oldScript, script));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DronesSimulationPackage.DRONE_INSTANCE__DRONE, oldDrone, drone));
 			}
 		}
-		return script;
+		return drone;
 	}
 
 	/**
@@ -146,8 +145,8 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Script basicGetScript() {
-		return script;
+	public Drone basicGetDrone() {
+		return drone;
 	}
 
 	/**
@@ -155,11 +154,11 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setScript(Script newScript) {
-		Script oldScript = script;
-		script = newScript;
+	public void setDrone(Drone newDrone) {
+		Drone oldDrone = drone;
+		drone = newDrone;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DronesSimulationPackage.DRONE_INSTANCE__SCRIPT, oldScript, script));
+			eNotify(new ENotificationImpl(this, Notification.SET, DronesSimulationPackage.DRONE_INSTANCE__DRONE, oldDrone, drone));
 	}
 
 	/**
@@ -340,9 +339,9 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DronesSimulationPackage.DRONE_INSTANCE__SCRIPT:
-				if (resolve) return getScript();
-				return basicGetScript();
+			case DronesSimulationPackage.DRONE_INSTANCE__DRONE:
+				if (resolve) return getDrone();
+				return basicGetDrone();
 			case DronesSimulationPackage.DRONE_INSTANCE__POSITION:
 				return getPosition();
 			case DronesSimulationPackage.DRONE_INSTANCE__CURRENT_ROLE:
@@ -365,8 +364,8 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DronesSimulationPackage.DRONE_INSTANCE__SCRIPT:
-				setScript((Script)newValue);
+			case DronesSimulationPackage.DRONE_INSTANCE__DRONE:
+				setDrone((Drone)newValue);
 				return;
 			case DronesSimulationPackage.DRONE_INSTANCE__POSITION:
 				setPosition((Position)newValue);
@@ -393,8 +392,8 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DronesSimulationPackage.DRONE_INSTANCE__SCRIPT:
-				setScript((Script)null);
+			case DronesSimulationPackage.DRONE_INSTANCE__DRONE:
+				setDrone((Drone)null);
 				return;
 			case DronesSimulationPackage.DRONE_INSTANCE__POSITION:
 				setPosition((Position)null);
@@ -420,8 +419,8 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DronesSimulationPackage.DRONE_INSTANCE__SCRIPT:
-				return script != null;
+			case DronesSimulationPackage.DRONE_INSTANCE__DRONE:
+				return drone != null;
 			case DronesSimulationPackage.DRONE_INSTANCE__POSITION:
 				return position != null;
 			case DronesSimulationPackage.DRONE_INSTANCE__CURRENT_ROLE:

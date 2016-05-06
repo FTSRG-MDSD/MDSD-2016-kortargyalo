@@ -10,6 +10,8 @@ import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.xtext.common.types.provider.TypesEditPlugin;
+
 /**
  * This is the central singleton for the DronesSimulation edit plugin.
  * <!-- begin-user-doc -->
@@ -44,6 +46,7 @@ public final class DronesSimulationEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     DronesBehaviorEditPlugin.INSTANCE,
 		     DronesStructureEditPlugin.INSTANCE,
+		     TypesEditPlugin.INSTANCE,
 		   });
 	}
 

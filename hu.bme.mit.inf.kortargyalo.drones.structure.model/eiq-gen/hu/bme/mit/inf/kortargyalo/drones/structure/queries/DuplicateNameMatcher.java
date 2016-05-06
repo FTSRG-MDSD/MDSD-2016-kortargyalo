@@ -270,7 +270,7 @@ public class DuplicateNameMatcher extends BaseMatcher<DuplicateNameMatch> {
   @Override
   protected DuplicateNameMatch tupleToMatch(final Tuple t) {
     try {
-    	return DuplicateNameMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement) t.get(POSITION_NAMEDELEMENT), (java.lang.String) t.get(POSITION_NAME));
+    	return DuplicateNameMatch.newMatch((NamedElement) t.get(POSITION_NAMEDELEMENT), (String) t.get(POSITION_NAME));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -280,7 +280,7 @@ public class DuplicateNameMatcher extends BaseMatcher<DuplicateNameMatch> {
   @Override
   protected DuplicateNameMatch arrayToMatch(final Object[] match) {
     try {
-    	return DuplicateNameMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement) match[POSITION_NAMEDELEMENT], (java.lang.String) match[POSITION_NAME]);
+    	return DuplicateNameMatch.newMatch((NamedElement) match[POSITION_NAMEDELEMENT], (String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -290,7 +290,7 @@ public class DuplicateNameMatcher extends BaseMatcher<DuplicateNameMatch> {
   @Override
   protected DuplicateNameMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return DuplicateNameMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.NamedElement) match[POSITION_NAMEDELEMENT], (java.lang.String) match[POSITION_NAME]);
+    	return DuplicateNameMatch.newMutableMatch((NamedElement) match[POSITION_NAMEDELEMENT], (String) match[POSITION_NAME]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
