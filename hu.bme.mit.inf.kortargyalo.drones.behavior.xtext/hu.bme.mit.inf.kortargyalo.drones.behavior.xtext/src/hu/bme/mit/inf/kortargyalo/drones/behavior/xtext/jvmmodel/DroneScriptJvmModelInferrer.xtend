@@ -3,26 +3,30 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.jvmmodel
 
+import co.paralleluniverse.fibers.SuspendExecution
 import com.google.inject.Inject
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script
+import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities.DroneSimProcess
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario
 import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.common.types.JvmVisibility
 import org.eclipse.xtext.xbase.jvmmodel.AbstractModelInferrer
 import org.eclipse.xtext.xbase.jvmmodel.IJvmDeclaredTypeAcceptor
 import org.eclipse.xtext.xbase.jvmmodel.JvmTypesBuilder
-import org.eclipse.xtext.common.types.JvmVisibility
+import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities.DronesSimModel
+import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance
 
 /**
  * <p>Infers a JVM model from the source model.</p> 
- *
+ * 
  * <p>The JVM model should contain all elements that would appear in the Java code 
  * which is generated from the source model. Other models link against the JVM model rather than the source model.</p>     
  */
 class DroneScriptJvmModelInferrer extends AbstractModelInferrer {
 
-    /**
-     * convenience API to build and initialize JVM types and their members.
-     */
+	/**
+	 * convenience API to build and initialize JVM types and their members.
+	 */
 	@Inject extension JvmTypesBuilder
 
 	/**
@@ -51,9 +55,8 @@ class DroneScriptJvmModelInferrer extends AbstractModelInferrer {
 	 *            <code>true</code>.
 	 */
 	/*def dispatch void infer(DronesBehavior element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
-		
-	}*/
-	
+	 * 	
+	 }*/
 	def dispatch void infer(Script element, IJvmDeclaredTypeAcceptor acceptor, boolean isPreIndexingPhase) {
 		val drone = element.drone
 		if (drone == null || drone.name.isNullOrEmpty) {
@@ -63,10 +66,24 @@ class DroneScriptJvmModelInferrer extends AbstractModelInferrer {
 		if (scenario == null || scenario.name.isNullOrEmpty) {
 			return
 		}
-		
-		acceptor.accept(element.toClass('''«scenario.name».«drone.name»_Entity''')) [
-			members += element.toMethod("run", typeRef(Void.TYPE)) [
+
+		acceptor.accept(element.toClass('''«scenario.name».«drone.name»_SimProcess''')) [
+			superTypes += typeRef(DroneSimProcess)
+
+			members += element.toConstructor [
 				visibility = JvmVisibility.PUBLIC
+				parameters += element.toParameter("owner", typeRef(DronesSimModel))
+				parameters += element.toParameter("droneInstance", typeRef(DroneInstance))
+				parameters += element.toParameter("showInTrace", typeRef(Boolean.TYPE))
+				val params = parameters
+				body = [
+					append('''super(«FOR param : params SEPARATOR ", "»«param.name»«ENDFOR»);''')
+				]
+			]
+
+			members += element.toMethod("runScript", typeRef(Void.TYPE)) [
+				visibility = JvmVisibility.PROTECTED
+				exceptions += typeRef(SuspendExecution)
 				body = element.statement
 			]
 		]

@@ -4,9 +4,10 @@ scenario firstScenario
 signal letsBuild, readyToBuild
 
 script for quad1 {
-	move to 890, 700, 20
+	move to 890, 20, 700
 	scan
 	var accepted = false
+	accepted = true
 	while (!accepted) {
 		send letsBuild to quad2
 		wait timeout 120 {

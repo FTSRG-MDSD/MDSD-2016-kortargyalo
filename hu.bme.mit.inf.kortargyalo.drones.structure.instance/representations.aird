@@ -795,12 +795,12 @@
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Charger" href="src/First.dronesstructure#//@scenarios.0/@regions.0"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_8u_kChLkEealeMVgJa4xrQ" label="40.0" column="_8u_kJhLkEealeMVgJa4xrQ">
+          <cells xmi:type="table:DCell" xmi:id="_8u_kChLkEealeMVgJa4xrQ" label="0.0" column="_8u_kJhLkEealeMVgJa4xrQ">
             <target xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Charger" href="src/First.dronesstructure#//@scenarios.0/@regions.0"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_8u_kCxLkEealeMVgJa4xrQ" label="0.0" column="_8u_kJxLkEealeMVgJa4xrQ">
+          <cells xmi:type="table:DCell" xmi:id="_8u_kCxLkEealeMVgJa4xrQ" label="40.0" column="_8u_kJxLkEealeMVgJa4xrQ">
             <target xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Charger" href="src/First.dronesstructure#//@scenarios.0/@regions.0"/>
@@ -830,12 +830,12 @@
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Region" href="src/First.dronesstructure#//@scenarios.0/@regions.1"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_8u_kERLkEealeMVgJa4xrQ" label="698.0" column="_8u_kJhLkEealeMVgJa4xrQ">
+          <cells xmi:type="table:DCell" xmi:id="_8u_kERLkEealeMVgJa4xrQ" label="0.0" column="_8u_kJhLkEealeMVgJa4xrQ">
             <target xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Region" href="src/First.dronesstructure#//@scenarios.0/@regions.1"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_8u_kEhLkEealeMVgJa4xrQ" label="15.0" column="_8u_kJxLkEealeMVgJa4xrQ">
+          <cells xmi:type="table:DCell" xmi:id="_8u_kEhLkEealeMVgJa4xrQ" label="698.0" column="_8u_kJxLkEealeMVgJa4xrQ">
             <target xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@regions.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Region" href="src/First.dronesstructure#//@scenarios.0/@regions.1"/>
@@ -870,12 +870,12 @@
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Obstacle" href="src/First.dronesstructure#//@scenarios.0/@obstacles.0"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_8u_kGRLkEealeMVgJa4xrQ" label="678.0" column="_8u_kJhLkEealeMVgJa4xrQ">
+          <cells xmi:type="table:DCell" xmi:id="_8u_kGRLkEealeMVgJa4xrQ" label="0.0" column="_8u_kJhLkEealeMVgJa4xrQ">
             <target xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Obstacle" href="src/First.dronesstructure#//@scenarios.0/@obstacles.0"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_8u_kGhLkEealeMVgJa4xrQ" label="0.0" column="_8u_kJxLkEealeMVgJa4xrQ">
+          <cells xmi:type="table:DCell" xmi:id="_8u_kGhLkEealeMVgJa4xrQ" label="687.0" column="_8u_kJxLkEealeMVgJa4xrQ">
             <target xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
             <semanticElements xmi:type="dronesStructure:Obstacle" href="src/First.dronesstructure#//@scenarios.0/@obstacles.0"/>
@@ -905,12 +905,12 @@
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Obstacle" href="src/First.dronesstructure#//@scenarios.0/@obstacles.1"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_8u_kIBLkEealeMVgJa4xrQ" label="126.0" column="_8u_kJhLkEealeMVgJa4xrQ">
+          <cells xmi:type="table:DCell" xmi:id="_8u_kIBLkEealeMVgJa4xrQ" label="0.0" column="_8u_kJhLkEealeMVgJa4xrQ">
             <target xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Obstacle" href="src/First.dronesstructure#//@scenarios.0/@obstacles.1"/>
           </cells>
-          <cells xmi:type="table:DCell" xmi:id="_8u_kIRLkEealeMVgJa4xrQ" label="0.0" column="_8u_kJxLkEealeMVgJa4xrQ">
+          <cells xmi:type="table:DCell" xmi:id="_8u_kIRLkEealeMVgJa4xrQ" label="126.0" column="_8u_kJxLkEealeMVgJa4xrQ">
             <target xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Position" href="src/First.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
             <semanticElements xmi:type="dronesStructure:Obstacle" href="src/First.dronesstructure#//@scenarios.0/@obstacles.1"/>
@@ -940,17 +940,17 @@
       <columns xmi:type="table:DFeatureColumn" xmi:id="_8u_kJhLkEealeMVgJa4xrQ" label="y" cells="_8u_j8xLkEealeMVgJa4xrQ _8u_j-xLkEealeMVgJa4xrQ _8u_kAhLkEealeMVgJa4xrQ _8u_kChLkEealeMVgJa4xrQ _8u_kERLkEealeMVgJa4xrQ _8u_kGRLkEealeMVgJa4xrQ _8u_kIBLkEealeMVgJa4xrQ" width="36" featureName="y">
         <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='YColumn']"/>
       </columns>
-      <columns xmi:type="table:DFeatureColumn" xmi:id="_8u_kJxLkEealeMVgJa4xrQ" label="z" cells="_8u_j9BLkEealeMVgJa4xrQ _8u_j_BLkEealeMVgJa4xrQ _8u_kAxLkEealeMVgJa4xrQ _8u_kCxLkEealeMVgJa4xrQ _8u_kEhLkEealeMVgJa4xrQ _8u_kGhLkEealeMVgJa4xrQ _8u_kIRLkEealeMVgJa4xrQ" width="30" featureName="z">
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_8u_kJxLkEealeMVgJa4xrQ" label="z" cells="_8u_j9BLkEealeMVgJa4xrQ _8u_j_BLkEealeMVgJa4xrQ _8u_kAxLkEealeMVgJa4xrQ _8u_kCxLkEealeMVgJa4xrQ _8u_kEhLkEealeMVgJa4xrQ _8u_kGhLkEealeMVgJa4xrQ _8u_kIRLkEealeMVgJa4xrQ" width="36" featureName="z">
         <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='ZColumn']"/>
       </columns>
       <columns xmi:type="table:DFeatureColumn" xmi:id="_8u_kKBLkEealeMVgJa4xrQ" label="width" cells="_8u_j9RLkEealeMVgJa4xrQ _8u_j_RLkEealeMVgJa4xrQ _8u_kBBLkEealeMVgJa4xrQ _8u_kDBLkEealeMVgJa4xrQ _8u_kExLkEealeMVgJa4xrQ _8u_kGxLkEealeMVgJa4xrQ _8u_kIhLkEealeMVgJa4xrQ" width="45" featureName="width">
         <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='WidthColumn']"/>
       </columns>
-      <columns xmi:type="table:DFeatureColumn" xmi:id="_8u_kKRLkEealeMVgJa4xrQ" label="depth" cells="_8u_j9hLkEealeMVgJa4xrQ _8u_j_hLkEealeMVgJa4xrQ _8u_kBRLkEealeMVgJa4xrQ _8u_kDRLkEealeMVgJa4xrQ _8u_kFBLkEealeMVgJa4xrQ _8u_kHBLkEealeMVgJa4xrQ _8u_kIxLkEealeMVgJa4xrQ" width="46" featureName="depth">
-        <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='DepthColumn']"/>
-      </columns>
       <columns xmi:type="table:DFeatureColumn" xmi:id="_8u_kKhLkEealeMVgJa4xrQ" label="height" cells="_8u_j9xLkEealeMVgJa4xrQ _8u_j_xLkEealeMVgJa4xrQ _8u_kBhLkEealeMVgJa4xrQ _8u_kDhLkEealeMVgJa4xrQ _8u_kFRLkEealeMVgJa4xrQ _8u_kHRLkEealeMVgJa4xrQ _8u_kJBLkEealeMVgJa4xrQ" width="49" featureName="height">
         <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='HeightColumn']"/>
+      </columns>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_8u_kKRLkEealeMVgJa4xrQ" label="depth" cells="_8u_j9hLkEealeMVgJa4xrQ _8u_j_hLkEealeMVgJa4xrQ _8u_kBRLkEealeMVgJa4xrQ _8u_kDRLkEealeMVgJa4xrQ _8u_kFBLkEealeMVgJa4xrQ _8u_kHBLkEealeMVgJa4xrQ _8u_kIxLkEealeMVgJa4xrQ" width="46" featureName="depth">
+        <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='DepthColumn']"/>
       </columns>
       <description xmi:type="description_2:EditionTableDescription" href="platform:/resource/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']"/>
     </ownedRepresentations>

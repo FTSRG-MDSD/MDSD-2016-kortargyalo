@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Drones Simulation Runtime
+Bundle-SymbolicName: hu.bme.mit.inf.kortargyalo.drones.simulation.runtime
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ desmoj;bundle-version="2.5.1";visibility:=reexport,
+ hu.bme.mit.inf.kortargyalo.drones.simulation.model;bundle-version="0.1.0";visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities
+
