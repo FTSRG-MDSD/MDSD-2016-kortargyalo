@@ -53,11 +53,11 @@ public abstract class CrashMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("drone1".equals(parameterName) ) {
-    	this.fDrone1 = (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) newValue;
+    	this.fDrone1 = (DroneInstance) newValue;
     	return true;
     }
     if ("drone2".equals(parameterName) ) {
-    	this.fDrone2 = (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) newValue;
+    	this.fDrone2 = (DroneInstance) newValue;
     	return true;
     }
     return false;

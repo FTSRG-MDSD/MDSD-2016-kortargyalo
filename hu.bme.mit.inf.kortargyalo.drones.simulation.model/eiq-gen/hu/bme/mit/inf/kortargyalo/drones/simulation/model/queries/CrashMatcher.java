@@ -34,20 +34,20 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 	Position.y(drone1position,drone1positiony);
  * 	Position.z(drone1position,drone1positionz);
  * 	DroneInstance.drone.dronetype.dimension(drone1,drone1dimension);
- * 	Dimension.depth(drone1dimension, drone1dimensionz);
- * 	Dimension.height(drone1dimension, drone1dimensiony);
  * 	Dimension.width(drone1dimension, drone1dimensionx);
+ * 	Dimension.height(drone1dimension, drone1dimensiony);
+ * 	Dimension.depth(drone1dimension, drone1dimensionz);
  * 	
  * 	DroneInstance.position(drone2,drone2position);
  * 	Position.x(drone2position,drone2positionx);
  * 	Position.y(drone2position,drone2positiony);
  * 	Position.z(drone2position,drone2positionz);
  * 	DroneInstance.drone.dronetype.dimension(drone2,drone2dimension);
+ * 	Dimension.width(drone2dimension, drone2dimensionx);
  * 	Dimension.depth(drone2dimension, drone2dimensionz);
  * 	Dimension.height(drone2dimension, drone2dimensiony);
- * 	Dimension.width(drone2dimension, drone2dimensionx);
  * 
- * 	check(CollisionHelper.collide(drone1positionx,drone1positiony, drone1positionz, drone1dimensionx, drone1dimensiony, drone1dimensionz,drone2positionx, drone2positiony, drone2positionz,drone2dimensionx, drone2dimensiony, drone2dimensionz));
+ * 	check(CollisionHelper.doDronesCollide(drone1positionx,drone1positiony, drone1positionz, drone1dimensionx, drone1dimensiony, drone1dimensionz,drone2positionx, drone2positiony, drone2positionz,drone2dimensionx, drone2dimensiony, drone2dimensionz));
  * }
  * </pre></code>
  * 
@@ -281,7 +281,7 @@ public class CrashMatcher extends BaseMatcher<CrashMatch> {
   @Override
   protected CrashMatch tupleToMatch(final Tuple t) {
     try {
-    	return CrashMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) t.get(POSITION_DRONE1), (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) t.get(POSITION_DRONE2));
+    	return CrashMatch.newMatch((DroneInstance) t.get(POSITION_DRONE1), (DroneInstance) t.get(POSITION_DRONE2));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -291,7 +291,7 @@ public class CrashMatcher extends BaseMatcher<CrashMatch> {
   @Override
   protected CrashMatch arrayToMatch(final Object[] match) {
     try {
-    	return CrashMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE1], (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE2]);
+    	return CrashMatch.newMatch((DroneInstance) match[POSITION_DRONE1], (DroneInstance) match[POSITION_DRONE2]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -301,7 +301,7 @@ public class CrashMatcher extends BaseMatcher<CrashMatch> {
   @Override
   protected CrashMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return CrashMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE1], (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE2]);
+    	return CrashMatch.newMutableMatch((DroneInstance) match[POSITION_DRONE1], (DroneInstance) match[POSITION_DRONE2]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

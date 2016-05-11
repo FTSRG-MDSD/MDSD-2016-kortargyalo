@@ -64,3 +64,24 @@ pattern leftScene(drone : DroneInstance){
 	
 	check(CollisionHelper.didDroneLeftScene(x,y,z, scenex, sceney, scenez, boundx, boundy, boundz));	
 }
+
+pattern collisionWithObject(drone : DroneInstance, object : Obstacle){
+	DroneInstance.position(drone,droneposition);
+	Position.x(droneposition,dronepositionx);
+	Position.y(droneposition,dronepositiony);
+	Position.z(droneposition,dronepositionz);
+	DroneInstance.drone.dronetype.dimension(drone,dronedimension);
+	Dimension.width(dronedimension, dronedimensionx);
+	Dimension.height(dronedimension, dronedimensiony);
+	Dimension.depth(dronedimension, dronedimensionz);	
+
+	Obstacle.position.x(object, objectx);
+	Obstacle.position.y(object, objecty);
+	Obstacle.position.z(object, objectz);
+	Obstacle.dimension.width(object, objectdimx);
+	Obstacle.dimension.height(object, objectdimy);
+	Obstacle.dimension.depth(object, objectdimz);
+	
+	check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
+		
+}

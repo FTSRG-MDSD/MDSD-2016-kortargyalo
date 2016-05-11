@@ -1,6 +1,7 @@
 package hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util;
 
 import com.google.common.collect.Sets;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CollisionHelper;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.LeftSceneMatch;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.LeftSceneMatcher;
 import java.util.Arrays;
@@ -11,10 +12,15 @@ import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
 import org.eclipse.incquery.runtime.emf.types.EClassTransitiveInstancesKey;
+import org.eclipse.incquery.runtime.emf.types.EStructuralFeatureInstancesKey;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
+import org.eclipse.incquery.runtime.matchers.psystem.IExpressionEvaluator;
+import org.eclipse.incquery.runtime.matchers.psystem.IValueProvider;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
@@ -94,12 +100,129 @@ public final class LeftSceneQuerySpecification extends BaseGeneratedEMFQuerySpec
       	{
       		PBody body = new PBody(this);
       		PVariable var_drone = body.getOrCreateVariableByName("drone");
+      		PVariable var_position = body.getOrCreateVariableByName("position");
+      		PVariable var_x = body.getOrCreateVariableByName("x");
+      		PVariable var_y = body.getOrCreateVariableByName("y");
+      		PVariable var_z = body.getOrCreateVariableByName("z");
+      		PVariable var_ds = body.getOrCreateVariableByName("ds");
+      		PVariable var_pos = body.getOrCreateVariableByName("pos");
+      		PVariable var_scenex = body.getOrCreateVariableByName("scenex");
+      		PVariable var_sceney = body.getOrCreateVariableByName("sceney");
+      		PVariable var_scenez = body.getOrCreateVariableByName("scenez");
+      		PVariable var_dim = body.getOrCreateVariableByName("dim");
+      		PVariable var_boundx = body.getOrCreateVariableByName("boundx");
+      		PVariable var_boundy = body.getOrCreateVariableByName("boundy");
+      		PVariable var_boundz = body.getOrCreateVariableByName("boundz");
       		new TypeConstraint(body, new FlatTuple(var_drone), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
       		   new ExportedParameter(body, var_drone, "drone")
       		));
-      		// 	DroneInstance(drone)
+      		// 	DroneInstance.position(drone, position)
       		new TypeConstraint(body, new FlatTuple(var_drone), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
+      		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
+      		new TypeConstraint(body, new FlatTuple(var_drone, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance", "position")));
+      		new Equality(body, var__virtual_0_, var_position);
+      		// 	Position.x(position, x)
+      		new TypeConstraint(body, new FlatTuple(var_position), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position")));
+      		PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
+      		new TypeConstraint(body, new FlatTuple(var_position, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "x")));
+      		new Equality(body, var__virtual_1_, var_x);
+      		// 	Position.y(position, y)
+      		new TypeConstraint(body, new FlatTuple(var_position), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position")));
+      		PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
+      		new TypeConstraint(body, new FlatTuple(var_position, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "y")));
+      		new Equality(body, var__virtual_2_, var_y);
+      		// 	Position.z(position, z)
+      		new TypeConstraint(body, new FlatTuple(var_position), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position")));
+      		PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
+      		new TypeConstraint(body, new FlatTuple(var_position, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "z")));
+      		new Equality(body, var__virtual_3_, var_z);
+      		// 	DronesSimulation.droneInstances(ds, drone)
+      		new TypeConstraint(body, new FlatTuple(var_ds), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DronesSimulation")));
+      		PVariable var__virtual_4_ = body.getOrCreateVariableByName(".virtual{4}");
+      		new TypeConstraint(body, new FlatTuple(var_ds, var__virtual_4_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DronesSimulation", "droneInstances")));
+      		new Equality(body, var__virtual_4_, var_drone);
+      		// 		DronesSimulation.scenario.allowedBounds.position(ds, pos)
+      		new TypeConstraint(body, new FlatTuple(var_ds), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DronesSimulation")));
+      		PVariable var__virtual_5_ = body.getOrCreateVariableByName(".virtual{5}");
+      		new TypeConstraint(body, new FlatTuple(var_ds, var__virtual_5_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DronesSimulation", "scenario")));
+      		PVariable var__virtual_6_ = body.getOrCreateVariableByName(".virtual{6}");
+      		new TypeConstraint(body, new FlatTuple(var__virtual_5_, var__virtual_6_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Scenario", "allowedBounds")));
+      		PVariable var__virtual_7_ = body.getOrCreateVariableByName(".virtual{7}");
+      		new TypeConstraint(body, new FlatTuple(var__virtual_6_, var__virtual_7_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
+      		new Equality(body, var__virtual_7_, var_pos);
+      		// 	Position.x(pos, scenex)
+      		new TypeConstraint(body, new FlatTuple(var_pos), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position")));
+      		PVariable var__virtual_8_ = body.getOrCreateVariableByName(".virtual{8}");
+      		new TypeConstraint(body, new FlatTuple(var_pos, var__virtual_8_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "x")));
+      		new Equality(body, var__virtual_8_, var_scenex);
+      		// 	Position.y(pos, sceney)
+      		new TypeConstraint(body, new FlatTuple(var_pos), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position")));
+      		PVariable var__virtual_9_ = body.getOrCreateVariableByName(".virtual{9}");
+      		new TypeConstraint(body, new FlatTuple(var_pos, var__virtual_9_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "y")));
+      		new Equality(body, var__virtual_9_, var_sceney);
+      		// 	Position.z(pos, scenez)
+      		new TypeConstraint(body, new FlatTuple(var_pos), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position")));
+      		PVariable var__virtual_10_ = body.getOrCreateVariableByName(".virtual{10}");
+      		new TypeConstraint(body, new FlatTuple(var_pos, var__virtual_10_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "z")));
+      		new Equality(body, var__virtual_10_, var_scenez);
+      		// 	DronesSimulation.scenario.allowedBounds.dimension(ds, dim)
+      		new TypeConstraint(body, new FlatTuple(var_ds), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DronesSimulation")));
+      		PVariable var__virtual_11_ = body.getOrCreateVariableByName(".virtual{11}");
+      		new TypeConstraint(body, new FlatTuple(var_ds, var__virtual_11_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DronesSimulation", "scenario")));
+      		PVariable var__virtual_12_ = body.getOrCreateVariableByName(".virtual{12}");
+      		new TypeConstraint(body, new FlatTuple(var__virtual_11_, var__virtual_12_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Scenario", "allowedBounds")));
+      		PVariable var__virtual_13_ = body.getOrCreateVariableByName(".virtual{13}");
+      		new TypeConstraint(body, new FlatTuple(var__virtual_12_, var__virtual_13_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
+      		new Equality(body, var__virtual_13_, var_dim);
+      		// 	Dimension.width(dim, boundx)
+      		new TypeConstraint(body, new FlatTuple(var_dim), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
+      		PVariable var__virtual_14_ = body.getOrCreateVariableByName(".virtual{14}");
+      		new TypeConstraint(body, new FlatTuple(var_dim, var__virtual_14_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "width")));
+      		new Equality(body, var__virtual_14_, var_boundx);
+      		// 	Dimension.height(dim, boundy)
+      		new TypeConstraint(body, new FlatTuple(var_dim), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
+      		PVariable var__virtual_15_ = body.getOrCreateVariableByName(".virtual{15}");
+      		new TypeConstraint(body, new FlatTuple(var_dim, var__virtual_15_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "height")));
+      		new Equality(body, var__virtual_15_, var_boundy);
+      		// 	Dimension.depth(dim, boundz)
+      		new TypeConstraint(body, new FlatTuple(var_dim), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
+      		PVariable var__virtual_16_ = body.getOrCreateVariableByName(".virtual{16}");
+      		new TypeConstraint(body, new FlatTuple(var_dim, var__virtual_16_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
+      		new Equality(body, var__virtual_16_, var_boundz);
+      		// 		DronesSimulation.droneInstances(ds, drone)
+      		new TypeConstraint(body, new FlatTuple(var_ds), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DronesSimulation")));
+      		PVariable var__virtual_17_ = body.getOrCreateVariableByName(".virtual{17}");
+      		new TypeConstraint(body, new FlatTuple(var_ds, var__virtual_17_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DronesSimulation", "droneInstances")));
+      		new Equality(body, var__virtual_17_, var_drone);
+      		// 		check(CollisionHelper.didDroneLeftScene(x,y,z, scenex, sceney, scenez, boundx, boundy, boundz))
+      		new ExpressionEvaluation(body, new IExpressionEvaluator() {
+      		                            
+      		                            @Override
+      		                            public String getShortDescription() {
+      		                                return "Expression evaluation from pattern leftScene";
+      		                            }
+      		
+      		                            @Override
+      		                            public Iterable<String> getInputParameterNames() {
+      		                                return Arrays.asList("boundx", "boundy", "boundz", "scenex", "sceney", "scenez", "x", "y", "z");
+      		                            }
+      		
+      		                            @Override
+      		                            public Object evaluateExpression(IValueProvider provider) throws Exception {
+      		                                    java.lang.Double boundx = (java.lang.Double) provider.getValue("boundx");
+      		                                    java.lang.Double boundy = (java.lang.Double) provider.getValue("boundy");
+      		                                    java.lang.Double boundz = (java.lang.Double) provider.getValue("boundz");
+      		                                    java.lang.Double scenex = (java.lang.Double) provider.getValue("scenex");
+      		                                    java.lang.Double sceney = (java.lang.Double) provider.getValue("sceney");
+      		                                    java.lang.Double scenez = (java.lang.Double) provider.getValue("scenez");
+      		                                    java.lang.Double x = (java.lang.Double) provider.getValue("x");
+      		                                    java.lang.Double y = (java.lang.Double) provider.getValue("y");
+      		                                    java.lang.Double z = (java.lang.Double) provider.getValue("z");
+      		                                    return evaluateExpression_1_1(boundx, boundy, boundz, scenex, sceney, scenez, x, y, z);
+      		                                }
+      		
+      		                        },  null); 
       		bodies.add(body);
       	}
       	// to silence compiler error
@@ -109,5 +232,10 @@ public final class LeftSceneQuerySpecification extends BaseGeneratedEMFQuerySpec
       }
       return bodies;
     }
+  }
+  
+  private static boolean evaluateExpression_1_1(final Double boundx, final Double boundy, final Double boundz, final Double scenex, final Double sceney, final Double scenez, final Double x, final Double y, final Double z) {
+    boolean _didDroneLeftScene = CollisionHelper.didDroneLeftScene((x).doubleValue(), (y).doubleValue(), (z).doubleValue(), (scenex).doubleValue(), (sceney).doubleValue(), (scenez).doubleValue(), (boundx).doubleValue(), (boundy).doubleValue(), (boundz).doubleValue());
+    return _didDroneLeftScene;
   }
 }
