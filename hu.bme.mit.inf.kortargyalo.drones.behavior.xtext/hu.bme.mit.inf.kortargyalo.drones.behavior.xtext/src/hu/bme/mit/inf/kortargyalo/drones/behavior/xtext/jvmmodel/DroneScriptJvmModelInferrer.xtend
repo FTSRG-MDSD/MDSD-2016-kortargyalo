@@ -76,9 +76,7 @@ class DroneScriptJvmModelInferrer extends AbstractModelInferrer {
 				parameters += element.toParameter("droneInstance", typeRef(DroneInstance))
 				parameters += element.toParameter("showInTrace", typeRef(Boolean.TYPE))
 				val params = parameters
-				body = [
-					append('''super(«FOR param : params SEPARATOR ", "»«param.name»«ENDFOR»);''')
-				]
+				body = '''super(«FOR param : params SEPARATOR ", "»«param.name»«ENDFOR»);'''
 			]
 
 			members += element.toMethod("runScript", typeRef(Void.TYPE)) [

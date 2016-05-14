@@ -38,7 +38,7 @@ abstract class DroneSimProcess extends SimProcess {
 		droneInstance.observations
 	}
 	
-	protected final def _moveTo(double x, double y, double z) {
+	protected final def void _moveTo(double x, double y, double z) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")		
 	}
 	

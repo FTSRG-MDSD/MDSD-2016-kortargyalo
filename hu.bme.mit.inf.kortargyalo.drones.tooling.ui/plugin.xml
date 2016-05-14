@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="hu.bme.mit.inf.kortargyalo.drones.tooling.ui.DronesCathegory"
+            class="hu.bme.mit.inf.kortargyalo.drones.tooling.ui.project.NewProjectWizard"
+            finalPerspective="org.eclipse.sirius.ui.tools.perspective.modeling"
+            id="hu.bme.mit.inf.kortargyalo.drones.tooling.ui.NewDronesProjectWizard"
+            name="Drones Simulation Project"
+            project="true">
+      </wizard>
+      <category
+            id="hu.bme.mit.inf.kortargyalo.drones.tooling.ui.DronesCathegory"
+            name="Drones">
+      </category>
+   </extension>
+
+</plugin>

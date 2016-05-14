@@ -28,14 +28,25 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * <p>Original source:
  * <code><pre>
  * pattern leftScene(drone : DroneInstance){
- * 	DroneInstance(drone);
- * //	DronesSimulation(ds);
- * //	DronesSimulation.scenario.allowedBounds.position(ds, pos);
- * //	DronesSimulation.scenario.allowedBounds.dimension(ds, dim);
- * //	DronesSimulation.droneInstances(ds, drone);
+ * 	DroneInstance.position(drone, position);
+ * 	Position.x(position, x);
+ * 	Position.y(position, y);
+ * 	Position.z(position, z);
+ * 	DronesSimulation.droneInstances(ds, drone);
  * 	
- * 	//TODO	check();
+ * 	DronesSimulation.scenario.allowedBounds.position(ds, pos);
+ * 	Position.x(pos, scenex);
+ * 	Position.y(pos, sceney);
+ * 	Position.z(pos, scenez);
+ * 
+ * 	DronesSimulation.scenario.allowedBounds.dimension(ds, dim);
+ * 	Dimension.width(dim, boundx);
+ * 	Dimension.height(dim, boundy);
+ * 	Dimension.depth(dim, boundz);
  * 	
+ * 	DronesSimulation.droneInstances(ds, drone);
+ * 	
+ * 	check(CollisionHelper.didDroneLeftScene(x,y,z, scenex, sceney, scenez, boundx, boundy, boundz));	
  * }
  * </pre></code>
  * 

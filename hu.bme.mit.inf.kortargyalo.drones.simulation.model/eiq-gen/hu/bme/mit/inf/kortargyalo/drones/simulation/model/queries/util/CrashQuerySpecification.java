@@ -106,17 +106,17 @@ public final class CrashQuerySpecification extends BaseGeneratedEMFQuerySpecific
       		PVariable var_drone1positiony = body.getOrCreateVariableByName("drone1positiony");
       		PVariable var_drone1positionz = body.getOrCreateVariableByName("drone1positionz");
       		PVariable var_drone1dimension = body.getOrCreateVariableByName("drone1dimension");
-      		PVariable var_drone1dimensionz = body.getOrCreateVariableByName("drone1dimensionz");
-      		PVariable var_drone1dimensiony = body.getOrCreateVariableByName("drone1dimensiony");
       		PVariable var_drone1dimensionx = body.getOrCreateVariableByName("drone1dimensionx");
+      		PVariable var_drone1dimensiony = body.getOrCreateVariableByName("drone1dimensiony");
+      		PVariable var_drone1dimensionz = body.getOrCreateVariableByName("drone1dimensionz");
       		PVariable var_drone2position = body.getOrCreateVariableByName("drone2position");
       		PVariable var_drone2positionx = body.getOrCreateVariableByName("drone2positionx");
       		PVariable var_drone2positiony = body.getOrCreateVariableByName("drone2positiony");
       		PVariable var_drone2positionz = body.getOrCreateVariableByName("drone2positionz");
       		PVariable var_drone2dimension = body.getOrCreateVariableByName("drone2dimension");
+      		PVariable var_drone2dimensionx = body.getOrCreateVariableByName("drone2dimensionx");
       		PVariable var_drone2dimensionz = body.getOrCreateVariableByName("drone2dimensionz");
       		PVariable var_drone2dimensiony = body.getOrCreateVariableByName("drone2dimensiony");
-      		PVariable var_drone2dimensionx = body.getOrCreateVariableByName("drone2dimensionx");
       		new TypeConstraint(body, new FlatTuple(var_drone1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
       		new TypeConstraint(body, new FlatTuple(var_drone2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
@@ -152,21 +152,21 @@ public final class CrashQuerySpecification extends BaseGeneratedEMFQuerySpecific
       		PVariable var__virtual_6_ = body.getOrCreateVariableByName(".virtual{6}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_5_, var__virtual_6_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "DroneType", "dimension")));
       		new Equality(body, var__virtual_6_, var_drone1dimension);
-      		// 	Dimension.depth(drone1dimension, drone1dimensionz)
+      		// 	Dimension.width(drone1dimension, drone1dimensionx)
       		new TypeConstraint(body, new FlatTuple(var_drone1dimension), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
       		PVariable var__virtual_7_ = body.getOrCreateVariableByName(".virtual{7}");
-      		new TypeConstraint(body, new FlatTuple(var_drone1dimension, var__virtual_7_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
-      		new Equality(body, var__virtual_7_, var_drone1dimensionz);
+      		new TypeConstraint(body, new FlatTuple(var_drone1dimension, var__virtual_7_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "width")));
+      		new Equality(body, var__virtual_7_, var_drone1dimensionx);
       		// 	Dimension.height(drone1dimension, drone1dimensiony)
       		new TypeConstraint(body, new FlatTuple(var_drone1dimension), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
       		PVariable var__virtual_8_ = body.getOrCreateVariableByName(".virtual{8}");
       		new TypeConstraint(body, new FlatTuple(var_drone1dimension, var__virtual_8_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "height")));
       		new Equality(body, var__virtual_8_, var_drone1dimensiony);
-      		// 	Dimension.width(drone1dimension, drone1dimensionx)
+      		// 	Dimension.depth(drone1dimension, drone1dimensionz)
       		new TypeConstraint(body, new FlatTuple(var_drone1dimension), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
       		PVariable var__virtual_9_ = body.getOrCreateVariableByName(".virtual{9}");
-      		new TypeConstraint(body, new FlatTuple(var_drone1dimension, var__virtual_9_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "width")));
-      		new Equality(body, var__virtual_9_, var_drone1dimensionx);
+      		new TypeConstraint(body, new FlatTuple(var_drone1dimension, var__virtual_9_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
+      		new Equality(body, var__virtual_9_, var_drone1dimensionz);
       		// 		DroneInstance.position(drone2,drone2position)
       		new TypeConstraint(body, new FlatTuple(var_drone2), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
       		PVariable var__virtual_10_ = body.getOrCreateVariableByName(".virtual{10}");
@@ -196,22 +196,22 @@ public final class CrashQuerySpecification extends BaseGeneratedEMFQuerySpecific
       		PVariable var__virtual_16_ = body.getOrCreateVariableByName(".virtual{16}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_15_, var__virtual_16_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "DroneType", "dimension")));
       		new Equality(body, var__virtual_16_, var_drone2dimension);
-      		// 	Dimension.depth(drone2dimension, drone2dimensionz)
-      		new TypeConstraint(body, new FlatTuple(var_drone2dimension), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
-      		PVariable var__virtual_17_ = body.getOrCreateVariableByName(".virtual{17}");
-      		new TypeConstraint(body, new FlatTuple(var_drone2dimension, var__virtual_17_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
-      		new Equality(body, var__virtual_17_, var_drone2dimensionz);
-      		// 	Dimension.height(drone2dimension, drone2dimensiony)
-      		new TypeConstraint(body, new FlatTuple(var_drone2dimension), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
-      		PVariable var__virtual_18_ = body.getOrCreateVariableByName(".virtual{18}");
-      		new TypeConstraint(body, new FlatTuple(var_drone2dimension, var__virtual_18_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "height")));
-      		new Equality(body, var__virtual_18_, var_drone2dimensiony);
       		// 	Dimension.width(drone2dimension, drone2dimensionx)
       		new TypeConstraint(body, new FlatTuple(var_drone2dimension), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
+      		PVariable var__virtual_17_ = body.getOrCreateVariableByName(".virtual{17}");
+      		new TypeConstraint(body, new FlatTuple(var_drone2dimension, var__virtual_17_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "width")));
+      		new Equality(body, var__virtual_17_, var_drone2dimensionx);
+      		// 	Dimension.depth(drone2dimension, drone2dimensionz)
+      		new TypeConstraint(body, new FlatTuple(var_drone2dimension), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
+      		PVariable var__virtual_18_ = body.getOrCreateVariableByName(".virtual{18}");
+      		new TypeConstraint(body, new FlatTuple(var_drone2dimension, var__virtual_18_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
+      		new Equality(body, var__virtual_18_, var_drone2dimensionz);
+      		// 	Dimension.height(drone2dimension, drone2dimensiony)
+      		new TypeConstraint(body, new FlatTuple(var_drone2dimension), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension")));
       		PVariable var__virtual_19_ = body.getOrCreateVariableByName(".virtual{19}");
-      		new TypeConstraint(body, new FlatTuple(var_drone2dimension, var__virtual_19_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "width")));
-      		new Equality(body, var__virtual_19_, var_drone2dimensionx);
-      		// 	check(CollisionHelper.collide(drone1positionx,drone1positiony, drone1positionz, drone1dimensionx, drone1dimensiony, drone1dimensionz,drone2positionx, drone2positiony, drone2positionz,drone2dimensionx, drone2dimensiony, drone2dimensionz))
+      		new TypeConstraint(body, new FlatTuple(var_drone2dimension, var__virtual_19_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "height")));
+      		new Equality(body, var__virtual_19_, var_drone2dimensiony);
+      		// 	check(CollisionHelper.doDronesCollide(drone1positionx,drone1positiony, drone1positionz, drone1dimensionx, drone1dimensiony, drone1dimensionz,drone2positionx, drone2positiony, drone2positionz,drone2dimensionx, drone2dimensiony, drone2dimensionz))
       		new ExpressionEvaluation(body, new IExpressionEvaluator() {
       		                            
       		                            @Override
@@ -254,7 +254,7 @@ public final class CrashQuerySpecification extends BaseGeneratedEMFQuerySpecific
   }
   
   private static boolean evaluateExpression_1_1(final Double drone1dimensionx, final Double drone1dimensiony, final Double drone1dimensionz, final Double drone1positionx, final Double drone1positiony, final Double drone1positionz, final Double drone2dimensionx, final Double drone2dimensiony, final Double drone2dimensionz, final Double drone2positionx, final Double drone2positiony, final Double drone2positionz) {
-    boolean _collide = CollisionHelper.collide((drone1positionx).doubleValue(), (drone1positiony).doubleValue(), (drone1positionz).doubleValue(), (drone1dimensionx).doubleValue(), (drone1dimensiony).doubleValue(), (drone1dimensionz).doubleValue(), (drone2positionx).doubleValue(), (drone2positiony).doubleValue(), (drone2positionz).doubleValue(), (drone2dimensionx).doubleValue(), (drone2dimensiony).doubleValue(), (drone2dimensionz).doubleValue());
-    return _collide;
+    boolean _doDronesCollide = CollisionHelper.doDronesCollide((drone1positionx).doubleValue(), (drone1positiony).doubleValue(), (drone1positionz).doubleValue(), (drone1dimensionx).doubleValue(), (drone1dimensiony).doubleValue(), (drone1dimensionz).doubleValue(), (drone2positionx).doubleValue(), (drone2positiony).doubleValue(), (drone2positionz).doubleValue(), (drone2dimensionx).doubleValue(), (drone2dimensiony).doubleValue(), (drone2dimensionz).doubleValue());
+    return _doDronesCollide;
   }
 }
