@@ -617,7 +617,7 @@ public class DroneScriptSemanticSequencer extends XbaseSemanticSequencer {
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getReactionAccess().getSignalSignalQualifiedNameParserRuleCall_1_0_1(), semanticObject.getSignal());
-		feeder.accept(grammarAccess.getReactionAccess().getStatementXExpressionParserRuleCall_2_0(), semanticObject.getStatement());
+		feeder.accept(grammarAccess.getReactionAccess().getStatementXExpressionParserRuleCall_3_0(), semanticObject.getStatement());
 		feeder.finish();
 	}
 	

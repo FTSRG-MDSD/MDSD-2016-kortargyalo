@@ -11,7 +11,7 @@ script for quad1 {
 	while (!accepted) {
 		send letsBuild to quad2
 		wait timeout 120 {
-			on readyToBuild accepted = true
+			on readyToBuild: accepted = true
 		}
 	}
 	println("Hello")

@@ -182,7 +182,7 @@ public class DroneScriptSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) 'typeof' '(' type=[JvmType|QualifiedName]
 	 *     (rule start) (ambiguity) 'wait' 'for' signal=[Signal|QualifiedName]
 	 *     (rule start) (ambiguity) 'wait' 'timeout' timeout=INT
-	 *     (rule start) (ambiguity) 'wait' '{' 'on' 'timeout' onTimeout=XExpression
+	 *     (rule start) (ambiguity) 'wait' '{' 'on' 'timeout' ':' onTimeout=XExpression
 	 *     (rule start) (ambiguity) 'wait' '{' '}' (rule start)
 	 *     (rule start) (ambiguity) 'wait' '{' reactions+=Reaction
 	 *     (rule start) (ambiguity) 'while' '(' predicate=XExpression
@@ -245,7 +245,7 @@ public class DroneScriptSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) 'typeof' '(' type=[JvmType|QualifiedName]
 	 *     (rule start) (ambiguity) 'wait' 'for' signal=[Signal|QualifiedName]
 	 *     (rule start) (ambiguity) 'wait' 'timeout' timeout=INT
-	 *     (rule start) (ambiguity) 'wait' '{' 'on' 'timeout' onTimeout=XExpression
+	 *     (rule start) (ambiguity) 'wait' '{' 'on' 'timeout' ':' onTimeout=XExpression
 	 *     (rule start) (ambiguity) 'wait' '{' '}' ')' (rule start)
 	 *     (rule start) (ambiguity) 'wait' '{' reactions+=Reaction
 	 *     (rule start) (ambiguity) 'while' '(' predicate=XExpression

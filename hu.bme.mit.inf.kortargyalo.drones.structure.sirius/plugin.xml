@@ -7,4 +7,11 @@
 	       name="sirius">
     </component>
   </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.action.CreateScriptAction"
+           id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.createScriptAction">
+     </javaActions>
+  </extension>
 </plugin>

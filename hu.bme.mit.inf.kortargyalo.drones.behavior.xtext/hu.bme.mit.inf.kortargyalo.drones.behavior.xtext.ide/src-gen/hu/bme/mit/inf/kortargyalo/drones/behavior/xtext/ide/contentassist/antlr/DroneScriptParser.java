@@ -287,9 +287,9 @@ public class DroneScriptParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSimpleWaitAccess().getTimeoutAssignment_3_1(), "rule__SimpleWait__TimeoutAssignment_3_1");
 					put(grammarAccess.getComplexWaitAccess().getTimeoutAssignment_2_1(), "rule__ComplexWait__TimeoutAssignment_2_1");
 					put(grammarAccess.getComplexWaitAccess().getReactionsAssignment_4(), "rule__ComplexWait__ReactionsAssignment_4");
-					put(grammarAccess.getComplexWaitAccess().getOnTimeoutAssignment_5_2(), "rule__ComplexWait__OnTimeoutAssignment_5_2");
+					put(grammarAccess.getComplexWaitAccess().getOnTimeoutAssignment_5_3(), "rule__ComplexWait__OnTimeoutAssignment_5_3");
 					put(grammarAccess.getReactionAccess().getSignalAssignment_1(), "rule__Reaction__SignalAssignment_1");
-					put(grammarAccess.getReactionAccess().getStatementAssignment_2(), "rule__Reaction__StatementAssignment_2");
+					put(grammarAccess.getReactionAccess().getStatementAssignment_3(), "rule__Reaction__StatementAssignment_3");
 					put(grammarAccess.getMoveAccess().getDestinationAssignment_2(), "rule__Move__DestinationAssignment_2");
 					put(grammarAccess.getSendSignalAccess().getSignalAssignment_1(), "rule__SendSignal__SignalAssignment_1");
 					put(grammarAccess.getSendSignalAccess().getRecipentAssignment_3(), "rule__SendSignal__RecipentAssignment_3");

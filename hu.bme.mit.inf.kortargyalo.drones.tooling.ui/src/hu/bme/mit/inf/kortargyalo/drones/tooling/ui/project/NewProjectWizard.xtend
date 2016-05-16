@@ -1,6 +1,8 @@
 package hu.bme.mit.inf.kortargyalo.drones.tooling.ui.project
 
+import hu.bme.mit.inf.kortargyalo.drones.tooling.project.CreateDronesProjectOperation
 import java.lang.reflect.InvocationTargetException
+import org.apache.log4j.Logger
 import org.eclipse.core.resources.IProject
 import org.eclipse.core.resources.IWorkspace
 import org.eclipse.core.resources.ResourcesPlugin
@@ -17,6 +19,8 @@ import org.eclipse.ui.dialogs.WizardNewProjectCreationPage
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard
 
 class NewProjectWizard extends Wizard implements INewWizard, IExecutableExtension {
+
+	val logger = Logger.getLogger(NewProjectWizard)
 
 	IConfigurationElement config
 	WizardNewProjectCreationPage projectCreationPage
@@ -56,21 +60,22 @@ class NewProjectWizard extends Wizard implements INewWizard, IExecutableExtensio
 			locationURI = if(projectCreationPage.useDefaults) null else projectCreationPage.locationURI
 		]
 		
-		val op = new CreateProjectOperation(handle, description)
+		val op = new CreateDronesProjectOperation(handle, description)
 		try {
 			container.run(true, true, op)
 		} catch (InterruptedException e) {
-			e.printStackTrace
+			logger.error(e.message, e)
 		} catch (InvocationTargetException e) {
 			if (handle.exists) {
 				try {
 					handle.delete(true, new NullProgressMonitor)
 				} catch (CoreException e1) {
-					// Ignore.
+					logger.error("Exception while deleting Drones Project", e1)
 				}
 			}
-			e.printStackTrace
-			MessageDialog.openError(shell, "Error", e.targetException.message)
+			val message = "Unable to create Drones Project: " + e.targetException.message
+			logger.error(message, e)
+			MessageDialog.openError(shell, "Error", message)
 			return false
 		}
 		

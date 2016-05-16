@@ -1,9 +1,10 @@
-package hu.bme.mit.inf.kortargyalo.drones.tooling.ui.project
+package hu.bme.mit.inf.kortargyalo.drones.tooling.project
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructureFactory
-import hu.bme.mit.inf.kortargyalo.drones.tooling.ui.Activator
+import hu.bme.mit.inf.kortargyalo.drones.tooling.Activator
 import java.lang.reflect.InvocationTargetException
 import java.util.Collections
+import org.apache.log4j.Logger
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IFolder
 import org.eclipse.core.resources.IProject
@@ -27,7 +28,9 @@ import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 import org.osgi.framework.Version
 
 @FinalFieldsConstructor
-package class CreateProjectOperation extends WorkspaceModifyOperation {
+class CreateDronesProjectOperation extends WorkspaceModifyOperation {
+
+	val logger = Logger.getLogger(CreateDronesProjectOperation)
 
 	val IProject project
 	val IProjectDescription description
@@ -90,6 +93,10 @@ package class CreateProjectOperation extends WorkspaceModifyOperation {
 
 			val airdEmfUri = project.getFile("representations.aird").toEmfUri
 			val siriusSession = SessionManager.INSTANCE.getSession(airdEmfUri, null)
+			if (siriusSession == null) {
+				logger.error("Sirius session was not found for project " + project.name)
+				return
+			}
 			val editingDomain = siriusSession.transactionalEditingDomain
 			val commandStack = editingDomain.commandStack
 
@@ -98,6 +105,11 @@ package class CreateProjectOperation extends WorkspaceModifyOperation {
 			// commandStack.execute(new AddSemanticResourceCommand(siriusSession, modelEmfUri, monitor))
 			val viewpoints = ViewpointRegistry.instance.viewpoints.toList
 			val viewpoint = viewpoints.findFirst[name == "hu.bme.mit.inf.kortargyalo.drones.structure.model"]
+			if (viewpoint == null) {
+				logger.error("Structural model viewpoint was not found for project " + project.name)
+				siriusSession.save(monitor)
+				return
+			}
 			commandStack.execute(new ChangeViewpointSelectionCommand(
 				siriusSession,
 				new ViewpointSelectionCallback,
@@ -111,8 +123,23 @@ package class CreateProjectOperation extends WorkspaceModifyOperation {
 				dronesStructure
 			);
 			val diagramDescription = representations.findFirst[name == "DroneStructuralDiagram"]
+			if (diagramDescription == null) {
+				logger.error("Drone Structural Diagram representation was not found for project " + project.name)
+				siriusSession.save(monitor)
+				return
+			}
 			val tableDescription = representations.findFirst[name == "CapabilitiesCrossTable"]
+			if (tableDescription == null) {
+				logger.error("Capabilities Table representation was not found for project " + project.name)
+				siriusSession.save(monitor)
+				return
+			}
 			val resourceInSession = siriusSession.semanticResources.findFirst[URI == modelEmfUri]
+			if (resourceInSession == null) {
+				logger.error("Semantic resource was not found for project " + project.name)
+				siriusSession.save(monitor)
+				return
+			}
 			val rootObject = resourceInSession.contents.get(0)
 			commandStack.execute(new CreateRepresentationCommand(
 				siriusSession,

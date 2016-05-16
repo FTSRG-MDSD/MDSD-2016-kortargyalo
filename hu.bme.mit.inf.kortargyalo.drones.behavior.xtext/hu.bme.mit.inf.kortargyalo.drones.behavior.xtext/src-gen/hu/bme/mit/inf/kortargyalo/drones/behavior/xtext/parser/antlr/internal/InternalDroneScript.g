@@ -560,12 +560,16 @@ ruleComplexWait returns [EObject current=null]
 			{
 				newLeafNode(otherlv_7, grammarAccess.getComplexWaitAccess().getTimeoutKeyword_5_1());
 			}
+			otherlv_8=':'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getComplexWaitAccess().getColonKeyword_5_2());
+			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getComplexWaitAccess().getOnTimeoutXExpressionParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getComplexWaitAccess().getOnTimeoutXExpressionParserRuleCall_5_3_0());
 					}
-					lv_onTimeout_8_0=ruleXExpression
+					lv_onTimeout_9_0=ruleXExpression
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getComplexWaitRule());
@@ -573,16 +577,16 @@ ruleComplexWait returns [EObject current=null]
 						set(
 							$current,
 							"onTimeout",
-							lv_onTimeout_8_0,
+							lv_onTimeout_9_0,
 							"hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.XExpression");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_9='}'
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getComplexWaitAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_10, grammarAccess.getComplexWaitAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -623,12 +627,16 @@ ruleReaction returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2=':'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getReactionAccess().getColonKeyword_2());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getReactionAccess().getStatementXExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getReactionAccess().getStatementXExpressionParserRuleCall_3_0());
 				}
-				lv_statement_2_0=ruleXExpression
+				lv_statement_3_0=ruleXExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getReactionRule());
@@ -636,7 +644,7 @@ ruleReaction returns [EObject current=null]
 					set(
 						$current,
 						"statement",
-						lv_statement_2_0,
+						lv_statement_3_0,
 						"hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.XExpression");
 					afterParserOrEnumRuleCall();
 				}

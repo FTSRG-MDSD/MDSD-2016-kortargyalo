@@ -382,6 +382,12 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="CreateScript" label="Create Script" precondition="aql:views->at(1).semanticElements->at(1).oclIsKindOf(dronesStructure::Drone)">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="CreateScriptAction" id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.createScriptAction"/>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>

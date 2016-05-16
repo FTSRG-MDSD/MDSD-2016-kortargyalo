@@ -32,10 +32,14 @@ class DroneScriptResourceDescriptionStrategy extends XbaseResourceDescriptionStr
 	}
 
 	private def createSignalEObjectDescriptions(Signal signal, IAcceptor<IEObjectDescription> acceptor) {
-		if(qualifiedNameProvider == null) return false
+		if (qualifiedNameProvider == null) {
+			return false
+		}
 		try {
 			val qualifiedName = qualifiedNameProvider.getFullyQualifiedName(signal)
-			// val qualifiedName = qualifiedNameConverter.toQualifiedName(signal.name)
+			if (qualifiedName == null) {
+				return false
+			}
 			val userData = newHashMap
 			val scenario = EcoreUtil2.getContainerOfType(signal, DronesBehavior)?.scenario
 			if (scenario != null) {

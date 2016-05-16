@@ -284,17 +284,18 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cOnKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cTimeoutKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cOnTimeoutAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cOnTimeoutXExpressionParserRuleCall_5_2_0 = (RuleCall)cOnTimeoutAssignment_5_2.eContents().get(0);
+		private final Keyword cColonKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
+		private final Assignment cOnTimeoutAssignment_5_3 = (Assignment)cGroup_5.eContents().get(3);
+		private final RuleCall cOnTimeoutXExpressionParserRuleCall_5_3_0 = (RuleCall)cOnTimeoutAssignment_5_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ComplexWait:
 		//	{ComplexWait} "wait" ("timeout" timeout=INT)? "{"
-		//	reactions+=Reaction* ("on" "timeout" onTimeout=XExpression)?
+		//	reactions+=Reaction* ("on" "timeout" ":" onTimeout=XExpression)?
 		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ComplexWait} "wait" ("timeout" timeout=INT)? "{" reactions+=Reaction* ("on" "timeout" onTimeout=XExpression)? "}"
+		//{ComplexWait} "wait" ("timeout" timeout=INT)? "{" reactions+=Reaction* ("on" "timeout" ":" onTimeout=XExpression)? "}"
 		public Group getGroup() { return cGroup; }
 		
 		//{ComplexWait}
@@ -324,7 +325,7 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//Reaction
 		public RuleCall getReactionsReactionParserRuleCall_4_0() { return cReactionsReactionParserRuleCall_4_0; }
 		
-		//("on" "timeout" onTimeout=XExpression)?
+		//("on" "timeout" ":" onTimeout=XExpression)?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//"on"
@@ -333,11 +334,14 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//"timeout"
 		public Keyword getTimeoutKeyword_5_1() { return cTimeoutKeyword_5_1; }
 		
+		//":"
+		public Keyword getColonKeyword_5_2() { return cColonKeyword_5_2; }
+		
 		//onTimeout=XExpression
-		public Assignment getOnTimeoutAssignment_5_2() { return cOnTimeoutAssignment_5_2; }
+		public Assignment getOnTimeoutAssignment_5_3() { return cOnTimeoutAssignment_5_3; }
 		
 		//XExpression
-		public RuleCall getOnTimeoutXExpressionParserRuleCall_5_2_0() { return cOnTimeoutXExpressionParserRuleCall_5_2_0; }
+		public RuleCall getOnTimeoutXExpressionParserRuleCall_5_3_0() { return cOnTimeoutXExpressionParserRuleCall_5_3_0; }
 		
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
@@ -349,14 +353,15 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cSignalAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cSignalSignalCrossReference_1_0 = (CrossReference)cSignalAssignment_1.eContents().get(0);
 		private final RuleCall cSignalSignalQualifiedNameParserRuleCall_1_0_1 = (RuleCall)cSignalSignalCrossReference_1_0.eContents().get(1);
-		private final Assignment cStatementAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cStatementXExpressionParserRuleCall_2_0 = (RuleCall)cStatementAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStatementAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStatementXExpressionParserRuleCall_3_0 = (RuleCall)cStatementAssignment_3.eContents().get(0);
 		
 		//Reaction:
-		//	"on" signal=[Signal|QualifiedName] statement=XExpression;
+		//	"on" signal=[Signal|QualifiedName] ":" statement=XExpression;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"on" signal=[Signal|QualifiedName] statement=XExpression
+		//"on" signal=[Signal|QualifiedName] ":" statement=XExpression
 		public Group getGroup() { return cGroup; }
 		
 		//"on"
@@ -371,11 +376,14 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getSignalSignalQualifiedNameParserRuleCall_1_0_1() { return cSignalSignalQualifiedNameParserRuleCall_1_0_1; }
 		
+		//":"
+		public Keyword getColonKeyword_2() { return cColonKeyword_2; }
+		
 		//statement=XExpression
-		public Assignment getStatementAssignment_2() { return cStatementAssignment_2; }
+		public Assignment getStatementAssignment_3() { return cStatementAssignment_3; }
 		
 		//XExpression
-		public RuleCall getStatementXExpressionParserRuleCall_2_0() { return cStatementXExpressionParserRuleCall_2_0; }
+		public RuleCall getStatementXExpressionParserRuleCall_3_0() { return cStatementXExpressionParserRuleCall_3_0; }
 	}
 	public class MoveElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.DroneScript.Move");
@@ -785,7 +793,7 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ComplexWait:
 	//	{ComplexWait} "wait" ("timeout" timeout=INT)? "{"
-	//	reactions+=Reaction* ("on" "timeout" onTimeout=XExpression)?
+	//	reactions+=Reaction* ("on" "timeout" ":" onTimeout=XExpression)?
 	//	"}";
 	public ComplexWaitElements getComplexWaitAccess() {
 		return pComplexWait;
@@ -796,7 +804,7 @@ public class DroneScriptGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Reaction:
-	//	"on" signal=[Signal|QualifiedName] statement=XExpression;
+	//	"on" signal=[Signal|QualifiedName] ":" statement=XExpression;
 	public ReactionElements getReactionAccess() {
 		return pReaction;
 	}

@@ -29,11 +29,11 @@ SimpleWait:
 ComplexWait:
 	{ComplexWait} "wait" ("timeout" timeout=INT)? "{"
 	reactions+=Reaction*
-	("on" "timeout" onTimeout=XExpression)?
+	("on" "timeout" ":" onTimeout=XExpression)?
 	"}";
 
 Reaction:
-	"on" signal=[Signal|QualifiedName] statement=XExpression;
+	"on" signal=[Signal|QualifiedName] ":" statement=XExpression;
 
 Move:
 	"move" "to" destination=Position;
