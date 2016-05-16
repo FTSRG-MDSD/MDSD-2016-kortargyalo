@@ -280,7 +280,7 @@ public class CollisionWithObjectMatcher extends BaseMatcher<CollisionWithObjectM
   @Override
   protected CollisionWithObjectMatch tupleToMatch(final Tuple t) {
     try {
-    	return CollisionWithObjectMatch.newMatch((DroneInstance) t.get(POSITION_DRONE), (Obstacle) t.get(POSITION_OBJECT));
+    	return CollisionWithObjectMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) t.get(POSITION_DRONE), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle) t.get(POSITION_OBJECT));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -290,7 +290,7 @@ public class CollisionWithObjectMatcher extends BaseMatcher<CollisionWithObjectM
   @Override
   protected CollisionWithObjectMatch arrayToMatch(final Object[] match) {
     try {
-    	return CollisionWithObjectMatch.newMatch((DroneInstance) match[POSITION_DRONE], (Obstacle) match[POSITION_OBJECT]);
+    	return CollisionWithObjectMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle) match[POSITION_OBJECT]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -300,7 +300,7 @@ public class CollisionWithObjectMatcher extends BaseMatcher<CollisionWithObjectM
   @Override
   protected CollisionWithObjectMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return CollisionWithObjectMatch.newMutableMatch((DroneInstance) match[POSITION_DRONE], (Obstacle) match[POSITION_OBJECT]);
+    	return CollisionWithObjectMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle) match[POSITION_OBJECT]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

@@ -8,3 +8,5 @@
 /.LeftSceneQuerySpecification.java._trace
 /.CollisionWithObjectProcessor.java._trace
 /.CollisionWithObjectQuerySpecification.java._trace
+/CollisionWithObjectProcessor.java
+/CollisionWithObjectQuerySpecification.java
