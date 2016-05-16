@@ -325,7 +325,7 @@ public class NegativeCostProvidedCapabilityMatcher extends BaseMatcher<NegativeC
   @Override
   protected NegativeCostProvidedCapabilityMatch tupleToMatch(final Tuple t) {
     try {
-    	return NegativeCostProvidedCapabilityMatch.newMatch((ProvidedCapability) t.get(POSITION_PROVIDEDCAPABILITY), (Capability) t.get(POSITION_CAPABILITY), (DroneType) t.get(POSITION_DRONETYPE));
+    	return NegativeCostProvidedCapabilityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) t.get(POSITION_PROVIDEDCAPABILITY), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) t.get(POSITION_CAPABILITY), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -335,7 +335,7 @@ public class NegativeCostProvidedCapabilityMatcher extends BaseMatcher<NegativeC
   @Override
   protected NegativeCostProvidedCapabilityMatch arrayToMatch(final Object[] match) {
     try {
-    	return NegativeCostProvidedCapabilityMatch.newMatch((ProvidedCapability) match[POSITION_PROVIDEDCAPABILITY], (Capability) match[POSITION_CAPABILITY], (DroneType) match[POSITION_DRONETYPE]);
+    	return NegativeCostProvidedCapabilityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) match[POSITION_PROVIDEDCAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) match[POSITION_CAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -345,7 +345,7 @@ public class NegativeCostProvidedCapabilityMatcher extends BaseMatcher<NegativeC
   @Override
   protected NegativeCostProvidedCapabilityMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NegativeCostProvidedCapabilityMatch.newMutableMatch((ProvidedCapability) match[POSITION_PROVIDEDCAPABILITY], (Capability) match[POSITION_CAPABILITY], (DroneType) match[POSITION_DRONETYPE]);
+    	return NegativeCostProvidedCapabilityMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) match[POSITION_PROVIDEDCAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) match[POSITION_CAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

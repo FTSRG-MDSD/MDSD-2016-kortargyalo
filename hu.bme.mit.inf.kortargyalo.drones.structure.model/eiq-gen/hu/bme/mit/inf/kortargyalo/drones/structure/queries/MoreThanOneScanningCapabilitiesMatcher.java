@@ -198,7 +198,7 @@ public class MoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<MoreThan
   @Override
   protected MoreThanOneScanningCapabilitiesMatch tupleToMatch(final Tuple t) {
     try {
-    	return MoreThanOneScanningCapabilitiesMatch.newMatch((DroneType) t.get(POSITION_DRONETYPE));
+    	return MoreThanOneScanningCapabilitiesMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -208,7 +208,7 @@ public class MoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<MoreThan
   @Override
   protected MoreThanOneScanningCapabilitiesMatch arrayToMatch(final Object[] match) {
     try {
-    	return MoreThanOneScanningCapabilitiesMatch.newMatch((DroneType) match[POSITION_DRONETYPE]);
+    	return MoreThanOneScanningCapabilitiesMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -218,7 +218,7 @@ public class MoreThanOneScanningCapabilitiesMatcher extends BaseMatcher<MoreThan
   @Override
   protected MoreThanOneScanningCapabilitiesMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return MoreThanOneScanningCapabilitiesMatch.newMutableMatch((DroneType) match[POSITION_DRONETYPE]);
+    	return MoreThanOneScanningCapabilitiesMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

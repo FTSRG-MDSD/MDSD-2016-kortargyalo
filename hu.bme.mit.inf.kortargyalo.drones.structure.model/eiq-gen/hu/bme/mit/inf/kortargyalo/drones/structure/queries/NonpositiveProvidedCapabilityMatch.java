@@ -63,15 +63,15 @@ public abstract class NonpositiveProvidedCapabilityMatch extends BasePatternMatc
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("ProvidedCapability".equals(parameterName) ) {
-    	this.fProvidedCapability = (ProvidedCapability) newValue;
+    	this.fProvidedCapability = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) newValue;
     	return true;
     }
     if ("Capability".equals(parameterName) ) {
-    	this.fCapability = (Capability) newValue;
+    	this.fCapability = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) newValue;
     	return true;
     }
     if ("DroneType".equals(parameterName) ) {
-    	this.fDroneType = (DroneType) newValue;
+    	this.fDroneType = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) newValue;
     	return true;
     }
     return false;

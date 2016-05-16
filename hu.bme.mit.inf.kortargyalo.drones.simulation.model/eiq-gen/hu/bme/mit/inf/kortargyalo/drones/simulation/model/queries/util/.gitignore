@@ -10,3 +10,11 @@
 /.CollisionWithObjectQuerySpecification.java._trace
 /CollisionWithObjectProcessor.java
 /CollisionWithObjectQuerySpecification.java
+/AllRoleFilledProcessor.java
+/AllRoleFilledQuerySpecification.java
+/NotAllRoleFilledQuerySpecification.java
+/RoleFilledQuerySpecification.java
+/CrashProcessor.java
+/CrashQuerySpecification.java
+/LeftSceneProcessor.java
+/LeftSceneQuerySpecification.java

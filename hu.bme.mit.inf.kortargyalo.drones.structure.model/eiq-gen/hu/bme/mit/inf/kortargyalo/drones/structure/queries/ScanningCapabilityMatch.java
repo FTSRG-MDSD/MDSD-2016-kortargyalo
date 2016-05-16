@@ -54,11 +54,11 @@ public abstract class ScanningCapabilityMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("This".equals(parameterName) ) {
-    	this.fThis = (DroneType) newValue;
+    	this.fThis = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) newValue;
     	return true;
     }
     if ("Target".equals(parameterName) ) {
-    	this.fTarget = (ProvidedCapability) newValue;
+    	this.fTarget = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.ProvidedCapability) newValue;
     	return true;
     }
     return false;

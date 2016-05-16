@@ -196,7 +196,7 @@ public class NotOneMovementCapabilityProvidedMatcher extends BaseMatcher<NotOneM
   @Override
   protected NotOneMovementCapabilityProvidedMatch tupleToMatch(final Tuple t) {
     try {
-    	return NotOneMovementCapabilityProvidedMatch.newMatch((DroneType) t.get(POSITION_DRONETYPE));
+    	return NotOneMovementCapabilityProvidedMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -206,7 +206,7 @@ public class NotOneMovementCapabilityProvidedMatcher extends BaseMatcher<NotOneM
   @Override
   protected NotOneMovementCapabilityProvidedMatch arrayToMatch(final Object[] match) {
     try {
-    	return NotOneMovementCapabilityProvidedMatch.newMatch((DroneType) match[POSITION_DRONETYPE]);
+    	return NotOneMovementCapabilityProvidedMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -216,7 +216,7 @@ public class NotOneMovementCapabilityProvidedMatcher extends BaseMatcher<NotOneM
   @Override
   protected NotOneMovementCapabilityProvidedMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NotOneMovementCapabilityProvidedMatch.newMutableMatch((DroneType) match[POSITION_DRONETYPE]);
+    	return NotOneMovementCapabilityProvidedMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

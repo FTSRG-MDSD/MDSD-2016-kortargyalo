@@ -197,7 +197,7 @@ public class NonpositiveWeightMatcher extends BaseMatcher<NonpositiveWeightMatch
   @Override
   protected NonpositiveWeightMatch tupleToMatch(final Tuple t) {
     try {
-    	return NonpositiveWeightMatch.newMatch((DroneType) t.get(POSITION_DRONETYPE));
+    	return NonpositiveWeightMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -207,7 +207,7 @@ public class NonpositiveWeightMatcher extends BaseMatcher<NonpositiveWeightMatch
   @Override
   protected NonpositiveWeightMatch arrayToMatch(final Object[] match) {
     try {
-    	return NonpositiveWeightMatch.newMatch((DroneType) match[POSITION_DRONETYPE]);
+    	return NonpositiveWeightMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -217,7 +217,7 @@ public class NonpositiveWeightMatcher extends BaseMatcher<NonpositiveWeightMatch
   @Override
   protected NonpositiveWeightMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NonpositiveWeightMatch.newMutableMatch((DroneType) match[POSITION_DRONETYPE]);
+    	return NonpositiveWeightMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

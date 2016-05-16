@@ -45,7 +45,7 @@ public abstract class NonpositiveDimensionMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("Dimension".equals(parameterName) ) {
-    	this.fDimension = (Dimension) newValue;
+    	this.fDimension = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Dimension) newValue;
     	return true;
     }
     return false;
