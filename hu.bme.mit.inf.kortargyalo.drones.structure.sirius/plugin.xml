@@ -13,5 +13,17 @@
            actionClass="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.action.CreateScriptAction"
            id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.createScriptAction">
      </javaActions>
+     <javaActions
+           actionClass="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.action.LaunchSimulationAction"
+           id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.launchSimulationAction">
+     </javaActions>
+     <javaActions
+           actionClass="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.action.DebugSimulationAction"
+           id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.debugSimulationAction">
+     </javaActions>
+     <javaActions
+           actionClass="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.action.LaunchSimulationAction"
+           id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.debugSimulationAction">
+     </javaActions>
   </extension>
 </plugin>

@@ -388,6 +388,18 @@
               <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="CreateScriptAction" id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.createScriptAction"/>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="RunSimulation" label="Run Simulation" precondition="aql:views->at(1).semanticElements->at(1).oclIsKindOf(dronesStructure::Scenario)">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="LaunchSimulationAction" id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.launchSimulationAction"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:OperationAction" name="DebugSimulation" label="Debug Simulation" precondition="aql:views->at(1).semanticElements->at(1).oclIsKindOf(dronesStructure::Scenario)">
+            <view name="views"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="DebugSimulationAction" id="hu.bme.mit.inf.kortargyalo.drones.structure.sirius.debugSimulationAction"/>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>

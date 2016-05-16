@@ -2,16 +2,15 @@ package hu.bme.mit.inf.kortargyalo.drones.tooling.behavior
 
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Drone
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario
+import hu.bme.mit.inf.kortargyalo.drones.tooling.util.ToolingUtil
 import java.io.ByteArrayInputStream
 import java.lang.reflect.InvocationTargetException
 import java.nio.charset.StandardCharsets
 import org.apache.log4j.Logger
 import org.eclipse.core.resources.IFile
 import org.eclipse.core.resources.IFolder
-import org.eclipse.core.resources.ResourcesPlugin
 import org.eclipse.core.runtime.CoreException
 import org.eclipse.core.runtime.IProgressMonitor
-import org.eclipse.core.runtime.Path
 import org.eclipse.ui.actions.WorkspaceModifyOperation
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor
 
@@ -33,15 +32,8 @@ class CreateBehaviorModelOperation extends WorkspaceModifyOperation {
 		monitor.beginTask("Create behavior model", IProgressMonitor.UNKNOWN)
 		
 		try {	
-			val uri = drone.eResource?.URI
-			if (uri == null || !uri.platformResource) {
-				logger.error("URI " + uri + " is not a platform resource URI, cannot find the corresponding project")
-				return
-			}
-			// https://www.eclipse.org/forums/index.php?t=msg&th=1066967&goto=1696822&#msg_1696822
-			val project = ResourcesPlugin.workspace.root.getFile(new Path(uri.toPlatformString(true))).project
+			val project = ToolingUtil.getProject(drone.eResource?.URI)
 			if (project == null) {
-				logger.error("Resource " + uri + " is not in a project")
 				return
 			}
 	
