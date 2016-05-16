@@ -191,7 +191,7 @@ public class AllRoleFilledMatcher extends BaseMatcher<AllRoleFilledMatch> {
   @Override
   protected AllRoleFilledMatch tupleToMatch(final Tuple t) {
     try {
-    	return AllRoleFilledMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance) t.get(POSITION_T));
+    	return AllRoleFilledMatch.newMatch((TaskInstance) t.get(POSITION_T));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -201,7 +201,7 @@ public class AllRoleFilledMatcher extends BaseMatcher<AllRoleFilledMatch> {
   @Override
   protected AllRoleFilledMatch arrayToMatch(final Object[] match) {
     try {
-    	return AllRoleFilledMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance) match[POSITION_T]);
+    	return AllRoleFilledMatch.newMatch((TaskInstance) match[POSITION_T]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -211,7 +211,7 @@ public class AllRoleFilledMatcher extends BaseMatcher<AllRoleFilledMatch> {
   @Override
   protected AllRoleFilledMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return AllRoleFilledMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance) match[POSITION_T]);
+    	return AllRoleFilledMatch.newMutableMatch((TaskInstance) match[POSITION_T]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

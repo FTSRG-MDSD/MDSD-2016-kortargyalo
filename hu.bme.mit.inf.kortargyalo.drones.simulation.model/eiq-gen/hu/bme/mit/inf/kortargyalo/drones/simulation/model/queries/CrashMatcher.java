@@ -281,7 +281,7 @@ public class CrashMatcher extends BaseMatcher<CrashMatch> {
   @Override
   protected CrashMatch tupleToMatch(final Tuple t) {
     try {
-    	return CrashMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) t.get(POSITION_DRONE1), (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) t.get(POSITION_DRONE2));
+    	return CrashMatch.newMatch((DroneInstance) t.get(POSITION_DRONE1), (DroneInstance) t.get(POSITION_DRONE2));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -291,7 +291,7 @@ public class CrashMatcher extends BaseMatcher<CrashMatch> {
   @Override
   protected CrashMatch arrayToMatch(final Object[] match) {
     try {
-    	return CrashMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE1], (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE2]);
+    	return CrashMatch.newMatch((DroneInstance) match[POSITION_DRONE1], (DroneInstance) match[POSITION_DRONE2]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -301,7 +301,7 @@ public class CrashMatcher extends BaseMatcher<CrashMatch> {
   @Override
   protected CrashMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return CrashMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE1], (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE2]);
+    	return CrashMatch.newMutableMatch((DroneInstance) match[POSITION_DRONE1], (DroneInstance) match[POSITION_DRONE2]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

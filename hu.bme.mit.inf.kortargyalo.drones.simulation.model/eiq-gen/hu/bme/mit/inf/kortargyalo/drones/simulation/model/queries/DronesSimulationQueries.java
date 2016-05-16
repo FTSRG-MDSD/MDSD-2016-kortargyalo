@@ -1,9 +1,11 @@
 package hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries;
 
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.AllRoleFilledMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CollisionWithObjectMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CrashMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.LeftSceneMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.AllRoleFilledQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.CollisionWithObjectQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.CrashQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.LeftSceneQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
@@ -23,6 +25,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * <li>allRoleFilled</li>
  * <li>crash</li>
  * <li>leftScene</li>
+ * <li>collisionWithObject</li>
  * </ul>
  * 
  * @see IPatternGroup
@@ -50,6 +53,7 @@ public final class DronesSimulationQueries extends BaseGeneratedPatternGroup {
     querySpecifications.add(AllRoleFilledQuerySpecification.instance());
     querySpecifications.add(CrashQuerySpecification.instance());
     querySpecifications.add(LeftSceneQuerySpecification.instance());
+    querySpecifications.add(CollisionWithObjectQuerySpecification.instance());
   }
   
   public AllRoleFilledQuerySpecification getAllRoleFilled() throws IncQueryException {
@@ -74,5 +78,13 @@ public final class DronesSimulationQueries extends BaseGeneratedPatternGroup {
   
   public LeftSceneMatcher getLeftScene(final IncQueryEngine engine) throws IncQueryException {
     return LeftSceneMatcher.on(engine);
+  }
+  
+  public CollisionWithObjectQuerySpecification getCollisionWithObject() throws IncQueryException {
+    return CollisionWithObjectQuerySpecification.instance();
+  }
+  
+  public CollisionWithObjectMatcher getCollisionWithObject(final IncQueryEngine engine) throws IncQueryException {
+    return CollisionWithObjectMatcher.on(engine);
   }
 }

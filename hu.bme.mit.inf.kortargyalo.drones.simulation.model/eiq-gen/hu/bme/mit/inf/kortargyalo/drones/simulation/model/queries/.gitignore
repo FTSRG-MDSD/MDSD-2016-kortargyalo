@@ -5,3 +5,5 @@
 /.DronesSimulationQueries.java._trace
 /.LeftSceneMatch.java._trace
 /.LeftSceneMatcher.java._trace
+/.CollisionWithObjectMatch.java._trace
+/.CollisionWithObjectMatcher.java._trace
