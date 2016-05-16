@@ -8,7 +8,7 @@ abstract class DroneSimProcess extends SimProcess {
 	
 	val DronesSimModel dronesOwner
 	
-	val DroneInstance droneInstance
+	package val DroneInstance droneInstance
 	
 	new(DronesSimModel owner, DroneInstance droneInstance, boolean showInTrace) {
 		super(owner, droneInstance.drone.name, showInTrace)

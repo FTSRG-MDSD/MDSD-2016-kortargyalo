@@ -8,8 +8,10 @@ Require-Bundle: org.eclipse.core.runtime,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtend.lib,
- org.eclipse.xtend.lib.macro
+ org.eclipse.xtend.lib.macro,
+ hu.bme.mit.inf.kortargyalo.drones.simulation.runtime;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: hu.bme.mit.inf.kortargyalo.drones.simulation.application
+Import-Package: org.apache.log4j;version="1.2.15"
 
