@@ -76,6 +76,7 @@ class SimulationLaunchConfiguration {
 			setAttribute(IPDELauncherConstants.AUTOMATIC_ADD, true)
 			setAttribute(IPDELauncherConstants.AUTOMATIC_VALIDATE, false)
 			var programArguments = LaunchArgumentsHelper.initialProgramArguments
+			programArguments += " -droneOutput ${workspace_loc}/" + project.name
 			programArguments += " -droneBundle " + bundleName
 			programArguments += ''' -droneModel platform:/plugin/«bundleName»/«modelFile.projectRelativePath»'''
 			programArguments += " -droneScenario " + scenario.name

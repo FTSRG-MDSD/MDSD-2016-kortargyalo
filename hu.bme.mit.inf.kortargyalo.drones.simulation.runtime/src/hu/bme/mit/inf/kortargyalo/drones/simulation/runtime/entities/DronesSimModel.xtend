@@ -22,11 +22,14 @@ class DronesSimModel extends Model {
 	}
 	
 	override description() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		'''Simulation for the «scenario.name» scenario'''
 	}
 	
 	override doInitialSchedules() {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+		for (droneProcess : droneProcessesMap.values) {
+			droneProcess.activate
+		}
+		// TODO Schedule tasks and time ticks
 	}
 	
 	override init() {

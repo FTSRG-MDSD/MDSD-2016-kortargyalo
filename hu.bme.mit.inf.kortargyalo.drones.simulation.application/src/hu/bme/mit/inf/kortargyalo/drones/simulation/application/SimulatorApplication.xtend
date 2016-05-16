@@ -23,12 +23,17 @@ class SimulatorApplication implements IApplication {
 		val args = context.arguments
 		val appArgs = args.get("application.args") as String[]
 		var iterator = appArgs.iterator
+		var String outputPath
 		var String bundleId
 		var URI modelURI
 		var String scenarioName
 		while (iterator.hasNext) {
 			val arg = iterator.next
 			switch (arg) {
+				case "-droneOutput":
+					if (iterator.hasNext) {
+						outputPath = iterator.next
+					}
 				case "-droneBundle":
 					if (iterator.hasNext) {
 						bundleId = iterator.next
@@ -49,7 +54,9 @@ class SimulatorApplication implements IApplication {
 					logger.warn("Unexpected argument: " + arg)
 			}
 		}
-		if (bundleId == null) {
+		if (outputPath == null) {
+			logger.error("Output path -droneOutput is required")
+		} else if (bundleId == null) {
 			logger.error("Bundle ID -droneBundle is required")
 		} else if (modelURI == null) {
 			logger.error("Model URI -droneModel is required")
@@ -57,7 +64,7 @@ class SimulatorApplication implements IApplication {
 			logger.error("Scenario name -droneScenario is required")
 		} else {
 			try {
-				runSimulator(bundleId, modelURI, scenarioName)
+				runSimulator(outputPath, bundleId, modelURI, scenarioName)
 			} catch (Exception e) {
 				// Exceptions should not bubble up to the platform.
 				logger.error(e.message, e)
@@ -70,12 +77,12 @@ class SimulatorApplication implements IApplication {
 		// Nothing to do.
 	}
 
-	private def runSimulator(String bundleId, URI modelURI, String scenarioName) {
+	private def runSimulator(String outputPath, String bundleId, URI modelURI, String scenarioName) {
 		val droneClassLoader = getDroneClassLoader(bundleId)
 		val scenario = getScenario(modelURI, scenarioName)
 		val droneLoader = new ClassLoaderDroneLoader(droneClassLoader)
 		val model = new DronesSimModel(null, scenario, droneLoader, true, true)
-		val experiment = new Experiment("drones")
+		val experiment = new Experiment(scenario.name, outputPath)
 		model.connectToExperiment(experiment)
 		experiment.start
 	}
