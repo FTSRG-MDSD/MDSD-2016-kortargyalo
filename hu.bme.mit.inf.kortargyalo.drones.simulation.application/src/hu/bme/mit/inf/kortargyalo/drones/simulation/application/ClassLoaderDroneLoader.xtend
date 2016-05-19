@@ -19,7 +19,7 @@ package class ClassLoaderDroneLoader implements DroneLoader {
 			throw new RuntimeException("Drone is contained in a scenario")
 		}
 		val scenario = eContainer as Scenario
-		val className = '''«scenario.name».«drone.name»_SimProcess'''
+		val className = '''Â«scenario.nameÂ».Â«drone.nameÂ»_SimProcess'''
 		val klazz = classLoader.loadClass(className)
 		val constructor = klazz.getConstructor(DronesSimModel, DroneInstance, Boolean.TYPE)
 		constructor.newInstance(model, droneInstance, showInTrace) as DroneSimProcess 
