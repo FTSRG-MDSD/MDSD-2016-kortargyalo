@@ -67,11 +67,29 @@ public final class NonpositiveStartTimeoutQuerySpecification extends BaseGenerat
     return NonpositiveStartTimeoutMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) parameters[0]);
   }
   
+  /**
+   * Inner class allowing the singleton instance of {@link NonpositiveStartTimeoutQuerySpecification} to be created 
+   * 	<b>not</b> at the class load time of the outer class, 
+   * 	but rather at the first call to {@link NonpositiveStartTimeoutQuerySpecification#instance()}.
+   * 
+   * <p> This workaround is required e.g. to support recursion.
+   * 
+   */
   private static class LazyHolder {
-    private final static NonpositiveStartTimeoutQuerySpecification INSTANCE = make();
+    private final static NonpositiveStartTimeoutQuerySpecification INSTANCE = new NonpositiveStartTimeoutQuerySpecification();
     
-    public static NonpositiveStartTimeoutQuerySpecification make() {
-      return new NonpositiveStartTimeoutQuerySpecification();					
+    /**
+     * Statically initializes the query specification <b>after</b> the field {@link #INSTANCE} is assigned.
+     * This initialization order is required to support indirect recursion.
+     * 
+     * <p> The static initializer is defined using a helper field to work around limitations of the code generator.
+     * 
+     */
+    private final static Object STATIC_INITIALIZER = ensureInitialized();
+    
+    public static Object ensureInitialized() {
+      INSTANCE.ensureInitializedInternalSneaky();
+      return null;					
     }
   }
   

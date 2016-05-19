@@ -29,4 +29,3 @@ Export-Package: hu.bme.mit.inf.kortargyalo.drones.tooling.behavior,
  hu.bme.mit.inf.kortargyalo.drones.tooling.launching,
  hu.bme.mit.inf.kortargyalo.drones.tooling.project
 Import-Package: org.apache.log4j;version="1.2.15"
-

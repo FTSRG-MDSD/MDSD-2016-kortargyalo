@@ -41,7 +41,7 @@ class CreateDronesProjectOperation extends WorkspaceModifyOperation {
 		try {
 			val srcPath = new Path("src/")
 			val srcGenPath = new Path("src-gen/")
-			val modelFileName = '''«description.name».dronesstructure'''
+			val modelFileName = '''Â«description.nameÂ».dronesstructure'''
 
 			val context = Activator.context
 			val ref = context.getServiceReference(IBundleProjectService)

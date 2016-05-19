@@ -198,7 +198,7 @@ public class DurationTooShortMatcher extends BaseMatcher<DurationTooShortMatch> 
   @Override
   protected DurationTooShortMatch tupleToMatch(final Tuple t) {
     try {
-    	return DurationTooShortMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) t.get(POSITION_ACTION));
+    	return DurationTooShortMatch.newMatch((CooperativeAction) t.get(POSITION_ACTION));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -208,7 +208,7 @@ public class DurationTooShortMatcher extends BaseMatcher<DurationTooShortMatch> 
   @Override
   protected DurationTooShortMatch arrayToMatch(final Object[] match) {
     try {
-    	return DurationTooShortMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) match[POSITION_ACTION]);
+    	return DurationTooShortMatch.newMatch((CooperativeAction) match[POSITION_ACTION]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -218,7 +218,7 @@ public class DurationTooShortMatcher extends BaseMatcher<DurationTooShortMatch> 
   @Override
   protected DurationTooShortMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return DurationTooShortMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) match[POSITION_ACTION]);
+    	return DurationTooShortMatch.newMutableMatch((CooperativeAction) match[POSITION_ACTION]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

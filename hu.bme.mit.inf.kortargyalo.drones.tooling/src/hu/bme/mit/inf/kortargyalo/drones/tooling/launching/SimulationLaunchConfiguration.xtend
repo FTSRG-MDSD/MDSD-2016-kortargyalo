@@ -45,7 +45,7 @@ class SimulationLaunchConfiguration {
 		val launchManager = DebugPlugin.^default.launchManager
 		val pdeLauncherType = launchManager.getLaunchConfigurationType(
 			IPDELauncherConstants.ECLIPSE_APPLICATION_LAUNCH_CONFIGURATION_TYPE)
-		val name = '''Simulate «project.name».«scenario.name»'''
+		val name = '''Simulate Â«project.nameÂ».Â«scenario.nameÂ»'''
 		launchConfig = launchManager.getLaunchConfigurations(pdeLauncherType).findFirst[it.name == name]
 		if (launchConfig != null) {
 			// Found existing launch configuration, reuse it.
@@ -78,7 +78,7 @@ class SimulationLaunchConfiguration {
 			var programArguments = LaunchArgumentsHelper.initialProgramArguments
 			programArguments += " -droneOutput ${workspace_loc}/" + project.name
 			programArguments += " -droneBundle " + bundleName
-			programArguments += ''' -droneModel platform:/plugin/«bundleName»/«modelFile.projectRelativePath»'''
+			programArguments += ''' -droneModel platform:/plugin/Â«bundleNameÂ»/Â«modelFile.projectRelativePathÂ»'''
 			programArguments += " -droneScenario " + scenario.name
 			setAttribute(IJavaLaunchConfigurationConstants.ATTR_PROGRAM_ARGUMENTS, programArguments)
 			setAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS, LaunchArgumentsHelper.initialVMArguments)
@@ -90,7 +90,7 @@ class SimulationLaunchConfiguration {
 		val config = workingCopy.doSave
 		LauncherUtils.validateProjectDependencies(config, new NullProgressMonitor)
 		config
-	}
+	} 
 
 //	private def findDepdendecies() {
 //		// This does not work, because Xbase has some dependencies that do not get added.

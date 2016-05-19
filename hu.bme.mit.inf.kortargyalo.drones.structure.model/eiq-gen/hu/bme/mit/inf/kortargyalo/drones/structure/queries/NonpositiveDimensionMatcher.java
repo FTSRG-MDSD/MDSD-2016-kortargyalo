@@ -201,7 +201,7 @@ public class NonpositiveDimensionMatcher extends BaseMatcher<NonpositiveDimensio
   @Override
   protected NonpositiveDimensionMatch tupleToMatch(final Tuple t) {
     try {
-    	return NonpositiveDimensionMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Dimension) t.get(POSITION_DIMENSION));
+    	return NonpositiveDimensionMatch.newMatch((Dimension) t.get(POSITION_DIMENSION));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -211,7 +211,7 @@ public class NonpositiveDimensionMatcher extends BaseMatcher<NonpositiveDimensio
   @Override
   protected NonpositiveDimensionMatch arrayToMatch(final Object[] match) {
     try {
-    	return NonpositiveDimensionMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Dimension) match[POSITION_DIMENSION]);
+    	return NonpositiveDimensionMatch.newMatch((Dimension) match[POSITION_DIMENSION]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -221,7 +221,7 @@ public class NonpositiveDimensionMatcher extends BaseMatcher<NonpositiveDimensio
   @Override
   protected NonpositiveDimensionMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NonpositiveDimensionMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Dimension) match[POSITION_DIMENSION]);
+    	return NonpositiveDimensionMatch.newMutableMatch((Dimension) match[POSITION_DIMENSION]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

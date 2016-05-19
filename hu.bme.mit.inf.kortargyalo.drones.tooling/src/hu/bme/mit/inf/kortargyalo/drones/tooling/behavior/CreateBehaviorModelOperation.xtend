@@ -58,9 +58,9 @@ class CreateBehaviorModelOperation extends WorkspaceModifyOperation {
 			scriptFile = folder.getFile(drone.name + ".ds")
 			if (!scriptFile.exists) {
 				val contents = '''
-					scenario «scenario.name»
+					scenario Â«scenario.nameÂ»
 					
-					script for «drone.name» {
+					script for Â«drone.nameÂ» {
 						// TODO Auto-generated drone script stub
 					}
 				'''

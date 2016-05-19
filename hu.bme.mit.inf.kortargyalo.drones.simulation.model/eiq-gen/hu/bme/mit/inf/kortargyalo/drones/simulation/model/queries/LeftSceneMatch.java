@@ -45,7 +45,7 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("drone".equals(parameterName) ) {
-    	this.fDrone = (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) newValue;
+    	this.fDrone = (DroneInstance) newValue;
     	return true;
     }
     return false;

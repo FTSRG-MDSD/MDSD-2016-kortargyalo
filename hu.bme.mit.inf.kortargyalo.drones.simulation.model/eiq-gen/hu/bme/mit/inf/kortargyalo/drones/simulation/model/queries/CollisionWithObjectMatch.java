@@ -54,11 +54,11 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("drone".equals(parameterName) ) {
-    	this.fDrone = (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) newValue;
+    	this.fDrone = (DroneInstance) newValue;
     	return true;
     }
     if ("object".equals(parameterName) ) {
-    	this.fObject = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle) newValue;
+    	this.fObject = (Obstacle) newValue;
     	return true;
     }
     return false;

@@ -197,7 +197,7 @@ public class NegativeEnergyConsumptionMatcher extends BaseMatcher<NegativeEnergy
   @Override
   protected NegativeEnergyConsumptionMatch tupleToMatch(final Tuple t) {
     try {
-    	return NegativeEnergyConsumptionMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
+    	return NegativeEnergyConsumptionMatch.newMatch((DroneType) t.get(POSITION_DRONETYPE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -207,7 +207,7 @@ public class NegativeEnergyConsumptionMatcher extends BaseMatcher<NegativeEnergy
   @Override
   protected NegativeEnergyConsumptionMatch arrayToMatch(final Object[] match) {
     try {
-    	return NegativeEnergyConsumptionMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
+    	return NegativeEnergyConsumptionMatch.newMatch((DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -217,7 +217,7 @@ public class NegativeEnergyConsumptionMatcher extends BaseMatcher<NegativeEnergy
   @Override
   protected NegativeEnergyConsumptionMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NegativeEnergyConsumptionMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
+    	return NegativeEnergyConsumptionMatch.newMutableMatch((DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

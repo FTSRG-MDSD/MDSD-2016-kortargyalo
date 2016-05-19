@@ -45,7 +45,7 @@ public abstract class NegativeEnergyConsumptionMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("DroneType".equals(parameterName) ) {
-    	this.fDroneType = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) newValue;
+    	this.fDroneType = (DroneType) newValue;
     	return true;
     }
     return false;
