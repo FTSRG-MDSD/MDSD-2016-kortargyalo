@@ -1,0 +1,10 @@
+scenario exampleScenario
+
+script for drone2 {
+	move to 750, 120, 900
+	wait for start
+	send ready to drone1
+	cooperate on build as role2
+	move to 70, 7.5, 50
+	charge;
+}

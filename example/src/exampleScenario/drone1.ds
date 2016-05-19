@@ -1,0 +1,20 @@
+scenario exampleScenario
+
+signal start, ready
+
+script for drone1 {
+	move to 560, 120, 900
+	var quad2Ready = false;
+	while(!quad2Ready){
+		scan
+		send start to drone2
+		wait timeout 120 {
+			on ready: quad2Ready = true
+			on timeout: println("I AM SERIOUSLY FUBAR")
+		} 
+	}	
+	
+	send map to drone2
+	cooperate on build as role1
+	move to 150, 7.5, 50
+}

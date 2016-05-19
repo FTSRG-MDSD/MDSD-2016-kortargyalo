@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:description_2="http://www.eclipse.org/sirius/table/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:dronesStructure="http://inf.mit.bme.hu/kortargyalo/dronesStructure" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:table="http://www.eclipse.org/sirius/table/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/table/description/1.1.0 http://www.eclipse.org/sirius/table/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_huHsAB3DEeaJTqGz3QslCA" selectedViews="_hwWgoB3DEeaJTqGz3QslCA" version="10.1.0.201509162000">
+  <semanticResources>src/example.dronesstructure</semanticResources>
+  <semanticResources>src/exampleScenario/drone1.ds</semanticResources>
+  <semanticResources>src/exampleScenario/drone2.ds</semanticResources>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_hwWgoB3DEeaJTqGz3QslCA">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_hw1o0B3DEeaJTqGz3QslCA" name="example Drone Structural Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_hw1o0R3DEeaJTqGz3QslCA" source="DANNOTATION_CUSTOMIZATION_KEY">
+        <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_hw1o0h3DEeaJTqGz3QslCA"/>
+      </ownedAnnotationEntries>
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_hw2P4B3DEeaJTqGz3QslCA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_hw2P4R3DEeaJTqGz3QslCA" type="Sirius" element="_hw1o0B3DEeaJTqGz3QslCA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_z00ysB3DEeaJTqGz3QslCA" type="2001" element="_z0JdQB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_z1DcMB3DEeaJTqGz3QslCA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_z1DcMR3DEeaJTqGz3QslCA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_z7HA4B3DEeaJTqGz3QslCA" type="3005" element="_z0VDcB3DEeaJTqGz3QslCA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_z7HA4R3DEeaJTqGz3QslCA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z7HA4h3DEeaJTqGz3QslCA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_z00ysR3DEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_z00ysh3DEeaJTqGz3QslCA" x="384" y="96" width="50" height="50"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_18BvwB3DEeaJTqGz3QslCA" type="2001" element="_17wC8B3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_18CW0B3DEeaJTqGz3QslCA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_18CW0R3DEeaJTqGz3QslCA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_18LgwB3DEeaJTqGz3QslCA" type="3005" element="_173-wB3DEeaJTqGz3QslCA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_18LgwR3DEeaJTqGz3QslCA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_18Lgwh3DEeaJTqGz3QslCA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_18BvwR3DEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_18Bvwh3DEeaJTqGz3QslCA" x="816" y="312" width="50" height="50"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5F31kB3DEeaJTqGz3QslCA" type="2001" element="_5FuroB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_5F4coB3DEeaJTqGz3QslCA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_5F4coR3DEeaJTqGz3QslCA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_5GHtMB3DEeaJTqGz3QslCA" type="3005" element="_5FxH4B3DEeaJTqGz3QslCA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_5GHtMR3DEeaJTqGz3QslCA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5GHtMh3DEeaJTqGz3QslCA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_5F31kR3DEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5F31kh3DEeaJTqGz3QslCA" x="816" y="216" width="50" height="50"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_60J8UB3DEeaJTqGz3QslCA" type="2001" element="_60BZcB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_60J8Ux3DEeaJTqGz3QslCA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_60J8VB3DEeaJTqGz3QslCA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_60TGQB3DEeaJTqGz3QslCA" type="3005" element="_60CnkB3DEeaJTqGz3QslCA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_60TGQR3DEeaJTqGz3QslCA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_60TGQh3DEeaJTqGz3QslCA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_60J8UR3DEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_60J8Uh3DEeaJTqGz3QslCA" x="816" y="132" width="50" height="50"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8M1mgB3DEeaJTqGz3QslCA" type="2002" element="_8MjSoB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_8M3bsB3DEeaJTqGz3QslCA" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_8M7GEB3DEeaJTqGz3QslCA" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_9-g_gB3DEeaJTqGz3QslCA" type="3007" element="_9-ULMB3DEeaJTqGz3QslCA">
+                <children xmi:type="notation:Node" xmi:id="_9-i0sB3DEeaJTqGz3QslCA" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_9-i0sR3DEeaJTqGz3QslCA" x="-1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_9-qwgB3DEeaJTqGz3QslCA" type="3005" element="_9-UyQB3DEeaJTqGz3QslCA">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_9-qwgR3DEeaJTqGz3QslCA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9-qwgh3DEeaJTqGz3QslCA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_9-g_gR3DEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9-g_gh3DEeaJTqGz3QslCA" x="31" y="29" width="50" height="50"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_-cOPMB3DEeaJTqGz3QslCA" type="3007" element="_-cFFQB3DEeaJTqGz3QslCA">
+                <children xmi:type="notation:Node" xmi:id="_-cO2QB3DEeaJTqGz3QslCA" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_-cO2QR3DEeaJTqGz3QslCA" x="-1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_-cQrcB3DEeaJTqGz3QslCA" type="3005" element="_-cFFQR3DEeaJTqGz3QslCA">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_-cQrcR3DEeaJTqGz3QslCA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-cQrch3DEeaJTqGz3QslCA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_-cOPMR3DEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-cOPMh3DEeaJTqGz3QslCA" x="115" y="29" width="50" height="50"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_8M7GER3DEeaJTqGz3QslCA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_8M7GEh3DEeaJTqGz3QslCA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8M1mgR3DEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8M1mgh3DEeaJTqGz3QslCA" x="996" y="156" width="231" height="147"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QcQtMB3EEeaJTqGz3QslCA" type="2002" element="_QbzaMB3EEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_QcRUQB3EEeaJTqGz3QslCA" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_QcUXkB3EEeaJTqGz3QslCA" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_QcWMwB3EEeaJTqGz3QslCA" type="3008" element="_QcDR0B3EEeaJTqGz3QslCA">
+                <children xmi:type="notation:Node" xmi:id="_QcWz0B3EEeaJTqGz3QslCA" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_QcYpAB3EEeaJTqGz3QslCA" type="7002">
+                  <children xmi:type="notation:Node" xmi:id="_XVlVcB3EEeaJTqGz3QslCA" type="3007" element="_XVKesB3EEeaJTqGz3QslCA">
+                    <children xmi:type="notation:Node" xmi:id="_XVl8gB3EEeaJTqGz3QslCA" type="5003">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_XVl8gR3EEeaJTqGz3QslCA" x="-1"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_XV3CQB3EEeaJTqGz3QslCA" type="3005" element="_XVKesR3EEeaJTqGz3QslCA">
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_XV3CQR3EEeaJTqGz3QslCA" fontName="Segoe UI"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XV3CQh3EEeaJTqGz3QslCA"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_XVlVcR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XVlVch3EEeaJTqGz3QslCA" x="19" y="23" width="50" height="50"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_YtWZoB3EEeaJTqGz3QslCA" type="3007" element="_Ys8J8B3EEeaJTqGz3QslCA">
+                    <children xmi:type="notation:Node" xmi:id="_YtXnwB3EEeaJTqGz3QslCA" type="5003">
+                      <layoutConstraint xmi:type="notation:Location" xmi:id="_YtXnwR3EEeaJTqGz3QslCA" x="-1"/>
+                    </children>
+                    <children xmi:type="notation:Node" xmi:id="_YtYO0B3EEeaJTqGz3QslCA" type="3005" element="_Ys8xAB3EEeaJTqGz3QslCA">
+                      <styles xmi:type="notation:ShapeStyle" xmi:id="_YtYO0R3EEeaJTqGz3QslCA" fontName="Segoe UI"/>
+                      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YtYO0h3EEeaJTqGz3QslCA"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_YtWZoR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YtWZoh3EEeaJTqGz3QslCA" x="19" y="95" width="50" height="50"/>
+                  </children>
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_QcYpAR3EEeaJTqGz3QslCA"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_QcYpAh3EEeaJTqGz3QslCA"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_QcaeMB3EEeaJTqGz3QslCA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_QcWMwR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QcWMwh3EEeaJTqGz3QslCA" width="107" height="267"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_QcaeMR3EEeaJTqGz3QslCA" type="3008" element="_QcEf8B3EEeaJTqGz3QslCA">
+                <children xmi:type="notation:Node" xmi:id="_QcbsUB3EEeaJTqGz3QslCA" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_QcbsUR3EEeaJTqGz3QslCA" type="7002">
+                  <children xmi:type="notation:Node" xmi:id="_iBoocB3EEeaJTqGz3QslCA" type="3008" element="_iBNxsB3EEeaJTqGz3QslCA">
+                    <children xmi:type="notation:Node" xmi:id="_iBpPgB3EEeaJTqGz3QslCA" type="5005"/>
+                    <children xmi:type="notation:Node" xmi:id="_iBpPgR3EEeaJTqGz3QslCA" type="7002">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_iBpPgh3EEeaJTqGz3QslCA"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_iBpPgx3EEeaJTqGz3QslCA"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_iBoocR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iBooch3EEeaJTqGz3QslCA" x="79" y="23"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_m1LP8B3EEeaJTqGz3QslCA" type="3008" element="_m01RsB3EEeaJTqGz3QslCA">
+                    <children xmi:type="notation:Node" xmi:id="_m1L3AB3EEeaJTqGz3QslCA" type="5005"/>
+                    <children xmi:type="notation:Node" xmi:id="_m1L3AR3EEeaJTqGz3QslCA" type="7002">
+                      <children xmi:type="notation:Node" xmi:id="_qTgYAB3EEeaJTqGz3QslCA" type="3007" element="_qTOEIB3EEeaJTqGz3QslCA">
+                        <children xmi:type="notation:Node" xmi:id="_qTg_EB3EEeaJTqGz3QslCA" type="5003">
+                          <layoutConstraint xmi:type="notation:Location" xmi:id="_qTg_ER3EEeaJTqGz3QslCA" x="-1"/>
+                        </children>
+                        <children xmi:type="notation:Node" xmi:id="_qTph8B3EEeaJTqGz3QslCA" type="3005" element="_qTOEIR3EEeaJTqGz3QslCA">
+                          <styles xmi:type="notation:ShapeStyle" xmi:id="_qTph8R3EEeaJTqGz3QslCA" fontName="Segoe UI"/>
+                          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qTph8h3EEeaJTqGz3QslCA"/>
+                        </children>
+                        <styles xmi:type="notation:ShapeStyle" xmi:id="_qTgYAR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qTgYAh3EEeaJTqGz3QslCA" x="108" y="24" width="50" height="50"/>
+                      </children>
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_m1L3Ah3EEeaJTqGz3QslCA"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_m1L3Ax3EEeaJTqGz3QslCA"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_m1LP8R3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m1LP8h3EEeaJTqGz3QslCA" x="91" y="119"/>
+                  </children>
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_QcbsUh3EEeaJTqGz3QslCA"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_QcbsUx3EEeaJTqGz3QslCA"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_QcbsVB3EEeaJTqGz3QslCA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_QcaeMh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QcaeMx3EEeaJTqGz3QslCA" x="107" width="276" height="267"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_QccTYB3EEeaJTqGz3QslCA" type="3009" element="_QcIKUB3EEeaJTqGz3QslCA">
+                <children xmi:type="notation:Node" xmi:id="_Qcc6cB3EEeaJTqGz3QslCA" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_QceIkB3EEeaJTqGz3QslCA" type="7003">
+                  <children xmi:type="notation:Node" xmi:id="_tsRqoB3EEeaJTqGz3QslCA" type="3010" element="_tr0-sB3EEeaJTqGz3QslCA">
+                    <styles xmi:type="notation:FontStyle" xmi:id="_tsRqoR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="11"/>
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_tsRqoh3EEeaJTqGz3QslCA"/>
+                  </children>
+                  <children xmi:type="notation:Node" xmi:id="_ugXaAB3EEeaJTqGz3QslCA" type="3010" element="_ugHiYB3EEeaJTqGz3QslCA">
+                    <styles xmi:type="notation:FontStyle" xmi:id="_ugXaAR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="11"/>
+                    <layoutConstraint xmi:type="notation:Location" xmi:id="_ugXaAh3EEeaJTqGz3QslCA"/>
+                  </children>
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_QceIkR3EEeaJTqGz3QslCA"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_QceIkh3EEeaJTqGz3QslCA"/>
+                  <styles xmi:type="notation:DrawerStyle" xmi:id="_QceIkx3EEeaJTqGz3QslCA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_QccTYR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QccTYh3EEeaJTqGz3QslCA" x="383" width="120" height="267"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_QcUXkR3EEeaJTqGz3QslCA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_QcUXkh3EEeaJTqGz3QslCA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_QcQtMR3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QcQtMh3EEeaJTqGz3QslCA" x="204" y="294"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_hw2P4h3DEeaJTqGz3QslCA"/>
+          <edges xmi:type="notation:Edge" xmi:id="_GTmbIB3EEeaJTqGz3QslCA" type="4001" element="_GTBMUB3EEeaJTqGz3QslCA" source="_z00ysB3DEeaJTqGz3QslCA" target="_18BvwB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_GTo3YB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GTo3YR3EEeaJTqGz3QslCA" x="-3" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GTqFgB3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GTqFgR3EEeaJTqGz3QslCA" x="1" y="9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_GTrToB3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GTrToR3EEeaJTqGz3QslCA" x="3" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_GTmbIR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_GTmbIh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_GTmbIx3EEeaJTqGz3QslCA" points="[25, 12, -407, -204]$[408, 210, -24, -6]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GT3g4B3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_GT3g4R3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_G9H5QB3EEeaJTqGz3QslCA" type="4001" element="_G8_9cB3EEeaJTqGz3QslCA" source="_z00ysB3DEeaJTqGz3QslCA" target="_5F31kB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_G9JHYB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G9JHYR3EEeaJTqGz3QslCA" x="-3" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_G9JHYh3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G9JHYx3EEeaJTqGz3QslCA" x="2" y="9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_G9JHZB3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G9JHZR3EEeaJTqGz3QslCA" x="3" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_G9H5QR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_G9H5Qh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_G9H5Qx3EEeaJTqGz3QslCA" points="[25, 7, -407, -113]$[411, 120, -21, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_G9JucB3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_G9JucR3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Hu-M8B3EEeaJTqGz3QslCA" type="4001" element="_Hu1DAB3EEeaJTqGz3QslCA" source="_z00ysB3DEeaJTqGz3QslCA" target="_60J8UB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_Hu-0AB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hu-0AR3EEeaJTqGz3QslCA" x="-4" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Hu-0Ah3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hu-0Ax3EEeaJTqGz3QslCA" x="2" y="9"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Hu-0BB3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Hu-0BR3EEeaJTqGz3QslCA" x="3" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Hu-M8R3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Hu-M8h3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Hu-M8x3EEeaJTqGz3QslCA" points="[25, 2, -407, -34]$[408, 40, -24, 4]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Hu_bEB3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Hu_bER3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_KBXGUB3EEeaJTqGz3QslCA" type="4001" element="_KBLgIB3EEeaJTqGz3QslCA" source="_9-g_gB3DEeaJTqGz3QslCA" target="_18BvwB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_KBYUcB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KBYUcR3EEeaJTqGz3QslCA" x="-2" y="12"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_KBYUch3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KBYUcx3EEeaJTqGz3QslCA" x="2" y="-8"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_KBYUdB3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KBYUdR3EEeaJTqGz3QslCA" x="3" y="-9"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_KBXGUR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_KBXGUh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KBXGUx3EEeaJTqGz3QslCA" points="[-25, 11, 191, -85]$[-193, 90, 23, -6]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KBY7gB3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KBY7gR3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_KcLaEB3EEeaJTqGz3QslCA" type="4001" element="_Kb4fIB3EEeaJTqGz3QslCA" source="_9-g_gB3DEeaJTqGz3QslCA" target="_5F31kB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_KcMBIB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KcMBIR3EEeaJTqGz3QslCA" x="3" y="8"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_KcMBIh3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KcMBIx3EEeaJTqGz3QslCA" x="-4" y="-5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_KcMBJB3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KcMBJR3EEeaJTqGz3QslCA" x="-3" y="-8"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_KcLaER3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_KcLaEh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KcLaEx3EEeaJTqGz3QslCA" points="[-25, 0, 191, 0]$[-194, 4, 22, 4]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KcRgsB3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KcRgsR3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_KrWegB3EEeaJTqGz3QslCA" type="4001" element="_KrPw0B3EEeaJTqGz3QslCA" source="_9-g_gB3DEeaJTqGz3QslCA" target="_60J8UB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_KrXFkB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KrXFkR3EEeaJTqGz3QslCA" x="9" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_KrXsoB3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KrXsoR3EEeaJTqGz3QslCA" x="-4" y="-3"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_KrXsoh3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KrXsox3EEeaJTqGz3QslCA" x="-5" y="-5"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_KrWegR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_KrWegh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_KrWegx3EEeaJTqGz3QslCA" points="[-25, -9, 191, 75]$[-201, -70, 15, 14]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KrYTsB3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_KrYTsR3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_LVzwwB3EEeaJTqGz3QslCA" type="4001" element="_LVp_wB3EEeaJTqGz3QslCA" source="_-cOPMB3DEeaJTqGz3QslCA" target="_5F31kB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_LV0-4B3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LV0-4R3EEeaJTqGz3QslCA" x="8" y="7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_LV0-4h3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LV0-4x3EEeaJTqGz3QslCA" x="-4" y="-7"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_LV0-5B3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LV0-5R3EEeaJTqGz3QslCA" x="-5" y="-7"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_LVzwwR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_LVzwwh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LVzwwx3EEeaJTqGz3QslCA" points="[-25, 0, 275, 0]$[-279, 3, 21, 3]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LV1l8B3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LV1l8R3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_Lra0YB3EEeaJTqGz3QslCA" type="4001" element="_LrLj0B3EEeaJTqGz3QslCA" source="_-cOPMB3DEeaJTqGz3QslCA" target="_60J8UB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_LrbbcB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LrbbcR3EEeaJTqGz3QslCA" x="10" y="4"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Lrbbch3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Lrbbcx3EEeaJTqGz3QslCA" x="-8" y="-3"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_LrcCgB3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LrcCgR3EEeaJTqGz3QslCA" x="-10" y="-3"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_Lra0YR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_Lra0Yh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Lra0Yx3EEeaJTqGz3QslCA" points="[-25, -7, 275, 77]$[-279, -74, 21, 10]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LrcpkB3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_LrcpkR3EEeaJTqGz3QslCA" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_b2QEQB3EEeaJTqGz3QslCA" type="4001" element="_b12boB3EEeaJTqGz3QslCA" source="_XVlVcB3EEeaJTqGz3QslCA" target="_z00ysB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_b2QrUB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b2QrUR3EEeaJTqGz3QslCA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_b2RSYB3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b2RSYR3EEeaJTqGz3QslCA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_b2RSYh3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_b2RSYx3EEeaJTqGz3QslCA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_b2QEQR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_b2QEQh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_b2QEQx3EEeaJTqGz3QslCA" points="[0, 0, -168, 226]$[168, -226, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_b2R5cB3EEeaJTqGz3QslCA" id="(0.24,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_b2R5cR3EEeaJTqGz3QslCA" id="(0.48,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_e10MsB3EEeaJTqGz3QslCA" type="4001" element="_e1fckB3EEeaJTqGz3QslCA" source="_YtWZoB3EEeaJTqGz3QslCA" target="_z00ysB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_e10MtB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e10MtR3EEeaJTqGz3QslCA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_e10Mth3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e10Mtx3EEeaJTqGz3QslCA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_e10MuB3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_e10MuR3EEeaJTqGz3QslCA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_e10MsR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_e10Msh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_e10Msx3EEeaJTqGz3QslCA" points="[0, 0, -131, 336]$[131, -336, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_e10zwB3EEeaJTqGz3QslCA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_e10zwR3EEeaJTqGz3QslCA" id="(0.0,0.24)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_smhjgB3EEeaJTqGz3QslCA" type="4001" element="_smRE0B3EEeaJTqGz3QslCA" source="_qTgYAB3EEeaJTqGz3QslCA" target="_8M1mgB3DEeaJTqGz3QslCA">
+            <children xmi:type="notation:Node" xmi:id="_smiKkB3EEeaJTqGz3QslCA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_smiKkR3EEeaJTqGz3QslCA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_smiKkh3EEeaJTqGz3QslCA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_smiKkx3EEeaJTqGz3QslCA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_smiKlB3EEeaJTqGz3QslCA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_smiKlR3EEeaJTqGz3QslCA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_smhjgR3EEeaJTqGz3QslCA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_smhjgh3EEeaJTqGz3QslCA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_smhjgx3EEeaJTqGz3QslCA" points="[0, 0, -534, 222]$[534, -222, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_smixoB3EEeaJTqGz3QslCA" id="(0.98,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_smixoR3EEeaJTqGz3QslCA" id="(0.47161572052401746,1.0)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_z0JdQB3DEeaJTqGz3QslCA" name="typeA" outgoingEdges="_GTBMUB3EEeaJTqGz3QslCA _G8_9cB3EEeaJTqGz3QslCA _Hu1DAB3EEeaJTqGz3QslCA" incomingEdges="_b12boB3EEeaJTqGz3QslCA _e1fckB3EEeaJTqGz3QslCA" width="-1" height="-1">
+        <target xmi:type="dronesStructure:DroneType" href="src/example.dronesstructure#//@droneTypes.0"/>
+        <semanticElements xmi:type="dronesStructure:DroneType" href="src/example.dronesstructure#//@droneTypes.0"/>
+        <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_z0VDcB3DEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/drone_type.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='DroneTypeNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='DroneTypeNode']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_17wC8B3DEeaJTqGz3QslCA" name="lift" incomingEdges="_GTBMUB3EEeaJTqGz3QslCA _KBLgIB3EEeaJTqGz3QslCA" width="-1" height="-1">
+        <target xmi:type="dronesStructure:Capability" href="src/example.dronesstructure#//@capabilities.0"/>
+        <semanticElements xmi:type="dronesStructure:Capability" href="src/example.dronesstructure#//@capabilities.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_173-wB3DEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/capability.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_5FuroB3DEeaJTqGz3QslCA" name="fly" incomingEdges="_G8_9cB3EEeaJTqGz3QslCA _Kb4fIB3EEeaJTqGz3QslCA _LVp_wB3EEeaJTqGz3QslCA" width="-1" height="-1">
+        <target xmi:type="dronesStructure:MovementCapability" href="src/example.dronesstructure#//@capabilities.1"/>
+        <semanticElements xmi:type="dronesStructure:MovementCapability" href="src/example.dronesstructure#//@capabilities.1"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_5FxH4B3DEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/capability_movement.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode']/@conditionnalStyles.0/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_60BZcB3DEeaJTqGz3QslCA" name="radar" incomingEdges="_Hu1DAB3EEeaJTqGz3QslCA _KrPw0B3EEeaJTqGz3QslCA _LrLj0B3EEeaJTqGz3QslCA" width="-1" height="-1">
+        <target xmi:type="dronesStructure:ScanningCapability" href="src/example.dronesstructure#//@capabilities.2"/>
+        <semanticElements xmi:type="dronesStructure:ScanningCapability" href="src/example.dronesstructure#//@capabilities.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_60CnkB3DEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/capability_scanning.svg">
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode']/@conditionnalStyles.1/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@nodeMappings[name='CapabilityNode']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_8MjSoB3DEeaJTqGz3QslCA" name="Build" incomingEdges="_smRE0B3EEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:CooperativeAction" href="src/example.dronesstructure#//@cooperativeActions.0"/>
+        <semanticElements xmi:type="dronesStructure:CooperativeAction" href="src/example.dronesstructure#//@cooperativeActions.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_8MoyMB3DEeaJTqGz3QslCA" borderSize="1" borderSizeComputationExpression="1" borderColor="110,132,132" backgroundStyle="Liquid" foregroundColor="238,249,244">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_9-ULMB3DEeaJTqGz3QslCA" name="role1" outgoingEdges="_KBLgIB3EEeaJTqGz3QslCA _Kb4fIB3EEeaJTqGz3QslCA _KrPw0B3EEeaJTqGz3QslCA" width="-1" height="-1">
+          <target xmi:type="dronesStructure:Role" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0"/>
+          <semanticElements xmi:type="dronesStructure:Role" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_9-UyQB3DEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/role.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']/@subNodeMappings[name='RoleNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']/@subNodeMappings[name='RoleNode']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-cFFQB3DEeaJTqGz3QslCA" name="role2" outgoingEdges="_LVp_wB3EEeaJTqGz3QslCA _LrLj0B3EEeaJTqGz3QslCA" width="-1" height="-1">
+          <target xmi:type="dronesStructure:Role" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1"/>
+          <semanticElements xmi:type="dronesStructure:Role" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_-cFFQR3DEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/role.svg">
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']/@subNodeMappings[name='RoleNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='CooperativeActionContainer']/@subNodeMappings[name='RoleNode']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_GTBMUB3EEeaJTqGz3QslCA" name="10.0 / 1.0" sourceNode="_z0JdQB3DEeaJTqGz3QslCA" targetNode="_17wC8B3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.0"/>
+        <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_GTK9UB3EEeaJTqGz3QslCA" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='ProvidedCapabilityEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_GTLkYB3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='ProvidedCapabilityEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_G8_9cB3EEeaJTqGz3QslCA" name="10.0 / 1.0" sourceNode="_z0JdQB3DEeaJTqGz3QslCA" targetNode="_5FuroB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.1"/>
+        <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_G9AkgB3EEeaJTqGz3QslCA" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='ProvidedCapabilityEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_G9AkgR3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='ProvidedCapabilityEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Hu1DAB3EEeaJTqGz3QslCA" name="10.0 / 0.0" sourceNode="_z0JdQB3DEeaJTqGz3QslCA" targetNode="_60BZcB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.2"/>
+        <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Hu1DAR3EEeaJTqGz3QslCA" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='ProvidedCapabilityEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Hu1DAh3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='ProvidedCapabilityEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_KBLgIB3EEeaJTqGz3QslCA" name="5.0" sourceNode="_9-ULMB3DEeaJTqGz3QslCA" targetNode="_17wC8B3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.0"/>
+        <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_KBMHMB3EEeaJTqGz3QslCA" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_KBMHMR3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Kb4fIB3EEeaJTqGz3QslCA" name="4.0" sourceNode="_9-ULMB3DEeaJTqGz3QslCA" targetNode="_5FuroB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.1"/>
+        <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Kb4fIR3EEeaJTqGz3QslCA" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Kb4fIh3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_KrPw0B3EEeaJTqGz3QslCA" name="3.0" sourceNode="_9-ULMB3DEeaJTqGz3QslCA" targetNode="_60BZcB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.2"/>
+        <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_KrPw0R3EEeaJTqGz3QslCA" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_KrPw0h3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_LVp_wB3EEeaJTqGz3QslCA" name="9.0" sourceNode="_-cFFQB3DEeaJTqGz3QslCA" targetNode="_5FuroB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1/@requiredCapabilities.0"/>
+        <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1/@requiredCapabilities.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_LVp_wR3EEeaJTqGz3QslCA" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_LVp_wh3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_LrLj0B3EEeaJTqGz3QslCA" name="8.0" sourceNode="_-cFFQB3DEeaJTqGz3QslCA" targetNode="_60BZcB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1/@requiredCapabilities.1"/>
+        <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1/@requiredCapabilities.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_LrMx8B3EEeaJTqGz3QslCA" strokeColor="69,69,69">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_LrMx8R3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='RequiredCapabilityEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_QbzaMB3EEeaJTqGz3QslCA" name="exampleScenario" childrenPresentation="HorizontalStack">
+        <target xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+        <semanticElements xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+        <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@position"/>
+        <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@dimension"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Qb0BQB3EEeaJTqGz3QslCA" borderSize="1" borderSizeComputationExpression="1" borderColor="69,69,69" backgroundStyle="Liquid" foregroundColor="230,230,230">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_QcDR0B3EEeaJTqGz3QslCA" name="Drones">
+          <target xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+          <semanticElements xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_QcD44B3EEeaJTqGz3QslCA" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="39,76,114" backgroundStyle="Liquid" foregroundColor="232,239,247">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='DronesContainer']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='DronesContainer']"/>
+          <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_XVKesB3EEeaJTqGz3QslCA" name="drone1" outgoingEdges="_b12boB3EEeaJTqGz3QslCA" width="-1" height="-1">
+            <target xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.0/@startPosition"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_XVKesR3EEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/drone.svg">
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='DronesContainer']/@subNodeMappings[name='DroneNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='DronesContainer']/@subNodeMappings[name='DroneNode']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Ys8J8B3EEeaJTqGz3QslCA" name="drone2" outgoingEdges="_e1fckB3EEeaJTqGz3QslCA" width="-1" height="-1">
+            <target xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.1/@startPosition"/>
+            <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+            <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+            <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+            <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_Ys8xAB3EEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/drone.svg">
+              <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='DronesContainer']/@subNodeMappings[name='DroneNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='DronesContainer']/@subNodeMappings[name='DroneNode']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_QcEf8B3EEeaJTqGz3QslCA" name="Regions">
+          <target xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+          <semanticElements xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_QcEf8R3EEeaJTqGz3QslCA" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="114,73,110" backgroundStyle="Liquid" foregroundColor="245,239,244">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_iBNxsB3EEeaJTqGz3QslCA" name="charger">
+            <target xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+            <semanticElements xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@dimension"/>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_iBSDIB3EEeaJTqGz3QslCA" borderSize="1" borderSizeComputationExpression="1" borderColor="154,103,23" backgroundStyle="Liquid" foregroundColor="255,255,211">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']/@conditionnalStyles.0/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']"/>
+          </ownedDiagramElements>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_m01RsB3EEeaJTqGz3QslCA" name="buildtarget">
+            <target xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+            <semanticElements xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@dimension"/>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_m03t8B3EEeaJTqGz3QslCA" borderSize="1" borderSizeComputationExpression="1" borderColor="69,69,69" backgroundStyle="Liquid" foregroundColor="230,230,230">
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']"/>
+            <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_qTOEIB3EEeaJTqGz3QslCA" name="build" outgoingEdges="_smRE0B3EEeaJTqGz3QslCA" width="-1" height="-1">
+              <target xmi:type="dronesStructure:Task" href="src/example.dronesstructure#//@scenarios.0/@tasks.0"/>
+              <semanticElements xmi:type="dronesStructure:Task" href="src/example.dronesstructure#//@scenarios.0/@tasks.0"/>
+              <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_qTOEIR3EEeaJTqGz3QslCA" showIcon="false" labelAlignment="RIGHT" workspacePath="/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/icons/task.svg">
+                <description xmi:type="style:WorkspaceImageDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']/@subNodeMappings[name='TaskNode']/@style"/>
+              </ownedStyle>
+              <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='RegionContainer']/@subContainerMappings[name='RegionContainer']/@subNodeMappings[name='TaskNode']"/>
+            </ownedDiagramElements>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_QcIKUB3EEeaJTqGz3QslCA" name="Obstacles">
+          <target xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+          <semanticElements xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_QcIKUR3EEeaJTqGz3QslCA" showIcon="false" borderSize="1" borderSizeComputationExpression="1" borderColor="154,103,23" backgroundStyle="Liquid" foregroundColor="254,238,214">
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='ObstacleContainer']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='ObstacleContainer']"/>
+          <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tr0-sB3EEeaJTqGz3QslCA" name="tree">
+            <target xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@dimension"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_tr5QIB3EEeaJTqGz3QslCA" labelSize="11" labelAlignment="LEFT" labelPosition="node">
+              <description xmi:type="style:SquareDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='ObstacleContainer']/@subNodeMappings[name='ObstacleNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='ObstacleContainer']/@subNodeMappings[name='ObstacleNode']"/>
+          </ownedElements>
+          <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ugHiYB3EEeaJTqGz3QslCA" name="bush">
+            <target xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@dimension"/>
+            <ownedStyle xmi:type="diagram:Square" xmi:id="_ugIJcB3EEeaJTqGz3QslCA" labelSize="11" labelAlignment="LEFT" labelPosition="node">
+              <description xmi:type="style:SquareDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='ObstacleContainer']/@subNodeMappings[name='ObstacleNode']/@style"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@containerMappings[name='ScenarioContainer']/@subContainerMappings[name='ObstacleContainer']/@subNodeMappings[name='ObstacleNode']"/>
+          </ownedElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_b12boB3EEeaJTqGz3QslCA" sourceNode="_XVKesB3EEeaJTqGz3QslCA" targetNode="_z0JdQB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_b13CsB3EEeaJTqGz3QslCA" strokeColor="39,76,114">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='DroneDroneTypeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_b13CsR3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='DroneDroneTypeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_e1fckB3EEeaJTqGz3QslCA" sourceNode="_Ys8J8B3EEeaJTqGz3QslCA" targetNode="_z0JdQB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_e1fckR3EEeaJTqGz3QslCA" strokeColor="39,76,114">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='DroneDroneTypeEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_e1fckh3EEeaJTqGz3QslCA" showIcon="false"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='DroneDroneTypeEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_smRE0B3EEeaJTqGz3QslCA" sourceNode="_qTOEIB3EEeaJTqGz3QslCA" targetNode="_8MjSoB3DEeaJTqGz3QslCA">
+        <target xmi:type="dronesStructure:Task" href="src/example.dronesstructure#//@scenarios.0/@tasks.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_smRr4B3EEeaJTqGz3QslCA" strokeColor="110,132,132">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='TaskCooperativeActionEdge']/@style"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_smRr4R3EEeaJTqGz3QslCA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer/@edgeMappings[name='TaskCooperativeActionEdge']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_hw1o0x3DEeaJTqGz3QslCA"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='DroneStructuralDiagram']/@defaultLayer"/>
+      <target xmi:type="dronesStructure:DronesStructure" href="src/example.dronesstructure#/"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="table:DTable" xmi:id="_hxB2EB3DEeaJTqGz3QslCA" name="example Capabilities Table" headerColumnWidth="152">
+      <target xmi:type="dronesStructure:DronesStructure" href="src/example.dronesstructure#/"/>
+      <lines xmi:type="table:DLine" xmi:id="_hxCdIB3DEeaJTqGz3QslCA" label="Drone Types">
+        <target xmi:type="dronesStructure:DronesStructure" href="src/example.dronesstructure#/"/>
+        <lines xmi:type="table:DLine" xmi:id="_z0olcB3DEeaJTqGz3QslCA" label="typeA">
+          <target xmi:type="dronesStructure:DroneType" href="src/example.dronesstructure#//@droneTypes.0"/>
+          <semanticElements xmi:type="dronesStructure:DroneType" href="src/example.dronesstructure#//@droneTypes.0"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedLineMappings[name='DroneTypesLine']/@ownedSubLines[name='DroneTypeLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_GTV8cB3EEeaJTqGz3QslCA" label="10.0 / 1.0" column="_18AhoB3DEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.0"/>
+            <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.0"/>
+            <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_G9DAwB3EEeaJTqGz3QslCA" label="10.0 / 1.0" column="_5F3OgB3DEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.1"/>
+            <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.1"/>
+            <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_Hu7JoB3EEeaJTqGz3QslCA" label="10.0 / 0.0" column="_60JVQB3DEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.2"/>
+            <semanticElements xmi:type="dronesStructure:ProvidedCapability" href="src/example.dronesstructure#//@droneTypes.0/@providedCapabilities.2"/>
+            <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.0"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="dronesStructure:DronesStructure" href="src/example.dronesstructure#/"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedLineMappings[name='DroneTypesLine']"/>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_hxCdIR3DEeaJTqGz3QslCA" label="Cooperative Actions">
+        <target xmi:type="dronesStructure:DronesStructure" href="src/example.dronesstructure#/"/>
+        <lines xmi:type="table:DLine" xmi:id="_8MzKQB3DEeaJTqGz3QslCA" label="Build">
+          <target xmi:type="dronesStructure:CooperativeAction" href="src/example.dronesstructure#//@cooperativeActions.0"/>
+          <lines xmi:type="table:DLine" xmi:id="_9-cuEB3DEeaJTqGz3QslCA" label="role1">
+            <target xmi:type="dronesStructure:Role" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0"/>
+            <semanticElements xmi:type="dronesStructure:Role" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedLineMappings[name='CooperativeActionsLine']/@ownedSubLines[name='CooperativeActionLine']/@ownedSubLines[name='RoleLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_KBUDAB3EEeaJTqGz3QslCA" label="5.0" column="_18AhoB3DEeaJTqGz3QslCA">
+              <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.0"/>
+              <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.0"/>
+              <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.1"/>
+            </cells>
+            <cells xmi:type="table:DCell" xmi:id="_KcEFUB3EEeaJTqGz3QslCA" label="4.0" column="_5F3OgB3DEeaJTqGz3QslCA">
+              <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.1"/>
+              <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.1"/>
+              <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.1"/>
+            </cells>
+            <cells xmi:type="table:DCell" xmi:id="_KrUCQB3EEeaJTqGz3QslCA" label="3.0" column="_60JVQB3DEeaJTqGz3QslCA">
+              <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.2"/>
+              <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.0/@requiredCapabilities.2"/>
+              <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.1"/>
+            </cells>
+          </lines>
+          <lines xmi:type="table:DLine" xmi:id="_-cMaAB3DEeaJTqGz3QslCA" label="role2">
+            <target xmi:type="dronesStructure:Role" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1"/>
+            <semanticElements xmi:type="dronesStructure:Role" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1"/>
+            <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedLineMappings[name='CooperativeActionsLine']/@ownedSubLines[name='CooperativeActionLine']/@ownedSubLines[name='RoleLine']"/>
+            <cells xmi:type="table:DCell" xmi:id="_LVwGYB3EEeaJTqGz3QslCA" label="9.0" column="_5F3OgB3DEeaJTqGz3QslCA">
+              <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1/@requiredCapabilities.0"/>
+              <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1/@requiredCapabilities.0"/>
+              <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.1"/>
+            </cells>
+            <cells xmi:type="table:DCell" xmi:id="_LrV74B3EEeaJTqGz3QslCA" label="8.0" column="_60JVQB3DEeaJTqGz3QslCA">
+              <target xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1/@requiredCapabilities.1"/>
+              <semanticElements xmi:type="dronesStructure:RequiredCapability" href="src/example.dronesstructure#//@cooperativeActions.0/@roles.1/@requiredCapabilities.1"/>
+              <intersectionMapping xmi:type="description_2:IntersectionMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@intersection.1"/>
+            </cells>
+          </lines>
+          <semanticElements xmi:type="dronesStructure:CooperativeAction" href="src/example.dronesstructure#//@cooperativeActions.0"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedLineMappings[name='CooperativeActionsLine']/@ownedSubLines[name='CooperativeActionLine']"/>
+        </lines>
+        <semanticElements xmi:type="dronesStructure:DronesStructure" href="src/example.dronesstructure#/"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedLineMappings[name='CooperativeActionsLine']"/>
+      </lines>
+      <columns xmi:type="table:DTargetColumn" xmi:id="_18AhoB3DEeaJTqGz3QslCA" label="lift" cells="_GTV8cB3EEeaJTqGz3QslCA _KBUDAB3EEeaJTqGz3QslCA" width="57">
+        <target xmi:type="dronesStructure:Capability" href="src/example.dronesstructure#//@capabilities.0"/>
+        <semanticElements xmi:type="dronesStructure:Capability" href="src/example.dronesstructure#//@capabilities.0"/>
+        <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedColumnMappings.0"/>
+      </columns>
+      <columns xmi:type="table:DTargetColumn" xmi:id="_5F3OgB3DEeaJTqGz3QslCA" label="fly" cells="_G9DAwB3EEeaJTqGz3QslCA _KcEFUB3EEeaJTqGz3QslCA _LVwGYB3EEeaJTqGz3QslCA" width="56">
+        <target xmi:type="dronesStructure:MovementCapability" href="src/example.dronesstructure#//@capabilities.1"/>
+        <semanticElements xmi:type="dronesStructure:MovementCapability" href="src/example.dronesstructure#//@capabilities.1"/>
+        <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedColumnMappings.0"/>
+      </columns>
+      <columns xmi:type="table:DTargetColumn" xmi:id="_60JVQB3DEeaJTqGz3QslCA" label="radar" cells="_Hu7JoB3EEeaJTqGz3QslCA _KrUCQB3EEeaJTqGz3QslCA _LrV74B3EEeaJTqGz3QslCA" width="70">
+        <target xmi:type="dronesStructure:ScanningCapability" href="src/example.dronesstructure#//@capabilities.2"/>
+        <semanticElements xmi:type="dronesStructure:ScanningCapability" href="src/example.dronesstructure#//@capabilities.2"/>
+        <originMapping xmi:type="description_2:ElementColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']/@ownedColumnMappings.0"/>
+      </columns>
+      <description xmi:type="description_2:CrossTableDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='CapabilitiesCrossTable']"/>
+    </ownedRepresentations>
+    <ownedRepresentations xmi:type="table:DTable" xmi:id="_6i9CIB3EEeaJTqGz3QslCA" name="exampleScenario Scenario Table" headerColumnWidth="155">
+      <target xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+      <lines xmi:type="table:DLine" xmi:id="_6i9CIR3EEeaJTqGz3QslCA" label="Allowed Bounds">
+        <target xmi:type="dronesStructure:ScenarioBounds" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds"/>
+        <semanticElements xmi:type="dronesStructure:ScenarioBounds" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='BoundsLine']"/>
+        <cells xmi:type="table:DCell" xmi:id="_6i9CIh3EEeaJTqGz3QslCA" label="0.0" column="_6i9pOh3EEeaJTqGz3QslCA">
+          <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@position"/>
+          <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@position"/>
+          <semanticElements xmi:type="dronesStructure:ScenarioBounds" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds"/>
+        </cells>
+        <cells xmi:type="table:DCell" xmi:id="_6i9CIx3EEeaJTqGz3QslCA" label="0.0" column="_6i9pOx3EEeaJTqGz3QslCA">
+          <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@position"/>
+          <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@position"/>
+          <semanticElements xmi:type="dronesStructure:ScenarioBounds" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds"/>
+        </cells>
+        <cells xmi:type="table:DCell" xmi:id="_6i9CJB3EEeaJTqGz3QslCA" label="0.0" column="_6i9pPB3EEeaJTqGz3QslCA">
+          <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@position"/>
+          <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@position"/>
+          <semanticElements xmi:type="dronesStructure:ScenarioBounds" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds"/>
+        </cells>
+        <cells xmi:type="table:DCell" xmi:id="_6i9CJR3EEeaJTqGz3QslCA" label="1500.0" column="_6i9pPR3EEeaJTqGz3QslCA">
+          <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@dimension"/>
+          <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@dimension"/>
+          <semanticElements xmi:type="dronesStructure:ScenarioBounds" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds"/>
+        </cells>
+        <cells xmi:type="table:DCell" xmi:id="_6i9CJh3EEeaJTqGz3QslCA" label="500.0" column="_6i9pPh3EEeaJTqGz3QslCA">
+          <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@dimension"/>
+          <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@dimension"/>
+          <semanticElements xmi:type="dronesStructure:ScenarioBounds" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds"/>
+        </cells>
+        <cells xmi:type="table:DCell" xmi:id="_6i9CJx3EEeaJTqGz3QslCA" label="2000.0" column="_6i9pPx3EEeaJTqGz3QslCA">
+          <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@dimension"/>
+          <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds/@dimension"/>
+          <semanticElements xmi:type="dronesStructure:ScenarioBounds" href="src/example.dronesstructure#//@scenarios.0/@allowedBounds"/>
+        </cells>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_6i9CKB3EEeaJTqGz3QslCA" label="Drones">
+        <target xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+        <lines xmi:type="table:DLine" xmi:id="_6i9CKR3EEeaJTqGz3QslCA" label="typeA drone1">
+          <target xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+          <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='DronesLine']/@ownedSubLines[name='DroneLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CKh3EEeaJTqGz3QslCA" label="50.0" column="_6i9pOh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.0/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.0/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CKx3EEeaJTqGz3QslCA" label="7.5" column="_6i9pOx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.0/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.0/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CLB3EEeaJTqGz3QslCA" label="50.0" column="_6i9pPB3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.0/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.0/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CLR3EEeaJTqGz3QslCA" label="50.0" column="_6i9pPR3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CLh3EEeaJTqGz3QslCA" label="15.0" column="_6i9pPh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CLx3EEeaJTqGz3QslCA" label="50.0" column="_6i9pPx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.0"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_6i9CMB3EEeaJTqGz3QslCA" label="typeA drone2">
+          <target xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+          <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='DronesLine']/@ownedSubLines[name='DroneLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CMR3EEeaJTqGz3QslCA" label="150.0" column="_6i9pOh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.1/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.1/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CMh3EEeaJTqGz3QslCA" label="7.5" column="_6i9pOx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.1/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.1/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CMx3EEeaJTqGz3QslCA" label="50.0" column="_6i9pPB3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.1/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@drones.1/@startPosition"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CNB3EEeaJTqGz3QslCA" label="50.0" column="_6i9pPR3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CNR3EEeaJTqGz3QslCA" label="15.0" column="_6i9pPh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CNh3EEeaJTqGz3QslCA" label="50.0" column="_6i9pPx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@droneTypes.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Drone" href="src/example.dronesstructure#//@scenarios.0/@drones.1"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='DronesLine']"/>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_6i9CNx3EEeaJTqGz3QslCA" label="Regions">
+        <target xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+        <lines xmi:type="table:DLine" xmi:id="_6i9COB3EEeaJTqGz3QslCA" label="charger (charger)">
+          <target xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+          <semanticElements xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='RegionsLine']/@ownedSubLines[name='RegionLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_6i9COR3EEeaJTqGz3QslCA" label="600.0" column="_6i9pOh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9COh3EEeaJTqGz3QslCA" label="100.0" column="_6i9pOx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9COx3EEeaJTqGz3QslCA" label="850.0" column="_6i9pPB3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CPB3EEeaJTqGz3QslCA" label="400.0" column="_6i9pPR3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CPR3EEeaJTqGz3QslCA" label="200.0" column="_6i9pPh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CPh3EEeaJTqGz3QslCA" label="150.0" column="_6i9pPx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Charger" href="src/example.dronesstructure#//@scenarios.0/@regions.0"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_6i9CPx3EEeaJTqGz3QslCA" label="buildtarget">
+          <target xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+          <semanticElements xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='RegionsLine']/@ownedSubLines[name='RegionLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CQB3EEeaJTqGz3QslCA" label="0.0" column="_6i9pOh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CQR3EEeaJTqGz3QslCA" label="0.0" column="_6i9pOx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CQh3EEeaJTqGz3QslCA" label="0.0" column="_6i9pPB3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CQx3EEeaJTqGz3QslCA" label="100.0" column="_6i9pPR3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CRB3EEeaJTqGz3QslCA" label="10.0" column="_6i9pPh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CRR3EEeaJTqGz3QslCA" label="100.0" column="_6i9pPx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@regions.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Region" href="src/example.dronesstructure#//@scenarios.0/@regions.1"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='RegionsLine']"/>
+      </lines>
+      <lines xmi:type="table:DLine" xmi:id="_6i9CRh3EEeaJTqGz3QslCA" label="Obstacles">
+        <target xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+        <lines xmi:type="table:DLine" xmi:id="_6i9CRx3EEeaJTqGz3QslCA" label="tree">
+          <target xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+          <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='ObstaclesLine']/@ownedSubLines[name='ObstacleLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CSB3EEeaJTqGz3QslCA" label="200.0" column="_6i9pOh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CSR3EEeaJTqGz3QslCA" label="0.0" column="_6i9pOx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9CSh3EEeaJTqGz3QslCA" label="615.0" column="_6i9pPB3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@position"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pMB3EEeaJTqGz3QslCA" label="30.0" column="_6i9pPR3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pMR3EEeaJTqGz3QslCA" label="450.0" column="_6i9pPh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pMh3EEeaJTqGz3QslCA" label="30.0" column="_6i9pPx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.0"/>
+          </cells>
+        </lines>
+        <lines xmi:type="table:DLine" xmi:id="_6i9pMx3EEeaJTqGz3QslCA" label="bush">
+          <target xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+          <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+          <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='ObstaclesLine']/@ownedSubLines[name='ObstacleLine']"/>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pNB3EEeaJTqGz3QslCA" label="600.0" column="_6i9pOh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pNR3EEeaJTqGz3QslCA" label="0.0" column="_6i9pOx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pNh3EEeaJTqGz3QslCA" label="825.0" column="_6i9pPB3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Position" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@position"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pNx3EEeaJTqGz3QslCA" label="400.0" column="_6i9pPR3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pOB3EEeaJTqGz3QslCA" label="250.0" column="_6i9pPh3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+          </cells>
+          <cells xmi:type="table:DCell" xmi:id="_6i9pOR3EEeaJTqGz3QslCA" label="25.0" column="_6i9pPx3EEeaJTqGz3QslCA">
+            <target xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Dimension" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1/@dimension"/>
+            <semanticElements xmi:type="dronesStructure:Obstacle" href="src/example.dronesstructure#//@scenarios.0/@obstacles.1"/>
+          </cells>
+        </lines>
+        <semanticElements xmi:type="dronesStructure:Scenario" href="src/example.dronesstructure#//@scenarios.0"/>
+        <originMapping xmi:type="description_2:LineMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedLineMappings[name='ObstaclesLine']"/>
+      </lines>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_6i9pOh3EEeaJTqGz3QslCA" label="x" cells="_6i9CIh3EEeaJTqGz3QslCA _6i9CKh3EEeaJTqGz3QslCA _6i9CMR3EEeaJTqGz3QslCA _6i9COR3EEeaJTqGz3QslCA _6i9CQB3EEeaJTqGz3QslCA _6i9CSB3EEeaJTqGz3QslCA _6i9pNB3EEeaJTqGz3QslCA" width="36" featureName="x">
+        <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='XColumn']"/>
+      </columns>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_6i9pOx3EEeaJTqGz3QslCA" label="y" cells="_6i9CIx3EEeaJTqGz3QslCA _6i9CKx3EEeaJTqGz3QslCA _6i9CMh3EEeaJTqGz3QslCA _6i9COh3EEeaJTqGz3QslCA _6i9CQR3EEeaJTqGz3QslCA _6i9CSR3EEeaJTqGz3QslCA _6i9pNR3EEeaJTqGz3QslCA" width="24" featureName="y">
+        <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='YColumn']"/>
+      </columns>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_6i9pPB3EEeaJTqGz3QslCA" label="z" cells="_6i9CJB3EEeaJTqGz3QslCA _6i9CLB3EEeaJTqGz3QslCA _6i9CMx3EEeaJTqGz3QslCA _6i9COx3EEeaJTqGz3QslCA _6i9CQh3EEeaJTqGz3QslCA _6i9CSh3EEeaJTqGz3QslCA _6i9pNh3EEeaJTqGz3QslCA" width="24" featureName="z">
+        <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='ZColumn']"/>
+      </columns>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_6i9pPR3EEeaJTqGz3QslCA" label="width" cells="_6i9CJR3EEeaJTqGz3QslCA _6i9CLR3EEeaJTqGz3QslCA _6i9CNB3EEeaJTqGz3QslCA _6i9CPB3EEeaJTqGz3QslCA _6i9CQx3EEeaJTqGz3QslCA _6i9pMB3EEeaJTqGz3QslCA _6i9pNx3EEeaJTqGz3QslCA" width="45" featureName="width">
+        <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='WidthColumn']"/>
+      </columns>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_6i9pPh3EEeaJTqGz3QslCA" label="height" cells="_6i9CJh3EEeaJTqGz3QslCA _6i9CLh3EEeaJTqGz3QslCA _6i9CNR3EEeaJTqGz3QslCA _6i9CPR3EEeaJTqGz3QslCA _6i9CRB3EEeaJTqGz3QslCA _6i9pMR3EEeaJTqGz3QslCA _6i9pOB3EEeaJTqGz3QslCA" width="49" featureName="height">
+        <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='HeightColumn']"/>
+      </columns>
+      <columns xmi:type="table:DFeatureColumn" xmi:id="_6i9pPx3EEeaJTqGz3QslCA" label="depth" cells="_6i9CJx3EEeaJTqGz3QslCA _6i9CLx3EEeaJTqGz3QslCA _6i9CNh3EEeaJTqGz3QslCA _6i9CPh3EEeaJTqGz3QslCA _6i9CRR3EEeaJTqGz3QslCA _6i9pMh3EEeaJTqGz3QslCA _6i9pOR3EEeaJTqGz3QslCA" width="46" featureName="depth">
+        <originMapping xmi:type="description_2:FeatureColumnMapping" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']/@ownedColumnMappings[name='DepthColumn']"/>
+      </columns>
+      <description xmi:type="description_2:EditionTableDescription" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']/@ownedRepresentations[name='ScenarioAabbTable']"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/hu.bme.mit.inf.kortargyalo.drones.structure.sirius/description/sirius.odesign#//@ownedViewpoints[name='hu.bme.mit.inf.kortargyalo.drones.structure.model']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>
