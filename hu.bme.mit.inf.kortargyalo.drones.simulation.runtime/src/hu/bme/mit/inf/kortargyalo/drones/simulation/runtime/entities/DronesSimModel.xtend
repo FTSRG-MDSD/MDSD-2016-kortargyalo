@@ -40,7 +40,6 @@ class DronesSimModel extends Model {
 	@Accessors(PUBLIC_GETTER) val timeoutInterrupt = new InterruptCode("timeout")
 	@Accessors(PUBLIC_GETTER) val moveCompletedInterrupt = new InterruptCode("moveCompleted")
 	
-	@Accessors(PUBLIC_GETTER) EnvironmentEntity environmentEntity
 	val droneProcessesMap = new HashMap<String, DroneSimProcess>
 	
 	new(Model owner, Scenario scenario, DroneLoader droneLoader, boolean showInReport, boolean showInTrace) {
@@ -66,8 +65,6 @@ class DronesSimModel extends Model {
 		simulationModel.scenario = scenario
 		
 		initIncQueryEngine()
-		
-		environmentEntity = new EnvironmentEntity(this, "environment", false)
 
 		for (drone : scenario.drones) {
 			val droneInstance = createDroneInstance => [
