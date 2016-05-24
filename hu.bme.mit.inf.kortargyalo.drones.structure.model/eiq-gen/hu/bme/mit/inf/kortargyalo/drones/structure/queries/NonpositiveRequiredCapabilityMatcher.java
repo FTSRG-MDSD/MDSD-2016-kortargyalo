@@ -382,7 +382,7 @@ public class NonpositiveRequiredCapabilityMatcher extends BaseMatcher<Nonpositiv
   @Override
   protected NonpositiveRequiredCapabilityMatch tupleToMatch(final Tuple t) {
     try {
-    	return NonpositiveRequiredCapabilityMatch.newMatch((RequiredCapability) t.get(POSITION_REQUIREDCAPABILITY), (Capability) t.get(POSITION_CAPABILITY), (CooperativeAction) t.get(POSITION_ACTION), (Role) t.get(POSITION_ROLE));
+    	return NonpositiveRequiredCapabilityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability) t.get(POSITION_REQUIREDCAPABILITY), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) t.get(POSITION_CAPABILITY), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) t.get(POSITION_ACTION), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role) t.get(POSITION_ROLE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -392,7 +392,7 @@ public class NonpositiveRequiredCapabilityMatcher extends BaseMatcher<Nonpositiv
   @Override
   protected NonpositiveRequiredCapabilityMatch arrayToMatch(final Object[] match) {
     try {
-    	return NonpositiveRequiredCapabilityMatch.newMatch((RequiredCapability) match[POSITION_REQUIREDCAPABILITY], (Capability) match[POSITION_CAPABILITY], (CooperativeAction) match[POSITION_ACTION], (Role) match[POSITION_ROLE]);
+    	return NonpositiveRequiredCapabilityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability) match[POSITION_REQUIREDCAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) match[POSITION_CAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) match[POSITION_ACTION], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role) match[POSITION_ROLE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -402,7 +402,7 @@ public class NonpositiveRequiredCapabilityMatcher extends BaseMatcher<Nonpositiv
   @Override
   protected NonpositiveRequiredCapabilityMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NonpositiveRequiredCapabilityMatch.newMutableMatch((RequiredCapability) match[POSITION_REQUIREDCAPABILITY], (Capability) match[POSITION_CAPABILITY], (CooperativeAction) match[POSITION_ACTION], (Role) match[POSITION_ROLE]);
+    	return NonpositiveRequiredCapabilityMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability) match[POSITION_REQUIREDCAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) match[POSITION_CAPABILITY], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) match[POSITION_ACTION], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role) match[POSITION_ROLE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

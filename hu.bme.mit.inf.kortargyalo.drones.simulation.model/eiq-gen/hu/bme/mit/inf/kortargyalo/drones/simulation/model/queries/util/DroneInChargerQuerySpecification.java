@@ -2,8 +2,8 @@ package hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util;
 
 import com.google.common.collect.Sets;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CollisionHelper;
-import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CollisionWithObjectMatch;
-import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CollisionWithObjectMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneInChargerMatch;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneInChargerMatcher;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -27,15 +27,15 @@ import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitialization
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 
 /**
- * A pattern-specific query specification that can instantiate CollisionWithObjectMatcher in a type-safe way.
+ * A pattern-specific query specification that can instantiate DroneInChargerMatcher in a type-safe way.
  * 
- * @see CollisionWithObjectMatcher
- * @see CollisionWithObjectMatch
+ * @see DroneInChargerMatcher
+ * @see DroneInChargerMatch
  * 
  */
 @SuppressWarnings("all")
-public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEMFQuerySpecification<CollisionWithObjectMatcher> {
-  private CollisionWithObjectQuerySpecification() {
+public final class DroneInChargerQuerySpecification extends BaseGeneratedEMFQuerySpecification<DroneInChargerMatcher> {
+  private DroneInChargerQuerySpecification() {
     super(GeneratedPQuery.INSTANCE);
   }
   
@@ -44,7 +44,7 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static CollisionWithObjectQuerySpecification instance() throws IncQueryException {
+  public static DroneInChargerQuerySpecification instance() throws IncQueryException {
     try{
     	return LazyHolder.INSTANCE;
     } catch (ExceptionInInitializerError err) {
@@ -53,44 +53,44 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
   }
   
   @Override
-  protected CollisionWithObjectMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
-    return CollisionWithObjectMatcher.on(engine);
+  protected DroneInChargerMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+    return DroneInChargerMatcher.on(engine);
   }
   
   @Override
-  public CollisionWithObjectMatch newEmptyMatch() {
-    return CollisionWithObjectMatch.newEmptyMatch();
+  public DroneInChargerMatch newEmptyMatch() {
+    return DroneInChargerMatch.newEmptyMatch();
   }
   
   @Override
-  public CollisionWithObjectMatch newMatch(final Object... parameters) {
-    return CollisionWithObjectMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) parameters[0], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle) parameters[1]);
+  public DroneInChargerMatch newMatch(final Object... parameters) {
+    return DroneInChargerMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) parameters[0], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) parameters[1]);
   }
   
   private static class LazyHolder {
-    private final static CollisionWithObjectQuerySpecification INSTANCE = make();
+    private final static DroneInChargerQuerySpecification INSTANCE = make();
     
-    public static CollisionWithObjectQuerySpecification make() {
-      return new CollisionWithObjectQuerySpecification();					
+    public static DroneInChargerQuerySpecification make() {
+      return new DroneInChargerQuerySpecification();					
     }
   }
   
   private static class GeneratedPQuery extends BaseGeneratedEMFPQuery {
-    private final static CollisionWithObjectQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
+    private final static DroneInChargerQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
     
     @Override
     public String getFullyQualifiedName() {
-      return "hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.collisionWithObject";
+      return "hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.droneInCharger";
     }
     
     @Override
     public List<String> getParameterNames() {
-      return Arrays.asList("drone","object");
+      return Arrays.asList("drone","c");
     }
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("drone", "hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance"),new PParameter("object", "hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle"));
+      return Arrays.asList(new PParameter("drone", "hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance"),new PParameter("c", "hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger"));
     }
     
     @Override
@@ -100,7 +100,7 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
       	{
       		PBody body = new PBody(this);
       		PVariable var_drone = body.getOrCreateVariableByName("drone");
-      		PVariable var_object = body.getOrCreateVariableByName("object");
+      		PVariable var_c = body.getOrCreateVariableByName("c");
       		PVariable var_droneposition = body.getOrCreateVariableByName("droneposition");
       		PVariable var_dronepositionx = body.getOrCreateVariableByName("dronepositionx");
       		PVariable var_dronepositiony = body.getOrCreateVariableByName("dronepositiony");
@@ -116,10 +116,10 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
       		PVariable var_objectdimy = body.getOrCreateVariableByName("objectdimy");
       		PVariable var_objectdimz = body.getOrCreateVariableByName("objectdimz");
       		new TypeConstraint(body, new FlatTuple(var_drone), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		new TypeConstraint(body, new FlatTuple(var_c), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Charger")));
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
       		   new ExportedParameter(body, var_drone, "drone"),
-      		   new ExportedParameter(body, var_object, "object")
+      		   new ExportedParameter(body, var_c, "c")
       		));
       		// 	DroneInstance.position(drone,droneposition)
       		new TypeConstraint(body, new FlatTuple(var_drone), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
@@ -165,54 +165,54 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
       		PVariable var__virtual_9_ = body.getOrCreateVariableByName(".virtual{9}");
       		new TypeConstraint(body, new FlatTuple(var_dronedimension, var__virtual_9_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
       		new Equality(body, var__virtual_9_, var_dronedimensionz);
-      		// 		Obstacle.position.x(object, objectx)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 		Charger.position.x(c, objectx)
+      		new TypeConstraint(body, new FlatTuple(var_c), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Charger")));
       		PVariable var__virtual_10_ = body.getOrCreateVariableByName(".virtual{10}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_10_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
+      		new TypeConstraint(body, new FlatTuple(var_c, var__virtual_10_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
       		PVariable var__virtual_11_ = body.getOrCreateVariableByName(".virtual{11}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_10_, var__virtual_11_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "x")));
       		new Equality(body, var__virtual_11_, var_objectx);
-      		// 	Obstacle.position.y(object, objecty)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Charger.position.y(c, objecty)
+      		new TypeConstraint(body, new FlatTuple(var_c), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Charger")));
       		PVariable var__virtual_12_ = body.getOrCreateVariableByName(".virtual{12}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_12_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
+      		new TypeConstraint(body, new FlatTuple(var_c, var__virtual_12_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
       		PVariable var__virtual_13_ = body.getOrCreateVariableByName(".virtual{13}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_12_, var__virtual_13_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "y")));
       		new Equality(body, var__virtual_13_, var_objecty);
-      		// 	Obstacle.position.z(object, objectz)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Charger.position.z(c, objectz)
+      		new TypeConstraint(body, new FlatTuple(var_c), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Charger")));
       		PVariable var__virtual_14_ = body.getOrCreateVariableByName(".virtual{14}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_14_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
+      		new TypeConstraint(body, new FlatTuple(var_c, var__virtual_14_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
       		PVariable var__virtual_15_ = body.getOrCreateVariableByName(".virtual{15}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_14_, var__virtual_15_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "z")));
       		new Equality(body, var__virtual_15_, var_objectz);
-      		// 	Obstacle.dimension.width(object, objectdimx)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Charger.dimension.width(c, objectdimx)
+      		new TypeConstraint(body, new FlatTuple(var_c), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Charger")));
       		PVariable var__virtual_16_ = body.getOrCreateVariableByName(".virtual{16}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_16_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
+      		new TypeConstraint(body, new FlatTuple(var_c, var__virtual_16_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
       		PVariable var__virtual_17_ = body.getOrCreateVariableByName(".virtual{17}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_16_, var__virtual_17_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "width")));
       		new Equality(body, var__virtual_17_, var_objectdimx);
-      		// 	Obstacle.dimension.height(object, objectdimy)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Charger.dimension.height(c, objectdimy)
+      		new TypeConstraint(body, new FlatTuple(var_c), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Charger")));
       		PVariable var__virtual_18_ = body.getOrCreateVariableByName(".virtual{18}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_18_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
+      		new TypeConstraint(body, new FlatTuple(var_c, var__virtual_18_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
       		PVariable var__virtual_19_ = body.getOrCreateVariableByName(".virtual{19}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_18_, var__virtual_19_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "height")));
       		new Equality(body, var__virtual_19_, var_objectdimy);
-      		// 	Obstacle.dimension.depth(object, objectdimz)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Charger.dimension.depth(c, objectdimz)
+      		new TypeConstraint(body, new FlatTuple(var_c), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Charger")));
       		PVariable var__virtual_20_ = body.getOrCreateVariableByName(".virtual{20}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_20_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
+      		new TypeConstraint(body, new FlatTuple(var_c, var__virtual_20_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
       		PVariable var__virtual_21_ = body.getOrCreateVariableByName(".virtual{21}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_20_, var__virtual_21_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
       		new Equality(body, var__virtual_21_, var_objectdimz);
-      		// 		check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz))
+      		// 	check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz))
       		new ExpressionEvaluation(body, new IExpressionEvaluator() {
       		                            
       		                            @Override
       		                            public String getShortDescription() {
-      		                                return "Expression evaluation from pattern collisionWithObject";
+      		                                return "Expression evaluation from pattern droneInCharger";
       		                            }
       		
       		                            @Override

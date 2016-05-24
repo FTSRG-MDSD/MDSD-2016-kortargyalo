@@ -45,7 +45,7 @@ public abstract class DurationTooShortMatch extends BasePatternMatch {
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("Action".equals(parameterName) ) {
-    	this.fAction = (CooperativeAction) newValue;
+    	this.fAction = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) newValue;
     	return true;
     }
     return false;

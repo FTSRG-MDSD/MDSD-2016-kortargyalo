@@ -3,10 +3,12 @@ package hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.AllRoleFilledMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CollisionWithObjectMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CrashMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneInChargerMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.LeftSceneMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.AllRoleFilledQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.CollisionWithObjectQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.CrashQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.DroneInChargerQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.LeftSceneQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
@@ -26,6 +28,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * <li>crash</li>
  * <li>leftScene</li>
  * <li>collisionWithObject</li>
+ * <li>droneInCharger</li>
  * </ul>
  * 
  * @see IPatternGroup
@@ -54,6 +57,7 @@ public final class DronesSimulationQueries extends BaseGeneratedPatternGroup {
     querySpecifications.add(CrashQuerySpecification.instance());
     querySpecifications.add(LeftSceneQuerySpecification.instance());
     querySpecifications.add(CollisionWithObjectQuerySpecification.instance());
+    querySpecifications.add(DroneInChargerQuerySpecification.instance());
   }
   
   public AllRoleFilledQuerySpecification getAllRoleFilled() throws IncQueryException {
@@ -86,5 +90,13 @@ public final class DronesSimulationQueries extends BaseGeneratedPatternGroup {
   
   public CollisionWithObjectMatcher getCollisionWithObject(final IncQueryEngine engine) throws IncQueryException {
     return CollisionWithObjectMatcher.on(engine);
+  }
+  
+  public DroneInChargerQuerySpecification getDroneInCharger() throws IncQueryException {
+    return DroneInChargerQuerySpecification.instance();
+  }
+  
+  public DroneInChargerMatcher getDroneInCharger(final IncQueryEngine engine) throws IncQueryException {
+    return DroneInChargerMatcher.on(engine);
   }
 }

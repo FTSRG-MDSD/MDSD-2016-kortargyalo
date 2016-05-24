@@ -11,7 +11,10 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtend.lib,
  org.eclipse.xtend.lib.macro,
  desmoj;bundle-version="2.5.1";visibility:=reexport,
- hu.bme.mit.inf.kortargyalo.drones.simulation.model;bundle-version="0.1.0";visibility:=reexport
+ hu.bme.mit.inf.kortargyalo.drones.simulation.model;bundle-version="0.1.0";visibility:=reexport,
+ org.eclipse.incquery.runtime;bundle-version="1.1.0",
+ org.eclipse.incquery.runtime.evm;bundle-version="1.1.0",
+ org.eclipse.viatra.emf.runtime;bundle-version="0.8.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities

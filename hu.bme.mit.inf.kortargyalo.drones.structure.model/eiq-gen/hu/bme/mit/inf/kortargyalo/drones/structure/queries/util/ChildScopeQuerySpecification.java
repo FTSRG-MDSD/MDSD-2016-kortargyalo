@@ -63,29 +63,11 @@ final class ChildScopeQuerySpecification extends BaseGeneratedEMFQuerySpecificat
     throw new UnsupportedOperationException();
   }
   
-  /**
-   * Inner class allowing the singleton instance of {@link ChildScopeQuerySpecification} to be created 
-   * 	<b>not</b> at the class load time of the outer class, 
-   * 	but rather at the first call to {@link ChildScopeQuerySpecification#instance()}.
-   * 
-   * <p> This workaround is required e.g. to support recursion.
-   * 
-   */
   private static class LazyHolder {
-    private final static ChildScopeQuerySpecification INSTANCE = new ChildScopeQuerySpecification();
+    private final static ChildScopeQuerySpecification INSTANCE = make();
     
-    /**
-     * Statically initializes the query specification <b>after</b> the field {@link #INSTANCE} is assigned.
-     * This initialization order is required to support indirect recursion.
-     * 
-     * <p> The static initializer is defined using a helper field to work around limitations of the code generator.
-     * 
-     */
-    private final static Object STATIC_INITIALIZER = ensureInitialized();
-    
-    public static Object ensureInitialized() {
-      INSTANCE.ensureInitializedInternalSneaky();
-      return null;					
+    public static ChildScopeQuerySpecification make() {
+      return new ChildScopeQuerySpecification();					
     }
   }
   

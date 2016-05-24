@@ -1,7 +1,8 @@
 package hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries;
 
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance;
-import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.LeftSceneQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.DroneInChargerQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -9,31 +10,35 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.leftScene pattern,
- * to be used in conjunction with {@link LeftSceneMatcher}.
+ * Pattern-specific match representation of the hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.droneInCharger pattern,
+ * to be used in conjunction with {@link DroneInChargerMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters,
  * usable to represent a match of the pattern in the result of a query,
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
- * @see LeftSceneMatcher
- * @see LeftSceneProcessor
+ * @see DroneInChargerMatcher
+ * @see DroneInChargerProcessor
  * 
  */
 @SuppressWarnings("all")
-public abstract class LeftSceneMatch extends BasePatternMatch {
+public abstract class DroneInChargerMatch extends BasePatternMatch {
   private DroneInstance fDrone;
   
-  private static List<String> parameterNames = makeImmutableList("drone");
+  private Charger fC;
   
-  private LeftSceneMatch(final DroneInstance pDrone) {
+  private static List<String> parameterNames = makeImmutableList("drone", "c");
+  
+  private DroneInChargerMatch(final DroneInstance pDrone, final Charger pC) {
     this.fDrone = pDrone;
+    this.fC = pC;
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("drone".equals(parameterName)) return this.fDrone;
+    if ("c".equals(parameterName)) return this.fC;
     return null;
   }
   
@@ -41,11 +46,19 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
     return this.fDrone;
   }
   
+  public Charger getC() {
+    return this.fC;
+  }
+  
   @Override
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("drone".equals(parameterName) ) {
     	this.fDrone = (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) newValue;
+    	return true;
+    }
+    if ("c".equals(parameterName) ) {
+    	this.fC = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) newValue;
     	return true;
     }
     return false;
@@ -56,30 +69,37 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
     this.fDrone = pDrone;
   }
   
+  public void setC(final Charger pC) {
+    if (!isMutable()) throw new java.lang.UnsupportedOperationException();
+    this.fC = pC;
+  }
+  
   @Override
   public String patternName() {
-    return "hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.leftScene";
+    return "hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.droneInCharger";
   }
   
   @Override
   public List<String> parameterNames() {
-    return LeftSceneMatch.parameterNames;
+    return DroneInChargerMatch.parameterNames;
   }
   
   @Override
   public Object[] toArray() {
-    return new Object[]{fDrone};
+    return new Object[]{fDrone, fC};
   }
   
   @Override
-  public LeftSceneMatch toImmutable() {
-    return isMutable() ? newMatch(fDrone) : this;
+  public DroneInChargerMatch toImmutable() {
+    return isMutable() ? newMatch(fDrone, fC) : this;
   }
   
   @Override
   public String prettyPrint() {
     StringBuilder result = new StringBuilder();
-    result.append("\"drone\"=" + prettyPrintValue(fDrone)
+    result.append("\"drone\"=" + prettyPrintValue(fDrone) + ", ");
+    
+    result.append("\"c\"=" + prettyPrintValue(fC)
     );
     return result.toString();
   }
@@ -89,6 +109,7 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((fDrone == null) ? 0 : fDrone.hashCode());
+    result = prime * result + ((fC == null) ? 0 : fC.hashCode());
     return result;
   }
   
@@ -96,7 +117,7 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof LeftSceneMatch)) { // this should be infrequent
+    if (!(obj instanceof DroneInChargerMatch)) { // this should be infrequent
     	if (obj == null) {
     		return false;
     	}
@@ -108,16 +129,18 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
-    LeftSceneMatch other = (LeftSceneMatch) obj;
+    DroneInChargerMatch other = (DroneInChargerMatch) obj;
     if (fDrone == null) {if (other.fDrone != null) return false;}
     else if (!fDrone.equals(other.fDrone)) return false;
+    if (fC == null) {if (other.fC != null) return false;}
+    else if (!fC.equals(other.fC)) return false;
     return true;
   }
   
   @Override
-  public LeftSceneQuerySpecification specification() {
+  public DroneInChargerQuerySpecification specification() {
     try {
-    	return LeftSceneQuerySpecification.instance();
+    	return DroneInChargerQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException (ex);
@@ -131,8 +154,8 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
    * @return the empty match.
    * 
    */
-  public static LeftSceneMatch newEmptyMatch() {
-    return new Mutable(null);
+  public static DroneInChargerMatch newEmptyMatch() {
+    return new Mutable(null, null);
   }
   
   /**
@@ -140,11 +163,12 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
    * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
    * 
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
+   * @param pC the fixed value of pattern parameter c, or null if not bound.
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static LeftSceneMatch newMutableMatch(final DroneInstance pDrone) {
-    return new Mutable(pDrone);
+  public static DroneInChargerMatch newMutableMatch(final DroneInstance pDrone, final Charger pC) {
+    return new Mutable(pDrone, pC);
   }
   
   /**
@@ -152,16 +176,17 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
+   * @param pC the fixed value of pattern parameter c, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public static LeftSceneMatch newMatch(final DroneInstance pDrone) {
-    return new Immutable(pDrone);
+  public static DroneInChargerMatch newMatch(final DroneInstance pDrone, final Charger pC) {
+    return new Immutable(pDrone, pC);
   }
   
-  private static final class Mutable extends LeftSceneMatch {
-    Mutable(final DroneInstance pDrone) {
-      super(pDrone);
+  private static final class Mutable extends DroneInChargerMatch {
+    Mutable(final DroneInstance pDrone, final Charger pC) {
+      super(pDrone, pC);
     }
     
     @Override
@@ -170,9 +195,9 @@ public abstract class LeftSceneMatch extends BasePatternMatch {
     }
   }
   
-  private static final class Immutable extends LeftSceneMatch {
-    Immutable(final DroneInstance pDrone) {
-      super(pDrone);
+  private static final class Immutable extends DroneInChargerMatch {
+    Immutable(final DroneInstance pDrone, final Charger pC) {
+      super(pDrone, pC);
     }
     
     @Override

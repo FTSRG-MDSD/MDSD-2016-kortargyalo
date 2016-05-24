@@ -209,7 +209,7 @@ public class LeftSceneMatcher extends BaseMatcher<LeftSceneMatch> {
   @Override
   protected LeftSceneMatch tupleToMatch(final Tuple t) {
     try {
-    	return LeftSceneMatch.newMatch((DroneInstance) t.get(POSITION_DRONE));
+    	return LeftSceneMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) t.get(POSITION_DRONE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -219,7 +219,7 @@ public class LeftSceneMatcher extends BaseMatcher<LeftSceneMatch> {
   @Override
   protected LeftSceneMatch arrayToMatch(final Object[] match) {
     try {
-    	return LeftSceneMatch.newMatch((DroneInstance) match[POSITION_DRONE]);
+    	return LeftSceneMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -229,7 +229,7 @@ public class LeftSceneMatcher extends BaseMatcher<LeftSceneMatch> {
   @Override
   protected LeftSceneMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return LeftSceneMatch.newMutableMatch((DroneInstance) match[POSITION_DRONE]);
+    	return LeftSceneMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

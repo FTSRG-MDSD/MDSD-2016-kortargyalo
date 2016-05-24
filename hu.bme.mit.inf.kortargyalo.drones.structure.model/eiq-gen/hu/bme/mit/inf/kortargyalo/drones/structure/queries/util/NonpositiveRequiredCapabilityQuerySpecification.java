@@ -67,29 +67,11 @@ public final class NonpositiveRequiredCapabilityQuerySpecification extends BaseG
     return NonpositiveRequiredCapabilityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability) parameters[0], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) parameters[1], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) parameters[2], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role) parameters[3]);
   }
   
-  /**
-   * Inner class allowing the singleton instance of {@link NonpositiveRequiredCapabilityQuerySpecification} to be created 
-   * 	<b>not</b> at the class load time of the outer class, 
-   * 	but rather at the first call to {@link NonpositiveRequiredCapabilityQuerySpecification#instance()}.
-   * 
-   * <p> This workaround is required e.g. to support recursion.
-   * 
-   */
   private static class LazyHolder {
-    private final static NonpositiveRequiredCapabilityQuerySpecification INSTANCE = new NonpositiveRequiredCapabilityQuerySpecification();
+    private final static NonpositiveRequiredCapabilityQuerySpecification INSTANCE = make();
     
-    /**
-     * Statically initializes the query specification <b>after</b> the field {@link #INSTANCE} is assigned.
-     * This initialization order is required to support indirect recursion.
-     * 
-     * <p> The static initializer is defined using a helper field to work around limitations of the code generator.
-     * 
-     */
-    private final static Object STATIC_INITIALIZER = ensureInitialized();
-    
-    public static Object ensureInitialized() {
-      INSTANCE.ensureInitializedInternalSneaky();
-      return null;					
+    public static NonpositiveRequiredCapabilityQuerySpecification make() {
+      return new NonpositiveRequiredCapabilityQuerySpecification();					
     }
   }
   

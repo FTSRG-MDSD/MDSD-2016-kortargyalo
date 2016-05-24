@@ -1,10 +1,11 @@
 package exampleScenario;
 
+import org.eclipse.xtext.xbase.lib.InputOutput;
+
 import co.paralleluniverse.fibers.SuspendExecution;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities.DroneSimProcess;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities.DronesSimModel;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class drone1_SimProcess extends DroneSimProcess {

@@ -18,6 +18,8 @@ pattern allRoleFilled(t : TaskInstance){
 	neg find notAllRoleFilled(t);
 }
 
+
+
 //this warning is intentional
 pattern crash(drone1 : DroneInstance, drone2: DroneInstance){
 	DroneInstance.position(drone1,drone1position);
@@ -83,3 +85,24 @@ pattern collisionWithObject(drone : DroneInstance, object : Obstacle){
 	check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
 		
 }
+
+pattern droneInCharger(drone : DroneInstance, c : Charger){
+	DroneInstance.position(drone,droneposition);
+	Position.x(droneposition,dronepositionx);
+	Position.y(droneposition,dronepositiony);
+	Position.z(droneposition,dronepositionz);
+	DroneInstance.drone.dronetype.dimension(drone,dronedimension);
+	Dimension.width(dronedimension, dronedimensionx);
+	Dimension.height(dronedimension, dronedimensiony);
+	Dimension.depth(dronedimension, dronedimensionz);	
+
+	Charger.position.x(c, objectx);
+	Charger.position.y(c, objecty);
+	Charger.position.z(c, objectz);
+	Charger.dimension.width(c, objectdimx);
+	Charger.dimension.height(c, objectdimy);
+	Charger.dimension.depth(c, objectdimz);
+
+	check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
+}
+

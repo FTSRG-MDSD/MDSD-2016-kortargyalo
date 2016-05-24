@@ -197,7 +197,7 @@ public class NonpositiveStartTimeoutMatcher extends BaseMatcher<NonpositiveStart
   @Override
   protected NonpositiveStartTimeoutMatch tupleToMatch(final Tuple t) {
     try {
-    	return NonpositiveStartTimeoutMatch.newMatch((CooperativeAction) t.get(POSITION_ACTION));
+    	return NonpositiveStartTimeoutMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) t.get(POSITION_ACTION));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -207,7 +207,7 @@ public class NonpositiveStartTimeoutMatcher extends BaseMatcher<NonpositiveStart
   @Override
   protected NonpositiveStartTimeoutMatch arrayToMatch(final Object[] match) {
     try {
-    	return NonpositiveStartTimeoutMatch.newMatch((CooperativeAction) match[POSITION_ACTION]);
+    	return NonpositiveStartTimeoutMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) match[POSITION_ACTION]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -217,7 +217,7 @@ public class NonpositiveStartTimeoutMatcher extends BaseMatcher<NonpositiveStart
   @Override
   protected NonpositiveStartTimeoutMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NonpositiveStartTimeoutMatch.newMutableMatch((CooperativeAction) match[POSITION_ACTION]);
+    	return NonpositiveStartTimeoutMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) match[POSITION_ACTION]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

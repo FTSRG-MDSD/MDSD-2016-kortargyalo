@@ -197,7 +197,7 @@ public class NonpositiveBatteryCapacityMatcher extends BaseMatcher<NonpositiveBa
   @Override
   protected NonpositiveBatteryCapacityMatch tupleToMatch(final Tuple t) {
     try {
-    	return NonpositiveBatteryCapacityMatch.newMatch((DroneType) t.get(POSITION_DRONETYPE));
+    	return NonpositiveBatteryCapacityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) t.get(POSITION_DRONETYPE));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -207,7 +207,7 @@ public class NonpositiveBatteryCapacityMatcher extends BaseMatcher<NonpositiveBa
   @Override
   protected NonpositiveBatteryCapacityMatch arrayToMatch(final Object[] match) {
     try {
-    	return NonpositiveBatteryCapacityMatch.newMatch((DroneType) match[POSITION_DRONETYPE]);
+    	return NonpositiveBatteryCapacityMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -217,7 +217,7 @@ public class NonpositiveBatteryCapacityMatcher extends BaseMatcher<NonpositiveBa
   @Override
   protected NonpositiveBatteryCapacityMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return NonpositiveBatteryCapacityMatch.newMutableMatch((DroneType) match[POSITION_DRONETYPE]);
+    	return NonpositiveBatteryCapacityMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DroneType) match[POSITION_DRONETYPE]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

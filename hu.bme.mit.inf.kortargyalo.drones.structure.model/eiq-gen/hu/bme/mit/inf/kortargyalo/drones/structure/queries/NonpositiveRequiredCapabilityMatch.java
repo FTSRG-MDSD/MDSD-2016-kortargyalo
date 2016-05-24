@@ -72,19 +72,19 @@ public abstract class NonpositiveRequiredCapabilityMatch extends BasePatternMatc
   public boolean set(final String parameterName, final Object newValue) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
     if ("RequiredCapability".equals(parameterName) ) {
-    	this.fRequiredCapability = (RequiredCapability) newValue;
+    	this.fRequiredCapability = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.RequiredCapability) newValue;
     	return true;
     }
     if ("Capability".equals(parameterName) ) {
-    	this.fCapability = (Capability) newValue;
+    	this.fCapability = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability) newValue;
     	return true;
     }
     if ("Action".equals(parameterName) ) {
-    	this.fAction = (CooperativeAction) newValue;
+    	this.fAction = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.CooperativeAction) newValue;
     	return true;
     }
     if ("Role".equals(parameterName) ) {
-    	this.fRole = (Role) newValue;
+    	this.fRole = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role) newValue;
     	return true;
     }
     return false;
