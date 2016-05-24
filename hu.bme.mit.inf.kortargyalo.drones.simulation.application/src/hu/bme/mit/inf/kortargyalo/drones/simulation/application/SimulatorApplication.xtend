@@ -1,6 +1,7 @@
 package hu.bme.mit.inf.kortargyalo.drones.simulation.application
 
 import desmoj.core.simulator.Experiment
+import desmoj.core.simulator.TimeInstant
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities.DronesSimModel
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructure
 import org.apache.log4j.Logger
@@ -84,7 +85,11 @@ class SimulatorApplication implements IApplication {
 		val model = new DronesSimModel(null, scenario, droneLoader, true, true)
 		val experiment = new Experiment(scenario.name, outputPath)
 		model.connectToExperiment(experiment)
+		experiment.executionSpeedRate = 0
+		experiment.traceOn(new TimeInstant(0))
 		experiment.start
+		experiment.report(model)
+		experiment.finish
 	}
 
 	private def getDroneClassLoader(String bundleId) {

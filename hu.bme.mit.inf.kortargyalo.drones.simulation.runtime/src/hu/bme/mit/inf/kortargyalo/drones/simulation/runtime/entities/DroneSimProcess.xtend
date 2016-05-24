@@ -58,7 +58,7 @@ abstract class DroneSimProcess extends SimProcess {
 	}
 
 	protected final def void _moveTo(double x, double y, double z) {
-		sendTraceNote('''Starting to move to «x», «y», «z»''')
+		log('''Starting to move to «x», «y», «z»''')
 		val target = DronesStructureFactory.eINSTANCE.createPosition => [
 			it.x = x
 			it.y = y
@@ -69,7 +69,7 @@ abstract class DroneSimProcess extends SimProcess {
 		movementEvent.moveTo(this, target)
 		while (true) {
 			if (interrupted && interruptCode == dronesOwner.moveCompletedInterrupt) {
-				sendTraceNote('''Moved to «x», «y», «z»''')
+				log('''Moved to «x», «y», «z»''')
 				return
 			}
 			passivate
@@ -79,7 +79,7 @@ abstract class DroneSimProcess extends SimProcess {
 	protected final def void _charge() {
 		if(DroneInChargerMatcher.on(dronesOwner.incQueryEngine).allValuesOfdrone.contains(droneInstance)) {
 			droneInstance.currentBattery = droneInstance.drone.dronetype.maxBatteryCapacity
-			sendTraceNote("Charged")
+			log("Charged")
 		} else {
 			sendWarning("Drone cannot charge", "SimProcess : " + name, "The drone is trying to charge when it is not in any of the charger areas", "Move the drone to a charger area before charging")
 		}
@@ -111,17 +111,17 @@ abstract class DroneSimProcess extends SimProcess {
 			droneInstance.observations.add(obs)
 			count.set(1, count.get(1) + 1)
 		]
-		sendTraceNote('''Scanned «count.get(0)» drones and «count.get(1)» obstacles''')
+		log('''Scanned «count.get(0)» drones and «count.get(1)» obstacles''')
 	}
 
 	protected final def void _sendSignal(String signal, String recipent) {
 		dronesOwner.getDroneProcess(recipent).interrupt(dronesOwner.getSignalInterrupt(signal))
-		sendTraceNote('''Sent signal «signal» to «recipent»''')
+		log('''Sent signal «signal» to «recipent»''')
 	}
 
 	protected final def void _sendMap(String drone) {
 		dronesOwner.getDroneProcess(drone).droneInstance.observations.addAll(droneInstance.observations)
-		sendTraceNote('''Sent map of «droneInstance.observations.size» observations to «drone»''')
+		log('''Sent map of «droneInstance.observations.size» observations to «drone»''')
 	}
 
 	protected final def int _wait(int timeout, String... signals) {
@@ -132,14 +132,14 @@ abstract class DroneSimProcess extends SimProcess {
 			if(signals.length == 0) {
 				throw new IllegalArgumentException("Infinite wait detected.")
 			}
-			sendTraceNote('''Waiting for «FOR i : signals SEPARATOR ", "»«i»«ENDFOR»''')
+			log('''Waiting for «FOR i : signals SEPARATOR ", "»«i»«ENDFOR»''')
 		} else if(signals.length == 0) {
-			sendTraceNote('''Waiting for «timeout» seconds''')
+			log('''Waiting for «timeout» seconds''')
 			hold(new TimeSpan(timeout, TimeUnit.SECONDS))
-			sendTraceNote("Wait completed")
+			log("Wait completed")
 			return -1
 		} else { // Wait for signals with timeout.
-		sendTraceNote('''Waiting for «FOR i : signals SEPARATOR ", "»«i»«ENDFOR» with «timeout» s timeout''')
+		log('''Waiting for «FOR i : signals SEPARATOR ", "»«i»«ENDFOR» with «timeout» s timeout''')
 			timeoutEvent.schedule(this, new TimeSpan(timeout, TimeUnit.SECONDS))
 		}
 
@@ -147,13 +147,13 @@ abstract class DroneSimProcess extends SimProcess {
 		while(true) {
 			if(interrupted) {
 				if(interruptCode == dronesOwner.timeoutInterrupt) {
-					sendTraceNote("Wait timed out")
+					log("Wait timed out")
 					return -1
 				}
 				val index = interrupts.indexOf(interruptCode)
 				if(index >= 0) {
 					if (timeout > 0) timeoutEvent.cancel
-					sendTraceNote('''Received signal «interruptCode.name»''')
+					log('''Received signal «interruptCode.name»''')
 					return index
 				}
 			}
@@ -163,5 +163,10 @@ abstract class DroneSimProcess extends SimProcess {
 
 	protected final def int _cooperate(String task, String role) {
 		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	}
+	
+	private final def log(String s){
+		println(s)
+		sendTraceNote(s)
 	}
 }

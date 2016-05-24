@@ -38,6 +38,7 @@ class MovementEvent extends Event<DroneSimProcess> {
 			y = current.y + (target.y - current.y) * speed / distance
 			z = current.z + (target.z - current.z) * speed / distance
 		]
+		println('''«who.name» at «who.droneInstance.position.x», «who.droneInstance.position.y», «who.droneInstance.position.z»''')
 		schedule(who, DELTA_T)
 	}
 	
