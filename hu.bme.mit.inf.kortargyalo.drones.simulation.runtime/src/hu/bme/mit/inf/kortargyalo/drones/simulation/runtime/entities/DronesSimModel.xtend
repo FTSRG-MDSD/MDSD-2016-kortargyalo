@@ -2,10 +2,12 @@ package hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities
 
 import desmoj.core.simulator.InterruptCode
 import desmoj.core.simulator.Model
+import desmoj.core.simulator.TimeSpan
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulation
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationFactory
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario
 import java.util.HashMap
+import java.util.concurrent.TimeUnit
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.util.EcoreUtil
@@ -26,6 +28,8 @@ import org.eclipse.xtend.lib.annotations.Accessors
 
 class DronesSimModel extends Model {
 	
+	public static val DELTA_T = new TimeSpan(1, TimeUnit.SECONDS)
+	
 	val Scenario scenario
 	val DroneLoader droneLoader 
 	@Accessors(PUBLIC_GETTER) DronesSimulation simulationModel
@@ -36,6 +40,7 @@ class DronesSimModel extends Model {
 	@Accessors(PUBLIC_GETTER) val timeoutInterrupt = new InterruptCode("timeout")
 	@Accessors(PUBLIC_GETTER) val moveCompletedInterrupt = new InterruptCode("moveCompleted")
 	
+	@Accessors(PUBLIC_GETTER) EnvironmentEntity environmentEntity
 	val droneProcessesMap = new HashMap<String, DroneSimProcess>
 	
 	new(Model owner, Scenario scenario, DroneLoader droneLoader, boolean showInReport, boolean showInTrace) {
@@ -62,10 +67,7 @@ class DronesSimModel extends Model {
 		
 		initIncQueryEngine()
 		
-//		addStatelessJob(AllRoleFilledMatcher.querySpecification) [
-//			//TODO add event to set the state of the task to RUNNING
-//			throw new RuntimeException("foo")
-//		]
+		environmentEntity = new EnvironmentEntity(this, "environment", false)
 
 		for (drone : scenario.drones) {
 			val droneInstance = createDroneInstance => [
