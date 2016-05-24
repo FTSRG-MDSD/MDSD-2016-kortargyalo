@@ -22,7 +22,7 @@ class DronesSimModel extends Model {
 	}
 	
 	override description() {
-		'''Simulation for the «scenario.name» scenario'''
+		'''Simulation for the Â«scenario.nameÂ» scenario'''
 	}
 	
 	override doInitialSchedules() {
