@@ -2,6 +2,7 @@ package hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities
 
 import co.paralleluniverse.fibers.SuspendExecution
 import desmoj.core.simulator.InterruptCode
+import desmoj.core.simulator.SimProcess
 import desmoj.core.simulator.TimeSpan
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState
@@ -11,13 +12,13 @@ import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneInCharger
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.SimulationUtils
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.events.MovementEvent
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.events.WaitTimeoutEvent
+import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.exceptions.DroneFailedException
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructureFactory
 import java.util.concurrent.TimeUnit
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtend.lib.annotations.Accessors
-import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.exceptions.DroneFailedException
 
-abstract class DroneSimProcess extends LogSimProcess {
+abstract class DroneSimProcess extends SimProcess {
 
 	private static long observationId = 0
 
@@ -236,5 +237,19 @@ abstract class DroneSimProcess extends LogSimProcess {
 			}
 			passivate
 		}
+	}
+	
+	protected def log(String s) {
+		val currTime = model.experiment.simClock.time.getTimeTruncated(TimeUnit.SECONDS)
+		println('''«currTime» «name»: «s»''')
+		sendTraceNote(s)
+	}
+	
+	protected def error(String description, String reason, String prevention) {
+		val currTime = model.experiment.simClock.time.getTimeTruncated(TimeUnit.SECONDS)
+		println('''!!! «currTime» «name»: «description»''')
+		println("!!! reason: " + reason)
+		println("!!! prevention: " + prevention)
+		sendWarning(description, "SimProcess : " + name, reason, prevention)
 	}
 }

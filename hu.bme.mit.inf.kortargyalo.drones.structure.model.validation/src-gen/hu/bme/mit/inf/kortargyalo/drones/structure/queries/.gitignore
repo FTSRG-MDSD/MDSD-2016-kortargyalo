@@ -1,13 +1,13 @@
 /DuplicateNameConstraint0.java
-/DurationTooShortConstraint0.java
 /MoreThanOneScanningCapabilitiesConstraint0.java
+/NonpositiveDimensionConstraint0.java
+/NotOneMovementCapabilityProvidedConstraint0.java
+/DurationTooShortConstraint0.java
 /NegativeCostProvidedCapabilityConstraint0.java
 /NegativeEnergyConsumptionConstraint0.java
 /NonpositiveBatteryCapacityConstraint0.java
-/NonpositiveDimensionConstraint0.java
 /NonpositiveProvidedCapabilityConstraint0.java
 /NonpositiveRequiredCapabilityConstraint0.java
 /NonpositiveStartTimeoutConstraint0.java
 /NonpositiveWeightConstraint0.java
-/NotOneMovementCapabilityProvidedConstraint0.java
 /ProvidedScanningCapabilityWithCostConstraint0.java

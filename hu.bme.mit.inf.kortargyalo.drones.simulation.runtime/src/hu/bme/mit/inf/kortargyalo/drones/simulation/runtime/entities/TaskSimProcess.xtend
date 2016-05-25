@@ -2,6 +2,7 @@ package hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities
 
 import co.paralleluniverse.fibers.SuspendExecution
 import desmoj.core.simulator.InterruptCode
+import desmoj.core.simulator.SimProcess
 import desmoj.core.simulator.TimeSpan
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskState
@@ -9,7 +10,7 @@ import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.events.TaskReadyToSt
 import java.util.concurrent.TimeUnit
 import org.eclipse.xtend.lib.annotations.Accessors
 
-class TaskSimProcess extends LogSimProcess {
+class TaskSimProcess extends SimProcess {
 	
 	val DronesSimModel dronesOwner
 	@Accessors(PUBLIC_GETTER) val TaskInstance taskInstance
@@ -57,5 +58,19 @@ class TaskSimProcess extends LogSimProcess {
 	
 	def readyToStart() {
 		readyToStartEvent.signalReady
+	}
+	
+	protected def log(String s) {
+		val currTime = model.experiment.simClock.time.getTimeTruncated(TimeUnit.SECONDS)
+		println('''«currTime» «name»: «s»''')
+		sendTraceNote(s)
+	}
+	
+	protected def error(String description, String reason, String prevention) {
+		val currTime = model.experiment.simClock.time.getTimeTruncated(TimeUnit.SECONDS)
+		println('''!!! «currTime» «name»: «description»''')
+		println("!!! reason: " + reason)
+		println("!!! prevention: " + prevention)
+		sendWarning(description, "SimProcess : " + name, reason, prevention)
 	}
 }

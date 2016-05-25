@@ -1,15 +1,14 @@
 package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.resource
 
-import com.google.inject.Inject
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehavior
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Signal
 import org.apache.log4j.Logger
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.xtext.EcoreUtil2
-import org.eclipse.xtext.naming.IQualifiedNameConverter
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils
 import org.eclipse.xtext.resource.EObjectDescription
 import org.eclipse.xtext.resource.IEObjectDescription
-import org.eclipse.xtext.resource.IResourceDescriptions
 import org.eclipse.xtext.util.IAcceptor
 import org.eclipse.xtext.xbase.resource.XbaseResourceDescriptionStrategy
 
@@ -18,10 +17,6 @@ class DroneScriptResourceDescriptionStrategy extends XbaseResourceDescriptionStr
 	public static val SCENARIO_NAME_KEY = "hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.resource.SCENARIO_NAME"
 
 	final static val LOG = Logger.getLogger(DroneScriptResourceDescriptionStrategy)
-
-	@Inject IResourceDescriptions globalResourceDescriptions
-
-	@Inject IQualifiedNameConverter qualifiedNameConverter
 
 	override createEObjectDescriptions(EObject eObject, IAcceptor<IEObjectDescription> acceptor) {
 		if (eObject instanceof Signal) {
@@ -41,14 +36,24 @@ class DroneScriptResourceDescriptionStrategy extends XbaseResourceDescriptionStr
 				return false
 			}
 			val userData = newHashMap
-			val scenario = EcoreUtil2.getContainerOfType(signal, DronesBehavior)?.scenario
-			if (scenario != null) {
-				val scenarioName = globalResourceDescriptions.getExportedObjectsByObject(scenario).head?.name
-				if (scenarioName != null) {
-					userData.put(SCENARIO_NAME_KEY, qualifiedNameConverter.toString(scenarioName))
-				}
+			
+			val dronesBehavior = EcoreUtil2.getContainerOfType(signal, DronesBehavior)
+			val nodes = NodeModelUtils.findNodesForFeature(dronesBehavior, DronesBehaviorPackage.eINSTANCE.dronesBehavior_Scenario)
+			var String scenarioName = null
+			// Access the textual model directly instead of the semantic model to avoid cyclic reference resolution.
+			if (nodes.size == 1 && !nodes.get(0).text.isNullOrEmpty) {
+				scenarioName = nodes.get(0).text.trim
+			} else {
+				val scenario = dronesBehavior?.scenario
+				if (scenario != null) {
+					scenarioName = scenario.name
+				} 
 			}
-			acceptor.accept(EObjectDescription.create(qualifiedName, signal, userData))
+
+			if (scenarioName != null) {
+				userData.put(SCENARIO_NAME_KEY, scenarioName)
+				acceptor.accept(EObjectDescription.create(qualifiedName, signal, userData))
+			}
 		} catch (Exception e) {
 			LOG.error(e.message, e)
 		}

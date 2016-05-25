@@ -17,5 +17,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.viatra.emf.runtime;bundle-version="0.8.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities
+Export-Package: hu.bme.mit.inf.kortargyalo.drones.simulation.runtime,
+ hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities,
+ hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.events,
+ hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.exceptions
 

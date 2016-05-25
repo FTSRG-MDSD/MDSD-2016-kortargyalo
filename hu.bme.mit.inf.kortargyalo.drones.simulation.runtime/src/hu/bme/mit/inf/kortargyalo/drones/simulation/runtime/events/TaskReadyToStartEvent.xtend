@@ -10,7 +10,7 @@ class TaskReadyToStartEvent extends ExternalEvent {
 	val TaskSimProcess task
 	val DronesSimModel dronesOwner
 	
-	new(TaskSimProcess task, boolean showInTrace) {
+	new(TaskSimProcess task, boolean showInTrace) { 
 		super(task.model, task.taskInstance.task.name + " ready to start", showInTrace)
 		this.task = task
 		dronesOwner = task.model as DronesSimModel
