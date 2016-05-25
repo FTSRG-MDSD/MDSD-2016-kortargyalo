@@ -3,36 +3,63 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.behavior.xtext.validation
 
-import org.eclipse.xtext.validation.Check
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendSignal
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Cooperate
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage
-import org.eclipse.xtext.EcoreUtil2
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Scan
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.Script
 import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendMap
+import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.SendSignal
+import org.eclipse.xtext.EcoreUtil2
+import org.eclipse.xtext.validation.Check
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class DroneScriptValidator extends AbstractDroneScriptValidator {
-	
+
 	@Check
 	def checkSendSignalWithSameSenderAsRecipent(SendSignal signalCommand) {
 		if (signalCommand.recipent == EcoreUtil2.getContainerOfType(signalCommand, Script)?.drone) {
-			warning('Signals sent to from a drone to itself will be dropped.', 
-					signalCommand,
-					DronesBehaviorPackage.eINSTANCE.sendSignal_Recipent)
+			warning('Signals sent to from a drone to itself will be dropped.', signalCommand,
+				DronesBehaviorPackage.eINSTANCE.sendSignal_Recipent)
 		}
 	}
 
 	@Check
 	def checkSendMapWithSameSenderAsRecipent(SendMap signalCommand) {
 		if (signalCommand.recipent == EcoreUtil2.getContainerOfType(signalCommand, Script)?.drone) {
-			warning('Sending the map information from a drone to itself contains no new information.', 
-					signalCommand,
-					DronesBehaviorPackage.eINSTANCE.sendMap_Recipent)
+			warning('Sending the map information from a drone to itself contains no new information.', signalCommand,
+				DronesBehaviorPackage.eINSTANCE.sendMap_Recipent)
 		}
 	}
-	
+
+	@Check
+	def checkScanWithScanningCapability(Scan scanCommand) {
+		val droneType = EcoreUtil2.getContainerOfType(scanCommand, Script)?.drone?.dronetype
+		if (droneType != null && droneType.scanningCapability == null) {
+			error('''Drones of type «droneType.name» cannot scan, because they have no scanning capability.''',
+				scanCommand, null)
+		}
+	}
+
+	@Check
+	def checkCooperateWithCapabilities(Cooperate cooperateCommand) {
+		val droneType = EcoreUtil2.getContainerOfType(cooperateCommand, Script)?.drone?.dronetype
+		val role = cooperateCommand.role
+		if (droneType == null || role == null) {
+			return
+		}
+		for (required : role.requiredCapabilities) {
+			val providesRequiredCapability = droneType.providedCapabilities.
+				exists [
+					capability == required.capability && maximalValue >= required.minimalValue
+				]
+			if (!providesRequiredCapability) {
+				error('''Drones of type «droneType.name» cannot cooperate as «role.name», because they have no «required.capability.name» >= «required.minimalValue».''',
+					cooperateCommand, DronesBehaviorPackage.eINSTANCE.cooperate_Role)
+			}
+		}
+	}
 }
