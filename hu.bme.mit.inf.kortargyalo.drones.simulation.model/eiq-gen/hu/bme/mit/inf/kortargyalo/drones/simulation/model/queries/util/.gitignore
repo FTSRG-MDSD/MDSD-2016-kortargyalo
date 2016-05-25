@@ -24,3 +24,12 @@
 /DroneInChargerQuerySpecification.java
 /.FirstRoleFilledProcessor.java._trace
 /.FirstRoleFilledQuerySpecification.java._trace
+/.AllDronesAreInactiveProcessor.java._trace
+/.AllDronesAreInactiveQuerySpecification.java._trace
+/.DroneIsActiveQuerySpecification.java._trace
+/.DroneIsInactiveQuerySpecification.java._trace
+/.ObservesSameObjectQuerySpecification.java._trace
+/.ReplacedObservationProcessor.java._trace
+/.ReplacedObservationQuerySpecification.java._trace
+/.DroneBatteryDepletedProcessor.java._trace
+/.DroneBatteryDepletedQuerySpecification.java._trace

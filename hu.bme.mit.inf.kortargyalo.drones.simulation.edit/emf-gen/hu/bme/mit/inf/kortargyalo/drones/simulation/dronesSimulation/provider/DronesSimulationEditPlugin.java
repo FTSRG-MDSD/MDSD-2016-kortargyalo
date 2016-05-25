@@ -2,15 +2,11 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.provider;
 
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.provider.DronesBehaviorEditPlugin;
-
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.provider.DronesStructureEditPlugin;
 
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.xtext.common.types.provider.TypesEditPlugin;
 
 /**
  * This is the central singleton for the DronesSimulation edit plugin.
@@ -44,9 +40,7 @@ public final class DronesSimulationEditPlugin extends EMFPlugin {
 	public DronesSimulationEditPlugin() {
 		super
 		  (new ResourceLocator [] {
-		     DronesBehaviorEditPlugin.INSTANCE,
 		     DronesStructureEditPlugin.INSTANCE,
-		     TypesEditPlugin.INSTANCE,
 		   });
 	}
 

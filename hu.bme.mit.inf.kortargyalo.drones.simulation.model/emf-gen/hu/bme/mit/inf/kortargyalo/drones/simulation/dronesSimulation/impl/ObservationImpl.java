@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.ObservationImpl#getTime <em>Time</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.ObservationImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +46,26 @@ public abstract class ObservationImpl extends MinimalEObjectImpl.Container imple
 	 * @ordered
 	 */
 	protected long time = TIME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long ID_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected long id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +112,34 @@ public abstract class ObservationImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(long newId) {
+		long oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DronesSimulationPackage.OBSERVATION__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DronesSimulationPackage.OBSERVATION__TIME:
 				return getTime();
+			case DronesSimulationPackage.OBSERVATION__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +154,9 @@ public abstract class ObservationImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case DronesSimulationPackage.OBSERVATION__TIME:
 				setTime((Long)newValue);
+				return;
+			case DronesSimulationPackage.OBSERVATION__ID:
+				setId((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +173,9 @@ public abstract class ObservationImpl extends MinimalEObjectImpl.Container imple
 			case DronesSimulationPackage.OBSERVATION__TIME:
 				setTime(TIME_EDEFAULT);
 				return;
+			case DronesSimulationPackage.OBSERVATION__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +190,8 @@ public abstract class ObservationImpl extends MinimalEObjectImpl.Container imple
 		switch (featureID) {
 			case DronesSimulationPackage.OBSERVATION__TIME:
 				return time != TIME_EDEFAULT;
+			case DronesSimulationPackage.OBSERVATION__ID:
+				return id != ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,6 +208,8 @@ public abstract class ObservationImpl extends MinimalEObjectImpl.Container imple
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (time: ");
 		result.append(time);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

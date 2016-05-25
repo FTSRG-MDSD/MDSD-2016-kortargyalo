@@ -68,6 +68,7 @@ public class DroneInstanceItemProvider
 			addDronePropertyDescriptor(object);
 			addCurrentRolePropertyDescriptor(object);
 			addCurrentBatteryPropertyDescriptor(object);
+			addStatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -134,6 +135,28 @@ public class DroneInstanceItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the State feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_DroneInstance_state_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_DroneInstance_state_feature", "_UI_DroneInstance_type"),
+				 DronesSimulationPackage.Literals.DRONE_INSTANCE__STATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -206,6 +229,7 @@ public class DroneInstanceItemProvider
 
 		switch (notification.getFeatureID(DroneInstance.class)) {
 			case DronesSimulationPackage.DRONE_INSTANCE__CURRENT_BATTERY:
+			case DronesSimulationPackage.DRONE_INSTANCE__STATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case DronesSimulationPackage.DRONE_INSTANCE__POSITION:

@@ -21,6 +21,7 @@ import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExpressionEvaluation;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Inequality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitializationException;
@@ -123,7 +124,9 @@ public final class CrashQuerySpecification extends BaseGeneratedEMFQuerySpecific
       		   new ExportedParameter(body, var_drone1, "drone1"),
       		   new ExportedParameter(body, var_drone2, "drone2")
       		));
-      		// 	DroneInstance.position(drone1,drone1position)
+      		// 	drone1 != drone2
+      		new Inequality(body, var_drone1, var_drone2);
+      		// 		DroneInstance.position(drone1,drone1position)
       		new TypeConstraint(body, new FlatTuple(var_drone1), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
       		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
       		new TypeConstraint(body, new FlatTuple(var_drone1, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance", "position")));

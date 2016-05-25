@@ -4,6 +4,7 @@ import co.paralleluniverse.fibers.SuspendExecution
 import desmoj.core.simulator.InterruptCode
 import desmoj.core.simulator.TimeSpan
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance
+import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationFactory
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskState
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneInChargerMatcher
@@ -12,12 +13,13 @@ import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.events.MovementEvent
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.events.WaitTimeoutEvent
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructureFactory
 import java.util.concurrent.TimeUnit
-import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtend.lib.annotations.Accessors
+import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.exceptions.DroneFailedException
 
 abstract class DroneSimProcess extends LogSimProcess {
+
+	private static long observationId = 0
 
 	val DronesSimModel dronesOwner
 	val WaitTimeoutEvent timeoutEvent
@@ -33,13 +35,20 @@ abstract class DroneSimProcess extends LogSimProcess {
 		// A new event must be created for every drone,
 		// because a single scheduled instance of an event (for a given drone)
 		// cannot be cancelled, only all scheduled instances.
-		timeoutEvent = new WaitTimeoutEvent(this, true)
+		timeoutEvent = new WaitTimeoutEvent(this, false)
 
 		movementEvent = new MovementEvent(this, false)
 	}
 
 	override lifeCycle() throws SuspendExecution {
-		runScript()
+		droneInstance.state = DroneState.HOVERING
+		try {
+			runScript()
+			droneInstance.state = DroneState.DONE
+		} catch (DroneFailedException e) {
+			error("Drone failed", e.reason, e.prevention)
+			dronesOwner.stop
+		}
 	}
 
 	protected def abstract void runScript() throws SuspendExecution;
@@ -69,20 +78,14 @@ abstract class DroneSimProcess extends LogSimProcess {
 		]
 
 		clearInterruptCode
+		droneInstance.state = DroneState.MOVING
 		movementEvent.moveTo(target)
 		waitForInterrupt(dronesOwner.moveCompletedInterrupt)
+		droneInstance.state = DroneState.HOVERING
 		log('''Moved to «x», «y», «z»''')
 	}
 
 	protected final def void _charge() {
-		val resourceSet = new ResourceSetImpl
-		val resource = resourceSet.createResource(URI.createFileURI(model.experiment.outputPath + "/runtime.dronessimulation"))
-		resource.contents.add(EcoreUtil.copy(droneInstance.eContainer))
-		resource.save(newHashMap())
-		
-		DroneInChargerMatcher.on(dronesOwner.incQueryEngine).allMatches.forEach[
-			println('''«drone.drone.name» «charger.name»''')
-		]
 		if (DroneInChargerMatcher.on(dronesOwner.incQueryEngine).countMatches(droneInstance, null) >= 1) {
 			droneInstance.currentBattery = droneInstance.drone.dronetype.maxBatteryCapacity
 			log("Charged")
@@ -112,18 +115,19 @@ abstract class DroneSimProcess extends LogSimProcess {
 				position = EcoreUtil.copy(obsDrone.position)
 				drone = obsDrone.drone
 				time = currTime
+				id = observationId++
 			]
 			droneInstance.observations.add(obs)
 			count.set(0, count.get(0) + 1)
 		]
 
 		dronesOwner.simulationModel.scenario.obstacles.filter [
-			// TODO Implement sphere--AABB collision test.
 			SimulationUtils.distance(droneInstance.position, it.position) < droneScanningRange
 		].forEach [ obsObstacle |
 			val obs = DronesSimulationFactory.eINSTANCE.createObstacleObservation => [
 				obstacle = obsObstacle
 				time = currTime
+				id = observationId++
 			]
 			droneInstance.observations.add(obs)
 			count.set(1, count.get(1) + 1)
@@ -138,8 +142,9 @@ abstract class DroneSimProcess extends LogSimProcess {
 	}
 
 	protected final def void _sendMap(String drone) {
-		dronesOwner.getDroneProcess(drone).droneInstance.observations.addAll(droneInstance.observations)
-		log('''Sent map of «droneInstance.observations.size» observations to «drone»''')
+		val copyOfObservations = EcoreUtil.copyAll(droneInstance.observations)
+		dronesOwner.getDroneProcess(drone).droneInstance.observations.addAll(copyOfObservations)
+		log('''Sent map of «copyOfObservations.size» observations to «drone»''')
 	}
 
 	protected final def int _wait(int timeout, String... signals) {
@@ -153,9 +158,7 @@ abstract class DroneSimProcess extends LogSimProcess {
 			log('''Waiting for «FOR i : signals SEPARATOR ", "»«i»«ENDFOR»''')
 		} else if (signals.length == 0) {
 			log('''Waiting for «timeout» seconds''')
-			hold(new TimeSpan(timeout, TimeUnit.SECONDS))
-			log("Wait completed")
-			return -1
+			timeoutEvent.waitFor(new TimeSpan(timeout, TimeUnit.SECONDS))
 		} else { // Wait for signals with timeout.
 			log('''Waiting for «FOR i : signals SEPARATOR ", "»«i»«ENDFOR» with «timeout» second timeout''')
 			timeoutEvent.waitFor(new TimeSpan(timeout, TimeUnit.SECONDS))
@@ -186,18 +189,24 @@ abstract class DroneSimProcess extends LogSimProcess {
 	protected final def void _cooperate(String task, String role) {
 		val taskInstance = dronesOwner.getTaskProcess(task).taskInstance
 		if (taskInstance.state == TaskState.IN_PROGRESS || taskInstance.state == TaskState.DONE) {
-			// TODO Report error and stop simulation.
+			throw new DroneFailedException(
+				'''Drone «droneInstance.drone.name» tried to collaborate on task «task» that was already stated''',
+				'''Modify the behavior of «droneInstance.drone.name» to avoid collaboration on started task'''
+			)
 		}
 		val roleInstance = taskInstance.roleInstances.findFirst[it.role.name == role]
 		if (roleInstance == null) {
 			throw new RuntimeException('''Task «task» has no role named «role»''')
 		}
 		if (roleInstance.allocatedDrone != null) {
-			// TODO Report error.
+			throw new DroneFailedException(
+				'''Drone «droneInstance.drone.name» tried to collaborate on task «task» as «role» that was already allocated to «roleInstance.allocatedDrone.drone.name»''',
+				'''Modify the behavior of «droneInstance.drone.name» and «roleInstance.allocatedDrone.drone.name» to avoid collaboration on the same role'''
+			)
 		}
 		
 		clearInterruptCode
-		log('''Starting to cooperated on «task» as «role»''')
+		log('''Starting to cooperate on «task» as «role»''')
 		roleInstance.allocatedDrone = droneInstance
 		
 		waitForInterrupt(dronesOwner.taskDoneInterrupt)

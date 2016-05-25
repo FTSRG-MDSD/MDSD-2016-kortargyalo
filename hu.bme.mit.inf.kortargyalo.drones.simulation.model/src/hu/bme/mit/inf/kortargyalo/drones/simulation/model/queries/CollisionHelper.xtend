@@ -21,11 +21,14 @@ class CollisionHelper {
 			(a_minZ <= b_maxZ && a_maxZ >= b_minZ)); // Check for https://developer.mozilla.org/en-US/docs/Games/Techniques/3D_collision_detection
 	}
 
-	def static boolean didDroneLeftScene(double droneposx, double droneposy, double droneposz, double scenex,
-		double sceney, double scenez, double bounddimx, double bounddimy, double bounddimz) {
-		return ((scenex < droneposx && droneposx < scenex + bounddimx) &&
+	def static boolean didDroneLeftScene(double droneposx, double droneposy, double droneposz, 
+		double scenex, double sceney, double scenez, 
+		double bounddimx, double bounddimy, double bounddimz) {
+		return !(
+			(scenex < droneposx && droneposx < scenex + bounddimx) &&
 			(sceney < droneposy && droneposy < sceney + bounddimy) &&
-			(scenez < droneposz && droneposz < scenez + bounddimz))
+			(scenez < droneposz && droneposz < scenez + bounddimz)
+			)
 	}
 
 	def static boolean doCollideWithObstacle(double dronex, double droney, double dronez, double dronedimx,

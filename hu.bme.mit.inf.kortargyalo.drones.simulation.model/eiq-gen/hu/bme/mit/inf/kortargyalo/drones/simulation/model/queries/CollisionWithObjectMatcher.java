@@ -29,14 +29,12 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * <p>Original source:
  * <code><pre>
  * pattern collisionWithObject(drone : DroneInstance, obstacle : Obstacle){
- * 	DroneInstance.position(drone,droneposition);
- * 	Position.x(droneposition,dronepositionx);
- * 	Position.y(droneposition,dronepositiony);
- * 	Position.z(droneposition,dronepositionz);
- * 	DroneInstance.drone.dronetype.dimension(drone,dronedimension);
- * 	Dimension.width(dronedimension, dronedimensionx);
- * 	Dimension.height(dronedimension, dronedimensiony);
- * 	Dimension.depth(dronedimension, dronedimensionz);	
+ * 	DroneInstance.position.x(drone,dronepositionx);
+ * 	DroneInstance.position.y(drone,dronepositiony);
+ * 	DroneInstance.position.z(drone,dronepositionz);
+ * 	DroneInstance.drone.dronetype.dimension.width(drone,dronedimensionx);
+ * 	DroneInstance.drone.dronetype.dimension.height(drone,dronedimensiony);
+ * 	DroneInstance.drone.dronetype.dimension.depth(drone,dronedimensionz);	
  * 
  * 	Obstacle.position.x(obstacle, objectx);
  * 	Obstacle.position.y(obstacle, objecty);

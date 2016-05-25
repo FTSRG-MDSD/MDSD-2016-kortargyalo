@@ -168,13 +168,22 @@ public interface DronesSimulationPackage extends EPackage {
 	int DRONE_INSTANCE__CURRENT_BATTERY = 4;
 
 	/**
+	 * The feature id for the '<em><b>State</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRONE_INSTANCE__STATE = 5;
+
+	/**
 	 * The number of structural features of the '<em>Drone Instance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DRONE_INSTANCE_FEATURE_COUNT = 5;
+	int DRONE_INSTANCE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Drone Instance</em>' class.
@@ -315,13 +324,22 @@ public interface DronesSimulationPackage extends EPackage {
 	int OBSERVATION__TIME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVATION__ID = 1;
+
+	/**
 	 * The number of structural features of the '<em>Observation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVATION_FEATURE_COUNT = 1;
+	int OBSERVATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Observation</em>' class.
@@ -350,6 +368,15 @@ public interface DronesSimulationPackage extends EPackage {
 	 * @ordered
 	 */
 	int OBSTACLE_OBSERVATION__TIME = OBSERVATION__TIME;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSTACLE_OBSERVATION__ID = OBSERVATION__ID;
 
 	/**
 	 * The feature id for the '<em><b>Obstacle</b></em>' reference.
@@ -398,6 +425,15 @@ public interface DronesSimulationPackage extends EPackage {
 	int DRONE_OBSERVATION__TIME = OBSERVATION__TIME;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DRONE_OBSERVATION__ID = OBSERVATION__ID;
+
+	/**
 	 * The feature id for the '<em><b>Drone</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -442,6 +478,17 @@ public interface DronesSimulationPackage extends EPackage {
 	 * @generated
 	 */
 	int TASK_STATE = 7;
+
+
+	/**
+	 * The meta object id for the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState <em>Drone State</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DronesSimulationPackageImpl#getDroneState()
+	 * @generated
+	 */
+	int DRONE_STATE = 8;
 
 
 	/**
@@ -553,6 +600,17 @@ public interface DronesSimulationPackage extends EPackage {
 	EAttribute getDroneInstance_CurrentBattery();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getState <em>State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>State</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getState()
+	 * @see #getDroneInstance()
+	 * @generated
+	 */
+	EAttribute getDroneInstance_State();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance <em>Task Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -660,6 +718,17 @@ public interface DronesSimulationPackage extends EPackage {
 	EAttribute getObservation_Time();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.Observation#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.Observation#getId()
+	 * @see #getObservation()
+	 * @generated
+	 */
+	EAttribute getObservation_Id();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.ObstacleObservation <em>Obstacle Observation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -721,6 +790,16 @@ public interface DronesSimulationPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getTaskState();
+
+	/**
+	 * Returns the meta object for enum '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState <em>Drone State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Drone State</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState
+	 * @generated
+	 */
+	EEnum getDroneState();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -830,6 +909,14 @@ public interface DronesSimulationPackage extends EPackage {
 		EAttribute DRONE_INSTANCE__CURRENT_BATTERY = eINSTANCE.getDroneInstance_CurrentBattery();
 
 		/**
+		 * The meta object literal for the '<em><b>State</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DRONE_INSTANCE__STATE = eINSTANCE.getDroneInstance_State();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.TaskInstanceImpl <em>Task Instance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -916,6 +1003,14 @@ public interface DronesSimulationPackage extends EPackage {
 		EAttribute OBSERVATION__TIME = eINSTANCE.getObservation_Time();
 
 		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVATION__ID = eINSTANCE.getObservation_Id();
+
+		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.ObstacleObservationImpl <em>Obstacle Observation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -968,6 +1063,16 @@ public interface DronesSimulationPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TASK_STATE = eINSTANCE.getTaskState();
+
+		/**
+		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState <em>Drone State</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState
+		 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DronesSimulationPackageImpl#getDroneState()
+		 * @generated
+		 */
+		EEnum DRONE_STATE = eINSTANCE.getDroneState();
 
 	}
 

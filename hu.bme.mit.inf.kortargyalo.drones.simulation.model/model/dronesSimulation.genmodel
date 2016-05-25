@@ -6,7 +6,7 @@
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/hu.bme.mit.inf.kortargyalo.drones.simulation.tests/emf-gen"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     editorPluginID="hu.bme.mit.inf.kortargyalo.drones.simulation.editor" testsPluginID="hu.bme.mit.inf.kortargyalo.drones.simulation.tests"
-    usedGenPackages="../../hu.bme.mit.inf.kortargyalo.drones.behavior.model/model/dronesBehavior.genmodel#//dronesBehavior ../../hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.genmodel#//dronesStructure"
+    usedGenPackages="../../hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.genmodel#//dronesStructure"
     operationReflection="true" importOrganizing="true">
   <foreignModel>dronesSimulation.ecore</foreignModel>
   <genPackages prefix="DronesSimulation" basePackage="hu.bme.mit.inf.kortargyalo.drones.simulation"
@@ -16,6 +16,12 @@
       <genEnumLiterals ecoreEnumLiteral="dronesSimulation.ecore#//TaskState/WAITING"/>
       <genEnumLiterals ecoreEnumLiteral="dronesSimulation.ecore#//TaskState/IN_PROGRESS"/>
       <genEnumLiterals ecoreEnumLiteral="dronesSimulation.ecore#//TaskState/DONE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="dronesSimulation.ecore#//DroneState">
+      <genEnumLiterals ecoreEnumLiteral="dronesSimulation.ecore#//DroneState/CREATED"/>
+      <genEnumLiterals ecoreEnumLiteral="dronesSimulation.ecore#//DroneState/HOVERING"/>
+      <genEnumLiterals ecoreEnumLiteral="dronesSimulation.ecore#//DroneState/MOVING"/>
+      <genEnumLiterals ecoreEnumLiteral="dronesSimulation.ecore#//DroneState/DONE"/>
     </genEnums>
     <genClasses ecoreClass="dronesSimulation.ecore#//DronesSimulation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DronesSimulation/scenario"/>
@@ -28,6 +34,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DroneInstance/currentRole"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//DroneInstance/observations"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesSimulation.ecore#//DroneInstance/currentBattery"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesSimulation.ecore#//DroneInstance/state"/>
     </genClasses>
     <genClasses ecoreClass="dronesSimulation.ecore#//TaskInstance">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//TaskInstance/task"/>
@@ -41,6 +48,7 @@
     </genClasses>
     <genClasses ecoreClass="dronesSimulation.ecore#//Observation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesSimulation.ecore#//Observation/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesSimulation.ecore#//Observation/id"/>
     </genClasses>
     <genClasses ecoreClass="dronesSimulation.ecore#//ObstacleObservation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference dronesSimulation.ecore#//ObstacleObservation/obstacle"/>

@@ -22,3 +22,9 @@
 /DroneInChargerMatcher.java
 /.FirstRoleFilledMatch.java._trace
 /.FirstRoleFilledMatcher.java._trace
+/.AllDronesAreInactiveMatch.java._trace
+/.AllDronesAreInactiveMatcher.java._trace
+/.ReplacedObservationMatch.java._trace
+/.ReplacedObservationMatcher.java._trace
+/.DroneBatteryDepletedMatch.java._trace
+/.DroneBatteryDepletedMatcher.java._trace

@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getCurrentRole <em>Current Role</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getObservations <em>Observations</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getCurrentBattery <em>Current Battery</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getState <em>State</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance()
@@ -151,5 +152,34 @@ public interface DroneInstance extends EObject {
 	 * @generated
 	 */
 	void setCurrentBattery(double value);
+
+	/**
+	 * Returns the value of the '<em><b>State</b></em>' attribute.
+	 * The literals are from the enumeration {@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>State</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>State</em>' attribute.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState
+	 * @see #setState(DroneState)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage#getDroneInstance_State()
+	 * @model
+	 * @generated
+	 */
+	DroneState getState();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance#getState <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>State</em>' attribute.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState
+	 * @see #getState()
+	 * @generated
+	 */
+	void setState(DroneState value);
 
 } // DroneInstance

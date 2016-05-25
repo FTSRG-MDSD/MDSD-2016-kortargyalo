@@ -35,8 +35,7 @@ class TaskSimProcess extends LogSimProcess {
 			error("Cooperation initiation has timed out",
 				'''Roles «FOR role : rolesNotFilled SEPARATOR ", "»«role.role.name»«ENDFOR» of task «name» are not allocated''',
 				"Allocated some drones to the unallocated roles")
-			// TODO Does this work?
-			model.experiment.finish
+			dronesOwner.stop
 		} else if (!InterruptCode.equals(interruptCode, dronesOwner.readyToStartInterrupt)) {
 			throw new RuntimeException("Unexpected interrupt " + interruptCode.name)
 		}

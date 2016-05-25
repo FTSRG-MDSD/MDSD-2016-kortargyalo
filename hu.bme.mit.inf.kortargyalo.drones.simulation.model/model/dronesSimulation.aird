@@ -78,6 +78,10 @@
                 <styles xmi:type="notation:FontStyle" xmi:id="_uooPseVREeWgT-yAxJSf6Q" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_uooPsuVREeWgT-yAxJSf6Q"/>
               </children>
+              <children xmi:type="notation:Node" xmi:id="_wL_DkCKAEeaindoWFv97QQ" type="3010" element="_wLnQICKAEeaindoWFv97QQ">
+                <styles xmi:type="notation:FontStyle" xmi:id="_wL_DkSKAEeaindoWFv97QQ" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_wL_DkiKAEeaindoWFv97QQ"/>
+              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_tYfIMuUqEeWgT-yAxJSf6Q"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_tYfIM-UqEeWgT-yAxJSf6Q"/>
             </children>
@@ -170,6 +174,10 @@
                 <styles xmi:type="notation:FontStyle" xmi:id="_b_M2ceVREeWgT-yAxJSf6Q" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_b_M2cuVREeWgT-yAxJSf6Q"/>
               </children>
+              <children xmi:type="notation:Node" xmi:id="_duOVgCKFEeaindoWFv97QQ" type="3010" element="_dt3wMCKFEeaindoWFv97QQ">
+                <styles xmi:type="notation:FontStyle" xmi:id="_duOVgSKFEeaindoWFv97QQ" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_duOVgiKFEeaindoWFv97QQ"/>
+              </children>
               <styles xmi:type="notation:SortingStyle" xmi:id="_pfFqYuVOEeWgT-yAxJSf6Q"/>
               <styles xmi:type="notation:FilteringStyle" xmi:id="_pfFqY-VOEeWgT-yAxJSf6Q"/>
             </children>
@@ -226,7 +234,32 @@
               <styles xmi:type="notation:FilteringStyle" xmi:id="_9zURNuVREeWgT-yAxJSf6Q"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_9zURMeVREeWgT-yAxJSf6Q" fontName="Segoe UI" fontHeight="8"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9zURMuVREeWgT-yAxJSf6Q" x="144" y="36" width="120" height="100"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_9zURMuVREeWgT-yAxJSf6Q" x="264" y="36" width="120" height="100"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_DRtzwCKAEeaindoWFv97QQ" type="2003" element="_DRFhoCKAEeaindoWFv97QQ">
+            <children xmi:type="notation:Node" xmi:id="_DRvB4CKAEeaindoWFv97QQ" type="5007"/>
+            <children xmi:type="notation:Node" xmi:id="_DRvo8CKAEeaindoWFv97QQ" type="7004">
+              <children xmi:type="notation:Node" xmi:id="_IYgHYCKAEeaindoWFv97QQ" type="3010" element="_IYDbcCKAEeaindoWFv97QQ">
+                <styles xmi:type="notation:FontStyle" xmi:id="_IYgHYSKAEeaindoWFv97QQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_IYgHYiKAEeaindoWFv97QQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_Ukb4wCKAEeaindoWFv97QQ" type="3010" element="_UkLaECKAEeaindoWFv97QQ">
+                <styles xmi:type="notation:FontStyle" xmi:id="_Ukb4wSKAEeaindoWFv97QQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_Ukb4wiKAEeaindoWFv97QQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_apP64CKAEeaindoWFv97QQ" type="3010" element="_ao-OECKAEeaindoWFv97QQ">
+                <styles xmi:type="notation:FontStyle" xmi:id="_apP64SKAEeaindoWFv97QQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_apP64iKAEeaindoWFv97QQ"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_b6Hs4CKAEeaindoWFv97QQ" type="3010" element="_b52AECKAEeaindoWFv97QQ">
+                <styles xmi:type="notation:FontStyle" xmi:id="_b6Hs4SKAEeaindoWFv97QQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_b6Hs4iKAEeaindoWFv97QQ"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_DRvo8SKAEeaindoWFv97QQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_DRvo8iKAEeaindoWFv97QQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_DRtzwSKAEeaindoWFv97QQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DRtzwiKAEeaindoWFv97QQ" x="108" y="36" width="120" height="100"/>
           </children>
           <styles xmi:type="notation:DiagramStyle" xmi:id="_WW-6suSWEeWgT-yAxJSf6Q"/>
           <edges xmi:type="notation:Edge" xmi:id="_qxt-oOVIEeWgT-yAxJSf6Q" type="4001" element="_qxqUQOVIEeWgT-yAxJSf6Q" source="_YQMfEOSWEeWgT-yAxJSf6Q" target="_IP8MoeVIEeWgT-yAxJSf6Q">
@@ -541,7 +574,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_YQJbweSWEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_YQJbweSWEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="216,255,252">
+          <customFeatures>foregroundColor</customFeatures>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -552,7 +586,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_w4YEwOVREeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_yZutgCKAEeaindoWFv97QQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="216,255,252">
+          <customFeatures>foregroundColor</customFeatures>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -564,6 +599,14 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
         </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_wLnQICKAEeaindoWFv97QQ" name="state : DroneState = CREATED" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="dronesSimulation.ecore#//DroneInstance/state"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="dronesSimulation.ecore#//DroneInstance/state"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_yZwisCKAEeaindoWFv97QQ" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_x7EikOUqEeWgT-yAxJSf6Q" name="TaskInstance" tooltipText="" outgoingEdges="_0MG1cOVIEeWgT-yAxJSf6Q _IIqDcOVJEeWgT-yAxJSf6Q" incomingEdges="_PEIn0OVJEeWgT-yAxJSf6Q" width="12" height="10">
         <target xmi:type="ecore:EClass" href="dronesSimulation.ecore#//TaskInstance"/>
@@ -571,7 +614,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_PqH6sOVSEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_PqH6sOVSEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="216,255,252">
+          <customFeatures>foregroundColor</customFeatures>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -590,7 +634,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_5HGrcOUqEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_5HGrcOUqEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="216,255,252">
+          <customFeatures>foregroundColor</customFeatures>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -850,7 +895,7 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_dxhvsOVREeWgT-yAxJSf6Q" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_folJYCKFEeaindoWFv97QQ" iconPath="/org.eclipse.emf.ecoretools.design/icons/full/obj16/EClass_abstract.gif" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="228,228,228">
           <labelFormat>italic</labelFormat>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
         </ownedStyle>
@@ -859,6 +904,14 @@
           <target xmi:type="ecore:EAttribute" href="dronesSimulation.ecore#//Observation/time"/>
           <semanticElements xmi:type="ecore:EAttribute" href="dronesSimulation.ecore#//Observation/time"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_dxiWwOVREeWgT-yAxJSf6Q" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_dt3wMCKFEeaindoWFv97QQ" name="id : ELong" tooltipText="">
+          <target xmi:type="ecore:EAttribute" href="dronesSimulation.ecore#//Observation/id"/>
+          <semanticElements xmi:type="ecore:EAttribute" href="dronesSimulation.ecore#//Observation/id"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_fopa0CKFEeaindoWFv97QQ" labelAlignment="LEFT">
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
@@ -883,7 +936,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_LE3RseVQEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_LE3RseVQEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="216,255,252">
+          <customFeatures>foregroundColor</customFeatures>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -894,7 +948,8 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Q2bnseVQEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Q2bnseVQEeWgT-yAxJSf6Q" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="216,255,252">
+          <customFeatures>foregroundColor</customFeatures>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
@@ -1021,6 +1076,49 @@
           <target xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//TaskState/DONE"/>
           <semanticElements xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//TaskState/DONE"/>
           <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_G6uhoOVSEeWgT-yAxJSf6Q" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+        </ownedElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_DRFhoCKAEeaindoWFv97QQ" name="DroneState" tooltipText="" width="12" height="10">
+        <target xmi:type="ecore:EEnum" href="dronesSimulation.ecore#//DroneState"/>
+        <semanticElements xmi:type="ecore:EEnum" href="dronesSimulation.ecore#//DroneState"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_DRGIsCKAEeaindoWFv97QQ" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="221,236,202">
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_IYDbcCKAEeaindoWFv97QQ" name="CREATED" tooltipText="">
+          <target xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//DroneState/CREATED"/>
+          <semanticElements xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//DroneState/CREATED"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_IYDbcSKAEeaindoWFv97QQ" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_UkLaECKAEeaindoWFv97QQ" name="HOVERING" tooltipText="">
+          <target xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//DroneState/HOVERING"/>
+          <semanticElements xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//DroneState/HOVERING"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_UkLaESKAEeaindoWFv97QQ" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ao-OECKAEeaindoWFv97QQ" name="MOVING" tooltipText="">
+          <target xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//DroneState/MOVING"/>
+          <semanticElements xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//DroneState/MOVING"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_ao-OESKAEeaindoWFv97QQ" labelAlignment="LEFT">
+            <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_b52AECKAEeaindoWFv97QQ" name="DONE" tooltipText="">
+          <target xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//DroneState/DONE"/>
+          <semanticElements xmi:type="ecore:EEnumLiteral" href="dronesSimulation.ecore#//DroneState/DONE"/>
+          <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_b52nICKAEeaindoWFv97QQ" labelAlignment="LEFT">
             <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>

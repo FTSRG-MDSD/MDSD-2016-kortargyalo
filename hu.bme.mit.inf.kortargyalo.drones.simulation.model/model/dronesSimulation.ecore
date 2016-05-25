@@ -20,6 +20,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="observations" upperBound="-1"
         eType="#//Observation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="currentBattery" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//DroneState"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TaskInstance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="task" eType="ecore:EClass ../../hu.bme.mit.inf.kortargyalo.drones.structure.model/model/dronesStructure.ecore#//Task"/>
@@ -38,6 +39,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Observation" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
         defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+        iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ObstacleObservation" eSuperTypes="#//Observation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="obstacle" lowerBound="1"
@@ -53,6 +56,12 @@
     <eLiterals name="NOT_STARTED"/>
     <eLiterals name="WAITING" value="1"/>
     <eLiterals name="IN_PROGRESS" value="2"/>
+    <eLiterals name="DONE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DroneState">
+    <eLiterals name="CREATED"/>
+    <eLiterals name="HOVERING" value="1"/>
+    <eLiterals name="MOVING" value="2"/>
     <eLiterals name="DONE" value="3"/>
   </eClassifiers>
 </ecore:EPackage>

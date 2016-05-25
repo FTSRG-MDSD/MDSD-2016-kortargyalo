@@ -29,16 +29,14 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * <p>Original source:
  * <code><pre>
  * pattern droneInCharger(drone : DroneInstance, charger : Charger){
- * 	DroneInstance(drone);
+ * 	DroneInstance.position.x(drone,dronepositionx);
+ * 	DroneInstance.position.y(drone,dronepositiony);
+ * 	DroneInstance.position.z(drone,dronepositionz);
+ * 	DroneInstance.drone.dronetype.dimension.width(drone,dronedimensionx);
+ * 	DroneInstance.drone.dronetype.dimension.height(drone,dronedimensiony);
+ * 	DroneInstance.drone.dronetype.dimension.depth(drone,dronedimensionz);
+ * 
  * 	Charger(charger);
- * 	DroneInstance.position(drone,droneposition);
- * 	Position.x(droneposition,dronepositionx);
- * 	Position.y(droneposition,dronepositiony);
- * 	Position.z(droneposition,dronepositionz);
- * 	DroneInstance.drone.dronetype.dimension(drone,dronedimension);
- * 	Dimension.width(dronedimension, dronedimensionx);
- * 	Dimension.height(dronedimension, dronedimensiony);
- * 	Dimension.depth(dronedimension, dronedimensionz);	
  * 
  * 	Charger.position.x(charger, objectx);
  * 	Charger.position.y(charger, objecty);
@@ -47,7 +45,7 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 	Charger.dimension.height(charger, objectdimy);
  * 	Charger.dimension.depth(charger, objectdimz);
  * 
- * 	// check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
+ * 	check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
  * }
  * </pre></code>
  * 

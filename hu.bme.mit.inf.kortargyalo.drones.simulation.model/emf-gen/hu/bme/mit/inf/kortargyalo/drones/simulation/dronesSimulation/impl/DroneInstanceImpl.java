@@ -3,6 +3,7 @@
 package hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl;
 
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.Observation;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.RoleInstance;
@@ -39,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getCurrentRole <em>Current Role</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getObservations <em>Observations</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getCurrentBattery <em>Current Battery</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl.DroneInstanceImpl#getState <em>State</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,6 +105,26 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	 * @ordered
 	 */
 	protected double currentBattery = CURRENT_BATTERY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final DroneState STATE_EDEFAULT = DroneState.CREATED;
+
+	/**
+	 * The cached value of the '{@link #getState() <em>State</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getState()
+	 * @generated
+	 * @ordered
+	 */
+	protected DroneState state = STATE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,6 +324,27 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public DroneState getState() {
+		return state;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setState(DroneState newState) {
+		DroneState oldState = state;
+		state = newState == null ? STATE_EDEFAULT : newState;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DronesSimulationPackage.DRONE_INSTANCE__STATE, oldState, state));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -351,6 +394,8 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 				return getObservations();
 			case DronesSimulationPackage.DRONE_INSTANCE__CURRENT_BATTERY:
 				return getCurrentBattery();
+			case DronesSimulationPackage.DRONE_INSTANCE__STATE:
+				return getState();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -380,6 +425,9 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 			case DronesSimulationPackage.DRONE_INSTANCE__CURRENT_BATTERY:
 				setCurrentBattery((Double)newValue);
 				return;
+			case DronesSimulationPackage.DRONE_INSTANCE__STATE:
+				setState((DroneState)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -407,6 +455,9 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 			case DronesSimulationPackage.DRONE_INSTANCE__CURRENT_BATTERY:
 				setCurrentBattery(CURRENT_BATTERY_EDEFAULT);
 				return;
+			case DronesSimulationPackage.DRONE_INSTANCE__STATE:
+				setState(STATE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -429,6 +480,8 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 				return observations != null && !observations.isEmpty();
 			case DronesSimulationPackage.DRONE_INSTANCE__CURRENT_BATTERY:
 				return currentBattery != CURRENT_BATTERY_EDEFAULT;
+			case DronesSimulationPackage.DRONE_INSTANCE__STATE:
+				return state != STATE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -445,6 +498,8 @@ public class DroneInstanceImpl extends MinimalEObjectImpl.Container implements D
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (currentBattery: ");
 		result.append(currentBattery);
+		result.append(", state: ");
+		result.append(state);
 		result.append(')');
 		return result.toString();
 	}

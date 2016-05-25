@@ -80,11 +80,9 @@ class SimulatorApplication implements IApplication {
 
 	private def runSimulator(String outputPath, String bundleId, URI modelURI, String scenarioName) {
 		val droneClassLoader = getDroneClassLoader(bundleId)
-		val pair = getScenario(modelURI, scenarioName)
-		val resourceSet = pair.key
-		val scenario = pair.value
+		val scenario = getScenario(modelURI, scenarioName)
 		val droneLoader = new ClassLoaderDroneLoader(droneClassLoader)
-		val model = new DronesSimModel(resourceSet, null, scenario, droneLoader, true, true)
+		val model = new DronesSimModel(null, scenario, droneLoader, true, true)
 		val experiment = new Experiment(scenario.name, outputPath)
 		model.connectToExperiment(experiment)
 		experiment.executionSpeedRate = 0
@@ -126,6 +124,6 @@ class SimulatorApplication implements IApplication {
 		if (scenario == null) {
 			throw new RuntimeException("Structural model " + modelURI + " does not contain scenario " + scenarioName)
 		}
-		new Pair(resourceSet, scenario)
+		scenario
 	}
 }

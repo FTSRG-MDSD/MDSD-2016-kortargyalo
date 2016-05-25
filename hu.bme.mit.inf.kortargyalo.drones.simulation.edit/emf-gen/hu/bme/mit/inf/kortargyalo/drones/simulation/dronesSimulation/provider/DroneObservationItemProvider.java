@@ -148,7 +148,7 @@ public class DroneObservationItemProvider extends ObservationItemProvider {
 	@Override
 	public String getText(Object object) {
 		DroneObservation droneObservation = (DroneObservation)object;
-		return getString("_UI_DroneObservation_type") + " " + droneObservation.getTime();
+		return getString("_UI_DroneObservation_type") + " " + droneObservation.getId();
 	}
 	
 

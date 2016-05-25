@@ -61,6 +61,7 @@ public class ObservationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTimePropertyDescriptor(object);
+			addIdPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -79,6 +80,28 @@ public class ObservationItemProvider
 				 getString("_UI_Observation_time_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Observation_time_feature", "_UI_Observation_type"),
 				 DronesSimulationPackage.Literals.OBSERVATION__TIME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Observation_id_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Observation_id_feature", "_UI_Observation_type"),
+				 DronesSimulationPackage.Literals.OBSERVATION__ID,
 				 true,
 				 false,
 				 false,
@@ -107,7 +130,7 @@ public class ObservationItemProvider
 	@Override
 	public String getText(Object object) {
 		Observation observation = (Observation)object;
-		return getString("_UI_Observation_type") + " " + observation.getTime();
+		return getString("_UI_Observation_type") + " " + observation.getId();
 	}
 	
 
@@ -124,6 +147,7 @@ public class ObservationItemProvider
 
 		switch (notification.getFeatureID(Observation.class)) {
 			case DronesSimulationPackage.OBSERVATION__TIME:
+			case DronesSimulationPackage.OBSERVATION__ID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

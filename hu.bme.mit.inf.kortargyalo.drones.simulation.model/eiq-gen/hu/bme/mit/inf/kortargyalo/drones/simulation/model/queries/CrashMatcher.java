@@ -29,6 +29,8 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * <code><pre>
  * //this warning is intentional
  * pattern crash(drone1 : DroneInstance, drone2: DroneInstance){
+ * 	drone1 != drone2;
+ * 	
  * 	DroneInstance.position(drone1,drone1position);
  * 	Position.x(drone1position,drone1positionx);
  * 	Position.y(drone1position,drone1positiony);

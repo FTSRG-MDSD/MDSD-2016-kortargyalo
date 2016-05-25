@@ -90,7 +90,7 @@ public class ObstacleObservationItemProvider extends ObservationItemProvider {
 	@Override
 	public String getText(Object object) {
 		ObstacleObservation obstacleObservation = (ObstacleObservation)object;
-		return getString("_UI_ObstacleObservation_type") + " " + obstacleObservation.getTime();
+		return getString("_UI_ObstacleObservation_type") + " " + obstacleObservation.getId();
 	}
 	
 

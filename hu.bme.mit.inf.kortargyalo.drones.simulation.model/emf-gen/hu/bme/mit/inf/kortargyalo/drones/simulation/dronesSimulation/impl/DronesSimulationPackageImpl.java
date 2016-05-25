@@ -2,10 +2,9 @@
  */
 package hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.impl;
 
-import hu.bme.mit.inf.kortargyalo.drones.behavior.dronesBehavior.DronesBehaviorPackage;
-
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneObservation;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulation;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationFactory;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationPackage;
@@ -89,6 +88,13 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 	private EEnum taskStateEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum droneStateEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -135,7 +141,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 		isInited = true;
 
 		// Initialize simple dependencies
-		DronesBehaviorPackage.eINSTANCE.eClass();
+		DronesStructurePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theDronesSimulationPackage.createPackageContents();
@@ -247,6 +253,15 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getDroneInstance_State() {
+		return (EAttribute)droneInstanceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTaskInstance() {
 		return taskInstanceEClass;
 	}
@@ -337,6 +352,15 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getObservation_Id() {
+		return (EAttribute)observationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getObstacleObservation() {
 		return obstacleObservationEClass;
 	}
@@ -391,6 +415,15 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getDroneState() {
+		return droneStateEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DronesSimulationFactory getDronesSimulationFactory() {
 		return (DronesSimulationFactory)getEFactoryInstance();
 	}
@@ -425,6 +458,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 		createEReference(droneInstanceEClass, DRONE_INSTANCE__CURRENT_ROLE);
 		createEReference(droneInstanceEClass, DRONE_INSTANCE__OBSERVATIONS);
 		createEAttribute(droneInstanceEClass, DRONE_INSTANCE__CURRENT_BATTERY);
+		createEAttribute(droneInstanceEClass, DRONE_INSTANCE__STATE);
 
 		taskInstanceEClass = createEClass(TASK_INSTANCE);
 		createEReference(taskInstanceEClass, TASK_INSTANCE__TASK);
@@ -438,6 +472,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 
 		observationEClass = createEClass(OBSERVATION);
 		createEAttribute(observationEClass, OBSERVATION__TIME);
+		createEAttribute(observationEClass, OBSERVATION__ID);
 
 		obstacleObservationEClass = createEClass(OBSTACLE_OBSERVATION);
 		createEReference(obstacleObservationEClass, OBSTACLE_OBSERVATION__OBSTACLE);
@@ -448,6 +483,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 
 		// Create enums
 		taskStateEEnum = createEEnum(TASK_STATE);
+		droneStateEEnum = createEEnum(DRONE_STATE);
 	}
 
 	/**
@@ -496,6 +532,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 		initEReference(getDroneInstance_CurrentRole(), this.getRoleInstance(), this.getRoleInstance_AllocatedDrone(), "currentRole", null, 0, 1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDroneInstance_Observations(), this.getObservation(), null, "observations", null, 0, -1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDroneInstance_CurrentBattery(), ecorePackage.getEDouble(), "currentBattery", null, 0, 1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDroneInstance_State(), this.getDroneState(), "state", null, 0, 1, DroneInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskInstanceEClass, TaskInstance.class, "TaskInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTaskInstance_Task(), theDronesStructurePackage.getTask(), null, "task", null, 0, 1, TaskInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -509,6 +546,7 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 
 		initEClass(observationEClass, Observation.class, "Observation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getObservation_Time(), ecorePackage.getELong(), "time", "0", 0, 1, Observation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObservation_Id(), ecorePackage.getELong(), "id", null, 0, 1, Observation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(obstacleObservationEClass, ObstacleObservation.class, "ObstacleObservation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getObstacleObservation_Obstacle(), theDronesStructurePackage.getObstacle(), null, "obstacle", null, 1, 1, ObstacleObservation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -523,6 +561,12 @@ public class DronesSimulationPackageImpl extends EPackageImpl implements DronesS
 		addEEnumLiteral(taskStateEEnum, TaskState.WAITING);
 		addEEnumLiteral(taskStateEEnum, TaskState.IN_PROGRESS);
 		addEEnumLiteral(taskStateEEnum, TaskState.DONE);
+
+		initEEnum(droneStateEEnum, DroneState.class, "DroneState");
+		addEEnumLiteral(droneStateEEnum, DroneState.CREATED);
+		addEEnumLiteral(droneStateEEnum, DroneState.HOVERING);
+		addEEnumLiteral(droneStateEEnum, DroneState.MOVING);
+		addEEnumLiteral(droneStateEEnum, DroneState.DONE);
 
 		// Create resource
 		createResource(eNS_URI);
