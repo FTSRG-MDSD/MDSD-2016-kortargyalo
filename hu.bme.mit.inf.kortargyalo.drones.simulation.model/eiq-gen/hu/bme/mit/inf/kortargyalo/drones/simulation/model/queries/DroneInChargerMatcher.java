@@ -28,7 +28,9 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 
  * <p>Original source:
  * <code><pre>
- * pattern droneInCharger(drone : DroneInstance, c : Charger){
+ * pattern droneInCharger(drone : DroneInstance, charger : Charger){
+ * 	DroneInstance(drone);
+ * 	Charger(charger);
  * 	DroneInstance.position(drone,droneposition);
  * 	Position.x(droneposition,dronepositionx);
  * 	Position.y(droneposition,dronepositiony);
@@ -38,14 +40,14 @@ import org.eclipse.incquery.runtime.util.IncQueryLoggingUtil;
  * 	Dimension.height(dronedimension, dronedimensiony);
  * 	Dimension.depth(dronedimension, dronedimensionz);	
  * 
- * 	Charger.position.x(c, objectx);
- * 	Charger.position.y(c, objecty);
- * 	Charger.position.z(c, objectz);
- * 	Charger.dimension.width(c, objectdimx);
- * 	Charger.dimension.height(c, objectdimy);
- * 	Charger.dimension.depth(c, objectdimz);
+ * 	Charger.position.x(charger, objectx);
+ * 	Charger.position.y(charger, objecty);
+ * 	Charger.position.z(charger, objectz);
+ * 	Charger.dimension.width(charger, objectdimx);
+ * 	Charger.dimension.height(charger, objectdimy);
+ * 	Charger.dimension.depth(charger, objectdimz);
  * 
- * 	check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
+ * 	// check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
  * }
  * </pre></code>
  * 
@@ -76,7 +78,7 @@ public class DroneInChargerMatcher extends BaseMatcher<DroneInChargerMatch> {
   
   private final static int POSITION_DRONE = 0;
   
-  private final static int POSITION_C = 1;
+  private final static int POSITION_CHARGER = 1;
   
   private final static Logger LOGGER = IncQueryLoggingUtil.getLogger(DroneInChargerMatcher.class);
   
@@ -114,71 +116,71 @@ public class DroneInChargerMatcher extends BaseMatcher<DroneInChargerMatch> {
   /**
    * Returns the set of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @return matches represented as a DroneInChargerMatch object.
    * 
    */
-  public Collection<DroneInChargerMatch> getAllMatches(final DroneInstance pDrone, final Charger pC) {
-    return rawGetAllMatches(new Object[]{pDrone, pC});
+  public Collection<DroneInChargerMatch> getAllMatches(final DroneInstance pDrone, final Charger pCharger) {
+    return rawGetAllMatches(new Object[]{pDrone, pCharger});
   }
   
   /**
    * Returns an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @return a match represented as a DroneInChargerMatch object, or null if no match is found.
    * 
    */
-  public DroneInChargerMatch getOneArbitraryMatch(final DroneInstance pDrone, final Charger pC) {
-    return rawGetOneArbitraryMatch(new Object[]{pDrone, pC});
+  public DroneInChargerMatch getOneArbitraryMatch(final DroneInstance pDrone, final Charger pCharger) {
+    return rawGetOneArbitraryMatch(new Object[]{pDrone, pCharger});
   }
   
   /**
    * Indicates whether the given combination of specified pattern parameters constitute a valid pattern match,
    * under any possible substitution of the unspecified parameters (if any).
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @return true if the input is a valid (partial) match of the pattern.
    * 
    */
-  public boolean hasMatch(final DroneInstance pDrone, final Charger pC) {
-    return rawHasMatch(new Object[]{pDrone, pC});
+  public boolean hasMatch(final DroneInstance pDrone, final Charger pCharger) {
+    return rawHasMatch(new Object[]{pDrone, pCharger});
   }
   
   /**
    * Returns the number of all matches of the pattern that conform to the given fixed values of some parameters.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @return the number of pattern matches found.
    * 
    */
-  public int countMatches(final DroneInstance pDrone, final Charger pC) {
-    return rawCountMatches(new Object[]{pDrone, pC});
+  public int countMatches(final DroneInstance pDrone, final Charger pCharger) {
+    return rawCountMatches(new Object[]{pDrone, pCharger});
   }
   
   /**
    * Executes the given processor on each match of the pattern that conforms to the given fixed values of some parameters.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @param processor the action that will process each pattern match.
    * 
    */
-  public void forEachMatch(final DroneInstance pDrone, final Charger pC, final IMatchProcessor<? super DroneInChargerMatch> processor) {
-    rawForEachMatch(new Object[]{pDrone, pC}, processor);
+  public void forEachMatch(final DroneInstance pDrone, final Charger pCharger, final IMatchProcessor<? super DroneInChargerMatch> processor) {
+    rawForEachMatch(new Object[]{pDrone, pCharger}, processor);
   }
   
   /**
    * Executes the given processor on an arbitrarily chosen match of the pattern that conforms to the given fixed values of some parameters.
    * Neither determinism nor randomness of selection is guaranteed.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @param processor the action that will process the selected match.
    * @return true if the pattern has at least one match with the given parameter values, false if the processor was not invoked
    * 
    */
-  public boolean forOneArbitraryMatch(final DroneInstance pDrone, final Charger pC, final IMatchProcessor<? super DroneInChargerMatch> processor) {
-    return rawForOneArbitraryMatch(new Object[]{pDrone, pC}, processor);
+  public boolean forOneArbitraryMatch(final DroneInstance pDrone, final Charger pCharger, final IMatchProcessor<? super DroneInChargerMatch> processor) {
+    return rawForOneArbitraryMatch(new Object[]{pDrone, pCharger}, processor);
   }
   
   /**
@@ -186,12 +188,12 @@ public class DroneInChargerMatcher extends BaseMatcher<DroneInChargerMatch> {
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public DroneInChargerMatch newMatch(final DroneInstance pDrone, final Charger pC) {
-    return DroneInChargerMatch.newMatch(pDrone, pC);
+  public DroneInChargerMatch newMatch(final DroneInstance pDrone, final Charger pCharger) {
+    return DroneInChargerMatch.newMatch(pDrone, pCharger);
   }
   
   /**
@@ -228,49 +230,49 @@ public class DroneInChargerMatcher extends BaseMatcher<DroneInChargerMatch> {
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<DroneInstance> getAllValuesOfdrone(final Charger pC) {
+  public Set<DroneInstance> getAllValuesOfdrone(final Charger pCharger) {
     return rawAccumulateAllValuesOfdrone(new Object[]{
     null, 
-    pC
+    pCharger
     });
   }
   
   /**
-   * Retrieve the set of values that occur in matches for c.
+   * Retrieve the set of values that occur in matches for charger.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  protected Set<Charger> rawAccumulateAllValuesOfc(final Object[] parameters) {
+  protected Set<Charger> rawAccumulateAllValuesOfcharger(final Object[] parameters) {
     Set<Charger> results = new HashSet<Charger>();
-    rawAccumulateAllValues(POSITION_C, parameters, results);
+    rawAccumulateAllValues(POSITION_CHARGER, parameters, results);
     return results;
   }
   
   /**
-   * Retrieve the set of values that occur in matches for c.
+   * Retrieve the set of values that occur in matches for charger.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Charger> getAllValuesOfc() {
-    return rawAccumulateAllValuesOfc(emptyArray());
+  public Set<Charger> getAllValuesOfcharger() {
+    return rawAccumulateAllValuesOfcharger(emptyArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for c.
+   * Retrieve the set of values that occur in matches for charger.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Charger> getAllValuesOfc(final DroneInChargerMatch partialMatch) {
-    return rawAccumulateAllValuesOfc(partialMatch.toArray());
+  public Set<Charger> getAllValuesOfcharger(final DroneInChargerMatch partialMatch) {
+    return rawAccumulateAllValuesOfcharger(partialMatch.toArray());
   }
   
   /**
-   * Retrieve the set of values that occur in matches for c.
+   * Retrieve the set of values that occur in matches for charger.
    * @return the Set of all values, null if no parameter with the given name exists, empty set if there are no matches
    * 
    */
-  public Set<Charger> getAllValuesOfc(final DroneInstance pDrone) {
-    return rawAccumulateAllValuesOfc(new Object[]{
+  public Set<Charger> getAllValuesOfcharger(final DroneInstance pDrone) {
+    return rawAccumulateAllValuesOfcharger(new Object[]{
     pDrone, 
     null
     });
@@ -279,7 +281,7 @@ public class DroneInChargerMatcher extends BaseMatcher<DroneInChargerMatch> {
   @Override
   protected DroneInChargerMatch tupleToMatch(final Tuple t) {
     try {
-    	return DroneInChargerMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) t.get(POSITION_DRONE), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) t.get(POSITION_C));
+    	return DroneInChargerMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) t.get(POSITION_DRONE), (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) t.get(POSITION_CHARGER));
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in tuple not properly typed!",e);
     	return null;
@@ -289,7 +291,7 @@ public class DroneInChargerMatcher extends BaseMatcher<DroneInChargerMatch> {
   @Override
   protected DroneInChargerMatch arrayToMatch(final Object[] match) {
     try {
-    	return DroneInChargerMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) match[POSITION_C]);
+    	return DroneInChargerMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) match[POSITION_CHARGER]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;
@@ -299,7 +301,7 @@ public class DroneInChargerMatcher extends BaseMatcher<DroneInChargerMatch> {
   @Override
   protected DroneInChargerMatch arrayToMatchMutable(final Object[] match) {
     try {
-    	return DroneInChargerMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) match[POSITION_C]);
+    	return DroneInChargerMatch.newMutableMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) match[POSITION_DRONE], (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) match[POSITION_CHARGER]);
     } catch(ClassCastException e) {
     	LOGGER.error("Element(s) in array not properly typed!",e);
     	return null;

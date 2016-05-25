@@ -2,20 +2,22 @@ package hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities
 
 import co.paralleluniverse.fibers.SuspendExecution
 import desmoj.core.simulator.InterruptCode
-import desmoj.core.simulator.SimProcess
 import desmoj.core.simulator.TimeSpan
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationFactory
+import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskState
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneInChargerMatcher
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.SimulationUtils
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.events.MovementEvent
 import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.events.WaitTimeoutEvent
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructureFactory
 import java.util.concurrent.TimeUnit
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.xtend.lib.annotations.Accessors
 
-abstract class DroneSimProcess extends SimProcess {
+abstract class DroneSimProcess extends LogSimProcess {
 
 	val DronesSimModel dronesOwner
 	val WaitTimeoutEvent timeoutEvent
@@ -68,25 +70,24 @@ abstract class DroneSimProcess extends SimProcess {
 
 		clearInterruptCode
 		movementEvent.moveTo(target)
-		while (true) {
-			if (interrupted) {
-				val code = interruptCode
-				clearInterruptCode
-				if (InterruptCode.equals(code, dronesOwner.moveCompletedInterrupt)) {
-					log('''Moved to «x», «y», «z»''')
-					return
-				}
-			}
-			passivate
-		}
+		waitForInterrupt(dronesOwner.moveCompletedInterrupt)
+		log('''Moved to «x», «y», «z»''')
 	}
 
 	protected final def void _charge() {
-		if (DroneInChargerMatcher.on(dronesOwner.incQueryEngine).allValuesOfdrone.contains(droneInstance)) {
+		val resourceSet = new ResourceSetImpl
+		val resource = resourceSet.createResource(URI.createFileURI(model.experiment.outputPath + "/runtime.dronessimulation"))
+		resource.contents.add(EcoreUtil.copy(droneInstance.eContainer))
+		resource.save(newHashMap())
+		
+		DroneInChargerMatcher.on(dronesOwner.incQueryEngine).allMatches.forEach[
+			println('''«drone.drone.name» «charger.name»''')
+		]
+		if (DroneInChargerMatcher.on(dronesOwner.incQueryEngine).countMatches(droneInstance, null) >= 1) {
 			droneInstance.currentBattery = droneInstance.drone.dronetype.maxBatteryCapacity
 			log("Charged")
 		} else {
-			sendWarning("Drone cannot charge", "SimProcess : " + name,
+			error("Drone cannot charge",
 				"The drone is trying to charge when it is not in any of the charger areas",
 				"Move the drone to a charger area before charging")
 		}
@@ -94,7 +95,7 @@ abstract class DroneSimProcess extends SimProcess {
 
 	protected final def void _scan() {
 		if (droneInstance.drone.dronetype.scanningCapability == null) {
-			sendWarning("Drone has no scanning capability", "SimProcess : " + name,
+			error("Drone has no scanning capability",
 				"The drone is trying to scan when it does not have capability to do so",
 				"Add a scanning capability or don't scan with this drone")
 				return
@@ -176,18 +177,45 @@ abstract class DroneSimProcess extends SimProcess {
 						return i
 					}
 				}
+				log('''Ignored interrupt «code.name»''')
 			}
 			passivate
 		}
 	}
 
-	protected final def int _cooperate(String task, String role) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	protected final def void _cooperate(String task, String role) {
+		val taskInstance = dronesOwner.getTaskProcess(task).taskInstance
+		if (taskInstance.state == TaskState.IN_PROGRESS || taskInstance.state == TaskState.DONE) {
+			// TODO Report error and stop simulation.
+		}
+		val roleInstance = taskInstance.roleInstances.findFirst[it.role.name == role]
+		if (roleInstance == null) {
+			throw new RuntimeException('''Task «task» has no role named «role»''')
+		}
+		if (roleInstance.allocatedDrone != null) {
+			// TODO Report error.
+		}
+		
+		clearInterruptCode
+		log('''Starting to cooperated on «task» as «role»''')
+		roleInstance.allocatedDrone = droneInstance
+		
+		waitForInterrupt(dronesOwner.taskDoneInterrupt)
+		log('''Cooperated on «task» as «role»''')
 	}
 
-	private final def log(String s) {
-		val currTime = dronesOwner.experiment.simClock.time.getTimeTruncated(TimeUnit.SECONDS)
-		println('''«currTime» «name»: «s»''')
-		sendTraceNote(s)
+	private def waitForInterrupt(InterruptCode interrupt) {
+		while (true) {
+			if (interrupted) {
+				val code = interruptCode
+				clearInterruptCode
+				if (InterruptCode.equals(code, interrupt)) {
+					return
+				} else {
+					log('''Ignored interrupt «code.name»''')
+				}
+			}
+			passivate
+		}
 	}
 }

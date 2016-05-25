@@ -16,13 +16,13 @@ public abstract class CollisionWithObjectProcessor implements IMatchProcessor<Co
   /**
    * Defines the action that is to be executed on each match.
    * @param pDrone the value of pattern parameter drone in the currently processed match
-   * @param pObject the value of pattern parameter object in the currently processed match
+   * @param pObstacle the value of pattern parameter obstacle in the currently processed match
    * 
    */
-  public abstract void process(final DroneInstance pDrone, final Obstacle pObject);
+  public abstract void process(final DroneInstance pDrone, final Obstacle pObstacle);
   
   @Override
   public void process(final CollisionWithObjectMatch match) {
-    process(match.getDrone(), match.getObject());
+    process(match.getDrone(), match.getObstacle());
   }
 }

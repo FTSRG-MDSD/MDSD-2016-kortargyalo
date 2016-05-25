@@ -26,19 +26,19 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class CollisionWithObjectMatch extends BasePatternMatch {
   private DroneInstance fDrone;
   
-  private Obstacle fObject;
+  private Obstacle fObstacle;
   
-  private static List<String> parameterNames = makeImmutableList("drone", "object");
+  private static List<String> parameterNames = makeImmutableList("drone", "obstacle");
   
-  private CollisionWithObjectMatch(final DroneInstance pDrone, final Obstacle pObject) {
+  private CollisionWithObjectMatch(final DroneInstance pDrone, final Obstacle pObstacle) {
     this.fDrone = pDrone;
-    this.fObject = pObject;
+    this.fObstacle = pObstacle;
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("drone".equals(parameterName)) return this.fDrone;
-    if ("object".equals(parameterName)) return this.fObject;
+    if ("obstacle".equals(parameterName)) return this.fObstacle;
     return null;
   }
   
@@ -46,8 +46,8 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
     return this.fDrone;
   }
   
-  public Obstacle getObject() {
-    return this.fObject;
+  public Obstacle getObstacle() {
+    return this.fObstacle;
   }
   
   @Override
@@ -57,8 +57,8 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
     	this.fDrone = (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) newValue;
     	return true;
     }
-    if ("object".equals(parameterName) ) {
-    	this.fObject = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle) newValue;
+    if ("obstacle".equals(parameterName) ) {
+    	this.fObstacle = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle) newValue;
     	return true;
     }
     return false;
@@ -69,9 +69,9 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
     this.fDrone = pDrone;
   }
   
-  public void setObject(final Obstacle pObject) {
+  public void setObstacle(final Obstacle pObstacle) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
-    this.fObject = pObject;
+    this.fObstacle = pObstacle;
   }
   
   @Override
@@ -86,12 +86,12 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
   
   @Override
   public Object[] toArray() {
-    return new Object[]{fDrone, fObject};
+    return new Object[]{fDrone, fObstacle};
   }
   
   @Override
   public CollisionWithObjectMatch toImmutable() {
-    return isMutable() ? newMatch(fDrone, fObject) : this;
+    return isMutable() ? newMatch(fDrone, fObstacle) : this;
   }
   
   @Override
@@ -99,7 +99,7 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
     StringBuilder result = new StringBuilder();
     result.append("\"drone\"=" + prettyPrintValue(fDrone) + ", ");
     
-    result.append("\"object\"=" + prettyPrintValue(fObject)
+    result.append("\"obstacle\"=" + prettyPrintValue(fObstacle)
     );
     return result.toString();
   }
@@ -109,7 +109,7 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((fDrone == null) ? 0 : fDrone.hashCode());
-    result = prime * result + ((fObject == null) ? 0 : fObject.hashCode());
+    result = prime * result + ((fObstacle == null) ? 0 : fObstacle.hashCode());
     return result;
   }
   
@@ -132,8 +132,8 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
     CollisionWithObjectMatch other = (CollisionWithObjectMatch) obj;
     if (fDrone == null) {if (other.fDrone != null) return false;}
     else if (!fDrone.equals(other.fDrone)) return false;
-    if (fObject == null) {if (other.fObject != null) return false;}
-    else if (!fObject.equals(other.fObject)) return false;
+    if (fObstacle == null) {if (other.fObstacle != null) return false;}
+    else if (!fObstacle.equals(other.fObstacle)) return false;
     return true;
   }
   
@@ -163,12 +163,12 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
    * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
    * 
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pObject the fixed value of pattern parameter object, or null if not bound.
+   * @param pObstacle the fixed value of pattern parameter obstacle, or null if not bound.
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static CollisionWithObjectMatch newMutableMatch(final DroneInstance pDrone, final Obstacle pObject) {
-    return new Mutable(pDrone, pObject);
+  public static CollisionWithObjectMatch newMutableMatch(final DroneInstance pDrone, final Obstacle pObstacle) {
+    return new Mutable(pDrone, pObstacle);
   }
   
   /**
@@ -176,17 +176,17 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pObject the fixed value of pattern parameter object, or null if not bound.
+   * @param pObstacle the fixed value of pattern parameter obstacle, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public static CollisionWithObjectMatch newMatch(final DroneInstance pDrone, final Obstacle pObject) {
-    return new Immutable(pDrone, pObject);
+  public static CollisionWithObjectMatch newMatch(final DroneInstance pDrone, final Obstacle pObstacle) {
+    return new Immutable(pDrone, pObstacle);
   }
   
   private static final class Mutable extends CollisionWithObjectMatch {
-    Mutable(final DroneInstance pDrone, final Obstacle pObject) {
-      super(pDrone, pObject);
+    Mutable(final DroneInstance pDrone, final Obstacle pObstacle) {
+      super(pDrone, pObstacle);
     }
     
     @Override
@@ -196,8 +196,8 @@ public abstract class CollisionWithObjectMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends CollisionWithObjectMatch {
-    Immutable(final DroneInstance pDrone, final Obstacle pObject) {
-      super(pDrone, pObject);
+    Immutable(final DroneInstance pDrone, final Obstacle pObstacle) {
+      super(pDrone, pObstacle);
     }
     
     @Override

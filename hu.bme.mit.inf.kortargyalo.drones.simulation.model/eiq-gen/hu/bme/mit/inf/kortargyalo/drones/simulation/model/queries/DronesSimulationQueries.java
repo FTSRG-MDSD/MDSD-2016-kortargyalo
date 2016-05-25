@@ -4,11 +4,13 @@ import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.AllRoleFilledM
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CollisionWithObjectMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CrashMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneInChargerMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.FirstRoleFilledMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.LeftSceneMatcher;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.AllRoleFilledQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.CollisionWithObjectQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.CrashQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.DroneInChargerQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.FirstRoleFilledQuerySpecification;
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.LeftSceneQuerySpecification;
 import org.eclipse.incquery.runtime.api.IncQueryEngine;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedPatternGroup;
@@ -25,6 +27,7 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
  * <li>roleFilled</li>
  * <li>notAllRoleFilled</li>
  * <li>allRoleFilled</li>
+ * <li>firstRoleFilled</li>
  * <li>crash</li>
  * <li>leftScene</li>
  * <li>collisionWithObject</li>
@@ -54,6 +57,7 @@ public final class DronesSimulationQueries extends BaseGeneratedPatternGroup {
   
   private DronesSimulationQueries() throws IncQueryException {
     querySpecifications.add(AllRoleFilledQuerySpecification.instance());
+    querySpecifications.add(FirstRoleFilledQuerySpecification.instance());
     querySpecifications.add(CrashQuerySpecification.instance());
     querySpecifications.add(LeftSceneQuerySpecification.instance());
     querySpecifications.add(CollisionWithObjectQuerySpecification.instance());
@@ -66,6 +70,14 @@ public final class DronesSimulationQueries extends BaseGeneratedPatternGroup {
   
   public AllRoleFilledMatcher getAllRoleFilled(final IncQueryEngine engine) throws IncQueryException {
     return AllRoleFilledMatcher.on(engine);
+  }
+  
+  public FirstRoleFilledQuerySpecification getFirstRoleFilled() throws IncQueryException {
+    return FirstRoleFilledQuerySpecification.instance();
+  }
+  
+  public FirstRoleFilledMatcher getFirstRoleFilled(final IncQueryEngine engine) throws IncQueryException {
+    return FirstRoleFilledMatcher.on(engine);
   }
   
   public CrashQuerySpecification getCrash() throws IncQueryException {

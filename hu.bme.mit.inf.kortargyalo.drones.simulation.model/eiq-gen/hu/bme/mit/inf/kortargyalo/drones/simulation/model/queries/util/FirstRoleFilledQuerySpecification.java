@@ -1,9 +1,9 @@
 package hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util;
 
 import com.google.common.collect.Sets;
-import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.AllRoleFilledMatch;
-import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.AllRoleFilledMatcher;
-import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.NotAllRoleFilledQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.FirstRoleFilledMatch;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.FirstRoleFilledMatcher;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.RoleFilledQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
@@ -18,7 +18,7 @@ import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
+import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.PatternMatchCounter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.ConstantValue;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
 import org.eclipse.incquery.runtime.matchers.psystem.queries.PParameter;
@@ -26,15 +26,15 @@ import org.eclipse.incquery.runtime.matchers.psystem.queries.QueryInitialization
 import org.eclipse.incquery.runtime.matchers.tuple.FlatTuple;
 
 /**
- * A pattern-specific query specification that can instantiate AllRoleFilledMatcher in a type-safe way.
+ * A pattern-specific query specification that can instantiate FirstRoleFilledMatcher in a type-safe way.
  * 
- * @see AllRoleFilledMatcher
- * @see AllRoleFilledMatch
+ * @see FirstRoleFilledMatcher
+ * @see FirstRoleFilledMatch
  * 
  */
 @SuppressWarnings("all")
-public final class AllRoleFilledQuerySpecification extends BaseGeneratedEMFQuerySpecification<AllRoleFilledMatcher> {
-  private AllRoleFilledQuerySpecification() {
+public final class FirstRoleFilledQuerySpecification extends BaseGeneratedEMFQuerySpecification<FirstRoleFilledMatcher> {
+  private FirstRoleFilledQuerySpecification() {
     super(GeneratedPQuery.INSTANCE);
   }
   
@@ -43,7 +43,7 @@ public final class AllRoleFilledQuerySpecification extends BaseGeneratedEMFQuery
    * @throws IncQueryException if the pattern definition could not be loaded
    * 
    */
-  public static AllRoleFilledQuerySpecification instance() throws IncQueryException {
+  public static FirstRoleFilledQuerySpecification instance() throws IncQueryException {
     try{
     	return LazyHolder.INSTANCE;
     } catch (ExceptionInInitializerError err) {
@@ -52,34 +52,34 @@ public final class AllRoleFilledQuerySpecification extends BaseGeneratedEMFQuery
   }
   
   @Override
-  protected AllRoleFilledMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
-    return AllRoleFilledMatcher.on(engine);
+  protected FirstRoleFilledMatcher instantiate(final IncQueryEngine engine) throws IncQueryException {
+    return FirstRoleFilledMatcher.on(engine);
   }
   
   @Override
-  public AllRoleFilledMatch newEmptyMatch() {
-    return AllRoleFilledMatch.newEmptyMatch();
+  public FirstRoleFilledMatch newEmptyMatch() {
+    return FirstRoleFilledMatch.newEmptyMatch();
   }
   
   @Override
-  public AllRoleFilledMatch newMatch(final Object... parameters) {
-    return AllRoleFilledMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance) parameters[0]);
+  public FirstRoleFilledMatch newMatch(final Object... parameters) {
+    return FirstRoleFilledMatch.newMatch((hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance) parameters[0]);
   }
   
   private static class LazyHolder {
-    private final static AllRoleFilledQuerySpecification INSTANCE = make();
+    private final static FirstRoleFilledQuerySpecification INSTANCE = make();
     
-    public static AllRoleFilledQuerySpecification make() {
-      return new AllRoleFilledQuerySpecification();					
+    public static FirstRoleFilledQuerySpecification make() {
+      return new FirstRoleFilledQuerySpecification();					
     }
   }
   
   private static class GeneratedPQuery extends BaseGeneratedEMFPQuery {
-    private final static AllRoleFilledQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
+    private final static FirstRoleFilledQuerySpecification.GeneratedPQuery INSTANCE = new GeneratedPQuery();
     
     @Override
     public String getFullyQualifiedName() {
-      return "hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.allRoleFilled";
+      return "hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.firstRoleFilled";
     }
     
     @Override
@@ -99,19 +99,24 @@ public final class AllRoleFilledQuerySpecification extends BaseGeneratedEMFQuery
       	{
       		PBody body = new PBody(this);
       		PVariable var_task = body.getOrCreateVariableByName("task");
+      		PVariable var___0_ = body.getOrCreateVariableByName("_<0>");
       		new TypeConstraint(body, new FlatTuple(var_task), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
       		   new ExportedParameter(body, var_task, "task")
       		));
-      		// 	TaskInstance.state(task, ::WAITING)
+      		// 	TaskInstance.state(task, ::NOT_STARTED)
       		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-      		new ConstantValue(body, var__virtual_0_, getEnumLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskState", "WAITING").getInstance());
+      		new ConstantValue(body, var__virtual_0_, getEnumLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskState", "NOT_STARTED").getInstance());
       		new TypeConstraint(body, new FlatTuple(var_task), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
       		PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
       		new TypeConstraint(body, new FlatTuple(var_task, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance", "state")));
       		new Equality(body, var__virtual_1_, var__virtual_0_);
-      		// 	neg find notAllRoleFilled(task)
-      		new NegativePatternCall(body, new FlatTuple(var_task), NotAllRoleFilledQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 	count find roleFilled(task, _) == 1
+      		PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
+      		new PatternMatchCounter(body, new FlatTuple(var_task, var___0_), RoleFilledQuerySpecification.instance().getInternalQueryRepresentation(), var__virtual_2_);
+      		PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
+      		new ConstantValue(body, var__virtual_3_, 1);
+      		new Equality(body, var__virtual_2_, var__virtual_3_);
       		bodies.add(body);
       	}
       	// to silence compiler error

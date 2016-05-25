@@ -26,19 +26,19 @@ import org.eclipse.incquery.runtime.exception.IncQueryException;
 public abstract class DroneInChargerMatch extends BasePatternMatch {
   private DroneInstance fDrone;
   
-  private Charger fC;
+  private Charger fCharger;
   
-  private static List<String> parameterNames = makeImmutableList("drone", "c");
+  private static List<String> parameterNames = makeImmutableList("drone", "charger");
   
-  private DroneInChargerMatch(final DroneInstance pDrone, final Charger pC) {
+  private DroneInChargerMatch(final DroneInstance pDrone, final Charger pCharger) {
     this.fDrone = pDrone;
-    this.fC = pC;
+    this.fCharger = pCharger;
   }
   
   @Override
   public Object get(final String parameterName) {
     if ("drone".equals(parameterName)) return this.fDrone;
-    if ("c".equals(parameterName)) return this.fC;
+    if ("charger".equals(parameterName)) return this.fCharger;
     return null;
   }
   
@@ -46,8 +46,8 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
     return this.fDrone;
   }
   
-  public Charger getC() {
-    return this.fC;
+  public Charger getCharger() {
+    return this.fCharger;
   }
   
   @Override
@@ -57,8 +57,8 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
     	this.fDrone = (hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance) newValue;
     	return true;
     }
-    if ("c".equals(parameterName) ) {
-    	this.fC = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) newValue;
+    if ("charger".equals(parameterName) ) {
+    	this.fCharger = (hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Charger) newValue;
     	return true;
     }
     return false;
@@ -69,9 +69,9 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
     this.fDrone = pDrone;
   }
   
-  public void setC(final Charger pC) {
+  public void setCharger(final Charger pCharger) {
     if (!isMutable()) throw new java.lang.UnsupportedOperationException();
-    this.fC = pC;
+    this.fCharger = pCharger;
   }
   
   @Override
@@ -86,12 +86,12 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
   
   @Override
   public Object[] toArray() {
-    return new Object[]{fDrone, fC};
+    return new Object[]{fDrone, fCharger};
   }
   
   @Override
   public DroneInChargerMatch toImmutable() {
-    return isMutable() ? newMatch(fDrone, fC) : this;
+    return isMutable() ? newMatch(fDrone, fCharger) : this;
   }
   
   @Override
@@ -99,7 +99,7 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
     StringBuilder result = new StringBuilder();
     result.append("\"drone\"=" + prettyPrintValue(fDrone) + ", ");
     
-    result.append("\"c\"=" + prettyPrintValue(fC)
+    result.append("\"charger\"=" + prettyPrintValue(fCharger)
     );
     return result.toString();
   }
@@ -109,7 +109,7 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
     final int prime = 31;
     int result = 1;
     result = prime * result + ((fDrone == null) ? 0 : fDrone.hashCode());
-    result = prime * result + ((fC == null) ? 0 : fC.hashCode());
+    result = prime * result + ((fCharger == null) ? 0 : fCharger.hashCode());
     return result;
   }
   
@@ -132,8 +132,8 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
     DroneInChargerMatch other = (DroneInChargerMatch) obj;
     if (fDrone == null) {if (other.fDrone != null) return false;}
     else if (!fDrone.equals(other.fDrone)) return false;
-    if (fC == null) {if (other.fC != null) return false;}
-    else if (!fC.equals(other.fC)) return false;
+    if (fCharger == null) {if (other.fCharger != null) return false;}
+    else if (!fCharger.equals(other.fCharger)) return false;
     return true;
   }
   
@@ -163,12 +163,12 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
    * Fields of the mutable match can be filled to create a partial match, usable as matcher input.
    * 
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static DroneInChargerMatch newMutableMatch(final DroneInstance pDrone, final Charger pC) {
-    return new Mutable(pDrone, pC);
+  public static DroneInChargerMatch newMutableMatch(final DroneInstance pDrone, final Charger pCharger) {
+    return new Mutable(pDrone, pCharger);
   }
   
   /**
@@ -176,17 +176,17 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
    * This can be used e.g. to call the matcher with a partial match.
    * <p>The returned match will be immutable. Use {@link #newEmptyMatch()} to obtain a mutable match object.
    * @param pDrone the fixed value of pattern parameter drone, or null if not bound.
-   * @param pC the fixed value of pattern parameter c, or null if not bound.
+   * @param pCharger the fixed value of pattern parameter charger, or null if not bound.
    * @return the (partial) match object.
    * 
    */
-  public static DroneInChargerMatch newMatch(final DroneInstance pDrone, final Charger pC) {
-    return new Immutable(pDrone, pC);
+  public static DroneInChargerMatch newMatch(final DroneInstance pDrone, final Charger pCharger) {
+    return new Immutable(pDrone, pCharger);
   }
   
   private static final class Mutable extends DroneInChargerMatch {
-    Mutable(final DroneInstance pDrone, final Charger pC) {
-      super(pDrone, pC);
+    Mutable(final DroneInstance pDrone, final Charger pCharger) {
+      super(pDrone, pCharger);
     }
     
     @Override
@@ -196,8 +196,8 @@ public abstract class DroneInChargerMatch extends BasePatternMatch {
   }
   
   private static final class Immutable extends DroneInChargerMatch {
-    Immutable(final DroneInstance pDrone, final Charger pC) {
-      super(pDrone, pC);
+    Immutable(final DroneInstance pDrone, final Charger pCharger) {
+      super(pDrone, pCharger);
     }
     
     @Override

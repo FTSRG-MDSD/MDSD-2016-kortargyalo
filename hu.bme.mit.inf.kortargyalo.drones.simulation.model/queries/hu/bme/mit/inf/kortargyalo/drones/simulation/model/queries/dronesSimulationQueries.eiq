@@ -4,21 +4,24 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 import "http://inf.mit.bme.hu/kortargyalo/dronesSimulation"
 import "http://inf.mit.bme.hu/kortargyalo/dronesStructure"
 
-private pattern roleFilled(r : Role){
-	TaskInstance.roleInstances.allocatedDrone(t,_);
-	TaskInstance.roleInstances.role(t,r);
+private pattern roleFilled(task : TaskInstance, role : RoleInstance) {
+	TaskInstance.roleInstances(task, role);
+	RoleInstance.allocatedDrone(role, _);
 }
 
-private pattern notAllRoleFilled(t : TaskInstance){
-	TaskInstance.roleInstances(t, r);
-	neg find roleFilled(r);
+private pattern notAllRoleFilled(task : TaskInstance){
+	neg find roleFilled(task, _);
 }
 
-pattern allRoleFilled(t : TaskInstance){
-	neg find notAllRoleFilled(t);
+pattern allRoleFilled(task : TaskInstance) {
+	TaskInstance.state(task, ::WAITING);
+	neg find notAllRoleFilled(task);
 }
 
-
+pattern firstRoleFilled(task : TaskInstance) {
+	TaskInstance.state(task, ::NOT_STARTED);
+	count find roleFilled(task, _) == 1;
+}
 
 //this warning is intentional
 pattern crash(drone1 : DroneInstance, drone2: DroneInstance){
@@ -65,7 +68,7 @@ pattern leftScene(drone : DroneInstance){
 	check(CollisionHelper.didDroneLeftScene(x,y,z, scenex, sceney, scenez, boundx, boundy, boundz));	
 }
 
-pattern collisionWithObject(drone : DroneInstance, object : Obstacle){
+pattern collisionWithObject(drone : DroneInstance, obstacle : Obstacle){
 	DroneInstance.position(drone,droneposition);
 	Position.x(droneposition,dronepositionx);
 	Position.y(droneposition,dronepositiony);
@@ -75,19 +78,21 @@ pattern collisionWithObject(drone : DroneInstance, object : Obstacle){
 	Dimension.height(dronedimension, dronedimensiony);
 	Dimension.depth(dronedimension, dronedimensionz);	
 
-	Obstacle.position.x(object, objectx);
-	Obstacle.position.y(object, objecty);
-	Obstacle.position.z(object, objectz);
-	Obstacle.dimension.width(object, objectdimx);
-	Obstacle.dimension.height(object, objectdimy);
-	Obstacle.dimension.depth(object, objectdimz);
+	Obstacle.position.x(obstacle, objectx);
+	Obstacle.position.y(obstacle, objecty);
+	Obstacle.position.z(obstacle, objectz);
+	Obstacle.dimension.width(obstacle, objectdimx);
+	Obstacle.dimension.height(obstacle, objectdimy);
+	Obstacle.dimension.depth(obstacle, objectdimz);
 	
 	check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
 		
 }
 
-pattern droneInCharger(drone : DroneInstance, c : Charger){
-	DroneInstance.position(drone,droneposition);
+pattern droneInCharger(drone : DroneInstance, charger : Charger){
+	DroneInstance(drone);
+	Charger(charger);
+	/*DroneInstance.position(drone,droneposition);
 	Position.x(droneposition,dronepositionx);
 	Position.y(droneposition,dronepositiony);
 	Position.z(droneposition,dronepositionz);
@@ -96,13 +101,13 @@ pattern droneInCharger(drone : DroneInstance, c : Charger){
 	Dimension.height(dronedimension, dronedimensiony);
 	Dimension.depth(dronedimension, dronedimensionz);	
 
-	Charger.position.x(c, objectx);
-	Charger.position.y(c, objecty);
-	Charger.position.z(c, objectz);
-	Charger.dimension.width(c, objectdimx);
-	Charger.dimension.height(c, objectdimy);
-	Charger.dimension.depth(c, objectdimz);
+	Charger.position.x(charger, objectx);
+	Charger.position.y(charger, objecty);
+	Charger.position.z(charger, objectz);
+	Charger.dimension.width(charger, objectdimx);
+	Charger.dimension.height(charger, objectdimy);
+	Charger.dimension.depth(charger, objectdimz);*/
 
-	check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
+	// check(CollisionHelper.doCollideWithObstacle(dronepositionx, dronepositiony, dronepositionz, dronedimensionx, dronedimensiony, dronedimensionz, objectx, objecty, objectz, objectdimx, objectdimy, objectdimz));
 }
 

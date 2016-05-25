@@ -81,12 +81,12 @@ final class RoleFilledQuerySpecification extends BaseGeneratedEMFQuerySpecificat
     
     @Override
     public List<String> getParameterNames() {
-      return Arrays.asList("r");
+      return Arrays.asList("task","role");
     }
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("r", "hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Role"));
+      return Arrays.asList(new PParameter("task", "hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance"),new PParameter("role", "hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.RoleInstance"));
     }
     
     @Override
@@ -95,27 +95,25 @@ final class RoleFilledQuerySpecification extends BaseGeneratedEMFQuerySpecificat
       try {
       	{
       		PBody body = new PBody(this);
-      		PVariable var_r = body.getOrCreateVariableByName("r");
-      		PVariable var_t = body.getOrCreateVariableByName("t");
+      		PVariable var_task = body.getOrCreateVariableByName("task");
+      		PVariable var_role = body.getOrCreateVariableByName("role");
       		PVariable var___0_ = body.getOrCreateVariableByName("_<0>");
-      		new TypeConstraint(body, new FlatTuple(var_r), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Role")));
+      		new TypeConstraint(body, new FlatTuple(var_task), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
+      		new TypeConstraint(body, new FlatTuple(var_role), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "RoleInstance")));
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-      		   new ExportedParameter(body, var_r, "r")
+      		   new ExportedParameter(body, var_task, "task"),
+      		   new ExportedParameter(body, var_role, "role")
       		));
-      		// 	TaskInstance.roleInstances.allocatedDrone(t,_)
-      		new TypeConstraint(body, new FlatTuple(var_t), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
+      		// 	TaskInstance.roleInstances(task, role)
+      		new TypeConstraint(body, new FlatTuple(var_task), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
       		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-      		new TypeConstraint(body, new FlatTuple(var_t, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance", "roleInstances")));
+      		new TypeConstraint(body, new FlatTuple(var_task, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance", "roleInstances")));
+      		new Equality(body, var__virtual_0_, var_role);
+      		// 	RoleInstance.allocatedDrone(role, _)
+      		new TypeConstraint(body, new FlatTuple(var_role), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "RoleInstance")));
       		PVariable var__virtual_1_ = body.getOrCreateVariableByName(".virtual{1}");
-      		new TypeConstraint(body, new FlatTuple(var__virtual_0_, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "RoleInstance", "allocatedDrone")));
+      		new TypeConstraint(body, new FlatTuple(var_role, var__virtual_1_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "RoleInstance", "allocatedDrone")));
       		new Equality(body, var__virtual_1_, var___0_);
-      		// 	TaskInstance.roleInstances.role(t,r)
-      		new TypeConstraint(body, new FlatTuple(var_t), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
-      		PVariable var__virtual_2_ = body.getOrCreateVariableByName(".virtual{2}");
-      		new TypeConstraint(body, new FlatTuple(var_t, var__virtual_2_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance", "roleInstances")));
-      		PVariable var__virtual_3_ = body.getOrCreateVariableByName(".virtual{3}");
-      		new TypeConstraint(body, new FlatTuple(var__virtual_2_, var__virtual_3_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "RoleInstance", "role")));
-      		new Equality(body, var__virtual_3_, var_r);
       		bodies.add(body);
       	}
       	// to silence compiler error

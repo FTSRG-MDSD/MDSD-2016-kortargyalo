@@ -12,11 +12,9 @@ import org.eclipse.incquery.runtime.api.IncQueryMatcher;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFPQuery;
 import org.eclipse.incquery.runtime.api.impl.BaseGeneratedEMFQuerySpecification;
 import org.eclipse.incquery.runtime.emf.types.EClassTransitiveInstancesKey;
-import org.eclipse.incquery.runtime.emf.types.EStructuralFeatureInstancesKey;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 import org.eclipse.incquery.runtime.matchers.psystem.PBody;
 import org.eclipse.incquery.runtime.matchers.psystem.PVariable;
-import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.Equality;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.ExportedParameter;
 import org.eclipse.incquery.runtime.matchers.psystem.basicdeferred.NegativePatternCall;
 import org.eclipse.incquery.runtime.matchers.psystem.basicenumerables.TypeConstraint;
@@ -83,12 +81,12 @@ final class NotAllRoleFilledQuerySpecification extends BaseGeneratedEMFQuerySpec
     
     @Override
     public List<String> getParameterNames() {
-      return Arrays.asList("t");
+      return Arrays.asList("task");
     }
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("t", "hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance"));
+      return Arrays.asList(new PParameter("task", "hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance"));
     }
     
     @Override
@@ -97,19 +95,14 @@ final class NotAllRoleFilledQuerySpecification extends BaseGeneratedEMFQuerySpec
       try {
       	{
       		PBody body = new PBody(this);
-      		PVariable var_t = body.getOrCreateVariableByName("t");
-      		PVariable var_r = body.getOrCreateVariableByName("r");
-      		new TypeConstraint(body, new FlatTuple(var_t), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
+      		PVariable var_task = body.getOrCreateVariableByName("task");
+      		PVariable var___0_ = body.getOrCreateVariableByName("_<0>");
+      		new TypeConstraint(body, new FlatTuple(var_task), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
-      		   new ExportedParameter(body, var_t, "t")
+      		   new ExportedParameter(body, var_task, "task")
       		));
-      		// 	TaskInstance.roleInstances(t, r)
-      		new TypeConstraint(body, new FlatTuple(var_t), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance")));
-      		PVariable var__virtual_0_ = body.getOrCreateVariableByName(".virtual{0}");
-      		new TypeConstraint(body, new FlatTuple(var_t, var__virtual_0_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "TaskInstance", "roleInstances")));
-      		new Equality(body, var__virtual_0_, var_r);
-      		// 	neg find roleFilled(r)
-      		new NegativePatternCall(body, new FlatTuple(var_r), RoleFilledQuerySpecification.instance().getInternalQueryRepresentation());
+      		// 	neg find roleFilled(task, _)
+      		new NegativePatternCall(body, new FlatTuple(var_task, var___0_), RoleFilledQuerySpecification.instance().getInternalQueryRepresentation());
       		bodies.add(body);
       	}
       	// to silence compiler error

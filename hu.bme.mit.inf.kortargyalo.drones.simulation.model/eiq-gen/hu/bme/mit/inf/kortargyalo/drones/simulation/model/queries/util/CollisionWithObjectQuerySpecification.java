@@ -85,12 +85,12 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
     
     @Override
     public List<String> getParameterNames() {
-      return Arrays.asList("drone","object");
+      return Arrays.asList("drone","obstacle");
     }
     
     @Override
     public List<PParameter> getParameters() {
-      return Arrays.asList(new PParameter("drone", "hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance"),new PParameter("object", "hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle"));
+      return Arrays.asList(new PParameter("drone", "hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance"),new PParameter("obstacle", "hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Obstacle"));
     }
     
     @Override
@@ -100,7 +100,7 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
       	{
       		PBody body = new PBody(this);
       		PVariable var_drone = body.getOrCreateVariableByName("drone");
-      		PVariable var_object = body.getOrCreateVariableByName("object");
+      		PVariable var_obstacle = body.getOrCreateVariableByName("obstacle");
       		PVariable var_droneposition = body.getOrCreateVariableByName("droneposition");
       		PVariable var_dronepositionx = body.getOrCreateVariableByName("dronepositionx");
       		PVariable var_dronepositiony = body.getOrCreateVariableByName("dronepositiony");
@@ -116,10 +116,10 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
       		PVariable var_objectdimy = body.getOrCreateVariableByName("objectdimy");
       		PVariable var_objectdimz = body.getOrCreateVariableByName("objectdimz");
       		new TypeConstraint(body, new FlatTuple(var_drone), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		new TypeConstraint(body, new FlatTuple(var_obstacle), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
       		body.setSymbolicParameters(Arrays.<ExportedParameter>asList(
       		   new ExportedParameter(body, var_drone, "drone"),
-      		   new ExportedParameter(body, var_object, "object")
+      		   new ExportedParameter(body, var_obstacle, "obstacle")
       		));
       		// 	DroneInstance.position(drone,droneposition)
       		new TypeConstraint(body, new FlatTuple(var_drone), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesSimulation", "DroneInstance")));
@@ -165,45 +165,45 @@ public final class CollisionWithObjectQuerySpecification extends BaseGeneratedEM
       		PVariable var__virtual_9_ = body.getOrCreateVariableByName(".virtual{9}");
       		new TypeConstraint(body, new FlatTuple(var_dronedimension, var__virtual_9_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
       		new Equality(body, var__virtual_9_, var_dronedimensionz);
-      		// 		Obstacle.position.x(object, objectx)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 		Obstacle.position.x(obstacle, objectx)
+      		new TypeConstraint(body, new FlatTuple(var_obstacle), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
       		PVariable var__virtual_10_ = body.getOrCreateVariableByName(".virtual{10}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_10_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
+      		new TypeConstraint(body, new FlatTuple(var_obstacle, var__virtual_10_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
       		PVariable var__virtual_11_ = body.getOrCreateVariableByName(".virtual{11}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_10_, var__virtual_11_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "x")));
       		new Equality(body, var__virtual_11_, var_objectx);
-      		// 	Obstacle.position.y(object, objecty)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Obstacle.position.y(obstacle, objecty)
+      		new TypeConstraint(body, new FlatTuple(var_obstacle), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
       		PVariable var__virtual_12_ = body.getOrCreateVariableByName(".virtual{12}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_12_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
+      		new TypeConstraint(body, new FlatTuple(var_obstacle, var__virtual_12_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
       		PVariable var__virtual_13_ = body.getOrCreateVariableByName(".virtual{13}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_12_, var__virtual_13_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "y")));
       		new Equality(body, var__virtual_13_, var_objecty);
-      		// 	Obstacle.position.z(object, objectz)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Obstacle.position.z(obstacle, objectz)
+      		new TypeConstraint(body, new FlatTuple(var_obstacle), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
       		PVariable var__virtual_14_ = body.getOrCreateVariableByName(".virtual{14}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_14_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
+      		new TypeConstraint(body, new FlatTuple(var_obstacle, var__virtual_14_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "position")));
       		PVariable var__virtual_15_ = body.getOrCreateVariableByName(".virtual{15}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_14_, var__virtual_15_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Position", "z")));
       		new Equality(body, var__virtual_15_, var_objectz);
-      		// 	Obstacle.dimension.width(object, objectdimx)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Obstacle.dimension.width(obstacle, objectdimx)
+      		new TypeConstraint(body, new FlatTuple(var_obstacle), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
       		PVariable var__virtual_16_ = body.getOrCreateVariableByName(".virtual{16}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_16_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
+      		new TypeConstraint(body, new FlatTuple(var_obstacle, var__virtual_16_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
       		PVariable var__virtual_17_ = body.getOrCreateVariableByName(".virtual{17}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_16_, var__virtual_17_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "width")));
       		new Equality(body, var__virtual_17_, var_objectdimx);
-      		// 	Obstacle.dimension.height(object, objectdimy)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Obstacle.dimension.height(obstacle, objectdimy)
+      		new TypeConstraint(body, new FlatTuple(var_obstacle), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
       		PVariable var__virtual_18_ = body.getOrCreateVariableByName(".virtual{18}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_18_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
+      		new TypeConstraint(body, new FlatTuple(var_obstacle, var__virtual_18_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
       		PVariable var__virtual_19_ = body.getOrCreateVariableByName(".virtual{19}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_18_, var__virtual_19_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "height")));
       		new Equality(body, var__virtual_19_, var_objectdimy);
-      		// 	Obstacle.dimension.depth(object, objectdimz)
-      		new TypeConstraint(body, new FlatTuple(var_object), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
+      		// 	Obstacle.dimension.depth(obstacle, objectdimz)
+      		new TypeConstraint(body, new FlatTuple(var_obstacle), new EClassTransitiveInstancesKey((EClass)getClassifierLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Obstacle")));
       		PVariable var__virtual_20_ = body.getOrCreateVariableByName(".virtual{20}");
-      		new TypeConstraint(body, new FlatTuple(var_object, var__virtual_20_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
+      		new TypeConstraint(body, new FlatTuple(var_obstacle, var__virtual_20_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "AABB", "dimension")));
       		PVariable var__virtual_21_ = body.getOrCreateVariableByName(".virtual{21}");
       		new TypeConstraint(body, new FlatTuple(var__virtual_20_, var__virtual_21_), new EStructuralFeatureInstancesKey(getFeatureLiteral("http://inf.mit.bme.hu/kortargyalo/dronesStructure", "Dimension", "depth")));
       		new Equality(body, var__virtual_21_, var_objectdimz);

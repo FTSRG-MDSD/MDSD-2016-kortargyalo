@@ -1,7 +1,7 @@
 package hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries;
 
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskInstance;
-import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.AllRoleFilledQuerySpecification;
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.util.FirstRoleFilledQuerySpecification;
 import java.util.Arrays;
 import java.util.List;
 import org.eclipse.incquery.runtime.api.IPatternMatch;
@@ -9,25 +9,25 @@ import org.eclipse.incquery.runtime.api.impl.BasePatternMatch;
 import org.eclipse.incquery.runtime.exception.IncQueryException;
 
 /**
- * Pattern-specific match representation of the hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.allRoleFilled pattern,
- * to be used in conjunction with {@link AllRoleFilledMatcher}.
+ * Pattern-specific match representation of the hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.firstRoleFilled pattern,
+ * to be used in conjunction with {@link FirstRoleFilledMatcher}.
  * 
  * <p>Class fields correspond to parameters of the pattern. Fields with value null are considered unassigned.
  * Each instance is a (possibly partial) substitution of pattern parameters,
  * usable to represent a match of the pattern in the result of a query,
  * or to specify the bound (fixed) input parameters when issuing a query.
  * 
- * @see AllRoleFilledMatcher
- * @see AllRoleFilledProcessor
+ * @see FirstRoleFilledMatcher
+ * @see FirstRoleFilledProcessor
  * 
  */
 @SuppressWarnings("all")
-public abstract class AllRoleFilledMatch extends BasePatternMatch {
+public abstract class FirstRoleFilledMatch extends BasePatternMatch {
   private TaskInstance fTask;
   
   private static List<String> parameterNames = makeImmutableList("task");
   
-  private AllRoleFilledMatch(final TaskInstance pTask) {
+  private FirstRoleFilledMatch(final TaskInstance pTask) {
     this.fTask = pTask;
   }
   
@@ -58,12 +58,12 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
   
   @Override
   public String patternName() {
-    return "hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.allRoleFilled";
+    return "hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.firstRoleFilled";
   }
   
   @Override
   public List<String> parameterNames() {
-    return AllRoleFilledMatch.parameterNames;
+    return FirstRoleFilledMatch.parameterNames;
   }
   
   @Override
@@ -72,7 +72,7 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
   }
   
   @Override
-  public AllRoleFilledMatch toImmutable() {
+  public FirstRoleFilledMatch toImmutable() {
     return isMutable() ? newMatch(fTask) : this;
   }
   
@@ -96,7 +96,7 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
   public boolean equals(final Object obj) {
     if (this == obj)
     	return true;
-    if (!(obj instanceof AllRoleFilledMatch)) { // this should be infrequent
+    if (!(obj instanceof FirstRoleFilledMatch)) { // this should be infrequent
     	if (obj == null) {
     		return false;
     	}
@@ -108,16 +108,16 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
     		return false;
     	return Arrays.deepEquals(toArray(), otherSig.toArray());
     }
-    AllRoleFilledMatch other = (AllRoleFilledMatch) obj;
+    FirstRoleFilledMatch other = (FirstRoleFilledMatch) obj;
     if (fTask == null) {if (other.fTask != null) return false;}
     else if (!fTask.equals(other.fTask)) return false;
     return true;
   }
   
   @Override
-  public AllRoleFilledQuerySpecification specification() {
+  public FirstRoleFilledQuerySpecification specification() {
     try {
-    	return AllRoleFilledQuerySpecification.instance();
+    	return FirstRoleFilledQuerySpecification.instance();
     } catch (IncQueryException ex) {
      	// This cannot happen, as the match object can only be instantiated if the query specification exists
      	throw new IllegalStateException (ex);
@@ -131,7 +131,7 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
    * @return the empty match.
    * 
    */
-  public static AllRoleFilledMatch newEmptyMatch() {
+  public static FirstRoleFilledMatch newEmptyMatch() {
     return new Mutable(null);
   }
   
@@ -143,7 +143,7 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
    * @return the new, mutable (partial) match object.
    * 
    */
-  public static AllRoleFilledMatch newMutableMatch(final TaskInstance pTask) {
+  public static FirstRoleFilledMatch newMutableMatch(final TaskInstance pTask) {
     return new Mutable(pTask);
   }
   
@@ -155,11 +155,11 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
    * @return the (partial) match object.
    * 
    */
-  public static AllRoleFilledMatch newMatch(final TaskInstance pTask) {
+  public static FirstRoleFilledMatch newMatch(final TaskInstance pTask) {
     return new Immutable(pTask);
   }
   
-  private static final class Mutable extends AllRoleFilledMatch {
+  private static final class Mutable extends FirstRoleFilledMatch {
     Mutable(final TaskInstance pTask) {
       super(pTask);
     }
@@ -170,7 +170,7 @@ public abstract class AllRoleFilledMatch extends BasePatternMatch {
     }
   }
   
-  private static final class Immutable extends AllRoleFilledMatch {
+  private static final class Immutable extends FirstRoleFilledMatch {
     Immutable(final TaskInstance pTask) {
       super(pTask);
     }

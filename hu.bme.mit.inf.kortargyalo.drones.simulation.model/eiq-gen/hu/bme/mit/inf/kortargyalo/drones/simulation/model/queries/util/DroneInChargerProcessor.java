@@ -16,13 +16,13 @@ public abstract class DroneInChargerProcessor implements IMatchProcessor<DroneIn
   /**
    * Defines the action that is to be executed on each match.
    * @param pDrone the value of pattern parameter drone in the currently processed match
-   * @param pC the value of pattern parameter c in the currently processed match
+   * @param pCharger the value of pattern parameter charger in the currently processed match
    * 
    */
-  public abstract void process(final DroneInstance pDrone, final Charger pC);
+  public abstract void process(final DroneInstance pDrone, final Charger pCharger);
   
   @Override
   public void process(final DroneInChargerMatch match) {
-    process(match.getDrone(), match.getC());
+    process(match.getDrone(), match.getCharger());
   }
 }

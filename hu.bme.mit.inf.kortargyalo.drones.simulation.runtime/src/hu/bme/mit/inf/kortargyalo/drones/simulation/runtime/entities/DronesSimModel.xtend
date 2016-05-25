@@ -5,11 +5,14 @@ import desmoj.core.simulator.Model
 import desmoj.core.simulator.TimeSpan
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulation
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationFactory
+import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.TaskState
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.AllRoleFilledMatcher
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.FirstRoleFilledMatcher
 import hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario
 import java.util.HashMap
 import java.util.concurrent.TimeUnit
 import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.incquery.runtime.api.IMatchProcessor
 import org.eclipse.incquery.runtime.api.IPatternMatch
@@ -27,44 +30,49 @@ import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEn
 import org.eclipse.xtend.lib.annotations.Accessors
 
 class DronesSimModel extends Model {
-	
+
 	public static val DELTA_T = new TimeSpan(1, TimeUnit.SECONDS)
-	
+
+	val ResourceSet resourceSet
 	val Scenario scenario
-	val DroneLoader droneLoader 
+	val DroneLoader droneLoader
 	@Accessors(PUBLIC_GETTER) DronesSimulation simulationModel
 	@Accessors(PUBLIC_GETTER) IncQueryEngine incQueryEngine
 	ExecutionSchema executionSchema
-	
+
 	val signalMap = new HashMap<String, InterruptCode>
 	@Accessors(PUBLIC_GETTER) val timeoutInterrupt = new InterruptCode("timeout")
 	@Accessors(PUBLIC_GETTER) val moveCompletedInterrupt = new InterruptCode("moveCompleted")
-	
+	@Accessors(PUBLIC_GETTER) val readyToStartInterrupt = new InterruptCode("readyToStart")
+	@Accessors(PUBLIC_GETTER) val taskDoneInterrupt = new InterruptCode("taskDone")
+
 	val droneProcessesMap = new HashMap<String, DroneSimProcess>
-	
-	new(Model owner, Scenario scenario, DroneLoader droneLoader, boolean showInReport, boolean showInTrace) {
+	val taskProcessesMap = new HashMap<String, TaskSimProcess>
+
+	new(ResourceSet resourceSet, Model owner, Scenario scenario, DroneLoader droneLoader, boolean showInReport, boolean showInTrace) {
 		super(owner, scenario.name, showInReport, showInTrace)
+		this.resourceSet = resourceSet
 		this.scenario = scenario
 		this.droneLoader = droneLoader
 	}
-	
+
 	override description() {
 		'''Simulation for the «scenario.name» scenario'''
 	}
-	
+
 	override doInitialSchedules() {
 		for (droneProcess : droneProcessesMap.values) {
 			droneProcess.activate
 		}
-		// TODO Schedule tasks and time ticks
+	// TODO Schedule tasks and time ticks
 	}
-	
+
 	override init() {
-		val extension factory = DronesSimulationFactory.eINSTANCE 
+		val extension factory = DronesSimulationFactory.eINSTANCE
 		simulationModel = createDronesSimulation
-		simulationModel.scenario = scenario
+		initIncQueryListeners(scenario.name)
 		
-		initIncQueryEngine()
+		simulationModel.scenario = scenario
 
 		for (drone : scenario.drones) {
 			val droneInstance = createDroneInstance => [
@@ -76,25 +84,52 @@ class DronesSimModel extends Model {
 			val droneProcess = droneLoader.getSimProcess(this, droneInstance, true)
 			droneProcessesMap.put(drone.name, droneProcess)
 		}
-		// TODO Add Task and Role instances.
+
+		for (task : scenario.tasks) {
+			val taskInstance = createTaskInstance => [
+				it.task = task
+				state = TaskState.NOT_STARTED
+			]
+			for (role : task.actionToPerform.roles) {
+				val roleInstance = createRoleInstance => [
+					it.role = role
+				]
+				taskInstance.roleInstances.add(roleInstance)
+			}
+			simulationModel.taskInstances.add(taskInstance)
+			val taskProcess = new TaskSimProcess(this, taskInstance, true)
+			taskProcessesMap.put(task.name, taskProcess)
+		}
 	}
-	
-	private def initIncQueryEngine() {
-		val resourceSet = new ResourceSetImpl()
-		val resource = resourceSet.createResource(URI.createURI(simulationModel.scenario.name + ".dronessimultation"))
+
+	private def initIncQueryEngine(String name) {
+		val resource = resourceSet.createResource(URI.createURI(name + ".dronessimultation"))
 		resource.getContents().add(simulationModel)
 		incQueryEngine = IncQueryEngine.on(new EMFScope(resource))
 		val schedulerFactory = Schedulers.getIQEngineSchedulerFactory(incQueryEngine)
 		executionSchema = ExecutionSchemas.createIncQueryExecutionSchema(incQueryEngine, schedulerFactory)
 	}
 	
-	def <T extends IPatternMatch> addStatelessJob(IQuerySpecification<? extends IncQueryMatcher<T>> querySpecification, IMatchProcessor<T> processor) {
+	private def initIncQueryListeners(String name) {
+		initIncQueryEngine(name)
+		
+		addStatelessJob(FirstRoleFilledMatcher.querySpecification) [
+			getTaskProcess(task.task.name).activate
+		]
+		
+		addStatelessJob(AllRoleFilledMatcher.querySpecification) [
+			getTaskProcess(task.task.name).readyToStart
+		]
+	}
+
+	def <T extends IPatternMatch> addStatelessJob(IQuerySpecification<? extends IncQueryMatcher<T>> querySpecification,
+		IMatchProcessor<T> processor) {
 		val job = Jobs.newStatelessJob(IncQueryActivationStateEnum.APPEARED, processor)
 		val lifecycle = Lifecycles.getDefault(false, false)
 		val rule = Rules.newMatcherRuleSpecification(querySpecification, lifecycle, newHashSet(job))
 		executionSchema.addRule(rule)
 	}
-	
+
 	def getSignalInterrupt(String name) {
 		var interrupt = signalMap.get(name)
 		if (interrupt == null) {
@@ -103,10 +138,16 @@ class DronesSimModel extends Model {
 		}
 		interrupt
 	}
-	
+
 	def getDroneProcess(String name) {
 		val drone = droneProcessesMap.get(name)
-		if (drone == null) throw new RuntimeException("There is no drone with name: " + name)
+		if(drone == null) throw new RuntimeException("There is no drone with name: " + name)
 		drone
+	}
+
+	def getTaskProcess(String name) {
+		val task = taskProcessesMap.get(name)
+		if(task == null) throw new RuntimeException("There is no task with name: " + name)
+		task
 	}
 }
