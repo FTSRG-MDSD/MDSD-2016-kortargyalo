@@ -137,14 +137,24 @@ abstract class DroneSimProcess extends LogSimProcess {
 	}
 
 	protected final def void _sendSignal(String signal, String recipent) {
-		dronesOwner.getDroneProcess(recipent).interrupt(dronesOwner.getSignalInterrupt(signal))
-		log('''Sent signal «signal» to «recipent»''')
+		val recipentProcess = dronesOwner.getDroneProcess(recipent)
+		if (dronesOwner.isCommunicationSuccessful(droneInstance, recipentProcess.droneInstance)) {
+			recipentProcess.interrupt(dronesOwner.getSignalInterrupt(signal))
+			log('''Sent signal «signal» to «recipent»''')
+		} else {
+			log('''Tried to send signal «signal» to «recipent», but communication failed''')
+		}
 	}
 
 	protected final def void _sendMap(String drone) {
-		val copyOfObservations = EcoreUtil.copyAll(droneInstance.observations)
-		dronesOwner.getDroneProcess(drone).droneInstance.observations.addAll(copyOfObservations)
-		log('''Sent map of «copyOfObservations.size» observations to «drone»''')
+		val recipentProcess = dronesOwner.getDroneProcess(drone)
+		if (dronesOwner.isCommunicationSuccessful(droneInstance, recipentProcess.droneInstance)) {
+			val copyOfObservations = EcoreUtil.copyAll(droneInstance.observations)
+			recipentProcess.droneInstance.observations.addAll(copyOfObservations)
+			log('''Sent map of «copyOfObservations.size» observations to «drone»''')
+		} else {
+			log('''Tried to send map to «drone», but communication failed''')
+		}
 	}
 
 	protected final def int _wait(int timeout, String... signals) {

@@ -343,6 +343,24 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getScenario_SafeCommunicationDistance() {
+		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getScenario_MaximumCommunicationDistance() {
+		return (EAttribute)scenarioEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCapability() {
 		return capabilityEClass;
 	}
@@ -837,6 +855,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		createEReference(scenarioEClass, SCENARIO__OBSTACLES);
 		createEReference(scenarioEClass, SCENARIO__REGIONS);
 		createEReference(scenarioEClass, SCENARIO__TASKS);
+		createEAttribute(scenarioEClass, SCENARIO__SAFE_COMMUNICATION_DISTANCE);
+		createEAttribute(scenarioEClass, SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE);
 
 		capabilityEClass = createEClass(CAPABILITY);
 
@@ -965,6 +985,8 @@ public class DronesStructurePackageImpl extends EPackageImpl implements DronesSt
 		initEReference(getScenario_Obstacles(), this.getObstacle(), null, "obstacles", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Regions(), this.getRegion(), null, "regions", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScenario_Tasks(), this.getTask(), null, "tasks", null, 0, -1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScenario_SafeCommunicationDistance(), ecorePackage.getEDouble(), "safeCommunicationDistance", "500.0", 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScenario_MaximumCommunicationDistance(), ecorePackage.getEDouble(), "maximumCommunicationDistance", "2000.0", 0, 1, Scenario.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(capabilityEClass, Capability.class, "Capability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

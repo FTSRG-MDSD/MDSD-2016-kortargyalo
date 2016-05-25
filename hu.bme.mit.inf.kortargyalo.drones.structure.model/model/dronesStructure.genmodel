@@ -23,6 +23,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Scenario/obstacles"/>
       <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Scenario/regions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference dronesStructure.ecore#//Scenario/tasks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Scenario/safeCommunicationDistance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute dronesStructure.ecore#//Scenario/maximumCommunicationDistance"/>
     </genClasses>
     <genClasses ecoreClass="dronesStructure.ecore#//Capability"/>
     <genClasses ecoreClass="dronesStructure.ecore#//DroneType">

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -50,6 +51,8 @@ public class ScenarioItemProvider
 			addDronesPropertyDescriptor(object);
 			addAllowedBoundsPropertyDescriptor(object);
 			addRegionsPropertyDescriptor(object);
+			addSafeCommunicationDistancePropertyDescriptor(object);
+			addMaximumCommunicationDistancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -116,6 +119,50 @@ public class ScenarioItemProvider
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Safe Communication Distance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSafeCommunicationDistancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_safeCommunicationDistance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_safeCommunicationDistance_feature", "_UI_Scenario_type"),
+				 DronesStructurePackage.Literals.SCENARIO__SAFE_COMMUNICATION_DISTANCE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Maximum Communication Distance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaximumCommunicationDistancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Scenario_maximumCommunicationDistance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Scenario_maximumCommunicationDistance_feature", "_UI_Scenario_type"),
+				 DronesStructurePackage.Literals.SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.REAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -192,6 +239,10 @@ public class ScenarioItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Scenario.class)) {
+			case DronesStructurePackage.SCENARIO__SAFE_COMMUNICATION_DISTANCE:
+			case DronesStructurePackage.SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case DronesStructurePackage.SCENARIO__DRONES:
 			case DronesStructurePackage.SCENARIO__ALLOWED_BOUNDS:
 			case DronesStructurePackage.SCENARIO__OBSTACLES:

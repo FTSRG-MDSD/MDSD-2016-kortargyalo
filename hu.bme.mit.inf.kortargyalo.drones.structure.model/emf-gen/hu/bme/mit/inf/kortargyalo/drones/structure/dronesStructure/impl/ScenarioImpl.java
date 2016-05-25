@@ -38,6 +38,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getObstacles <em>Obstacles</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getRegions <em>Regions</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getSafeCommunicationDistance <em>Safe Communication Distance</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.ScenarioImpl#getMaximumCommunicationDistance <em>Maximum Communication Distance</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,6 +94,46 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	 * @ordered
 	 */
 	protected EList<Task> tasks;
+
+	/**
+	 * The default value of the '{@link #getSafeCommunicationDistance() <em>Safe Communication Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSafeCommunicationDistance()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double SAFE_COMMUNICATION_DISTANCE_EDEFAULT = 500.0;
+
+	/**
+	 * The cached value of the '{@link #getSafeCommunicationDistance() <em>Safe Communication Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSafeCommunicationDistance()
+	 * @generated
+	 * @ordered
+	 */
+	protected double safeCommunicationDistance = SAFE_COMMUNICATION_DISTANCE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaximumCommunicationDistance() <em>Maximum Communication Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumCommunicationDistance()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double MAXIMUM_COMMUNICATION_DISTANCE_EDEFAULT = 2000.0;
+
+	/**
+	 * The cached value of the '{@link #getMaximumCommunicationDistance() <em>Maximum Communication Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaximumCommunicationDistance()
+	 * @generated
+	 * @ordered
+	 */
+	protected double maximumCommunicationDistance = MAXIMUM_COMMUNICATION_DISTANCE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,6 +250,48 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getSafeCommunicationDistance() {
+		return safeCommunicationDistance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSafeCommunicationDistance(double newSafeCommunicationDistance) {
+		double oldSafeCommunicationDistance = safeCommunicationDistance;
+		safeCommunicationDistance = newSafeCommunicationDistance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.SCENARIO__SAFE_COMMUNICATION_DISTANCE, oldSafeCommunicationDistance, safeCommunicationDistance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getMaximumCommunicationDistance() {
+		return maximumCommunicationDistance;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMaximumCommunicationDistance(double newMaximumCommunicationDistance) {
+		double oldMaximumCommunicationDistance = maximumCommunicationDistance;
+		maximumCommunicationDistance = newMaximumCommunicationDistance;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DronesStructurePackage.SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE, oldMaximumCommunicationDistance, maximumCommunicationDistance));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -243,6 +327,10 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 				return getRegions();
 			case DronesStructurePackage.SCENARIO__TASKS:
 				return getTasks();
+			case DronesStructurePackage.SCENARIO__SAFE_COMMUNICATION_DISTANCE:
+				return getSafeCommunicationDistance();
+			case DronesStructurePackage.SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE:
+				return getMaximumCommunicationDistance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -275,6 +363,12 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 				getTasks().clear();
 				getTasks().addAll((Collection<? extends Task>)newValue);
 				return;
+			case DronesStructurePackage.SCENARIO__SAFE_COMMUNICATION_DISTANCE:
+				setSafeCommunicationDistance((Double)newValue);
+				return;
+			case DronesStructurePackage.SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE:
+				setMaximumCommunicationDistance((Double)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -302,6 +396,12 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 			case DronesStructurePackage.SCENARIO__TASKS:
 				getTasks().clear();
 				return;
+			case DronesStructurePackage.SCENARIO__SAFE_COMMUNICATION_DISTANCE:
+				setSafeCommunicationDistance(SAFE_COMMUNICATION_DISTANCE_EDEFAULT);
+				return;
+			case DronesStructurePackage.SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE:
+				setMaximumCommunicationDistance(MAXIMUM_COMMUNICATION_DISTANCE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -324,8 +424,30 @@ public class ScenarioImpl extends NamedElementImpl implements Scenario {
 				return regions != null && !regions.isEmpty();
 			case DronesStructurePackage.SCENARIO__TASKS:
 				return tasks != null && !tasks.isEmpty();
+			case DronesStructurePackage.SCENARIO__SAFE_COMMUNICATION_DISTANCE:
+				return safeCommunicationDistance != SAFE_COMMUNICATION_DISTANCE_EDEFAULT;
+			case DronesStructurePackage.SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE:
+				return maximumCommunicationDistance != MAXIMUM_COMMUNICATION_DISTANCE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (safeCommunicationDistance: ");
+		result.append(safeCommunicationDistance);
+		result.append(", maximumCommunicationDistance: ");
+		result.append(maximumCommunicationDistance);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ScenarioImpl

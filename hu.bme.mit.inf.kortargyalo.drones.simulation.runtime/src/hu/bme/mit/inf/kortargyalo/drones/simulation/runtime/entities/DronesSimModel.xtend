@@ -1,8 +1,11 @@
 package hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.entities
 
+import desmoj.core.dist.ContDist
+import desmoj.core.dist.ContDistUniform
 import desmoj.core.simulator.InterruptCode
 import desmoj.core.simulator.Model
 import desmoj.core.simulator.TimeSpan
+import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneInstance
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DroneState
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulation
 import hu.bme.mit.inf.kortargyalo.drones.simulation.dronesSimulation.DronesSimulationFactory
@@ -11,6 +14,7 @@ import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.AllDronesAreIn
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.AllRoleFilledMatcher
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CollisionWithObjectMatcher
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.CrashMatcher
+import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneBatteryDepletedMatcher
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.FirstRoleFilledMatcher
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.LeftSceneMatcher
 import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.ReplacedObservationMatcher
@@ -41,7 +45,7 @@ import org.eclipse.incquery.runtime.evm.specific.Rules
 import org.eclipse.incquery.runtime.evm.specific.Schedulers
 import org.eclipse.incquery.runtime.evm.specific.event.IncQueryActivationStateEnum
 import org.eclipse.xtend.lib.annotations.Accessors
-import hu.bme.mit.inf.kortargyalo.drones.simulation.model.queries.DroneBatteryDepletedMatcher
+import hu.bme.mit.inf.kortargyalo.drones.simulation.runtime.SimulationUtils
 
 class DronesSimModel extends Model {
 
@@ -63,6 +67,8 @@ class DronesSimModel extends Model {
 
 	val droneProcessesMap = new HashMap<String, DroneSimProcess>
 	val taskProcessesMap = new HashMap<String, TaskSimProcess>
+	
+	ContDist communicationDistanceDist
 	
 	TimeElapsedEvent timeElapsedEvent
 	SimulationFinishedEvent simulationFinishedEvent
@@ -96,6 +102,11 @@ class DronesSimModel extends Model {
 		val copyOfStructure = EcoreUtil.copy(originalScenario.eContainer as DronesStructure)
 		resource.contents.add(copyOfStructure)
 		simulationModel.scenario = copyOfStructure.scenarios.findFirst[it.name == originalScenario.name]
+
+		communicationDistanceDist = new ContDistUniform(model, "communication distance",
+			simulationModel.scenario.safeCommunicationDistance,
+			simulationModel.scenario.maximumCommunicationDistance, false, false
+		)
 
 		simulationFinishedEvent = new SimulationFinishedEvent(this, true)
 		simulationFailedEvent = new SimulationFailedEvent(this, true)
@@ -219,6 +230,11 @@ class DronesSimModel extends Model {
 	def stop() {
 		executionSchema.dispose
 		experiment.finish
+	}
+	
+	def isCommunicationSuccessful(DroneInstance from, DroneInstance to) {
+		val distance = SimulationUtils.distance(from.position, to.position)
+		communicationDistanceDist.sample >= distance
 	}
 	
 	private def stringify(Position position) {

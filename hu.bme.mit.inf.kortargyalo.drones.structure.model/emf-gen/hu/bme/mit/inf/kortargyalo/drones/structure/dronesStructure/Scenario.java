@@ -18,6 +18,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getObstacles <em>Obstacles</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getRegions <em>Regions</em>}</li>
  *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getSafeCommunicationDistance <em>Safe Communication Distance</em>}</li>
+ *   <li>{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getMaximumCommunicationDistance <em>Maximum Communication Distance</em>}</li>
  * </ul>
  *
  * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getScenario()
@@ -114,5 +116,59 @@ public interface Scenario extends NamedElement {
 	 * @generated
 	 */
 	EList<Task> getTasks();
+
+	/**
+	 * Returns the value of the '<em><b>Safe Communication Distance</b></em>' attribute.
+	 * The default value is <code>"500.0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Safe Communication Distance</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Safe Communication Distance</em>' attribute.
+	 * @see #setSafeCommunicationDistance(double)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getScenario_SafeCommunicationDistance()
+	 * @model default="500.0"
+	 * @generated
+	 */
+	double getSafeCommunicationDistance();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getSafeCommunicationDistance <em>Safe Communication Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Safe Communication Distance</em>' attribute.
+	 * @see #getSafeCommunicationDistance()
+	 * @generated
+	 */
+	void setSafeCommunicationDistance(double value);
+
+	/**
+	 * Returns the value of the '<em><b>Maximum Communication Distance</b></em>' attribute.
+	 * The default value is <code>"2000.0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Maximum Communication Distance</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Maximum Communication Distance</em>' attribute.
+	 * @see #setMaximumCommunicationDistance(double)
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage#getScenario_MaximumCommunicationDistance()
+	 * @model default="2000.0"
+	 * @generated
+	 */
+	double getMaximumCommunicationDistance();
+
+	/**
+	 * Sets the value of the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getMaximumCommunicationDistance <em>Maximum Communication Distance</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Maximum Communication Distance</em>' attribute.
+	 * @see #getMaximumCommunicationDistance()
+	 * @generated
+	 */
+	void setMaximumCommunicationDistance(double value);
 
 } // Scenario

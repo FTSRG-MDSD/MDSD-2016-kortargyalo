@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><?eclipse version="3.0"?><!--
 --><plugin>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated dronesStructure -->
-    <package class="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage" genModel="model/dronesStructure.genmodel" uri="http://inf.mit.bme.hu/kortargyalo/dronesStructure"/>
-  </extension>
-  <extension id="extension.derived.hu.bme.mit.inf.kortargyalo.drones.structure.queries.scanningCapability" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated dronesStructure -->
+      <package
+            uri="http://inf.mit.bme.hu/kortargyalo/dronesStructure"
+            class="hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.DronesStructurePackage"
+            genModel="model/dronesStructure.genmodel"/>
+   </extension>
+  <extension id="extension.derived.hu.bme.mit.inf.kortargyalo.drones.structure.queries.scanningCapability" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">
     <wellbehaving-derived-feature classifier-name="DroneType" feature-name="scanningCapability" package-nsUri="http://inf.mit.bme.hu/kortargyalo/dronesStructure"/>
   </extension>
   <extension id="extension.derived.hu.bme.mit.inf.kortargyalo.drones.structure.queries.movementCapability" point="org.eclipse.incquery.runtime.base.wellbehaving.derived.features">

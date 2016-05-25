@@ -223,13 +223,31 @@ public interface DronesStructurePackage extends EPackage {
 	int SCENARIO__TASKS = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Safe Communication Distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__SAFE_COMMUNICATION_DISTANCE = NAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Maximum Communication Distance</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE = NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Scenario</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCENARIO_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int SCENARIO_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Scenario</em>' class.
@@ -1305,6 +1323,28 @@ public interface DronesStructurePackage extends EPackage {
 	EReference getScenario_Tasks();
 
 	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getSafeCommunicationDistance <em>Safe Communication Distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Safe Communication Distance</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getSafeCommunicationDistance()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EAttribute getScenario_SafeCommunicationDistance();
+
+	/**
+	 * Returns the meta object for the attribute '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getMaximumCommunicationDistance <em>Maximum Communication Distance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Maximum Communication Distance</em>'.
+	 * @see hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Scenario#getMaximumCommunicationDistance()
+	 * @see #getScenario()
+	 * @generated
+	 */
+	EAttribute getScenario_MaximumCommunicationDistance();
+
+	/**
 	 * Returns the meta object for class '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.Capability <em>Capability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1961,6 +2001,22 @@ public interface DronesStructurePackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCENARIO__TASKS = eINSTANCE.getScenario_Tasks();
+
+		/**
+		 * The meta object literal for the '<em><b>Safe Communication Distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCENARIO__SAFE_COMMUNICATION_DISTANCE = eINSTANCE.getScenario_SafeCommunicationDistance();
+
+		/**
+		 * The meta object literal for the '<em><b>Maximum Communication Distance</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCENARIO__MAXIMUM_COMMUNICATION_DISTANCE = eINSTANCE.getScenario_MaximumCommunicationDistance();
 
 		/**
 		 * The meta object literal for the '{@link hu.bme.mit.inf.kortargyalo.drones.structure.dronesStructure.impl.CapabilityImpl <em>Capability</em>}' class.
